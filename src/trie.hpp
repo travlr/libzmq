@@ -34,11 +34,25 @@ namespace zmq
         trie_t ();
         ~trie_t ();
 
+        //  Add key to the trie.
         void add (unsigned char *prefix_, size_t size_);
+
+        //  Remove key from the trie.
         bool rm (unsigned char *prefix_, size_t size_);
+
+        //  Check whether particular key is in the trie.
         bool check (unsigned char *data_, size_t size_);
 
+        //  Apply the function supplied to each subscription in the trie.
+        void apply (void (*func_) (unsigned char *data_, size_t size_,
+            void *arg_), void *arg_);
+
     private:
+
+        void apply_helper (
+            unsigned char **buff_, size_t buffsize_, size_t maxbuffsize_,
+            void (*func_) (unsigned char *data_, size_t size_, void *arg_),
+            void *arg_);
 
         uint32_t refcnt;
         unsigned char min;

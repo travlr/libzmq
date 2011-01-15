@@ -49,6 +49,9 @@ namespace zmq
 
     private:
 
+        static void send_subscription (unsigned char *data_, size_t size_,
+            void *arg_);
+
         //  Hook into the termination process.
         void process_term (int linger_);
 

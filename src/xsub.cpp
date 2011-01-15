@@ -52,6 +52,11 @@ void zmq::xsub_t::xattach_pipes (class reader_t *inpipe_,
     class writer_t *outpipe_, const blob_t &peer_identity_)
 {
     zmq_assert (inpipe_ && outpipe_);
+
+    //  Send all the cached subscriptions to the new upstream peer.
+    subscriptions.apply (send_subscription, outpipe_);
+    outpipe_->flush ();
+
     fq.attach (inpipe_);
     dist.attach (outpipe_);
 }
@@ -181,4 +186,23 @@ bool zmq::xsub_t::match (zmq_msg_t *msg_)
 {
     return subscriptions.check ((unsigned char*) zmq_msg_data (msg_),
         zmq_msg_size (msg_));
+}
+
+void zmq::xsub_t::send_subscription (unsigned char *data_, size_t size_,
+    void *arg_)
+{
+    writer_t *outpipe = (writer_t*) arg_;
+
+    //  Create the subsctription message.
+    zmq_msg_t msg;
+    int rc = zmq_msg_init_size (&msg, size_ + 1);
+    zmq_assert (rc == 0);
+    unsigned char *data = (unsigned char*) zmq_msg_data (&msg);
+    data [0] = 1;
+    memcpy (data + 1, data_, size_);
+
+    //  Send it to the pipe.
+    bool sent = outpipe->write (&msg);
+    zmq_assert (sent);
+    zmq_msg_close (&msg);
 }
