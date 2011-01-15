@@ -34,6 +34,12 @@ zmq::xsub_t::xsub_t (class ctx_t *parent_, uint32_t tid_) :
     options.type = ZMQ_XSUB;
     options.requires_in = true;
     options.requires_out = true;
+
+    //  In XSUB and SUB sockets outbound messages are exclusively subscriptions.
+    //  Thus, given it does not make sense to send the subscriptions when
+    //  the socket is terminating anyway, we set linger period to 0.
+    options.linger = 0;
+
     zmq_msg_init (&message);
 }
 
@@ -62,18 +68,22 @@ int zmq::xsub_t::xsend (zmq_msg_t *msg_, int options_)
     size_t size = zmq_msg_size (msg_);
     unsigned char *data = (unsigned char*) zmq_msg_data (msg_);
 
-    //  Malformed subscriptions are dropped silently.
     if (size >= 1) {
 
-        //  Process a subscription.
-        if (*data == 1)
+        //  Process a subscription and send it upstream.
+        if (*data == 1) {
             subscriptions.add (data + 1, size - 1);
+            return dist.send (msg_, options_);
+        }
 
         //  Process an unsubscription. Invalid unsubscription is ignored.
-        if (*data == 0)
+        if (*data == 0) {
             subscriptions.rm (data + 1, size - 1);
+            return dist.send (msg_, options_);
+        }
     }
 
+    //  Malformed subscriptions are dropped silently.
     int rc = zmq_msg_close (msg_);
     zmq_assert (rc == 0);
     rc = zmq_msg_init (msg_);

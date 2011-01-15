@@ -32,6 +32,11 @@ namespace zmq
         pub_t (class ctx_t *parent_, uint32_t tid_);
         ~pub_t ();
 
+        int xsend (zmq_msg_t *msg_, int flags_);
+        bool xhas_out ();
+        int xrecv (zmq_msg_t *msg_, int flags_);
+        bool xhas_in ();
+
     private:
 
         pub_t (const pub_t&);
