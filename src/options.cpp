@@ -40,6 +40,8 @@ zmq::options_t::options_t () :
     backlog (100),
     requires_in (false),
     requires_out (false),
+    disconnect_in (false),
+    disconnect_out (false),
     immediate_connect (true)
 {
 }

@@ -35,6 +35,11 @@ zmq::xsub_t::xsub_t (class ctx_t *parent_, uint32_t tid_) :
     options.requires_in = true;
     options.requires_out = true;
 
+    //  When connection fails, session disconnects the associated subscription
+    //  pipe. When the engine is reconnected, new pipe is created and all
+    //  the subscriptions cached by the socket are re-sent upstream.
+    options.disconnect_out = true;
+
     //  In XSUB and SUB sockets outbound messages are exclusively subscriptions.
     //  Thus, given it does not make sense to send the subscriptions when
     //  the socket is terminating anyway, we set linger period to 0.

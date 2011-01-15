@@ -65,10 +65,18 @@ namespace zmq
         //  Maximum backlog for pending connections.
         int backlog;
 
-        //  These options are never set by the user directly. Instead they are
-        //  provided by the specific socket type.
+        //  The rest of the options are never set by the user directly.
+        //  Instead they are provided by the specific socket type.
+
+        //  Specidies whether particular socket type requires pipe in the
+        //  particular direction.
         bool requires_in;
-        bool requires_out;
+        bool requires_out; 
+
+        //  Specifies whether pipe belonging to the socket type should be
+        //  disconnected when engine is disconnected.
+        bool disconnect_in;
+        bool disconnect_out;
 
         //  If true, when connecting, pipes are created immediately without
         //  waiting for the connection to be established. That way the socket

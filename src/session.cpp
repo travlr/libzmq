@@ -248,8 +248,8 @@ void zmq::session_t::process_attach (i_engine *engine_,
 
         //  Create the pipes, as required.
         if (options.requires_in) {
-            create_pipe (socket, this, options.hwm, options.swap, &socket_reader,
-                &out_pipe);
+            create_pipe (socket, this, options.hwm, options.swap,
+                &socket_reader, &out_pipe);
             out_pipe->set_event_sink (this);
         }
         if (options.requires_out) {
@@ -279,10 +279,16 @@ void zmq::session_t::detach ()
     //  Remove any half-done messages from the pipes.
     clean_pipes ();
 
+    //  If required, drop the pipes.
+    if (!terminating && options.disconnect_in && in_pipe)
+        in_pipe->terminate ();
+    if (!terminating && options.disconnect_out && out_pipe)
+        out_pipe->terminate ();
+
     //  Send the event to the derived class.
     detached ();
 
-    //  Just in case, there's only a delimiter in the inbound pipe.
+    //  Just in case there's only a delimiter in the inbound pipe.
     if (in_pipe)
         in_pipe->check_read ();
 }
