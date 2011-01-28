@@ -71,10 +71,10 @@ namespace zmq
         //  Specidies whether particular socket type requires pipe in the
         //  particular direction.
         bool requires_in;
-        bool requires_out; 
+        bool requires_out;
 
-        //  Specifies whether pipe belonging to the socket type should be
-        //  disconnected when engine is disconnected.
+        //  Specifies whether message pipes should be
+        //  re-instantiated when engine is disconnected.
         bool disconnect_in;
         bool disconnect_out;
 

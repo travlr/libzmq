@@ -179,16 +179,40 @@ void zmq::session_t::terminated (reader_t *pipe_)
 {
     zmq_assert (in_pipe == pipe_);
     in_pipe = NULL;
-    if (state == terminating)
+    if (state == terminating) {
         unregister_term_ack ();
+        return;
+    }
+
+    //  If required, create a new pipe to replace the old one.
+    if (options.disconnect_out) {
+        writer_t *writer;
+        create_pipe (this, socket, options.hwm, options.swap, &in_pipe,
+            &writer);
+        in_pipe->set_event_sink (this);
+        blob_t empty_identity;
+        send_bind (socket, NULL, writer, empty_identity);
+    }
 }
 
 void zmq::session_t::terminated (writer_t *pipe_)
 {
     zmq_assert (out_pipe == pipe_);
     out_pipe = NULL;
-    if (state == terminating)
+    if (state == terminating) {
         unregister_term_ack ();
+        return;
+    }
+
+    //  If required, create a new pipe to replace the old one.
+    if (options.disconnect_in) {
+        reader_t *reader;
+        create_pipe (this, socket, options.hwm, options.swap, &reader,
+            &out_pipe);
+        out_pipe->set_event_sink (this);
+        blob_t empty_identity;
+        send_bind (socket, reader, NULL, empty_identity);
+    }
 }
 
 void zmq::session_t::activated (reader_t *pipe_)
@@ -238,30 +262,38 @@ void zmq::session_t::process_attach (i_engine *engine_,
         return;
     }
 
+    bool create_in = false;
+    bool create_out = false;
+
     //  Check whether the required pipes already exist. If not so, we'll
     //  create them and bind them to the socket object.
     if (!pipes_attached) {
         zmq_assert (!in_pipe && !out_pipe);
+        if (options.requires_in)
+            create_in = true;
+        if (options.requires_out)
+            create_out = true;
         pipes_attached = true;
-        reader_t *socket_reader = NULL;
-        writer_t *socket_writer = NULL;
-
-        //  Create the pipes, as required.
-        if (options.requires_in) {
-            create_pipe (socket, this, options.hwm, options.swap,
-                &socket_reader, &out_pipe);
-            out_pipe->set_event_sink (this);
-        }
-        if (options.requires_out) {
-            create_pipe (this, socket, options.hwm, options.swap, &in_pipe,
-                &socket_writer);
-            in_pipe->set_event_sink (this);
-        }
-
-        //  Bind the pipes to the socket object.
-        if (socket_reader || socket_writer)
-            send_bind (socket, socket_reader, socket_writer, peer_identity_);
     }
+
+    reader_t *socket_reader = NULL;
+    writer_t *socket_writer = NULL;
+
+    //  Create the pipes, as required.
+    if (create_in) {
+        create_pipe (socket, this, options.hwm, options.swap,
+            &socket_reader, &out_pipe);
+        out_pipe->set_event_sink (this);
+    }
+    if (create_out) {
+        create_pipe (this, socket, options.hwm, options.swap, &in_pipe,
+            &socket_writer);
+        in_pipe->set_event_sink (this);
+    }
+
+    //  Bind the pipes to the socket object.
+    if (socket_reader || socket_writer)
+        send_bind (socket, socket_reader, socket_writer, peer_identity_);
 
     //  Plug in the engine.
     engine = engine_;
@@ -279,11 +311,13 @@ void zmq::session_t::detach ()
     //  Remove any half-done messages from the pipes.
     clean_pipes ();
 
-    //  If required, drop the pipes.
-    if (!terminating && options.disconnect_in && in_pipe)
-        in_pipe->terminate ();
-    if (!terminating && options.disconnect_out && out_pipe)
-        out_pipe->terminate ();
+    //  If required, drop the pipe(s).
+    if (state != terminating) {
+        if (options.disconnect_in && out_pipe)
+            out_pipe->terminate ();
+        if (options.disconnect_out && in_pipe)
+            in_pipe->terminate ();
+    }
 
     //  Send the event to the derived class.
     detached ();

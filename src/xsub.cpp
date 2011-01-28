@@ -56,14 +56,16 @@ zmq::xsub_t::~xsub_t ()
 void zmq::xsub_t::xattach_pipes (class reader_t *inpipe_,
     class writer_t *outpipe_, const blob_t &peer_identity_)
 {
-    zmq_assert (inpipe_ && outpipe_);
+    zmq_assert (outpipe_);
 
     //  Send all the cached subscriptions to the new upstream peer.
     subscriptions.apply (send_subscription, outpipe_);
     outpipe_->flush ();
 
-    fq.attach (inpipe_);
     dist.attach (outpipe_);
+
+    if (inpipe_)
+        fq.attach (inpipe_);
 }
 
 void zmq::xsub_t::process_term (int linger_)

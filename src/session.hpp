@@ -116,7 +116,9 @@ namespace zmq
         //  the engines into the same thread.
         class io_thread_t *io_thread;
 
-        //  If true, pipes were already attached to this session.
+        //  If true, pipes were already attached to this session. This flag is
+        //  used to signalise that the session was already piped to the socket
+        //  and subsequent 'attach' command should not create new pipes.
         bool pipes_attached;
 
         //  If true, delimiter was already read from the inbound pipe.

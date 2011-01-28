@@ -31,6 +31,11 @@ zmq::xpub_t::xpub_t (class ctx_t *parent_, uint32_t tid_) :
     options.type = ZMQ_XPUB;
     options.requires_in = true;
     options.requires_out = true;
+
+    //  When connection fails, session disconnects the associated subscription
+    //  pipe. That causes the socket to remove all the associated subscriptions
+    //  to be removed from the socket's subscription map.
+    options.disconnect_in = true;
 }
 
 zmq::xpub_t::~xpub_t ()
@@ -40,9 +45,11 @@ zmq::xpub_t::~xpub_t ()
 void zmq::xpub_t::xattach_pipes (class reader_t *inpipe_,
     class writer_t *outpipe_, const blob_t &peer_identity_)
 {
-    zmq_assert (inpipe_ && outpipe_);
-    dist.attach (outpipe_);
+    zmq_assert (inpipe_);
     fq.attach (inpipe_);
+
+    if (outpipe_)
+        dist.attach (outpipe_);
 }
 
 void zmq::xpub_t::process_term (int linger_)
