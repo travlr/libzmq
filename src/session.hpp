@@ -140,6 +140,10 @@ namespace zmq
             terminating
         } state;
 
+        //  True, if the related pipe is being reconnected.
+        bool reconnecting_in;
+        bool reconnecting_out;
+
         session_t (const session_t&);
         const session_t &operator = (const session_t&);
     };

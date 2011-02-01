@@ -54,7 +54,7 @@ bool zmq::trie_t::add (unsigned char *prefix_, size_t size_)
     //  We are at the node corresponding to the prefix. We are done.
     if (!size_) {
         ++refcnt;
-        return false;
+        return refcnt == 1;
     }
 
     unsigned char c = *prefix_;
@@ -112,17 +112,15 @@ bool zmq::trie_t::add (unsigned char *prefix_, size_t size_)
             next.node = new (std::nothrow) trie_t;
             zmq_assert (next.node);
         }
-        next.node->add (prefix_ + 1, size_ - 1);
+        return next.node->add (prefix_ + 1, size_ - 1);
     }
     else {
         if (!next.table [c - min]) {
             next.table [c - min] = new (std::nothrow) trie_t;
             zmq_assert (next.table [c - min]);
         }
-        next.table [c - min]->add (prefix_ + 1, size_ - 1);
+        return next.table [c - min]->add (prefix_ + 1, size_ - 1);
     }
-
-    return true;
 }
 
 bool zmq::trie_t::rm (unsigned char *prefix_, size_t size_)

@@ -37,16 +37,15 @@ int zmq::pub_t::xsend (zmq_msg_t *msg_, int flags_)
     zmq_msg_init (&sub);
     while (true) {
         int rc = xpub_t::xrecv (&sub, ZMQ_NOBLOCK);
-        if (rc != 0 && errno == EAGAIN)
+        if (rc != 0 && errno == EAGAIN) {
+            zmq_msg_close (&sub);
             break;
+        }
         if (unlikely (rc != 0)) {
             zmq_msg_close (&sub);
             return -1;
         }
-
-        //  At this point we have the subscription. As for now, just ignore it.
     }
-    zmq_msg_close (&sub);
 
     return xpub_t::xsend (msg_, flags_);
 }

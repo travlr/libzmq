@@ -200,7 +200,7 @@ namespace zmq
         //  swap is empied.
         bool pending_delimiter;
 
-        //  True is 'terminate' method was called of 'pipe_term' command
+        //  True is 'terminate' method was called or 'pipe_term' command
         //  arrived from the reader.
         bool terminating;
 

@@ -40,7 +40,9 @@ zmq::session_t::session_t (class io_thread_t *io_thread_,
     delimiter_processed (false),
     force_terminate (false),
     has_linger_timer (false),
-    state (active)
+    state (active),
+    reconnecting_in (false),
+    reconnecting_out (false)
 {    
 }
 
@@ -83,7 +85,7 @@ void zmq::session_t::proceed_with_term ()
 
 bool zmq::session_t::read (::zmq_msg_t *msg_)
 {
-    if (!in_pipe)
+    if (!in_pipe || reconnecting_out)
         return false;
 
     if (!in_pipe->read (msg_))
@@ -95,7 +97,10 @@ bool zmq::session_t::read (::zmq_msg_t *msg_)
 
 bool zmq::session_t::write (::zmq_msg_t *msg_)
 {
-    if (out_pipe && out_pipe->write (msg_)) {
+    if (!out_pipe || reconnecting_in)
+        return false;
+
+    if (out_pipe->write (msg_)) {
         zmq_msg_init (msg_);
         return true;
     }
@@ -192,6 +197,9 @@ void zmq::session_t::terminated (reader_t *pipe_)
         in_pipe->set_event_sink (this);
         blob_t empty_identity;
         send_bind (socket, NULL, writer, empty_identity);
+        reconnecting_out = false;
+        if (engine)
+            engine->activate_out ();
     }
 }
 
@@ -212,6 +220,9 @@ void zmq::session_t::terminated (writer_t *pipe_)
         out_pipe->set_event_sink (this);
         blob_t empty_identity;
         send_bind (socket, reader, NULL, empty_identity);
+        reconnecting_in = false;
+        if (engine)
+            engine->activate_in ();
     }
 }
 
@@ -313,10 +324,14 @@ void zmq::session_t::detach ()
 
     //  If required, drop the pipe(s).
     if (state != terminating) {
-        if (options.disconnect_in && out_pipe)
+        if (options.disconnect_in && out_pipe) {
+            reconnecting_in = true;
             out_pipe->terminate ();
-        if (options.disconnect_out && in_pipe)
+        }
+        if (options.disconnect_out && in_pipe) {
+            reconnecting_out = true;
             in_pipe->terminate ();
+        }
     }
 
     //  Send the event to the derived class.
