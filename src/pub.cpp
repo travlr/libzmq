@@ -45,7 +45,6 @@ int zmq::pub_t::xsend (zmq_msg_t *msg_, int flags_)
         }
 
         //  At this point we have the subscription. As for now, just ignore it.
-printf ("(un)subscription received!\n");
     }
     zmq_msg_close (&sub);
 

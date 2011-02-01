@@ -25,11 +25,12 @@
 #include "own.hpp"
 #include "msg_content.hpp"
 
-zmq::dist_t::dist_t (own_t *sink_) :
+zmq::dist_t::dist_t (own_t *sink_, bool debug_) :
     active (0),
     more (false),
     sink (sink_),
-    terminating (false)
+    terminating (false),
+    debug (debug_)
 {
 }
 
@@ -97,8 +98,11 @@ int zmq::dist_t::send (zmq_msg_t *msg_, int flags_)
     //  For VSMs the copying is straighforward.
     if (content == (msg_content_t*) ZMQ_VSM) {
         for (pipes_t::size_type i = 0; i < active;)
-            if (write (pipes [i], msg_))
+            if (write (pipes [i], msg_)) {
+if (debug)
+printf ("XSUB: subscription sent\n");
                 i++;
+            }
         int rc = zmq_msg_init (msg_);
         zmq_assert (rc == 0);
         return 0;
@@ -111,6 +115,10 @@ int zmq::dist_t::send (zmq_msg_t *msg_, int flags_)
         if (!write (pipes [0], msg_)) {
             int rc = zmq_msg_close (msg_);
             zmq_assert (rc == 0);
+        }
+        else {
+if (debug)
+printf ("XSUB: subscription sent\n");
         }
         int rc = zmq_msg_init (msg_);
         zmq_assert (rc == 0);
@@ -131,8 +139,11 @@ int zmq::dist_t::send (zmq_msg_t *msg_, int flags_)
     for (pipes_t::size_type i = 0; i < active;) {
         if (!write (pipes [i], msg_))
             content->refcnt.sub (1);
-        else
+        else {
             i++;
+if (debug)
+printf ("XSUB: subscription sent\n");
+        }
     }
 
     //  Detach the original message from the data buffer.

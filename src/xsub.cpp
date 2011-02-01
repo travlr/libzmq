@@ -27,7 +27,7 @@
 zmq::xsub_t::xsub_t (class ctx_t *parent_, uint32_t tid_) :
     socket_base_t (parent_, tid_),
     fq (this),
-    dist (this),
+    dist (this, true),
     has_message (false),
     more (false)
 {
@@ -212,4 +212,5 @@ void zmq::xsub_t::send_subscription (unsigned char *data_, size_t size_,
     bool sent = outpipe->write (&msg);
     zmq_assert (sent);
     zmq_msg_close (&msg);
+printf ("XSUB: subscription sent\n");
 }

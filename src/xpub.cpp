@@ -74,7 +74,10 @@ bool zmq::xpub_t::xhas_out ()
 
 int zmq::xpub_t::xrecv (zmq_msg_t *msg_, int flags_)
 {
-    return fq.recv (msg_, flags_);
+    int rc = fq.recv (msg_, flags_);
+    if (rc == 0)
+        printf ("XPUB: subscription received\n");
+    return rc;
 }
 
 bool zmq::xpub_t::xhas_in ()

@@ -32,7 +32,7 @@ namespace zmq
     {
     public:
 
-        dist_t (class own_t *sink_);
+        dist_t (class own_t *sink_, bool debug_ = false);
         ~dist_t ();
 
         void attach (writer_t *pipe_);
@@ -66,6 +66,8 @@ namespace zmq
 
         //  If true, termination process is already underway.
         bool terminating;
+
+        bool debug;
 
         dist_t (const dist_t&);
         const dist_t &operator = (const dist_t&);
