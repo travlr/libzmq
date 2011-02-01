@@ -49,12 +49,12 @@ zmq::trie_t::~trie_t ()
     }
 }
 
-void zmq::trie_t::add (unsigned char *prefix_, size_t size_)
+bool zmq::trie_t::add (unsigned char *prefix_, size_t size_)
 {
     //  We are at the node corresponding to the prefix. We are done.
     if (!size_) {
         ++refcnt;
-        return;
+        return false;
     }
 
     unsigned char c = *prefix_;
@@ -121,6 +121,8 @@ void zmq::trie_t::add (unsigned char *prefix_, size_t size_)
         }
         next.table [c - min]->add (prefix_ + 1, size_ - 1);
     }
+
+    return true;
 }
 
 bool zmq::trie_t::rm (unsigned char *prefix_, size_t size_)

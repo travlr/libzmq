@@ -35,7 +35,7 @@ namespace zmq
         ~trie_t ();
 
         //  Add key to the trie.
-        void add (unsigned char *prefix_, size_t size_);
+        bool add (unsigned char *prefix_, size_t size_);
 
         //  Remove key from the trie.
         bool rm (unsigned char *prefix_, size_t size_);

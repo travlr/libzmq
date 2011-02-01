@@ -84,14 +84,14 @@ int zmq::xsub_t::xsend (zmq_msg_t *msg_, int options_)
 
         //  Process a subscription and send it upstream.
         if (*data == 1) {
-            subscriptions.add (data + 1, size - 1);
-            return dist.send (msg_, options_);
+            if (subscriptions.add (data + 1, size - 1))
+                return dist.send (msg_, options_);
         }
 
         //  Process an unsubscription. Invalid unsubscription is ignored.
         if (*data == 0) {
-            subscriptions.rm (data + 1, size - 1);
-            return dist.send (msg_, options_);
+            if (subscriptions.rm (data + 1, size - 1))
+                return dist.send (msg_, options_);
         }
     }
 
