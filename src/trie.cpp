@@ -129,7 +129,7 @@ bool zmq::trie_t::rm (unsigned char *prefix_, size_t size_)
          if (!refcnt)
              return false;
          refcnt--;
-         return true;
+         return refcnt == 0;
      }
 
      unsigned char c = *prefix_;
