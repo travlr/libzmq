@@ -89,7 +89,6 @@ libzmq_la_SOURCES = \
     lb.hpp \
     likely.hpp \
     mailbox.hpp \
-    matcher.hpp \
     msg_content.hpp \
     mutex.hpp \
     named_session.hpp \
@@ -105,6 +104,7 @@ libzmq_la_SOURCES = \
     poller.hpp \
     poller_base.hpp \
     pair.hpp \
+    ptrie.hpp \
     pub.hpp \
     pull.hpp \
     push.hpp \
@@ -154,7 +154,6 @@ libzmq_la_SOURCES = \
     kqueue.cpp \
     lb.cpp \
     mailbox.cpp \
-    matcher.cpp \
     named_session.cpp \
     object.cpp \
     options.cpp \
@@ -166,6 +165,7 @@ libzmq_la_SOURCES = \
     pipe.cpp \
     poll.cpp \
     poller_base.cpp \
+    ptrie.cpp \
     pull.cpp \
     push.cpp \
     pub.cpp \
