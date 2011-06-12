@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classzmq_1_1session__t.html#a9f8dfb1c61670320ac84f4751442b8cd" title="zmq::session_t::attach_pipes" alt="" coords="249,32,441,61"/>
+<area shape="rect" id="node9" href="$namespacezmq.html#a298bc554f19da8cd5eac945d1dec8d2d" title="zmq::create_pipe" alt="" coords="284,85,407,115"/>
+<area shape="rect" id="node5" href="$classzmq_1_1writer__t.html#afc0fb2d3d43763f14dd8341eb10b26db" title="zmq::writer_t::set_event_sink" alt="" coords="493,5,688,35"/>
+<area shape="rect" id="node7" href="$classzmq_1_1reader__t.html#a82debf2a9c8a50587a752c1bbf73a26a" title="zmq::reader_t::set_event_sink" alt="" coords="492,59,689,88"/>
+</map>

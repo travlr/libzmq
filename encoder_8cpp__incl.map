@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$encoder_8hpp.html" title="encoder.hpp" alt="" coords="158,83,251,112"/>
+<area shape="rect" id="node52" href="$i__inout_8hpp.html" title="i_inout.hpp" alt="" coords="395,83,480,112"/>
+<area shape="rect" id="node56" href="$wire_8hpp.html" title="wire.hpp" alt="" coords="672,160,742,189"/>
+<area shape="rect" id="node13" href="$err_8hpp.html" title="err.hpp" alt="" coords="386,392,447,421"/>
+<area shape="rect" id="node33" href="$msg_8hpp.html" title="msg.hpp" alt="" coords="342,160,414,189"/>
+<area shape="rect" id="node15" href="$zmq_8h.html" title="../include/zmq.h" alt="" coords="638,469,752,499"/>
+<area shape="rect" id="node29" href="$likely_8hpp.html" title="likely.hpp" alt="" coords="448,469,526,499"/>
+<area shape="rect" id="node36" href="$config_8hpp.html" title="config.hpp" alt="" coords="336,237,419,267"/>
+<area shape="rect" id="node38" href="$atomic__counter_8hpp.html" title="atomic_counter.hpp" alt="" coords="444,237,580,267"/>
+<area shape="rect" id="node40" href="$stdint_8hpp.html" title="stdint.hpp" alt="" coords="671,315,748,344"/>
+<area shape="rect" id="node46" href="$mutex_8hpp.html" title="mutex.hpp" alt="" coords="468,315,551,344"/>
+</map>

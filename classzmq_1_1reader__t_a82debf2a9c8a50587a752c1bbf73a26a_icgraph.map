@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classzmq_1_1fq__t.html#a3a944467f99003b64f832cd2f12a5e9e" title="zmq::fq_t::attach" alt="" coords="291,5,411,35"/>
+<area shape="rect" id="node5" href="$classzmq_1_1session__t.html#a9f8dfb1c61670320ac84f4751442b8cd" title="zmq::session_t::attach_pipes" alt="" coords="255,59,447,88"/>
+<area shape="rect" id="node9" href="$classzmq_1_1xrep__t.html#adb350ccf16995f381d743111e23e2d63" title="zmq::xrep_t::xattach_pipes" alt="" coords="261,112,440,141"/>
+<area shape="rect" id="node11" href="$classzmq_1_1pair__t.html#a1fa6b0ec1b2c8a9f9eafa76e902d7d52" title="zmq::pair_t::xattach_pipes" alt="" coords="263,165,439,195"/>
+<area shape="rect" id="node7" href="$classzmq_1_1socket__base__t.html#ac47f3f966fabb59f2d304786be37a101" title="zmq::socket_base_t::connect" alt="" coords="496,59,691,88"/>
+</map>

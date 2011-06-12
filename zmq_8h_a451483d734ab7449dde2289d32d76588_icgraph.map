@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$remote__lat_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="160,5,211,35"/>
+<area shape="rect" id="node5" href="$inproc__lat_8cpp.html#afdde2c05692ce4366f55800934ffdebe" title="worker" alt="" coords="155,59,216,88"/>
+<area shape="rect" id="node7" href="$inproc__lat_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="320,5,371,35"/>
+<area shape="rect" id="node9" href="$classzmq_1_1select__t.html#ad3f4a2a6b5efb9b431994b5a9cdb2a71" title="zmq::select_t::start" alt="" coords="279,59,412,88"/>
+<area shape="rect" id="node11" href="$classzmq_1_1select__t.html#a5804585770480c0be49bb6b78e5a3cf7" title="zmq::select_t::~select_t" alt="" coords="264,112,427,141"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classzmq_1_1writer__t.html#afc0fb2d3d43763f14dd8341eb10b26db" title="zmq::writer_t::set_event_sink" alt="" coords="251,5,445,35"/>
+<area shape="rect" id="node5" href="$classzmq_1_1reader__t.html#a82debf2a9c8a50587a752c1bbf73a26a" title="zmq::reader_t::set_event_sink" alt="" coords="249,59,447,88"/>
+</map>

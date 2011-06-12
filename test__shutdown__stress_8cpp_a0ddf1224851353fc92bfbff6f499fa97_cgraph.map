@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$test__shutdown__stress_8cpp.html#ab1c51147f2d4042bdee88a40e7992631" title="worker" alt="" coords="120,57,181,87"/>
+<area shape="rect" id="node5" href="$zmq_8h.html#a7f3288b9a1241ae2d2cc2a41324a7dd5" title="zmq_close" alt="" coords="253,5,339,35"/>
+<area shape="rect" id="node9" href="$zmq_8h.html#a9b9820b4fd19e3b23bc5dba2da65dc3f" title="zmq_bind" alt="" coords="112,111,189,140"/>
+<area shape="rect" id="node12" href="$zmq_8h.html#a17913cd15c5dea05267f65c8e2300231" title="zmq_init" alt="" coords="116,164,185,193"/>
+<area shape="rect" id="node14" href="$zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd" title="zmq_socket" alt="" coords="104,217,197,247"/>
+<area shape="rect" id="node16" href="$zmq_8h.html#ab6987eb024256ef4ccda6a18ce37a2f0" title="zmq_term" alt="" coords="111,271,191,300"/>
+<area shape="rect" id="node7" href="$zmq_8h.html#a451483d734ab7449dde2289d32d76588" title="zmq_connect" alt="" coords="247,59,345,88"/>
+</map>

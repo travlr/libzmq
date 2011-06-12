@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classzmq_1_1socket__base__t.html#a0ab61e85ab5d14e34c61c018eb02b511" title="zmq::socket_base_t::check_destroy" alt="" coords="244,5,476,35"/>
+<area shape="rect" id="node7" href="$classzmq_1_1socket__base__t.html#afce7c38392a2cd061dcc4f3a13d33889" title="zmq::socket_base_t::start_reaping" alt="" coords="249,59,471,88"/>
+<area shape="rect" id="node9" href="$classzmq_1_1own__t.html#acb355d192a396d061f13733f493b432e" title="zmq::own_t::terminate" alt="" coords="284,112,436,141"/>
+<area shape="rect" id="node5" href="$classzmq_1_1own__t.html#a7b6a4582c7d63a16a701b8e863e317a2" title="zmq::own_t::process_destroy" alt="" coords="525,5,720,35"/>
+</map>

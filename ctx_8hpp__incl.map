@@ -1,0 +1,19 @@
+<map id="G" name="G">
+<area shape="rect" id="node11" href="$mailbox_8hpp.html" title="mailbox.hpp" alt="" coords="568,83,659,112"/>
+<area shape="rect" id="node20" href="$stdint_8hpp.html" title="stdint.hpp" alt="" coords="435,237,512,267"/>
+<area shape="rect" id="node25" href="$config_8hpp.html" title="config.hpp" alt="" coords="701,160,784,189"/>
+<area shape="rect" id="node30" href="$semaphore_8hpp.html" title="semaphore.hpp" alt="" coords="788,315,897,344"/>
+<area shape="rect" id="node56" href="$ypipe_8hpp.html" title="ypipe.hpp" alt="" coords="1104,83,1181,112"/>
+<area shape="rect" id="node61" href="$mutex_8hpp.html" title="mutex.hpp" alt="" coords="1152,315,1235,344"/>
+<area shape="rect" id="node74" href="$array_8hpp.html" title="array.hpp" alt="" coords="909,83,984,112"/>
+<area shape="rect" id="node82" href="$thread_8hpp.html" title="thread.hpp" alt="" coords="944,315,1027,344"/>
+<area shape="rect" id="node86" href="$options_8hpp.html" title="options.hpp" alt="" coords="177,83,265,112"/>
+<area shape="rect" id="node17" href="$fd_8hpp.html" title="fd.hpp" alt="" coords="568,237,627,267"/>
+<area shape="rect" id="node27" href="$command_8hpp.html" title="command.hpp" alt="" coords="421,160,525,189"/>
+<area shape="rect" id="node33" href="$err_8hpp.html" title="err.hpp" alt="" coords="1301,392,1363,421"/>
+<area shape="rect" id="node35" href="$zmq_8h.html" title="../include/zmq.h" alt="" coords="1487,469,1601,499"/>
+<area shape="rect" id="node50" href="$likely_8hpp.html" title="likely.hpp" alt="" coords="1204,469,1281,499"/>
+<area shape="rect" id="node58" href="$atomic__ptr_8hpp.html" title="atomic_ptr.hpp" alt="" coords="1101,237,1208,267"/>
+<area shape="rect" id="node67" href="$yqueue_8hpp.html" title="yqueue.hpp" alt="" coords="1283,160,1371,189"/>
+<area shape="rect" id="node90" href="$blob_8hpp.html" title="blob.hpp" alt="" coords="125,160,195,189"/>
+</map>
