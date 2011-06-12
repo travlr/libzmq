@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -99,7 +98,7 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespacezmq.html">zmq</a>      </li>
+      <li class="navelem"><b>zmq</b>      </li>
       <li class="navelem"><a class="el" href="classzmq_1_1array__t.html">array_t</a>      </li>
     </ul>
   </div>
@@ -122,8 +121,8 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="classzmq_1_1array__t__inherit__graph.png" border="0" usemap="#zmq_1_1array__t_3_01_t_01_4_inherit__map" alt="Inheritance graph"/></div>
-<map name="zmq_1_1array__t_3_01_t_01_4_inherit__map" id="zmq_1_1array__t_3_01_t_01_4_inherit__map">
+<div class="center"><img src="classzmq_1_1array__t__inherit__graph.png" border="0" usemap="#zmq_1_1array__t_3_01T_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="zmq_1_1array__t_3_01T_01_4_inherit__map" id="zmq_1_1array__t_3_01T_01_4_inherit__map">
 <area shape="rect" id="node3" href="classzmq_1_1array__t.html" title="zmq::array_t\&lt; reader_t \&gt;" alt="" coords="311,5,476,35"/><area shape="rect" id="node5" href="classzmq_1_1array__t.html" title="zmq::array_t\&lt; class writer_t \&gt;" alt="" coords="295,59,492,88"/><area shape="rect" id="node7" href="classzmq_1_1array__t.html" title="zmq::array_t\&lt; socket_base_t \&gt;" alt="" coords="292,112,495,141"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 
@@ -216,9 +215,7 @@ template&lt;typename T&gt; </div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="array_8hpp_source.html#l00076">76</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a7b2dd864d5210d9c1614d3542d3615d7"></a><!-- doxytag: member="zmq::array_t::~array_t" ref="a7b2dd864d5210d9c1614d3542d3615d7" args="()" -->
@@ -238,9 +235,7 @@ template&lt;typename T&gt; </div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="array_8hpp_source.html#l00080">80</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a5ceb87c61c48ad2262c703ebfc2cb7c9"></a><!-- doxytag: member="zmq::array_t::array_t" ref="a5ceb87c61c48ad2262c703ebfc2cb7c9" args="(const array_t &amp;)" -->
@@ -280,10 +275,7 @@ template&lt;typename T&gt; </div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="array_8hpp_source.html#l00126">126</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <a class="code" href="classzmq_1_1array__t.html#ae6582a356c4ef0a25b6e5d143621d3fc">items</a>.clear ();
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="af09fae34ad4ad9bbb0bd9a8083f9a3f2"></a><!-- doxytag: member="zmq::array_t::empty" ref="af09fae34ad4ad9bbb0bd9a8083f9a3f2" args="()" -->
@@ -303,10 +295,7 @@ template&lt;typename T&gt; </div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="array_8hpp_source.html#l00089">89</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1array__t.html#ae6582a356c4ef0a25b6e5d143621d3fc">items</a>.empty ();
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a19c850fa9d9eea7fa79dedf71cce4ec6"></a><!-- doxytag: member="zmq::array_t::erase" ref="a19c850fa9d9eea7fa79dedf71cce4ec6" args="(T *item_)" -->
@@ -329,18 +318,13 @@ template&lt;typename T&gt; </div>
 <p>Definition at line <a class="el" href="array_8hpp_source.html#l00106">106</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="array_8hpp_source.html#l00106">zmq::array_t&lt; socket_base_t &gt;::erase()</a>.</p>
-<div class="fragment"><pre class="fragment">                                     {
-            <a class="code" href="classzmq_1_1array__t.html#a19c850fa9d9eea7fa79dedf71cce4ec6">erase</a> (item_-&gt;get_array_index ());
-        }
-</pre></div>
+
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1array__t_a19c850fa9d9eea7fa79dedf71cce4ec6_icgraph.png" border="0" usemap="#classzmq_1_1array__t_a19c850fa9d9eea7fa79dedf71cce4ec6_icgraph" alt=""/></div>
-<map name="classzmq_1_1array__t_a19c850fa9d9eea7fa79dedf71cce4ec6_icgraph" id="classzmq_1_1array__t_a19c850fa9d9eea7fa79dedf71cce4ec6_icgraph">
-</map>
 </div>
 </p>
 
@@ -364,13 +348,7 @@ template&lt;typename T&gt; </div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="array_8hpp_source.html#l00110">110</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
-<div class="fragment"><pre class="fragment">                                             {
-            <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1array__t.html#ae6582a356c4ef0a25b6e5d143621d3fc">items</a>.back ())
-                <a class="code" href="classzmq_1_1array__t.html#ae6582a356c4ef0a25b6e5d143621d3fc">items</a>.back ()-&gt;set_array_index ((<span class="keywordtype">int</span>) index_);
-            <a class="code" href="classzmq_1_1array__t.html#ae6582a356c4ef0a25b6e5d143621d3fc">items</a> [index_] = <a class="code" href="classzmq_1_1array__t.html#ae6582a356c4ef0a25b6e5d143621d3fc">items</a>.back ();
-            <a class="code" href="classzmq_1_1array__t.html#ae6582a356c4ef0a25b6e5d143621d3fc">items</a>.pop_back ();
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a33e6993cca31b096782ec51c1dc98315"></a><!-- doxytag: member="zmq::array_t::index" ref="a33e6993cca31b096782ec51c1dc98315" args="(T *item_)" -->
@@ -391,10 +369,7 @@ template&lt;typename T&gt; </div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="array_8hpp_source.html#l00131">131</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordflow">return</span> (<a class="code" href="classzmq_1_1array__t.html#a95098ae535820a060a53645cab6dbb36">size_type</a>) item_-&gt;get_array_index ();
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="acffa5124c847d8045b63845121a52980"></a><!-- doxytag: member="zmq::array_t::operator=" ref="acffa5124c847d8045b63845121a52980" args="(const array_t &amp;)" -->
@@ -434,10 +409,7 @@ template&lt;typename T&gt; </div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="array_8hpp_source.html#l00094">94</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1array__t.html#ae6582a356c4ef0a25b6e5d143621d3fc">items</a> [index_];
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a3b79bba5eafb8830e2bc30312a4a9825"></a><!-- doxytag: member="zmq::array_t::push_back" ref="a3b79bba5eafb8830e2bc30312a4a9825" args="(T *item_)" -->
@@ -458,12 +430,7 @@ template&lt;typename T&gt; </div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="array_8hpp_source.html#l00099">99</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordflow">if</span> (item_)
-                item_-&gt;set_array_index ((<span class="keywordtype">int</span>) <a class="code" href="classzmq_1_1array__t.html#ae6582a356c4ef0a25b6e5d143621d3fc">items</a>.size ());
-            <a class="code" href="classzmq_1_1array__t.html#ae6582a356c4ef0a25b6e5d143621d3fc">items</a>.push_back (item_);
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a2fe6ef91998728c49e1439c673ca76f2"></a><!-- doxytag: member="zmq::array_t::size" ref="a2fe6ef91998728c49e1439c673ca76f2" args="()" -->
@@ -483,10 +450,7 @@ template&lt;typename T&gt; </div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="array_8hpp_source.html#l00084">84</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1array__t.html#ae6582a356c4ef0a25b6e5d143621d3fc">items</a>.size ();
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="af69a68b3377e174a35b337fb2048c1e8"></a><!-- doxytag: member="zmq::array_t::swap" ref="af69a68b3377e174a35b337fb2048c1e8" args="(size_type index1_, size_type index2_)" -->
@@ -519,22 +483,13 @@ template&lt;typename T&gt; </div>
 <p>Definition at line <a class="el" href="array_8hpp_source.html#l00117">117</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="array_8hpp_source.html#l00117">zmq::array_t&lt; socket_base_t &gt;::swap()</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1array__t.html#ae6582a356c4ef0a25b6e5d143621d3fc">items</a> [index1_])
-                <a class="code" href="classzmq_1_1array__t.html#ae6582a356c4ef0a25b6e5d143621d3fc">items</a> [index1_]-&gt;set_array_index ((<span class="keywordtype">int</span>) index2_);
-            <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1array__t.html#ae6582a356c4ef0a25b6e5d143621d3fc">items</a> [index2_])
-                <a class="code" href="classzmq_1_1array__t.html#ae6582a356c4ef0a25b6e5d143621d3fc">items</a> [index2_]-&gt;set_array_index ((<span class="keywordtype">int</span>) index1_);
-            <a class="code" href="classzmq_1_1array__t.html#af69a68b3377e174a35b337fb2048c1e8">std::swap</a> (<a class="code" href="classzmq_1_1array__t.html#ae6582a356c4ef0a25b6e5d143621d3fc">items</a> [index1_], <a class="code" href="classzmq_1_1array__t.html#ae6582a356c4ef0a25b6e5d143621d3fc">items</a> [index2_]);
-        }
-</pre></div>
+
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1array__t_af69a68b3377e174a35b337fb2048c1e8_icgraph.png" border="0" usemap="#classzmq_1_1array__t_af69a68b3377e174a35b337fb2048c1e8_icgraph" alt=""/></div>
-<map name="classzmq_1_1array__t_af69a68b3377e174a35b337fb2048c1e8_icgraph" id="classzmq_1_1array__t_af69a68b3377e174a35b337fb2048c1e8_icgraph">
-</map>
 </div>
 </p>
 
@@ -561,7 +516,7 @@ template&lt;typename T&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="array_8hpp_source.html">array.hpp</a></li>
+<li>src/<a class="el" href="array_8hpp_source.html">array.hpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -569,7 +524,7 @@ template&lt;typename T&gt; </div>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -578,7 +533,7 @@ template&lt;typename T&gt; </div>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:11 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:16 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

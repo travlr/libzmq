@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$pull_8cpp.html" title="/home/travlr/src/libzmq/src/pull.cpp" alt="" coords="5,83,232,112"/>
-<area shape="rect" id="node5" href="$socket__base_8cpp.html" title="/home/travlr/src/libzmq/src/socket_base.cpp" alt="" coords="256,83,536,112"/>
+<area shape="rect" id="node3" href="$pull_8cpp.html" title="src/pull.cpp" alt="" coords="5,83,93,112"/>
+<area shape="rect" id="node5" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="117,83,259,112"/>
 </map>

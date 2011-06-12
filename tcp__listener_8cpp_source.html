@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/src/libzmq/src/tcp_listener.cpp Source File</title>
+<title>libzmq: src/tcp_listener.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -97,10 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a>      </li>
-      <li class="navelem"><a class="el" href="dir_223207b948e8fa656fe21665415438d6.html">travlr</a>      </li>
-      <li class="navelem"><a class="el" href="dir_fb6bd66a99939deb91cf473b567980dd.html">src</a>      </li>
-      <li class="navelem"><a class="el" href="dir_aef0164114278eee23dc63ccdad22337.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
     </ul>
   </div>
@@ -142,7 +137,7 @@ function toggleVisibility(linkObj) {
 <a name="l00030"></a>00030 <span class="preprocessor"></span>
 <a name="l00031"></a>00031 <a class="code" href="classzmq_1_1tcp__listener__t.html#a946065c966caf35944cedf21b02a88ae">zmq::tcp_listener_t::tcp_listener_t</a> () :
 <a name="l00032"></a>00032     has_file (false),
-<a name="l00033"></a>00033     s (<a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>)
+<a name="l00033"></a>00033     s (retired_fd)
 <a name="l00034"></a>00034 {
 <a name="l00035"></a>00035     memset (&amp;<a class="code" href="classzmq_1_1tcp__connecter__t.html#ab6b9732afd4a6c5fe5c904a69cd11c73">addr</a>, 0, <span class="keyword">sizeof</span> (<a class="code" href="classzmq_1_1tcp__connecter__t.html#ab6b9732afd4a6c5fe5c904a69cd11c73">addr</a>));
 <a name="l00036"></a>00036     <a class="code" href="classzmq_1_1tcp__connecter__t.html#a98526e3c66107217daf9dfc3d4b28033">addr_len</a> = 0;
@@ -150,7 +145,7 @@ function toggleVisibility(linkObj) {
 <a name="l00038"></a>00038 
 <a name="l00039"></a>00039 <a class="code" href="classzmq_1_1tcp__listener__t.html#a5ce2de50a1242c4f43c1d1496b6b2cd8">zmq::tcp_listener_t::~tcp_listener_t</a> ()
 <a name="l00040"></a>00040 {
-<a name="l00041"></a>00041     <span class="keywordflow">if</span> (s != <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>)
+<a name="l00041"></a>00041     <span class="keywordflow">if</span> (s != retired_fd)
 <a name="l00042"></a>00042         close ();
 <a name="l00043"></a>00043 }
 <a name="l00044"></a>00044 
@@ -164,7 +159,7 @@ function toggleVisibility(linkObj) {
 <a name="l00052"></a>00052     }
 <a name="l00053"></a>00053 
 <a name="l00054"></a>00054     <span class="comment">//  Convert the interface into sockaddr_in structure.</span>
-<a name="l00055"></a>00055     <span class="keywordtype">int</span> rc = <a class="code" href="namespacezmq.html#ac5b37ef8f53af06b226b0e9b571d355b">resolve_ip_interface</a> (&amp;addr, &amp;addr_len, addr_);
+<a name="l00055"></a>00055     <span class="keywordtype">int</span> rc = resolve_ip_interface (&amp;addr, &amp;addr_len, addr_);
 <a name="l00056"></a>00056     <span class="keywordflow">if</span> (rc != 0)
 <a name="l00057"></a>00057         <span class="keywordflow">return</span> rc;
 <a name="l00058"></a>00058 
@@ -205,28 +200,28 @@ function toggleVisibility(linkObj) {
 <a name="l00093"></a>00093 
 <a name="l00094"></a>00094 <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1tcp__listener__t.html#a786f013879772618d90bb3fc554dc3cd">zmq::tcp_listener_t::close</a> ()
 <a name="l00095"></a>00095 {
-<a name="l00096"></a>00096     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (s != <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>);
+<a name="l00096"></a>00096     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (s != retired_fd);
 <a name="l00097"></a>00097     <span class="keywordtype">int</span> rc = closesocket (s);
 <a name="l00098"></a>00098     wsa_assert (rc != SOCKET_ERROR);
-<a name="l00099"></a>00099     s = <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>;
+<a name="l00099"></a>00099     s = retired_fd;
 <a name="l00100"></a>00100     <span class="keywordflow">return</span> 0;
 <a name="l00101"></a>00101 }
 <a name="l00102"></a>00102 
-<a name="l00103"></a>00103 <a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">zmq::fd_t</a> <a class="code" href="classzmq_1_1tcp__listener__t.html#ac94028a1a0bcadbcbe157be23025dd37">zmq::tcp_listener_t::get_fd</a> ()
+<a name="l00103"></a>00103 zmq::fd_t <a class="code" href="classzmq_1_1tcp__listener__t.html#ac94028a1a0bcadbcbe157be23025dd37">zmq::tcp_listener_t::get_fd</a> ()
 <a name="l00104"></a>00104 {
 <a name="l00105"></a>00105     <span class="keywordflow">return</span> s;
 <a name="l00106"></a>00106 }
 <a name="l00107"></a>00107 
-<a name="l00108"></a>00108 <a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">zmq::fd_t</a> <a class="code" href="classzmq_1_1tcp__listener__t.html#a61d3286e4d1a1199b2710d6b193b7076">zmq::tcp_listener_t::accept</a> ()
+<a name="l00108"></a>00108 zmq::fd_t <a class="code" href="classzmq_1_1tcp__listener__t.html#a61d3286e4d1a1199b2710d6b193b7076">zmq::tcp_listener_t::accept</a> ()
 <a name="l00109"></a>00109 {
-<a name="l00110"></a>00110     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (s != <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>);
+<a name="l00110"></a>00110     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (s != retired_fd);
 <a name="l00111"></a>00111 
 <a name="l00112"></a>00112     <span class="comment">//  Accept one incoming connection.</span>
-<a name="l00113"></a>00113     <a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a> sock = ::accept (s, NULL, NULL);
+<a name="l00113"></a>00113     fd_t sock = ::accept (s, NULL, NULL);
 <a name="l00114"></a>00114     <span class="keywordflow">if</span> (sock == INVALID_SOCKET &amp;&amp; 
 <a name="l00115"></a>00115           (WSAGetLastError () == WSAEWOULDBLOCK ||
 <a name="l00116"></a>00116           WSAGetLastError () == WSAECONNRESET))
-<a name="l00117"></a>00117         <span class="keywordflow">return</span> <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>;
+<a name="l00117"></a>00117         <span class="keywordflow">return</span> retired_fd;
 <a name="l00118"></a>00118 
 <a name="l00119"></a>00119     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (sock != INVALID_SOCKET);
 <a name="l00120"></a>00120 
@@ -264,14 +259,14 @@ function toggleVisibility(linkObj) {
 <a name="l00152"></a>00152 <span class="preprocessor"></span>
 <a name="l00153"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#a946065c966caf35944cedf21b02a88ae">00153</a> <a class="code" href="classzmq_1_1tcp__listener__t.html#a946065c966caf35944cedf21b02a88ae">zmq::tcp_listener_t::tcp_listener_t</a> () :
 <a name="l00154"></a>00154     has_file (false),
-<a name="l00155"></a>00155     s (<a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>)
+<a name="l00155"></a>00155     s (retired_fd)
 <a name="l00156"></a>00156 {
 <a name="l00157"></a>00157     memset (&amp;<a class="code" href="classzmq_1_1tcp__listener__t.html#ad4fec3e2587c935085a781d37d2634c7">addr</a>, 0, <span class="keyword">sizeof</span> (<a class="code" href="classzmq_1_1tcp__listener__t.html#ad4fec3e2587c935085a781d37d2634c7">addr</a>));
 <a name="l00158"></a>00158 }
 <a name="l00159"></a>00159 
 <a name="l00160"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#a5ce2de50a1242c4f43c1d1496b6b2cd8">00160</a> <a class="code" href="classzmq_1_1tcp__listener__t.html#a5ce2de50a1242c4f43c1d1496b6b2cd8">zmq::tcp_listener_t::~tcp_listener_t</a> ()
 <a name="l00161"></a>00161 {
-<a name="l00162"></a>00162     <span class="keywordflow">if</span> (s != <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>)
+<a name="l00162"></a>00162     <span class="keywordflow">if</span> (s != retired_fd)
 <a name="l00163"></a>00163         close ();
 <a name="l00164"></a>00164 }
 <a name="l00165"></a>00165 
@@ -281,7 +276,7 @@ function toggleVisibility(linkObj) {
 <a name="l00169"></a>00169     <span class="keywordflow">if</span> (strcmp (protocol_, <span class="stringliteral">&quot;tcp&quot;</span>) == 0 ) {
 <a name="l00170"></a>00170 
 <a name="l00171"></a>00171         <span class="comment">//  Resolve the sockaddr to bind to.</span>
-<a name="l00172"></a>00172         <span class="keywordtype">int</span> rc = <a class="code" href="namespacezmq.html#ac5b37ef8f53af06b226b0e9b571d355b">resolve_ip_interface</a> (&amp;addr, &amp;addr_len, addr_);
+<a name="l00172"></a>00172         <span class="keywordtype">int</span> rc = resolve_ip_interface (&amp;addr, &amp;addr_len, addr_);
 <a name="l00173"></a>00173         <span class="keywordflow">if</span> (rc != 0)
 <a name="l00174"></a>00174             <span class="keywordflow">return</span> -1;
 <a name="l00175"></a>00175 
@@ -338,7 +333,7 @@ function toggleVisibility(linkObj) {
 <a name="l00226"></a>00226         ::unlink (addr_);
 <a name="l00227"></a>00227 
 <a name="l00228"></a>00228         <span class="comment">//  Convert the address into sockaddr_un structure.</span>
-<a name="l00229"></a>00229         <span class="keywordtype">int</span> rc = <a class="code" href="namespacezmq.html#a0919175e52c870f26ffbe07b5b77d7e3">resolve_local_path</a> (&amp;addr, &amp;addr_len, addr_);
+<a name="l00229"></a>00229         <span class="keywordtype">int</span> rc = resolve_local_path (&amp;addr, &amp;addr_len, addr_);
 <a name="l00230"></a>00230         <span class="keywordflow">if</span> (rc != 0)
 <a name="l00231"></a>00231             <span class="keywordflow">return</span> -1;
 <a name="l00232"></a>00232 
@@ -386,11 +381,11 @@ function toggleVisibility(linkObj) {
 <a name="l00274"></a>00274 
 <a name="l00275"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#a786f013879772618d90bb3fc554dc3cd">00275</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1tcp__listener__t.html#a786f013879772618d90bb3fc554dc3cd">zmq::tcp_listener_t::close</a> ()
 <a name="l00276"></a>00276 {
-<a name="l00277"></a>00277     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (s != <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>);
+<a name="l00277"></a>00277     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (s != retired_fd);
 <a name="l00278"></a>00278     <span class="keywordtype">int</span> rc = ::close (s);
 <a name="l00279"></a>00279     <span class="keywordflow">if</span> (rc != 0)
 <a name="l00280"></a>00280         <span class="keywordflow">return</span> -1;
-<a name="l00281"></a>00281     s = <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>;
+<a name="l00281"></a>00281     s = retired_fd;
 <a name="l00282"></a>00282 
 <a name="l00283"></a>00283 <span class="preprocessor">#ifndef ZMQ_HAVE_OPENVMS</span>
 <a name="l00284"></a>00284 <span class="preprocessor"></span>    <span class="comment">//  If there&#39;s an underlying UNIX domain socket, get rid of the file it</span>
@@ -406,17 +401,17 @@ function toggleVisibility(linkObj) {
 <a name="l00294"></a>00294     <span class="keywordflow">return</span> 0;
 <a name="l00295"></a>00295 }
 <a name="l00296"></a>00296 
-<a name="l00297"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#ac94028a1a0bcadbcbe157be23025dd37">00297</a> <a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">zmq::fd_t</a> <a class="code" href="classzmq_1_1tcp__listener__t.html#ac94028a1a0bcadbcbe157be23025dd37">zmq::tcp_listener_t::get_fd</a> ()
+<a name="l00297"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#ac94028a1a0bcadbcbe157be23025dd37">00297</a> zmq::fd_t <a class="code" href="classzmq_1_1tcp__listener__t.html#ac94028a1a0bcadbcbe157be23025dd37">zmq::tcp_listener_t::get_fd</a> ()
 <a name="l00298"></a>00298 {
 <a name="l00299"></a>00299     <span class="keywordflow">return</span> s;
 <a name="l00300"></a>00300 }
 <a name="l00301"></a>00301 
-<a name="l00302"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#a61d3286e4d1a1199b2710d6b193b7076">00302</a> <a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">zmq::fd_t</a> <a class="code" href="classzmq_1_1tcp__listener__t.html#a61d3286e4d1a1199b2710d6b193b7076">zmq::tcp_listener_t::accept</a> ()
+<a name="l00302"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#a61d3286e4d1a1199b2710d6b193b7076">00302</a> zmq::fd_t <a class="code" href="classzmq_1_1tcp__listener__t.html#a61d3286e4d1a1199b2710d6b193b7076">zmq::tcp_listener_t::accept</a> ()
 <a name="l00303"></a>00303 {
-<a name="l00304"></a>00304     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (s != <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>);
+<a name="l00304"></a>00304     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (s != retired_fd);
 <a name="l00305"></a>00305 
 <a name="l00306"></a>00306     <span class="comment">//  Accept one incoming connection.</span>
-<a name="l00307"></a>00307     <a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a> sock = ::accept (s, NULL, NULL);
+<a name="l00307"></a>00307     fd_t sock = ::accept (s, NULL, NULL);
 <a name="l00308"></a>00308 
 <a name="l00309"></a>00309 <span class="preprocessor">#if (defined ZMQ_HAVE_LINUX || defined ZMQ_HAVE_FREEBSD || \</span>
 <a name="l00310"></a>00310 <span class="preprocessor">     defined ZMQ_HAVE_OPENBSD || defined ZMQ_HAVE_OSX || \</span>
@@ -425,21 +420,21 @@ function toggleVisibility(linkObj) {
 <a name="l00313"></a>00313 <span class="preprocessor"></span>    <span class="keywordflow">if</span> (sock == -1 &amp;&amp; 
 <a name="l00314"></a>00314         (errno == EAGAIN || errno == EWOULDBLOCK || 
 <a name="l00315"></a>00315          errno == EINTR || errno == ECONNABORTED))
-<a name="l00316"></a>00316         <span class="keywordflow">return</span> <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>;
+<a name="l00316"></a>00316         <span class="keywordflow">return</span> retired_fd;
 <a name="l00317"></a>00317 <span class="preprocessor">#elif (defined ZMQ_HAVE_SOLARIS || defined ZMQ_HAVE_AIX)</span>
 <a name="l00318"></a>00318 <span class="preprocessor"></span>    <span class="keywordflow">if</span> (sock == -1 &amp;&amp; 
 <a name="l00319"></a>00319         (errno == EWOULDBLOCK || errno == EINTR || 
 <a name="l00320"></a>00320          errno == ECONNABORTED || errno == EPROTO))
-<a name="l00321"></a>00321         <span class="keywordflow">return</span> <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>;
+<a name="l00321"></a>00321         <span class="keywordflow">return</span> retired_fd;
 <a name="l00322"></a>00322 <span class="preprocessor">#elif defined ZMQ_HAVE_HPUX</span>
 <a name="l00323"></a>00323 <span class="preprocessor"></span>    <span class="keywordflow">if</span> (sock == -1 &amp;&amp; 
 <a name="l00324"></a>00324         (errno == EAGAIN || errno == EWOULDBLOCK || 
 <a name="l00325"></a>00325          errno == EINTR || errno == ECONNABORTED || errno == <a class="code" href="zmq_8h.html#a9e655f47bfd914a1174f281fc31cf63d">ENOBUFS</a>))
-<a name="l00326"></a>00326         <span class="keywordflow">return</span> <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>;
+<a name="l00326"></a>00326         <span class="keywordflow">return</span> retired_fd;
 <a name="l00327"></a>00327 <span class="preprocessor">#elif defined ZMQ_HAVE_QNXNTO </span>
 <a name="l00328"></a>00328 <span class="preprocessor"></span>    <span class="keywordflow">if</span> (sock == -1 &amp;&amp; 
 <a name="l00329"></a>00329         (errno == EWOULDBLOCK || errno == EINTR || errno == ECONNABORTED))
-<a name="l00330"></a>00330         <span class="keywordflow">return</span> <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>;
+<a name="l00330"></a>00330         <span class="keywordflow">return</span> retired_fd;
 <a name="l00331"></a>00331 <span class="preprocessor">#endif</span>
 <a name="l00332"></a>00332 <span class="preprocessor"></span>
 <a name="l00333"></a>00333     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (sock != -1); 
@@ -486,7 +481,7 @@ function toggleVisibility(linkObj) {
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -495,7 +490,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:09 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:07 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

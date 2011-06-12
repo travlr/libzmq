@@ -12,7 +12,6 @@
 <area shape="rect" id="node25" href="$zmq__utils_8h.html#a4a5508f72f3ee8685b7e0850566d0c13" title="zmq_stopwatch_start" alt="" coords="104,536,251,565"/>
 <area shape="rect" id="node29" href="$zmq__utils_8h.html#a90ab5c3e9343988ed91d0adc547af90a" title="zmq_stopwatch_stop" alt="" coords="104,589,251,619"/>
 <area shape="rect" id="node32" href="$zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27" title="zmq_strerror" alt="" coords="131,643,224,672"/>
-<area shape="rect" id="node36" href="$zmq_8h.html#ab6987eb024256ef4ccda6a18ce37a2f0" title="zmq_term" alt="" coords="137,696,217,725"/>
+<area shape="rect" id="node34" href="$zmq_8h.html#ab6987eb024256ef4ccda6a18ce37a2f0" title="zmq_term" alt="" coords="137,696,217,725"/>
 <area shape="rect" id="node27" href="$classzmq_1_1clock__t.html#ac1caeb031c357ffe97a3df77a87ed265" title="zmq::clock_t::now_us" alt="" coords="300,563,449,592"/>
-<area shape="rect" id="node34" href="$namespacezmq.html#ad7e83cae9e2cf285742327ec337fff1d" title="zmq::errno_to_string" alt="" coords="304,643,445,672"/>
 </map>

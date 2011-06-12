@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/src/libzmq/src/pgm_socket.cpp Source File</title>
+<title>libzmq: src/pgm_socket.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -97,10 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a>      </li>
-      <li class="navelem"><a class="el" href="dir_223207b948e8fa656fe21665415438d6.html">travlr</a>      </li>
-      <li class="navelem"><a class="el" href="dir_fb6bd66a99939deb91cf473b567980dd.html">src</a>      </li>
-      <li class="navelem"><a class="el" href="dir_aef0164114278eee23dc63ccdad22337.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
     </ul>
   </div>
@@ -295,7 +290,7 @@ function toggleVisibility(linkObj) {
 <a name="l00183"></a>00183                 <span class="keywordflow">goto</span> err_abort;
 <a name="l00184"></a>00184         }
 <a name="l00185"></a>00185 
-<a name="l00186"></a>00186         <span class="keyword">const</span> <span class="keywordtype">int</span> max_tpdu = (int) <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba4bc142d509df387e1e732eebadbc5f69">pgm_max_tpdu</a>;
+<a name="l00186"></a>00186         <span class="keyword">const</span> <span class="keywordtype">int</span> max_tpdu = (int) pgm_max_tpdu;
 <a name="l00187"></a>00187         <span class="keywordflow">if</span> (!pgm_setsockopt (sock, IPPROTO_PGM, PGM_MTU, &amp;max_tpdu,
 <a name="l00188"></a>00188               <span class="keyword">sizeof</span> (max_tpdu)))
 <a name="l00189"></a>00189             <span class="keywordflow">goto</span> err_abort;
@@ -303,7 +298,7 @@ function toggleVisibility(linkObj) {
 <a name="l00191"></a>00191 
 <a name="l00192"></a>00192     <span class="keywordflow">if</span> (receiver) {
 <a name="l00193"></a>00193         <span class="keyword">const</span> <span class="keywordtype">int</span> recv_only        = 1,
-<a name="l00194"></a>00194                   rxw_max_tpdu     = (int) <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba4bc142d509df387e1e732eebadbc5f69">pgm_max_tpdu</a>,
+<a name="l00194"></a>00194                   rxw_max_tpdu     = (int) pgm_max_tpdu,
 <a name="l00195"></a>00195                   rxw_sqns         = compute_sqns (rxw_max_tpdu),
 <a name="l00196"></a>00196                   peer_expiry      = pgm_secs (300),
 <a name="l00197"></a>00197                   spmr_expiry      = pgm_msecs (25),
@@ -334,7 +329,7 @@ function toggleVisibility(linkObj) {
 <a name="l00222"></a>00222             <span class="keywordflow">goto</span> err_abort;
 <a name="l00223"></a>00223     } <span class="keywordflow">else</span> {
 <a name="l00224"></a>00224         <span class="keyword">const</span> <span class="keywordtype">int</span> send_only        = 1,
-<a name="l00225"></a>00225                   txw_max_tpdu     = (int) <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba4bc142d509df387e1e732eebadbc5f69">pgm_max_tpdu</a>,
+<a name="l00225"></a>00225                   txw_max_tpdu     = (int) pgm_max_tpdu,
 <a name="l00226"></a>00226                   txw_sqns         = compute_sqns (txw_max_tpdu),
 <a name="l00227"></a>00227                   ambient_spm      = pgm_secs (30),
 <a name="l00228"></a>00228                   heartbeat_spm[]  = { pgm_msecs (100),
@@ -375,7 +370,7 @@ function toggleVisibility(linkObj) {
 <a name="l00263"></a>00263 
 <a name="l00264"></a>00264         <span class="comment">//  Generate GSI from UUID.</span>
 <a name="l00265"></a>00265         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> buf [16];
-<a name="l00266"></a>00266         <a class="code" href="namespacezmq.html#aba955dc1d654f51695b92ff4a6069780">generate_uuid</a> (buf);
+<a name="l00266"></a>00266         generate_uuid (buf);
 <a name="l00267"></a>00267         <span class="keywordflow">if</span> (!pgm_gsi_create_from_data (&amp;addr.sa_addr.gsi, buf, 16))
 <a name="l00268"></a>00268             <span class="keywordflow">goto</span> err_abort;
 <a name="l00269"></a>00269     }
@@ -455,10 +450,10 @@ function toggleVisibility(linkObj) {
 <a name="l00343"></a>00343 
 <a name="l00344"></a>00344     <span class="comment">//  For receiver transport preallocate pgm_msgv array.</span>
 <a name="l00345"></a>00345     <span class="keywordflow">if</span> (receiver) {
-<a name="l00346"></a>00346         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba414961fcf5bb64712339a387d1e4bd24">in_batch_size</a> &gt; 0);
+<a name="l00346"></a>00346         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (in_batch_size &gt; 0);
 <a name="l00347"></a>00347         <span class="keywordtype">size_t</span> max_tsdu_size = get_max_tsdu_size ();
-<a name="l00348"></a>00348         pgm_msgv_len = (int) <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba414961fcf5bb64712339a387d1e4bd24">in_batch_size</a> / max_tsdu_size;
-<a name="l00349"></a>00349         <span class="keywordflow">if</span> ((<span class="keywordtype">int</span>) <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba414961fcf5bb64712339a387d1e4bd24">in_batch_size</a> % max_tsdu_size)
+<a name="l00348"></a>00348         pgm_msgv_len = (int) in_batch_size / max_tsdu_size;
+<a name="l00349"></a>00349         <span class="keywordflow">if</span> ((<span class="keywordtype">int</span>) in_batch_size % max_tsdu_size)
 <a name="l00350"></a>00350             pgm_msgv_len++;
 <a name="l00351"></a>00351         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (pgm_msgv_len);
 <a name="l00352"></a>00352 
@@ -806,7 +801,7 @@ function toggleVisibility(linkObj) {
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -815,7 +810,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:08 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:07 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

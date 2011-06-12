@@ -7,6 +7,5 @@
 <area shape="rect" id="node13" href="$zmq_8h.html#a2d25c972234261a2b683d6376e7b09aa" title="zmq_sendmsg" alt="" coords="129,272,236,301"/>
 <area shape="rect" id="node17" href="$zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd" title="zmq_socket" alt="" coords="136,325,229,355"/>
 <area shape="rect" id="node19" href="$zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27" title="zmq_strerror" alt="" coords="136,379,229,408"/>
-<area shape="rect" id="node15" href="$zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8" title="zmq_msg_size" alt="" coords="315,272,424,301"/>
-<area shape="rect" id="node21" href="$namespacezmq.html#ad7e83cae9e2cf285742327ec337fff1d" title="zmq::errno_to_string" alt="" coords="299,379,440,408"/>
+<area shape="rect" id="node15" href="$zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8" title="zmq_msg_size" alt="" coords="300,272,409,301"/>
 </map>

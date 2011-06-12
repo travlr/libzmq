@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -99,7 +98,7 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespacezmq.html">zmq</a>      </li>
+      <li class="navelem"><b>zmq</b>      </li>
       <li class="navelem"><a class="el" href="classzmq_1_1fq__t.html">fq_t</a>      </li>
     </ul>
   </div>
@@ -200,15 +199,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="fq_8cpp_source.html#l00027">27</a> of file <a class="el" href="fq_8cpp_source.html">fq.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">                           :
-    <a class="code" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">active</a> (0),
-    <a class="code" href="classzmq_1_1fq__t.html#a482cf68c03ca31889fd3df575a1fbf50">current</a> (0),
-    <a class="code" href="classzmq_1_1fq__t.html#a518a654bec62facaa28b8c8390518014">more</a> (<span class="keyword">false</span>),
-    <a class="code" href="classzmq_1_1fq__t.html#a8afa6b904776f8acb597a39f7a97accb">sink</a> (sink_),
-    <a class="code" href="classzmq_1_1fq__t.html#a6cbc36e1e6db21d57d7b874e596798a5">terminating</a> (<span class="keyword">false</span>)
-{
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a82cb3ffad3dfef585c701d563cb9689c"></a><!-- doxytag: member="zmq::fq_t::~fq_t" ref="a82cb3ffad3dfef585c701d563cb9689c" args="()" -->
@@ -228,10 +219,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="fq_8cpp_source.html#l00036">36</a> of file <a class="el" href="fq_8cpp_source.html">fq.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="classzmq_1_1fq__t.html#adf53604a889785a53457fd1057a45c52">pipes</a>.<a class="code" href="classzmq_1_1array__t.html#af09fae34ad4ad9bbb0bd9a8083f9a3f2">empty</a> ());
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a33206050c70fcf0bae863b3141ce3c01"></a><!-- doxytag: member="zmq::fq_t::fq_t" ref="a33206050c70fcf0bae863b3141ce3c01" args="(const fq_t &amp;)" -->
@@ -270,12 +258,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="structzmq_1_1i__reader__events.html#a461c55a924e49a33b4cc2627c4a4449e">zmq::i_reader_events</a>.</p>
 
 <p>Definition at line <a class="el" href="fq_8cpp_source.html#l00089">89</a> of file <a class="el" href="fq_8cpp_source.html">fq.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  Move the pipe to the list of active pipes.</span>
-    <a class="code" href="classzmq_1_1fq__t.html#adf53604a889785a53457fd1057a45c52">pipes</a>.<a class="code" href="classzmq_1_1array__t.html#af69a68b3377e174a35b337fb2048c1e8">swap</a> (<a class="code" href="classzmq_1_1fq__t.html#adf53604a889785a53457fd1057a45c52">pipes</a>.<a class="code" href="classzmq_1_1array__t.html#a33e6993cca31b096782ec51c1dc98315">index</a> (pipe_), <a class="code" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">active</a>);
-    <a class="code" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">active</a>++;
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a3a944467f99003b64f832cd2f12a5e9e"></a><!-- doxytag: member="zmq::fq_t::attach" ref="a3a944467f99003b64f832cd2f12a5e9e" args="(reader_t *pipe_)" -->
@@ -296,20 +279,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="fq_8cpp_source.html#l00041">41</a> of file <a class="el" href="fq_8cpp_source.html">fq.cpp</a>.</p>
 
 <p>References <a class="el" href="pipe_8cpp_source.html#l00064">zmq::reader_t::set_event_sink()</a>, and <a class="el" href="pipe_8cpp_source.html#l00128">zmq::reader_t::terminate()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    pipe_-&gt;set_event_sink (<span class="keyword">this</span>);
 
-    <a class="code" href="classzmq_1_1fq__t.html#adf53604a889785a53457fd1057a45c52">pipes</a>.<a class="code" href="classzmq_1_1array__t.html#a3b79bba5eafb8830e2bc30312a4a9825">push_back</a> (pipe_);
-    <a class="code" href="classzmq_1_1fq__t.html#adf53604a889785a53457fd1057a45c52">pipes</a>.<a class="code" href="classzmq_1_1array__t.html#af69a68b3377e174a35b337fb2048c1e8">swap</a> (<a class="code" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">active</a>, <a class="code" href="classzmq_1_1fq__t.html#adf53604a889785a53457fd1057a45c52">pipes</a>.<a class="code" href="classzmq_1_1array__t.html#a2fe6ef91998728c49e1439c673ca76f2">size</a> () - 1);
-    <a class="code" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">active</a>++;
-
-    <span class="comment">//  If we are already terminating, ask the pipe to terminate straight away.</span>
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1fq__t.html#a6cbc36e1e6db21d57d7b874e596798a5">terminating</a>) {
-        <a class="code" href="classzmq_1_1fq__t.html#a8afa6b904776f8acb597a39f7a97accb">sink</a>-&gt;register_term_acks (1);
-        pipe_-&gt;terminate ();
-    }
-}
-</pre></div>
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -341,9 +311,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="structzmq_1_1i__reader__events.html#a572df7fa4b47f383e03e8dc58859ded6">zmq::i_reader_events</a>.</p>
 
 <p>Definition at line <a class="el" href="fq_8cpp_source.html#l00075">75</a> of file <a class="el" href="fq_8cpp_source.html">fq.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="ae1e4c90a7142141ac37c210e1c0fb818"></a><!-- doxytag: member="zmq::fq_t::has_in" ref="ae1e4c90a7142141ac37c210e1c0fb818" args="()" -->
@@ -361,29 +329,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="fq_8cpp_source.html#l00142">142</a> of file <a class="el" href="fq_8cpp_source.html">fq.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  There are subsequent parts of the partly-read message available.</span>
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1fq__t.html#a518a654bec62facaa28b8c8390518014">more</a>)
-        <span class="keywordflow">return</span> <span class="keyword">true</span>;
 
-    <span class="comment">//  Note that messing with current doesn&#39;t break the fairness of fair</span>
-    <span class="comment">//  queueing algorithm. If there are no messages available current will</span>
-    <span class="comment">//  get back to its original value. Otherwise it&#39;ll point to the first</span>
-    <span class="comment">//  pipe holding messages, skipping only pipes with no messages available.</span>
-    <span class="keywordflow">for</span> (<a class="code" href="classzmq_1_1array__t.html#a95098ae535820a060a53645cab6dbb36">pipes_t::size_type</a> count = <a class="code" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">active</a>; count != 0; count--) {
-        <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1fq__t.html#adf53604a889785a53457fd1057a45c52">pipes</a> [<a class="code" href="classzmq_1_1fq__t.html#a482cf68c03ca31889fd3df575a1fbf50">current</a>]-&gt;check_read ())
-            <span class="keywordflow">return</span> <span class="keyword">true</span>;
-
-        <span class="comment">//  Deactivate the pipe.</span>
-        <a class="code" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">active</a>--;
-        <a class="code" href="classzmq_1_1fq__t.html#adf53604a889785a53457fd1057a45c52">pipes</a>.<a class="code" href="classzmq_1_1array__t.html#af69a68b3377e174a35b337fb2048c1e8">swap</a> (<a class="code" href="classzmq_1_1fq__t.html#a482cf68c03ca31889fd3df575a1fbf50">current</a>, <a class="code" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">active</a>);
-        <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1fq__t.html#a482cf68c03ca31889fd3df575a1fbf50">current</a> == <a class="code" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">active</a>)
-            <a class="code" href="classzmq_1_1fq__t.html#a482cf68c03ca31889fd3df575a1fbf50">current</a> = 0;
-    }
-
-    <span class="keywordflow">return</span> <span class="keyword">false</span>;
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a14f34219e87be244a3f05ab609862e61"></a><!-- doxytag: member="zmq::fq_t::operator=" ref="a14f34219e87be244a3f05ab609862e61" args="(const fq_t &amp;)" -->
@@ -431,51 +377,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="fq_8cpp_source.html#l00096">96</a> of file <a class="el" href="fq_8cpp_source.html">fq.cpp</a>.</p>
 
 <p>References <a class="el" href="msg_8cpp_source.html#l00098">zmq::msg_t::close()</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="msg_8hpp_source.html#l00112">zmq::msg_t::flags</a>, <a class="el" href="msg_8cpp_source.html#l00037">zmq::msg_t::init()</a>, <a class="el" href="msg_8hpp_source.html#l00050">zmq::msg_t::more</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  Deallocate old content of the message.</span>
-    <span class="keywordtype">int</span> rc = msg_-&gt;close ();
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
 
-    <span class="comment">//  Round-robin over the pipes to get the next message.</span>
-    <span class="keywordflow">for</span> (<a class="code" href="classzmq_1_1array__t.html#a95098ae535820a060a53645cab6dbb36">pipes_t::size_type</a> count = <a class="code" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">active</a>; count != 0; count--) {
-
-        <span class="comment">//  Try to fetch new message. If we&#39;ve already read part of the message</span>
-        <span class="comment">//  subsequent part should be immediately available.</span>
-        <span class="keywordtype">bool</span> fetched = <a class="code" href="classzmq_1_1fq__t.html#adf53604a889785a53457fd1057a45c52">pipes</a> [<a class="code" href="classzmq_1_1fq__t.html#a482cf68c03ca31889fd3df575a1fbf50">current</a>]-&gt;read (msg_);
-
-        <span class="comment">//  Check the atomicity of the message. If we&#39;ve already received the</span>
-        <span class="comment">//  first part of the message we should get the remaining parts</span>
-        <span class="comment">//  without blocking.</span>
-        <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!(<a class="code" href="classzmq_1_1fq__t.html#a518a654bec62facaa28b8c8390518014">more</a> &amp;&amp; !fetched));
-
-        <span class="comment">//  Note that when message is not fetched, current pipe is deactivated</span>
-        <span class="comment">//  and replaced by another active pipe. Thus we don&#39;t have to increase</span>
-        <span class="comment">//  the &#39;current&#39; pointer.</span>
-        <span class="keywordflow">if</span> (fetched) {
-            <a class="code" href="classzmq_1_1fq__t.html#a518a654bec62facaa28b8c8390518014">more</a> = msg_-&gt;flags () &amp; <a class="code" href="classzmq_1_1fq__t.html#a518a654bec62facaa28b8c8390518014">msg_t::more</a>;
-            <span class="keywordflow">if</span> (!<a class="code" href="classzmq_1_1fq__t.html#a518a654bec62facaa28b8c8390518014">more</a>) {
-                <a class="code" href="classzmq_1_1fq__t.html#a482cf68c03ca31889fd3df575a1fbf50">current</a>++;
-                <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1fq__t.html#a482cf68c03ca31889fd3df575a1fbf50">current</a> &gt;= <a class="code" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">active</a>)
-                    <a class="code" href="classzmq_1_1fq__t.html#a482cf68c03ca31889fd3df575a1fbf50">current</a> = 0;
-            }
-            <span class="keywordflow">return</span> 0;
-        }
-        <span class="keywordflow">else</span> {
-            <a class="code" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">active</a>--;
-            <a class="code" href="classzmq_1_1fq__t.html#adf53604a889785a53457fd1057a45c52">pipes</a>.<a class="code" href="classzmq_1_1array__t.html#af69a68b3377e174a35b337fb2048c1e8">swap</a> (<a class="code" href="classzmq_1_1fq__t.html#a482cf68c03ca31889fd3df575a1fbf50">current</a>, <a class="code" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">active</a>);
-            <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1fq__t.html#a482cf68c03ca31889fd3df575a1fbf50">current</a> == <a class="code" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">active</a>)
-                <a class="code" href="classzmq_1_1fq__t.html#a482cf68c03ca31889fd3df575a1fbf50">current</a> = 0;
-        }
-    }
-
-    <span class="comment">//  No message is available. Initialise the output parameter</span>
-    <span class="comment">//  to be a 0-byte message.</span>
-    rc = msg_-&gt;init ();
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-    errno = EAGAIN;
-    <span class="keywordflow">return</span> -1;
-}
-</pre></div>
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -506,15 +408,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="fq_8cpp_source.html#l00079">79</a> of file <a class="el" href="fq_8cpp_source.html">fq.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!<a class="code" href="classzmq_1_1fq__t.html#a6cbc36e1e6db21d57d7b874e596798a5">terminating</a>);
-    <a class="code" href="classzmq_1_1fq__t.html#a6cbc36e1e6db21d57d7b874e596798a5">terminating</a> = <span class="keyword">true</span>;
 
-    <a class="code" href="classzmq_1_1fq__t.html#a8afa6b904776f8acb597a39f7a97accb">sink</a>-&gt;register_term_acks ((<span class="keywordtype">int</span>) <a class="code" href="classzmq_1_1fq__t.html#adf53604a889785a53457fd1057a45c52">pipes</a>.<a class="code" href="classzmq_1_1array__t.html#a2fe6ef91998728c49e1439c673ca76f2">size</a> ());
-    <span class="keywordflow">for</span> (<a class="code" href="classzmq_1_1array__t.html#a95098ae535820a060a53645cab6dbb36">pipes_t::size_type</a> i = 0; i != <a class="code" href="classzmq_1_1fq__t.html#adf53604a889785a53457fd1057a45c52">pipes</a>.<a class="code" href="classzmq_1_1array__t.html#a2fe6ef91998728c49e1439c673ca76f2">size</a> (); i++)
-        <a class="code" href="classzmq_1_1fq__t.html#adf53604a889785a53457fd1057a45c52">pipes</a> [i]-&gt;<a class="code" href="classzmq_1_1fq__t.html#afec8b049e4bf2358671c8164a574a96e">terminate</a> ();
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="ac56f29770425eaa1279de584bc3ee6f0"></a><!-- doxytag: member="zmq::fq_t::terminated" ref="ac56f29770425eaa1279de584bc3ee6f0" args="(reader_t *pipe_)" -->
@@ -537,24 +431,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="fq_8cpp_source.html#l00056">56</a> of file <a class="el" href="fq_8cpp_source.html">fq.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  Make sure that we are not closing current pipe while</span>
-    <span class="comment">//  message is half-read.</span>
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="classzmq_1_1fq__t.html#a6cbc36e1e6db21d57d7b874e596798a5">terminating</a> || (!<a class="code" href="classzmq_1_1fq__t.html#a518a654bec62facaa28b8c8390518014">more</a> || <a class="code" href="classzmq_1_1fq__t.html#adf53604a889785a53457fd1057a45c52">pipes</a> [<a class="code" href="classzmq_1_1fq__t.html#a482cf68c03ca31889fd3df575a1fbf50">current</a>] != pipe_));
 
-    <span class="comment">//  Remove the pipe from the list; adjust number of active pipes</span>
-    <span class="comment">//  accordingly.</span>
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1fq__t.html#adf53604a889785a53457fd1057a45c52">pipes</a>.<a class="code" href="classzmq_1_1array__t.html#a33e6993cca31b096782ec51c1dc98315">index</a> (pipe_) &lt; <a class="code" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">active</a>) {
-        <a class="code" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">active</a>--;
-        <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1fq__t.html#a482cf68c03ca31889fd3df575a1fbf50">current</a> == <a class="code" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">active</a>)
-            <a class="code" href="classzmq_1_1fq__t.html#a482cf68c03ca31889fd3df575a1fbf50">current</a> = 0;
-    }
-    <a class="code" href="classzmq_1_1fq__t.html#adf53604a889785a53457fd1057a45c52">pipes</a>.<a class="code" href="classzmq_1_1array__t.html#a19c850fa9d9eea7fa79dedf71cce4ec6">erase</a> (pipe_);
-
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1fq__t.html#a6cbc36e1e6db21d57d7b874e596798a5">terminating</a>)
-        <a class="code" href="classzmq_1_1fq__t.html#a8afa6b904776f8acb597a39f7a97accb">sink</a>-&gt;unregister_term_ack ();
-}
-</pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
@@ -649,8 +526,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="fq_8hpp_source.html">fq.hpp</a></li>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="fq_8cpp_source.html">fq.cpp</a></li>
+<li>src/<a class="el" href="fq_8hpp_source.html">fq.hpp</a></li>
+<li>src/<a class="el" href="fq_8cpp_source.html">fq.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -658,7 +535,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -667,7 +544,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:11 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:16 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

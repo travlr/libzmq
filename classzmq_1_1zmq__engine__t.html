@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -99,7 +98,7 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespacezmq.html">zmq</a>      </li>
+      <li class="navelem"><b>zmq</b>      </li>
       <li class="navelem"><a class="el" href="classzmq_1_1zmq__engine__t.html">zmq_engine_t</a>      </li>
     </ul>
   </div>
@@ -140,7 +139,7 @@ function toggleVisibility(linkObj) {
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1zmq__engine__t.html#a5853c6d3a1f4de638738a90b2f8ef2d1">zmq_engine_t</a> (<a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a> fd_, const <a class="el" href="structzmq_1_1options__t.html">options_t</a> &amp;options_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1zmq__engine__t.html#a5853c6d3a1f4de638738a90b2f8ef2d1">zmq_engine_t</a> (fd_t fd_, const <a class="el" href="structzmq_1_1options__t.html">options_t</a> &amp;options_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1zmq__engine__t.html#a7c4280dc761fec14d4af64d31293e5f3">~zmq_engine_t</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1zmq__engine__t.html#a42b37152e622da1e21f68cd749e556d4">activate_in</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1zmq__engine__t.html#ac0290cda0935b3fb179ab6fab525d1ce">activate_out</a> ()</td></tr>
@@ -155,7 +154,7 @@ Protected Types</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef poller_t::handle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1io__object__t.html#a4b6973c60124b9f72305af675e9a4cf4">handle_t</a></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzmq_1_1io__object__t.html#a4b6973c60124b9f72305af675e9a4cf4">handle_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1io__object__t.html#a625f6b4af52776132612f008fc2ef99a">add_fd</a> (<a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a> fd_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzmq_1_1io__object__t.html#a4b6973c60124b9f72305af675e9a4cf4">handle_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1io__object__t.html#a625f6b4af52776132612f008fc2ef99a">add_fd</a> (fd_t fd_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1io__object__t.html#a12bdc0ed9eaef78341e08bb46a6239cc">add_timer</a> (int timout_, int id_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1io__object__t.html#ab54b3f312cbdb8f7787022b1d8313b73">cancel_timer</a> (int id_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1io__object__t.html#a0a5133d60f91ebe5e617f5056f5c4a35">reset_pollin</a> (<a class="el" href="classzmq_1_1io__object__t.html#a4b6973c60124b9f72305af675e9a4cf4">handle_t</a> handle_)</td></tr>
@@ -211,7 +210,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">zmq::zmq_engine_t::zmq_engine_t </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a>&#160;</td>
+          <td class="paramtype">fd_t&#160;</td>
           <td class="paramname"><em>fd_</em>, </td>
         </tr>
         <tr>
@@ -232,23 +231,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="zmq__engine_8cpp_source.html#l00036">36</a> of file <a class="el" href="zmq__engine_8cpp_source.html">zmq_engine.cpp</a>.</p>
 
 <p>References <a class="el" href="tcp__socket_8cpp_source.html#l00146">zmq::tcp_socket_t::open()</a>, <a class="el" href="zmq__engine_8hpp_source.html#l00077">options</a>, <a class="el" href="options_8hpp_source.html#l00056">zmq::options_t::rcvbuf</a>, <a class="el" href="options_8hpp_source.html#l00055">zmq::options_t::sndbuf</a>, <a class="el" href="zmq__engine_8hpp_source.html#l00061">tcp_socket</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">                                                                  :
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#aafd7793aca78fb68486256dc895d4664">inpos</a> (NULL),
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#ac90f65c9c9661b90962d456cb6695713">insize</a> (0),
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a657caefbfd85111cad32d2d2d83c7866">decoder</a> (<a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba414961fcf5bb64712339a387d1e4bd24">in_batch_size</a>, options_.maxmsgsize),
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a50cee1e6cfcf5b5c14118fe3c59d5aa1">outpos</a> (NULL),
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#ad2f8b2e066dcf997981b5b744dde94e9">outsize</a> (0),
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a4574bbc67ea9e441af0fa6eb2bbd4767">encoder</a> (<a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69bacce31026a6c3cbf9e0f1948c1105b78c">out_batch_size</a>),
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a5100ef75289c358ed1f25eee414c2dba">inout</a> (NULL),
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a63de5f17a9152cf51fba61cc6b3726f0">ephemeral_inout</a> (NULL),
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a85b45510f70a1261427df29763ac9b59">options</a> (options_),
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a78843cc4c33c5c41aa8c7c4c1041b24b">plugged</a> (<span class="keyword">false</span>)
-{
-    <span class="comment">//  Initialise the underlying socket.</span>
-    <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1zmq__engine__t.html#ac0e8156d5a3c31235700c28d79adf820">tcp_socket</a>.open (fd_, <a class="code" href="classzmq_1_1zmq__engine__t.html#a85b45510f70a1261427df29763ac9b59">options</a>.sndbuf, <a class="code" href="classzmq_1_1zmq__engine__t.html#a85b45510f70a1261427df29763ac9b59">options</a>.rcvbuf);
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
-}
-</pre></div>
+
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -279,10 +262,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="zmq__engine_8cpp_source.html#l00053">53</a> of file <a class="el" href="zmq__engine_8cpp_source.html">zmq_engine.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!<a class="code" href="classzmq_1_1zmq__engine__t.html#a78843cc4c33c5c41aa8c7c4c1041b24b">plugged</a>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a2ecc298e9e2cdf74839ff2fb47b768a5"></a><!-- doxytag: member="zmq::zmq_engine_t::zmq_engine_t" ref="a2ecc298e9e2cdf74839ff2fb47b768a5" args="(const zmq_engine_t &amp;)" -->
@@ -320,13 +300,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="structzmq_1_1i__engine.html#af7701dbec48bab5f144a9b762f228097">zmq::i_engine</a>.</p>
 
 <p>Definition at line <a class="el" href="zmq__engine_8cpp_source.html#l00212">212</a> of file <a class="el" href="zmq__engine_8cpp_source.html">zmq_engine.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1io__object__t.html#a12190325c661dc86f6de8e231792eb18">set_pollin</a> (<a class="code" href="classzmq_1_1zmq__engine__t.html#a4fadf46acc11765517756b269d7db709">handle</a>);
 
-    <span class="comment">//  Speculative read.</span>
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#afcfe5dc39dce8d67f271f14fc2b25812">in_event</a> ();
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="ac0290cda0935b3fb179ab6fab525d1ce"></a><!-- doxytag: member="zmq::zmq_engine_t::activate_out" ref="ac0290cda0935b3fb179ab6fab525d1ce" args="()" -->
@@ -346,16 +320,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="structzmq_1_1i__engine.html#a9f64a9684d65eb27245058bde5f10e6d">zmq::i_engine</a>.</p>
 
 <p>Definition at line <a class="el" href="zmq__engine_8cpp_source.html#l00201">201</a> of file <a class="el" href="zmq__engine_8cpp_source.html">zmq_engine.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1io__object__t.html#a58a130c19aeec9529c67cde2e980fd5b">set_pollout</a> (<a class="code" href="classzmq_1_1zmq__engine__t.html#a4fadf46acc11765517756b269d7db709">handle</a>);
 
-    <span class="comment">//  Speculative write: The assumption is that at the moment new message</span>
-    <span class="comment">//  was sent by the user the socket is probably available for writing.</span>
-    <span class="comment">//  Thus we try to write the data to socket avoiding polling for POLLOUT.</span>
-    <span class="comment">//  Consequently, the latency should be better in request/reply scenarios.</span>
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a470ed391413853d132aff411f43f1ec9">out_event</a> ();
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a625f6b4af52776132612f008fc2ef99a"></a><!-- doxytag: member="zmq::zmq_engine_t::add_fd" ref="a625f6b4af52776132612f008fc2ef99a" args="(fd_t fd_)" -->
@@ -365,7 +330,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classzmq_1_1io__object__t.html#a4b6973c60124b9f72305af675e9a4cf4">zmq::io_object_t::handle_t</a> zmq::io_object_t::add_fd </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a>&#160;</td>
+          <td class="paramtype">fd_t&#160;</td>
           <td class="paramname"><em>fd_</em></td><td>)</td>
           <td><code> [protected, inherited]</code></td>
         </tr>
@@ -374,10 +339,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="io__object_8cpp_source.html#l00054">54</a> of file <a class="el" href="io__object_8cpp_source.html">io_object.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1io__object__t.html#a53c9aace78a3778c14a7ea54b9577ad4">poller</a>-&gt;add_fd (fd_, <span class="keyword">this</span>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a12bdc0ed9eaef78341e08bb46a6239cc"></a><!-- doxytag: member="zmq::zmq_engine_t::add_timer" ref="a12bdc0ed9eaef78341e08bb46a6239cc" args="(int timout_, int id_)" -->
@@ -406,10 +368,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="io__object_8cpp_source.html#l00084">84</a> of file <a class="el" href="io__object_8cpp_source.html">io_object.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1io__object__t.html#a53c9aace78a3778c14a7ea54b9577ad4">poller</a>-&gt;add_timer (timeout_, <span class="keyword">this</span>, id_);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="ab54b3f312cbdb8f7787022b1d8313b73"></a><!-- doxytag: member="zmq::zmq_engine_t::cancel_timer" ref="ab54b3f312cbdb8f7787022b1d8313b73" args="(int id_)" -->
@@ -428,10 +387,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="io__object_8cpp_source.html#l00089">89</a> of file <a class="el" href="io__object_8cpp_source.html">io_object.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1io__object__t.html#a53c9aace78a3778c14a7ea54b9577ad4">poller</a>-&gt;cancel_timer (<span class="keyword">this</span>, id_);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="ab5d3d70508f8b861f3fa8a1b4ae710f8"></a><!-- doxytag: member="zmq::zmq_engine_t::error" ref="ab5d3d70508f8b861f3fa8a1b4ae710f8" args="()" -->
@@ -451,13 +407,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="zmq__engine_8cpp_source.html#l00220">220</a> of file <a class="el" href="zmq__engine_8cpp_source.html">zmq_engine.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="classzmq_1_1zmq__engine__t.html#a5100ef75289c358ed1f25eee414c2dba">inout</a>);
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a5100ef75289c358ed1f25eee414c2dba">inout</a>-&gt;detach ();
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#ad0454482274ecbcf930581a75cf6be71">unplug</a> ();
-    <span class="keyword">delete</span> <span class="keyword">this</span>;
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="afcfe5dc39dce8d67f271f14fc2b25812"></a><!-- doxytag: member="zmq::zmq_engine_t::in_event" ref="afcfe5dc39dce8d67f271f14fc2b25812" args="()" -->
@@ -479,62 +429,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="zmq__engine_8cpp_source.html#l00105">105</a> of file <a class="el" href="zmq__engine_8cpp_source.html">zmq_engine.cpp</a>.</p>
 
 <p>References <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordtype">bool</span> disconnection = <span class="keyword">false</span>;
 
-    <span class="comment">//  If there&#39;s no data to process in the buffer...</span>
-    <span class="keywordflow">if</span> (!<a class="code" href="classzmq_1_1zmq__engine__t.html#ac90f65c9c9661b90962d456cb6695713">insize</a>) {
-
-        <span class="comment">//  Retrieve the buffer and read as much data as possible.</span>
-        <span class="comment">//  Note that buffer can be arbitrarily large. However, we assume</span>
-        <span class="comment">//  the underlying TCP layer has fixed buffer size and thus the</span>
-        <span class="comment">//  number of bytes read will be always limited.</span>
-        <a class="code" href="classzmq_1_1zmq__engine__t.html#a657caefbfd85111cad32d2d2d83c7866">decoder</a>.get_buffer (&amp;<a class="code" href="classzmq_1_1zmq__engine__t.html#aafd7793aca78fb68486256dc895d4664">inpos</a>, &amp;<a class="code" href="classzmq_1_1zmq__engine__t.html#ac90f65c9c9661b90962d456cb6695713">insize</a>);
-        <a class="code" href="classzmq_1_1zmq__engine__t.html#ac90f65c9c9661b90962d456cb6695713">insize</a> = <a class="code" href="classzmq_1_1zmq__engine__t.html#ac0e8156d5a3c31235700c28d79adf820">tcp_socket</a>.read (<a class="code" href="classzmq_1_1zmq__engine__t.html#aafd7793aca78fb68486256dc895d4664">inpos</a>, <a class="code" href="classzmq_1_1zmq__engine__t.html#ac90f65c9c9661b90962d456cb6695713">insize</a>);
-
-        <span class="comment">//  Check whether the peer has closed the connection.</span>
-        <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1zmq__engine__t.html#ac90f65c9c9661b90962d456cb6695713">insize</a> == (<span class="keywordtype">size_t</span>) -1) {
-            <a class="code" href="classzmq_1_1zmq__engine__t.html#ac90f65c9c9661b90962d456cb6695713">insize</a> = 0;
-            disconnection = <span class="keyword">true</span>;
-        }
-    }
-
-    <span class="comment">//  Push the data to the decoder.</span>
-    <span class="keywordtype">size_t</span> processed = <a class="code" href="classzmq_1_1zmq__engine__t.html#a657caefbfd85111cad32d2d2d83c7866">decoder</a>.process_buffer (<a class="code" href="classzmq_1_1zmq__engine__t.html#aafd7793aca78fb68486256dc895d4664">inpos</a>, <a class="code" href="classzmq_1_1zmq__engine__t.html#ac90f65c9c9661b90962d456cb6695713">insize</a>);
-
-    <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (processed == (<span class="keywordtype">size_t</span>) -1)) {
-        disconnection = <span class="keyword">true</span>;
-    }
-    <span class="keywordflow">else</span> {
-
-        <span class="comment">//  Stop polling for input if we got stuck.</span>
-        <span class="keywordflow">if</span> (processed &lt; <a class="code" href="classzmq_1_1zmq__engine__t.html#ac90f65c9c9661b90962d456cb6695713">insize</a>) {
-
-            <span class="comment">//  This may happen if queue limits are in effect or when</span>
-            <span class="comment">//  init object reads all required information from the socket</span>
-            <span class="comment">//  and rejects to read more data.</span>
-            <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1zmq__engine__t.html#a78843cc4c33c5c41aa8c7c4c1041b24b">plugged</a>)
-                <a class="code" href="classzmq_1_1io__object__t.html#a0a5133d60f91ebe5e617f5056f5c4a35">reset_pollin</a> (<a class="code" href="classzmq_1_1zmq__engine__t.html#a4fadf46acc11765517756b269d7db709">handle</a>);
-        }
-
-        <span class="comment">//  Adjust the buffer.</span>
-        <a class="code" href="classzmq_1_1zmq__engine__t.html#aafd7793aca78fb68486256dc895d4664">inpos</a> += processed;
-        <a class="code" href="classzmq_1_1zmq__engine__t.html#ac90f65c9c9661b90962d456cb6695713">insize</a> -= processed;
-    }
-
-    <span class="comment">//  Flush all messages the decoder may have produced.</span>
-    <span class="comment">//  If IO handler has unplugged engine, flush transient IO handler.</span>
-    <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (!<a class="code" href="classzmq_1_1zmq__engine__t.html#a78843cc4c33c5c41aa8c7c4c1041b24b">plugged</a>)) {
-        <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="classzmq_1_1zmq__engine__t.html#a63de5f17a9152cf51fba61cc6b3726f0">ephemeral_inout</a>);
-        <a class="code" href="classzmq_1_1zmq__engine__t.html#a63de5f17a9152cf51fba61cc6b3726f0">ephemeral_inout</a>-&gt;flush ();
-    } <span class="keywordflow">else</span> {
-        <a class="code" href="classzmq_1_1zmq__engine__t.html#a5100ef75289c358ed1f25eee414c2dba">inout</a>-&gt;flush ();
-    }
-
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1zmq__engine__t.html#a5100ef75289c358ed1f25eee414c2dba">inout</a> &amp;&amp; disconnection)
-        <a class="code" href="classzmq_1_1zmq__engine__t.html#ab5d3d70508f8b861f3fa8a1b4ae710f8">error</a> ();
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a439a5a3e04f2f1a218751895dfdfcecd"></a><!-- doxytag: member="zmq::zmq_engine_t::operator=" ref="a439a5a3e04f2f1a218751895dfdfcecd" args="(const zmq_engine_t &amp;)" -->
@@ -573,44 +468,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="zmq__engine_8cpp_source.html#l00162">162</a> of file <a class="el" href="zmq__engine_8cpp_source.html">zmq_engine.cpp</a>.</p>
 
 <p>References <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  If write buffer is empty, try to read new data from the encoder.</span>
-    <span class="keywordflow">if</span> (!<a class="code" href="classzmq_1_1zmq__engine__t.html#ad2f8b2e066dcf997981b5b744dde94e9">outsize</a>) {
 
-        <a class="code" href="classzmq_1_1zmq__engine__t.html#a50cee1e6cfcf5b5c14118fe3c59d5aa1">outpos</a> = NULL;
-        <a class="code" href="classzmq_1_1zmq__engine__t.html#a4574bbc67ea9e441af0fa6eb2bbd4767">encoder</a>.get_data (&amp;<a class="code" href="classzmq_1_1zmq__engine__t.html#a50cee1e6cfcf5b5c14118fe3c59d5aa1">outpos</a>, &amp;<a class="code" href="classzmq_1_1zmq__engine__t.html#ad2f8b2e066dcf997981b5b744dde94e9">outsize</a>);
-
-        <span class="comment">//  If IO handler has unplugged engine, flush transient IO handler.</span>
-        <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (!<a class="code" href="classzmq_1_1zmq__engine__t.html#a78843cc4c33c5c41aa8c7c4c1041b24b">plugged</a>)) {
-            <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="classzmq_1_1zmq__engine__t.html#a63de5f17a9152cf51fba61cc6b3726f0">ephemeral_inout</a>);
-            <a class="code" href="classzmq_1_1zmq__engine__t.html#a63de5f17a9152cf51fba61cc6b3726f0">ephemeral_inout</a>-&gt;flush ();
-            <span class="keywordflow">return</span>;
-        }
-
-        <span class="comment">//  If there is no data to send, stop polling for output.</span>
-        <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1zmq__engine__t.html#ad2f8b2e066dcf997981b5b744dde94e9">outsize</a> == 0) {
-            <a class="code" href="classzmq_1_1io__object__t.html#ad300cb901fe8e454ee7cf7d8dac9c816">reset_pollout</a> (<a class="code" href="classzmq_1_1zmq__engine__t.html#a4fadf46acc11765517756b269d7db709">handle</a>);
-            <span class="keywordflow">return</span>;
-        }
-    }
-
-    <span class="comment">//  If there are any data to write in write buffer, write as much as</span>
-    <span class="comment">//  possible to the socket. Note that amount of data to write can be</span>
-    <span class="comment">//  arbitratily large. However, we assume that underlying TCP layer has</span>
-    <span class="comment">//  limited transmission buffer and thus the actual number of bytes</span>
-    <span class="comment">//  written should be reasonably modest.</span>
-    <span class="keywordtype">int</span> nbytes = <a class="code" href="classzmq_1_1zmq__engine__t.html#ac0e8156d5a3c31235700c28d79adf820">tcp_socket</a>.write (<a class="code" href="classzmq_1_1zmq__engine__t.html#a50cee1e6cfcf5b5c14118fe3c59d5aa1">outpos</a>, <a class="code" href="classzmq_1_1zmq__engine__t.html#ad2f8b2e066dcf997981b5b744dde94e9">outsize</a>);
-
-    <span class="comment">//  Handle problems with the connection.</span>
-    <span class="keywordflow">if</span> (nbytes == -1) {
-        <a class="code" href="classzmq_1_1zmq__engine__t.html#ab5d3d70508f8b861f3fa8a1b4ae710f8">error</a> ();
-        <span class="keywordflow">return</span>;
-    }
-
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a50cee1e6cfcf5b5c14118fe3c59d5aa1">outpos</a> += nbytes;
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#ad2f8b2e066dcf997981b5b744dde94e9">outsize</a> -= nbytes;
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="ab57698c45e55f221a3eb4e326281db78"></a><!-- doxytag: member="zmq::zmq_engine_t::plug" ref="ab57698c45e55f221a3eb4e326281db78" args="(class io_thread_t *io_thread_)" -->
@@ -633,14 +491,7 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="io__thread_8cpp_source.html#l00097">zmq::io_thread_t::get_poller()</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
 <p>Referenced by <a class="el" href="io__object_8cpp_source.html#l00025">zmq::io_object_t::io_object_t()</a>, and <a class="el" href="zmq__engine_8cpp_source.html#l00058">plug()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (io_thread_);
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!<a class="code" href="classzmq_1_1io__object__t.html#a53c9aace78a3778c14a7ea54b9577ad4">poller</a>);
 
-    <span class="comment">//  Retrieve the poller from the thread we are running in.</span>
-    <a class="code" href="classzmq_1_1io__object__t.html#a53c9aace78a3778c14a7ea54b9577ad4">poller</a> = io_thread_-&gt;get_poller ();
-}
-</pre></div>
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -695,28 +546,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="zmq__engine_8cpp_source.html#l00058">58</a> of file <a class="el" href="zmq__engine_8cpp_source.html">zmq_engine.cpp</a>.</p>
 
 <p>References <a class="el" href="io__object_8cpp_source.html#l00036">zmq::io_object_t::plug()</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!<a class="code" href="classzmq_1_1zmq__engine__t.html#a78843cc4c33c5c41aa8c7c4c1041b24b">plugged</a>);
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a78843cc4c33c5c41aa8c7c4c1041b24b">plugged</a> = <span class="keyword">true</span>;
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a63de5f17a9152cf51fba61cc6b3726f0">ephemeral_inout</a> = NULL;
 
-    <span class="comment">//  Connect to session/init object.</span>
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!<a class="code" href="classzmq_1_1zmq__engine__t.html#a5100ef75289c358ed1f25eee414c2dba">inout</a>);
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (inout_);
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a4574bbc67ea9e441af0fa6eb2bbd4767">encoder</a>.set_inout (inout_);
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a657caefbfd85111cad32d2d2d83c7866">decoder</a>.set_inout (inout_);
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a5100ef75289c358ed1f25eee414c2dba">inout</a> = inout_;
-
-    <span class="comment">//  Connect to I/O threads poller object.</span>
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a9b08f7d17503962bf56fbe47def05a4b">io_object_t::plug</a> (io_thread_);
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a4fadf46acc11765517756b269d7db709">handle</a> = <a class="code" href="classzmq_1_1io__object__t.html#a625f6b4af52776132612f008fc2ef99a">add_fd</a> (<a class="code" href="classzmq_1_1zmq__engine__t.html#ac0e8156d5a3c31235700c28d79adf820">tcp_socket</a>.get_fd ());
-    <a class="code" href="classzmq_1_1io__object__t.html#a12190325c661dc86f6de8e231792eb18">set_pollin</a> (<a class="code" href="classzmq_1_1zmq__engine__t.html#a4fadf46acc11765517756b269d7db709">handle</a>);
-    <a class="code" href="classzmq_1_1io__object__t.html#a58a130c19aeec9529c67cde2e980fd5b">set_pollout</a> (<a class="code" href="classzmq_1_1zmq__engine__t.html#a4fadf46acc11765517756b269d7db709">handle</a>);
-
-    <span class="comment">//  Flush all the data that may have been already received downstream.</span>
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#afcfe5dc39dce8d67f271f14fc2b25812">in_event</a> ();
-}
-</pre></div>
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -746,10 +576,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="io__object_8cpp_source.html#l00069">69</a> of file <a class="el" href="io__object_8cpp_source.html">io_object.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1io__object__t.html#a53c9aace78a3778c14a7ea54b9577ad4">poller</a>-&gt;reset_pollin (handle_);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="ad300cb901fe8e454ee7cf7d8dac9c816"></a><!-- doxytag: member="zmq::zmq_engine_t::reset_pollout" ref="ad300cb901fe8e454ee7cf7d8dac9c816" args="(handle_t handle_)" -->
@@ -768,10 +595,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="io__object_8cpp_source.html#l00079">79</a> of file <a class="el" href="io__object_8cpp_source.html">io_object.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1io__object__t.html#a53c9aace78a3778c14a7ea54b9577ad4">poller</a>-&gt;reset_pollout (handle_);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a3eec6c5d52ffb674f6c44923f21b727f"></a><!-- doxytag: member="zmq::zmq_engine_t::rm_fd" ref="a3eec6c5d52ffb674f6c44923f21b727f" args="(handle_t handle_)" -->
@@ -790,10 +614,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="io__object_8cpp_source.html#l00059">59</a> of file <a class="el" href="io__object_8cpp_source.html">io_object.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1io__object__t.html#a53c9aace78a3778c14a7ea54b9577ad4">poller</a>-&gt;rm_fd (handle_);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a12190325c661dc86f6de8e231792eb18"></a><!-- doxytag: member="zmq::zmq_engine_t::set_pollin" ref="a12190325c661dc86f6de8e231792eb18" args="(handle_t handle_)" -->
@@ -812,10 +633,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="io__object_8cpp_source.html#l00064">64</a> of file <a class="el" href="io__object_8cpp_source.html">io_object.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1io__object__t.html#a53c9aace78a3778c14a7ea54b9577ad4">poller</a>-&gt;set_pollin (handle_);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a58a130c19aeec9529c67cde2e980fd5b"></a><!-- doxytag: member="zmq::zmq_engine_t::set_pollout" ref="a58a130c19aeec9529c67cde2e980fd5b" args="(handle_t handle_)" -->
@@ -834,10 +652,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="io__object_8cpp_source.html#l00074">74</a> of file <a class="el" href="io__object_8cpp_source.html">io_object.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1io__object__t.html#a53c9aace78a3778c14a7ea54b9577ad4">poller</a>-&gt;set_pollout (handle_);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a1919f2a8ec41d344bd1879a7a6229628"></a><!-- doxytag: member="zmq::zmq_engine_t::terminate" ref="a1919f2a8ec41d344bd1879a7a6229628" args="()" -->
@@ -857,11 +672,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="structzmq_1_1i__engine.html#a6289f8f2354de76377112a94c4db0b18">zmq::i_engine</a>.</p>
 
 <p>Definition at line <a class="el" href="zmq__engine_8cpp_source.html#l00099">99</a> of file <a class="el" href="zmq__engine_8cpp_source.html">zmq_engine.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#ad0454482274ecbcf930581a75cf6be71">unplug</a> ();
-    <span class="keyword">delete</span> <span class="keyword">this</span>;
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="aa54970567a5ecaa4fa5eddc2ec45f29d"></a><!-- doxytag: member="zmq::zmq_engine_t::timer_event" ref="aa54970567a5ecaa4fa5eddc2ec45f29d" args="(int id_)" -->
@@ -886,10 +697,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="io__object_8cpp_source.html#l00104">104</a> of file <a class="el" href="io__object_8cpp_source.html">io_object.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="ad0454482274ecbcf930581a75cf6be71"></a><!-- doxytag: member="zmq::zmq_engine_t::unplug" ref="ad0454482274ecbcf930581a75cf6be71" args="()" -->
@@ -911,23 +719,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="zmq__engine_8cpp_source.html#l00081">81</a> of file <a class="el" href="zmq__engine_8cpp_source.html">zmq_engine.cpp</a>.</p>
 
 <p>References <a class="el" href="io__object_8cpp_source.html#l00045">zmq::io_object_t::unplug()</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="classzmq_1_1zmq__engine__t.html#a78843cc4c33c5c41aa8c7c4c1041b24b">plugged</a>);
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a78843cc4c33c5c41aa8c7c4c1041b24b">plugged</a> = <span class="keyword">false</span>;
 
-    <span class="comment">//  Cancel all fd subscriptions.</span>
-    <a class="code" href="classzmq_1_1io__object__t.html#a3eec6c5d52ffb674f6c44923f21b727f">rm_fd</a> (<a class="code" href="classzmq_1_1zmq__engine__t.html#a4fadf46acc11765517756b269d7db709">handle</a>);
-
-    <span class="comment">//  Disconnect from I/O threads poller object.</span>
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#ad0454482274ecbcf930581a75cf6be71">io_object_t::unplug</a> ();
-
-    <span class="comment">//  Disconnect from init/session object.</span>
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a4574bbc67ea9e441af0fa6eb2bbd4767">encoder</a>.set_inout (NULL);
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a657caefbfd85111cad32d2d2d83c7866">decoder</a>.set_inout (NULL);
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a63de5f17a9152cf51fba61cc6b3726f0">ephemeral_inout</a> = <a class="code" href="classzmq_1_1zmq__engine__t.html#a5100ef75289c358ed1f25eee414c2dba">inout</a>;
-    <a class="code" href="classzmq_1_1zmq__engine__t.html#a5100ef75289c358ed1f25eee414c2dba">inout</a> = NULL;
-}
-</pre></div>
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
@@ -1127,8 +919,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="zmq__engine_8hpp_source.html">zmq_engine.hpp</a></li>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="zmq__engine_8cpp_source.html">zmq_engine.cpp</a></li>
+<li>src/<a class="el" href="zmq__engine_8hpp_source.html">zmq_engine.hpp</a></li>
+<li>src/<a class="el" href="zmq__engine_8cpp_source.html">zmq_engine.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -1136,7 +928,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -1145,7 +937,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:24 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:21 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

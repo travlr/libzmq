@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -99,7 +98,7 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespacezmq.html">zmq</a>      </li>
+      <li class="navelem"><b>zmq</b>      </li>
       <li class="navelem"><a class="el" href="classzmq_1_1tcp__listener__t.html">tcp_listener_t</a>      </li>
     </ul>
   </div>
@@ -122,9 +121,9 @@ function toggleVisibility(linkObj) {
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#a946065c966caf35944cedf21b02a88ae">tcp_listener_t</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#a5ce2de50a1242c4f43c1d1496b6b2cd8">~tcp_listener_t</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#a61d3286e4d1a1199b2710d6b193b7076">accept</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">fd_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#a61d3286e4d1a1199b2710d6b193b7076">accept</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#a786f013879772618d90bb3fc554dc3cd">close</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#ac94028a1a0bcadbcbe157be23025dd37">get_fd</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">fd_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#ac94028a1a0bcadbcbe157be23025dd37">get_fd</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#af6c5765483b158fa4535a41fda4a5012">set_address</a> (const char *protocol_, const char *addr_, int backlog_)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -135,7 +134,7 @@ Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">sockaddr_storage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#ad4fec3e2587c935085a781d37d2634c7">addr</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">socklen_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#a7b24104624a46adf84ba0d69a48c6def">addr_len</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#a779ca79d4ef1e64bf8bdf755b51b22be">has_file</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">fd_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock">
@@ -158,13 +157,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="tcp__listener_8cpp_source.html#l00153">153</a> of file <a class="el" href="tcp__listener_8cpp_source.html">tcp_listener.cpp</a>.</p>
 
 <p>References <a class="el" href="tcp__listener_8hpp_source.html#l00058">addr</a>.</p>
-<div class="fragment"><pre class="fragment">                                   :
-    <a class="code" href="classzmq_1_1tcp__listener__t.html#a779ca79d4ef1e64bf8bdf755b51b22be">has_file</a> (<span class="keyword">false</span>),
-    <a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a> (<a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>)
-{
-    memset (&amp;<a class="code" href="classzmq_1_1tcp__listener__t.html#ad4fec3e2587c935085a781d37d2634c7">addr</a>, 0, <span class="keyword">sizeof</span> (<a class="code" href="classzmq_1_1tcp__listener__t.html#ad4fec3e2587c935085a781d37d2634c7">addr</a>));
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a5ce2de50a1242c4f43c1d1496b6b2cd8"></a><!-- doxytag: member="zmq::tcp_listener_t::~tcp_listener_t" ref="a5ce2de50a1242c4f43c1d1496b6b2cd8" args="()" -->
@@ -183,12 +176,6 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="tcp__listener_8cpp_source.html#l00160">160</a> of file <a class="el" href="tcp__listener_8cpp_source.html">tcp_listener.cpp</a>.</p>
 
-<p>References <a class="el" href="fd_8hpp_source.html#l00042">zmq::retired_fd</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a> != <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>)
-        <a class="code" href="classzmq_1_1tcp__listener__t.html#a786f013879772618d90bb3fc554dc3cd">close</a> ();
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a7ad38de26201bfd8654a760ded797a28"></a><!-- doxytag: member="zmq::tcp_listener_t::tcp_listener_t" ref="a7ad38de26201bfd8654a760ded797a28" args="(const tcp_listener_t &amp;)" -->
@@ -214,7 +201,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">zmq::fd_t</a> zmq::tcp_listener_t::accept </td>
+          <td class="memname">zmq::fd_t zmq::tcp_listener_t::accept </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -225,73 +212,8 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="tcp__listener_8cpp_source.html#l00302">302</a> of file <a class="el" href="tcp__listener_8cpp_source.html">tcp_listener.cpp</a>.</p>
 
-<p>References <a class="el" href="zmq_8h_source.html#l00084">ENOBUFS</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="fd_8hpp_source.html#l00042">zmq::retired_fd</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a> != <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>);
+<p>References <a class="el" href="zmq_8h_source.html#l00084">ENOBUFS</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
-    <span class="comment">//  Accept one incoming connection.</span>
-    <a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a> sock =<a class="code" href="classzmq_1_1tcp__listener__t.html#a61d3286e4d1a1199b2710d6b193b7076"> ::accept</a> (<a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a>, NULL, NULL);
-
-<span class="preprocessor">#if (defined ZMQ_HAVE_LINUX || defined ZMQ_HAVE_FREEBSD || \</span>
-<span class="preprocessor">     defined ZMQ_HAVE_OPENBSD || defined ZMQ_HAVE_OSX || \</span>
-<span class="preprocessor">     defined ZMQ_HAVE_OPENVMS || defined ZMQ_HAVE_NETBSD || \</span>
-<span class="preprocessor">     defined ZMQ_HAVE_CYGWIN)</span>
-<span class="preprocessor"></span>    <span class="keywordflow">if</span> (sock == -1 &amp;&amp; 
-        (errno == EAGAIN || errno == EWOULDBLOCK || 
-         errno == EINTR || errno == ECONNABORTED))
-        <span class="keywordflow">return</span> <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>;
-<span class="preprocessor">#elif (defined ZMQ_HAVE_SOLARIS || defined ZMQ_HAVE_AIX)</span>
-<span class="preprocessor"></span>    <span class="keywordflow">if</span> (sock == -1 &amp;&amp; 
-        (errno == EWOULDBLOCK || errno == EINTR || 
-         errno == ECONNABORTED || errno == EPROTO))
-        <span class="keywordflow">return</span> <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>;
-<span class="preprocessor">#elif defined ZMQ_HAVE_HPUX</span>
-<span class="preprocessor"></span>    <span class="keywordflow">if</span> (sock == -1 &amp;&amp; 
-        (errno == EAGAIN || errno == EWOULDBLOCK || 
-         errno == EINTR || errno == ECONNABORTED || errno == <a class="code" href="zmq_8h.html#a9e655f47bfd914a1174f281fc31cf63d">ENOBUFS</a>))
-        <span class="keywordflow">return</span> <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>;
-<span class="preprocessor">#elif defined ZMQ_HAVE_QNXNTO </span>
-<span class="preprocessor"></span>    <span class="keywordflow">if</span> (sock == -1 &amp;&amp; 
-        (errno == EWOULDBLOCK || errno == EINTR || errno == ECONNABORTED))
-        <span class="keywordflow">return</span> <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>;
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (sock != -1); 
-
-    <span class="comment">// Set to non-blocking mode.</span>
-<span class="preprocessor">#ifdef ZMQ_HAVE_OPENVMS</span>
-<span class="preprocessor"></span>    <span class="keywordtype">int</span> flags = 1;
-    <span class="keywordtype">int</span> rc = ioctl (sock, FIONBIO, &amp;flags);
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc != -1);
-<span class="preprocessor">#else</span>
-<span class="preprocessor"></span>    <span class="keywordtype">int</span> flags = fcntl (s, F_GETFL, 0);
-    <span class="keywordflow">if</span> (flags == -1)
-        flags = 0;
-    <span class="keywordtype">int</span> rc = fcntl (sock, F_SETFL, flags | O_NONBLOCK);
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc != -1);
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>
-    <span class="keyword">struct </span>sockaddr *sa = (<span class="keyword">struct </span>sockaddr*) &amp;<a class="code" href="classzmq_1_1tcp__listener__t.html#ad4fec3e2587c935085a781d37d2634c7">addr</a>;
-    <span class="keywordflow">if</span> (AF_UNIX != sa-&gt;sa_family) {
-
-        <span class="comment">//  Disable Nagle&#39;s algorithm.</span>
-        <span class="keywordtype">int</span> flag = 1;
-        rc = setsockopt (sock, IPPROTO_TCP, TCP_NODELAY, (<span class="keywordtype">char</span>*) &amp;flag,
-            <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>));
-        <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-
-<span class="preprocessor">#ifdef ZMQ_HAVE_OPENVMS</span>
-<span class="preprocessor"></span>        <span class="comment">//  Disable delayed acknowledgements.</span>
-        flag = 1;
-        rc = setsockopt (sock, IPPROTO_TCP, TCP_NODELACK, (<span class="keywordtype">char</span>*) &amp;flag,
-            <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>));
-        <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc != SOCKET_ERROR);
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    }
-
-    <span class="keywordflow">return</span> sock;
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a786f013879772618d90bb3fc554dc3cd"></a><!-- doxytag: member="zmq::tcp_listener_t::close" ref="a786f013879772618d90bb3fc554dc3cd" args="()" -->
@@ -310,28 +232,8 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="tcp__listener_8cpp_source.html#l00275">275</a> of file <a class="el" href="tcp__listener_8cpp_source.html">tcp_listener.cpp</a>.</p>
 
-<p>References <a class="el" href="fd_8hpp_source.html#l00042">zmq::retired_fd</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a> != <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>);
-    <span class="keywordtype">int</span> rc =<a class="code" href="classzmq_1_1tcp__listener__t.html#a786f013879772618d90bb3fc554dc3cd"> ::close</a> (<a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a>);
-    <span class="keywordflow">if</span> (rc != 0)
-        <span class="keywordflow">return</span> -1;
-    <a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a> = <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>;
+<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
-<span class="preprocessor">#ifndef ZMQ_HAVE_OPENVMS</span>
-<span class="preprocessor"></span>    <span class="comment">//  If there&#39;s an underlying UNIX domain socket, get rid of the file it</span>
-    <span class="comment">//  is associated with.</span>
-    <span class="keyword">struct </span>sockaddr_un *su = (<span class="keyword">struct </span>sockaddr_un*) &amp;<a class="code" href="classzmq_1_1tcp__listener__t.html#ad4fec3e2587c935085a781d37d2634c7">addr</a>;
-    <span class="keywordflow">if</span> (AF_UNIX == su-&gt;sun_family &amp;&amp; <a class="code" href="classzmq_1_1tcp__listener__t.html#a779ca79d4ef1e64bf8bdf755b51b22be">has_file</a>) {
-        rc = ::unlink(su-&gt;sun_path);
-        <span class="keywordflow">if</span> (rc != 0)
-            <span class="keywordflow">return</span> -1;
-    }
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>
-    <span class="keywordflow">return</span> 0;
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="ac94028a1a0bcadbcbe157be23025dd37"></a><!-- doxytag: member="zmq::tcp_listener_t::get_fd" ref="ac94028a1a0bcadbcbe157be23025dd37" args="()" -->
@@ -339,7 +241,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">zmq::fd_t</a> zmq::tcp_listener_t::get_fd </td>
+          <td class="memname">zmq::fd_t zmq::tcp_listener_t::get_fd </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -349,10 +251,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="tcp__listener_8cpp_source.html#l00297">297</a> of file <a class="el" href="tcp__listener_8cpp_source.html">tcp_listener.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a>;
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a26b7188f805103c354917c56e15f8429"></a><!-- doxytag: member="zmq::tcp_listener_t::operator=" ref="a26b7188f805103c354917c56e15f8429" args="(const tcp_listener_t &amp;)" -->
@@ -405,124 +304,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="tcp__listener_8cpp_source.html#l00166">166</a> of file <a class="el" href="tcp__listener_8cpp_source.html">tcp_listener.cpp</a>.</p>
 
-<p>References <a class="el" href="zmq_8h_source.html#l00081">EPROTONOSUPPORT</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="ip_8cpp_source.html#l00178">zmq::resolve_ip_interface()</a>, and <a class="el" href="ip_8cpp_source.html#l00327">zmq::resolve_local_path()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (strcmp (protocol_, <span class="stringliteral">&quot;tcp&quot;</span>) == 0 ) {
-
-        <span class="comment">//  Resolve the sockaddr to bind to.</span>
-        <span class="keywordtype">int</span> rc = <a class="code" href="namespacezmq.html#ac5b37ef8f53af06b226b0e9b571d355b">resolve_ip_interface</a> (&amp;<a class="code" href="classzmq_1_1tcp__listener__t.html#ad4fec3e2587c935085a781d37d2634c7">addr</a>, &amp;<a class="code" href="classzmq_1_1tcp__listener__t.html#a7b24104624a46adf84ba0d69a48c6def">addr_len</a>, addr_);
-        <span class="keywordflow">if</span> (rc != 0)
-            <span class="keywordflow">return</span> -1;
-
-        <span class="comment">//  Create a listening socket.</span>
-        <a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a> = socket (<a class="code" href="classzmq_1_1tcp__listener__t.html#ad4fec3e2587c935085a781d37d2634c7">addr</a>.ss_family, SOCK_STREAM, IPPROTO_TCP);
-        <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a> == -1)
-            <span class="keywordflow">return</span> -1;
-
-        <span class="comment">//  Allow reusing of the address.</span>
-        <span class="keywordtype">int</span> flag = 1;
-        rc = setsockopt (<a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a>, SOL_SOCKET, SO_REUSEADDR, &amp;flag, <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>));
-        <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-
-        <span class="comment">//  Set the non-blocking flag.</span>
-<span class="preprocessor">#ifdef ZMQ_HAVE_OPENVMS</span>
-<span class="preprocessor"></span>        flag = 1;
-        rc = ioctl (<a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a>, FIONBIO, &amp;flag);
-        <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc != -1);
-<span class="preprocessor">#else</span>
-<span class="preprocessor"></span>        flag = fcntl (<a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a>, F_GETFL, 0);
-        <span class="keywordflow">if</span> (flag == -1)
-            flag = 0;
-        rc = fcntl (<a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a>, F_SETFL, flag | O_NONBLOCK);
-        <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc != -1);
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>
-        <span class="comment">//  Bind the socket to the network interface and port.</span>
-        rc = bind (<a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a>, (<span class="keyword">struct</span> sockaddr*) &amp;<a class="code" href="classzmq_1_1tcp__listener__t.html#ad4fec3e2587c935085a781d37d2634c7">addr</a>, <a class="code" href="classzmq_1_1tcp__listener__t.html#a7b24104624a46adf84ba0d69a48c6def">addr_len</a>);
-        <span class="keywordflow">if</span> (rc != 0) {
-            <span class="keywordtype">int</span> err = errno;
-            <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1tcp__listener__t.html#a786f013879772618d90bb3fc554dc3cd">close</a> () != 0)
-                <span class="keywordflow">return</span> -1;
-            errno = err;
-            <span class="keywordflow">return</span> -1;
-        }
-
-        <span class="comment">//  Listen for incomming connections.</span>
-        rc = listen (<a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a>, backlog_);
-        <span class="keywordflow">if</span> (rc != 0) {
-            <span class="keywordtype">int</span> err = errno;
-            <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1tcp__listener__t.html#a786f013879772618d90bb3fc554dc3cd">close</a> () != 0)
-                <span class="keywordflow">return</span> -1;
-            errno = err;
-            <span class="keywordflow">return</span> -1;
-        }
-
-        <span class="keywordflow">return</span> 0;
-    }
-<span class="preprocessor">#ifndef ZMQ_HAVE_OPENVMS</span>
-<span class="preprocessor"></span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp (protocol_, <span class="stringliteral">&quot;ipc&quot;</span>) == 0) {
-
-        <span class="comment">//  Get rid of the file associated with the UNIX domain socket that</span>
-        <span class="comment">//  may have been left behind by the previous run of the application.</span>
-        ::unlink (addr_);
-
-        <span class="comment">//  Convert the address into sockaddr_un structure.</span>
-        <span class="keywordtype">int</span> rc = <a class="code" href="namespacezmq.html#a0919175e52c870f26ffbe07b5b77d7e3">resolve_local_path</a> (&amp;<a class="code" href="classzmq_1_1tcp__listener__t.html#ad4fec3e2587c935085a781d37d2634c7">addr</a>, &amp;<a class="code" href="classzmq_1_1tcp__listener__t.html#a7b24104624a46adf84ba0d69a48c6def">addr_len</a>, addr_);
-        <span class="keywordflow">if</span> (rc != 0)
-            <span class="keywordflow">return</span> -1;
-
-        <span class="comment">//  Create a listening socket.</span>
-        <a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a> = socket (AF_UNIX, SOCK_STREAM, 0);
-        <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a> == -1)
-            <span class="keywordflow">return</span> -1;
-
-        <span class="comment">//  Set the non-blocking flag.</span>
-        <span class="keywordtype">int</span> flag = fcntl (<a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a>, F_GETFL, 0);
-        <span class="keywordflow">if</span> (flag == -1) 
-            flag = 0;
-        rc = fcntl (<a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a>, F_SETFL, flag | O_NONBLOCK);
-        <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc != -1);
-
-        <span class="comment">//  Bind the socket to the file path.</span>
-        rc = bind (<a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a>, (<span class="keyword">struct</span> sockaddr*) &amp;<a class="code" href="classzmq_1_1tcp__listener__t.html#ad4fec3e2587c935085a781d37d2634c7">addr</a>, <a class="code" href="classzmq_1_1tcp__listener__t.html#a7b24104624a46adf84ba0d69a48c6def">addr_len</a>);
-        <span class="keywordflow">if</span> (rc != 0) {
-            <span class="keywordtype">int</span> err = errno;
-            <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1tcp__listener__t.html#a786f013879772618d90bb3fc554dc3cd">close</a> () != 0)
-                <span class="keywordflow">return</span> -1;
-            errno = err;
-            <span class="keywordflow">return</span> -1;
-        }
-        <a class="code" href="classzmq_1_1tcp__listener__t.html#a779ca79d4ef1e64bf8bdf755b51b22be">has_file</a> = <span class="keyword">true</span>;
-
-        <span class="comment">//  Listen for incomming connections.</span>
-        rc = listen (<a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a>, backlog_);
-        <span class="keywordflow">if</span> (rc != 0) {
-            <span class="keywordtype">int</span> err = errno;
-            <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1tcp__listener__t.html#a786f013879772618d90bb3fc554dc3cd">close</a> () != 0)
-                <span class="keywordflow">return</span> -1;
-            errno = err;
-            <span class="keywordflow">return</span> -1;
-        }
-
-        <span class="keywordflow">return</span> 0;
-    }
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    <span class="keywordflow">else</span> {
-        errno = <a class="code" href="zmq_8h.html#ad581c46fdd4dee9419f60eaff40415e7">EPROTONOSUPPORT</a>;
-        <span class="keywordflow">return</span> -1;
-    }    
-}
-</pre></div>
-<p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png"/> Here is the call graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="classzmq_1_1tcp__listener__t_af6c5765483b158fa4535a41fda4a5012_cgraph.png" border="0" usemap="#classzmq_1_1tcp__listener__t_af6c5765483b158fa4535a41fda4a5012_cgraph" alt=""/></div>
-<map name="classzmq_1_1tcp__listener__t_af6c5765483b158fa4535a41fda4a5012_cgraph" id="classzmq_1_1tcp__listener__t_af6c5765483b158fa4535a41fda4a5012_cgraph">
-<area shape="rect" id="node3" href="namespacezmq.html#ac5b37ef8f53af06b226b0e9b571d355b" title="zmq::resolve_ip_interface" alt="" coords="267,5,437,35"/><area shape="rect" id="node7" href="namespacezmq.html#a0919175e52c870f26ffbe07b5b77d7e3" title="zmq::resolve_local_path" alt="" coords="271,59,433,88"/><area shape="rect" id="node5" href="ip_8cpp.html#a2805434ebe7947d417cc7f84cd4a693c" title="resolve_nic_name" alt="" coords="487,5,612,35"/></map>
-</div>
-</p>
+<p>References <a class="el" href="zmq_8h_source.html#l00081">EPROTONOSUPPORT</a>, and <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>.</p>
 
 </div>
 </div>
@@ -579,7 +361,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a> <a class="el" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">zmq::tcp_listener_t::s</a><code> [private]</code></td>
+          <td class="memname">fd_t <a class="el" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">zmq::tcp_listener_t::s</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -590,8 +372,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="tcp__listener_8hpp_source.html">tcp_listener.hpp</a></li>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="tcp__listener_8cpp_source.html">tcp_listener.cpp</a></li>
+<li>src/<a class="el" href="tcp__listener_8hpp_source.html">tcp_listener.hpp</a></li>
+<li>src/<a class="el" href="tcp__listener_8cpp_source.html">tcp_listener.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -599,7 +381,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -608,7 +390,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:19 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:19 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

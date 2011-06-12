@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -99,7 +98,7 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespacezmq.html">zmq</a>      </li>
+      <li class="navelem"><b>zmq</b>      </li>
       <li class="navelem"><a class="el" href="structzmq_1_1options__t.html">options_t</a>      </li>
     </ul>
   </div>
@@ -126,7 +125,7 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#afcea2aff5e12c5d5aa93eb6d099564f6">affinity</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#a114241e93812f02aabc7ee20f536e93e">backlog</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#ac14f64051a187fa69b07d4604fd55f2a">identity</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">blob_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#ac14f64051a187fa69b07d4604fd55f2a">identity</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#a4b9862e97726a033af7105c1bb74e99f">immediate_connect</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#a0dede560932dfc3dd1344888c774ab81">linger</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#ad86b1856fbd893e523566555f3b5543a">maxmsgsize</a></td></tr>
@@ -162,27 +161,7 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="options_8cpp_source.html#l00026">26</a> of file <a class="el" href="options_8cpp_source.html">options.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">                         :
-    <a class="code" href="structzmq_1_1options__t.html#a41282f385aa470a689903d31606197e9">sndhwm</a> (0),
-    <a class="code" href="structzmq_1_1options__t.html#ab64e67fc828bb2a84d4c05b1f582a9c8">rcvhwm</a> (0),
-    <a class="code" href="structzmq_1_1options__t.html#afcea2aff5e12c5d5aa93eb6d099564f6">affinity</a> (0),
-    <a class="code" href="structzmq_1_1options__t.html#ae145acb3d13f959cecbf7bb1e45b58ff">rate</a> (100),
-    <a class="code" href="structzmq_1_1options__t.html#a5029576975db404bb61b834d8957c6c3">recovery_ivl</a> (10000),
-    <a class="code" href="structzmq_1_1options__t.html#ab18003835690b2071905d2d90e9cfdcf">multicast_hops</a> (1),
-    <a class="code" href="structzmq_1_1options__t.html#aad8b70994ae7f7bb1772040f55abfb23">sndbuf</a> (0),
-    <a class="code" href="structzmq_1_1options__t.html#ac2656cd05eba309c410d50f04f44d5f2">rcvbuf</a> (0),
-    <a class="code" href="structzmq_1_1options__t.html#a09b8e840a00a79aa02c1e574f8ad817a">type</a> (-1),
-    <a class="code" href="structzmq_1_1options__t.html#a0dede560932dfc3dd1344888c774ab81">linger</a> (-1),
-    <a class="code" href="structzmq_1_1options__t.html#a4c4a66d8792d7dcd199357558b96353f">reconnect_ivl</a> (100),
-    <a class="code" href="structzmq_1_1options__t.html#aba9afbb4d938fa778b9fdf064ec3546e">reconnect_ivl_max</a> (0),
-    <a class="code" href="structzmq_1_1options__t.html#a114241e93812f02aabc7ee20f536e93e">backlog</a> (100),
-    <a class="code" href="structzmq_1_1options__t.html#ad86b1856fbd893e523566555f3b5543a">maxmsgsize</a> (-1),
-    <a class="code" href="structzmq_1_1options__t.html#adee54de16c503c8f5f2dc4d549225d50">requires_in</a> (<span class="keyword">false</span>),
-    <a class="code" href="structzmq_1_1options__t.html#a3c463ab812d4ffc9fd414ee80f9cc349">requires_out</a> (<span class="keyword">false</span>),
-    <a class="code" href="structzmq_1_1options__t.html#a4b9862e97726a033af7105c1bb74e99f">immediate_connect</a> (<span class="keyword">true</span>)
-{
-}
-</pre></div>
+
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
@@ -220,150 +199,7 @@ Public Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="options_8cpp_source.html#l00183">183</a> of file <a class="el" href="options_8cpp_source.html">options.cpp</a>.</p>
 
 <p>References <a class="el" href="zmq_8h_source.html#l00163">ZMQ_AFFINITY</a>, <a class="el" href="zmq_8h_source.html#l00177">ZMQ_BACKLOG</a>, <a class="el" href="zmq_8h_source.html#l00164">ZMQ_IDENTITY</a>, <a class="el" href="zmq_8h_source.html#l00175">ZMQ_LINGER</a>, <a class="el" href="zmq_8h_source.html#l00179">ZMQ_MAXMSGSIZE</a>, <a class="el" href="zmq_8h_source.html#l00182">ZMQ_MULTICAST_HOPS</a>, <a class="el" href="zmq_8h_source.html#l00167">ZMQ_RATE</a>, <a class="el" href="zmq_8h_source.html#l00170">ZMQ_RCVBUF</a>, <a class="el" href="zmq_8h_source.html#l00181">ZMQ_RCVHWM</a>, <a class="el" href="zmq_8h_source.html#l00176">ZMQ_RECONNECT_IVL</a>, <a class="el" href="zmq_8h_source.html#l00178">ZMQ_RECONNECT_IVL_MAX</a>, <a class="el" href="zmq_8h_source.html#l00168">ZMQ_RECOVERY_IVL</a>, <a class="el" href="zmq_8h_source.html#l00169">ZMQ_SNDBUF</a>, <a class="el" href="zmq_8h_source.html#l00180">ZMQ_SNDHWM</a>, and <a class="el" href="zmq_8h_source.html#l00174">ZMQ_TYPE</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">switch</span> (option_) {
 
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a7b5bb1c600aeb444afd8c2204e25f8c7">ZMQ_SNDHWM</a>:
-        <span class="keywordflow">if</span> (*optvallen_ &lt; <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        *((<span class="keywordtype">int</span>*) optval_) = <a class="code" href="structzmq_1_1options__t.html#a41282f385aa470a689903d31606197e9">sndhwm</a>;
-        *optvallen_ = <span class="keyword">sizeof</span> (int);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#aa0871c4cda701dadad1b3c0e22ca9677">ZMQ_RCVHWM</a>:
-        <span class="keywordflow">if</span> (*optvallen_ &lt; <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        *((<span class="keywordtype">int</span>*) optval_) = <a class="code" href="structzmq_1_1options__t.html#ab64e67fc828bb2a84d4c05b1f582a9c8">rcvhwm</a>;
-        *optvallen_ = <span class="keyword">sizeof</span> (int);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#acac0cba274a1e525c6898128aba6efd3">ZMQ_AFFINITY</a>:
-        <span class="keywordflow">if</span> (*optvallen_ &lt; <span class="keyword">sizeof</span> (uint64_t)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        *((uint64_t*) optval_) = <a class="code" href="structzmq_1_1options__t.html#afcea2aff5e12c5d5aa93eb6d099564f6">affinity</a>;
-        *optvallen_ = <span class="keyword">sizeof</span> (uint64_t);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a22f1befa4e2bda1f32efc5e165c0d44c">ZMQ_IDENTITY</a>:
-        <span class="keywordflow">if</span> (*optvallen_ &lt; <a class="code" href="structzmq_1_1options__t.html#ac14f64051a187fa69b07d4604fd55f2a">identity</a>.size ()) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        memcpy (optval_, <a class="code" href="structzmq_1_1options__t.html#ac14f64051a187fa69b07d4604fd55f2a">identity</a>.data (), <a class="code" href="structzmq_1_1options__t.html#ac14f64051a187fa69b07d4604fd55f2a">identity</a>.size ());
-        *optvallen_ = <a class="code" href="structzmq_1_1options__t.html#ac14f64051a187fa69b07d4604fd55f2a">identity</a>.size ();
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a17f08ea2b0b2c7c637c082c67f929988">ZMQ_RATE</a>:
-        <span class="keywordflow">if</span> (*optvallen_ &lt; <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        *((<span class="keywordtype">int</span>*) optval_) = <a class="code" href="structzmq_1_1options__t.html#ae145acb3d13f959cecbf7bb1e45b58ff">rate</a>;
-        *optvallen_ = <span class="keyword">sizeof</span> (int);
-        <span class="keywordflow">return</span> 0;
-        
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a9a0ce4d3c25f6e7b13a24abca084b547">ZMQ_RECOVERY_IVL</a>:
-        <span class="keywordflow">if</span> (*optvallen_ &lt; <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        *((<span class="keywordtype">int</span>*) optval_) = <a class="code" href="structzmq_1_1options__t.html#a5029576975db404bb61b834d8957c6c3">recovery_ivl</a>;
-        *optvallen_ = <span class="keyword">sizeof</span> (int);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a7f298a93275ab4697a69de2009993488">ZMQ_SNDBUF</a>:
-        <span class="keywordflow">if</span> (*optvallen_ &lt; <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        *((<span class="keywordtype">int</span>*) optval_) = <a class="code" href="structzmq_1_1options__t.html#aad8b70994ae7f7bb1772040f55abfb23">sndbuf</a>;
-        *optvallen_ = <span class="keyword">sizeof</span> (int);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a437edcff5d378e9562eab235400ecb43">ZMQ_RCVBUF</a>:
-        <span class="keywordflow">if</span> (*optvallen_ &lt; <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        *((<span class="keywordtype">int</span>*) optval_) = <a class="code" href="structzmq_1_1options__t.html#ac2656cd05eba309c410d50f04f44d5f2">rcvbuf</a>;
-        *optvallen_ = <span class="keyword">sizeof</span> (int);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#ae43ff9d067909855ebbbad19c3fe36c2">ZMQ_TYPE</a>:
-        <span class="keywordflow">if</span> (*optvallen_ &lt; <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        *((<span class="keywordtype">int</span>*) optval_) = <a class="code" href="structzmq_1_1options__t.html#a09b8e840a00a79aa02c1e574f8ad817a">type</a>;
-        *optvallen_ = <span class="keyword">sizeof</span> (int);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a4f19fe8f054ca728f6e73fcb0c3dd973">ZMQ_LINGER</a>:
-        <span class="keywordflow">if</span> (*optvallen_ &lt; <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        *((<span class="keywordtype">int</span>*) optval_) = <a class="code" href="structzmq_1_1options__t.html#a0dede560932dfc3dd1344888c774ab81">linger</a>;
-        *optvallen_ = <span class="keyword">sizeof</span> (int);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a96999d707609e36ef85415638fafa146">ZMQ_RECONNECT_IVL</a>:
-        <span class="keywordflow">if</span> (*optvallen_ &lt; <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        *((<span class="keywordtype">int</span>*) optval_) = <a class="code" href="structzmq_1_1options__t.html#a4c4a66d8792d7dcd199357558b96353f">reconnect_ivl</a>;
-        *optvallen_ = <span class="keyword">sizeof</span> (int);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a16e88e3edaa0d4df2fac1f5a2e215aa3">ZMQ_RECONNECT_IVL_MAX</a>:
-        <span class="keywordflow">if</span> (*optvallen_ &lt; <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        *((<span class="keywordtype">int</span>*) optval_) = <a class="code" href="structzmq_1_1options__t.html#aba9afbb4d938fa778b9fdf064ec3546e">reconnect_ivl_max</a>;
-        *optvallen_ = <span class="keyword">sizeof</span> (int);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#ad6373596f7bd6fa5d82b05964a9557b1">ZMQ_BACKLOG</a>:
-        <span class="keywordflow">if</span> (*optvallen_ &lt; <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        *((<span class="keywordtype">int</span>*) optval_) = <a class="code" href="structzmq_1_1options__t.html#a114241e93812f02aabc7ee20f536e93e">backlog</a>;
-        *optvallen_ = <span class="keyword">sizeof</span> (int);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a9d6801ea0fec60d230fd6aa06e08e5e4">ZMQ_MAXMSGSIZE</a>:
-        <span class="keywordflow">if</span> (*optvallen_ &lt; <span class="keyword">sizeof</span> (int64_t)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        *((int64_t*) optval_) = <a class="code" href="structzmq_1_1options__t.html#ad86b1856fbd893e523566555f3b5543a">maxmsgsize</a>;
-        *optvallen_ = <span class="keyword">sizeof</span> (int64_t);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a09fdb2650edf0d062b071f0138879ddb">ZMQ_MULTICAST_HOPS</a>:
-        <span class="keywordflow">if</span> (*optvallen_ &lt; <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        *((<span class="keywordtype">int</span>*) optval_) = <a class="code" href="structzmq_1_1options__t.html#ab18003835690b2071905d2d90e9cfdcf">multicast_hops</a>;
-        *optvallen_ = <span class="keyword">sizeof</span> (int);
-        <span class="keywordflow">return</span> 0;
-
-    }
-
-    errno = EINVAL;
-    <span class="keywordflow">return</span> -1;
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a31ce310554d40a281134800b81ce0803"></a><!-- doxytag: member="zmq::options_t::setsockopt" ref="a31ce310554d40a281134800b81ce0803" args="(int option_, const void *optval_, size_t optvallen_)" -->
@@ -400,140 +236,7 @@ Public Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="options_8cpp_source.html#l00047">47</a> of file <a class="el" href="options_8cpp_source.html">options.cpp</a>.</p>
 
 <p>References <a class="el" href="zmq_8h_source.html#l00163">ZMQ_AFFINITY</a>, <a class="el" href="zmq_8h_source.html#l00177">ZMQ_BACKLOG</a>, <a class="el" href="zmq_8h_source.html#l00164">ZMQ_IDENTITY</a>, <a class="el" href="zmq_8h_source.html#l00175">ZMQ_LINGER</a>, <a class="el" href="zmq_8h_source.html#l00179">ZMQ_MAXMSGSIZE</a>, <a class="el" href="zmq_8h_source.html#l00182">ZMQ_MULTICAST_HOPS</a>, <a class="el" href="zmq_8h_source.html#l00167">ZMQ_RATE</a>, <a class="el" href="zmq_8h_source.html#l00170">ZMQ_RCVBUF</a>, <a class="el" href="zmq_8h_source.html#l00181">ZMQ_RCVHWM</a>, <a class="el" href="zmq_8h_source.html#l00176">ZMQ_RECONNECT_IVL</a>, <a class="el" href="zmq_8h_source.html#l00178">ZMQ_RECONNECT_IVL_MAX</a>, <a class="el" href="zmq_8h_source.html#l00168">ZMQ_RECOVERY_IVL</a>, <a class="el" href="zmq_8h_source.html#l00169">ZMQ_SNDBUF</a>, and <a class="el" href="zmq_8h_source.html#l00180">ZMQ_SNDHWM</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">switch</span> (option_) {
 
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a7b5bb1c600aeb444afd8c2204e25f8c7">ZMQ_SNDHWM</a>:
-        <span class="keywordflow">if</span> (optvallen_ != <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>) || *((<span class="keywordtype">int</span>*) optval_) &lt; 0) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        <a class="code" href="structzmq_1_1options__t.html#a41282f385aa470a689903d31606197e9">sndhwm</a> = *((<span class="keywordtype">int</span>*) optval_);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#aa0871c4cda701dadad1b3c0e22ca9677">ZMQ_RCVHWM</a>:
-        <span class="keywordflow">if</span> (optvallen_ != <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>) || *((<span class="keywordtype">int</span>*) optval_) &lt; 0) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        <a class="code" href="structzmq_1_1options__t.html#ab64e67fc828bb2a84d4c05b1f582a9c8">rcvhwm</a> = *((<span class="keywordtype">int</span>*) optval_);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#acac0cba274a1e525c6898128aba6efd3">ZMQ_AFFINITY</a>:
-        <span class="keywordflow">if</span> (optvallen_ != <span class="keyword">sizeof</span> (uint64_t)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        <a class="code" href="structzmq_1_1options__t.html#afcea2aff5e12c5d5aa93eb6d099564f6">affinity</a> = *((uint64_t*) optval_);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a22f1befa4e2bda1f32efc5e165c0d44c">ZMQ_IDENTITY</a>:
-
-        <span class="comment">//  Empty identity is invalid as well as identity longer than</span>
-        <span class="comment">//  255 bytes. Identity starting with binary zero is invalid</span>
-        <span class="comment">//  as these are used for auto-generated identities.</span>
-        <span class="keywordflow">if</span> (optvallen_ &lt; 1 || optvallen_ &gt; 255 ||
-              *((<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) optval_) == 0) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        <a class="code" href="structzmq_1_1options__t.html#ac14f64051a187fa69b07d4604fd55f2a">identity</a>.assign ((<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) optval_, optvallen_);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a17f08ea2b0b2c7c637c082c67f929988">ZMQ_RATE</a>:
-        <span class="keywordflow">if</span> (optvallen_ != <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>) || *((<span class="keywordtype">int</span>*) optval_) &lt;= 0) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        <a class="code" href="structzmq_1_1options__t.html#ae145acb3d13f959cecbf7bb1e45b58ff">rate</a> = *((<span class="keywordtype">int</span>*) optval_);
-        <span class="keywordflow">return</span> 0;
-        
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a9a0ce4d3c25f6e7b13a24abca084b547">ZMQ_RECOVERY_IVL</a>:
-        <span class="keywordflow">if</span> (optvallen_ != <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>) || *((<span class="keywordtype">int</span>*) optval_) &lt; 0) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        <a class="code" href="structzmq_1_1options__t.html#a5029576975db404bb61b834d8957c6c3">recovery_ivl</a> = *((<span class="keywordtype">int</span>*) optval_);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a7f298a93275ab4697a69de2009993488">ZMQ_SNDBUF</a>:
-        <span class="keywordflow">if</span> (optvallen_ != <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>) || *((<span class="keywordtype">int</span>*) optval_) &lt; 0) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        <a class="code" href="structzmq_1_1options__t.html#aad8b70994ae7f7bb1772040f55abfb23">sndbuf</a> = *((<span class="keywordtype">int</span>*) optval_);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a437edcff5d378e9562eab235400ecb43">ZMQ_RCVBUF</a>:
-        <span class="keywordflow">if</span> (optvallen_ != <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>) || *((<span class="keywordtype">int</span>*) optval_) &lt; 0) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        <a class="code" href="structzmq_1_1options__t.html#ac2656cd05eba309c410d50f04f44d5f2">rcvbuf</a> = *((<span class="keywordtype">int</span>*) optval_);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a4f19fe8f054ca728f6e73fcb0c3dd973">ZMQ_LINGER</a>:
-        <span class="keywordflow">if</span> (optvallen_ != <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        <a class="code" href="structzmq_1_1options__t.html#a0dede560932dfc3dd1344888c774ab81">linger</a> = *((<span class="keywordtype">int</span>*) optval_);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a96999d707609e36ef85415638fafa146">ZMQ_RECONNECT_IVL</a>:
-        <span class="keywordflow">if</span> (optvallen_ != <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        <span class="keywordflow">if</span> (*((<span class="keywordtype">int</span>*) optval_) &lt; 0) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        <a class="code" href="structzmq_1_1options__t.html#a4c4a66d8792d7dcd199357558b96353f">reconnect_ivl</a> = *((<span class="keywordtype">int</span>*) optval_);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a16e88e3edaa0d4df2fac1f5a2e215aa3">ZMQ_RECONNECT_IVL_MAX</a>:
-        <span class="keywordflow">if</span> (optvallen_ != <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        <span class="keywordflow">if</span> (*((<span class="keywordtype">int</span>*) optval_) &lt; 0) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        <a class="code" href="structzmq_1_1options__t.html#aba9afbb4d938fa778b9fdf064ec3546e">reconnect_ivl_max</a> = *((<span class="keywordtype">int</span>*) optval_);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#ad6373596f7bd6fa5d82b05964a9557b1">ZMQ_BACKLOG</a>:
-        <span class="keywordflow">if</span> (optvallen_ != <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        <a class="code" href="structzmq_1_1options__t.html#a114241e93812f02aabc7ee20f536e93e">backlog</a> = *((<span class="keywordtype">int</span>*) optval_);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a9d6801ea0fec60d230fd6aa06e08e5e4">ZMQ_MAXMSGSIZE</a>:
-        <span class="keywordflow">if</span> (optvallen_ != <span class="keyword">sizeof</span> (int64_t)) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        <a class="code" href="structzmq_1_1options__t.html#ad86b1856fbd893e523566555f3b5543a">maxmsgsize</a> = *((int64_t*) optval_);
-        <span class="keywordflow">return</span> 0;
-
-    <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a09fdb2650edf0d062b071f0138879ddb">ZMQ_MULTICAST_HOPS</a>:
-        <span class="keywordflow">if</span> (optvallen_ != <span class="keyword">sizeof</span> (<span class="keywordtype">int</span>) || *((<span class="keywordtype">int</span>*) optval_) &lt;= 0) {
-            errno = EINVAL;
-            <span class="keywordflow">return</span> -1;
-        }
-        <a class="code" href="structzmq_1_1options__t.html#ab18003835690b2071905d2d90e9cfdcf">multicast_hops</a> = *((<span class="keywordtype">int</span>*) optval_);
-        <span class="keywordflow">return</span> 0;
-
-    }
-
-    errno = EINVAL;
-    <span class="keywordflow">return</span> -1;
-}
-</pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
@@ -572,7 +275,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> <a class="el" href="structzmq_1_1options__t.html#ac14f64051a187fa69b07d4604fd55f2a">zmq::options_t::identity</a></td>
+          <td class="memname">blob_t <a class="el" href="structzmq_1_1options__t.html#ac14f64051a187fa69b07d4604fd55f2a">zmq::options_t::identity</a></td>
         </tr>
       </table>
 </div>
@@ -826,8 +529,8 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="options_8hpp_source.html">options.hpp</a></li>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="options_8cpp_source.html">options.cpp</a></li>
+<li>src/<a class="el" href="options_8hpp_source.html">options.hpp</a></li>
+<li>src/<a class="el" href="options_8cpp_source.html">options.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -835,7 +538,7 @@ Public Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -844,7 +547,7 @@ Public Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:13 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:17 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -99,7 +98,7 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespacezmq.html">zmq</a>      </li>
+      <li class="navelem"><b>zmq</b>      </li>
       <li class="navelem"><a class="el" href="classzmq_1_1atomic__counter__t.html">atomic_counter_t</a>      </li>
     </ul>
   </div>
@@ -184,10 +183,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="atomic__counter_8hpp_source.html#l00060">60</a> of file <a class="el" href="atomic__counter_8hpp_source.html">atomic_counter.hpp</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-        }
 
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="adc2d6c035262461a27fe16bdbc041c47"></a><!-- doxytag: member="zmq::atomic_counter_t::~atomic_counter_t" ref="adc2d6c035262461a27fe16bdbc041c47" args="()" -->
@@ -205,10 +201,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="atomic__counter_8hpp_source.html#l00065">65</a> of file <a class="el" href="atomic__counter_8hpp_source.html">atomic_counter.hpp</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-        }
 
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="abdf722a081ad58e495d15dce1ed9a3af"></a><!-- doxytag: member="zmq::atomic_counter_t::atomic_counter_t" ref="abdf722a081ad58e495d15dce1ed9a3af" args="(const atomic_counter_t &amp;)" -->
@@ -247,32 +240,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="atomic__counter_8hpp_source.html#l00076">76</a> of file <a class="el" href="atomic__counter_8hpp_source.html">atomic_counter.hpp</a>.</p>
 
 <p>References <a class="el" href="mutex_8hpp_source.html#l00094">zmq::mutex_t::lock()</a>, <a class="el" href="atomic__counter_8hpp_source.html#l00141">sync</a>, <a class="el" href="mutex_8hpp_source.html#l00101">zmq::mutex_t::unlock()</a>, and <a class="el" href="atomic__counter_8hpp_source.html#l00139">value</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <a class="code" href="classzmq_1_1atomic__counter__t.html#a8edd1338366fd258ccfd8d4290d76c91">integer_t</a> old_value;
 
-<span class="preprocessor">#if defined ZMQ_ATOMIC_COUNTER_WINDOWS</span>
-<span class="preprocessor"></span>            old_value = InterlockedExchangeAdd ((LONG*) &amp;<a class="code" href="classzmq_1_1atomic__counter__t.html#ad922ac1904ac4923c205d6e83bc57ee4">value</a>, increment_);
-<span class="preprocessor">#elif defined ZMQ_ATOMIC_COUNTER_ATOMIC_H</span>
-<span class="preprocessor"></span>            <a class="code" href="classzmq_1_1atomic__counter__t.html#a8edd1338366fd258ccfd8d4290d76c91">integer_t</a> new_value = atomic_add_32_nv (&amp;<a class="code" href="classzmq_1_1atomic__counter__t.html#ad922ac1904ac4923c205d6e83bc57ee4">value</a>, increment_);
-            old_value = new_value - increment_;
-<span class="preprocessor">#elif defined ZMQ_ATOMIC_COUNTER_X86</span>
-<span class="preprocessor"></span>            __asm__ <span class="keyword">volatile</span> (
-                <span class="stringliteral">&quot;lock; xadd %0, %1 \n\t&quot;</span>
-                : <span class="stringliteral">&quot;=r&quot;</span> (old_value), <span class="stringliteral">&quot;=m&quot;</span> (<a class="code" href="classzmq_1_1atomic__counter__t.html#ad922ac1904ac4923c205d6e83bc57ee4">value</a>)
-                : <span class="stringliteral">&quot;0&quot;</span> (increment_), <span class="stringliteral">&quot;m&quot;</span> (<a class="code" href="classzmq_1_1atomic__counter__t.html#ad922ac1904ac4923c205d6e83bc57ee4">value</a>)
-                : <span class="stringliteral">&quot;cc&quot;</span>, <span class="stringliteral">&quot;memory&quot;</span>);
-<span class="preprocessor">#elif defined ZMQ_ATOMIC_COUNTER_MUTEX</span>
-<span class="preprocessor"></span>            <a class="code" href="classzmq_1_1atomic__counter__t.html#ad726fe121d72d691ce3ccae6e640002a">sync</a>.lock ();
-            old_value = <a class="code" href="classzmq_1_1atomic__counter__t.html#ad922ac1904ac4923c205d6e83bc57ee4">value</a>;
-            <a class="code" href="classzmq_1_1atomic__counter__t.html#ad922ac1904ac4923c205d6e83bc57ee4">value</a> += increment_;
-            <a class="code" href="classzmq_1_1atomic__counter__t.html#ad726fe121d72d691ce3ccae6e640002a">sync</a>.unlock ();
-<span class="preprocessor">#else</span>
-<span class="preprocessor"></span><span class="preprocessor">#error atomic_counter is not implemented for this platform</span>
-<span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>            <span class="keywordflow">return</span> old_value;
-        }
-
-</pre></div>
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -303,11 +271,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="atomic__counter_8hpp_source.html#l00132">132</a> of file <a class="el" href="atomic__counter_8hpp_source.html">atomic_counter.hpp</a>.</p>
 
 <p>References <a class="el" href="atomic__counter_8hpp_source.html#l00139">value</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1atomic__counter__t.html#ad922ac1904ac4923c205d6e83bc57ee4">value</a>;
-        }
 
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="abb15ad2531eafd751f096e92a474ede7"></a><!-- doxytag: member="zmq::atomic_counter_t::operator=" ref="abb15ad2531eafd751f096e92a474ede7" args="(const atomic_counter_t &amp;)" -->
@@ -345,11 +309,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="atomic__counter_8hpp_source.html#l00070">70</a> of file <a class="el" href="atomic__counter_8hpp_source.html">atomic_counter.hpp</a>.</p>
 
 <p>References <a class="el" href="atomic__counter_8hpp_source.html#l00139">value</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <a class="code" href="classzmq_1_1atomic__counter__t.html#ad922ac1904ac4923c205d6e83bc57ee4">value</a> = value_;
-        }
 
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a0d29a10e45fc702fce16907cab738acb"></a><!-- doxytag: member="zmq::atomic_counter_t::sub" ref="a0d29a10e45fc702fce16907cab738acb" args="(integer_t decrement)" -->
@@ -370,35 +330,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="atomic__counter_8hpp_source.html#l00103">103</a> of file <a class="el" href="atomic__counter_8hpp_source.html">atomic_counter.hpp</a>.</p>
 
 <p>References <a class="el" href="mutex_8hpp_source.html#l00094">zmq::mutex_t::lock()</a>, <a class="el" href="atomic__counter_8hpp_source.html#l00141">sync</a>, <a class="el" href="mutex_8hpp_source.html#l00101">zmq::mutex_t::unlock()</a>, and <a class="el" href="atomic__counter_8hpp_source.html#l00139">value</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-<span class="preprocessor">#if defined ZMQ_ATOMIC_COUNTER_WINDOWS</span>
-<span class="preprocessor"></span>            LONG delta = - ((LONG) decrement);
-            <a class="code" href="classzmq_1_1atomic__counter__t.html#a8edd1338366fd258ccfd8d4290d76c91">integer_t</a> old = InterlockedExchangeAdd ((LONG*) &amp;<a class="code" href="classzmq_1_1atomic__counter__t.html#ad922ac1904ac4923c205d6e83bc57ee4">value</a>, delta);
-            <span class="keywordflow">return</span> old - decrement != 0;
-<span class="preprocessor">#elif defined ZMQ_ATOMIC_COUNTER_ATOMIC_H</span>
-<span class="preprocessor"></span>            int32_t delta = - ((int32_t) decrement);
-            <a class="code" href="classzmq_1_1atomic__counter__t.html#a8edd1338366fd258ccfd8d4290d76c91">integer_t</a> nv = atomic_add_32_nv (&amp;<a class="code" href="classzmq_1_1atomic__counter__t.html#ad922ac1904ac4923c205d6e83bc57ee4">value</a>, delta);
-            <span class="keywordflow">return</span> nv != 0;
-<span class="preprocessor">#elif defined ZMQ_ATOMIC_COUNTER_X86</span>
-<span class="preprocessor"></span>            <a class="code" href="classzmq_1_1atomic__counter__t.html#a8edd1338366fd258ccfd8d4290d76c91">integer_t</a> oldval = -decrement;
-            <span class="keyword">volatile</span> <a class="code" href="classzmq_1_1atomic__counter__t.html#a8edd1338366fd258ccfd8d4290d76c91">integer_t</a> *val = &amp;<a class="code" href="classzmq_1_1atomic__counter__t.html#ad922ac1904ac4923c205d6e83bc57ee4">value</a>;
-            __asm__ <span class="keyword">volatile</span> (<span class="stringliteral">&quot;lock; xaddl %0,%1&quot;</span>
-                : <span class="stringliteral">&quot;=r&quot;</span> (oldval), <span class="stringliteral">&quot;=m&quot;</span> (*val)
-                : <span class="stringliteral">&quot;0&quot;</span> (oldval), <span class="stringliteral">&quot;m&quot;</span> (*val)
-                : <span class="stringliteral">&quot;cc&quot;</span>, <span class="stringliteral">&quot;memory&quot;</span>);
-            <span class="keywordflow">return</span> oldval != decrement;
-<span class="preprocessor">#elif defined ZMQ_ATOMIC_COUNTER_MUTEX</span>
-<span class="preprocessor"></span>            <a class="code" href="classzmq_1_1atomic__counter__t.html#ad726fe121d72d691ce3ccae6e640002a">sync</a>.lock ();
-            <a class="code" href="classzmq_1_1atomic__counter__t.html#ad922ac1904ac4923c205d6e83bc57ee4">value</a> -= decrement;
-            <span class="keywordtype">bool</span> result = <a class="code" href="classzmq_1_1atomic__counter__t.html#ad922ac1904ac4923c205d6e83bc57ee4">value</a> ? <span class="keyword">true</span> : <span class="keyword">false</span>;
-            <a class="code" href="classzmq_1_1atomic__counter__t.html#ad726fe121d72d691ce3ccae6e640002a">sync</a>.unlock ();
-            <span class="keywordflow">return</span> result;
-<span class="preprocessor">#else</span>
-<span class="preprocessor"></span><span class="preprocessor">#error atomic_counter is not implemented for this platform</span>
-<span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>        }
 
-</pre></div>
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -448,7 +380,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="atomic__counter_8hpp_source.html">atomic_counter.hpp</a></li>
+<li>src/<a class="el" href="atomic__counter_8hpp_source.html">atomic_counter.hpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -456,7 +388,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -465,7 +397,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:11 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:16 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

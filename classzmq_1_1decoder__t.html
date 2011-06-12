@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -99,7 +98,7 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespacezmq.html">zmq</a>      </li>
+      <li class="navelem"><b>zmq</b>      </li>
       <li class="navelem"><a class="el" href="classzmq_1_1decoder__t.html">decoder_t</a>      </li>
     </ul>
   </div>
@@ -215,18 +214,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="decoder_8cpp_source.html#l00029">29</a> of file <a class="el" href="decoder_8cpp_source.html">decoder.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="decoder_8hpp_source.html#l00198">in_progress</a>, <a class="el" href="msg_8cpp_source.html#l00037">zmq::msg_t::init()</a>, <a class="el" href="decoder_8hpp_source.html#l00150">zmq::decoder_base_t&lt; decoder_t &gt;::next_step()</a>, <a class="el" href="decoder_8cpp_source.html#l00052">one_byte_size_ready()</a>, and <a class="el" href="decoder_8hpp_source.html#l00197">tmpbuf</a>.</p>
-<div class="fragment"><pre class="fragment">                                                             :
-    decoder_base_t &lt;decoder_t&gt; (bufsize_),
-    <a class="code" href="classzmq_1_1decoder__t.html#a180beddea800e0a1697f3d44303ac35b">destination</a> (NULL),
-    <a class="code" href="classzmq_1_1decoder__t.html#a5e98911bb1f4cd24a73197c8017b88a7">maxmsgsize</a> (maxmsgsize_)
-{
-    <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1decoder__t.html#ace76017276c49d4c6ff190e2eccc0b93">in_progress</a>.init ();
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
 
-    <span class="comment">//  At the beginning, read one byte and go to one_byte_size_ready state.</span>
-    <a class="code" href="classzmq_1_1decoder__base__t.html#a27a75d64867e2b7d19bda567258aa1b6">next_step</a> (<a class="code" href="classzmq_1_1decoder__t.html#ae3d86a1139f0a17edb9f44b33925ffda">tmpbuf</a>, 1, &amp;<a class="code" href="classzmq_1_1decoder__t.html#ab949da14c858a5bbc4ba8728abb2c481">decoder_t::one_byte_size_ready</a>);
-}
-</pre></div>
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -234,7 +222,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1decoder__t_a8d1cb1d15ab637eaf634cc18389831c3_cgraph.png" border="0" usemap="#classzmq_1_1decoder__t_a8d1cb1d15ab637eaf634cc18389831c3_cgraph" alt=""/></div>
 <map name="classzmq_1_1decoder__t_a8d1cb1d15ab637eaf634cc18389831c3_cgraph" id="classzmq_1_1decoder__t_a8d1cb1d15ab637eaf634cc18389831c3_cgraph">
-<area shape="rect" id="node3" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e" title="zmq::msg_t::init" alt="" coords="321,5,436,35"/><area shape="rect" id="node5" href="classzmq_1_1decoder__base__t.html#a27a75d64867e2b7d19bda567258aa1b6" title="zmq::decoder_base_t\&lt; decoder_t \&gt;::next_step" alt="" coords="232,59,525,88"/><area shape="rect" id="node7" href="classzmq_1_1decoder__t.html#ab949da14c858a5bbc4ba8728abb2c481" title="zmq::decoder_t::one_byte_size_ready" alt="" coords="257,112,500,141"/><area shape="rect" id="node9" href="classzmq_1_1decoder__t.html#a69280603cde763e3e4e3b66feea3f338" title="zmq::decoder_t::eight_byte_size_ready" alt="" coords="573,112,824,141"/><area shape="rect" id="node11" href="classzmq_1_1decoder__t.html#a0859949bf711edf2b6c9cd1e353a8cc1" title="zmq::decoder_t::flags_ready" alt="" coords="872,59,1059,88"/><area shape="rect" id="node16" href="namespacezmq.html#a462f1cc054607017556d81aeee1363d2" title="zmq::get_uint64" alt="" coords="908,112,1023,141"/><area shape="rect" id="node13" href="classzmq_1_1decoder__t.html#a06cc01035ccb5041a982b8c91add5754" title="zmq::decoder_t::message_ready" alt="" coords="1108,112,1319,141"/></map>
+<area shape="rect" id="node3" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e" title="zmq::msg_t::init" alt="" coords="321,5,436,35"/><area shape="rect" id="node5" href="classzmq_1_1decoder__base__t.html#a27a75d64867e2b7d19bda567258aa1b6" title="zmq::decoder_base_t\&lt; decoder_t \&gt;::next_step" alt="" coords="232,59,525,88"/><area shape="rect" id="node7" href="classzmq_1_1decoder__t.html#ab949da14c858a5bbc4ba8728abb2c481" title="zmq::decoder_t::one_byte_size_ready" alt="" coords="257,112,500,141"/><area shape="rect" id="node9" href="classzmq_1_1decoder__t.html#a69280603cde763e3e4e3b66feea3f338" title="zmq::decoder_t::eight_byte_size_ready" alt="" coords="573,60,824,89"/><area shape="rect" id="node11" href="classzmq_1_1decoder__t.html#a0859949bf711edf2b6c9cd1e353a8cc1" title="zmq::decoder_t::flags_ready" alt="" coords="872,111,1059,140"/><area shape="rect" id="node13" href="classzmq_1_1decoder__t.html#a06cc01035ccb5041a982b8c91add5754" title="zmq::decoder_t::message_ready" alt="" coords="1108,137,1319,167"/></map>
 </div>
 </p>
 
@@ -257,11 +245,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="decoder_8cpp_source.html#l00041">41</a> of file <a class="el" href="decoder_8cpp_source.html">decoder.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1decoder__t.html#ace76017276c49d4c6ff190e2eccc0b93">in_progress</a>.close ();
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a1bdf2204d5f85e5bb4e56b74f46a40a7"></a><!-- doxytag: member="zmq::decoder_t::decoder_t" ref="a1bdf2204d5f85e5bb4e56b74f46a40a7" args="(const decoder_t &amp;)" -->
@@ -299,10 +283,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="decoder_8hpp_source.html#l00160">160</a> of file <a class="el" href="decoder_8hpp_source.html">decoder.hpp</a>.</p>
 
 <p>References <a class="el" href="decoder_8hpp_source.html#l00169">zmq::decoder_base_t&lt; T &gt;::next</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <a class="code" href="classzmq_1_1decoder__base__t.html#a1425a28333c2cd4a3b9a9f27398f0bff">next</a> = NULL;
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a69280603cde763e3e4e3b66feea3f338"></a><!-- doxytag: member="zmq::decoder_t::eight_byte_size_ready" ref="a69280603cde763e3e4e3b66feea3f338" args="()" -->
@@ -321,42 +302,10 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="decoder_8cpp_source.html#l00090">90</a> of file <a class="el" href="decoder_8cpp_source.html">decoder.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="decoder_8cpp_source.html#l00124">flags_ready()</a>, and <a class="el" href="wire_8hpp_source.html#l00084">zmq::get_uint64()</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, and <a class="el" href="decoder_8cpp_source.html#l00124">flags_ready()</a>.</p>
 
 <p>Referenced by <a class="el" href="decoder_8cpp_source.html#l00052">one_byte_size_ready()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  8-byte size is read. Allocate the buffer for message body and</span>
-    <span class="comment">//  read the message data into it.</span>
-    <span class="keywordtype">size_t</span> size = (size_t) <a class="code" href="namespacezmq.html#a462f1cc054607017556d81aeee1363d2">get_uint64</a> (<a class="code" href="classzmq_1_1decoder__t.html#ae3d86a1139f0a17edb9f44b33925ffda">tmpbuf</a>);
 
-    <span class="comment">//  There has to be at least one byte (the flags) in the message).</span>
-    <span class="keywordflow">if</span> (!size) {
-        <a class="code" href="classzmq_1_1decoder__base__t.html#a7cf8a12f24cfe1d96833785a7e0b122d">decoding_error</a> ();
-        <span class="keywordflow">return</span> <span class="keyword">false</span>;
-    }
-
-    <span class="comment">//  in_progress is initialised at this point so in theory we should</span>
-    <span class="comment">//  close it before calling zmq_msg_init_size, however, it&#39;s a 0-byte</span>
-    <span class="comment">//  message and thus we can treat it as uninitialised...</span>
-    <span class="keywordtype">int</span> rc;
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1decoder__t.html#a5e98911bb1f4cd24a73197c8017b88a7">maxmsgsize</a> &gt;= 0 &amp;&amp; (int64_t) (size - 1) &gt; <a class="code" href="classzmq_1_1decoder__t.html#a5e98911bb1f4cd24a73197c8017b88a7">maxmsgsize</a>) {
-        rc = -1;
-        errno = ENOMEM;
-    }
-    <span class="keywordflow">else</span>
-        rc = <a class="code" href="classzmq_1_1decoder__t.html#ace76017276c49d4c6ff190e2eccc0b93">in_progress</a>.init_size (size - 1);
-    <span class="keywordflow">if</span> (rc != 0 &amp;&amp; errno == ENOMEM) {
-        rc = <a class="code" href="classzmq_1_1decoder__t.html#ace76017276c49d4c6ff190e2eccc0b93">in_progress</a>.init ();
-        <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-        <a class="code" href="classzmq_1_1decoder__base__t.html#a7cf8a12f24cfe1d96833785a7e0b122d">decoding_error</a> ();
-        <span class="keywordflow">return</span> <span class="keyword">false</span>;
-    }
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-
-    <a class="code" href="classzmq_1_1decoder__base__t.html#a27a75d64867e2b7d19bda567258aa1b6">next_step</a> (<a class="code" href="classzmq_1_1decoder__t.html#ae3d86a1139f0a17edb9f44b33925ffda">tmpbuf</a>, 1, &amp;<a class="code" href="classzmq_1_1decoder__t.html#a0859949bf711edf2b6c9cd1e353a8cc1">decoder_t::flags_ready</a>);
-    <span class="keywordflow">return</span> <span class="keyword">true</span>;
-}
-</pre></div>
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -364,7 +313,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1decoder__t_a69280603cde763e3e4e3b66feea3f338_cgraph.png" border="0" usemap="#classzmq_1_1decoder__t_a69280603cde763e3e4e3b66feea3f338_cgraph" alt=""/></div>
 <map name="classzmq_1_1decoder__t_a69280603cde763e3e4e3b66feea3f338_cgraph" id="classzmq_1_1decoder__t_a69280603cde763e3e4e3b66feea3f338_cgraph">
-<area shape="rect" id="node3" href="classzmq_1_1decoder__t.html#a0859949bf711edf2b6c9cd1e353a8cc1" title="zmq::decoder_t::flags_ready" alt="" coords="304,5,491,35"/><area shape="rect" id="node11" href="namespacezmq.html#a462f1cc054607017556d81aeee1363d2" title="zmq::get_uint64" alt="" coords="340,59,455,88"/><area shape="rect" id="node5" href="classzmq_1_1decoder__t.html#a06cc01035ccb5041a982b8c91add5754" title="zmq::decoder_t::message_ready" alt="" coords="540,5,751,35"/><area shape="rect" id="node7" href="classzmq_1_1decoder__t.html#ab949da14c858a5bbc4ba8728abb2c481" title="zmq::decoder_t::one_byte_size_ready" alt="" coords="800,57,1043,87"/></map>
+<area shape="rect" id="node3" href="classzmq_1_1decoder__t.html#a0859949bf711edf2b6c9cd1e353a8cc1" title="zmq::decoder_t::flags_ready" alt="" coords="304,56,491,85"/><area shape="rect" id="node5" href="classzmq_1_1decoder__t.html#a06cc01035ccb5041a982b8c91add5754" title="zmq::decoder_t::message_ready" alt="" coords="540,5,751,35"/><area shape="rect" id="node7" href="classzmq_1_1decoder__t.html#ab949da14c858a5bbc4ba8728abb2c481" title="zmq::decoder_t::one_byte_size_ready" alt="" coords="800,57,1043,87"/></map>
 </div>
 </p>
 
@@ -400,16 +349,7 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="decoder_8cpp_source.html#l00135">message_ready()</a>.</p>
 
 <p>Referenced by <a class="el" href="decoder_8cpp_source.html#l00090">eight_byte_size_ready()</a>, and <a class="el" href="decoder_8cpp_source.html#l00052">one_byte_size_ready()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  Store the flags from the wire into the message structure.</span>
-    <a class="code" href="classzmq_1_1decoder__t.html#ace76017276c49d4c6ff190e2eccc0b93">in_progress</a>.set_flags (<a class="code" href="classzmq_1_1decoder__t.html#ae3d86a1139f0a17edb9f44b33925ffda">tmpbuf</a> [0]);
 
-    <a class="code" href="classzmq_1_1decoder__base__t.html#a27a75d64867e2b7d19bda567258aa1b6">next_step</a> (<a class="code" href="classzmq_1_1decoder__t.html#ace76017276c49d4c6ff190e2eccc0b93">in_progress</a>.data (), <a class="code" href="classzmq_1_1decoder__t.html#ace76017276c49d4c6ff190e2eccc0b93">in_progress</a>.size (),
-        &amp;<a class="code" href="classzmq_1_1decoder__t.html#a06cc01035ccb5041a982b8c91add5754">decoder_t::message_ready</a>);
-    
-    <span class="keywordflow">return</span> <span class="keyword">true</span>;
-}
-</pre></div>
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -417,7 +357,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1decoder__t_a0859949bf711edf2b6c9cd1e353a8cc1_cgraph.png" border="0" usemap="#classzmq_1_1decoder__t_a0859949bf711edf2b6c9cd1e353a8cc1_cgraph" alt=""/></div>
 <map name="classzmq_1_1decoder__t_a0859949bf711edf2b6c9cd1e353a8cc1_cgraph" id="classzmq_1_1decoder__t_a0859949bf711edf2b6c9cd1e353a8cc1_cgraph">
-<area shape="rect" id="node3" href="classzmq_1_1decoder__t.html#a06cc01035ccb5041a982b8c91add5754" title="zmq::decoder_t::message_ready" alt="" coords="241,5,452,35"/><area shape="rect" id="node5" href="classzmq_1_1decoder__t.html#ab949da14c858a5bbc4ba8728abb2c481" title="zmq::decoder_t::one_byte_size_ready" alt="" coords="501,56,744,85"/><area shape="rect" id="node7" href="classzmq_1_1decoder__t.html#a69280603cde763e3e4e3b66feea3f338" title="zmq::decoder_t::eight_byte_size_ready" alt="" coords="792,83,1043,112"/><area shape="rect" id="node10" href="namespacezmq.html#a462f1cc054607017556d81aeee1363d2" title="zmq::get_uint64" alt="" coords="1091,83,1205,112"/></map>
+<area shape="rect" id="node3" href="classzmq_1_1decoder__t.html#a06cc01035ccb5041a982b8c91add5754" title="zmq::decoder_t::message_ready" alt="" coords="241,5,452,35"/><area shape="rect" id="node5" href="classzmq_1_1decoder__t.html#ab949da14c858a5bbc4ba8728abb2c481" title="zmq::decoder_t::one_byte_size_ready" alt="" coords="501,56,744,85"/><area shape="rect" id="node7" href="classzmq_1_1decoder__t.html#a69280603cde763e3e4e3b66feea3f338" title="zmq::decoder_t::eight_byte_size_ready" alt="" coords="792,83,1043,112"/></map>
 </div>
 </p>
 
@@ -462,25 +402,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="decoder_8hpp_source.html#l00069">69</a> of file <a class="el" href="decoder_8hpp_source.html">decoder.hpp</a>.</p>
 
 <p>References <a class="el" href="decoder_8hpp_source.html#l00172">zmq::decoder_base_t&lt; T &gt;::buf</a>, <a class="el" href="decoder_8hpp_source.html#l00171">zmq::decoder_base_t&lt; T &gt;::bufsize</a>, <a class="el" href="decoder_8hpp_source.html#l00167">zmq::decoder_base_t&lt; T &gt;::read_pos</a>, and <a class="el" href="decoder_8hpp_source.html#l00168">zmq::decoder_base_t&lt; T &gt;::to_read</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="comment">//  If we are expected to read large message, we&#39;ll opt for zero-</span>
-            <span class="comment">//  copy, i.e. we&#39;ll ask caller to fill the data directly to the</span>
-            <span class="comment">//  message. Note that subsequent read(s) are non-blocking, thus</span>
-            <span class="comment">//  each single read reads at most SO_RCVBUF bytes at once not</span>
-            <span class="comment">//  depending on how large is the chunk returned from here.</span>
-            <span class="comment">//  As a consequence, large messages being received won&#39;t block</span>
-            <span class="comment">//  other engines running in the same I/O thread for excessive</span>
-            <span class="comment">//  amounts of time.</span>
-            <span class="keywordflow">if</span> (to_read &gt;= bufsize) {
-                *data_ = <a class="code" href="classzmq_1_1decoder__base__t.html#aa96b939c1f0d25012c95112e7c9d6163">read_pos</a>;
-                *size_ = <a class="code" href="classzmq_1_1decoder__base__t.html#aa9f26fe6343935e957edfdac7f9f5e6c">to_read</a>;
-                <span class="keywordflow">return</span>;
-            }
 
-            *data_ = <a class="code" href="classzmq_1_1decoder__base__t.html#a87d8722162478acd4679aaf552b6e70b">buf</a>;
-            *size_ = <a class="code" href="classzmq_1_1decoder__base__t.html#ab01aa9f0f3ef7008faf86254567bd6f4">bufsize</a>;
-        }
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a06cc01035ccb5041a982b8c91add5754"></a><!-- doxytag: member="zmq::decoder_t::message_ready" ref="a06cc01035ccb5041a982b8c91add5754" args="()" -->
@@ -502,16 +424,7 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="decoder_8cpp_source.html#l00052">one_byte_size_ready()</a>.</p>
 
 <p>Referenced by <a class="el" href="decoder_8cpp_source.html#l00124">flags_ready()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  Message is completely read. Push it further and start reading</span>
-    <span class="comment">//  new message. (in_progress is a 0-byte message after this point.)</span>
-    <span class="keywordflow">if</span> (!<a class="code" href="classzmq_1_1decoder__t.html#a180beddea800e0a1697f3d44303ac35b">destination</a> || !<a class="code" href="classzmq_1_1decoder__t.html#a180beddea800e0a1697f3d44303ac35b">destination</a>-&gt;write (&amp;<a class="code" href="classzmq_1_1decoder__t.html#ace76017276c49d4c6ff190e2eccc0b93">in_progress</a>))
-        <span class="keywordflow">return</span> <span class="keyword">false</span>;
 
-    <a class="code" href="classzmq_1_1decoder__base__t.html#a27a75d64867e2b7d19bda567258aa1b6">next_step</a> (<a class="code" href="classzmq_1_1decoder__t.html#ae3d86a1139f0a17edb9f44b33925ffda">tmpbuf</a>, 1, &amp;<a class="code" href="classzmq_1_1decoder__t.html#ab949da14c858a5bbc4ba8728abb2c481">decoder_t::one_byte_size_ready</a>);
-    <span class="keywordflow">return</span> <span class="keyword">true</span>;
-}
-</pre></div>
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
@@ -519,7 +432,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1decoder__t_a06cc01035ccb5041a982b8c91add5754_cgraph.png" border="0" usemap="#classzmq_1_1decoder__t_a06cc01035ccb5041a982b8c91add5754_cgraph" alt=""/></div>
 <map name="classzmq_1_1decoder__t_a06cc01035ccb5041a982b8c91add5754_cgraph" id="classzmq_1_1decoder__t_a06cc01035ccb5041a982b8c91add5754_cgraph">
-<area shape="rect" id="node3" href="classzmq_1_1decoder__t.html#ab949da14c858a5bbc4ba8728abb2c481" title="zmq::decoder_t::one_byte_size_ready" alt="" coords="267,56,509,85"/><area shape="rect" id="node5" href="classzmq_1_1decoder__t.html#a69280603cde763e3e4e3b66feea3f338" title="zmq::decoder_t::eight_byte_size_ready" alt="" coords="557,5,808,35"/><area shape="rect" id="node7" href="classzmq_1_1decoder__t.html#a0859949bf711edf2b6c9cd1e353a8cc1" title="zmq::decoder_t::flags_ready" alt="" coords="856,59,1043,88"/><area shape="rect" id="node10" href="namespacezmq.html#a462f1cc054607017556d81aeee1363d2" title="zmq::get_uint64" alt="" coords="892,5,1007,35"/></map>
+<area shape="rect" id="node3" href="classzmq_1_1decoder__t.html#ab949da14c858a5bbc4ba8728abb2c481" title="zmq::decoder_t::one_byte_size_ready" alt="" coords="267,56,509,85"/><area shape="rect" id="node5" href="classzmq_1_1decoder__t.html#a69280603cde763e3e4e3b66feea3f338" title="zmq::decoder_t::eight_byte_size_ready" alt="" coords="557,5,808,35"/><area shape="rect" id="node7" href="classzmq_1_1decoder__t.html#a0859949bf711edf2b6c9cd1e353a8cc1" title="zmq::decoder_t::flags_ready" alt="" coords="856,57,1043,87"/></map>
 </div>
 </p>
 
@@ -572,12 +485,7 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="decoder_8hpp_source.html#l00169">zmq::decoder_base_t&lt; T &gt;::next</a>, <a class="el" href="decoder_8hpp_source.html#l00167">zmq::decoder_base_t&lt; T &gt;::read_pos</a>, and <a class="el" href="decoder_8hpp_source.html#l00168">zmq::decoder_base_t&lt; T &gt;::to_read</a>.</p>
 
 <p>Referenced by <a class="el" href="decoder_8cpp_source.html#l00029">decoder_t()</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <a class="code" href="classzmq_1_1decoder__base__t.html#aa96b939c1f0d25012c95112e7c9d6163">read_pos</a> = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) read_pos_;
-            <a class="code" href="classzmq_1_1decoder__base__t.html#aa9f26fe6343935e957edfdac7f9f5e6c">to_read</a> = to_read_;
-            <a class="code" href="classzmq_1_1decoder__base__t.html#a1425a28333c2cd4a3b9a9f27398f0bff">next</a> = next_;
-        }
-</pre></div>
+
 <p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
@@ -610,43 +518,7 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="decoder_8cpp_source.html#l00090">eight_byte_size_ready()</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, and <a class="el" href="decoder_8cpp_source.html#l00124">flags_ready()</a>.</p>
 
 <p>Referenced by <a class="el" href="decoder_8cpp_source.html#l00029">decoder_t()</a>, and <a class="el" href="decoder_8cpp_source.html#l00135">message_ready()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  First byte of size is read. If it is 0xff read 8-byte size.</span>
-    <span class="comment">//  Otherwise allocate the buffer for message data and read the</span>
-    <span class="comment">//  message data into it.</span>
-    <span class="keywordflow">if</span> (*<a class="code" href="classzmq_1_1decoder__t.html#ae3d86a1139f0a17edb9f44b33925ffda">tmpbuf</a> == 0xff)
-        <a class="code" href="classzmq_1_1decoder__base__t.html#a27a75d64867e2b7d19bda567258aa1b6">next_step</a> (<a class="code" href="classzmq_1_1decoder__t.html#ae3d86a1139f0a17edb9f44b33925ffda">tmpbuf</a>, 8, &amp;<a class="code" href="classzmq_1_1decoder__t.html#a69280603cde763e3e4e3b66feea3f338">decoder_t::eight_byte_size_ready</a>);
-    <span class="keywordflow">else</span> {
 
-        <span class="comment">//  There has to be at least one byte (the flags) in the message).</span>
-        <span class="keywordflow">if</span> (!*<a class="code" href="classzmq_1_1decoder__t.html#ae3d86a1139f0a17edb9f44b33925ffda">tmpbuf</a>) {
-            <a class="code" href="classzmq_1_1decoder__base__t.html#a7cf8a12f24cfe1d96833785a7e0b122d">decoding_error</a> ();
-            <span class="keywordflow">return</span> <span class="keyword">false</span>;
-        }
-
-        <span class="comment">//  in_progress is initialised at this point so in theory we should</span>
-        <span class="comment">//  close it before calling zmq_msg_init_size, however, it&#39;s a 0-byte</span>
-        <span class="comment">//  message and thus we can treat it as uninitialised...</span>
-        <span class="keywordtype">int</span> rc;
-        <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1decoder__t.html#a5e98911bb1f4cd24a73197c8017b88a7">maxmsgsize</a> &gt;= 0 &amp;&amp; (int64_t) (*<a class="code" href="classzmq_1_1decoder__t.html#ae3d86a1139f0a17edb9f44b33925ffda">tmpbuf</a> - 1) &gt; <a class="code" href="classzmq_1_1decoder__t.html#a5e98911bb1f4cd24a73197c8017b88a7">maxmsgsize</a>) {
-            rc = -1;
-            errno = ENOMEM;
-        }
-        <span class="keywordflow">else</span>
-            rc = <a class="code" href="classzmq_1_1decoder__t.html#ace76017276c49d4c6ff190e2eccc0b93">in_progress</a>.init_size (*<a class="code" href="classzmq_1_1decoder__t.html#ae3d86a1139f0a17edb9f44b33925ffda">tmpbuf</a> - 1);
-        <span class="keywordflow">if</span> (rc != 0 &amp;&amp; errno == ENOMEM) {
-            rc = <a class="code" href="classzmq_1_1decoder__t.html#ace76017276c49d4c6ff190e2eccc0b93">in_progress</a>.init ();
-            <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-            <a class="code" href="classzmq_1_1decoder__base__t.html#a7cf8a12f24cfe1d96833785a7e0b122d">decoding_error</a> ();
-            <span class="keywordflow">return</span> <span class="keyword">false</span>;
-        }
-        <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-
-        <a class="code" href="classzmq_1_1decoder__base__t.html#a27a75d64867e2b7d19bda567258aa1b6">next_step</a> (<a class="code" href="classzmq_1_1decoder__t.html#ae3d86a1139f0a17edb9f44b33925ffda">tmpbuf</a>, 1, &amp;<a class="code" href="classzmq_1_1decoder__t.html#a0859949bf711edf2b6c9cd1e353a8cc1">decoder_t::flags_ready</a>);
-    }
-    <span class="keywordflow">return</span> <span class="keyword">true</span>;
-}
-</pre></div>
 <p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
@@ -654,7 +526,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1decoder__t_ab949da14c858a5bbc4ba8728abb2c481_cgraph.png" border="0" usemap="#classzmq_1_1decoder__t_ab949da14c858a5bbc4ba8728abb2c481_cgraph" alt=""/></div>
 <map name="classzmq_1_1decoder__t_ab949da14c858a5bbc4ba8728abb2c481_cgraph" id="classzmq_1_1decoder__t_ab949da14c858a5bbc4ba8728abb2c481_cgraph">
-<area shape="rect" id="node3" href="classzmq_1_1decoder__t.html#a69280603cde763e3e4e3b66feea3f338" title="zmq::decoder_t::eight_byte_size_ready" alt="" coords="296,59,547,88"/><area shape="rect" id="node5" href="classzmq_1_1decoder__t.html#a0859949bf711edf2b6c9cd1e353a8cc1" title="zmq::decoder_t::flags_ready" alt="" coords="595,5,781,35"/><area shape="rect" id="node10" href="namespacezmq.html#a462f1cc054607017556d81aeee1363d2" title="zmq::get_uint64" alt="" coords="631,59,745,88"/><area shape="rect" id="node7" href="classzmq_1_1decoder__t.html#a06cc01035ccb5041a982b8c91add5754" title="zmq::decoder_t::message_ready" alt="" coords="831,59,1041,88"/></map>
+<area shape="rect" id="node3" href="classzmq_1_1decoder__t.html#a69280603cde763e3e4e3b66feea3f338" title="zmq::decoder_t::eight_byte_size_ready" alt="" coords="296,5,547,35"/><area shape="rect" id="node5" href="classzmq_1_1decoder__t.html#a0859949bf711edf2b6c9cd1e353a8cc1" title="zmq::decoder_t::flags_ready" alt="" coords="595,56,781,85"/><area shape="rect" id="node7" href="classzmq_1_1decoder__t.html#a06cc01035ccb5041a982b8c91add5754" title="zmq::decoder_t::message_ready" alt="" coords="831,83,1041,112"/></map>
 </div>
 </p>
 
@@ -716,54 +588,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="decoder_8hpp_source.html#l00093">93</a> of file <a class="el" href="decoder_8hpp_source.html">decoder.hpp</a>.</p>
 
 <p>References <a class="el" href="decoder_8hpp_source.html#l00169">zmq::decoder_base_t&lt; T &gt;::next</a>, <a class="el" href="decoder_8hpp_source.html#l00167">zmq::decoder_base_t&lt; T &gt;::read_pos</a>, <a class="el" href="decoder_8hpp_source.html#l00168">zmq::decoder_base_t&lt; T &gt;::to_read</a>, and <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="comment">//  Check if we had an error in previous attempt.</span>
-            <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (!(static_cast &lt;T*&gt; (<span class="keyword">this</span>)-&gt;next)))
-                <span class="keywordflow">return</span> (<span class="keywordtype">size_t</span>) -1;
 
-            <span class="comment">//  In case of zero-copy simply adjust the pointers, no copying</span>
-            <span class="comment">//  is required. Also, run the state machine in case all the data</span>
-            <span class="comment">//  were processed.</span>
-            <span class="keywordflow">if</span> (data_ == read_pos) {
-                <a class="code" href="classzmq_1_1decoder__base__t.html#aa96b939c1f0d25012c95112e7c9d6163">read_pos</a> += size_;
-                <a class="code" href="classzmq_1_1decoder__base__t.html#aa9f26fe6343935e957edfdac7f9f5e6c">to_read</a> -= size_;
-
-                <span class="keywordflow">while</span> (!to_read) {
-                    <span class="keywordflow">if</span> (!(static_cast &lt;T*&gt; (<span class="keyword">this</span>)-&gt;*next) ()) {
-                        <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (!(static_cast &lt;T*&gt; (<span class="keyword">this</span>)-&gt;next)))
-                            <span class="keywordflow">return</span> (<span class="keywordtype">size_t</span>) -1;
-                        <span class="keywordflow">return</span> size_;
-                    }
-                }
-                <span class="keywordflow">return</span> size_;
-            }
-
-            <span class="keywordtype">size_t</span> pos = 0;
-            <span class="keywordflow">while</span> (<span class="keyword">true</span>) {
-
-                <span class="comment">//  Try to get more space in the message to fill in.</span>
-                <span class="comment">//  If none is available, return.</span>
-                <span class="keywordflow">while</span> (!to_read) {
-                    <span class="keywordflow">if</span> (!(static_cast &lt;T*&gt; (<span class="keyword">this</span>)-&gt;*next) ()) {
-                        <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (!(static_cast &lt;T*&gt; (<span class="keyword">this</span>)-&gt;next)))
-                            <span class="keywordflow">return</span> (<span class="keywordtype">size_t</span>) -1;
-                        <span class="keywordflow">return</span> pos;
-                    }
-                }
-
-                <span class="comment">//  If there are no more data in the buffer, return.</span>
-                <span class="keywordflow">if</span> (pos == size_)
-                    <span class="keywordflow">return</span> pos;
-
-                <span class="comment">//  Copy the data from buffer to the message.</span>
-                <span class="keywordtype">size_t</span> to_copy = std::min (to_read, size_ - pos);
-                memcpy (read_pos, data_ + pos, to_copy);
-                <a class="code" href="classzmq_1_1decoder__base__t.html#aa96b939c1f0d25012c95112e7c9d6163">read_pos</a> += to_copy;
-                pos += to_copy;
-                <a class="code" href="classzmq_1_1decoder__base__t.html#aa9f26fe6343935e957edfdac7f9f5e6c">to_read</a> -= to_copy;
-            }
-        }
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a679f27cfa7a2870bd45770cef222daea"></a><!-- doxytag: member="zmq::decoder_t::set_inout" ref="a679f27cfa7a2870bd45770cef222daea" args="(struct i_inout *destination_)" -->
@@ -782,10 +607,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="decoder_8cpp_source.html#l00047">47</a> of file <a class="el" href="decoder_8cpp_source.html">decoder.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1decoder__t.html#a180beddea800e0a1697f3d44303ac35b">destination</a> = destination_;
-}
-</pre></div>
+
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
@@ -854,8 +676,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="decoder_8hpp_source.html">decoder.hpp</a></li>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="decoder_8cpp_source.html">decoder.cpp</a></li>
+<li>src/<a class="el" href="decoder_8hpp_source.html">decoder.hpp</a></li>
+<li>src/<a class="el" href="decoder_8cpp_source.html">decoder.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -863,7 +685,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -872,7 +694,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:11 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:16 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

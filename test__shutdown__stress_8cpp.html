@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/src/libzmq/tests/test_shutdown_stress.cpp File Reference</title>
+<title>libzmq: tests/test_shutdown_stress.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -97,10 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a>      </li>
-      <li class="navelem"><a class="el" href="dir_223207b948e8fa656fe21665415438d6.html">travlr</a>      </li>
-      <li class="navelem"><a class="el" href="dir_fb6bd66a99939deb91cf473b567980dd.html">src</a>      </li>
-      <li class="navelem"><a class="el" href="dir_aef0164114278eee23dc63ccdad22337.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_a758f62c12d5d1841afc85d2d5c29f77.html">tests</a>      </li>
     </ul>
   </div>
@@ -122,8 +117,8 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="test__shutdown__stress_8cpp__incl.png" border="0" usemap="#_2home_2travlr_2src_2libzmq_2tests_2test__shutdown__stress_8cpp" alt=""/></div>
-<map name="_2home_2travlr_2src_2libzmq_2tests_2test__shutdown__stress_8cpp" id="_2home_2travlr_2src_2libzmq_2tests_2test__shutdown__stress_8cpp">
+<div class="center"><img src="test__shutdown__stress_8cpp__incl.png" border="0" usemap="#tests_2test__shutdown__stress_8cpp" alt=""/></div>
+<map name="tests_2test__shutdown__stress_8cpp" id="tests_2test__shutdown__stress_8cpp">
 <area shape="rect" id="node3" href="zmq_8h.html" title="../include/zmq.h" alt="" coords="5,83,120,112"/></map>
 </div>
 </div>
@@ -184,49 +179,7 @@ Functions</h2></td></tr>
 <p>Definition at line <a class="el" href="test__shutdown__stress_8cpp_source.html#l00045">45</a> of file <a class="el" href="test__shutdown__stress_8cpp_source.html">test_shutdown_stress.cpp</a>.</p>
 
 <p>References <a class="el" href="test__shutdown__stress_8cpp_source.html#l00026">THREAD_COUNT</a>, <a class="el" href="test__shutdown__stress_8cpp_source.html#l00030">worker()</a>, <a class="el" href="zmq_8cpp_source.html#l00193">zmq_bind()</a>, <a class="el" href="zmq_8cpp_source.html#l00162">zmq_close()</a>, <a class="el" href="zmq_8cpp_source.html#l00075">zmq_init()</a>, <a class="el" href="zmq_8h_source.html#l00154">ZMQ_REP</a>, <a class="el" href="zmq_8cpp_source.html#l00153">zmq_socket()</a>, <a class="el" href="zmq_8h_source.html#l00152">ZMQ_SUB</a>, and <a class="el" href="zmq_8cpp_source.html#l00127">zmq_term()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordtype">void</span> *ctx;
-    <span class="keywordtype">void</span> *s1;
-    <span class="keywordtype">void</span> *s2;
-    <span class="keywordtype">int</span> i;
-    <span class="keywordtype">int</span> j;
-    <span class="keywordtype">int</span> rc;
-    pthread_t threads [<a class="code" href="test__shutdown__stress_8cpp.html#ae4f10e3506669382a3a5b19ce7a5eb7c">THREAD_COUNT</a>];
 
-    <span class="keywordflow">for</span> (j = 0; j != 10; j++) {
-
-        <span class="comment">//  Check the shutdown with many parallel I/O threads.</span>
-        ctx = <a class="code" href="zmq_8h.html#a17913cd15c5dea05267f65c8e2300231">zmq_init</a> (7);
-        assert (ctx);
-
-        s1 = <a class="code" href="zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd">zmq_socket</a> (ctx, <a class="code" href="zmq_8h.html#ae12cfa87d7c995e029de5d7c163c7d9b">ZMQ_REP</a>);
-        assert (s1);
-
-        rc = <a class="code" href="zmq_8h.html#a9b9820b4fd19e3b23bc5dba2da65dc3f">zmq_bind</a> (s1, <span class="stringliteral">&quot;tcp://127.0.0.1:5560&quot;</span>);
-        assert (rc == 0);
-
-        <span class="keywordflow">for</span> (i = 0; i != <a class="code" href="test__shutdown__stress_8cpp.html#ae4f10e3506669382a3a5b19ce7a5eb7c">THREAD_COUNT</a>; i++) {
-            s2 = <a class="code" href="zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd">zmq_socket</a> (ctx, <a class="code" href="zmq_8h.html#ad331770f0eec9ed393bf25fe6ea65dcc">ZMQ_SUB</a>);
-            assert (s2);
-            rc = pthread_create (&amp;threads [i], NULL, <a class="code" href="test__shutdown__stress_8cpp.html#ab1c51147f2d4042bdee88a40e7992631">worker</a>, s2);
-            assert (rc == 0);
-        }
-
-        <span class="keywordflow">for</span> (i = 0; i != <a class="code" href="test__shutdown__stress_8cpp.html#ae4f10e3506669382a3a5b19ce7a5eb7c">THREAD_COUNT</a>; i++) {
-            rc = pthread_join (threads [i], NULL);
-            assert (rc == 0);
-        }
-
-        rc = <a class="code" href="zmq_8h.html#a7f3288b9a1241ae2d2cc2a41324a7dd5">zmq_close</a> (s1);
-        assert (rc == 0);
-
-        rc = <a class="code" href="zmq_8h.html#ab6987eb024256ef4ccda6a18ce37a2f0">zmq_term</a> (ctx);
-        assert (rc == 0);
-    }
-
-    <span class="keywordflow">return</span> 0;
-}
-</pre></div>
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -260,19 +213,7 @@ Functions</h2></td></tr>
 <p>References <a class="el" href="zmq_8cpp_source.html#l00162">zmq_close()</a>, and <a class="el" href="zmq_8cpp_source.html#l00202">zmq_connect()</a>.</p>
 
 <p>Referenced by <a class="el" href="test__shutdown__stress_8cpp_source.html#l00045">main()</a>.</p>
-<div class="fragment"><pre class="fragment">    {
-        <span class="keywordtype">int</span> rc;
 
-        rc = <a class="code" href="zmq_8h.html#a451483d734ab7449dde2289d32d76588">zmq_connect</a> (s, <span class="stringliteral">&quot;tcp://127.0.0.1:5560&quot;</span>);
-        assert (rc == 0);
-
-        <span class="comment">//  Start closing the socket while the connecting process is underway.</span>
-        rc = <a class="code" href="zmq_8h.html#a7f3288b9a1241ae2d2cc2a41324a7dd5">zmq_close</a> (s);
-        assert (rc == 0);
-
-        <span class="keywordflow">return</span> NULL;
-    }
-</pre></div>
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -303,7 +244,7 @@ Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -312,7 +253,7 @@ Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:10 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:14 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

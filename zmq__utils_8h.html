@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/src/libzmq/include/zmq_utils.h File Reference</title>
+<title>libzmq: include/zmq_utils.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -97,10 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a>      </li>
-      <li class="navelem"><a class="el" href="dir_223207b948e8fa656fe21665415438d6.html">travlr</a>      </li>
-      <li class="navelem"><a class="el" href="dir_fb6bd66a99939deb91cf473b567980dd.html">src</a>      </li>
-      <li class="navelem"><a class="el" href="dir_aef0164114278eee23dc63ccdad22337.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_3c714ef813379a693c10c4b83676f6ec.html">include</a>      </li>
     </ul>
   </div>
@@ -118,9 +113,9 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="zmq__utils_8h__dep__incl.png" border="0" usemap="#_2home_2travlr_2src_2libzmq_2include_2zmq__utils_8hdep" alt=""/></div>
-<map name="_2home_2travlr_2src_2libzmq_2include_2zmq__utils_8hdep" id="_2home_2travlr_2src_2libzmq_2include_2zmq__utils_8hdep">
-<area shape="rect" id="node3" href="inproc__lat_8cpp.html" title="/home/travlr/src/libzmq/perf/inproc_lat.cpp" alt="" coords="5,83,272,112"/><area shape="rect" id="node5" href="inproc__thr_8cpp.html" title="/home/travlr/src/libzmq/perf/inproc_thr.cpp" alt="" coords="296,83,563,112"/><area shape="rect" id="node7" href="local__lat_8cpp.html" title="/home/travlr/src/libzmq/perf/local_lat.cpp" alt="" coords="587,83,845,112"/><area shape="rect" id="node9" href="local__thr_8cpp.html" title="/home/travlr/src/libzmq/perf/local_thr.cpp" alt="" coords="869,83,1128,112"/><area shape="rect" id="node11" href="remote__lat_8cpp.html" title="/home/travlr/src/libzmq/perf/remote_lat.cpp" alt="" coords="1152,83,1421,112"/><area shape="rect" id="node13" href="remote__thr_8cpp.html" title="/home/travlr/src/libzmq/perf/remote_thr.cpp" alt="" coords="1445,83,1717,112"/><area shape="rect" id="node15" href="zmq__utils_8cpp.html" title="/home/travlr/src/libzmq/src/zmq_utils.cpp" alt="" coords="1741,83,2003,112"/></map>
+<div class="center"><img src="zmq__utils_8h__dep__incl.png" border="0" usemap="#include_2zmq__utils_8hdep" alt=""/></div>
+<map name="include_2zmq__utils_8hdep" id="include_2zmq__utils_8hdep">
+<area shape="rect" id="node3" href="inproc__lat_8cpp.html" title="perf/inproc_lat.cpp" alt="" coords="5,83,133,112"/><area shape="rect" id="node5" href="inproc__thr_8cpp.html" title="perf/inproc_thr.cpp" alt="" coords="157,83,288,112"/><area shape="rect" id="node7" href="local__lat_8cpp.html" title="perf/local_lat.cpp" alt="" coords="312,83,432,112"/><area shape="rect" id="node9" href="local__thr_8cpp.html" title="perf/local_thr.cpp" alt="" coords="456,83,579,112"/><area shape="rect" id="node11" href="remote__lat_8cpp.html" title="perf/remote_lat.cpp" alt="" coords="603,83,736,112"/><area shape="rect" id="node13" href="remote__thr_8cpp.html" title="perf/remote_thr.cpp" alt="" coords="760,83,893,112"/><area shape="rect" id="node15" href="zmq__utils_8cpp.html" title="src/zmq_utils.cpp" alt="" coords="917,83,1043,112"/></map>
 </div>
 </div>
 <p><a href="zmq__utils_8h_source.html">Go to the source code of this file.</a></p>
@@ -169,14 +164,7 @@ Functions</h2></td></tr>
 <p>Definition at line <a class="el" href="zmq__utils_8cpp_source.html#l00037">37</a> of file <a class="el" href="zmq__utils_8cpp_source.html">zmq_utils.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="local__lat_8cpp_source.html#l00026">main()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-<span class="preprocessor">#if defined ZMQ_HAVE_WINDOWS</span>
-<span class="preprocessor"></span>    Sleep (seconds_ * 1000);
-<span class="preprocessor">#else</span>
-<span class="preprocessor"></span>    sleep (seconds_);
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>}
-</pre></div>
+
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -210,13 +198,7 @@ Functions</h2></td></tr>
 <p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>, and <a class="el" href="clock_8cpp_source.html#l00047">zmq::clock_t::now_us()</a>.</p>
 
 <p>Referenced by <a class="el" href="inproc__lat_8cpp_source.html#l00101">main()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    uint64_t *watch = (uint64_t*) malloc (<span class="keyword">sizeof</span> (uint64_t));
-    <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (watch);
-    *watch = <a class="code" href="classzmq_1_1clock__t.html#ac1caeb031c357ffe97a3df77a87ed265">zmq::clock_t::now_us</a> ();
-    <span class="keywordflow">return</span> (<span class="keywordtype">void</span>*) watch;
-}
-</pre></div>
+
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -261,13 +243,7 @@ Functions</h2></td></tr>
 <p>References <a class="el" href="clock_8cpp_source.html#l00047">zmq::clock_t::now_us()</a>.</p>
 
 <p>Referenced by <a class="el" href="inproc__lat_8cpp_source.html#l00101">main()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    uint64_t end = <a class="code" href="classzmq_1_1clock__t.html#ac1caeb031c357ffe97a3df77a87ed265">zmq::clock_t::now_us</a> ();
-    uint64_t start = *(uint64_t*) watch_;
-    free (watch_);
-    <span class="keywordflow">return</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>) (end - start);
-}
-</pre></div>
+
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -298,7 +274,7 @@ Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -307,7 +283,7 @@ Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:09 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:09 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

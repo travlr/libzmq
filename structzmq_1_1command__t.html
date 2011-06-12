@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -99,7 +98,7 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespacezmq.html">zmq</a>      </li>
+      <li class="navelem"><b>zmq</b>      </li>
       <li class="navelem"><a class="el" href="structzmq_1_1command__t.html">command_t</a>      </li>
     </ul>
   </div>
@@ -248,24 +247,7 @@ Public Attributes</h2></td></tr>
 </dl>
 
 <p>Definition at line <a class="el" href="command_8hpp_source.html#l00036">36</a> of file <a class="el" href="command_8hpp_source.html">command.hpp</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <a class="code" href="structzmq_1_1command__t.html#affea24404521d5c38e56b9ca9e6337ac">stop</a>,
-            <a class="code" href="structzmq_1_1command__t.html#a72baf7a4772b48e8ee60d5cab291a52e">plug</a>,
-            <a class="code" href="structzmq_1_1command__t.html#aea530f2505d28c466404996a9e6c4ad7">own</a>,
-            <a class="code" href="structzmq_1_1command__t.html#a4c7dc393ee89ffd6e42d886c56588088">attach</a>,
-            <a class="code" href="structzmq_1_1command__t.html#a72973798c00f6a1afaecfd4d6512eaf0">bind</a>,
-            <a class="code" href="structzmq_1_1command__t.html#accaf87a203c86f66eb9df2da34abf70d">activate_reader</a>,
-            <a class="code" href="structzmq_1_1command__t.html#a3a7605977c82a2e1228d848456b16828">activate_writer</a>,
-            <a class="code" href="structzmq_1_1command__t.html#a0e1742b051a3f1141b34da535a2fe8a0">pipe_term</a>,
-            <a class="code" href="structzmq_1_1command__t.html#a54e867c559a03d74d9f83f23ff577c12">pipe_term_ack</a>,
-            <a class="code" href="structzmq_1_1command__t.html#aa80f3c4fd7479fb198694f059f548f5b">term_req</a>,
-            <a class="code" href="structzmq_1_1command__t.html#ac140d3142e70880df5c05fa542f4fe0f">term</a>,
-            <a class="code" href="structzmq_1_1command__t.html#a437858476087cf4aca0fff95ce2e881b">term_ack</a>,
-            <a class="code" href="structzmq_1_1command__t.html#ac51eefa1348538068eb93c8837e529ca">reap</a>,
-            <a class="code" href="structzmq_1_1command__t.html#a75bfdb62e23a00bcff2968b7e8548f42">reaped</a>,
-            <a class="code" href="structzmq_1_1command__t.html#a410fe9a71a98dc5dda09a2ed4e27be48">done</a>
-        } <a class="code" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">type</a>;
-</pre></div>
+
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
@@ -310,7 +292,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Referenced by <a class="el" href="command_8cpp_source.html#l00025">zmq::deallocate_command()</a>, <a class="el" href="object_8cpp_source.html#l00058">zmq::object_t::process_command()</a>, <a class="el" href="object_8cpp_source.html#l00281">zmq::object_t::send_activate_writer()</a>, <a class="el" href="object_8cpp_source.html#l00209">zmq::object_t::send_attach()</a>, <a class="el" href="object_8cpp_source.html#l00239">zmq::object_t::send_bind()</a>, <a class="el" href="object_8cpp_source.html#l00196">zmq::object_t::send_own()</a>, <a class="el" href="object_8cpp_source.html#l00352">zmq::object_t::send_reap()</a>, <a class="el" href="object_8cpp_source.html#l00329">zmq::object_t::send_term()</a>, and <a class="el" href="object_8cpp_source.html#l00316">zmq::object_t::send_term_req()</a>.</p>
+<p>Referenced by <a class="el" href="object_8cpp_source.html#l00058">zmq::object_t::process_command()</a>, <a class="el" href="object_8cpp_source.html#l00281">zmq::object_t::send_activate_writer()</a>, <a class="el" href="object_8cpp_source.html#l00209">zmq::object_t::send_attach()</a>, <a class="el" href="object_8cpp_source.html#l00239">zmq::object_t::send_bind()</a>, <a class="el" href="object_8cpp_source.html#l00196">zmq::object_t::send_own()</a>, <a class="el" href="object_8cpp_source.html#l00352">zmq::object_t::send_reap()</a>, <a class="el" href="object_8cpp_source.html#l00329">zmq::object_t::send_term()</a>, and <a class="el" href="object_8cpp_source.html#l00316">zmq::object_t::send_term_req()</a>.</p>
 
 </div>
 </div>
@@ -325,7 +307,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Referenced by <a class="el" href="command_8cpp_source.html#l00025">zmq::deallocate_command()</a>, <a class="el" href="object_8cpp_source.html#l00058">zmq::object_t::process_command()</a>, and <a class="el" href="object_8cpp_source.html#l00209">zmq::object_t::send_attach()</a>.</p>
+<p>Referenced by <a class="el" href="object_8cpp_source.html#l00058">zmq::object_t::process_command()</a>, and <a class="el" href="object_8cpp_source.html#l00209">zmq::object_t::send_attach()</a>.</p>
 
 </div>
 </div>
@@ -340,7 +322,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Referenced by <a class="el" href="command_8cpp_source.html#l00025">zmq::deallocate_command()</a>, <a class="el" href="object_8cpp_source.html#l00058">zmq::object_t::process_command()</a>, and <a class="el" href="object_8cpp_source.html#l00239">zmq::object_t::send_bind()</a>.</p>
+<p>Referenced by <a class="el" href="object_8cpp_source.html#l00058">zmq::object_t::process_command()</a>, and <a class="el" href="object_8cpp_source.html#l00239">zmq::object_t::send_bind()</a>.</p>
 
 </div>
 </div>
@@ -672,12 +654,12 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Referenced by <a class="el" href="command_8cpp_source.html#l00025">zmq::deallocate_command()</a>, <a class="el" href="object_8cpp_source.html#l00058">zmq::object_t::process_command()</a>, <a class="el" href="object_8cpp_source.html#l00270">zmq::object_t::send_activate_reader()</a>, <a class="el" href="object_8cpp_source.html#l00281">zmq::object_t::send_activate_writer()</a>, <a class="el" href="object_8cpp_source.html#l00209">zmq::object_t::send_attach()</a>, <a class="el" href="object_8cpp_source.html#l00239">zmq::object_t::send_bind()</a>, <a class="el" href="object_8cpp_source.html#l00375">zmq::object_t::send_done()</a>, <a class="el" href="object_8cpp_source.html#l00196">zmq::object_t::send_own()</a>, <a class="el" href="object_8cpp_source.html#l00294">zmq::object_t::send_pipe_term()</a>, <a class="el" href="object_8cpp_source.html#l00305">zmq::object_t::send_pipe_term_ack()</a>, <a class="el" href="object_8cpp_source.html#l00182">zmq::object_t::send_plug()</a>, <a class="el" href="object_8cpp_source.html#l00352">zmq::object_t::send_reap()</a>, <a class="el" href="object_8cpp_source.html#l00364">zmq::object_t::send_reaped()</a>, <a class="el" href="object_8cpp_source.html#l00169">zmq::object_t::send_stop()</a>, <a class="el" href="object_8cpp_source.html#l00329">zmq::object_t::send_term()</a>, <a class="el" href="object_8cpp_source.html#l00341">zmq::object_t::send_term_ack()</a>, <a class="el" href="object_8cpp_source.html#l00316">zmq::object_t::send_term_req()</a>, and <a class="el" href="ctx_8cpp_source.html#l00114">zmq::ctx_t::terminate()</a>.</p>
+<p>Referenced by <a class="el" href="object_8cpp_source.html#l00058">zmq::object_t::process_command()</a>, <a class="el" href="object_8cpp_source.html#l00270">zmq::object_t::send_activate_reader()</a>, <a class="el" href="object_8cpp_source.html#l00281">zmq::object_t::send_activate_writer()</a>, <a class="el" href="object_8cpp_source.html#l00209">zmq::object_t::send_attach()</a>, <a class="el" href="object_8cpp_source.html#l00239">zmq::object_t::send_bind()</a>, <a class="el" href="object_8cpp_source.html#l00375">zmq::object_t::send_done()</a>, <a class="el" href="object_8cpp_source.html#l00196">zmq::object_t::send_own()</a>, <a class="el" href="object_8cpp_source.html#l00294">zmq::object_t::send_pipe_term()</a>, <a class="el" href="object_8cpp_source.html#l00305">zmq::object_t::send_pipe_term_ack()</a>, <a class="el" href="object_8cpp_source.html#l00182">zmq::object_t::send_plug()</a>, <a class="el" href="object_8cpp_source.html#l00352">zmq::object_t::send_reap()</a>, <a class="el" href="object_8cpp_source.html#l00364">zmq::object_t::send_reaped()</a>, <a class="el" href="object_8cpp_source.html#l00169">zmq::object_t::send_stop()</a>, <a class="el" href="object_8cpp_source.html#l00329">zmq::object_t::send_term()</a>, <a class="el" href="object_8cpp_source.html#l00341">zmq::object_t::send_term_ack()</a>, <a class="el" href="object_8cpp_source.html#l00316">zmq::object_t::send_term_req()</a>, and <a class="el" href="ctx_8cpp_source.html#l00114">zmq::ctx_t::terminate()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="command_8hpp_source.html">command.hpp</a></li>
+<li>src/<a class="el" href="command_8hpp_source.html">command.hpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -685,7 +667,7 @@ Public Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -694,7 +676,7 @@ Public Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:11 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:16 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

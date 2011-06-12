@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -99,7 +98,7 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespacezmq.html">zmq</a>      </li>
+      <li class="navelem"><b>zmq</b>      </li>
       <li class="navelem"><a class="el" href="classzmq_1_1yqueue__t.html">yqueue_t</a>      </li>
     </ul>
   </div>
@@ -121,8 +120,8 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="classzmq_1_1yqueue__t__coll__graph.png" border="0" usemap="#zmq_1_1yqueue__t_3_01_t_00_01_n_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="zmq_1_1yqueue__t_3_01_t_00_01_n_01_4_coll__map" id="zmq_1_1yqueue__t_3_01_t_00_01_n_01_4_coll__map">
+<div class="center"><img src="classzmq_1_1yqueue__t__coll__graph.png" border="0" usemap="#zmq_1_1yqueue__t_3_01T_00_01N_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="zmq_1_1yqueue__t_3_01T_00_01N_01_4_coll__map" id="zmq_1_1yqueue__t_3_01T_00_01N_01_4_coll__map">
 <area shape="rect" id="node2" href="classzmq_1_1atomic__ptr__t.html" title="zmq::atomic_ptr_t\&lt; chunk_t \&gt;" alt="" coords="68,215,265,244"/><area shape="rect" id="node4" href="classzmq_1_1mutex__t.html" title="zmq::mutex_t" alt="" coords="5,5,107,35"/><area shape="rect" id="node9" href="classzmq_1_1atomic__ptr__t.html" title="zmq::atomic_ptr_t\&lt; T \&gt;" alt="" coords="65,104,223,133"/><area shape="rect" id="node6" href="structzmq_1_1yqueue__t_1_1chunk__t.html" title="zmq::yqueue_t\&lt; T, N \&gt;::chunk_t" alt="" coords="247,104,457,133"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 
@@ -180,16 +179,7 @@ template&lt;typename T , int N&gt; </div>
 <p>Definition at line <a class="el" href="yqueue_8hpp_source.html#l00051">51</a> of file <a class="el" href="yqueue_8hpp_source.html">yqueue.hpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>, <a class="el" href="yqueue_8hpp_source.html#l00181">zmq::yqueue_t&lt; T, N &gt;::back_chunk</a>, <a class="el" href="yqueue_8hpp_source.html#l00182">zmq::yqueue_t&lt; T, N &gt;::back_pos</a>, <a class="el" href="yqueue_8hpp_source.html#l00179">zmq::yqueue_t&lt; T, N &gt;::begin_chunk</a>, <a class="el" href="yqueue_8hpp_source.html#l00180">zmq::yqueue_t&lt; T, N &gt;::begin_pos</a>, <a class="el" href="yqueue_8hpp_source.html#l00183">zmq::yqueue_t&lt; T, N &gt;::end_chunk</a>, and <a class="el" href="yqueue_8hpp_source.html#l00184">zmq::yqueue_t&lt; T, N &gt;::end_pos</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-             <a class="code" href="classzmq_1_1yqueue__t.html#ac0c3c8f6f75f2b5006967e29d8d7bbb2">begin_chunk</a> = (chunk_t*) malloc (<span class="keyword">sizeof</span> (chunk_t));
-             <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (<a class="code" href="classzmq_1_1yqueue__t.html#ac0c3c8f6f75f2b5006967e29d8d7bbb2">begin_chunk</a>);
-             <a class="code" href="classzmq_1_1yqueue__t.html#a73dba15529a15b5c5b2d2e32a97d60c1">begin_pos</a> = 0;
-             <a class="code" href="classzmq_1_1yqueue__t.html#add2cf8fa53460b2c64f4222fb55722eb">back_chunk</a> = NULL;
-             <a class="code" href="classzmq_1_1yqueue__t.html#a24a489abd9a6bc92f15b37fbe9e90c36">back_pos</a> = 0;
-             <a class="code" href="classzmq_1_1yqueue__t.html#af0aa4544e50af90b09e0c1ff040df92d">end_chunk</a> = <a class="code" href="classzmq_1_1yqueue__t.html#ac0c3c8f6f75f2b5006967e29d8d7bbb2">begin_chunk</a>;
-             <a class="code" href="classzmq_1_1yqueue__t.html#a52825e688cfe927627091eb6a6817e5f">end_pos</a> = 0;
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="ae7b05c473ee485fa835639471ec33551"></a><!-- doxytag: member="zmq::yqueue_t::~yqueue_t" ref="ae7b05c473ee485fa835639471ec33551" args="()" -->
@@ -211,22 +201,7 @@ template&lt;typename T , int N&gt; </div>
 <p>Definition at line <a class="el" href="yqueue_8hpp_source.html#l00063">63</a> of file <a class="el" href="yqueue_8hpp_source.html">yqueue.hpp</a>.</p>
 
 <p>References <a class="el" href="yqueue_8hpp_source.html#l00179">zmq::yqueue_t&lt; T, N &gt;::begin_chunk</a>, <a class="el" href="yqueue_8hpp_source.html#l00183">zmq::yqueue_t&lt; T, N &gt;::end_chunk</a>, <a class="el" href="yqueue_8hpp_source.html#l00172">zmq::yqueue_t&lt; T, N &gt;::chunk_t::next</a>, <a class="el" href="yqueue_8hpp_source.html#l00189">zmq::yqueue_t&lt; T, N &gt;::spare_chunk</a>, and <a class="el" href="atomic__ptr_8hpp_source.html#l00076">zmq::atomic_ptr_t&lt; T &gt;::xchg()</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordflow">while</span> (<span class="keyword">true</span>) {
-                <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1yqueue__t.html#ac0c3c8f6f75f2b5006967e29d8d7bbb2">begin_chunk</a> == <a class="code" href="classzmq_1_1yqueue__t.html#af0aa4544e50af90b09e0c1ff040df92d">end_chunk</a>) {
-                    free (<a class="code" href="classzmq_1_1yqueue__t.html#ac0c3c8f6f75f2b5006967e29d8d7bbb2">begin_chunk</a>);
-                    <span class="keywordflow">break</span>;
-                } 
-                chunk_t *o = <a class="code" href="classzmq_1_1yqueue__t.html#ac0c3c8f6f75f2b5006967e29d8d7bbb2">begin_chunk</a>;
-                <a class="code" href="classzmq_1_1yqueue__t.html#ac0c3c8f6f75f2b5006967e29d8d7bbb2">begin_chunk</a> = <a class="code" href="classzmq_1_1yqueue__t.html#ac0c3c8f6f75f2b5006967e29d8d7bbb2">begin_chunk</a>-&gt;<a class="code" href="structzmq_1_1yqueue__t_1_1chunk__t.html#ac287733cd8d8642cbd732739e4e722f7">next</a>;
-                free (o);
-            }
 
-            chunk_t *sc = <a class="code" href="classzmq_1_1yqueue__t.html#a89168b7813a4860382299c33d7a309b0">spare_chunk</a>.xchg (NULL);
-            <span class="keywordflow">if</span> (sc)
-                free (sc);
-        }
-</pre></div>
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -279,10 +254,7 @@ template&lt;typename T , int N&gt; </div>
 <p>Definition at line <a class="el" href="yqueue_8hpp_source.html#l00089">89</a> of file <a class="el" href="yqueue_8hpp_source.html">yqueue.hpp</a>.</p>
 
 <p>References <a class="el" href="yqueue_8hpp_source.html#l00181">zmq::yqueue_t&lt; T, N &gt;::back_chunk</a>, <a class="el" href="yqueue_8hpp_source.html#l00182">zmq::yqueue_t&lt; T, N &gt;::back_pos</a>, and <a class="el" href="yqueue_8hpp_source.html#l00170">zmq::yqueue_t&lt; T, N &gt;::chunk_t::values</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1yqueue__t.html#add2cf8fa53460b2c64f4222fb55722eb">back_chunk</a>-&gt;<a class="code" href="structzmq_1_1yqueue__t_1_1chunk__t.html#adea082e8765c699c3606e881c6f5a48a">values</a> [<a class="code" href="classzmq_1_1yqueue__t.html#a24a489abd9a6bc92f15b37fbe9e90c36">back_pos</a>];
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a64333ade3f14b9bce6e64e7a5423c442"></a><!-- doxytag: member="zmq::yqueue_t::front" ref="a64333ade3f14b9bce6e64e7a5423c442" args="()" -->
@@ -304,10 +276,7 @@ template&lt;typename T , int N&gt; </div>
 <p>Definition at line <a class="el" href="yqueue_8hpp_source.html#l00082">82</a> of file <a class="el" href="yqueue_8hpp_source.html">yqueue.hpp</a>.</p>
 
 <p>References <a class="el" href="yqueue_8hpp_source.html#l00179">zmq::yqueue_t&lt; T, N &gt;::begin_chunk</a>, <a class="el" href="yqueue_8hpp_source.html#l00180">zmq::yqueue_t&lt; T, N &gt;::begin_pos</a>, and <a class="el" href="yqueue_8hpp_source.html#l00170">zmq::yqueue_t&lt; T, N &gt;::chunk_t::values</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-             <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1yqueue__t.html#ac0c3c8f6f75f2b5006967e29d8d7bbb2">begin_chunk</a>-&gt;<a class="code" href="structzmq_1_1yqueue__t_1_1chunk__t.html#adea082e8765c699c3606e881c6f5a48a">values</a> [<a class="code" href="classzmq_1_1yqueue__t.html#a73dba15529a15b5c5b2d2e32a97d60c1">begin_pos</a>];
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a2727a6cad1f86646a294e50f05eb2dac"></a><!-- doxytag: member="zmq::yqueue_t::operator=" ref="a2727a6cad1f86646a294e50f05eb2dac" args="(const yqueue_t &amp;)" -->
@@ -348,22 +317,7 @@ template&lt;typename T , int N&gt; </div>
 <p>Definition at line <a class="el" href="yqueue_8hpp_source.html#l00148">148</a> of file <a class="el" href="yqueue_8hpp_source.html">yqueue.hpp</a>.</p>
 
 <p>References <a class="el" href="yqueue_8hpp_source.html#l00179">zmq::yqueue_t&lt; T, N &gt;::begin_chunk</a>, <a class="el" href="yqueue_8hpp_source.html#l00180">zmq::yqueue_t&lt; T, N &gt;::begin_pos</a>, <a class="el" href="yqueue_8hpp_source.html#l00172">zmq::yqueue_t&lt; T, N &gt;::chunk_t::next</a>, <a class="el" href="yqueue_8hpp_source.html#l00171">zmq::yqueue_t&lt; T, N &gt;::chunk_t::prev</a>, <a class="el" href="yqueue_8hpp_source.html#l00189">zmq::yqueue_t&lt; T, N &gt;::spare_chunk</a>, and <a class="el" href="atomic__ptr_8hpp_source.html#l00076">zmq::atomic_ptr_t&lt; T &gt;::xchg()</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordflow">if</span> (++ <a class="code" href="classzmq_1_1yqueue__t.html#a73dba15529a15b5c5b2d2e32a97d60c1">begin_pos</a> == N) {
-                chunk_t *o = <a class="code" href="classzmq_1_1yqueue__t.html#ac0c3c8f6f75f2b5006967e29d8d7bbb2">begin_chunk</a>;
-                <a class="code" href="classzmq_1_1yqueue__t.html#ac0c3c8f6f75f2b5006967e29d8d7bbb2">begin_chunk</a> = <a class="code" href="classzmq_1_1yqueue__t.html#ac0c3c8f6f75f2b5006967e29d8d7bbb2">begin_chunk</a>-&gt;<a class="code" href="structzmq_1_1yqueue__t_1_1chunk__t.html#ac287733cd8d8642cbd732739e4e722f7">next</a>;
-                <a class="code" href="classzmq_1_1yqueue__t.html#ac0c3c8f6f75f2b5006967e29d8d7bbb2">begin_chunk</a>-&gt;<a class="code" href="structzmq_1_1yqueue__t_1_1chunk__t.html#a0ff74577d58df303c995a6e8e894ddc9">prev</a> = NULL;
-                <a class="code" href="classzmq_1_1yqueue__t.html#a73dba15529a15b5c5b2d2e32a97d60c1">begin_pos</a> = 0;
 
-                <span class="comment">//  &#39;o&#39; has been more recently used than spare_chunk,</span>
-                <span class="comment">//  so for cache reasons we&#39;ll get rid of the spare and</span>
-                <span class="comment">//  use &#39;o&#39; as the spare.</span>
-                chunk_t *cs = <a class="code" href="classzmq_1_1yqueue__t.html#a89168b7813a4860382299c33d7a309b0">spare_chunk</a>.xchg (o);
-                <span class="keywordflow">if</span> (cs)
-                    free (cs);
-            }
-        }
-</pre></div>
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -396,26 +350,7 @@ template&lt;typename T , int N&gt; </div>
 <p>Definition at line <a class="el" href="yqueue_8hpp_source.html#l00095">95</a> of file <a class="el" href="yqueue_8hpp_source.html">yqueue.hpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>, <a class="el" href="yqueue_8hpp_source.html#l00181">zmq::yqueue_t&lt; T, N &gt;::back_chunk</a>, <a class="el" href="yqueue_8hpp_source.html#l00182">zmq::yqueue_t&lt; T, N &gt;::back_pos</a>, <a class="el" href="yqueue_8hpp_source.html#l00183">zmq::yqueue_t&lt; T, N &gt;::end_chunk</a>, <a class="el" href="yqueue_8hpp_source.html#l00184">zmq::yqueue_t&lt; T, N &gt;::end_pos</a>, <a class="el" href="yqueue_8hpp_source.html#l00172">zmq::yqueue_t&lt; T, N &gt;::chunk_t::next</a>, <a class="el" href="yqueue_8hpp_source.html#l00171">zmq::yqueue_t&lt; T, N &gt;::chunk_t::prev</a>, <a class="el" href="yqueue_8hpp_source.html#l00189">zmq::yqueue_t&lt; T, N &gt;::spare_chunk</a>, and <a class="el" href="atomic__ptr_8hpp_source.html#l00076">zmq::atomic_ptr_t&lt; T &gt;::xchg()</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <a class="code" href="classzmq_1_1yqueue__t.html#add2cf8fa53460b2c64f4222fb55722eb">back_chunk</a> = <a class="code" href="classzmq_1_1yqueue__t.html#af0aa4544e50af90b09e0c1ff040df92d">end_chunk</a>;
-            <a class="code" href="classzmq_1_1yqueue__t.html#a24a489abd9a6bc92f15b37fbe9e90c36">back_pos</a> = <a class="code" href="classzmq_1_1yqueue__t.html#a52825e688cfe927627091eb6a6817e5f">end_pos</a>;
 
-            <span class="keywordflow">if</span> (++<a class="code" href="classzmq_1_1yqueue__t.html#a52825e688cfe927627091eb6a6817e5f">end_pos</a> != N)
-                <span class="keywordflow">return</span>;
-
-            chunk_t *sc = <a class="code" href="classzmq_1_1yqueue__t.html#a89168b7813a4860382299c33d7a309b0">spare_chunk</a>.xchg (NULL);
-            <span class="keywordflow">if</span> (sc) {
-                <a class="code" href="classzmq_1_1yqueue__t.html#af0aa4544e50af90b09e0c1ff040df92d">end_chunk</a>-&gt;<a class="code" href="structzmq_1_1yqueue__t_1_1chunk__t.html#ac287733cd8d8642cbd732739e4e722f7">next</a> = sc;
-                sc-&gt;<a class="code" href="structzmq_1_1yqueue__t_1_1chunk__t.html#a0ff74577d58df303c995a6e8e894ddc9">prev</a> = <a class="code" href="classzmq_1_1yqueue__t.html#af0aa4544e50af90b09e0c1ff040df92d">end_chunk</a>;
-            } <span class="keywordflow">else</span> {
-                <a class="code" href="classzmq_1_1yqueue__t.html#af0aa4544e50af90b09e0c1ff040df92d">end_chunk</a>-&gt;<a class="code" href="structzmq_1_1yqueue__t_1_1chunk__t.html#ac287733cd8d8642cbd732739e4e722f7">next</a> = (chunk_t*) malloc (<span class="keyword">sizeof</span> (chunk_t));
-                <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (<a class="code" href="classzmq_1_1yqueue__t.html#af0aa4544e50af90b09e0c1ff040df92d">end_chunk</a>-&gt;<a class="code" href="structzmq_1_1yqueue__t_1_1chunk__t.html#ac287733cd8d8642cbd732739e4e722f7">next</a>);
-                <a class="code" href="classzmq_1_1yqueue__t.html#af0aa4544e50af90b09e0c1ff040df92d">end_chunk</a>-&gt;<a class="code" href="structzmq_1_1yqueue__t_1_1chunk__t.html#ac287733cd8d8642cbd732739e4e722f7">next</a>-&gt;<a class="code" href="structzmq_1_1yqueue__t_1_1chunk__t.html#a0ff74577d58df303c995a6e8e894ddc9">prev</a> = <a class="code" href="classzmq_1_1yqueue__t.html#af0aa4544e50af90b09e0c1ff040df92d">end_chunk</a>;
-            }
-            <a class="code" href="classzmq_1_1yqueue__t.html#af0aa4544e50af90b09e0c1ff040df92d">end_chunk</a> = <a class="code" href="classzmq_1_1yqueue__t.html#af0aa4544e50af90b09e0c1ff040df92d">end_chunk</a>-&gt;<a class="code" href="structzmq_1_1yqueue__t_1_1chunk__t.html#ac287733cd8d8642cbd732739e4e722f7">next</a>;
-            <a class="code" href="classzmq_1_1yqueue__t.html#a52825e688cfe927627091eb6a6817e5f">end_pos</a> = 0;
-        }
-</pre></div>
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -448,29 +383,7 @@ template&lt;typename T , int N&gt; </div>
 <p>Definition at line <a class="el" href="yqueue_8hpp_source.html#l00123">123</a> of file <a class="el" href="yqueue_8hpp_source.html">yqueue.hpp</a>.</p>
 
 <p>References <a class="el" href="yqueue_8hpp_source.html#l00181">zmq::yqueue_t&lt; T, N &gt;::back_chunk</a>, <a class="el" href="yqueue_8hpp_source.html#l00182">zmq::yqueue_t&lt; T, N &gt;::back_pos</a>, <a class="el" href="yqueue_8hpp_source.html#l00183">zmq::yqueue_t&lt; T, N &gt;::end_chunk</a>, <a class="el" href="yqueue_8hpp_source.html#l00184">zmq::yqueue_t&lt; T, N &gt;::end_pos</a>, <a class="el" href="yqueue_8hpp_source.html#l00172">zmq::yqueue_t&lt; T, N &gt;::chunk_t::next</a>, and <a class="el" href="yqueue_8hpp_source.html#l00171">zmq::yqueue_t&lt; T, N &gt;::chunk_t::prev</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="comment">//  First, move &#39;back&#39; one position backwards.</span>
-            <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1yqueue__t.html#a24a489abd9a6bc92f15b37fbe9e90c36">back_pos</a>)
-                --<a class="code" href="classzmq_1_1yqueue__t.html#a24a489abd9a6bc92f15b37fbe9e90c36">back_pos</a>;
-            <span class="keywordflow">else</span> {
-                <a class="code" href="classzmq_1_1yqueue__t.html#a24a489abd9a6bc92f15b37fbe9e90c36">back_pos</a> = N - 1;
-                <a class="code" href="classzmq_1_1yqueue__t.html#add2cf8fa53460b2c64f4222fb55722eb">back_chunk</a> = <a class="code" href="classzmq_1_1yqueue__t.html#add2cf8fa53460b2c64f4222fb55722eb">back_chunk</a>-&gt;<a class="code" href="structzmq_1_1yqueue__t_1_1chunk__t.html#a0ff74577d58df303c995a6e8e894ddc9">prev</a>;
-            }
 
-            <span class="comment">//  Now, move &#39;end&#39; position backwards. Note that obsolete end chunk</span>
-            <span class="comment">//  is not used as a spare chunk. The analysis shows that doing so</span>
-            <span class="comment">//  would require free and atomic operation per chunk deallocated</span>
-            <span class="comment">//  instead of a simple free.</span>
-            <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1yqueue__t.html#a52825e688cfe927627091eb6a6817e5f">end_pos</a>)
-                --<a class="code" href="classzmq_1_1yqueue__t.html#a52825e688cfe927627091eb6a6817e5f">end_pos</a>;
-            <span class="keywordflow">else</span> {
-                <a class="code" href="classzmq_1_1yqueue__t.html#a52825e688cfe927627091eb6a6817e5f">end_pos</a> = N - 1;
-                <a class="code" href="classzmq_1_1yqueue__t.html#af0aa4544e50af90b09e0c1ff040df92d">end_chunk</a> = <a class="code" href="classzmq_1_1yqueue__t.html#af0aa4544e50af90b09e0c1ff040df92d">end_chunk</a>-&gt;<a class="code" href="structzmq_1_1yqueue__t_1_1chunk__t.html#a0ff74577d58df303c995a6e8e894ddc9">prev</a>;
-                free (<a class="code" href="classzmq_1_1yqueue__t.html#af0aa4544e50af90b09e0c1ff040df92d">end_chunk</a>-&gt;<a class="code" href="structzmq_1_1yqueue__t_1_1chunk__t.html#ac287733cd8d8642cbd732739e4e722f7">next</a>);
-                <a class="code" href="classzmq_1_1yqueue__t.html#af0aa4544e50af90b09e0c1ff040df92d">end_chunk</a>-&gt;<a class="code" href="structzmq_1_1yqueue__t_1_1chunk__t.html#ac287733cd8d8642cbd732739e4e722f7">next</a> = NULL;
-            }
-        }
-</pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
@@ -608,7 +521,7 @@ template&lt;typename T , int N&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="yqueue_8hpp_source.html">yqueue.hpp</a></li>
+<li>src/<a class="el" href="yqueue_8hpp_source.html">yqueue.hpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -616,7 +529,7 @@ template&lt;typename T , int N&gt; </div>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -625,7 +538,7 @@ template&lt;typename T , int N&gt; </div>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:23 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:20 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

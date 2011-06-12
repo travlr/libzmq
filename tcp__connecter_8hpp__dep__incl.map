@@ -1,8 +1,8 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$zmq__connecter_8hpp.html" title="/home/travlr/src/libzmq/src/zmq_connecter.hpp" alt="" coords="481,83,775,112"/>
-<area shape="rect" id="node13" href="$tcp__connecter_8cpp.html" title="/home/travlr/src/libzmq/src/tcp_connecter.cpp" alt="" coords="799,83,1087,112"/>
-<area shape="rect" id="node5" href="$connect__session_8cpp.html" title="/home/travlr/src/libzmq/src/connect_session.cpp" alt="" coords="5,160,309,189"/>
-<area shape="rect" id="node7" href="$socket__base_8cpp.html" title="/home/travlr/src/libzmq/src/socket_base.cpp" alt="" coords="333,160,613,189"/>
-<area shape="rect" id="node9" href="$zmq__connecter_8cpp.html" title="/home/travlr/src/libzmq/src/zmq_connecter.cpp" alt="" coords="637,160,931,189"/>
-<area shape="rect" id="node11" href="$zmq__engine_8cpp.html" title="/home/travlr/src/libzmq/src/zmq_engine.cpp" alt="" coords="955,160,1229,189"/>
+<area shape="rect" id="node3" href="$zmq__connecter_8hpp.html" title="src/zmq_connecter.hpp" alt="" coords="273,83,431,112"/>
+<area shape="rect" id="node13" href="$tcp__connecter_8cpp.html" title="src/tcp_connecter.cpp" alt="" coords="455,83,604,112"/>
+<area shape="rect" id="node5" href="$connect__session_8cpp.html" title="src/connect_session.cpp" alt="" coords="5,160,171,189"/>
+<area shape="rect" id="node7" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="195,160,336,189"/>
+<area shape="rect" id="node9" href="$zmq__connecter_8cpp.html" title="src/zmq_connecter.cpp" alt="" coords="360,160,517,189"/>
+<area shape="rect" id="node11" href="$zmq__engine_8cpp.html" title="src/zmq_engine.cpp" alt="" coords="541,160,680,189"/>
 </map>

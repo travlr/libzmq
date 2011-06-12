@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/src/libzmq/src/config.hpp Source File</title>
+<title>libzmq: src/config.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -97,10 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a>      </li>
-      <li class="navelem"><a class="el" href="dir_223207b948e8fa656fe21665415438d6.html">travlr</a>      </li>
-      <li class="navelem"><a class="el" href="dir_fb6bd66a99939deb91cf473b567980dd.html">src</a>      </li>
-      <li class="navelem"><a class="el" href="dir_aef0164114278eee23dc63ccdad22337.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
     </ul>
   </div>
@@ -141,16 +136,16 @@ function toggleVisibility(linkObj) {
 <a name="l00029"></a>00029     <span class="keyword">enum</span> 
 <a name="l00030"></a>00030     {
 <a name="l00031"></a>00031         <span class="comment">//  Maximum number of sockets that can be opened at the same time.</span>
-<a name="l00032"></a><a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69bad07897f35803c5312249d8301419d8ea">00032</a>         <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69bad07897f35803c5312249d8301419d8ea">max_sockets</a> = 512,
+<a name="l00032"></a>00032         max_sockets = 512,
 <a name="l00033"></a>00033 
 <a name="l00034"></a>00034         <span class="comment">//  Number of new messages in message pipe needed to trigger new memory</span>
 <a name="l00035"></a>00035         <span class="comment">//  allocation. Setting this parameter to 256 decreases the impact of</span>
 <a name="l00036"></a>00036         <span class="comment">//  memory allocation by approximately 99.6%</span>
-<a name="l00037"></a><a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba76c4ca17da528912c30f8635d619b47c">00037</a>         <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba76c4ca17da528912c30f8635d619b47c">message_pipe_granularity</a> = 256,
+<a name="l00037"></a>00037         message_pipe_granularity = 256,
 <a name="l00038"></a>00038 
 <a name="l00039"></a>00039         <span class="comment">//  Size in bytes of the largest message that is still copied around</span>
 <a name="l00040"></a>00040         <span class="comment">//  rather than being reference-counted.</span>
-<a name="l00041"></a><a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba5da03200e1ed8fed02f0e58e7431855f">00041</a>         <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba5da03200e1ed8fed02f0e58e7431855f">max_vsm_size</a> = 29,
+<a name="l00041"></a>00041         max_vsm_size = 29,
 <a name="l00042"></a>00042 
 <a name="l00043"></a>00043         <span class="comment">//  Determines how often does socket poll for new commands when it</span>
 <a name="l00044"></a>00044         <span class="comment">//  still has unprocessed messages to handle. Thus, if it is set to 100,</span>
@@ -158,41 +153,41 @@ function toggleVisibility(linkObj) {
 <a name="l00046"></a>00046         <span class="comment">//  If there are no unprocessed messages available, poll is done</span>
 <a name="l00047"></a>00047         <span class="comment">//  immediately. Decreasing the value trades overall latency for more</span>
 <a name="l00048"></a>00048         <span class="comment">//  real-time behaviour (less latency peaks).</span>
-<a name="l00049"></a><a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69bac6d02e6c5baae3f769f9091edb36ec0e">00049</a>         <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69bac6d02e6c5baae3f769f9091edb36ec0e">inbound_poll_rate</a> = 100,
+<a name="l00049"></a>00049         inbound_poll_rate = 100,
 <a name="l00050"></a>00050 
 <a name="l00051"></a>00051         <span class="comment">//  Maximal batching size for engines with receiving functionality.</span>
 <a name="l00052"></a>00052         <span class="comment">//  So, if there are 10 messages that fit into the batch size, all of</span>
 <a name="l00053"></a>00053         <span class="comment">//  them may be read by a single &#39;recv&#39; system call, thus avoiding</span>
 <a name="l00054"></a>00054         <span class="comment">//  unnecessary network stack traversals.</span>
-<a name="l00055"></a><a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba414961fcf5bb64712339a387d1e4bd24">00055</a>         <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba414961fcf5bb64712339a387d1e4bd24">in_batch_size</a> = 8192,
+<a name="l00055"></a>00055         in_batch_size = 8192,
 <a name="l00056"></a>00056 
 <a name="l00057"></a>00057         <span class="comment">//  Maximal batching size for engines with sending functionality.</span>
 <a name="l00058"></a>00058         <span class="comment">//  So, if there are 10 messages that fit into the batch size, all of</span>
 <a name="l00059"></a>00059         <span class="comment">//  them may be written by a single &#39;send&#39; system call, thus avoiding</span>
 <a name="l00060"></a>00060         <span class="comment">//  unnecessary network stack traversals.</span>
-<a name="l00061"></a><a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69bacce31026a6c3cbf9e0f1948c1105b78c">00061</a>         <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69bacce31026a6c3cbf9e0f1948c1105b78c">out_batch_size</a> = 8192,
+<a name="l00061"></a>00061         out_batch_size = 8192,
 <a name="l00062"></a>00062 
 <a name="l00063"></a>00063         <span class="comment">//  Maximal delta between high and low watermark.</span>
-<a name="l00064"></a><a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba17876b8aa2590a65918639e92bb2383b">00064</a>         <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba17876b8aa2590a65918639e92bb2383b">max_wm_delta</a> = 1024,
+<a name="l00064"></a>00064         max_wm_delta = 1024,
 <a name="l00065"></a>00065 
 <a name="l00066"></a>00066         <span class="comment">//  Maximum number of events the I/O thread can process in one go.</span>
-<a name="l00067"></a><a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba0cc1ab6982fafc6074622c382bfb7cf5">00067</a>         <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba0cc1ab6982fafc6074622c382bfb7cf5">max_io_events</a> = 256,
+<a name="l00067"></a>00067         max_io_events = 256,
 <a name="l00068"></a>00068 
 <a name="l00069"></a>00069         <span class="comment">//  Maximal delay to process command in API thread (in CPU ticks).</span>
 <a name="l00070"></a>00070         <span class="comment">//  3,000,000 ticks equals to 1 - 2 milliseconds on current CPUs.</span>
 <a name="l00071"></a>00071         <span class="comment">//  Note that delay is only applied when there is continuous stream of</span>
 <a name="l00072"></a>00072         <span class="comment">//  messages to process. If not so, commands are processed immediately.</span>
-<a name="l00073"></a><a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69bab0053eda075aef87bcf9759022cbed3c">00073</a>         <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69bab0053eda075aef87bcf9759022cbed3c">max_command_delay</a> = 3000000,
+<a name="l00073"></a>00073         max_command_delay = 3000000,
 <a name="l00074"></a>00074 
 <a name="l00075"></a>00075         <span class="comment">//  Low-precision clock precision in CPU ticks. 1ms. Value of 1000000</span>
 <a name="l00076"></a>00076         <span class="comment">//  should be OK for CPU frequencies above 1GHz. If should work</span>
 <a name="l00077"></a>00077         <span class="comment">//  reasonably well for CPU frequencies above 500MHz. For lower CPU</span>
 <a name="l00078"></a>00078         <span class="comment">//  frequencies you may consider lowering this value to get best</span>
 <a name="l00079"></a>00079         <span class="comment">//  possible latencies.</span>
-<a name="l00080"></a><a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba1b02e75b18573656097202913e1448b8">00080</a>         <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba1b02e75b18573656097202913e1448b8">clock_precision</a> = 1000000,
+<a name="l00080"></a>00080         clock_precision = 1000000,
 <a name="l00081"></a>00081 
 <a name="l00082"></a>00082         <span class="comment">//  Maximum transport data unit size for PGM (TPDU).</span>
-<a name="l00083"></a><a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba4bc142d509df387e1e732eebadbc5f69">00083</a>         <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba4bc142d509df387e1e732eebadbc5f69">pgm_max_tpdu</a> = 1500
+<a name="l00083"></a>00083         pgm_max_tpdu = 1500
 <a name="l00084"></a>00084     };
 <a name="l00085"></a>00085 
 <a name="l00086"></a>00086 }
@@ -205,7 +200,7 @@ function toggleVisibility(linkObj) {
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -214,7 +209,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:08 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:05 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

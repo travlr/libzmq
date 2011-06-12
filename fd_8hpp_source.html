@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/src/libzmq/src/fd.hpp Source File</title>
+<title>libzmq: src/fd.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -97,10 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a>      </li>
-      <li class="navelem"><a class="el" href="dir_223207b948e8fa656fe21665415438d6.html">travlr</a>      </li>
-      <li class="navelem"><a class="el" href="dir_fb6bd66a99939deb91cf473b567980dd.html">src</a>      </li>
-      <li class="navelem"><a class="el" href="dir_aef0164114278eee23dc63ccdad22337.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
     </ul>
   </div>
@@ -143,15 +138,15 @@ function toggleVisibility(linkObj) {
 <a name="l00031"></a>00031 {
 <a name="l00032"></a>00032 <span class="preprocessor">#ifdef ZMQ_HAVE_WINDOWS</span>
 <a name="l00033"></a>00033 <span class="preprocessor"></span><span class="preprocessor">#if defined _MSC_VER &amp;&amp;_MSC_VER &lt;= 1400</span>
-<a name="l00034"></a>00034 <span class="preprocessor"></span>    <span class="keyword">typedef</span> UINT_PTR <a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a>;
-<a name="l00035"></a>00035     <span class="keyword">enum</span> {<a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a> = (<a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a>)(~0)};
+<a name="l00034"></a>00034 <span class="preprocessor"></span>    <span class="keyword">typedef</span> UINT_PTR fd_t;
+<a name="l00035"></a>00035     <span class="keyword">enum</span> {retired_fd = (fd_t)(~0)};
 <a name="l00036"></a>00036 <span class="preprocessor">#else</span>
-<a name="l00037"></a>00037 <span class="preprocessor"></span>    <span class="keyword">typedef</span> SOCKET <a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a>;
-<a name="l00038"></a>00038     <span class="keyword">enum</span> {<a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a> = INVALID_SOCKET};
+<a name="l00037"></a>00037 <span class="preprocessor"></span>    <span class="keyword">typedef</span> SOCKET fd_t;
+<a name="l00038"></a>00038     <span class="keyword">enum</span> {retired_fd = INVALID_SOCKET};
 <a name="l00039"></a>00039 <span class="preprocessor">#endif</span>
 <a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00041"></a><a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">00041</a> <span class="preprocessor"></span>    <span class="keyword">typedef</span> <span class="keywordtype">int</span> <a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a>;
-<a name="l00042"></a><a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">00042</a>     <span class="keyword">enum</span> {<a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a> = -1};
+<a name="l00041"></a>00041 <span class="preprocessor"></span>    <span class="keyword">typedef</span> <span class="keywordtype">int</span> fd_t;
+<a name="l00042"></a>00042     <span class="keyword">enum</span> {retired_fd = -1};
 <a name="l00043"></a>00043 <span class="preprocessor">#endif</span>
 <a name="l00044"></a>00044 <span class="preprocessor"></span>}
 <a name="l00045"></a>00045 <span class="preprocessor">#endif</span>
@@ -162,7 +157,7 @@ function toggleVisibility(linkObj) {
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -171,7 +166,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:08 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:06 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

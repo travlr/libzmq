@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/src/libzmq/perf/inproc_thr.cpp File Reference</title>
+<title>libzmq: perf/inproc_thr.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -97,10 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a>      </li>
-      <li class="navelem"><a class="el" href="dir_223207b948e8fa656fe21665415438d6.html">travlr</a>      </li>
-      <li class="navelem"><a class="el" href="dir_fb6bd66a99939deb91cf473b567980dd.html">src</a>      </li>
-      <li class="navelem"><a class="el" href="dir_aef0164114278eee23dc63ccdad22337.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_e8776e04f7a206c3b9be5bf50921531b.html">perf</a>      </li>
     </ul>
   </div>
@@ -125,8 +120,8 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="inproc__thr_8cpp__incl.png" border="0" usemap="#_2home_2travlr_2src_2libzmq_2perf_2inproc__thr_8cpp" alt=""/></div>
-<map name="_2home_2travlr_2src_2libzmq_2perf_2inproc__thr_8cpp" id="_2home_2travlr_2src_2libzmq_2perf_2inproc__thr_8cpp">
+<div class="center"><img src="inproc__thr_8cpp__incl.png" border="0" usemap="#perf_2inproc__thr_8cpp" alt=""/></div>
+<map name="perf_2inproc__thr_8cpp" id="perf_2inproc__thr_8cpp">
 <area shape="rect" id="node3" href="zmq_8h.html" title="../include/zmq.h" alt="" coords="23,83,137,112"/><area shape="rect" id="node9" href="zmq__utils_8h.html" title="../include/zmq_utils.h" alt="" coords="161,83,308,112"/></map>
 </div>
 </div>
@@ -170,153 +165,7 @@ Variables</h2></td></tr>
 <p>Definition at line <a class="el" href="inproc__thr_8cpp_source.html#l00099">99</a> of file <a class="el" href="inproc__thr_8cpp_source.html">inproc_thr.cpp</a>.</p>
 
 <p>References <a class="el" href="inproc__thr_8cpp_source.html#l00037">message_count</a>, <a class="el" href="inproc__thr_8cpp_source.html#l00038">message_size</a>, <a class="el" href="inproc__thr_8cpp_source.html#l00043">worker()</a>, <a class="el" href="zmq_8cpp_source.html#l00193">zmq_bind()</a>, <a class="el" href="zmq_8cpp_source.html#l00162">zmq_close()</a>, <a class="el" href="zmq_8cpp_source.html#l00075">zmq_init()</a>, <a class="el" href="zmq_8cpp_source.html#l00300">zmq_msg_close()</a>, <a class="el" href="zmq_8cpp_source.html#l00284">zmq_msg_init()</a>, <a class="el" href="zmq_8cpp_source.html#l00320">zmq_msg_size()</a>, <a class="el" href="zmq_8cpp_source.html#l00272">zmq_recvmsg()</a>, <a class="el" href="zmq_8cpp_source.html#l00172">zmq_setsockopt()</a>, <a class="el" href="zmq_8cpp_source.html#l00153">zmq_socket()</a>, <a class="el" href="zmq__utils_8cpp_source.html#l00046">zmq_stopwatch_start()</a>, <a class="el" href="zmq__utils_8cpp_source.html#l00054">zmq_stopwatch_stop()</a>, <a class="el" href="zmq_8cpp_source.html#l00070">zmq_strerror()</a>, <a class="el" href="zmq_8h_source.html#l00152">ZMQ_SUB</a>, <a class="el" href="zmq_8h_source.html#l00165">ZMQ_SUBSCRIBE</a>, and <a class="el" href="zmq_8cpp_source.html#l00127">zmq_term()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-<span class="preprocessor">#if defined ZMQ_HAVE_WINDOWS</span>
-<span class="preprocessor"></span>    HANDLE local_thread;
-<span class="preprocessor">#else</span>
-<span class="preprocessor"></span>    pthread_t local_thread;
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    <span class="keywordtype">void</span> *ctx;
-    <span class="keywordtype">void</span> *s;
-    <span class="keywordtype">int</span> rc;
-    <span class="keywordtype">int</span> i;
-    <a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> msg;
-    <span class="keywordtype">void</span> *watch;
-    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> elapsed;
-    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> throughput;
-    <span class="keywordtype">double</span> megabits;
 
-    <span class="keywordflow">if</span> (argc != 3) {
-        printf (<span class="stringliteral">&quot;usage: thread_thr &lt;message-size&gt; &lt;message-count&gt;\n&quot;</span>);
-        <span class="keywordflow">return</span> 1;
-    }
-
-    <a class="code" href="inproc__thr_8cpp.html#a767ba2e8299d0d9a71b552bfb719e9f0">message_size</a> = atoi (argv [1]);
-    <a class="code" href="inproc__thr_8cpp.html#a21d557fb1a24b78862f142e9ee2b3324">message_count</a> = atoi (argv [2]);
-
-    ctx = <a class="code" href="zmq_8h.html#a17913cd15c5dea05267f65c8e2300231">zmq_init</a> (1);
-    <span class="keywordflow">if</span> (!ctx) {
-        printf (<span class="stringliteral">&quot;error in zmq_init: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-        <span class="keywordflow">return</span> -1;
-    }
-
-    s = <a class="code" href="zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd">zmq_socket</a> (ctx, <a class="code" href="zmq_8h.html#ad331770f0eec9ed393bf25fe6ea65dcc">ZMQ_SUB</a>);
-    <span class="keywordflow">if</span> (!s) {
-        printf (<span class="stringliteral">&quot;error in zmq_socket: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-        <span class="keywordflow">return</span> -1;
-    }
-
-    rc = <a class="code" href="zmq_8h.html#acc51e98041e88b50af242d5847d0c7d7">zmq_setsockopt</a> (s, <a class="code" href="zmq_8h.html#af9e304eb1481a4458b5c63c342d57b23">ZMQ_SUBSCRIBE</a> , <span class="stringliteral">&quot;&quot;</span>, 0);
-    <span class="keywordflow">if</span> (rc != 0) {
-        printf (<span class="stringliteral">&quot;error in zmq_setsockopt: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-        <span class="keywordflow">return</span> -1;
-    }
-
-    rc = <a class="code" href="zmq_8h.html#a9b9820b4fd19e3b23bc5dba2da65dc3f">zmq_bind</a> (s, <span class="stringliteral">&quot;inproc://thr_test&quot;</span>);
-    <span class="keywordflow">if</span> (rc != 0) {
-        printf (<span class="stringliteral">&quot;error in zmq_bind: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-        <span class="keywordflow">return</span> -1;
-    }
-
-<span class="preprocessor">#if defined ZMQ_HAVE_WINDOWS</span>
-<span class="preprocessor"></span>    local_thread = (HANDLE) _beginthreadex (NULL, 0,
-        <a class="code" href="inproc__thr_8cpp.html#afdde2c05692ce4366f55800934ffdebe">worker</a>, ctx, 0 , NULL);
-    <span class="keywordflow">if</span> (local_thread == 0) {
-        printf (<span class="stringliteral">&quot;error in _beginthreadex\n&quot;</span>);
-        <span class="keywordflow">return</span> -1;
-    }
-<span class="preprocessor">#else</span>
-<span class="preprocessor"></span>    rc = pthread_create (&amp;local_thread, NULL, <a class="code" href="inproc__thr_8cpp.html#afdde2c05692ce4366f55800934ffdebe">worker</a>, ctx);
-    <span class="keywordflow">if</span> (rc != 0) {
-        printf (<span class="stringliteral">&quot;error in pthread_create: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (rc));
-        <span class="keywordflow">return</span> -1;
-    }
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>
-    rc = <a class="code" href="zmq_8h.html#a8c888cf117d859ae0d669e95cf8b64c2">zmq_msg_init</a> (&amp;msg);
-    <span class="keywordflow">if</span> (rc != 0) {
-        printf (<span class="stringliteral">&quot;error in zmq_msg_init: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-        <span class="keywordflow">return</span> -1;
-    }
-
-    printf (<span class="stringliteral">&quot;message size: %d [B]\n&quot;</span>, (<span class="keywordtype">int</span>) <a class="code" href="inproc__thr_8cpp.html#a767ba2e8299d0d9a71b552bfb719e9f0">message_size</a>);
-    printf (<span class="stringliteral">&quot;message count: %d\n&quot;</span>, (<span class="keywordtype">int</span>) <a class="code" href="inproc__thr_8cpp.html#a21d557fb1a24b78862f142e9ee2b3324">message_count</a>);
-
-    rc = <a class="code" href="zmq_8h.html#acfaed58455d33fedb9574920c239c9ed">zmq_recvmsg</a> (s, &amp;msg, 0);
-    <span class="keywordflow">if</span> (rc &lt; 0) {
-        printf (<span class="stringliteral">&quot;error in zmq_recvmsg: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-        <span class="keywordflow">return</span> -1;
-    }
-    <span class="keywordflow">if</span> (<a class="code" href="zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8">zmq_msg_size</a> (&amp;msg) != <a class="code" href="inproc__thr_8cpp.html#a767ba2e8299d0d9a71b552bfb719e9f0">message_size</a>) {
-        printf (<span class="stringliteral">&quot;message of incorrect size received\n&quot;</span>);
-        <span class="keywordflow">return</span> -1;
-    }
-
-    watch = <a class="code" href="zmq__utils_8h.html#a4a5508f72f3ee8685b7e0850566d0c13">zmq_stopwatch_start</a> ();
-
-    <span class="keywordflow">for</span> (i = 0; i != <a class="code" href="inproc__thr_8cpp.html#a21d557fb1a24b78862f142e9ee2b3324">message_count</a> - 1; i++) {
-        rc = <a class="code" href="zmq_8h.html#acfaed58455d33fedb9574920c239c9ed">zmq_recvmsg</a> (s, &amp;msg, 0);
-        <span class="keywordflow">if</span> (rc &lt; 0) {
-            printf (<span class="stringliteral">&quot;error in zmq_recvmsg: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-            <span class="keywordflow">return</span> -1;
-        }
-        <span class="keywordflow">if</span> (<a class="code" href="zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8">zmq_msg_size</a> (&amp;msg) != <a class="code" href="inproc__thr_8cpp.html#a767ba2e8299d0d9a71b552bfb719e9f0">message_size</a>) {
-            printf (<span class="stringliteral">&quot;message of incorrect size received\n&quot;</span>);
-            <span class="keywordflow">return</span> -1;
-        }
-    }
-
-    elapsed = <a class="code" href="zmq__utils_8h.html#a90ab5c3e9343988ed91d0adc547af90a">zmq_stopwatch_stop</a> (watch);
-    <span class="keywordflow">if</span> (elapsed == 0)
-        elapsed = 1;
-
-    rc = <a class="code" href="zmq_8h.html#a14cc42a7330a4b174dc3b735afd2adcc">zmq_msg_close</a> (&amp;msg);
-    <span class="keywordflow">if</span> (rc != 0) {
-        printf (<span class="stringliteral">&quot;error in zmq_msg_close: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-        <span class="keywordflow">return</span> -1;
-    }
-
-<span class="preprocessor">#if defined ZMQ_HAVE_WINDOWS</span>
-<span class="preprocessor"></span>    DWORD rc2 = WaitForSingleObject (local_thread, INFINITE);
-    <span class="keywordflow">if</span> (rc2 == WAIT_FAILED) {
-        printf (<span class="stringliteral">&quot;error in WaitForSingleObject\n&quot;</span>);
-        <span class="keywordflow">return</span> -1;
-    }
-    BOOL rc3 = CloseHandle (local_thread);
-    <span class="keywordflow">if</span> (rc3 == 0) {
-        printf (<span class="stringliteral">&quot;error in CloseHandle\n&quot;</span>);
-        <span class="keywordflow">return</span> -1;
-    }
-<span class="preprocessor">#else</span>
-<span class="preprocessor"></span>    rc = pthread_join (local_thread, NULL);
-    <span class="keywordflow">if</span> (rc != 0) {
-        printf (<span class="stringliteral">&quot;error in pthread_join: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (rc));
-        <span class="keywordflow">return</span> -1;
-    }
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>
-    rc = <a class="code" href="zmq_8h.html#a7f3288b9a1241ae2d2cc2a41324a7dd5">zmq_close</a> (s);
-    <span class="keywordflow">if</span> (rc != 0) {
-        printf (<span class="stringliteral">&quot;error in zmq_close: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-        <span class="keywordflow">return</span> -1;
-    }
-
-    rc = <a class="code" href="zmq_8h.html#ab6987eb024256ef4ccda6a18ce37a2f0">zmq_term</a> (ctx);
-    <span class="keywordflow">if</span> (rc != 0) {
-        printf (<span class="stringliteral">&quot;error in zmq_term: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-        <span class="keywordflow">return</span> -1;
-    }
-
-    throughput = (<span class="keywordtype">unsigned</span> long)
-        ((<span class="keywordtype">double</span>) <a class="code" href="inproc__thr_8cpp.html#a21d557fb1a24b78862f142e9ee2b3324">message_count</a> / (double) elapsed * 1000000);
-    megabits = (double) (throughput * <a class="code" href="inproc__thr_8cpp.html#a767ba2e8299d0d9a71b552bfb719e9f0">message_size</a> * 8) / 1000000;
-
-    printf (<span class="stringliteral">&quot;mean throughput: %d [msg/s]\n&quot;</span>, (<span class="keywordtype">int</span>) throughput);
-    printf (<span class="stringliteral">&quot;mean throughput: %.3f [Mb/s]\n&quot;</span>, (<span class="keywordtype">double</span>) megabits);
-
-    <span class="keywordflow">return</span> 0;
-}
-</pre></div>
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -324,7 +173,7 @@ Variables</h2></td></tr>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="inproc__thr_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.png" border="0" usemap="#inproc__thr_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph" alt=""/></div>
 <map name="inproc__thr_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph" id="inproc__thr_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph">
-<area shape="rect" id="node3" href="inproc__thr_8cpp.html#afdde2c05692ce4366f55800934ffdebe" title="worker" alt="" coords="147,219,208,248"/><area shape="rect" id="node5" href="zmq_8h.html#a7f3288b9a1241ae2d2cc2a41324a7dd5" title="zmq_close" alt="" coords="332,5,417,35"/><area shape="rect" id="node9" href="zmq_8h.html#a14cc42a7330a4b174dc3b735afd2adcc" title="zmq_msg_close" alt="" coords="316,59,433,88"/><area shape="rect" id="node17" href="zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8" title="zmq_msg_size" alt="" coords="515,431,624,460"/><area shape="rect" id="node19" href="zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd" title="zmq_socket" alt="" coords="328,379,421,408"/><area shape="rect" id="node21" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27" title="zmq_strerror" alt="" coords="328,325,421,355"/><area shape="rect" id="node25" href="zmq_8h.html#a9b9820b4fd19e3b23bc5dba2da65dc3f" title="zmq_bind" alt="" coords="139,480,216,509"/><area shape="rect" id="node28" href="zmq_8h.html#a17913cd15c5dea05267f65c8e2300231" title="zmq_init" alt="" coords="143,533,212,563"/><area shape="rect" id="node31" href="zmq_8h.html#a8c888cf117d859ae0d669e95cf8b64c2" title="zmq_msg_init" alt="" coords="127,587,228,616"/><area shape="rect" id="node34" href="zmq_8h.html#acfaed58455d33fedb9574920c239c9ed" title="zmq_recvmsg" alt="" coords="125,640,229,669"/><area shape="rect" id="node37" href="zmq_8h.html#acc51e98041e88b50af242d5847d0c7d7" title="zmq_setsockopt" alt="" coords="119,693,236,723"/><area shape="rect" id="node40" href="zmq__utils_8h.html#a4a5508f72f3ee8685b7e0850566d0c13" title="zmq_stopwatch_start" alt="" coords="104,747,251,776"/><area shape="rect" id="node44" href="zmq__utils_8h.html#a90ab5c3e9343988ed91d0adc547af90a" title="zmq_stopwatch_stop" alt="" coords="104,800,251,829"/><area shape="rect" id="node48" href="zmq_8h.html#ab6987eb024256ef4ccda6a18ce37a2f0" title="zmq_term" alt="" coords="137,853,217,883"/><area shape="rect" id="node7" href="zmq_8h.html#a451483d734ab7449dde2289d32d76588" title="zmq_connect" alt="" coords="325,112,424,141"/><area shape="rect" id="node11" href="zmq_8h.html#aabc235325f4161f00acf0657e2e24d83" title="zmq_msg_data" alt="" coords="320,165,429,195"/><area shape="rect" id="node13" href="zmq_8h.html#adabea9817029bab4ac295e1339d79803" title="zmq_msg_init_size" alt="" coords="308,219,441,248"/><area shape="rect" id="node15" href="zmq_8h.html#a2d25c972234261a2b683d6376e7b09aa" title="zmq_sendmsg" alt="" coords="321,272,428,301"/><area shape="rect" id="node23" href="namespacezmq.html#ad7e83cae9e2cf285742327ec337fff1d" title="zmq::errno_to_string" alt="" coords="499,325,640,355"/><area shape="rect" id="node42" href="classzmq_1_1clock__t.html#ac1caeb031c357ffe97a3df77a87ed265" title="zmq::clock_t::now_us" alt="" coords="300,773,449,803"/></map>
+<area shape="rect" id="node3" href="inproc__thr_8cpp.html#afdde2c05692ce4366f55800934ffdebe" title="worker" alt="" coords="147,219,208,248"/><area shape="rect" id="node5" href="zmq_8h.html#a7f3288b9a1241ae2d2cc2a41324a7dd5" title="zmq_close" alt="" coords="332,5,417,35"/><area shape="rect" id="node9" href="zmq_8h.html#a14cc42a7330a4b174dc3b735afd2adcc" title="zmq_msg_close" alt="" coords="316,59,433,88"/><area shape="rect" id="node17" href="zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8" title="zmq_msg_size" alt="" coords="500,431,609,460"/><area shape="rect" id="node19" href="zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd" title="zmq_socket" alt="" coords="328,325,421,355"/><area shape="rect" id="node21" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27" title="zmq_strerror" alt="" coords="328,379,421,408"/><area shape="rect" id="node23" href="zmq_8h.html#a9b9820b4fd19e3b23bc5dba2da65dc3f" title="zmq_bind" alt="" coords="139,535,216,564"/><area shape="rect" id="node26" href="zmq_8h.html#a17913cd15c5dea05267f65c8e2300231" title="zmq_init" alt="" coords="143,588,212,617"/><area shape="rect" id="node29" href="zmq_8h.html#a8c888cf117d859ae0d669e95cf8b64c2" title="zmq_msg_init" alt="" coords="127,641,228,671"/><area shape="rect" id="node32" href="zmq_8h.html#acfaed58455d33fedb9574920c239c9ed" title="zmq_recvmsg" alt="" coords="125,481,229,511"/><area shape="rect" id="node35" href="zmq_8h.html#acc51e98041e88b50af242d5847d0c7d7" title="zmq_setsockopt" alt="" coords="119,695,236,724"/><area shape="rect" id="node38" href="zmq__utils_8h.html#a4a5508f72f3ee8685b7e0850566d0c13" title="zmq_stopwatch_start" alt="" coords="104,748,251,777"/><area shape="rect" id="node42" href="zmq__utils_8h.html#a90ab5c3e9343988ed91d0adc547af90a" title="zmq_stopwatch_stop" alt="" coords="104,801,251,831"/><area shape="rect" id="node46" href="zmq_8h.html#ab6987eb024256ef4ccda6a18ce37a2f0" title="zmq_term" alt="" coords="137,855,217,884"/><area shape="rect" id="node7" href="zmq_8h.html#a451483d734ab7449dde2289d32d76588" title="zmq_connect" alt="" coords="325,112,424,141"/><area shape="rect" id="node11" href="zmq_8h.html#aabc235325f4161f00acf0657e2e24d83" title="zmq_msg_data" alt="" coords="320,165,429,195"/><area shape="rect" id="node13" href="zmq_8h.html#adabea9817029bab4ac295e1339d79803" title="zmq_msg_init_size" alt="" coords="308,272,441,301"/><area shape="rect" id="node15" href="zmq_8h.html#a2d25c972234261a2b683d6376e7b09aa" title="zmq_sendmsg" alt="" coords="321,219,428,248"/><area shape="rect" id="node40" href="classzmq_1_1clock__t.html#ac1caeb031c357ffe97a3df77a87ed265" title="zmq::clock_t::now_us" alt="" coords="300,775,449,804"/></map>
 </div>
 </p>
 
@@ -350,60 +199,7 @@ Variables</h2></td></tr>
 <p>References <a class="el" href="inproc__thr_8cpp_source.html#l00037">message_count</a>, <a class="el" href="inproc__thr_8cpp_source.html#l00038">message_size</a>, <a class="el" href="zmq_8cpp_source.html#l00162">zmq_close()</a>, <a class="el" href="zmq_8cpp_source.html#l00202">zmq_connect()</a>, <a class="el" href="zmq_8cpp_source.html#l00300">zmq_msg_close()</a>, <a class="el" href="zmq_8cpp_source.html#l00315">zmq_msg_data()</a>, <a class="el" href="zmq_8cpp_source.html#l00289">zmq_msg_init_size()</a>, <a class="el" href="zmq_8h_source.html#l00151">ZMQ_PUB</a>, <a class="el" href="zmq_8cpp_source.html#l00259">zmq_sendmsg()</a>, <a class="el" href="zmq_8cpp_source.html#l00153">zmq_socket()</a>, and <a class="el" href="zmq_8cpp_source.html#l00070">zmq_strerror()</a>.</p>
 
 <p>Referenced by <a class="el" href="inproc__thr_8cpp_source.html#l00099">main()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordtype">void</span> *s;
-    <span class="keywordtype">int</span> rc;
-    <span class="keywordtype">int</span> i;
-    <a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> msg;
 
-    s = <a class="code" href="zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd">zmq_socket</a> (ctx_, <a class="code" href="zmq_8h.html#a0755bc624cb1e1a7e897d8b512e17f2a">ZMQ_PUB</a>);
-    <span class="keywordflow">if</span> (!s) {
-        printf (<span class="stringliteral">&quot;error in zmq_socket: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-        exit (1);
-    }
-
-    rc = <a class="code" href="zmq_8h.html#a451483d734ab7449dde2289d32d76588">zmq_connect</a> (s, <span class="stringliteral">&quot;inproc://thr_test&quot;</span>);
-    <span class="keywordflow">if</span> (rc != 0) {
-        printf (<span class="stringliteral">&quot;error in zmq_connect: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-        exit (1);
-    }
-
-    <span class="keywordflow">for</span> (i = 0; i != <a class="code" href="inproc__thr_8cpp.html#a21d557fb1a24b78862f142e9ee2b3324">message_count</a>; i++) {
-
-        rc = <a class="code" href="zmq_8h.html#adabea9817029bab4ac295e1339d79803">zmq_msg_init_size</a> (&amp;msg, <a class="code" href="inproc__thr_8cpp.html#a767ba2e8299d0d9a71b552bfb719e9f0">message_size</a>);
-        <span class="keywordflow">if</span> (rc != 0) {
-            printf (<span class="stringliteral">&quot;error in zmq_msg_init_size: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-            exit (1);
-        }
-<span class="preprocessor">#if defined ZMQ_MAKE_VALGRIND_HAPPY</span>
-<span class="preprocessor"></span>        memset (<a class="code" href="zmq_8h.html#aabc235325f4161f00acf0657e2e24d83">zmq_msg_data</a> (&amp;msg), 0, <a class="code" href="inproc__thr_8cpp.html#a767ba2e8299d0d9a71b552bfb719e9f0">message_size</a>);
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>
-        rc = <a class="code" href="zmq_8h.html#a2d25c972234261a2b683d6376e7b09aa">zmq_sendmsg</a> (s, &amp;msg, 0);
-        <span class="keywordflow">if</span> (rc &lt; 0) {
-            printf (<span class="stringliteral">&quot;error in zmq_sendmsg: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-            exit (1);
-        }
-        rc = <a class="code" href="zmq_8h.html#a14cc42a7330a4b174dc3b735afd2adcc">zmq_msg_close</a> (&amp;msg);
-        <span class="keywordflow">if</span> (rc != 0) {
-            printf (<span class="stringliteral">&quot;error in zmq_msg_close: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-            exit (1);
-        }
-    }
-
-    rc = <a class="code" href="zmq_8h.html#a7f3288b9a1241ae2d2cc2a41324a7dd5">zmq_close</a> (s);
-    <span class="keywordflow">if</span> (rc != 0) {
-        printf (<span class="stringliteral">&quot;error in zmq_close: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-        exit (1);
-    }
-
-<span class="preprocessor">#if defined ZMQ_HAVE_WINDOWS</span>
-<span class="preprocessor"></span>    <span class="keywordflow">return</span> 0;
-<span class="preprocessor">#else</span>
-<span class="preprocessor"></span>    <span class="keywordflow">return</span> NULL;
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>}
-</pre></div>
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -411,7 +207,7 @@ Variables</h2></td></tr>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="inproc__thr_8cpp_afdde2c05692ce4366f55800934ffdebe_cgraph.png" border="0" usemap="#inproc__thr_8cpp_afdde2c05692ce4366f55800934ffdebe_cgraph" alt=""/></div>
 <map name="inproc__thr_8cpp_afdde2c05692ce4366f55800934ffdebe_cgraph" id="inproc__thr_8cpp_afdde2c05692ce4366f55800934ffdebe_cgraph">
-<area shape="rect" id="node3" href="zmq_8h.html#a7f3288b9a1241ae2d2cc2a41324a7dd5" title="zmq_close" alt="" coords="140,5,225,35"/><area shape="rect" id="node5" href="zmq_8h.html#a451483d734ab7449dde2289d32d76588" title="zmq_connect" alt="" coords="133,59,232,88"/><area shape="rect" id="node7" href="zmq_8h.html#a14cc42a7330a4b174dc3b735afd2adcc" title="zmq_msg_close" alt="" coords="124,112,241,141"/><area shape="rect" id="node9" href="zmq_8h.html#aabc235325f4161f00acf0657e2e24d83" title="zmq_msg_data" alt="" coords="128,165,237,195"/><area shape="rect" id="node11" href="zmq_8h.html#adabea9817029bab4ac295e1339d79803" title="zmq_msg_init_size" alt="" coords="116,219,249,248"/><area shape="rect" id="node13" href="zmq_8h.html#a2d25c972234261a2b683d6376e7b09aa" title="zmq_sendmsg" alt="" coords="129,272,236,301"/><area shape="rect" id="node17" href="zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd" title="zmq_socket" alt="" coords="136,325,229,355"/><area shape="rect" id="node19" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27" title="zmq_strerror" alt="" coords="136,379,229,408"/><area shape="rect" id="node15" href="zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8" title="zmq_msg_size" alt="" coords="315,272,424,301"/><area shape="rect" id="node21" href="namespacezmq.html#ad7e83cae9e2cf285742327ec337fff1d" title="zmq::errno_to_string" alt="" coords="299,379,440,408"/></map>
+<area shape="rect" id="node3" href="zmq_8h.html#a7f3288b9a1241ae2d2cc2a41324a7dd5" title="zmq_close" alt="" coords="140,5,225,35"/><area shape="rect" id="node5" href="zmq_8h.html#a451483d734ab7449dde2289d32d76588" title="zmq_connect" alt="" coords="133,59,232,88"/><area shape="rect" id="node7" href="zmq_8h.html#a14cc42a7330a4b174dc3b735afd2adcc" title="zmq_msg_close" alt="" coords="124,112,241,141"/><area shape="rect" id="node9" href="zmq_8h.html#aabc235325f4161f00acf0657e2e24d83" title="zmq_msg_data" alt="" coords="128,165,237,195"/><area shape="rect" id="node11" href="zmq_8h.html#adabea9817029bab4ac295e1339d79803" title="zmq_msg_init_size" alt="" coords="116,219,249,248"/><area shape="rect" id="node13" href="zmq_8h.html#a2d25c972234261a2b683d6376e7b09aa" title="zmq_sendmsg" alt="" coords="129,272,236,301"/><area shape="rect" id="node17" href="zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd" title="zmq_socket" alt="" coords="136,325,229,355"/><area shape="rect" id="node19" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27" title="zmq_strerror" alt="" coords="136,379,229,408"/><area shape="rect" id="node15" href="zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8" title="zmq_msg_size" alt="" coords="300,272,409,301"/></map>
 </div>
 </p>
 
@@ -469,7 +265,7 @@ Variables</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -478,7 +274,7 @@ Variables</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:09 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:09 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

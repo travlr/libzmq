@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$sub_8hpp.html" title="/home/travlr/src/libzmq/src/sub.hpp" alt="" coords="183,83,409,112"/>
-<area shape="rect" id="node5" href="$socket__base_8cpp.html" title="/home/travlr/src/libzmq/src/socket_base.cpp" alt="" coords="5,160,285,189"/>
-<area shape="rect" id="node10" href="$xsub_8cpp.html" title="/home/travlr/src/libzmq/src/xsub.cpp" alt="" coords="433,83,668,112"/>
-<area shape="rect" id="node7" href="$sub_8cpp.html" title="/home/travlr/src/libzmq/src/sub.cpp" alt="" coords="309,160,536,189"/>
+<area shape="rect" id="node3" href="$sub_8hpp.html" title="src/sub.hpp" alt="" coords="113,83,204,112"/>
+<area shape="rect" id="node5" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="5,160,147,189"/>
+<area shape="rect" id="node10" href="$xsub_8cpp.html" title="src/xsub.cpp" alt="" coords="228,83,324,112"/>
+<area shape="rect" id="node7" href="$sub_8cpp.html" title="src/sub.cpp" alt="" coords="171,160,261,189"/>
 </map>

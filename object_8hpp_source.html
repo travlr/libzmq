@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/src/libzmq/src/object.hpp Source File</title>
+<title>libzmq: src/object.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -97,10 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a>      </li>
-      <li class="navelem"><a class="el" href="dir_223207b948e8fa656fe21665415438d6.html">travlr</a>      </li>
-      <li class="navelem"><a class="el" href="dir_fb6bd66a99939deb91cf473b567980dd.html">src</a>      </li>
-      <li class="navelem"><a class="el" href="dir_aef0164114278eee23dc63ccdad22337.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
     </ul>
   </div>
@@ -176,11 +171,11 @@ function toggleVisibility(linkObj) {
 <a name="l00064"></a>00064         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a1746fdd6c7b787bfa432dace8c5ca156">send_own</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a> *destination_,
 <a name="l00065"></a>00065             <span class="keyword">class</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a> *object_);
 <a name="l00066"></a>00066         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#ae7d1be5035efda04d5b0f5cb5ee1aff6">send_attach</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1session__t.html">session_t</a> *destination_,
-<a name="l00067"></a>00067              <span class="keyword">struct</span> <a class="code" href="structzmq_1_1i__engine.html">i_engine</a> *engine_, <span class="keyword">const</span> <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;peer_identity_,
+<a name="l00067"></a>00067              <span class="keyword">struct</span> <a class="code" href="structzmq_1_1i__engine.html">i_engine</a> *engine_, <span class="keyword">const</span> blob_t &amp;peer_identity_,
 <a name="l00068"></a>00068              <span class="keywordtype">bool</span> inc_seqnum_ = <span class="keyword">true</span>);
 <a name="l00069"></a>00069         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#aefe7f36f1370393a301fe849b190b022">send_bind</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a> *destination_,
 <a name="l00070"></a>00070              <span class="keyword">class</span> <a class="code" href="classzmq_1_1reader__t.html">reader_t</a> *in_pipe_, <span class="keyword">class</span> <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *out_pipe_,
-<a name="l00071"></a>00071              <span class="keyword">const</span> <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;peer_identity_, <span class="keywordtype">bool</span> inc_seqnum_ = <span class="keyword">true</span>);
+<a name="l00071"></a>00071              <span class="keyword">const</span> blob_t &amp;peer_identity_, <span class="keywordtype">bool</span> inc_seqnum_ = <span class="keyword">true</span>);
 <a name="l00072"></a>00072         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a6019509926465c8f21b7cf5ca5e64fe4">send_activate_reader</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1reader__t.html">reader_t</a> *destination_);
 <a name="l00073"></a>00073         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a215313f441429d7a01a26c4b7b1b97c0">send_activate_writer</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *destination_,
 <a name="l00074"></a>00074              uint64_t msgs_read_);
@@ -200,9 +195,9 @@ function toggleVisibility(linkObj) {
 <a name="l00088"></a>00088         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#ac2ea931f4a6be8b6fabe502cd22b85b7">process_plug</a> ();
 <a name="l00089"></a>00089         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a48b588321f4fdbe7aa573300fc0976f1">process_own</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a> *object_);
 <a name="l00090"></a>00090         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#ad0b54980f3a60dac2a68ced302d7a835">process_attach</a> (<span class="keyword">struct</span> <a class="code" href="structzmq_1_1i__engine.html">i_engine</a> *engine_,
-<a name="l00091"></a>00091             <span class="keyword">const</span> <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;peer_identity_);
+<a name="l00091"></a>00091             <span class="keyword">const</span> blob_t &amp;peer_identity_);
 <a name="l00092"></a>00092         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a640914b51beb9629e1048199ade635d5">process_bind</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1reader__t.html">reader_t</a> *in_pipe_,
-<a name="l00093"></a>00093             <span class="keyword">class</span> <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *out_pipe_, <span class="keyword">const</span> <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;peer_identity_);
+<a name="l00093"></a>00093             <span class="keyword">class</span> <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *out_pipe_, <span class="keyword">const</span> blob_t &amp;peer_identity_);
 <a name="l00094"></a>00094         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#ac4cb21fd4f79080ff94f74a071032e7c">process_activate_reader</a> ();
 <a name="l00095"></a>00095         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#adae0d107731853c76b907cd9edaa1912">process_activate_writer</a> (uint64_t msgs_read_);
 <a name="l00096"></a>00096         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a66d6b70e97b659523f89e27062b75461">process_pipe_term</a> ();
@@ -242,7 +237,7 @@ function toggleVisibility(linkObj) {
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -251,7 +246,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:08 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:06 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

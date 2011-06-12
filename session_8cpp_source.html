@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/src/libzmq/src/session.cpp Source File</title>
+<title>libzmq: src/session.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -97,10 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a>      </li>
-      <li class="navelem"><a class="el" href="dir_223207b948e8fa656fe21665415438d6.html">travlr</a>      </li>
-      <li class="navelem"><a class="el" href="dir_fb6bd66a99939deb91cf473b567980dd.html">src</a>      </li>
-      <li class="navelem"><a class="el" href="dir_aef0164114278eee23dc63ccdad22337.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
     </ul>
   </div>
@@ -247,7 +242,7 @@ function toggleVisibility(linkObj) {
 <a name="l00135"></a>00135 }
 <a name="l00136"></a>00136 
 <a name="l00137"></a><a class="code" href="classzmq_1_1session__t.html#a9f8dfb1c61670320ac84f4751442b8cd">00137</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__t.html#a9f8dfb1c61670320ac84f4751442b8cd">zmq::session_t::attach_pipes</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1reader__t.html">reader_t</a> *inpipe_,
-<a name="l00138"></a>00138     <span class="keyword">class</span> <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *outpipe_, <span class="keyword">const</span> <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;peer_identity_)
+<a name="l00138"></a>00138     <span class="keyword">class</span> <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *outpipe_, <span class="keyword">const</span> blob_t &amp;peer_identity_)
 <a name="l00139"></a>00139 {
 <a name="l00140"></a>00140     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!pipes_attached);
 <a name="l00141"></a>00141     pipes_attached = <span class="keyword">true</span>;
@@ -327,7 +322,7 @@ function toggleVisibility(linkObj) {
 <a name="l00215"></a>00215 }
 <a name="l00216"></a>00216 
 <a name="l00217"></a><a class="code" href="classzmq_1_1session__t.html#a4204be20114ba94fda3a301e3fad75c7">00217</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__t.html#a4204be20114ba94fda3a301e3fad75c7">zmq::session_t::process_attach</a> (<a class="code" href="structzmq_1_1i__engine.html">i_engine</a> *engine_,
-<a name="l00218"></a>00218     <span class="keyword">const</span> <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;peer_identity_)
+<a name="l00218"></a>00218     <span class="keyword">const</span> blob_t &amp;peer_identity_)
 <a name="l00219"></a>00219 {
 <a name="l00220"></a>00220     <span class="comment">//  If we are already terminating, we destroy the engine straight away.</span>
 <a name="l00221"></a>00221     <span class="comment">//  Note that we don&#39;t have to unplug it before deleting as it&#39;s not</span>
@@ -362,12 +357,12 @@ function toggleVisibility(linkObj) {
 <a name="l00250"></a>00250 
 <a name="l00251"></a>00251         <span class="comment">//  Create the pipes, as required.</span>
 <a name="l00252"></a>00252         <span class="keywordflow">if</span> (options.requires_in) {
-<a name="l00253"></a>00253             <a class="code" href="namespacezmq.html#a298bc554f19da8cd5eac945d1dec8d2d">create_pipe</a> (socket, <span class="keyword">this</span>, options.rcvhwm, &amp;socket_reader,
+<a name="l00253"></a>00253             create_pipe (socket, <span class="keyword">this</span>, options.rcvhwm, &amp;socket_reader,
 <a name="l00254"></a>00254                 &amp;out_pipe);
 <a name="l00255"></a>00255             out_pipe-&gt;set_event_sink (<span class="keyword">this</span>);
 <a name="l00256"></a>00256         }
 <a name="l00257"></a>00257         <span class="keywordflow">if</span> (options.requires_out) {
-<a name="l00258"></a>00258             <a class="code" href="namespacezmq.html#a298bc554f19da8cd5eac945d1dec8d2d">create_pipe</a> (<span class="keyword">this</span>, socket, options.sndhwm, &amp;in_pipe,
+<a name="l00258"></a>00258             create_pipe (<span class="keyword">this</span>, socket, options.sndhwm, &amp;in_pipe,
 <a name="l00259"></a>00259                 &amp;socket_writer);
 <a name="l00260"></a>00260             in_pipe-&gt;set_event_sink (<span class="keyword">this</span>);
 <a name="l00261"></a>00261         }
@@ -447,12 +442,12 @@ function toggleVisibility(linkObj) {
 <a name="l00335"></a>00335     <span class="keywordflow">return</span> engine != NULL;
 <a name="l00336"></a>00336 }
 <a name="l00337"></a>00337 
-<a name="l00338"></a><a class="code" href="classzmq_1_1session__t.html#a55104ef6e1a8a9b541f81e8b3cf62423">00338</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1session__t.html#a55104ef6e1a8a9b541f81e8b3cf62423">zmq::session_t::register_session</a> (<span class="keyword">const</span> <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;name_, <a class="code" href="classzmq_1_1session__t.html">session_t</a> *session_)
+<a name="l00338"></a><a class="code" href="classzmq_1_1session__t.html#a55104ef6e1a8a9b541f81e8b3cf62423">00338</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1session__t.html#a55104ef6e1a8a9b541f81e8b3cf62423">zmq::session_t::register_session</a> (<span class="keyword">const</span> blob_t &amp;name_, <a class="code" href="classzmq_1_1session__t.html">session_t</a> *session_)
 <a name="l00339"></a>00339 {
 <a name="l00340"></a>00340     <span class="keywordflow">return</span> socket-&gt;register_session (name_, session_);
 <a name="l00341"></a>00341 }
 <a name="l00342"></a>00342 
-<a name="l00343"></a><a class="code" href="classzmq_1_1session__t.html#a062986d6b8a42e4bd21cf254ee7b6d5d">00343</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__t.html#a062986d6b8a42e4bd21cf254ee7b6d5d">zmq::session_t::unregister_session</a> (<span class="keyword">const</span> <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;name_)
+<a name="l00343"></a><a class="code" href="classzmq_1_1session__t.html#a062986d6b8a42e4bd21cf254ee7b6d5d">00343</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__t.html#a062986d6b8a42e4bd21cf254ee7b6d5d">zmq::session_t::unregister_session</a> (<span class="keyword">const</span> blob_t &amp;name_)
 <a name="l00344"></a>00344 {
 <a name="l00345"></a>00345     socket-&gt;unregister_session (name_);
 <a name="l00346"></a>00346 }
@@ -469,7 +464,7 @@ function toggleVisibility(linkObj) {
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -478,7 +473,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:09 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:07 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

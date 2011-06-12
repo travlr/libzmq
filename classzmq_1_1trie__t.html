@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -99,7 +98,7 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespacezmq.html">zmq</a>      </li>
+      <li class="navelem"><b>zmq</b>      </li>
       <li class="navelem"><a class="el" href="classzmq_1_1trie__t.html">trie_t</a>      </li>
     </ul>
   </div>
@@ -121,8 +120,6 @@ function toggleVisibility(linkObj) {
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1trie__t__coll__graph.png" border="0" usemap="#zmq_1_1trie__t_coll__map" alt="Collaboration graph"/></div>
-<map name="zmq_1_1trie__t_coll__map" id="zmq_1_1trie__t_coll__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classzmq_1_1trie__t-members.html">List of all members.</a></p>
@@ -167,13 +164,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="trie_8cpp_source.html#l00034">34</a> of file <a class="el" href="trie_8cpp_source.html">trie.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">                   :
-    <a class="code" href="classzmq_1_1trie__t.html#a4c3411a88044a450f4ddabfeee77a5a5">refcnt</a> (0),
-    <a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a> (0),
-    <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a> (0)
-{
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="aa9a686de7a3d302b44d34e045adf5926"></a><!-- doxytag: member="zmq::trie_t::~trie_t" ref="aa9a686de7a3d302b44d34e045adf5926" args="()" -->
@@ -191,17 +182,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="trie_8cpp_source.html#l00041">41</a> of file <a class="el" href="trie_8cpp_source.html">trie.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a> == 1)
-        <span class="keyword">delete</span> <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.node;
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a> &gt; 1) {
-        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> i = 0; i != <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a>; ++i)
-            <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table [i])
-                <span class="keyword">delete</span> <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table [i];
-        free (<a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table);
-    }
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a480c5aab44643295043053b9b4a53fec"></a><!-- doxytag: member="zmq::trie_t::trie_t" ref="a480c5aab44643295043053b9b4a53fec" args="(const trie_t &amp;)" -->
@@ -250,79 +231,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="trie_8cpp_source.html#l00053">53</a> of file <a class="el" href="trie_8cpp_source.html">trie.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>, <a class="el" href="trie_8hpp_source.html#l00048">node</a>, <a class="el" href="trie_8hpp_source.html#l00049">table</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  We are at the node corresponding to the prefix. We are done.</span>
-    <span class="keywordflow">if</span> (!size_) {
-        ++<a class="code" href="classzmq_1_1trie__t.html#a4c3411a88044a450f4ddabfeee77a5a5">refcnt</a>;
-        <span class="keywordflow">return</span>;
-    }
 
-    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c = *prefix_;
-    <span class="keywordflow">if</span> (c &lt; min || c &gt;= <a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a> + <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a>) {
-
-        <span class="comment">//  The character is out of range of currently handled</span>
-        <span class="comment">//  charcters. We have to extend the table.</span>
-        <span class="keywordflow">if</span> (!<a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a>) {
-            <a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a> = c;
-            <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a> = 1;
-            <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.node = NULL;
-        }
-        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a> == 1) {
-            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> oldc = <a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a>;
-            <a class="code" href="classzmq_1_1trie__t.html#a475953f88453a0a820e6edb4dfc51e7f">trie_t</a> *oldp = <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.node;
-            <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a> = (<a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a> &lt; c ? c - <a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a> : <a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a> - c) + 1;
-            <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table = (<a class="code" href="classzmq_1_1trie__t.html#a475953f88453a0a820e6edb4dfc51e7f">trie_t</a>**)
-                malloc (<span class="keyword">sizeof</span> (<a class="code" href="classzmq_1_1trie__t.html#a475953f88453a0a820e6edb4dfc51e7f">trie_t</a>*) * <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a>);
-            <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (<a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table);
-            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> i = 0; i != <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a>; ++i)
-                <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table [i] = 0;
-            <a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a> = std::min (<a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a>, c);
-            <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table [oldc - <a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a>] = oldp;
-        }
-        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a> &lt; c) {
-
-            <span class="comment">//  The new character is above the current character range.</span>
-            <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> old_count = <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a>;
-            <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a> = c - <a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a> + 1;
-            <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table = (<a class="code" href="classzmq_1_1trie__t.html#a475953f88453a0a820e6edb4dfc51e7f">trie_t</a>**) realloc ((<span class="keywordtype">void</span>*) <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table,
-                <span class="keyword">sizeof</span> (<a class="code" href="classzmq_1_1trie__t.html#a475953f88453a0a820e6edb4dfc51e7f">trie_t</a>*) * <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a>);
-            <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table);
-            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> i = old_count; i != <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a>; i++)
-                <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table [i] = NULL;
-        }
-        <span class="keywordflow">else</span> {
-
-            <span class="comment">//  The new character is below the current character range.</span>
-            <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> old_count = <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a>;
-            <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a> = (min + old_count) - c;
-            <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table = (<a class="code" href="classzmq_1_1trie__t.html#a475953f88453a0a820e6edb4dfc51e7f">trie_t</a>**) realloc ((<span class="keywordtype">void</span>*) <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table,
-                <span class="keyword">sizeof</span> (<a class="code" href="classzmq_1_1trie__t.html#a475953f88453a0a820e6edb4dfc51e7f">trie_t</a>*) * <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a>);
-            <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table);
-            memmove (<a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table + min - c, <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table,
-                old_count * sizeof (<a class="code" href="classzmq_1_1trie__t.html#a475953f88453a0a820e6edb4dfc51e7f">trie_t</a>*));
-            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> i = 0; i != min - c; i++)
-                <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table [i] = NULL;
-            min = c;
-        }
-    }
-
-    <span class="comment">//  If next node does not exist, create one.</span>
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a> == 1) {
-        <span class="keywordflow">if</span> (!<a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.node) {
-            <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.node = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1trie__t.html#a475953f88453a0a820e6edb4dfc51e7f">trie_t</a>;
-            <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (<a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.node);
-        }
-        <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.node-&gt;add (prefix_ + 1, size_ - 1);
-    }
-    <span class="keywordflow">else</span> {
-        <span class="keywordflow">if</span> (!<a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table [c - min]) {
-            <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table [c - <a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a>] = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1trie__t.html#a475953f88453a0a820e6edb4dfc51e7f">trie_t</a>;
-            <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (<a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table [c - min]);
-        }
-        <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table [c - <a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a>]-&gt;add (prefix_ + 1, size_ - 1);
-    }
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a65c117c92c8c9c9ff32fcc2c38f9f548"></a><!-- doxytag: member="zmq::trie_t::check" ref="a65c117c92c8c9c9ff32fcc2c38f9f548" args="(unsigned char *data_, size_t size_)" -->
@@ -353,39 +262,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="trie_8cpp_source.html#l00149">149</a> of file <a class="el" href="trie_8cpp_source.html">trie.cpp</a>.</p>
 
 <p>References <a class="el" href="trie_8hpp_source.html#l00046">count</a>, <a class="el" href="trie_8hpp_source.html#l00045">min</a>, <a class="el" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>, <a class="el" href="trie_8hpp_source.html#l00048">node</a>, <a class="el" href="trie_8hpp_source.html#l00044">refcnt</a>, and <a class="el" href="trie_8hpp_source.html#l00049">table</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  This function is on critical path. It deliberately doesn&#39;t use</span>
-    <span class="comment">//  recursion to get a bit better performance.</span>
-    <a class="code" href="classzmq_1_1trie__t.html#a475953f88453a0a820e6edb4dfc51e7f">trie_t</a> *current = <span class="keyword">this</span>;
-    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {
 
-        <span class="comment">//  We&#39;ve found a corresponding subscription!</span>
-        <span class="keywordflow">if</span> (current-&gt;refcnt)
-            <span class="keywordflow">return</span> <span class="keyword">true</span>;
-
-        <span class="comment">//  We&#39;ve checked all the data and haven&#39;t found matching subscription.</span>
-        <span class="keywordflow">if</span> (!size_)
-            <span class="keywordflow">return</span> <span class="keyword">false</span>;
-
-        <span class="comment">//  If there&#39;s no corresponding slot for the first character</span>
-        <span class="comment">//  of the prefix, the message does not match.</span>
-        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c = *data_;
-        <span class="keywordflow">if</span> (c &lt; current-&gt;<a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a> || c &gt;= current-&gt;min + current-&gt;count)
-            <span class="keywordflow">return</span> <span class="keyword">false</span>;
-
-        <span class="comment">//  Move to the next character.</span>
-        <span class="keywordflow">if</span> (current-&gt;count == 1)
-            current = current-&gt;next.node;
-        <span class="keywordflow">else</span> {
-            current = current-&gt;next.table [c - current-&gt;min];
-            <span class="keywordflow">if</span> (!current)
-                <span class="keywordflow">return</span> <span class="keyword">false</span>;
-        }
-        data_++;
-        size_--;
-    }
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a10cee3607d90cab2970ea32dd5479555"></a><!-- doxytag: member="zmq::trie_t::operator=" ref="a10cee3607d90cab2970ea32dd5479555" args="(const trie_t &amp;)" -->
@@ -435,35 +312,13 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="trie_8hpp_source.html#l00048">node</a>, <a class="el" href="trie_8cpp_source.html#l00127">rm()</a>, and <a class="el" href="trie_8hpp_source.html#l00049">table</a>.</p>
 
 <p>Referenced by <a class="el" href="trie_8cpp_source.html#l00127">rm()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-     <span class="keywordflow">if</span> (!size_) {
-         <span class="keywordflow">if</span> (!<a class="code" href="classzmq_1_1trie__t.html#a4c3411a88044a450f4ddabfeee77a5a5">refcnt</a>)
-             <span class="keywordflow">return</span> <span class="keyword">false</span>;
-         <a class="code" href="classzmq_1_1trie__t.html#a4c3411a88044a450f4ddabfeee77a5a5">refcnt</a>--;
-         <span class="keywordflow">return</span> <span class="keyword">true</span>;
-     }
 
-     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c = *prefix_;
-     <span class="keywordflow">if</span> (!<a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a> || c &lt; min || c &gt;= <a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a> + <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a>)
-         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-
-     <a class="code" href="classzmq_1_1trie__t.html#a475953f88453a0a820e6edb4dfc51e7f">trie_t</a> *next_node =
-         <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a> == 1 ? <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.node : <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.table [c - <a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a>];
-
-     <span class="keywordflow">if</span> (!next_node)
-         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-
-     <span class="keywordflow">return</span> next_node-&gt;rm (prefix_ + 1, size_ - 1);
-}
-</pre></div>
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1trie__t_ab15f7f0440899870e962f0697e89b3ac_cgraph.png" border="0" usemap="#classzmq_1_1trie__t_ab15f7f0440899870e962f0697e89b3ac_cgraph" alt=""/></div>
-<map name="classzmq_1_1trie__t_ab15f7f0440899870e962f0697e89b3ac_cgraph" id="classzmq_1_1trie__t_ab15f7f0440899870e962f0697e89b3ac_cgraph">
-</map>
 </div>
 </p>
 
@@ -473,8 +328,6 @@ Private Attributes</h2></td></tr>
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1trie__t_ab15f7f0440899870e962f0697e89b3ac_icgraph.png" border="0" usemap="#classzmq_1_1trie__t_ab15f7f0440899870e962f0697e89b3ac_icgraph" alt=""/></div>
-<map name="classzmq_1_1trie__t_ab15f7f0440899870e962f0697e89b3ac_icgraph" id="classzmq_1_1trie__t_ab15f7f0440899870e962f0697e89b3ac_icgraph">
-</map>
 </div>
 </p>
 
@@ -582,8 +435,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="trie_8hpp_source.html">trie.hpp</a></li>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="trie_8cpp_source.html">trie.cpp</a></li>
+<li>src/<a class="el" href="trie_8hpp_source.html">trie.hpp</a></li>
+<li>src/<a class="el" href="trie_8cpp_source.html">trie.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -591,7 +444,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -600,7 +453,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:20 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:19 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -99,7 +98,7 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespacezmq.html">zmq</a>      </li>
+      <li class="navelem"><b>zmq</b>      </li>
       <li class="navelem"><a class="el" href="classzmq_1_1ypipe__t.html">ypipe_t</a>      </li>
     </ul>
   </div>
@@ -166,16 +165,7 @@ template&lt;typename T , int N&gt; </div>
 <p>Definition at line <a class="el" href="ypipe_8hpp_source.html#l00043">43</a> of file <a class="el" href="ypipe_8hpp_source.html">ypipe.hpp</a>.</p>
 
 <p>References <a class="el" href="ypipe_8hpp_source.html#l00200">zmq::ypipe_t&lt; T, N &gt;::c</a>, <a class="el" href="ypipe_8hpp_source.html#l00194">zmq::ypipe_t&lt; T, N &gt;::f</a>, <a class="el" href="ypipe_8hpp_source.html#l00183">zmq::ypipe_t&lt; T, N &gt;::queue</a>, <a class="el" href="ypipe_8hpp_source.html#l00191">zmq::ypipe_t&lt; T, N &gt;::r</a>, and <a class="el" href="ypipe_8hpp_source.html#l00187">zmq::ypipe_t&lt; T, N &gt;::w</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="comment">//  Insert terminator element into the queue.</span>
-            <a class="code" href="classzmq_1_1ypipe__t.html#ac294e30e0390b53c0b52320e687b64fe">queue</a>.push ();
 
-            <span class="comment">//  Let all the pointers to point to the terminator.</span>
-            <span class="comment">//  (unless pipe is dead, in which case c is set to NULL).</span>
-            <a class="code" href="classzmq_1_1ypipe__t.html#a0c6397dafaafa94515095648019d074f">r</a> = <a class="code" href="classzmq_1_1ypipe__t.html#aaf13854d4bcb65c142d236ff618342a4">w</a> = <a class="code" href="classzmq_1_1ypipe__t.html#a69f9c9cfc119f4d0ef794c8566787fb7">f</a> = &amp;<a class="code" href="classzmq_1_1ypipe__t.html#ac294e30e0390b53c0b52320e687b64fe">queue</a>.back ();
-            <a class="code" href="classzmq_1_1ypipe__t.html#a5e831e28a57ca5ef55c192791108e3f0">c</a>.set (&amp;<a class="code" href="classzmq_1_1ypipe__t.html#ac294e30e0390b53c0b52320e687b64fe">queue</a>.back ());
-        }
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a0516ee8209d899f42033742140d7c3ba"></a><!-- doxytag: member="zmq::ypipe_t::~ypipe_t" ref="a0516ee8209d899f42033742140d7c3ba" args="()" -->
@@ -195,9 +185,7 @@ template&lt;typename T , int N&gt; </div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="ypipe_8hpp_source.html#l00056">56</a> of file <a class="el" href="ypipe_8hpp_source.html">ypipe.hpp</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="accd8eac9115182b09fe926d356adadb7"></a><!-- doxytag: member="zmq::ypipe_t::ypipe_t" ref="accd8eac9115182b09fe926d356adadb7" args="(const ypipe_t &amp;)" -->
@@ -241,28 +229,7 @@ template&lt;typename T , int N&gt; </div>
 <p>References <a class="el" href="ypipe_8hpp_source.html#l00200">zmq::ypipe_t&lt; T, N &gt;::c</a>, <a class="el" href="ypipe_8hpp_source.html#l00183">zmq::ypipe_t&lt; T, N &gt;::queue</a>, and <a class="el" href="ypipe_8hpp_source.html#l00191">zmq::ypipe_t&lt; T, N &gt;::r</a>.</p>
 
 <p>Referenced by <a class="el" href="ypipe_8hpp_source.html#l00169">zmq::ypipe_t&lt; T, N &gt;::probe()</a>, and <a class="el" href="ypipe_8hpp_source.html#l00153">zmq::ypipe_t&lt; T, N &gt;::read()</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="comment">//  Was the value prefetched already? If so, return.</span>
-            <span class="keywordflow">if</span> (&amp;<a class="code" href="classzmq_1_1ypipe__t.html#ac294e30e0390b53c0b52320e687b64fe">queue</a>.front () != <a class="code" href="classzmq_1_1ypipe__t.html#a0c6397dafaafa94515095648019d074f">r</a> &amp;&amp; <a class="code" href="classzmq_1_1ypipe__t.html#a0c6397dafaafa94515095648019d074f">r</a>)
-                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
 
-            <span class="comment">//  There&#39;s no prefetched value, so let us prefetch more values.</span>
-            <span class="comment">//  Prefetching is to simply retrieve the</span>
-            <span class="comment">//  pointer from c in atomic fashion. If there are no</span>
-            <span class="comment">//  items to prefetch, set c to NULL (using compare-and-swap).</span>
-            <a class="code" href="classzmq_1_1ypipe__t.html#a0c6397dafaafa94515095648019d074f">r</a> = <a class="code" href="classzmq_1_1ypipe__t.html#a5e831e28a57ca5ef55c192791108e3f0">c</a>.cas (&amp;<a class="code" href="classzmq_1_1ypipe__t.html#ac294e30e0390b53c0b52320e687b64fe">queue</a>.front (), NULL);
-
-            <span class="comment">//  If there are no elements prefetched, exit.</span>
-            <span class="comment">//  During pipe&#39;s lifetime r should never be NULL, however,</span>
-            <span class="comment">//  it can happen during pipe shutdown when items</span>
-            <span class="comment">//  are being deallocated.</span>
-            <span class="keywordflow">if</span> (&amp;<a class="code" href="classzmq_1_1ypipe__t.html#ac294e30e0390b53c0b52320e687b64fe">queue</a>.front () == <a class="code" href="classzmq_1_1ypipe__t.html#a0c6397dafaafa94515095648019d074f">r</a> || !<a class="code" href="classzmq_1_1ypipe__t.html#a0c6397dafaafa94515095648019d074f">r</a>)
-                <span class="keywordflow">return</span> <span class="keyword">false</span>;
-
-            <span class="comment">//  There was at least one value prefetched.</span>
-            <span class="keywordflow">return</span> <span class="keyword">true</span>;
-        }
-</pre></div>
 <p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -295,30 +262,7 @@ template&lt;typename T , int N&gt; </div>
 <p>Definition at line <a class="el" href="ypipe_8hpp_source.html#l00102">102</a> of file <a class="el" href="ypipe_8hpp_source.html">ypipe.hpp</a>.</p>
 
 <p>References <a class="el" href="ypipe_8hpp_source.html#l00200">zmq::ypipe_t&lt; T, N &gt;::c</a>, <a class="el" href="ypipe_8hpp_source.html#l00194">zmq::ypipe_t&lt; T, N &gt;::f</a>, and <a class="el" href="ypipe_8hpp_source.html#l00187">zmq::ypipe_t&lt; T, N &gt;::w</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="comment">//  If there are no un-flushed items, do nothing.</span>
-            <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1ypipe__t.html#aaf13854d4bcb65c142d236ff618342a4">w</a> == <a class="code" href="classzmq_1_1ypipe__t.html#a69f9c9cfc119f4d0ef794c8566787fb7">f</a>)
-                <span class="keywordflow">return</span> <span class="keyword">true</span>;
 
-            <span class="comment">//  Try to set &#39;c&#39; to &#39;f&#39;.</span>
-            <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1ypipe__t.html#a5e831e28a57ca5ef55c192791108e3f0">c</a>.cas (<a class="code" href="classzmq_1_1ypipe__t.html#aaf13854d4bcb65c142d236ff618342a4">w</a>, <a class="code" href="classzmq_1_1ypipe__t.html#a69f9c9cfc119f4d0ef794c8566787fb7">f</a>) != <a class="code" href="classzmq_1_1ypipe__t.html#aaf13854d4bcb65c142d236ff618342a4">w</a>) {
-
-                <span class="comment">//  Compare-and-swap was unseccessful because &#39;c&#39; is NULL.</span>
-                <span class="comment">//  This means that the reader is asleep. Therefore we don&#39;t</span>
-                <span class="comment">//  care about thread-safeness and update c in non-atomic</span>
-                <span class="comment">//  manner. We&#39;ll return false to let the caller know</span>
-                <span class="comment">//  that reader is sleeping.</span>
-                <a class="code" href="classzmq_1_1ypipe__t.html#a5e831e28a57ca5ef55c192791108e3f0">c</a>.set (<a class="code" href="classzmq_1_1ypipe__t.html#a69f9c9cfc119f4d0ef794c8566787fb7">f</a>);
-                <a class="code" href="classzmq_1_1ypipe__t.html#aaf13854d4bcb65c142d236ff618342a4">w</a> = <a class="code" href="classzmq_1_1ypipe__t.html#a69f9c9cfc119f4d0ef794c8566787fb7">f</a>;
-                <span class="keywordflow">return</span> <span class="keyword">false</span>;
-            }
-
-            <span class="comment">//  Reader is alive. Nothing special to do now. Just move</span>
-            <span class="comment">//  the &#39;first un-flushed item&#39; pointer to &#39;f&#39;.</span>
-            <a class="code" href="classzmq_1_1ypipe__t.html#aaf13854d4bcb65c142d236ff618342a4">w</a> = <a class="code" href="classzmq_1_1ypipe__t.html#a69f9c9cfc119f4d0ef794c8566787fb7">f</a>;
-            <span class="keywordflow">return</span> <span class="keyword">true</span>;
-        }
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a8bb51e57123603d9e35f4e34943d2b27"></a><!-- doxytag: member="zmq::ypipe_t::operator=" ref="a8bb51e57123603d9e35f4e34943d2b27" args="(const ypipe_t &amp;)" -->
@@ -360,13 +304,7 @@ template&lt;typename T , int N&gt; </div>
 <p>Definition at line <a class="el" href="ypipe_8hpp_source.html#l00169">169</a> of file <a class="el" href="ypipe_8hpp_source.html">ypipe.hpp</a>.</p>
 
 <p>References <a class="el" href="ypipe_8hpp_source.html#l00128">zmq::ypipe_t&lt; T, N &gt;::check_read()</a>, <a class="el" href="ypipe_8hpp_source.html#l00183">zmq::ypipe_t&lt; T, N &gt;::queue</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-                <span class="keywordtype">bool</span> rc = <a class="code" href="classzmq_1_1ypipe__t.html#afa705a69aca13d172909250da3a86177">check_read</a> ();
-                <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc);
 
-                <span class="keywordflow">return</span> (*fn) (<a class="code" href="classzmq_1_1ypipe__t.html#ac294e30e0390b53c0b52320e687b64fe">queue</a>.front ());
-        }
-</pre></div>
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -400,18 +338,7 @@ template&lt;typename T , int N&gt; </div>
 <p>Definition at line <a class="el" href="ypipe_8hpp_source.html#l00153">153</a> of file <a class="el" href="ypipe_8hpp_source.html">ypipe.hpp</a>.</p>
 
 <p>References <a class="el" href="ypipe_8hpp_source.html#l00128">zmq::ypipe_t&lt; T, N &gt;::check_read()</a>, and <a class="el" href="ypipe_8hpp_source.html#l00183">zmq::ypipe_t&lt; T, N &gt;::queue</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="comment">//  Try to prefetch a value.</span>
-            <span class="keywordflow">if</span> (!<a class="code" href="classzmq_1_1ypipe__t.html#afa705a69aca13d172909250da3a86177">check_read</a> ())
-                <span class="keywordflow">return</span> <span class="keyword">false</span>;
 
-            <span class="comment">//  There was at least one value prefetched.</span>
-            <span class="comment">//  Return it to the caller.</span>
-            *value_ = <a class="code" href="classzmq_1_1ypipe__t.html#ac294e30e0390b53c0b52320e687b64fe">queue</a>.front ();
-            <a class="code" href="classzmq_1_1ypipe__t.html#ac294e30e0390b53c0b52320e687b64fe">queue</a>.pop ();
-            <span class="keywordflow">return</span> <span class="keyword">true</span>;
-        }
-</pre></div>
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -445,14 +372,7 @@ template&lt;typename T , int N&gt; </div>
 <p>Definition at line <a class="el" href="ypipe_8hpp_source.html#l00090">90</a> of file <a class="el" href="ypipe_8hpp_source.html">ypipe.hpp</a>.</p>
 
 <p>References <a class="el" href="ypipe_8hpp_source.html#l00194">zmq::ypipe_t&lt; T, N &gt;::f</a>, and <a class="el" href="ypipe_8hpp_source.html#l00183">zmq::ypipe_t&lt; T, N &gt;::queue</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1ypipe__t.html#a69f9c9cfc119f4d0ef794c8566787fb7">f</a> == &amp;<a class="code" href="classzmq_1_1ypipe__t.html#ac294e30e0390b53c0b52320e687b64fe">queue</a>.back ())
-                <span class="keywordflow">return</span> <span class="keyword">false</span>;
-            <a class="code" href="classzmq_1_1ypipe__t.html#ac294e30e0390b53c0b52320e687b64fe">queue</a>.unpush ();
-            *value_ = <a class="code" href="classzmq_1_1ypipe__t.html#ac294e30e0390b53c0b52320e687b64fe">queue</a>.back ();
-            <span class="keywordflow">return</span> <span class="keyword">true</span>;
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a5b372de8956b8c7504b748d437db7c53"></a><!-- doxytag: member="zmq::ypipe_t::write" ref="a5b372de8956b8c7504b748d437db7c53" args="(const T &amp;value_, bool incomplete_)" -->
@@ -485,16 +405,7 @@ template&lt;typename T , int N&gt; </div>
 <p>Definition at line <a class="el" href="ypipe_8hpp_source.html#l00073">73</a> of file <a class="el" href="ypipe_8hpp_source.html">ypipe.hpp</a>.</p>
 
 <p>References <a class="el" href="ypipe_8hpp_source.html#l00194">zmq::ypipe_t&lt; T, N &gt;::f</a>, and <a class="el" href="ypipe_8hpp_source.html#l00183">zmq::ypipe_t&lt; T, N &gt;::queue</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="comment">//  Place the value to the queue, add new terminator element.</span>
-            <a class="code" href="classzmq_1_1ypipe__t.html#ac294e30e0390b53c0b52320e687b64fe">queue</a>.back () = value_;
-            <a class="code" href="classzmq_1_1ypipe__t.html#ac294e30e0390b53c0b52320e687b64fe">queue</a>.push ();
 
-            <span class="comment">//  Move the &quot;flush up to here&quot; poiter.</span>
-            <span class="keywordflow">if</span> (!incomplete_)
-                <a class="code" href="classzmq_1_1ypipe__t.html#a69f9c9cfc119f4d0ef794c8566787fb7">f</a> = &amp;<a class="code" href="classzmq_1_1ypipe__t.html#ac294e30e0390b53c0b52320e687b64fe">queue</a>.back ();
-        }
-</pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
@@ -594,7 +505,7 @@ template&lt;typename T , int N&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="ypipe_8hpp_source.html">ypipe.hpp</a></li>
+<li>src/<a class="el" href="ypipe_8hpp_source.html">ypipe.hpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -602,7 +513,7 @@ template&lt;typename T , int N&gt; </div>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -611,7 +522,7 @@ template&lt;typename T , int N&gt; </div>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:23 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:20 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -1,7 +1,6 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e" title="zmq::msg_t::init" alt="" coords="321,5,436,35"/>
 <area shape="rect" id="node5" href="$classzmq_1_1encoder__t.html#ab8f436dcceeff8e128791997f63f0eaa" title="zmq::encoder_t::message_ready" alt="" coords="273,59,484,88"/>
-<area shape="rect" id="node12" href="$classzmq_1_1encoder__base__t.html#a80550bec12ce3a46d8c7487871e4554f" title="zmq::encoder_base_t\&lt; encoder_t \&gt;::next_step" alt="" coords="232,112,525,141"/>
-<area shape="rect" id="node7" href="$namespacezmq.html#a736c25b4fea4d8095430a74fe7ce4285" title="zmq::put_uint64" alt="" coords="608,5,723,35"/>
-<area shape="rect" id="node9" href="$classzmq_1_1encoder__t.html#ac552cef6a68dbf0640465bcf2911dd1e" title="zmq::encoder_t::size_ready" alt="" coords="575,59,756,88"/>
+<area shape="rect" id="node10" href="$classzmq_1_1encoder__base__t.html#a80550bec12ce3a46d8c7487871e4554f" title="zmq::encoder_base_t\&lt; encoder_t \&gt;::next_step" alt="" coords="232,112,525,141"/>
+<area shape="rect" id="node7" href="$classzmq_1_1encoder__t.html#ac552cef6a68dbf0640465bcf2911dd1e" title="zmq::encoder_t::size_ready" alt="" coords="575,59,756,88"/>
 </map>

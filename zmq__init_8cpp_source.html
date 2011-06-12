@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/src/libzmq/src/zmq_init.cpp Source File</title>
+<title>libzmq: src/zmq_init.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -97,10 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a>      </li>
-      <li class="navelem"><a class="el" href="dir_223207b948e8fa656fe21665415438d6.html">travlr</a>      </li>
-      <li class="navelem"><a class="el" href="dir_fb6bd66a99939deb91cf473b567980dd.html">src</a>      </li>
-      <li class="navelem"><a class="el" href="dir_aef0164114278eee23dc63ccdad22337.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
     </ul>
   </div>
@@ -145,7 +140,7 @@ function toggleVisibility(linkObj) {
 <a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="err_8hpp.html">err.hpp</a>&quot;</span>
 <a name="l00034"></a>00034 
 <a name="l00035"></a><a class="code" href="classzmq_1_1zmq__init__t.html#a96a5973ad064942fa9ed7a82041cd67e">00035</a> <a class="code" href="classzmq_1_1zmq__init__t.html#a96a5973ad064942fa9ed7a82041cd67e">zmq::zmq_init_t::zmq_init_t</a> (<a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
-<a name="l00036"></a>00036       <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_, <a class="code" href="classzmq_1_1session__t.html">session_t</a> *session_, <a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a> fd_,
+<a name="l00036"></a>00036       <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_, <a class="code" href="classzmq_1_1session__t.html">session_t</a> *session_, fd_t fd_,
 <a name="l00037"></a>00037       <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_) :
 <a name="l00038"></a>00038     <a class="code" href="classzmq_1_1own__t.html">own_t</a> (io_thread_, options_),
 <a name="l00039"></a>00039     ephemeral_engine (NULL),
@@ -161,15 +156,15 @@ function toggleVisibility(linkObj) {
 <a name="l00049"></a>00049     <span class="comment">//  Generate an unique identity.</span>
 <a name="l00050"></a>00050     <a class="code" href="classzmq_1_1zmq__init__t.html#abbc7dced1af92a83b47a149590811196">peer_identity</a>.resize (17);
 <a name="l00051"></a>00051     <a class="code" href="classzmq_1_1zmq__init__t.html#abbc7dced1af92a83b47a149590811196">peer_identity</a> [0] = 0;
-<a name="l00052"></a>00052     <a class="code" href="namespacezmq.html#aba955dc1d654f51695b92ff4a6069780">generate_uuid</a> (&amp;<a class="code" href="classzmq_1_1zmq__init__t.html#abbc7dced1af92a83b47a149590811196">peer_identity</a> [1]);
+<a name="l00052"></a>00052     generate_uuid (&amp;<a class="code" href="classzmq_1_1zmq__init__t.html#abbc7dced1af92a83b47a149590811196">peer_identity</a> [1]);
 <a name="l00053"></a>00053 
 <a name="l00054"></a>00054     <span class="comment">//  Create a list of props to send.</span>
 <a name="l00055"></a>00055     <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> msg;
 <a name="l00056"></a>00056     <span class="keywordtype">int</span> rc = msg.<a class="code" href="classzmq_1_1msg__t.html#a2d40a80f7828b6ab4f63a1d2afa2af82">init_size</a> (4);
 <a name="l00057"></a>00057     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
 <a name="l00058"></a>00058     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) msg.<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> ();
-<a name="l00059"></a>00059     <a class="code" href="namespacezmq.html#a675e52c0b2718869fdbdde8c878f0e59">put_uint16</a> (data, <a class="code" href="classzmq_1_1zmq__init__t.html#a0b1e00ea718dd5c2ca86c6c0214556bca7f0144e9cc89879a7c2c5c9ffec4c533">prop_type</a>);
-<a name="l00060"></a>00060     <a class="code" href="namespacezmq.html#a675e52c0b2718869fdbdde8c878f0e59">put_uint16</a> (data + 2, <a class="code" href="classzmq_1_1own__t.html#a2efb752f6444d140ee9ee928559c9b02">options</a>.<a class="code" href="structzmq_1_1options__t.html#a09b8e840a00a79aa02c1e574f8ad817a">type</a>);
+<a name="l00059"></a>00059     put_uint16 (data, <a class="code" href="classzmq_1_1zmq__init__t.html#a0b1e00ea718dd5c2ca86c6c0214556bca7f0144e9cc89879a7c2c5c9ffec4c533">prop_type</a>);
+<a name="l00060"></a>00060     put_uint16 (data + 2, <a class="code" href="classzmq_1_1own__t.html#a2efb752f6444d140ee9ee928559c9b02">options</a>.<a class="code" href="structzmq_1_1options__t.html#a09b8e840a00a79aa02c1e574f8ad817a">type</a>);
 <a name="l00061"></a>00061     msg.<a class="code" href="classzmq_1_1msg__t.html#aea7736e7955f2125dd6298baee851ca7">set_flags</a> (<a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>);
 <a name="l00062"></a>00062     <a class="code" href="classzmq_1_1zmq__init__t.html#ab131c51a27238309fded92f6122f2079">to_send</a>.push_back (msg);
 <a name="l00063"></a>00063 
@@ -177,7 +172,7 @@ function toggleVisibility(linkObj) {
 <a name="l00065"></a>00065         rc = msg.<a class="code" href="classzmq_1_1msg__t.html#a2d40a80f7828b6ab4f63a1d2afa2af82">init_size</a> (2 + <a class="code" href="classzmq_1_1own__t.html#a2efb752f6444d140ee9ee928559c9b02">options</a>.<a class="code" href="structzmq_1_1options__t.html#ac14f64051a187fa69b07d4604fd55f2a">identity</a>.size ());
 <a name="l00066"></a>00066         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
 <a name="l00067"></a>00067         data = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) msg.<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> ();
-<a name="l00068"></a>00068         <a class="code" href="namespacezmq.html#a675e52c0b2718869fdbdde8c878f0e59">put_uint16</a> (data, <a class="code" href="classzmq_1_1zmq__init__t.html#a0b1e00ea718dd5c2ca86c6c0214556bcaf8042d78fc30bd21fec8a9c8f01d95c7">prop_identity</a>);
+<a name="l00068"></a>00068         put_uint16 (data, <a class="code" href="classzmq_1_1zmq__init__t.html#a0b1e00ea718dd5c2ca86c6c0214556bcaf8042d78fc30bd21fec8a9c8f01d95c7">prop_identity</a>);
 <a name="l00069"></a>00069         memcpy (data + 2, <a class="code" href="classzmq_1_1own__t.html#a2efb752f6444d140ee9ee928559c9b02">options</a>.<a class="code" href="structzmq_1_1options__t.html#ac14f64051a187fa69b07d4604fd55f2a">identity</a>.data (), <a class="code" href="classzmq_1_1own__t.html#a2efb752f6444d140ee9ee928559c9b02">options</a>.<a class="code" href="structzmq_1_1options__t.html#ac14f64051a187fa69b07d4604fd55f2a">identity</a>.size ());
 <a name="l00070"></a>00070         msg.<a class="code" href="classzmq_1_1msg__t.html#aea7736e7955f2125dd6298baee851ca7">set_flags</a> (<a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>);
 <a name="l00071"></a>00071         <a class="code" href="classzmq_1_1zmq__init__t.html#ab131c51a27238309fded92f6122f2079">to_send</a>.push_back (msg);
@@ -229,7 +224,7 @@ function toggleVisibility(linkObj) {
 <a name="l00117"></a>00117 
 <a name="l00118"></a>00118     <span class="comment">//  There should be at least property type in the message.</span>
 <a name="l00119"></a>00119     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (size &gt;= 2);
-<a name="l00120"></a>00120     uint16_t prop = <a class="code" href="namespacezmq.html#a1b46a1c311a5eb2da945f104721616b3">get_uint16</a> (data);
+<a name="l00120"></a>00120     uint16_t prop = get_uint16 (data);
 <a name="l00121"></a>00121 
 <a name="l00122"></a>00122     <span class="keywordflow">switch</span> (prop) {
 <a name="l00123"></a>00123     <span class="keywordflow">case</span> prop_type:
@@ -275,7 +270,7 @@ function toggleVisibility(linkObj) {
 <a name="l00163"></a>00163     <span class="comment">//  If there is an associated session, send it a null engine to let it know</span>
 <a name="l00164"></a>00164     <span class="comment">//  that connection process was unsuccesful.</span>
 <a name="l00165"></a>00165     <span class="keywordflow">if</span> (session)
-<a name="l00166"></a>00166         send_attach (session, NULL, <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> (), <span class="keyword">true</span>);
+<a name="l00166"></a>00166         send_attach (session, NULL, blob_t (), <span class="keyword">true</span>);
 <a name="l00167"></a>00167 
 <a name="l00168"></a>00168     <span class="comment">//  The engine will destroy itself, so let&#39;s just drop the pointer here and</span>
 <a name="l00169"></a>00169     <span class="comment">//  start termination of the init object.</span>
@@ -377,7 +372,7 @@ function toggleVisibility(linkObj) {
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -386,7 +381,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:09 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:08 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -99,7 +98,7 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespacezmq.html">zmq</a>      </li>
+      <li class="navelem"><b>zmq</b>      </li>
       <li class="navelem"><a class="el" href="classzmq_1_1mailbox__t.html">mailbox_t</a>      </li>
     </ul>
   </div>
@@ -123,7 +122,7 @@ function toggleVisibility(linkObj) {
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a1f6cd7cf138f5538c0d7150c5ffe7773">mailbox_t</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a5733d60bd33a6ab29085891706356d8b">~mailbox_t</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#aea99b88ae98a776e71c86f5df3cd0d21">get_fd</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">fd_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#aea99b88ae98a776e71c86f5df3cd0d21">get_fd</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a5d75d5e0d1ebce4e8e9fb1990b704b72">recv</a> (<a class="el" href="structzmq_1_1command__t.html">command_t</a> *cmd_, bool block_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a2f137ea3c73f93e944452a0706984451">send</a> (const <a class="el" href="structzmq_1_1command__t.html">command_t</a> &amp;cmd_)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
@@ -132,11 +131,11 @@ Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classzmq_1_1mailbox__t.html">mailbox_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#afc24b8f515e54ef44f7dfb1c3cedb708">operator=</a> (const <a class="el" href="classzmq_1_1mailbox__t.html">mailbox_t</a> &amp;)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a111fadf93fe3e74301e7584414a6437c">make_socketpair</a> (<a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a> *r_, <a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a> *w_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a111fadf93fe3e74301e7584414a6437c">make_socketpair</a> (fd_t *r_, fd_t *w_)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a0d42ebd42ccaa776b1924af3ebd7fd33">r</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a9d904121ec638b439823b206fffe0b4f">w</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">fd_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a0d42ebd42ccaa776b1924af3ebd7fd33">r</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">fd_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a9d904121ec638b439823b206fffe0b4f">w</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock">
@@ -159,33 +158,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00123">123</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-<span class="preprocessor">#ifdef PIPE_BUF</span>
-<span class="preprocessor"></span>    <span class="comment">//  Make sure that command can be written to the socket in atomic fashion.</span>
-    <span class="comment">//  If this wasn&#39;t guaranteed, commands from different threads would be</span>
-    <span class="comment">//  interleaved.</span>
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">sizeof</span> (command_t) &lt;= PIPE_BUF);
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>
-    <span class="comment">//  Create the socketpair for signaling.</span>
-    <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1mailbox__t.html#a111fadf93fe3e74301e7584414a6437c">make_socketpair</a> (&amp;<a class="code" href="classzmq_1_1mailbox__t.html#a0d42ebd42ccaa776b1924af3ebd7fd33">r</a>, &amp;<a class="code" href="classzmq_1_1mailbox__t.html#a9d904121ec638b439823b206fffe0b4f">w</a>);
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
 
-    <span class="comment">//  Set the writer to non-blocking mode.</span>
-    <span class="keywordtype">int</span> flags = fcntl (<a class="code" href="classzmq_1_1mailbox__t.html#a9d904121ec638b439823b206fffe0b4f">w</a>, F_GETFL, 0);
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (flags &gt;= 0);
-    rc = fcntl (<a class="code" href="classzmq_1_1mailbox__t.html#a9d904121ec638b439823b206fffe0b4f">w</a>, F_SETFL, flags | O_NONBLOCK);
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-
-<span class="preprocessor">#ifndef MSG_DONTWAIT</span>
-<span class="preprocessor"></span>    <span class="comment">//  Set the reader to non-blocking mode.</span>
-    flags = fcntl (<a class="code" href="classzmq_1_1mailbox__t.html#a0d42ebd42ccaa776b1924af3ebd7fd33">r</a>, F_GETFL, 0);
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (flags &gt;= 0);
-    rc = fcntl (<a class="code" href="classzmq_1_1mailbox__t.html#a0d42ebd42ccaa776b1924af3ebd7fd33">r</a>, F_SETFL, flags | O_NONBLOCK);
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a5733d60bd33a6ab29085891706356d8b"></a><!-- doxytag: member="zmq::mailbox_t::~mailbox_t" ref="a5733d60bd33a6ab29085891706356d8b" args="()" -->
@@ -203,11 +176,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00151">151</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    close (<a class="code" href="classzmq_1_1mailbox__t.html#a9d904121ec638b439823b206fffe0b4f">w</a>);
-    close (<a class="code" href="classzmq_1_1mailbox__t.html#a0d42ebd42ccaa776b1924af3ebd7fd33">r</a>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a6b0d588401c2cf869090ba6f787ff2a9"></a><!-- doxytag: member="zmq::mailbox_t::mailbox_t" ref="a6b0d588401c2cf869090ba6f787ff2a9" args="(const mailbox_t &amp;)" -->
@@ -233,7 +202,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">zmq::fd_t</a> zmq::mailbox_t::get_fd </td>
+          <td class="memname">zmq::fd_t zmq::mailbox_t::get_fd </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -247,10 +216,7 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="mailbox_8hpp_source.html#l00050">r</a>.</p>
 
 <p>Referenced by <a class="el" href="io__thread_8cpp_source.html#l00028">zmq::io_thread_t::io_thread_t()</a>, and <a class="el" href="reaper_8cpp_source.html#l00025">zmq::reaper_t::reaper_t()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1mailbox__t.html#a0d42ebd42ccaa776b1924af3ebd7fd33">r</a>;
-}
-</pre></div>
+
 <p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -271,13 +237,13 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">int zmq::mailbox_t::make_socketpair </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a> *&#160;</td>
+          <td class="paramtype">fd_t *&#160;</td>
           <td class="paramname"><em>r_</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a> *&#160;</td>
+          <td class="paramtype">fd_t *&#160;</td>
           <td class="paramname"><em>w_</em>&#160;</td>
         </tr>
         <tr>
@@ -292,136 +258,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00252">252</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-<span class="preprocessor">#if defined ZMQ_HAVE_WINDOWS</span>
-<span class="preprocessor"></span>
-    <span class="comment">//  Windows has no &#39;socketpair&#39; function. CreatePipe is no good as pipe</span>
-    <span class="comment">//  handles cannot be polled on. Here we create the socketpair by hand.</span>
-    *w_ = INVALID_SOCKET;
-    *r_ = INVALID_SOCKET;
 
-    <span class="comment">//  Create listening socket.</span>
-    SOCKET listener;
-    listener = socket (AF_INET, SOCK_STREAM, 0);
-    wsa_assert (listener != INVALID_SOCKET);
-
-    <span class="comment">//  Set SO_REUSEADDR and TCP_NODELAY on listening socket.</span>
-    BOOL so_reuseaddr = 1;
-    <span class="keywordtype">int</span> rc = setsockopt (listener, SOL_SOCKET, SO_REUSEADDR,
-        (<span class="keywordtype">char</span> *)&amp;so_reuseaddr, <span class="keyword">sizeof</span> (so_reuseaddr));
-    wsa_assert (rc != SOCKET_ERROR);
-    BOOL tcp_nodelay = 1;
-    rc = setsockopt (listener, IPPROTO_TCP, TCP_NODELAY,
-        (<span class="keywordtype">char</span> *)&amp;tcp_nodelay, <span class="keyword">sizeof</span> (tcp_nodelay));
-    wsa_assert (rc != SOCKET_ERROR);
-
-    <span class="comment">//  Bind listening socket to any free local port.</span>
-    <span class="keyword">struct </span>sockaddr_in addr;
-    memset (&amp;addr, 0, <span class="keyword">sizeof</span> (addr));
-    addr.sin_family = AF_INET;
-    addr.sin_addr.s_addr = htonl (INADDR_LOOPBACK);
-    addr.sin_port = 0;
-    rc = bind (listener, (<span class="keyword">const</span> <span class="keyword">struct</span> sockaddr*) &amp;addr, <span class="keyword">sizeof</span> (addr));
-    wsa_assert (rc != SOCKET_ERROR);
-
-    <span class="comment">//  Retrieve local port listener is bound to (into addr).</span>
-    <span class="keywordtype">int</span> addrlen = <span class="keyword">sizeof</span> (addr);
-    rc = getsockname (listener, (<span class="keyword">struct</span> sockaddr*) &amp;addr, &amp;addrlen);
-    wsa_assert (rc != SOCKET_ERROR);
-
-    <span class="comment">//  Listen for incomming connections.</span>
-    rc = listen (listener, 1);
-    wsa_assert (rc != SOCKET_ERROR);
-
-    <span class="comment">//  Create the writer socket.</span>
-    *w_ = WSASocket (AF_INET, SOCK_STREAM, 0, NULL, 0,  0);
-    wsa_assert (*w_ != INVALID_SOCKET);
-
-    <span class="comment">//  Set TCP_NODELAY on writer socket.</span>
-    rc = setsockopt (*w_, IPPROTO_TCP, TCP_NODELAY,
-        (<span class="keywordtype">char</span> *)&amp;tcp_nodelay, <span class="keyword">sizeof</span> (tcp_nodelay));
-    wsa_assert (rc != SOCKET_ERROR);
-
-    <span class="comment">//  Connect writer to the listener.</span>
-    rc = connect (*w_, (sockaddr *) &amp;addr, <span class="keyword">sizeof</span> (addr));
-    wsa_assert (rc != SOCKET_ERROR);
-
-    <span class="comment">//  Accept connection from writer.</span>
-    *r_ = accept (listener, NULL, NULL);
-    wsa_assert (*r_ != INVALID_SOCKET);
-
-    <span class="comment">//  We don&#39;t need the listening socket anymore. Close it.</span>
-    rc = closesocket (listener);
-    wsa_assert (rc != SOCKET_ERROR);
-
-    <span class="keywordflow">return</span> 0;
-
-<span class="preprocessor">#elif defined ZMQ_HAVE_OPENVMS</span>
-<span class="preprocessor"></span>
-    <span class="comment">//  Whilst OpenVMS supports socketpair - it maps to AF_INET only.  Further,</span>
-    <span class="comment">//  it does not set the socket options TCP_NODELAY and TCP_NODELACK which</span>
-    <span class="comment">//  can lead to performance problems.</span>
-    <span class="comment">//</span>
-    <span class="comment">//  The bug will be fixed in V5.6 ECO4 and beyond.  In the meantime, we&#39;ll</span>
-    <span class="comment">//  create the socket pair manually.</span>
-    sockaddr_in lcladdr;
-    memset (&amp;lcladdr, 0, <span class="keyword">sizeof</span> (lcladdr));
-    lcladdr.sin_family = AF_INET;
-    lcladdr.sin_addr.s_addr = htonl (INADDR_LOOPBACK);
-    lcladdr.sin_port = 0;
-
-    <span class="keywordtype">int</span> listener = socket (AF_INET, SOCK_STREAM, 0);
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (listener != -1);
-
-    <span class="keywordtype">int</span> on = 1;
-    <span class="keywordtype">int</span> rc = setsockopt (listener, IPPROTO_TCP, TCP_NODELAY, &amp;on, <span class="keyword">sizeof</span> (on));
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc != -1);
-
-    rc = setsockopt (listener, IPPROTO_TCP, TCP_NODELACK, &amp;on, <span class="keyword">sizeof</span> (on));
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc != -1);
-
-    rc = bind(listener, (<span class="keyword">struct</span> sockaddr*) &amp;lcladdr, <span class="keyword">sizeof</span> (lcladdr));
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc != -1);
-
-    socklen_t lcladdr_len = <span class="keyword">sizeof</span> (lcladdr);
-
-    rc = getsockname (listener, (<span class="keyword">struct</span> sockaddr*) &amp;lcladdr, &amp;lcladdr_len);
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc != -1);
-
-    rc = listen (listener, 1);
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc != -1);
-
-    *w_ = socket (AF_INET, SOCK_STREAM, 0);
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (*w_ != -1);
-
-    rc = setsockopt (*w_, IPPROTO_TCP, TCP_NODELAY, &amp;on, <span class="keyword">sizeof</span> (on));
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc != -1);
-
-    rc = setsockopt (*w_, IPPROTO_TCP, TCP_NODELACK, &amp;on, <span class="keyword">sizeof</span> (on));
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc != -1);
-
-    rc = connect (*w_, (<span class="keyword">struct</span> sockaddr*) &amp;lcladdr, <span class="keyword">sizeof</span> (lcladdr));
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc != -1);
-
-    *r_ = accept (listener, NULL, NULL);
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (*r_ != -1);
-
-    close (listener);
-
-    <span class="keywordflow">return</span> 0;
-
-<span class="preprocessor">#else // All other implementations support socketpair()</span>
-<span class="preprocessor"></span>
-    <span class="keywordtype">int</span> sv [2];
-    <span class="keywordtype">int</span> rc = socketpair (AF_UNIX, SOCK_STREAM, 0, sv);
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-    *w_ = sv [0];
-    *r_ = sv [1];
-    <span class="keywordflow">return</span> 0;
-
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="afc24b8f515e54ef44f7dfb1c3cedb708"></a><!-- doxytag: member="zmq::mailbox_t::operator=" ref="afc24b8f515e54ef44f7dfb1c3cedb708" args="(const mailbox_t &amp;)" -->
@@ -469,58 +306,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00197">197</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-<span class="preprocessor">#ifdef MSG_DONTWAIT</span>
-<span class="preprocessor"></span>
-    <span class="comment">//  Attempt to read an entire command. Returns EAGAIN if non-blocking</span>
-    <span class="comment">//  mode is requested and a command is not available.</span>
-    ssize_t nbytes =<a class="code" href="classzmq_1_1mailbox__t.html#a5d75d5e0d1ebce4e8e9fb1990b704b72"> ::recv</a> (<a class="code" href="classzmq_1_1mailbox__t.html#a0d42ebd42ccaa776b1924af3ebd7fd33">r</a>, cmd_, <span class="keyword">sizeof</span> (command_t),
-        block_ ? 0 : MSG_DONTWAIT);
-    <span class="keywordflow">if</span> (nbytes == -1 &amp;&amp; (errno == EAGAIN || errno == EINTR))
-        <span class="keywordflow">return</span> -1;
-<span class="preprocessor">#else</span>
-<span class="preprocessor"></span>
-    <span class="comment">//  If required, set the reader to blocking mode.</span>
-    <span class="keywordflow">if</span> (block_) {
-        <span class="keywordtype">int</span> flags = fcntl (<a class="code" href="classzmq_1_1mailbox__t.html#a0d42ebd42ccaa776b1924af3ebd7fd33">r</a>, F_GETFL, 0);
-        <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (flags &gt;= 0);
-        <span class="keywordtype">int</span> rc = fcntl (<a class="code" href="classzmq_1_1mailbox__t.html#a0d42ebd42ccaa776b1924af3ebd7fd33">r</a>, F_SETFL, flags &amp; ~O_NONBLOCK);
-        <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-    }
 
-    <span class="comment">//  Attempt to read an entire command. Returns EAGAIN if non-blocking</span>
-    <span class="comment">//  and a command is not available. Save value of errno if we wish to pass</span>
-    <span class="comment">//  it to caller.</span>
-    <span class="keywordtype">int</span> err = 0;
-    ssize_t nbytes =<a class="code" href="classzmq_1_1mailbox__t.html#a5d75d5e0d1ebce4e8e9fb1990b704b72"> ::recv</a> (<a class="code" href="classzmq_1_1mailbox__t.html#a0d42ebd42ccaa776b1924af3ebd7fd33">r</a>, cmd_, <span class="keyword">sizeof</span> (command_t), 0);
-    <span class="keywordflow">if</span> (nbytes == -1 &amp;&amp; (errno == EAGAIN || errno == EINTR))  
-        err = errno;
-
-    <span class="comment">//  Re-set the reader to non-blocking mode.</span>
-    <span class="keywordflow">if</span> (block_) {
-        <span class="keywordtype">int</span> flags = fcntl (<a class="code" href="classzmq_1_1mailbox__t.html#a0d42ebd42ccaa776b1924af3ebd7fd33">r</a>, F_GETFL, 0);
-        <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (flags &gt;= 0);
-        <span class="keywordtype">int</span> rc = fcntl (<a class="code" href="classzmq_1_1mailbox__t.html#a0d42ebd42ccaa776b1924af3ebd7fd33">r</a>, F_SETFL, flags | O_NONBLOCK);
-        <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-    }
-
-    <span class="comment">//  If the recv failed, return with the saved errno if set.</span>
-    <span class="keywordflow">if</span> (err != 0) {
-        errno = err;
-        <span class="keywordflow">return</span> -1;
-    }
-
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>
-    <span class="comment">//  Sanity check for success.</span>
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (nbytes != -1);
-
-    <span class="comment">//  Check whether we haven&#39;t got half of command.</span>
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (nbytes == <span class="keyword">sizeof</span> (command_t));
-
-    <span class="keywordflow">return</span> 0;
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a2f137ea3c73f93e944452a0706984451"></a><!-- doxytag: member="zmq::mailbox_t::send" ref="a2f137ea3c73f93e944452a0706984451" args="(const command_t &amp;cmd_)" -->
@@ -541,45 +327,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00157">157</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  Attempt to write an entire command without blocking.</span>
-    ssize_t nbytes;
-    <span class="keywordflow">do</span> {
-        nbytes =<a class="code" href="classzmq_1_1mailbox__t.html#a2f137ea3c73f93e944452a0706984451"> ::send</a> (<a class="code" href="classzmq_1_1mailbox__t.html#a9d904121ec638b439823b206fffe0b4f">w</a>, &amp;cmd_, <span class="keyword">sizeof</span> (command_t), 0);
-    } <span class="keywordflow">while</span> (nbytes == -1 &amp;&amp; errno == EINTR);
 
-    <span class="comment">//  Attempt to increase mailbox SNDBUF if the send failed.</span>
-    <span class="keywordflow">if</span> (nbytes == -1 &amp;&amp; errno == EAGAIN) {
-        <span class="keywordtype">int</span> old_sndbuf, new_sndbuf;
-        socklen_t sndbuf_size = <span class="keyword">sizeof</span> old_sndbuf;
-
-        <span class="comment">//  Retrieve current send buffer size.</span>
-        <span class="keywordtype">int</span> rc = getsockopt (<a class="code" href="classzmq_1_1mailbox__t.html#a9d904121ec638b439823b206fffe0b4f">w</a>, SOL_SOCKET, SO_SNDBUF, &amp;old_sndbuf,
-            &amp;sndbuf_size);
-        <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-        new_sndbuf = old_sndbuf * 2;
-
-        <span class="comment">//  Double the new send buffer size.</span>
-        rc = setsockopt (<a class="code" href="classzmq_1_1mailbox__t.html#a9d904121ec638b439823b206fffe0b4f">w</a>, SOL_SOCKET, SO_SNDBUF, &amp;new_sndbuf, sndbuf_size);
-        <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-
-        <span class="comment">//  Verify that the OS actually honored the request.</span>
-        rc = getsockopt (<a class="code" href="classzmq_1_1mailbox__t.html#a9d904121ec638b439823b206fffe0b4f">w</a>, SOL_SOCKET, SO_SNDBUF, &amp;new_sndbuf, &amp;sndbuf_size);
-        <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-        <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (new_sndbuf &gt; old_sndbuf);
-
-        <span class="comment">//  Retry the sending operation; at this point it must succeed.</span>
-        <span class="keywordflow">do</span> {
-            nbytes =<a class="code" href="classzmq_1_1mailbox__t.html#a2f137ea3c73f93e944452a0706984451"> ::send</a> (<a class="code" href="classzmq_1_1mailbox__t.html#a9d904121ec638b439823b206fffe0b4f">w</a>, &amp;cmd_, <span class="keyword">sizeof</span> (command_t), 0);
-        } <span class="keywordflow">while</span> (nbytes == -1 &amp;&amp; errno == EINTR);
-    }
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (nbytes != -1);
-
-    <span class="comment">//  This should never happen as we&#39;ve already checked that command size is</span>
-    <span class="comment">//  less than PIPE_BUF.</span>
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (nbytes == <span class="keyword">sizeof</span> (command_t));
-}
-</pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
@@ -588,7 +336,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a> <a class="el" href="classzmq_1_1mailbox__t.html#a0d42ebd42ccaa776b1924af3ebd7fd33">zmq::mailbox_t::r</a><code> [private]</code></td>
+          <td class="memname">fd_t <a class="el" href="classzmq_1_1mailbox__t.html#a0d42ebd42ccaa776b1924af3ebd7fd33">zmq::mailbox_t::r</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -605,7 +353,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a> <a class="el" href="classzmq_1_1mailbox__t.html#a9d904121ec638b439823b206fffe0b4f">zmq::mailbox_t::w</a><code> [private]</code></td>
+          <td class="memname">fd_t <a class="el" href="classzmq_1_1mailbox__t.html#a9d904121ec638b439823b206fffe0b4f">zmq::mailbox_t::w</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
@@ -616,8 +364,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="mailbox_8hpp_source.html">mailbox.hpp</a></li>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a></li>
+<li>src/<a class="el" href="mailbox_8hpp_source.html">mailbox.hpp</a></li>
+<li>src/<a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -625,7 +373,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -634,7 +382,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:12 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:17 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

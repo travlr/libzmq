@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/src/libzmq/src/ip.cpp Source File</title>
+<title>libzmq: src/ip.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -97,10 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a>      </li>
-      <li class="navelem"><a class="el" href="dir_223207b948e8fa656fe21665415438d6.html">travlr</a>      </li>
-      <li class="navelem"><a class="el" href="dir_fb6bd66a99939deb91cf473b567980dd.html">src</a>      </li>
-      <li class="navelem"><a class="el" href="dir_aef0164114278eee23dc63ccdad22337.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
     </ul>
   </div>
@@ -287,7 +282,7 @@ function toggleVisibility(linkObj) {
 <a name="l00175"></a>00175 
 <a name="l00176"></a>00176 <span class="preprocessor">#endif</span>
 <a name="l00177"></a>00177 <span class="preprocessor"></span>
-<a name="l00178"></a><a class="code" href="namespacezmq.html#ac5b37ef8f53af06b226b0e9b571d355b">00178</a> <span class="keywordtype">int</span> <a class="code" href="namespacezmq.html#ac5b37ef8f53af06b226b0e9b571d355b">zmq::resolve_ip_interface</a> (sockaddr_storage* addr_, socklen_t *addr_len_,
+<a name="l00178"></a>00178 <span class="keywordtype">int</span> zmq::resolve_ip_interface (sockaddr_storage* addr_, socklen_t *addr_len_,
 <a name="l00179"></a>00179     <span class="keywordtype">char</span> <span class="keyword">const</span> *interface_)
 <a name="l00180"></a>00180 {
 <a name="l00181"></a>00181     <span class="comment">//  Find the &#39;:&#39; at end that separates NIC name from service.</span>
@@ -380,7 +375,7 @@ function toggleVisibility(linkObj) {
 <a name="l00268"></a>00268     <span class="keywordflow">return</span> 0;
 <a name="l00269"></a>00269 }
 <a name="l00270"></a>00270 
-<a name="l00271"></a><a class="code" href="namespacezmq.html#a87edc7d5475a8f15f6a2086000d48bbb">00271</a> <span class="keywordtype">int</span> <a class="code" href="namespacezmq.html#a87edc7d5475a8f15f6a2086000d48bbb">zmq::resolve_ip_hostname</a> (sockaddr_storage *addr_, socklen_t *addr_len_,
+<a name="l00271"></a>00271 <span class="keywordtype">int</span> zmq::resolve_ip_hostname (sockaddr_storage *addr_, socklen_t *addr_len_,
 <a name="l00272"></a>00272     <span class="keyword">const</span> <span class="keywordtype">char</span> *hostname_)
 <a name="l00273"></a>00273 {
 <a name="l00274"></a>00274     <span class="comment">//  Find the &#39;:&#39; that separates hostname name from service.</span>
@@ -436,7 +431,7 @@ function toggleVisibility(linkObj) {
 <a name="l00324"></a>00324     <span class="keywordflow">return</span> 0;
 <a name="l00325"></a>00325 }
 <a name="l00326"></a>00326 
-<a name="l00327"></a><a class="code" href="namespacezmq.html#a0919175e52c870f26ffbe07b5b77d7e3">00327</a> <span class="keywordtype">int</span> <a class="code" href="namespacezmq.html#a0919175e52c870f26ffbe07b5b77d7e3">zmq::resolve_local_path</a> (sockaddr_storage *addr_, socklen_t *addr_len_,
+<a name="l00327"></a>00327 <span class="keywordtype">int</span> zmq::resolve_local_path (sockaddr_storage *addr_, socklen_t *addr_len_,
 <a name="l00328"></a>00328     <span class="keyword">const</span> <span class="keywordtype">char</span> *path_)
 <a name="l00329"></a>00329 {
 <a name="l00330"></a>00330 <span class="preprocessor">#if defined ZMQ_HAVE_WINDOWS || defined ZMQ_HAVE_OPENVMS</span>
@@ -463,7 +458,7 @@ function toggleVisibility(linkObj) {
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -472,7 +467,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:08 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:06 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

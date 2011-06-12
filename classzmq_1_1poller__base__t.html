@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -99,7 +98,7 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespacezmq.html">zmq</a>      </li>
+      <li class="navelem"><b>zmq</b>      </li>
       <li class="navelem"><a class="el" href="classzmq_1_1poller__base__t.html">poller_base_t</a>      </li>
     </ul>
   </div>
@@ -202,9 +201,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="poller__base_8cpp_source.html#l00025">25</a> of file <a class="el" href="poller__base_8cpp_source.html">poller_base.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="aeea1d51419273d132793b25debb639f0"></a><!-- doxytag: member="zmq::poller_base_t::~poller_base_t" ref="aeea1d51419273d132793b25debb639f0" args="()" -->
@@ -224,11 +221,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="poller__base_8cpp_source.html#l00029">29</a> of file <a class="el" href="poller__base_8cpp_source.html">poller_base.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  Make sure there is no more load on the shutdown.</span>
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="classzmq_1_1poller__base__t.html#a9b4d8642087192b97daf438aca22bd5a">get_load</a> () == 0);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="ab105c783f3d25613287cda645549610b"></a><!-- doxytag: member="zmq::poller_base_t::poller_base_t" ref="ab105c783f3d25613287cda645549610b" args="(const poller_base_t &amp;)" -->
@@ -281,12 +274,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="poller__base_8cpp_source.html#l00048">48</a> of file <a class="el" href="poller__base_8cpp_source.html">poller_base.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    uint64_t expiration = <a class="code" href="classzmq_1_1poller__base__t.html#a7037a997684ee42df507931b3cd52709">clock</a>.now_ms () + timeout_;
-    timer_info_t info = {sink_, id_};
-    <a class="code" href="classzmq_1_1poller__base__t.html#a2b2a0e1ec7f34eda41a17788a10fad8b">timers</a>.insert (timers_t::value_type (expiration, info));
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a61455c93d9d53ffe68b4e176892459c1"></a><!-- doxytag: member="zmq::poller_base_t::adjust_load" ref="a61455c93d9d53ffe68b4e176892459c1" args="(int amount_)" -->
@@ -305,13 +293,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="poller__base_8cpp_source.html#l00040">40</a> of file <a class="el" href="poller__base_8cpp_source.html">poller_base.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (amount_ &gt; 0)
-        <a class="code" href="classzmq_1_1poller__base__t.html#abe13698556d55be59673e5f7cef6b8e9">load</a>.add (amount_);
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (amount_ &lt; 0)
-        <a class="code" href="classzmq_1_1poller__base__t.html#abe13698556d55be59673e5f7cef6b8e9">load</a>.sub (-amount_);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="aed4c52b5696fb90588050972f7d069e0"></a><!-- doxytag: member="zmq::poller_base_t::cancel_timer" ref="aed4c52b5696fb90588050972f7d069e0" args="(struct i_poll_events *sink_, int id_)" -->
@@ -342,18 +324,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="poller__base_8cpp_source.html#l00055">55</a> of file <a class="el" href="poller__base_8cpp_source.html">poller_base.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  Complexity of this operation is O(n). We assume it is rarely used.</span>
-    <span class="keywordflow">for</span> (timers_t::iterator it = <a class="code" href="classzmq_1_1poller__base__t.html#a2b2a0e1ec7f34eda41a17788a10fad8b">timers</a>.begin (); it != <a class="code" href="classzmq_1_1poller__base__t.html#a2b2a0e1ec7f34eda41a17788a10fad8b">timers</a>.end (); ++it)
-        <span class="keywordflow">if</span> (it-&gt;second.sink == sink_ &amp;&amp; it-&gt;second.id == id_) {
-            <a class="code" href="classzmq_1_1poller__base__t.html#a2b2a0e1ec7f34eda41a17788a10fad8b">timers</a>.erase (it);
-            <span class="keywordflow">return</span>;
-        }
 
-    <span class="comment">//  Timer not found.</span>
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="afaf9302408ac4f268d288e9912013f7a"></a><!-- doxytag: member="zmq::poller_base_t::execute_timers" ref="afaf9302408ac4f268d288e9912013f7a" args="()" -->
@@ -371,38 +342,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="poller__base_8cpp_source.html#l00068">68</a> of file <a class="el" href="poller__base_8cpp_source.html">poller_base.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  Fast track.</span>
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1poller__base__t.html#a2b2a0e1ec7f34eda41a17788a10fad8b">timers</a>.empty ())
-        <span class="keywordflow">return</span> 0;
 
-    <span class="comment">//  Get the current time.</span>
-    uint64_t current = <a class="code" href="classzmq_1_1poller__base__t.html#a7037a997684ee42df507931b3cd52709">clock</a>.now_ms ();
-
-    <span class="comment">//   Execute the timers that are already due.</span>
-    timers_t::iterator it = <a class="code" href="classzmq_1_1poller__base__t.html#a2b2a0e1ec7f34eda41a17788a10fad8b">timers</a>.begin ();
-    <span class="keywordflow">while</span> (it != <a class="code" href="classzmq_1_1poller__base__t.html#a2b2a0e1ec7f34eda41a17788a10fad8b">timers</a>.end ()) {
-
-        <span class="comment">//  If we have to wait to execute the item, same will be true about</span>
-        <span class="comment">//  all the following items (multimap is sorted). Thus we can stop</span>
-        <span class="comment">//  checking the subsequent timers and return the time to wait for</span>
-        <span class="comment">//  the next timer (at least 1ms).</span>
-        <span class="keywordflow">if</span> (it-&gt;first &gt; current)
-            <span class="keywordflow">return</span> it-&gt;first - current;
-
-        <span class="comment">//  Trigger the timer.</span>
-        it-&gt;second.sink-&gt;timer_event (it-&gt;second.id);
-
-        <span class="comment">//  Remove it from the list of active timers.</span>
-        timers_t::iterator o = it;
-        ++it;
-        <a class="code" href="classzmq_1_1poller__base__t.html#a2b2a0e1ec7f34eda41a17788a10fad8b">timers</a>.erase (o);
-    }
-
-    <span class="comment">//  There are no more timers.</span>
-    <span class="keywordflow">return</span> 0;
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a9b4d8642087192b97daf438aca22bd5a"></a><!-- doxytag: member="zmq::poller_base_t::get_load" ref="a9b4d8642087192b97daf438aca22bd5a" args="()" -->
@@ -420,10 +360,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="poller__base_8cpp_source.html#l00035">35</a> of file <a class="el" href="poller__base_8cpp_source.html">poller_base.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1poller__base__t.html#abe13698556d55be59673e5f7cef6b8e9">load</a>.get ();
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a0600f9f1c50e6ee95cdc9cd875b60677"></a><!-- doxytag: member="zmq::poller_base_t::operator=" ref="a0600f9f1c50e6ee95cdc9cd875b60677" args="(const poller_base_t &amp;)" -->
@@ -490,8 +427,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="poller__base_8hpp_source.html">poller_base.hpp</a></li>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="poller__base_8cpp_source.html">poller_base.cpp</a></li>
+<li>src/<a class="el" href="poller__base_8hpp_source.html">poller_base.hpp</a></li>
+<li>src/<a class="el" href="poller__base_8cpp_source.html">poller_base.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -499,7 +436,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -508,7 +445,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:14 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:18 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

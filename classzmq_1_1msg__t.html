@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -99,7 +98,7 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespacezmq.html">zmq</a>      </li>
+      <li class="navelem"><b>zmq</b>      </li>
       <li class="navelem"><a class="el" href="classzmq_1_1msg__t.html">msg_t</a>      </li>
     </ul>
   </div>
@@ -214,11 +213,7 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p>Definition at line <a class="el" href="msg_8hpp_source.html#l00048">48</a> of file <a class="el" href="msg_8hpp_source.html">msg.hpp</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">more</a> = 1,
-            <a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a20cfdc9d298df4c81dec1c578bb8e4f8">shared</a> = 128
-        };
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="aba1cea9aa54f2b9a0ccbc187a01831a8"></a><!-- doxytag: member="zmq::msg_t::type_t" ref="aba1cea9aa54f2b9a0ccbc187a01831a8" args="" -->
@@ -247,14 +242,7 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p>Definition at line <a class="el" href="msg_8hpp_source.html#l00096">96</a> of file <a class="el" href="msg_8hpp_source.html">msg.hpp</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a315f5e5aeac2f3724d8ebeea9e9e8752">type_min</a> = 101,
-            <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8ad6316db72334d6ef2b793fb9d6b3a36d">type_vsm</a> = 101,
-            <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a930a0cf86864b1324b61d7ab6b0de11a">type_lmsg</a> = 102,
-            <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8ad54d689e2464ee0fd2478b2c50dbbe2e">type_delimiter</a> = 103,
-            <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8aed322e9cbce8fe2c2f4823c3e54c88eb">type_max</a> = 103
-        };
-</pre></div>
+
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
@@ -278,25 +266,7 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="msg_8hpp_source.html#l00051">shared</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
 <p>Referenced by <a class="el" href="dist_8cpp_source.html#l00122">zmq::dist_t::distribute()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (refs_ &gt;= 0);
 
-    <span class="comment">//  No copies required.</span>
-    <span class="keywordflow">if</span> (!refs_)
-        <span class="keywordflow">return</span>;
-
-    <span class="comment">//  VSMs and delimiters can be copied straight away. The only message type</span>
-    <span class="comment">//  that needs special care are long messages.</span>
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.base.type == <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a930a0cf86864b1324b61d7ab6b0de11a">type_lmsg</a>) {
-        <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.flags &amp; <a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>)
-            <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;refcnt.add (refs_);
-        <span class="keywordflow">else</span> {
-            <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;refcnt.set (refs_ + 1);
-            <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.flags |= <a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>;
-        }
-    }
-}
-</pre></div>
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -329,10 +299,7 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="msg_8hpp_source.html#l00102">type_max</a>, <a class="el" href="msg_8hpp_source.html#l00098">type_min</a>, and <a class="el" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.</p>
 
 <p>Referenced by <a class="el" href="msg_8cpp_source.html#l00152">copy()</a>, <a class="el" href="msg_8cpp_source.html#l00131">move()</a>, <a class="el" href="socket__base_8cpp_source.html#l00511">zmq::socket_base_t::recv()</a>, and <a class="el" href="socket__base_8cpp_source.html#l00466">zmq::socket_base_t::send()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-     <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.base.type &gt;= <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a315f5e5aeac2f3724d8ebeea9e9e8752">type_min</a> &amp;&amp; <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.base.type &lt;= <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8aed322e9cbce8fe2c2f4823c3e54c88eb">type_max</a>;
-}
-</pre></div>
+
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -365,38 +332,7 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="msg_8hpp_source.html#l00051">shared</a>, and <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>.</p>
 
 <p>Referenced by <a class="el" href="session_8cpp_source.html#l00112">zmq::session_t::clean_pipes()</a>, <a class="el" href="dist_8cpp_source.html#l00122">zmq::dist_t::distribute()</a>, <a class="el" href="lb_8cpp_source.html#l00146">zmq::lb_t::has_out()</a>, <a class="el" href="ctx_8cpp_source.html#l00305">zmq::ctx_t::log()</a>, <a class="el" href="fq_8cpp_source.html#l00096">zmq::fq_t::recv()</a>, <a class="el" href="pipe_8cpp_source.html#l00213">zmq::writer_t::rollback()</a>, <a class="el" href="lb_8cpp_source.html#l00095">zmq::lb_t::send()</a>, <a class="el" href="pair_8cpp_source.html#l00170">zmq::pair_t::xhas_out()</a>, <a class="el" href="xrep_8cpp_source.html#l00230">zmq::xrep_t::xrecv()</a>, <a class="el" href="pair_8cpp_source.html#l00141">zmq::pair_t::xrecv()</a>, <a class="el" href="xsub_8cpp_source.html#l00058">zmq::xsub_t::xsend()</a>, <a class="el" href="xrep_8cpp_source.html#l00162">zmq::xrep_t::xsend()</a>, <a class="el" href="sub_8cpp_source.html#l00034">zmq::sub_t::xsetsockopt()</a>, and <a class="el" href="pipe_8cpp_source.html#l00046">zmq::reader_t::~reader_t()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  Check the validity of the message.</span>
-    <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (!<a class="code" href="classzmq_1_1msg__t.html#a214637bbec842b66265d7cde0effe6a9">check</a> ())) {
-        errno = EFAULT;
-        <span class="keywordflow">return</span> -1;
-    }
 
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.base.type == <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a930a0cf86864b1324b61d7ab6b0de11a">type_lmsg</a>) {
-
-        <span class="comment">//  If the content is not shared, or if it is shared and the reference</span>
-        <span class="comment">//  count has dropped to zero, deallocate it.</span>
-        <span class="keywordflow">if</span> (!(<a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.flags &amp; <a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>) ||
-              !<a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;refcnt.sub (1)) {
-
-            <span class="comment">//  We used &quot;placement new&quot; operator to initialize the reference</span>
-            <span class="comment">//  counter so we call the destructor explicitly now.</span>
-            <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;refcnt.~atomic_counter_t ();
-
-            <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;ffn)
-                <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;ffn (<a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;data,
-                    <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;hint);
-            free (<a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content);
-        }
-    }
-
-    <span class="comment">//  Make the message invalid.</span>
-    <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.base.type = 0;
-
-    <span class="keywordflow">return</span> 0;
-
-}
-</pre></div>
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -428,35 +364,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="msg_8cpp_source.html#l00152">152</a> of file <a class="el" href="msg_8cpp_source.html">msg.cpp</a>.</p>
 
 <p>References <a class="el" href="classzmq_1_1msg__t.html#adacba41946de9cd57d3563a46df642d8">base</a>, <a class="el" href="msg_8cpp_source.html#l00032">check()</a>, <a class="el" href="classzmq_1_1msg__t.html#a8a2830bcfbcd4e4ca15a41a9e20ab42b">lmsg</a>, <a class="el" href="msg_8hpp_source.html#l00051">shared</a>, <a class="el" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>, and <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  Check the validity of the source.</span>
-    <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (!src_.check ())) {
-        errno = EFAULT;
-        <span class="keywordflow">return</span> -1;
-    }
 
-    <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d">close</a> ();
-    <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (rc &lt; 0))
-        <span class="keywordflow">return</span> rc;
-
-    <span class="keywordflow">if</span> (src_.u.base.type == <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a930a0cf86864b1324b61d7ab6b0de11a">type_lmsg</a>) {
-
-        <span class="comment">//  One reference is added to shared messages. Non-shared messages</span>
-        <span class="comment">//  are turned into shared messages and reference count is set to 2.</span>
-        <span class="keywordflow">if</span> (src_.u.lmsg.flags &amp; <a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>)
-            src_.u.lmsg.content-&gt;refcnt.add (1);
-        <span class="keywordflow">else</span> {
-            src_.u.lmsg.flags |= <a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>;
-            src_.u.lmsg.content-&gt;refcnt.set (2);
-        }
-    }
-
-    *<span class="keyword">this</span> = src_;
-
-    <span class="keywordflow">return</span> 0;
-
-}
-</pre></div>
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -519,13 +427,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="msg_8cpp_source.html#l00037">37</a> of file <a class="el" href="msg_8cpp_source.html">msg.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="session_8cpp_source.html#l00112">zmq::session_t::clean_pipes()</a>, <a class="el" href="decoder_8cpp_source.html#l00029">zmq::decoder_t::decoder_t()</a>, <a class="el" href="dist_8cpp_source.html#l00122">zmq::dist_t::distribute()</a>, <a class="el" href="encoder_8cpp_source.html#l00025">zmq::encoder_t::encoder_t()</a>, <a class="el" href="lb_8cpp_source.html#l00146">zmq::lb_t::has_out()</a>, <a class="el" href="msg_8cpp_source.html#l00131">move()</a>, <a class="el" href="fq_8cpp_source.html#l00096">zmq::fq_t::recv()</a>, <a class="el" href="lb_8cpp_source.html#l00095">zmq::lb_t::send()</a>, <a class="el" href="session_8cpp_source.html#l00095">zmq::session_t::write()</a>, <a class="el" href="pair_8cpp_source.html#l00170">zmq::pair_t::xhas_out()</a>, <a class="el" href="xrep_8cpp_source.html#l00230">zmq::xrep_t::xrecv()</a>, <a class="el" href="pair_8cpp_source.html#l00141">zmq::pair_t::xrecv()</a>, <a class="el" href="xsub_8cpp_source.html#l00058">zmq::xsub_t::xsend()</a>, <a class="el" href="xrep_8cpp_source.html#l00162">zmq::xrep_t::xsend()</a>, <a class="el" href="req_8cpp_source.html#l00037">zmq::req_t::xsend()</a>, <a class="el" href="pair_8cpp_source.html#l00118">zmq::pair_t::xsend()</a>, and <a class="el" href="xsub_8cpp_source.html#l00026">zmq::xsub_t::xsub_t()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.vsm.type = <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8ad6316db72334d6ef2b793fb9d6b3a36d">type_vsm</a>;
-    <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.vsm.flags = 0;
-    <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.vsm.size = 0;
-    <span class="keywordflow">return</span> 0;
-}
-</pre></div>
+
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -577,24 +479,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="msg_8cpp_source.html#l00071">71</a> of file <a class="el" href="msg_8cpp_source.html">msg.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.type = <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a930a0cf86864b1324b61d7ab6b0de11a">type_lmsg</a>;
-    <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.flags = 0;
-    <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content = (content_t*) malloc (<span class="keyword">sizeof</span> (content_t));
-    <span class="keywordflow">if</span> (!<a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content) {
-        errno = ENOMEM;
-        <span class="keywordflow">return</span> -1;
-    }
 
-    <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;data = data_;
-    <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;size = size_;
-    <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;ffn = ffn_;
-    <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;hint = hint_;
-    <span class="keyword">new</span> (&amp;<a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;refcnt) <a class="code" href="classzmq_1_1atomic__counter__t.html">zmq::atomic_counter_t</a> ();
-    <span class="keywordflow">return</span> 0;
-
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="ab6d03777e41070ff6133c99f1ca3a0d3"></a><!-- doxytag: member="zmq::msg_t::init_delimiter" ref="ab6d03777e41070ff6133c99f1ca3a0d3" args="()" -->
@@ -614,12 +499,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="msg_8cpp_source.html#l00091">91</a> of file <a class="el" href="msg_8cpp_source.html">msg.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="pipe_8cpp_source.html#l00230">zmq::writer_t::terminate()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.delimiter.type = <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8ad54d689e2464ee0fd2478b2c50dbbe2e">type_delimiter</a>;
-    <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.delimiter.flags = 0;
-    <span class="keywordflow">return</span> 0;
-}
-</pre></div>
+
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
@@ -650,34 +530,8 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="msg_8cpp_source.html#l00045">45</a> of file <a class="el" href="msg_8cpp_source.html">msg.cpp</a>.</p>
 
-<p>References <a class="el" href="config_8hpp_source.html#l00041">zmq::max_vsm_size</a>.</p>
-
 <p>Referenced by <a class="el" href="ctx_8cpp_source.html#l00305">zmq::ctx_t::log()</a>, <a class="el" href="xrep_8cpp_source.html#l00230">zmq::xrep_t::xrecv()</a>, <a class="el" href="sub_8cpp_source.html#l00034">zmq::sub_t::xsetsockopt()</a>, and <a class="el" href="zmq__init_8cpp_source.html#l00035">zmq::zmq_init_t::zmq_init_t()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (size_ &lt;= <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba5da03200e1ed8fed02f0e58e7431855f">max_vsm_size</a>) {
-        <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.vsm.type = <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8ad6316db72334d6ef2b793fb9d6b3a36d">type_vsm</a>;
-        <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.vsm.flags = 0;
-        <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.vsm.size = (<span class="keywordtype">unsigned</span> char) size_;
-    }
-    <span class="keywordflow">else</span> {
-        <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.type = <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a930a0cf86864b1324b61d7ab6b0de11a">type_lmsg</a>;
-        <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.flags = 0;
-        <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content =
-            (content_t*) malloc (<span class="keyword">sizeof</span> (content_t) + size_);
-        <span class="keywordflow">if</span> (!<a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content) {
-            errno = ENOMEM;
-            <span class="keywordflow">return</span> -1;
-        }
 
-        <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;data = <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content + 1;
-        <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;size = size_;
-        <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;ffn = NULL;
-        <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;hint = NULL;
-        <span class="keyword">new</span> (&amp;<a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;refcnt) <a class="code" href="classzmq_1_1atomic__counter__t.html">zmq::atomic_counter_t</a> ();
-    }
-    <span class="keywordflow">return</span> 0;
-}
-</pre></div>
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
@@ -708,10 +562,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="msg_8cpp_source.html#l00229">229</a> of file <a class="el" href="msg_8cpp_source.html">msg.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="pipe_8cpp_source.html#l00070">zmq::reader_t::is_delimiter()</a>, and <a class="el" href="pipe_8cpp_source.html#l00101">zmq::reader_t::read()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.base.type == <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8ad54d689e2464ee0fd2478b2c50dbbe2e">type_delimiter</a>;
-}
-</pre></div>
+
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
@@ -745,26 +596,7 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="msg_8cpp_source.html#l00032">check()</a>, <a class="el" href="msg_8cpp_source.html#l00037">init()</a>, and <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>.</p>
 
 <p>Referenced by <a class="el" href="xsub_8cpp_source.html#l00088">zmq::xsub_t::xrecv()</a>, and <a class="el" href="xrep_8cpp_source.html#l00230">zmq::xrep_t::xrecv()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  Check the validity of the source.</span>
-    <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (!src_.check ())) {
-        errno = EFAULT;
-        <span class="keywordflow">return</span> -1;
-    }
 
-    <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d">close</a> ();
-    <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (rc &lt; 0))
-        <span class="keywordflow">return</span> rc;
-
-    *<span class="keyword">this</span> = src_;
-
-    rc = src_.init ();
-    <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (rc &lt; 0))
-        <span class="keywordflow">return</span> rc;
-
-    <span class="keywordflow">return</span> 0;
-}
-</pre></div>
 <p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
@@ -807,10 +639,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="msg_8cpp_source.html#l00224">224</a> of file <a class="el" href="msg_8cpp_source.html">msg.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="socket__base_8cpp_source.html#l00511">zmq::socket_base_t::recv()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.base.flags &amp;= ~flags_;
-}
-</pre></div>
+
 <p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-11-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
@@ -844,20 +673,7 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="msg_8hpp_source.html#l00051">shared</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
 <p>Referenced by <a class="el" href="dist_8cpp_source.html#l00122">zmq::dist_t::distribute()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (refs_ &gt;= 0);
 
-    <span class="comment">//  No copies required.</span>
-    <span class="keywordflow">if</span> (!refs_)
-        <span class="keywordflow">return</span>;
-
-    <span class="comment">//  The only message type that needs special care are long messages.</span>
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.base.type == <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a930a0cf86864b1324b61d7ab6b0de11a">type_lmsg</a>) {
-        <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.flags &amp; <a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>);
-        <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.lmsg.content-&gt;refcnt.sub (refs_);
-    }
-}
-</pre></div>
 <p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-12-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
@@ -889,10 +705,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="msg_8cpp_source.html#l00219">219</a> of file <a class="el" href="msg_8cpp_source.html">msg.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="socket__base_8cpp_source.html#l00466">zmq::socket_base_t::send()</a>, <a class="el" href="xrep_8cpp_source.html#l00230">zmq::xrep_t::xrecv()</a>, <a class="el" href="req_8cpp_source.html#l00037">zmq::req_t::xsend()</a>, and <a class="el" href="zmq__init_8cpp_source.html#l00035">zmq::zmq_init_t::zmq_init_t()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>.base.flags |= flags_;
-}
-</pre></div>
+
 <p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-13-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary" style="display:block;">
@@ -1076,8 +889,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="msg_8hpp_source.html">msg.hpp</a></li>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="msg_8cpp_source.html">msg.cpp</a></li>
+<li>src/<a class="el" href="msg_8hpp_source.html">msg.hpp</a></li>
+<li>src/<a class="el" href="msg_8cpp_source.html">msg.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -1085,7 +898,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -1094,7 +907,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:12 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:17 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

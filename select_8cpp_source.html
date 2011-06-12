@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/src/libzmq/src/select.cpp Source File</title>
+<title>libzmq: src/select.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -97,10 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a>      </li>
-      <li class="navelem"><a class="el" href="dir_223207b948e8fa656fe21665415438d6.html">travlr</a>      </li>
-      <li class="navelem"><a class="el" href="dir_fb6bd66a99939deb91cf473b567980dd.html">src</a>      </li>
-      <li class="navelem"><a class="el" href="dir_aef0164114278eee23dc63ccdad22337.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
     </ul>
   </div>
@@ -154,7 +149,7 @@ function toggleVisibility(linkObj) {
 <a name="l00042"></a>00042 <span class="preprocessor">#include &quot;<a class="code" href="i__poll__events_8hpp.html">i_poll_events.hpp</a>&quot;</span>
 <a name="l00043"></a>00043 
 <a name="l00044"></a><a class="code" href="classzmq_1_1select__t.html#ae48e2c65d181c9ded762c02b1ccb0f69">00044</a> <a class="code" href="classzmq_1_1select__t.html#ae48e2c65d181c9ded762c02b1ccb0f69">zmq::select_t::select_t</a> () :
-<a name="l00045"></a>00045     maxfd (<a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>),
+<a name="l00045"></a>00045     maxfd (retired_fd),
 <a name="l00046"></a>00046     retired (false),
 <a name="l00047"></a>00047     stopping (false)
 <a name="l00048"></a>00048 {
@@ -169,7 +164,7 @@ function toggleVisibility(linkObj) {
 <a name="l00057"></a>00057     <a class="code" href="inproc__lat_8cpp.html#afdde2c05692ce4366f55800934ffdebe">worker</a>.stop ();
 <a name="l00058"></a>00058 }
 <a name="l00059"></a>00059 
-<a name="l00060"></a><a class="code" href="classzmq_1_1select__t.html#ae49f25933d83c0c9adbd679416fdc0c8">00060</a> <a class="code" href="classzmq_1_1select__t.html#a756fed802e42b04859e846dd67003a52">zmq::select_t::handle_t</a> <a class="code" href="classzmq_1_1select__t.html#ae49f25933d83c0c9adbd679416fdc0c8">zmq::select_t::add_fd</a> (<a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a> fd_, <a class="code" href="structzmq_1_1i__poll__events.html">i_poll_events</a> *events_)
+<a name="l00060"></a><a class="code" href="classzmq_1_1select__t.html#ae49f25933d83c0c9adbd679416fdc0c8">00060</a> <a class="code" href="classzmq_1_1select__t.html#a756fed802e42b04859e846dd67003a52">zmq::select_t::handle_t</a> <a class="code" href="classzmq_1_1select__t.html#ae49f25933d83c0c9adbd679416fdc0c8">zmq::select_t::add_fd</a> (fd_t fd_, <a class="code" href="structzmq_1_1i__poll__events.html">i_poll_events</a> *events_)
 <a name="l00061"></a>00061 {
 <a name="l00062"></a>00062     <span class="comment">//  Store the file descriptor.</span>
 <a name="l00063"></a>00063     <a class="code" href="structzmq_1_1select__t_1_1fd__entry__t.html">fd_entry_t</a> entry = {fd_, events_};
@@ -200,7 +195,7 @@ function toggleVisibility(linkObj) {
 <a name="l00088"></a>00088         <span class="keywordflow">if</span> (it-&gt;fd == handle_)
 <a name="l00089"></a>00089             <span class="keywordflow">break</span>;
 <a name="l00090"></a>00090     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (it != fds.end ());
-<a name="l00091"></a>00091     it-&gt;fd = <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>;
+<a name="l00091"></a>00091     it-&gt;fd = retired_fd;
 <a name="l00092"></a>00092     retired = <span class="keyword">true</span>;
 <a name="l00093"></a>00093 
 <a name="l00094"></a>00094     <span class="comment">//  Stop polling on the descriptor.</span>
@@ -216,7 +211,7 @@ function toggleVisibility(linkObj) {
 <a name="l00104"></a>00104     <span class="comment">//  Adjust the maxfd attribute if we have removed the</span>
 <a name="l00105"></a>00105     <span class="comment">//  highest-numbered file descriptor.</span>
 <a name="l00106"></a>00106     <span class="keywordflow">if</span> (handle_ == maxfd) {
-<a name="l00107"></a>00107         maxfd = <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>;
+<a name="l00107"></a>00107         maxfd = retired_fd;
 <a name="l00108"></a>00108         <span class="keywordflow">for</span> (fd_set_t::iterator it = fds.begin (); it != fds.end (); ++it)
 <a name="l00109"></a>00109             <span class="keywordflow">if</span> (it-&gt;fd &gt; maxfd)
 <a name="l00110"></a>00110                 maxfd = it-&gt;fd;
@@ -289,15 +284,15 @@ function toggleVisibility(linkObj) {
 <a name="l00177"></a>00177             <span class="keywordflow">continue</span>;
 <a name="l00178"></a>00178 
 <a name="l00179"></a>00179         <span class="keywordflow">for</span> (fd_set_t::size_type i = 0; i &lt; fds.size (); i ++) {
-<a name="l00180"></a>00180             <span class="keywordflow">if</span> (fds [i].fd == <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>)
+<a name="l00180"></a>00180             <span class="keywordflow">if</span> (fds [i].fd == retired_fd)
 <a name="l00181"></a>00181                 <span class="keywordflow">continue</span>;
 <a name="l00182"></a>00182             <span class="keywordflow">if</span> (FD_ISSET (fds [i].fd, &amp;exceptfds))
 <a name="l00183"></a>00183                 fds [i].events-&gt;in_event ();
-<a name="l00184"></a>00184             <span class="keywordflow">if</span> (fds [i].fd == <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>)
+<a name="l00184"></a>00184             <span class="keywordflow">if</span> (fds [i].fd == retired_fd)
 <a name="l00185"></a>00185                 <span class="keywordflow">continue</span>;
 <a name="l00186"></a>00186             <span class="keywordflow">if</span> (FD_ISSET (fds [i].fd, &amp;writefds))
 <a name="l00187"></a>00187                 fds [i].events-&gt;out_event ();
-<a name="l00188"></a>00188             <span class="keywordflow">if</span> (fds [i].fd == <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>)
+<a name="l00188"></a>00188             <span class="keywordflow">if</span> (fds [i].fd == retired_fd)
 <a name="l00189"></a>00189                 <span class="keywordflow">continue</span>;
 <a name="l00190"></a>00190             <span class="keywordflow">if</span> (FD_ISSET (fds [i].fd, &amp;readfds))
 <a name="l00191"></a>00191                 fds [i].events-&gt;in_event ();
@@ -319,7 +314,7 @@ function toggleVisibility(linkObj) {
 <a name="l00207"></a>00207 
 <a name="l00208"></a><a class="code" href="classzmq_1_1select__t.html#a2172f2a033d292f1c6c42f725e7bf786">00208</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1select__t.html#a2172f2a033d292f1c6c42f725e7bf786">zmq::select_t::is_retired_fd</a> (<span class="keyword">const</span> <a class="code" href="structzmq_1_1select__t_1_1fd__entry__t.html">fd_entry_t</a> &amp;entry)
 <a name="l00209"></a>00209 {
-<a name="l00210"></a>00210     <span class="keywordflow">return</span> (entry.<a class="code" href="structzmq_1_1select__t_1_1fd__entry__t.html#aa38c30b8a87eca5da54a489ca921c015">fd</a> == <a class="code" href="namespacezmq.html#ae81a5431952eca8a54b5ecb06b20ed6fa8e355846dbf9275cb887f3d2b83bafc8">retired_fd</a>);
+<a name="l00210"></a>00210     <span class="keywordflow">return</span> (entry.<a class="code" href="structzmq_1_1select__t_1_1fd__entry__t.html#aa38c30b8a87eca5da54a489ca921c015">fd</a> == retired_fd);
 <a name="l00211"></a>00211 }
 <a name="l00212"></a>00212 
 </pre></div></div>
@@ -329,7 +324,7 @@ function toggleVisibility(linkObj) {
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -338,7 +333,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:09 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:07 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

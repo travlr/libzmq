@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/src/libzmq/src/uuid.cpp Source File</title>
+<title>libzmq: src/uuid.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -97,10 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a>      </li>
-      <li class="navelem"><a class="el" href="dir_223207b948e8fa656fe21665415438d6.html">travlr</a>      </li>
-      <li class="navelem"><a class="el" href="dir_fb6bd66a99939deb91cf473b567980dd.html">src</a>      </li>
-      <li class="navelem"><a class="el" href="dir_aef0164114278eee23dc63ccdad22337.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
     </ul>
   </div>
@@ -141,7 +136,7 @@ function toggleVisibility(linkObj) {
 <a name="l00029"></a>00029 <span class="preprocessor"></span>
 <a name="l00030"></a>00030 <span class="preprocessor">#include &lt;rpc.h&gt;</span>
 <a name="l00031"></a>00031 
-<a name="l00032"></a>00032 <span class="keywordtype">void</span> <a class="code" href="namespacezmq.html#aba955dc1d654f51695b92ff4a6069780">zmq::generate_uuid</a> (<span class="keywordtype">void</span> *buf_)
+<a name="l00032"></a>00032 <span class="keywordtype">void</span> zmq::generate_uuid (<span class="keywordtype">void</span> *buf_)
 <a name="l00033"></a>00033 {
 <a name="l00034"></a>00034     RPC_STATUS ret = UuidCreate ((::UUID*) buf_);
 <a name="l00035"></a>00035     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (ret == RPC_S_OK);
@@ -151,7 +146,7 @@ function toggleVisibility(linkObj) {
 <a name="l00039"></a>00039 <span class="preprocessor"></span>
 <a name="l00040"></a>00040 <span class="preprocessor">#include &lt;uuid.h&gt;</span>
 <a name="l00041"></a>00041 
-<a name="l00042"></a>00042 <span class="keywordtype">void</span> <a class="code" href="namespacezmq.html#aba955dc1d654f51695b92ff4a6069780">zmq::generate_uuid</a> (<span class="keywordtype">void</span> *buf_)
+<a name="l00042"></a>00042 <span class="keywordtype">void</span> zmq::generate_uuid (<span class="keywordtype">void</span> *buf_)
 <a name="l00043"></a>00043 {
 <a name="l00044"></a>00044     uint32_t status;
 <a name="l00045"></a>00045     uuid_create ((::uuid_t*) buf_, &amp;status);
@@ -163,7 +158,7 @@ function toggleVisibility(linkObj) {
 <a name="l00051"></a>00051 <span class="preprocessor"></span>
 <a name="l00052"></a>00052 <span class="preprocessor">#include &lt;uuid/uuid.h&gt;</span>
 <a name="l00053"></a>00053 
-<a name="l00054"></a>00054 <span class="keywordtype">void</span> <a class="code" href="namespacezmq.html#aba955dc1d654f51695b92ff4a6069780">zmq::generate_uuid</a> (<span class="keywordtype">void</span> *buf_)
+<a name="l00054"></a>00054 <span class="keywordtype">void</span> zmq::generate_uuid (<span class="keywordtype">void</span> *buf_)
 <a name="l00055"></a>00055 {
 <a name="l00056"></a>00056     uuid_generate ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) buf_);
 <a name="l00057"></a>00057 }
@@ -172,7 +167,7 @@ function toggleVisibility(linkObj) {
 <a name="l00060"></a>00060 <span class="preprocessor"></span>
 <a name="l00061"></a>00061 <span class="preprocessor">#include &lt;starlet.h&gt;</span>
 <a name="l00062"></a>00062 
-<a name="l00063"></a>00063 <span class="keywordtype">void</span> <a class="code" href="namespacezmq.html#aba955dc1d654f51695b92ff4a6069780">zmq::generate_uuid</a> (<span class="keywordtype">void</span> *buf_)
+<a name="l00063"></a>00063 <span class="keywordtype">void</span> zmq::generate_uuid (<span class="keywordtype">void</span> *buf_)
 <a name="l00064"></a>00064 {
 <a name="l00065"></a>00065     sys$create_uid(buf_);
 <a name="l00066"></a>00066 }
@@ -181,7 +176,7 @@ function toggleVisibility(linkObj) {
 <a name="l00069"></a>00069 <span class="preprocessor"></span>
 <a name="l00070"></a>00070 <span class="preprocessor">#include &lt;openssl/rand.h&gt;</span>
 <a name="l00071"></a>00071 
-<a name="l00072"></a><a class="code" href="namespacezmq.html#aba955dc1d654f51695b92ff4a6069780">00072</a> <span class="keywordtype">void</span> <a class="code" href="namespacezmq.html#aba955dc1d654f51695b92ff4a6069780">zmq::generate_uuid</a> (<span class="keywordtype">void</span> *buf_)
+<a name="l00072"></a>00072 <span class="keywordtype">void</span> zmq::generate_uuid (<span class="keywordtype">void</span> *buf_)
 <a name="l00073"></a>00073 {
 <a name="l00074"></a>00074     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *buf = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) buf_;
 <a name="l00075"></a>00075 
@@ -207,7 +202,7 @@ function toggleVisibility(linkObj) {
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -216,7 +211,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:09 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:08 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

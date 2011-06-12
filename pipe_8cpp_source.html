@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/src/libzmq/src/pipe.cpp Source File</title>
+<title>libzmq: src/pipe.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -97,10 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a>      </li>
-      <li class="navelem"><a class="el" href="dir_223207b948e8fa656fe21665415438d6.html">travlr</a>      </li>
-      <li class="navelem"><a class="el" href="dir_fb6bd66a99939deb91cf473b567980dd.html">src</a>      </li>
-      <li class="navelem"><a class="el" href="dir_aef0164114278eee23dc63ccdad22337.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
     </ul>
   </div>
@@ -397,7 +392,7 @@ function toggleVisibility(linkObj) {
 <a name="l00285"></a>00285     <span class="keywordflow">return</span> hwm &gt; 0 &amp;&amp; msgs_written - msgs_read == uint64_t (hwm);
 <a name="l00286"></a>00286 }
 <a name="l00287"></a>00287 
-<a name="l00288"></a><a class="code" href="namespacezmq.html#a298bc554f19da8cd5eac945d1dec8d2d">00288</a> <span class="keywordtype">void</span> <a class="code" href="namespacezmq.html#a298bc554f19da8cd5eac945d1dec8d2d">zmq::create_pipe</a> (<a class="code" href="classzmq_1_1object__t.html">object_t</a> *reader_parent_, <a class="code" href="classzmq_1_1object__t.html">object_t</a> *writer_parent_,
+<a name="l00288"></a>00288 <span class="keywordtype">void</span> zmq::create_pipe (<a class="code" href="classzmq_1_1object__t.html">object_t</a> *reader_parent_, <a class="code" href="classzmq_1_1object__t.html">object_t</a> *writer_parent_,
 <a name="l00289"></a>00289     <span class="keywordtype">int</span> hwm_, <a class="code" href="classzmq_1_1reader__t.html">reader_t</a> **reader_, <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> **writer_)
 <a name="l00290"></a>00290 {
 <a name="l00291"></a>00291     <span class="comment">//  First compute the low water mark. Following point should be taken</span>
@@ -420,8 +415,8 @@ function toggleVisibility(linkObj) {
 <a name="l00308"></a>00308     <span class="comment">//  That done, we still we have to account for the cases where</span>
 <a name="l00309"></a>00309     <span class="comment">//  HWM &lt; max_wm_delta thus driving LWM to negative numbers.</span>
 <a name="l00310"></a>00310     <span class="comment">//  Let&#39;s make LWM 1/2 of HWM in such cases.</span>
-<a name="l00311"></a>00311     <span class="keywordtype">int</span> lwm = (hwm_ &gt; <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba17876b8aa2590a65918639e92bb2383b">max_wm_delta</a> * 2) ?
-<a name="l00312"></a>00312         hwm_ - <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69ba17876b8aa2590a65918639e92bb2383b">max_wm_delta</a> : (hwm_ + 1) / 2;
+<a name="l00311"></a>00311     <span class="keywordtype">int</span> lwm = (hwm_ &gt; max_wm_delta * 2) ?
+<a name="l00312"></a>00312         hwm_ - max_wm_delta : (hwm_ + 1) / 2;
 <a name="l00313"></a>00313 
 <a name="l00314"></a>00314     <span class="comment">//  Create all three objects pipe consists of: the pipe per se, reader and</span>
 <a name="l00315"></a>00315     <span class="comment">//  writer. The pipe will be handled by reader and writer, its never passed</span>
@@ -441,7 +436,7 @@ function toggleVisibility(linkObj) {
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -450,7 +445,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:08 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:07 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/src/libzmq/src/tcp_socket.hpp Source File</title>
+<title>libzmq: src/tcp_socket.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -97,10 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a>      </li>
-      <li class="navelem"><a class="el" href="dir_223207b948e8fa656fe21665415438d6.html">travlr</a>      </li>
-      <li class="navelem"><a class="el" href="dir_fb6bd66a99939deb91cf473b567980dd.html">src</a>      </li>
-      <li class="navelem"><a class="el" href="dir_aef0164114278eee23dc63ccdad22337.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
     </ul>
   </div>
@@ -151,14 +146,14 @@ function toggleVisibility(linkObj) {
 <a name="l00039"></a>00039         <a class="code" href="classzmq_1_1tcp__socket__t.html#a5df80afb297b92eae236be4764cb3359">~tcp_socket_t</a> ();
 <a name="l00040"></a>00040 
 <a name="l00041"></a>00041         <span class="comment">//  Associates a socket with a native socket descriptor.</span>
-<a name="l00042"></a>00042         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1tcp__socket__t.html#a032819b80e9dce53b0c78376ac32a35a">open</a> (<a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a> fd_, <span class="keywordtype">int</span> sndbuf_, <span class="keywordtype">int</span> rcvbuf_);
+<a name="l00042"></a>00042         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1tcp__socket__t.html#a032819b80e9dce53b0c78376ac32a35a">open</a> (fd_t fd_, <span class="keywordtype">int</span> sndbuf_, <span class="keywordtype">int</span> rcvbuf_);
 <a name="l00043"></a>00043          
 <a name="l00044"></a>00044         <span class="comment">//  Closes the underlying socket.</span>
 <a name="l00045"></a>00045         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1tcp__socket__t.html#abea0f14dea0bf986138191be87bcab01">close</a> ();
 <a name="l00046"></a>00046 
 <a name="l00047"></a>00047         <span class="comment">//  Returns the underlying socket. Returns retired_fd when the socket</span>
 <a name="l00048"></a>00048         <span class="comment">//  is in the closed state.</span>
-<a name="l00049"></a>00049         <a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a> <a class="code" href="classzmq_1_1tcp__socket__t.html#a5913e1c8cfe00777fec158d71bba0fc8">get_fd</a> ();
+<a name="l00049"></a>00049         fd_t <a class="code" href="classzmq_1_1tcp__socket__t.html#a5913e1c8cfe00777fec158d71bba0fc8">get_fd</a> ();
 <a name="l00050"></a>00050 
 <a name="l00051"></a>00051         <span class="comment">//  Writes data to the socket. Returns the number of bytes actually</span>
 <a name="l00052"></a>00052         <span class="comment">//  written (even zero is to be considered to be a success). In case</span>
@@ -174,7 +169,7 @@ function toggleVisibility(linkObj) {
 <a name="l00062"></a>00062     <span class="keyword">private</span>:
 <a name="l00063"></a>00063 
 <a name="l00064"></a>00064         <span class="comment">//  Underlying socket.</span>
-<a name="l00065"></a><a class="code" href="classzmq_1_1tcp__socket__t.html#adb6f2623190256bd1f58f849d91f649b">00065</a>         <a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a> <a class="code" href="classzmq_1_1tcp__socket__t.html#adb6f2623190256bd1f58f849d91f649b">s</a>;
+<a name="l00065"></a><a class="code" href="classzmq_1_1tcp__socket__t.html#adb6f2623190256bd1f58f849d91f649b">00065</a>         fd_t <a class="code" href="classzmq_1_1tcp__socket__t.html#adb6f2623190256bd1f58f849d91f649b">s</a>;
 <a name="l00066"></a>00066 
 <a name="l00067"></a>00067         <span class="comment">//  Disable copy construction of tcp_socket.</span>
 <a name="l00068"></a>00068         <a class="code" href="classzmq_1_1tcp__socket__t.html#a51d2034e2f91c45c130951b4b4769924">tcp_socket_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1tcp__socket__t.html">tcp_socket_t</a>&amp;);
@@ -191,7 +186,7 @@ function toggleVisibility(linkObj) {
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -200,7 +195,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:09 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:08 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

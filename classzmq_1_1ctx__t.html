@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -99,7 +98,7 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespacezmq.html">zmq</a>      </li>
+      <li class="navelem"><b>zmq</b>      </li>
       <li class="navelem"><a class="el" href="classzmq_1_1ctx__t.html">ctx_t</a>      </li>
     </ul>
   </div>
@@ -263,11 +262,7 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p>Definition at line <a class="el" href="ctx_8hpp_source.html#l00093">93</a> of file <a class="el" href="ctx_8hpp_source.html">ctx.hpp</a>.</p>
-<div class="fragment"><pre class="fragment">             {
-            <a class="code" href="classzmq_1_1ctx__t.html#ad3ff47f239cb78f6c0d855b3b72336daa272e86e3e64b0da5f4c5ae42ab3cf572">term_tid</a> = 0,
-            <a class="code" href="classzmq_1_1ctx__t.html#ad3ff47f239cb78f6c0d855b3b72336daae17a94cd6dd359d9533c4dd7fc86bcd0">reaper_tid</a> = 1
-        };
-</pre></div>
+
 </div>
 </div>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
@@ -288,51 +283,8 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ctx_8cpp_source.html#l00039">39</a> of file <a class="el" href="ctx_8cpp_source.html">ctx.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>, <a class="el" href="socket__base_8cpp_source.html#l00295">zmq::socket_base_t::bind()</a>, <a class="el" href="ctx_8cpp_source.html#l00160">create_socket()</a>, <a class="el" href="ctx_8hpp_source.html#l00113">empty_slots</a>, <a class="el" href="io__thread_8cpp_source.html#l00054">zmq::io_thread_t::get_mailbox()</a>, <a class="el" href="reaper_8cpp_source.html#l00042">zmq::reaper_t::get_mailbox()</a>, <a class="el" href="ctx_8hpp_source.html#l00129">io_threads</a>, <a class="el" href="ctx_8hpp_source.html#l00147">log_socket</a>, <a class="el" href="config_8hpp_source.html#l00032">zmq::max_sockets</a>, <a class="el" href="ctx_8hpp_source.html#l00125">reaper</a>, <a class="el" href="ctx_8hpp_source.html#l00095">reaper_tid</a>, <a class="el" href="ctx_8hpp_source.html#l00132">slot_count</a>, <a class="el" href="ctx_8hpp_source.html#l00133">slots</a>, <a class="el" href="io__thread_8cpp_source.html#l00043">zmq::io_thread_t::start()</a>, <a class="el" href="reaper_8cpp_source.html#l00047">zmq::reaper_t::start()</a>, <a class="el" href="ctx_8hpp_source.html#l00136">term_mailbox</a>, <a class="el" href="ctx_8hpp_source.html#l00094">term_tid</a>, <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>, and <a class="el" href="zmq_8h_source.html#l00151">ZMQ_PUB</a>.</p>
-<div class="fragment"><pre class="fragment">                                     :
-    <a class="code" href="classzmq_1_1ctx__t.html#afdde4cd260bf89fff96ff18f1647c132">tag</a> (0xbadcafe0),
-    <a class="code" href="classzmq_1_1ctx__t.html#a5351d34715720942b74147276e7503aa">terminating</a> (<span class="keyword">false</span>)
-{
-    <span class="keywordtype">int</span> rc;
+<p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>, <a class="el" href="socket__base_8cpp_source.html#l00295">zmq::socket_base_t::bind()</a>, <a class="el" href="ctx_8cpp_source.html#l00160">create_socket()</a>, <a class="el" href="ctx_8hpp_source.html#l00113">empty_slots</a>, <a class="el" href="io__thread_8cpp_source.html#l00054">zmq::io_thread_t::get_mailbox()</a>, <a class="el" href="reaper_8cpp_source.html#l00042">zmq::reaper_t::get_mailbox()</a>, <a class="el" href="ctx_8hpp_source.html#l00129">io_threads</a>, <a class="el" href="ctx_8hpp_source.html#l00147">log_socket</a>, <a class="el" href="ctx_8hpp_source.html#l00125">reaper</a>, <a class="el" href="ctx_8hpp_source.html#l00095">reaper_tid</a>, <a class="el" href="ctx_8hpp_source.html#l00132">slot_count</a>, <a class="el" href="ctx_8hpp_source.html#l00133">slots</a>, <a class="el" href="io__thread_8cpp_source.html#l00043">zmq::io_thread_t::start()</a>, <a class="el" href="reaper_8cpp_source.html#l00047">zmq::reaper_t::start()</a>, <a class="el" href="ctx_8hpp_source.html#l00136">term_mailbox</a>, <a class="el" href="ctx_8hpp_source.html#l00094">term_tid</a>, <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>, and <a class="el" href="zmq_8h_source.html#l00151">ZMQ_PUB</a>.</p>
 
-    <span class="comment">//  Initialise the array of mailboxes. Additional three slots are for</span>
-    <span class="comment">//  internal log socket and the zmq_term thread the reaper thread.</span>
-    <a class="code" href="classzmq_1_1ctx__t.html#a96a142314e4373420358c7932736ccfb">slot_count</a> = <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69bad07897f35803c5312249d8301419d8ea">max_sockets</a> + io_threads_ + 3;
-    <a class="code" href="classzmq_1_1ctx__t.html#ae5f4652d6e8336b83959443f3f75a5d2">slots</a> = (mailbox_t**) malloc (<span class="keyword">sizeof</span> (mailbox_t*) * <a class="code" href="classzmq_1_1ctx__t.html#a96a142314e4373420358c7932736ccfb">slot_count</a>);
-    <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (<a class="code" href="classzmq_1_1ctx__t.html#ae5f4652d6e8336b83959443f3f75a5d2">slots</a>);
-
-    <span class="comment">//  Initialise the infrastructure for zmq_term thread.</span>
-    <a class="code" href="classzmq_1_1ctx__t.html#ae5f4652d6e8336b83959443f3f75a5d2">slots</a> [<a class="code" href="classzmq_1_1ctx__t.html#ad3ff47f239cb78f6c0d855b3b72336daa272e86e3e64b0da5f4c5ae42ab3cf572">term_tid</a>] = &amp;<a class="code" href="classzmq_1_1ctx__t.html#ab9dd36f721c28fa24b1d717a49c5fc25">term_mailbox</a>;
-
-    <span class="comment">//  Create the reaper thread.</span>
-    <a class="code" href="classzmq_1_1ctx__t.html#a6eb6acbc8898d3b0942d81a70131de50">reaper</a> = <span class="keyword">new</span> (std::nothrow) reaper_t (<span class="keyword">this</span>, <a class="code" href="classzmq_1_1ctx__t.html#ad3ff47f239cb78f6c0d855b3b72336daae17a94cd6dd359d9533c4dd7fc86bcd0">reaper_tid</a>);
-    <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (<a class="code" href="classzmq_1_1ctx__t.html#a6eb6acbc8898d3b0942d81a70131de50">reaper</a>);
-    <a class="code" href="classzmq_1_1ctx__t.html#ae5f4652d6e8336b83959443f3f75a5d2">slots</a> [<a class="code" href="classzmq_1_1ctx__t.html#ad3ff47f239cb78f6c0d855b3b72336daae17a94cd6dd359d9533c4dd7fc86bcd0">reaper_tid</a>] = <a class="code" href="classzmq_1_1ctx__t.html#a6eb6acbc8898d3b0942d81a70131de50">reaper</a>-&gt;get_mailbox ();
-    <a class="code" href="classzmq_1_1ctx__t.html#a6eb6acbc8898d3b0942d81a70131de50">reaper</a>-&gt;start ();
-
-    <span class="comment">//  Create I/O thread objects and launch them.</span>
-    <span class="keywordflow">for</span> (uint32_t i = 2; i != io_threads_ + 2; i++) {
-        io_thread_t *io_thread = <span class="keyword">new</span> (std::nothrow) io_thread_t (<span class="keyword">this</span>, i);
-        <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (io_thread);
-        <a class="code" href="classzmq_1_1ctx__t.html#a8ddff9e6be40cda40f5623c8f280b4a3">io_threads</a>.push_back (io_thread);
-        <a class="code" href="classzmq_1_1ctx__t.html#ae5f4652d6e8336b83959443f3f75a5d2">slots</a> [i] = io_thread-&gt;get_mailbox ();
-        io_thread-&gt;start ();
-    }
-
-    <span class="comment">//  In the unused part of the slot array, create a list of empty slots.</span>
-    <span class="keywordflow">for</span> (int32_t i = (int32_t) <a class="code" href="classzmq_1_1ctx__t.html#a96a142314e4373420358c7932736ccfb">slot_count</a> - 1;
-          i &gt;= (int32_t) io_threads_ + 2; i--) {
-        <a class="code" href="classzmq_1_1ctx__t.html#abea207ecc53e68514ad3aeb634df8321">empty_slots</a>.push_back (i);
-        <a class="code" href="classzmq_1_1ctx__t.html#ae5f4652d6e8336b83959443f3f75a5d2">slots</a> [i] = NULL;
-    }
-
-    <span class="comment">//  Create the logging infrastructure.</span>
-    <a class="code" href="classzmq_1_1ctx__t.html#ad7abd66a62b1fa140e35bd337a15c2a0">log_socket</a> = <a class="code" href="classzmq_1_1ctx__t.html#a68a9aea0d33fac5bea51b5916241eb4d">create_socket</a> (<a class="code" href="zmq_8h.html#a0755bc624cb1e1a7e897d8b512e17f2a">ZMQ_PUB</a>);
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="classzmq_1_1ctx__t.html#ad7abd66a62b1fa140e35bd337a15c2a0">log_socket</a>);
-    rc = <a class="code" href="classzmq_1_1ctx__t.html#ad7abd66a62b1fa140e35bd337a15c2a0">log_socket</a>-&gt;bind (<span class="stringliteral">&quot;sys://log&quot;</span>);
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
-}
-</pre></div>
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -363,31 +315,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="ctx_8cpp_source.html#l00088">88</a> of file <a class="el" href="ctx_8cpp_source.html">ctx.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  Check that there are no remaining sockets.</span>
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="classzmq_1_1ctx__t.html#ae5855dddb2c363caf436c97afefb93fe">sockets</a>.<a class="code" href="classzmq_1_1array__t.html#af09fae34ad4ad9bbb0bd9a8083f9a3f2">empty</a> ());
 
-    <span class="comment">//  Ask I/O threads to terminate. If stop signal wasn&#39;t sent to I/O</span>
-    <span class="comment">//  thread subsequent invocation of destructor would hang-up.</span>
-    <span class="keywordflow">for</span> (io_threads_t::size_type i = 0; i != <a class="code" href="classzmq_1_1ctx__t.html#a8ddff9e6be40cda40f5623c8f280b4a3">io_threads</a>.size (); i++)
-        <a class="code" href="classzmq_1_1ctx__t.html#a8ddff9e6be40cda40f5623c8f280b4a3">io_threads</a> [i]-&gt;stop ();
-
-    <span class="comment">//  Wait till I/O threads actually terminate.</span>
-    <span class="keywordflow">for</span> (io_threads_t::size_type i = 0; i != <a class="code" href="classzmq_1_1ctx__t.html#a8ddff9e6be40cda40f5623c8f280b4a3">io_threads</a>.size (); i++)
-        <span class="keyword">delete</span> <a class="code" href="classzmq_1_1ctx__t.html#a8ddff9e6be40cda40f5623c8f280b4a3">io_threads</a> [i];
-
-    <span class="comment">//  Deallocate the reaper thread object.</span>
-    <span class="keyword">delete</span> <a class="code" href="classzmq_1_1ctx__t.html#a6eb6acbc8898d3b0942d81a70131de50">reaper</a>;
-
-    <span class="comment">//  Deallocate the array of mailboxes. No special work is</span>
-    <span class="comment">//  needed as mailboxes themselves were deallocated with their</span>
-    <span class="comment">//  corresponding io_thread/socket objects.</span>
-    free (<a class="code" href="classzmq_1_1ctx__t.html#ae5f4652d6e8336b83959443f3f75a5d2">slots</a>);
-
-    <span class="comment">//  Remove the tag, so that the object is considered dead.</span>
-    <a class="code" href="classzmq_1_1ctx__t.html#afdde4cd260bf89fff96ff18f1647c132">tag</a> = 0xdeadbeef;
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a6d9747c19ccb9765c3d64ecf6819804f"></a><!-- doxytag: member="zmq::ctx_t::ctx_t" ref="a6d9747c19ccb9765c3d64ecf6819804f" args="(const ctx_t &amp;)" -->
@@ -423,10 +351,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="ctx_8cpp_source.html#l00083">83</a> of file <a class="el" href="ctx_8cpp_source.html">ctx.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1ctx__t.html#afdde4cd260bf89fff96ff18f1647c132">tag</a> == 0xbadcafe0;
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a20291243167826e3bdc5788c606b3ee2"></a><!-- doxytag: member="zmq::ctx_t::choose_io_thread" ref="a20291243167826e3bdc5788c606b3ee2" args="(uint64_t affinity_)" -->
@@ -447,26 +372,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="ctx_8cpp_source.html#l00227">227</a> of file <a class="el" href="ctx_8cpp_source.html">ctx.cpp</a>.</p>
 
 <p>References <a class="el" href="io__thread_8cpp_source.html#l00059">zmq::io_thread_t::get_load()</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1ctx__t.html#a8ddff9e6be40cda40f5623c8f280b4a3">io_threads</a>.empty ())
-        <span class="keywordflow">return</span> NULL;
 
-    <span class="comment">//  Find the I/O thread with minimum load.</span>
-    <span class="keywordtype">int</span> min_load = -1;
-    io_threads_t::size_type result = 0;
-    <span class="keywordflow">for</span> (io_threads_t::size_type i = 0; i != <a class="code" href="classzmq_1_1ctx__t.html#a8ddff9e6be40cda40f5623c8f280b4a3">io_threads</a>.size (); i++) {
-        <span class="keywordflow">if</span> (!affinity_ || (affinity_ &amp; (uint64_t (1) &lt;&lt; i))) {
-            <span class="keywordtype">int</span> load = <a class="code" href="classzmq_1_1ctx__t.html#a8ddff9e6be40cda40f5623c8f280b4a3">io_threads</a> [i]-&gt;get_load ();
-            <span class="keywordflow">if</span> (min_load == -1 || load &lt; min_load) {
-                min_load = load;
-                result = i;
-            }
-        }
-    }
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (min_load != -1);
-    <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1ctx__t.html#a8ddff9e6be40cda40f5623c8f280b4a3">io_threads</a> [result];
-}
-</pre></div>
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -500,42 +406,7 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="socket__base_8cpp_source.html#l00068">zmq::socket_base_t::create()</a>, <a class="el" href="zmq_8h_source.html#l00108">ETERM</a>, and <a class="el" href="socket__base_8cpp_source.html#l00139">zmq::socket_base_t::get_mailbox()</a>.</p>
 
 <p>Referenced by <a class="el" href="ctx_8cpp_source.html#l00039">ctx_t()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1ctx__t.html#a9643f870730f423c6f0b0ad6ff830d90">slot_sync</a>.lock ();
 
-    <span class="comment">//  Once zmq_term() was called, we can&#39;t create new sockets.</span>
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1ctx__t.html#a5351d34715720942b74147276e7503aa">terminating</a>) {
-        <a class="code" href="classzmq_1_1ctx__t.html#a9643f870730f423c6f0b0ad6ff830d90">slot_sync</a>.unlock ();
-        errno = <a class="code" href="zmq_8h.html#ac2ac1a2e8c039a4def30f537b6e39ca1">ETERM</a>;
-        <span class="keywordflow">return</span> NULL;
-    }
-
-    <span class="comment">//  If max_sockets limit was reached, return error.</span>
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1ctx__t.html#abea207ecc53e68514ad3aeb634df8321">empty_slots</a>.empty ()) {
-        <a class="code" href="classzmq_1_1ctx__t.html#a9643f870730f423c6f0b0ad6ff830d90">slot_sync</a>.unlock ();
-        errno = EMFILE;
-        <span class="keywordflow">return</span> NULL;
-    }
-
-    <span class="comment">//  Choose a slot for the socket.</span>
-    uint32_t slot = <a class="code" href="classzmq_1_1ctx__t.html#abea207ecc53e68514ad3aeb634df8321">empty_slots</a>.back ();
-    <a class="code" href="classzmq_1_1ctx__t.html#abea207ecc53e68514ad3aeb634df8321">empty_slots</a>.pop_back ();
-
-    <span class="comment">//  Create the socket and register its mailbox.</span>
-    socket_base_t *s = <a class="code" href="classzmq_1_1socket__base__t.html#a6015a318d8ff9435c1f505b838833877">socket_base_t::create</a> (type_, <span class="keyword">this</span>, slot);
-    <span class="keywordflow">if</span> (!s) {
-        <a class="code" href="classzmq_1_1ctx__t.html#abea207ecc53e68514ad3aeb634df8321">empty_slots</a>.push_back (slot);
-        <a class="code" href="classzmq_1_1ctx__t.html#a9643f870730f423c6f0b0ad6ff830d90">slot_sync</a>.unlock ();
-        <span class="keywordflow">return</span> NULL;
-    }
-    <a class="code" href="classzmq_1_1ctx__t.html#ae5855dddb2c363caf436c97afefb93fe">sockets</a>.<a class="code" href="classzmq_1_1array__t.html#a3b79bba5eafb8830e2bc30312a4a9825">push_back</a> (s);
-    <a class="code" href="classzmq_1_1ctx__t.html#ae5f4652d6e8336b83959443f3f75a5d2">slots</a> [slot] = s-&gt;get_mailbox ();
-
-    <a class="code" href="classzmq_1_1ctx__t.html#a9643f870730f423c6f0b0ad6ff830d90">slot_sync</a>.unlock ();
-
-    <span class="keywordflow">return</span> s;
-}
-</pre></div>
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -578,25 +449,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="ctx_8cpp_source.html#l00197">197</a> of file <a class="el" href="ctx_8cpp_source.html">ctx.cpp</a>.</p>
 
 <p>References <a class="el" href="object_8cpp_source.html#l00048">zmq::object_t::get_tid()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1ctx__t.html#a9643f870730f423c6f0b0ad6ff830d90">slot_sync</a>.lock ();
 
-    <span class="comment">//  Free the associared thread slot.</span>
-    uint32_t tid = socket_-&gt;get_tid ();
-    <a class="code" href="classzmq_1_1ctx__t.html#abea207ecc53e68514ad3aeb634df8321">empty_slots</a>.push_back (tid);
-    <a class="code" href="classzmq_1_1ctx__t.html#ae5f4652d6e8336b83959443f3f75a5d2">slots</a> [tid] = NULL;    
-
-    <span class="comment">//  Remove the socket from the list of sockets.</span>
-    <a class="code" href="classzmq_1_1ctx__t.html#ae5855dddb2c363caf436c97afefb93fe">sockets</a>.<a class="code" href="classzmq_1_1array__t.html#a19c850fa9d9eea7fa79dedf71cce4ec6">erase</a> (socket_);
-
-    <span class="comment">//  If zmq_term() was already called and there are no more socket</span>
-    <span class="comment">//  we can ask reaper thread to terminate.</span>
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1ctx__t.html#a5351d34715720942b74147276e7503aa">terminating</a> &amp;&amp; <a class="code" href="classzmq_1_1ctx__t.html#ae5855dddb2c363caf436c97afefb93fe">sockets</a>.<a class="code" href="classzmq_1_1array__t.html#af09fae34ad4ad9bbb0bd9a8083f9a3f2">empty</a> ())
-        <a class="code" href="classzmq_1_1ctx__t.html#a6eb6acbc8898d3b0942d81a70131de50">reaper</a>-&gt;stop ();
-
-    <a class="code" href="classzmq_1_1ctx__t.html#a9643f870730f423c6f0b0ad6ff830d90">slot_sync</a>.unlock ();
-}
-</pre></div>
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -628,28 +481,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="ctx_8cpp_source.html#l00282">282</a> of file <a class="el" href="ctx_8cpp_source.html">ctx.cpp</a>.</p>
 
 <p>References <a class="el" href="zmq_8h_source.html#l00096">ECONNREFUSED</a>, <a class="el" href="own_8cpp_source.html#l00056">zmq::own_t::inc_seqnum()</a>, and <a class="el" href="ctx_8hpp_source.html#l00046">zmq::endpoint_t::socket</a>.</p>
-<div class="fragment"><pre class="fragment">{
-     <a class="code" href="classzmq_1_1ctx__t.html#a582b4b2948585d65eec19f41a1a93019">endpoints_sync</a>.lock ();
 
-     endpoints_t::iterator it = <a class="code" href="classzmq_1_1ctx__t.html#ab0eb9763833c5db8cdd6125d7777a234">endpoints</a>.find (addr_);
-     <span class="keywordflow">if</span> (it == <a class="code" href="classzmq_1_1ctx__t.html#ab0eb9763833c5db8cdd6125d7777a234">endpoints</a>.end ()) {
-         <a class="code" href="classzmq_1_1ctx__t.html#a582b4b2948585d65eec19f41a1a93019">endpoints_sync</a>.unlock ();
-         errno = <a class="code" href="zmq_8h.html#aad88020b394ef1aa4af2f4ef9b4c8b39">ECONNREFUSED</a>;
-         endpoint_t empty = {NULL, options_t()};
-         <span class="keywordflow">return</span> empty;
-     }
-     endpoint_t *endpoint = &amp;it-&gt;second;
-
-     <span class="comment">//  Increment the command sequence number of the peer so that it won&#39;t</span>
-     <span class="comment">//  get deallocated until &quot;bind&quot; command is issued by the caller.</span>
-     <span class="comment">//  The subsequent &#39;bind&#39; has to be called with inc_seqnum parameter</span>
-     <span class="comment">//  set to false, so that the seqnum isn&#39;t incremented twice.</span>
-     endpoint-&gt;socket-&gt;inc_seqnum ();
-
-     <a class="code" href="classzmq_1_1ctx__t.html#a582b4b2948585d65eec19f41a1a93019">endpoints_sync</a>.unlock ();
-     <span class="keywordflow">return</span> *endpoint;
-}
-</pre></div>
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
@@ -678,10 +510,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="ctx_8cpp_source.html#l00217">217</a> of file <a class="el" href="ctx_8cpp_source.html">ctx.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1ctx__t.html#a6eb6acbc8898d3b0942d81a70131de50">reaper</a>;
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a1fe2dd42ad783e9b1f17ed5feeac3ed4"></a><!-- doxytag: member="zmq::ctx_t::log" ref="a1fe2dd42ad783e9b1f17ed5feeac3ed4" args="(const char *format_, va_list args_)" -->
@@ -712,24 +541,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="ctx_8cpp_source.html#l00305">305</a> of file <a class="el" href="ctx_8cpp_source.html">ctx.cpp</a>.</p>
 
 <p>References <a class="el" href="msg_8cpp_source.html#l00098">zmq::msg_t::close()</a>, <a class="el" href="msg_8hpp_source.html#l00118">zmq::msg_t::data</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="msg_8cpp_source.html#l00045">zmq::msg_t::init_size()</a>, and <a class="el" href="msg_8hpp_source.html#l00117">zmq::msg_t::size</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  Create the log message.</span>
-    msg_t msg;
-    <span class="keywordtype">int</span> rc = msg.init_size (strlen (format_) + 1);
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-    memcpy (msg.data (), format_, msg.size ());
 
-    <span class="comment">//  At this  point we migrate the log socket to the current thread.</span>
-    <span class="comment">//  We rely on mutex for executing the memory barrier.</span>
-    <a class="code" href="classzmq_1_1ctx__t.html#ac1fb2adc438dbfe1e7f83dd42f2392b7">log_sync</a>.lock ();
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1ctx__t.html#ad7abd66a62b1fa140e35bd337a15c2a0">log_socket</a>)
-        <a class="code" href="classzmq_1_1ctx__t.html#ad7abd66a62b1fa140e35bd337a15c2a0">log_socket</a>-&gt;send (&amp;msg, 0);
-    <a class="code" href="classzmq_1_1ctx__t.html#ac1fb2adc438dbfe1e7f83dd42f2392b7">log_sync</a>.unlock ();
-
-    rc = msg.close ();
-    <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-}
-</pre></div>
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
@@ -788,21 +600,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="ctx_8cpp_source.html#l00248">248</a> of file <a class="el" href="ctx_8cpp_source.html">ctx.cpp</a>.</p>
 
 <p>References <a class="el" href="zmq_8h_source.html#l00090">EADDRINUSE</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1ctx__t.html#a582b4b2948585d65eec19f41a1a93019">endpoints_sync</a>.lock ();
 
-    <span class="keywordtype">bool</span> inserted = <a class="code" href="classzmq_1_1ctx__t.html#ab0eb9763833c5db8cdd6125d7777a234">endpoints</a>.insert (endpoints_t::value_type (
-        std::string (addr_), endpoint_)).second;
-    <span class="keywordflow">if</span> (!inserted) {
-        errno = <a class="code" href="zmq_8h.html#a61676e39b42371c65c3b960a91887b03">EADDRINUSE</a>;
-        <a class="code" href="classzmq_1_1ctx__t.html#a582b4b2948585d65eec19f41a1a93019">endpoints_sync</a>.unlock ();
-        <span class="keywordflow">return</span> -1;
-    }
-
-    <a class="code" href="classzmq_1_1ctx__t.html#a582b4b2948585d65eec19f41a1a93019">endpoints_sync</a>.unlock ();
-    <span class="keywordflow">return</span> 0;
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a78f3ab6a392855392785c50d94d7eeee"></a><!-- doxytag: member="zmq::ctx_t::send_command" ref="a78f3ab6a392855392785c50d94d7eeee" args="(uint32_t tid_, const command_t &amp;command_)" -->
@@ -831,10 +629,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="ctx_8cpp_source.html#l00222">222</a> of file <a class="el" href="ctx_8cpp_source.html">ctx.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1ctx__t.html#ae5f4652d6e8336b83959443f3f75a5d2">slots</a> [tid_]-&gt;send (command_);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a2cf31c77d712c4643fef478c1259f243"></a><!-- doxytag: member="zmq::ctx_t::terminate" ref="a2cf31c77d712c4643fef478c1259f243" args="()" -->
@@ -854,51 +649,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="ctx_8cpp_source.html#l00114">114</a> of file <a class="el" href="ctx_8cpp_source.html">ctx.cpp</a>.</p>
 
 <p>References <a class="el" href="structzmq_1_1command__t.html#a410fe9a71a98dc5dda09a2ed4e27be48">zmq::command_t::done</a>, <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  Check whether termination was already underway, but interrupted and now</span>
-    <span class="comment">//  restarted.</span>
-    <a class="code" href="classzmq_1_1ctx__t.html#a9643f870730f423c6f0b0ad6ff830d90">slot_sync</a>.lock ();
-    <span class="keywordtype">bool</span> restarted = <a class="code" href="classzmq_1_1ctx__t.html#a5351d34715720942b74147276e7503aa">terminating</a>;
-    <a class="code" href="classzmq_1_1ctx__t.html#a9643f870730f423c6f0b0ad6ff830d90">slot_sync</a>.unlock ();
 
-    <span class="comment">//  First attempt to terminate the context.</span>
-    <span class="keywordflow">if</span> (!restarted) {
-
-        <span class="comment">//  Close the logging infrastructure.</span>
-        <a class="code" href="classzmq_1_1ctx__t.html#ac1fb2adc438dbfe1e7f83dd42f2392b7">log_sync</a>.lock ();
-        <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1ctx__t.html#ad7abd66a62b1fa140e35bd337a15c2a0">log_socket</a>-&gt;close ();
-        <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
-        <a class="code" href="classzmq_1_1ctx__t.html#ad7abd66a62b1fa140e35bd337a15c2a0">log_socket</a> = NULL;
-        <a class="code" href="classzmq_1_1ctx__t.html#ac1fb2adc438dbfe1e7f83dd42f2392b7">log_sync</a>.unlock ();
-
-        <span class="comment">//  First send stop command to sockets so that any blocking calls can be</span>
-        <span class="comment">//  interrupted. If there are no sockets we can ask reaper thread to stop.</span>
-        <a class="code" href="classzmq_1_1ctx__t.html#a9643f870730f423c6f0b0ad6ff830d90">slot_sync</a>.lock ();
-        <a class="code" href="classzmq_1_1ctx__t.html#a5351d34715720942b74147276e7503aa">terminating</a> = <span class="keyword">true</span>;
-        <span class="keywordflow">for</span> (<a class="code" href="classzmq_1_1array__t.html#a95098ae535820a060a53645cab6dbb36">sockets_t::size_type</a> i = 0; i != <a class="code" href="classzmq_1_1ctx__t.html#ae5855dddb2c363caf436c97afefb93fe">sockets</a>.<a class="code" href="classzmq_1_1array__t.html#a2fe6ef91998728c49e1439c673ca76f2">size</a> (); i++)
-            <a class="code" href="classzmq_1_1ctx__t.html#ae5855dddb2c363caf436c97afefb93fe">sockets</a> [i]-&gt;stop ();
-        <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1ctx__t.html#ae5855dddb2c363caf436c97afefb93fe">sockets</a>.<a class="code" href="classzmq_1_1array__t.html#af09fae34ad4ad9bbb0bd9a8083f9a3f2">empty</a> ())
-            <a class="code" href="classzmq_1_1ctx__t.html#a6eb6acbc8898d3b0942d81a70131de50">reaper</a>-&gt;stop ();
-        <a class="code" href="classzmq_1_1ctx__t.html#a9643f870730f423c6f0b0ad6ff830d90">slot_sync</a>.unlock ();
-    }
-
-    <span class="comment">//  Wait till reaper thread closes all the sockets.</span>
-    command_t cmd;
-    <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1ctx__t.html#ab9dd36f721c28fa24b1d717a49c5fc25">term_mailbox</a>.recv (&amp;cmd, <span class="keyword">true</span>);
-    <span class="keywordflow">if</span> (rc == -1 &amp;&amp; errno == EINTR)
-        <span class="keywordflow">return</span> -1;
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (cmd.type == <a class="code" href="structzmq_1_1command__t.html#a410fe9a71a98dc5dda09a2ed4e27be48">command_t::done</a>);
-    <a class="code" href="classzmq_1_1ctx__t.html#a9643f870730f423c6f0b0ad6ff830d90">slot_sync</a>.lock ();
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="classzmq_1_1ctx__t.html#ae5855dddb2c363caf436c97afefb93fe">sockets</a>.<a class="code" href="classzmq_1_1array__t.html#af09fae34ad4ad9bbb0bd9a8083f9a3f2">empty</a> ());
-    <a class="code" href="classzmq_1_1ctx__t.html#a9643f870730f423c6f0b0ad6ff830d90">slot_sync</a>.unlock ();
-
-    <span class="comment">//  Deallocate the resources.</span>
-    <span class="keyword">delete</span> <span class="keyword">this</span>;
-
-    <span class="keywordflow">return</span> 0;
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="a44a1d04beb64dff14b163cc5bc773b8f"></a><!-- doxytag: member="zmq::ctx_t::unregister_endpoints" ref="a44a1d04beb64dff14b163cc5bc773b8f" args="(class socket_base_t *socket_)" -->
@@ -917,23 +668,7 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="ctx_8cpp_source.html#l00264">264</a> of file <a class="el" href="ctx_8cpp_source.html">ctx.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1ctx__t.html#a582b4b2948585d65eec19f41a1a93019">endpoints_sync</a>.lock ();
 
-    endpoints_t::iterator it = <a class="code" href="classzmq_1_1ctx__t.html#ab0eb9763833c5db8cdd6125d7777a234">endpoints</a>.begin ();
-    <span class="keywordflow">while</span> (it != <a class="code" href="classzmq_1_1ctx__t.html#ab0eb9763833c5db8cdd6125d7777a234">endpoints</a>.end ()) {
-        <span class="keywordflow">if</span> (it-&gt;second.socket == socket_) {
-            endpoints_t::iterator to_erase = it;
-            ++it;
-            <a class="code" href="classzmq_1_1ctx__t.html#ab0eb9763833c5db8cdd6125d7777a234">endpoints</a>.erase (to_erase);
-            <span class="keywordflow">continue</span>;
-        }
-        ++it;
-    }
-        
-    <a class="code" href="classzmq_1_1ctx__t.html#a582b4b2948585d65eec19f41a1a93019">endpoints_sync</a>.unlock ();
-}
-</pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
@@ -1162,8 +897,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="ctx_8hpp_source.html">ctx.hpp</a></li>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="ctx_8cpp_source.html">ctx.cpp</a></li>
+<li>src/<a class="el" href="ctx_8hpp_source.html">ctx.hpp</a></li>
+<li>src/<a class="el" href="ctx_8cpp_source.html">ctx.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -1171,7 +906,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -1180,7 +915,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:11 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:16 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

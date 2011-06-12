@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -99,7 +98,7 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespacezmq.html">zmq</a>      </li>
+      <li class="navelem"><b>zmq</b>      </li>
       <li class="navelem"><a class="el" href="classzmq_1_1reader__t.html">reader_t</a>      </li>
     </ul>
   </div>
@@ -157,8 +156,8 @@ Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structzmq_1_1endpoint__t.html">endpoint_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#ab79ee4567511bec2625b22f47312ad2c">find_endpoint</a> (const char *addr_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#ad51f425a8cd4297c7a98cee050880436">log</a> (const char *format_,...)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#adae0d107731853c76b907cd9edaa1912">process_activate_writer</a> (uint64_t msgs_read_)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#ad0b54980f3a60dac2a68ced302d7a835">process_attach</a> (struct <a class="el" href="structzmq_1_1i__engine.html">i_engine</a> *engine_, const <a class="el" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;peer_identity_)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#a640914b51beb9629e1048199ade635d5">process_bind</a> (class <a class="el" href="classzmq_1_1reader__t.html">reader_t</a> *in_pipe_, class <a class="el" href="classzmq_1_1writer__t.html">writer_t</a> *out_pipe_, const <a class="el" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;peer_identity_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#ad0b54980f3a60dac2a68ced302d7a835">process_attach</a> (struct <a class="el" href="structzmq_1_1i__engine.html">i_engine</a> *engine_, const blob_t &amp;peer_identity_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#a640914b51beb9629e1048199ade635d5">process_bind</a> (class <a class="el" href="classzmq_1_1reader__t.html">reader_t</a> *in_pipe_, class <a class="el" href="classzmq_1_1writer__t.html">writer_t</a> *out_pipe_, const blob_t &amp;peer_identity_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#a48b588321f4fdbe7aa573300fc0976f1">process_own</a> (class <a class="el" href="classzmq_1_1own__t.html">own_t</a> *object_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#a66d6b70e97b659523f89e27062b75461">process_pipe_term</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#ac2ea931f4a6be8b6fabe502cd22b85b7">process_plug</a> ()</td></tr>
@@ -172,8 +171,8 @@ Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#ad70bc209ca4bcc4a2f0ea9026108da0e">register_endpoint</a> (const char *addr_, struct <a class="el" href="structzmq_1_1endpoint__t.html">endpoint_t</a> &amp;endpoint_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#a6019509926465c8f21b7cf5ca5e64fe4">send_activate_reader</a> (class <a class="el" href="classzmq_1_1reader__t.html">reader_t</a> *destination_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#a215313f441429d7a01a26c4b7b1b97c0">send_activate_writer</a> (class <a class="el" href="classzmq_1_1writer__t.html">writer_t</a> *destination_, uint64_t msgs_read_)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#ae7d1be5035efda04d5b0f5cb5ee1aff6">send_attach</a> (class <a class="el" href="classzmq_1_1session__t.html">session_t</a> *destination_, struct <a class="el" href="structzmq_1_1i__engine.html">i_engine</a> *engine_, const <a class="el" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;peer_identity_, bool inc_seqnum_=true)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#aefe7f36f1370393a301fe849b190b022">send_bind</a> (class <a class="el" href="classzmq_1_1own__t.html">own_t</a> *destination_, class <a class="el" href="classzmq_1_1reader__t.html">reader_t</a> *in_pipe_, class <a class="el" href="classzmq_1_1writer__t.html">writer_t</a> *out_pipe_, const <a class="el" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;peer_identity_, bool inc_seqnum_=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#ae7d1be5035efda04d5b0f5cb5ee1aff6">send_attach</a> (class <a class="el" href="classzmq_1_1session__t.html">session_t</a> *destination_, struct <a class="el" href="structzmq_1_1i__engine.html">i_engine</a> *engine_, const blob_t &amp;peer_identity_, bool inc_seqnum_=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#aefe7f36f1370393a301fe849b190b022">send_bind</a> (class <a class="el" href="classzmq_1_1own__t.html">own_t</a> *destination_, class <a class="el" href="classzmq_1_1reader__t.html">reader_t</a> *in_pipe_, class <a class="el" href="classzmq_1_1writer__t.html">writer_t</a> *out_pipe_, const blob_t &amp;peer_identity_, bool inc_seqnum_=true)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#ac8c1e3cde28211481d288ba343bd9856">send_done</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#a1746fdd6c7b787bfa432dace8c5ca156">send_own</a> (class <a class="el" href="classzmq_1_1own__t.html">own_t</a> *destination_, class <a class="el" href="classzmq_1_1own__t.html">own_t</a> *object_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#aca6916d9f3d21d8ddd29efa697b5c236">send_pipe_term</a> (class <a class="el" href="classzmq_1_1writer__t.html">writer_t</a> *destination_)</td></tr>
@@ -248,20 +247,7 @@ Friends</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00026">26</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">                                                                 :
-    <a class="code" href="classzmq_1_1object__t.html#a5342a291dc2fc4e39c0904413921935d">object_t</a> (parent_),
-    <a class="code" href="classzmq_1_1reader__t.html#a5b9b9b677e990ad11dc703ac7b3dba11">active</a> (<span class="keyword">true</span>),
-    <a class="code" href="classzmq_1_1reader__t.html#a387bb65b880f7329f46f9aa2d5c429f9">pipe</a> (pipe_),
-    <a class="code" href="classzmq_1_1reader__t.html#ad1e963f97cc12ccd0284b089a8823d48">writer</a> (NULL),
-    <a class="code" href="classzmq_1_1reader__t.html#a0fcec47e59d83c40ef760f74dd9f7a29">lwm</a> (lwm_),
-    <a class="code" href="classzmq_1_1reader__t.html#afd3da2a6daa2c5714c58f69ce1a31c1f">msgs_read</a> (0),
-    <a class="code" href="classzmq_1_1reader__t.html#ab0845f44136cede64517ed2d9f9e966c">sink</a> (NULL),
-    <a class="code" href="classzmq_1_1reader__t.html#a98172f0e3c67e6d6b04e4c2275ab9e78">terminating</a> (<span class="keyword">false</span>)
-{
-    <span class="comment">//  Note that writer is not set here. Writer will inform reader about its</span>
-    <span class="comment">//  address once it is created (via set_writer method).</span>
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="abc0e45adcd628cd2d756a7a9d1029090"></a><!-- doxytag: member="zmq::reader_t::~reader_t" ref="abc0e45adcd628cd2d756a7a9d1029090" args="()" -->
@@ -281,23 +267,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00046">46</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
 <p>References <a class="el" href="msg_8cpp_source.html#l00098">zmq::msg_t::close()</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  Pipe as such is owned and deallocated by reader object.</span>
-    <span class="comment">//  The point is that reader processes the last step of terminal</span>
-    <span class="comment">//  handshaking (term_ack).</span>
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="classzmq_1_1reader__t.html#a387bb65b880f7329f46f9aa2d5c429f9">pipe</a>);
 
-    <span class="comment">//  First delete all the unread messages in the pipe. We have to do it by</span>
-    <span class="comment">//  hand because msg_t doesn&#39;t have automatic destructor.</span>
-    msg_t msg;
-    <span class="keywordflow">while</span> (<a class="code" href="classzmq_1_1reader__t.html#a387bb65b880f7329f46f9aa2d5c429f9">pipe</a>-&gt;read (&amp;msg)) {
-       <span class="keywordtype">int</span> rc = msg.close ();
-       <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-    }
-
-    <span class="keyword">delete</span> <a class="code" href="classzmq_1_1reader__t.html#a387bb65b880f7329f46f9aa2d5c429f9">pipe</a>;
-}
-</pre></div>
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -346,31 +316,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00075">75</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (!<a class="code" href="classzmq_1_1reader__t.html#a5b9b9b677e990ad11dc703ac7b3dba11">active</a>)
-        <span class="keywordflow">return</span> <span class="keyword">false</span>;
 
-    <span class="comment">//  Check if there&#39;s an item in the pipe.</span>
-    <span class="keywordflow">if</span> (!<a class="code" href="classzmq_1_1reader__t.html#a387bb65b880f7329f46f9aa2d5c429f9">pipe</a>-&gt;check_read ()) {
-        <a class="code" href="classzmq_1_1reader__t.html#a5b9b9b677e990ad11dc703ac7b3dba11">active</a> = <span class="keyword">false</span>;
-        <span class="keywordflow">return</span> <span class="keyword">false</span>;
-    }
-
-    <span class="comment">//  If the next item in the pipe is message delimiter,</span>
-    <span class="comment">//  initiate its termination.</span>
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1reader__t.html#a387bb65b880f7329f46f9aa2d5c429f9">pipe</a>-&gt;probe (<a class="code" href="classzmq_1_1reader__t.html#ab3d2e1c4769a4cfa3f3440324fbe1941">is_delimiter</a>)) {
-        msg_t msg;
-        <span class="keywordtype">bool</span> ok = <a class="code" href="classzmq_1_1reader__t.html#a387bb65b880f7329f46f9aa2d5c429f9">pipe</a>-&gt;read (&amp;msg);
-        <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (ok);
-        <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1reader__t.html#ab0845f44136cede64517ed2d9f9e966c">sink</a>)
-            <a class="code" href="classzmq_1_1reader__t.html#ab0845f44136cede64517ed2d9f9e966c">sink</a>-&gt;delimited (<span class="keyword">this</span>);
-        <a class="code" href="classzmq_1_1reader__t.html#a56c12c46a75832e565ba7857a53dab01">terminate</a> ();
-        <span class="keywordflow">return</span> <span class="keyword">false</span>;
-    }
-
-    <span class="keywordflow">return</span> <span class="keyword">true</span>;
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="abda1fc9e6c8de7e6f71c724ef01986b0"></a><!-- doxytag: member="zmq::reader_t::choose_io_thread" ref="abda1fc9e6c8de7e6f71c724ef01986b0" args="(uint64_t affinity_)" -->
@@ -393,18 +339,13 @@ Friends</h2></td></tr>
 <p>References <a class="el" href="object_8cpp_source.html#l00164">zmq::object_t::choose_io_thread()</a>.</p>
 
 <p>Referenced by <a class="el" href="object_8cpp_source.html#l00164">zmq::object_t::choose_io_thread()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1object__t.html#a5313713abade537f7bff87afca7fe87d">ctx</a>-&gt;choose_io_thread (affinity_);
-}
-</pre></div>
+
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_cgraph.png" border="0" usemap="#classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_cgraph" alt=""/></div>
-<map name="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_cgraph" id="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_cgraph">
-</map>
 </div>
 </p>
 
@@ -414,8 +355,6 @@ Friends</h2></td></tr>
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_icgraph.png" border="0" usemap="#classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_icgraph" alt=""/></div>
-<map name="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_icgraph" id="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_icgraph">
-</map>
 </div>
 </p>
 
@@ -437,10 +376,7 @@ Friends</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00151">151</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="classzmq_1_1object__t.html#a5313713abade537f7bff87afca7fe87d">ctx</a>-&gt;destroy_socket (socket_);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="ab79ee4567511bec2625b22f47312ad2c"></a><!-- doxytag: member="zmq::reader_t::find_endpoint" ref="ab79ee4567511bec2625b22f47312ad2c" args="(const char *addr_)" -->
@@ -459,10 +395,7 @@ Friends</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00146">146</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1object__t.html#a5313713abade537f7bff87afca7fe87d">ctx</a>-&gt;find_endpoint (addr_);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a094e791bcbe8999720fe075eced6cc90"></a><!-- doxytag: member="zmq::reader_t::get_array_index" ref="a094e791bcbe8999720fe075eced6cc90" args="()" -->
@@ -482,10 +415,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="array_8hpp_source.html#l00053">53</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
 
 <p>References <a class="el" href="array_8hpp_source.html#l00060">zmq::array_item_t::array_index</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1array__item__t.html#a219e5027a1f711babc2e205e2e20e69b">array_index</a>;
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a8e980a312764d4528e5f8df5326cef45"></a><!-- doxytag: member="zmq::reader_t::get_ctx" ref="a8e980a312764d4528e5f8df5326cef45" args="()" -->
@@ -503,10 +433,7 @@ Friends</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00053">53</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1object__t.html#a5313713abade537f7bff87afca7fe87d">ctx</a>;
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="acdeba12028efedafc912ca126c23c583"></a><!-- doxytag: member="zmq::reader_t::get_tid" ref="acdeba12028efedafc912ca126c23c583" args="()" -->
@@ -526,10 +453,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00048">48</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="ctx_8cpp_source.html#l00197">zmq::ctx_t::destroy_socket()</a>, and <a class="el" href="object_8cpp_source.html#l00463">zmq::object_t::send_command()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1object__t.html#a85efc078219888868ae23ed6dc4f7600">tid</a>;
-}
-</pre></div>
+
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -561,10 +485,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00070">70</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
 <p>References <a class="el" href="msg_8cpp_source.html#l00229">zmq::msg_t::is_delimiter()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> msg_.is_delimiter ();
-}
-</pre></div>
+
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png"/> Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
@@ -604,13 +525,7 @@ Friends</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00156">156</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    va_list args;
-    va_start (args, format_);
-    <a class="code" href="classzmq_1_1object__t.html#a5313713abade537f7bff87afca7fe87d">ctx</a>-&gt;log (format_, args);
-    va_end (args);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="acce135e63dd3546374402558bb3d0370"></a><!-- doxytag: member="zmq::reader_t::operator=" ref="acce135e63dd3546374402558bb3d0370" args="(const reader_t &amp;)" -->
@@ -647,12 +562,7 @@ Friends</h2></td></tr>
 <p>Reimplemented from <a class="el" href="classzmq_1_1object__t.html#ac4cb21fd4f79080ff94f74a071032e7c">zmq::object_t</a>.</p>
 
 <p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00139">139</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  Forward the event to the sink (either socket or session).</span>
-    <a class="code" href="classzmq_1_1reader__t.html#a5b9b9b677e990ad11dc703ac7b3dba11">active</a> = <span class="keyword">true</span>;
-    <a class="code" href="classzmq_1_1reader__t.html#ab0845f44136cede64517ed2d9f9e966c">sink</a>-&gt;activated (<span class="keyword">this</span>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="adae0d107731853c76b907cd9edaa1912"></a><!-- doxytag: member="zmq::reader_t::process_activate_writer" ref="adae0d107731853c76b907cd9edaa1912" args="(uint64_t msgs_read_)" -->
@@ -675,10 +585,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00418">418</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="ad0b54980f3a60dac2a68ced302d7a835"></a><!-- doxytag: member="zmq::reader_t::process_attach" ref="ad0b54980f3a60dac2a68ced302d7a835" args="(struct i_engine *engine_, const blob_t &amp;peer_identity_)" -->
@@ -694,7 +601,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;&#160;</td>
+          <td class="paramtype">const blob_t &amp;&#160;</td>
           <td class="paramname"><em>peer_identity_</em>&#160;</td>
         </tr>
         <tr>
@@ -711,10 +618,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00401">401</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a640914b51beb9629e1048199ade635d5"></a><!-- doxytag: member="zmq::reader_t::process_bind" ref="a640914b51beb9629e1048199ade635d5" args="(class reader_t *in_pipe_, class writer_t *out_pipe_, const blob_t &amp;peer_identity_)" -->
@@ -736,7 +640,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;&#160;</td>
+          <td class="paramtype">const blob_t &amp;&#160;</td>
           <td class="paramname"><em>peer_identity_</em>&#160;</td>
         </tr>
         <tr>
@@ -753,10 +657,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00407">407</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a93b476c058c34d212f7424b881f6104f"></a><!-- doxytag: member="zmq::reader_t::process_command" ref="a93b476c058c34d212f7424b881f6104f" args="(struct command_t &amp;cmd_)" -->
@@ -776,102 +677,15 @@ Friends</h2></td></tr>
 
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00058">58</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="structzmq_1_1command__t.html#accaf87a203c86f66eb9df2da34abf70d">zmq::command_t::activate_reader</a>, <a class="el" href="structzmq_1_1command__t.html#a3a7605977c82a2e1228d848456b16828">zmq::command_t::activate_writer</a>, <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="structzmq_1_1command__t.html#a4c7dc393ee89ffd6e42d886c56588088">zmq::command_t::attach</a>, <a class="el" href="structzmq_1_1command__t.html#a72973798c00f6a1afaecfd4d6512eaf0">zmq::command_t::bind</a>, <a class="el" href="command_8cpp_source.html#l00025">zmq::deallocate_command()</a>, <a class="el" href="structzmq_1_1command__t.html#aea530f2505d28c466404996a9e6c4ad7">zmq::command_t::own</a>, <a class="el" href="structzmq_1_1command__t.html#a0e1742b051a3f1141b34da535a2fe8a0">zmq::command_t::pipe_term</a>, <a class="el" href="structzmq_1_1command__t.html#a54e867c559a03d74d9f83f23ff577c12">zmq::command_t::pipe_term_ack</a>, <a class="el" href="structzmq_1_1command__t.html#a72baf7a4772b48e8ee60d5cab291a52e">zmq::command_t::plug</a>, <a class="el" href="structzmq_1_1command__t.html#ac51eefa1348538068eb93c8837e529ca">zmq::command_t::reap</a>, <a class="el" href="structzmq_1_1command__t.html#a75bfdb62e23a00bcff2968b7e8548f42">zmq::command_t::reaped</a>, <a class="el" href="structzmq_1_1command__t.html#affea24404521d5c38e56b9ca9e6337ac">zmq::command_t::stop</a>, <a class="el" href="structzmq_1_1command__t.html#ac140d3142e70880df5c05fa542f4fe0f">zmq::command_t::term</a>, <a class="el" href="structzmq_1_1command__t.html#a437858476087cf4aca0fff95ce2e881b">zmq::command_t::term_ack</a>, <a class="el" href="structzmq_1_1command__t.html#aa80f3c4fd7479fb198694f059f548f5b">zmq::command_t::term_req</a>, <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="structzmq_1_1command__t.html#accaf87a203c86f66eb9df2da34abf70d">zmq::command_t::activate_reader</a>, <a class="el" href="structzmq_1_1command__t.html#a3a7605977c82a2e1228d848456b16828">zmq::command_t::activate_writer</a>, <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="structzmq_1_1command__t.html#a4c7dc393ee89ffd6e42d886c56588088">zmq::command_t::attach</a>, <a class="el" href="structzmq_1_1command__t.html#a72973798c00f6a1afaecfd4d6512eaf0">zmq::command_t::bind</a>, <a class="el" href="structzmq_1_1command__t.html#aea530f2505d28c466404996a9e6c4ad7">zmq::command_t::own</a>, <a class="el" href="structzmq_1_1command__t.html#a0e1742b051a3f1141b34da535a2fe8a0">zmq::command_t::pipe_term</a>, <a class="el" href="structzmq_1_1command__t.html#a54e867c559a03d74d9f83f23ff577c12">zmq::command_t::pipe_term_ack</a>, <a class="el" href="structzmq_1_1command__t.html#a72baf7a4772b48e8ee60d5cab291a52e">zmq::command_t::plug</a>, <a class="el" href="structzmq_1_1command__t.html#ac51eefa1348538068eb93c8837e529ca">zmq::command_t::reap</a>, <a class="el" href="structzmq_1_1command__t.html#a75bfdb62e23a00bcff2968b7e8548f42">zmq::command_t::reaped</a>, <a class="el" href="structzmq_1_1command__t.html#affea24404521d5c38e56b9ca9e6337ac">zmq::command_t::stop</a>, <a class="el" href="structzmq_1_1command__t.html#ac140d3142e70880df5c05fa542f4fe0f">zmq::command_t::term</a>, <a class="el" href="structzmq_1_1command__t.html#a437858476087cf4aca0fff95ce2e881b">zmq::command_t::term_ack</a>, <a class="el" href="structzmq_1_1command__t.html#aa80f3c4fd7479fb198694f059f548f5b">zmq::command_t::term_req</a>, <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
 <p>Referenced by <a class="el" href="reaper_8cpp_source.html#l00058">zmq::reaper_t::in_event()</a>, <a class="el" href="io__thread_8cpp_source.html#l00064">zmq::io_thread_t::in_event()</a>, and <a class="el" href="socket__base_8cpp_source.html#l00658">zmq::socket_base_t::process_commands()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">switch</span> (cmd_.type) {
 
-    <span class="keywordflow">case</span> <a class="code" href="structzmq_1_1command__t.html#accaf87a203c86f66eb9df2da34abf70d">command_t::activate_reader</a>:
-        <a class="code" href="classzmq_1_1object__t.html#ac4cb21fd4f79080ff94f74a071032e7c">process_activate_reader</a> ();
-        <span class="keywordflow">break</span>;
-
-    <span class="keywordflow">case</span> <a class="code" href="structzmq_1_1command__t.html#a3a7605977c82a2e1228d848456b16828">command_t::activate_writer</a>:
-        <a class="code" href="classzmq_1_1object__t.html#adae0d107731853c76b907cd9edaa1912">process_activate_writer</a> (cmd_.args.activate_writer.msgs_read);
-        <span class="keywordflow">break</span>;
-
-    <span class="keywordflow">case</span> <a class="code" href="structzmq_1_1command__t.html#affea24404521d5c38e56b9ca9e6337ac">command_t::stop</a>:
-        <a class="code" href="classzmq_1_1object__t.html#af74ed6e9b9a96ffc5589e8608e62885a">process_stop</a> ();
-        <span class="keywordflow">break</span>;
-
-    <span class="keywordflow">case</span> <a class="code" href="structzmq_1_1command__t.html#a72baf7a4772b48e8ee60d5cab291a52e">command_t::plug</a>:
-        <a class="code" href="classzmq_1_1object__t.html#ac2ea931f4a6be8b6fabe502cd22b85b7">process_plug</a> ();
-        <a class="code" href="classzmq_1_1object__t.html#a05acfcecb80a5e940eaa1fe31a7a16c0">process_seqnum</a> ();
-        <span class="keywordflow">return</span>;
-
-    <span class="keywordflow">case</span> <a class="code" href="structzmq_1_1command__t.html#aea530f2505d28c466404996a9e6c4ad7">command_t::own</a>:
-        <a class="code" href="classzmq_1_1object__t.html#a48b588321f4fdbe7aa573300fc0976f1">process_own</a> (cmd_.args.own.object);
-        <a class="code" href="classzmq_1_1object__t.html#a05acfcecb80a5e940eaa1fe31a7a16c0">process_seqnum</a> ();
-        <span class="keywordflow">break</span>;
-
-    <span class="keywordflow">case</span> <a class="code" href="structzmq_1_1command__t.html#a4c7dc393ee89ffd6e42d886c56588088">command_t::attach</a>:
-        <a class="code" href="classzmq_1_1object__t.html#ad0b54980f3a60dac2a68ced302d7a835">process_attach</a> (cmd_.args.attach.engine,
-            cmd_.args.attach.peer_identity ?
-            <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> (cmd_.args.attach.peer_identity,
-            cmd_.args.attach.peer_identity_size) : <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> ());
-        <a class="code" href="classzmq_1_1object__t.html#a05acfcecb80a5e940eaa1fe31a7a16c0">process_seqnum</a> ();
-        <span class="keywordflow">break</span>;
-
-    <span class="keywordflow">case</span> <a class="code" href="structzmq_1_1command__t.html#a72973798c00f6a1afaecfd4d6512eaf0">command_t::bind</a>:
-        <a class="code" href="classzmq_1_1object__t.html#a640914b51beb9629e1048199ade635d5">process_bind</a> (cmd_.args.bind.in_pipe, cmd_.args.bind.out_pipe,
-            cmd_.args.bind.peer_identity ? <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> (cmd_.args.bind.peer_identity,
-            cmd_.args.bind.peer_identity_size) : <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> ());
-        <a class="code" href="classzmq_1_1object__t.html#a05acfcecb80a5e940eaa1fe31a7a16c0">process_seqnum</a> ();
-        <span class="keywordflow">break</span>;
-
-    <span class="keywordflow">case</span> <a class="code" href="structzmq_1_1command__t.html#a0e1742b051a3f1141b34da535a2fe8a0">command_t::pipe_term</a>:
-        <a class="code" href="classzmq_1_1object__t.html#a66d6b70e97b659523f89e27062b75461">process_pipe_term</a> ();
-        <span class="keywordflow">return</span>;
-
-    <span class="keywordflow">case</span> <a class="code" href="structzmq_1_1command__t.html#a54e867c559a03d74d9f83f23ff577c12">command_t::pipe_term_ack</a>:
-        <a class="code" href="classzmq_1_1object__t.html#a756d189894a80ff4f9b76f85ea5241f2">process_pipe_term_ack</a> ();
-        <span class="keywordflow">break</span>;
-
-    <span class="keywordflow">case</span> <a class="code" href="structzmq_1_1command__t.html#aa80f3c4fd7479fb198694f059f548f5b">command_t::term_req</a>:
-        <a class="code" href="classzmq_1_1object__t.html#a344a7f21ac394b3154c900f9be2d9021">process_term_req</a> (cmd_.args.term_req.object);
-        <span class="keywordflow">break</span>;
-    
-    <span class="keywordflow">case</span> <a class="code" href="structzmq_1_1command__t.html#ac140d3142e70880df5c05fa542f4fe0f">command_t::term</a>:
-        <a class="code" href="classzmq_1_1object__t.html#a1aecc6e727edfe308fa8144b3d68ba4f">process_term</a> (cmd_.args.term.linger);
-        <span class="keywordflow">break</span>;
-
-    <span class="keywordflow">case</span> <a class="code" href="structzmq_1_1command__t.html#a437858476087cf4aca0fff95ce2e881b">command_t::term_ack</a>:
-        <a class="code" href="classzmq_1_1object__t.html#a716af8e4fb568b6f2589b73eb8953046">process_term_ack</a> ();
-        <span class="keywordflow">break</span>;
-
-    <span class="keywordflow">case</span> <a class="code" href="structzmq_1_1command__t.html#ac51eefa1348538068eb93c8837e529ca">command_t::reap</a>:
-        <a class="code" href="classzmq_1_1object__t.html#acb3ffd3e59f705c54b2449d92230db4e">process_reap</a> (cmd_.args.reap.socket);
-        <span class="keywordflow">break</span>;
-
-    <span class="keywordflow">case</span> <a class="code" href="structzmq_1_1command__t.html#a75bfdb62e23a00bcff2968b7e8548f42">command_t::reaped</a>:
-        <a class="code" href="classzmq_1_1object__t.html#abee5cbec3be7311e39ad5cfee077aefe">process_reaped</a> ();
-        <span class="keywordflow">break</span>;
-
-    <span class="keywordflow">default</span>:
-        <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-    }
-
-    <span class="comment">//  The assumption here is that each command is processed once only,</span>
-    <span class="comment">//  so deallocating it after processing is all right.</span>
-    <a class="code" href="namespacezmq.html#a1a8e0eb28535c139de41340995fa2fdc">deallocate_command</a> (&amp;cmd_);
-}
-</pre></div>
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+  <img id="dynsection-7-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="classzmq_1_1object__t_a93b476c058c34d212f7424b881f6104f_cgraph.png" border="0" usemap="#classzmq_1_1object__t_a93b476c058c34d212f7424b881f6104f_cgraph" alt=""/></div>
-<map name="classzmq_1_1object__t_a93b476c058c34d212f7424b881f6104f_cgraph" id="classzmq_1_1object__t_a93b476c058c34d212f7424b881f6104f_cgraph">
-<area shape="rect" id="node3" href="namespacezmq.html#a1a8e0eb28535c139de41340995fa2fdc" title="zmq::deallocate_command" alt="" coords="272,5,451,35"/></map>
-</div>
-</p>
-
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1object__t_a93b476c058c34d212f7424b881f6104f_icgraph.png" border="0" usemap="#classzmq_1_1object__t_a93b476c058c34d212f7424b881f6104f_icgraph" alt=""/></div>
 <map name="classzmq_1_1object__t_a93b476c058c34d212f7424b881f6104f_icgraph" id="classzmq_1_1object__t_a93b476c058c34d212f7424b881f6104f_icgraph">
 <area shape="rect" id="node3" href="classzmq_1_1reaper__t.html#ad1fd6624c998885d17a912a8798c4650" title="zmq::reaper_t::in_event" alt="" coords="327,5,484,35"/><area shape="rect" id="node5" href="classzmq_1_1io__thread__t.html#a73598fbc4516f6638ce9e901bc736a7b" title="zmq::io_thread_t::in_event" alt="" coords="317,59,493,88"/><area shape="rect" id="node7" href="classzmq_1_1socket__base__t.html#a727c494147ebcd76c661fd198f990d0b" title="zmq::socket_base_t::process_commands" alt="" coords="273,112,537,141"/></map>
@@ -900,10 +714,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00396">396</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a66d6b70e97b659523f89e27062b75461"></a><!-- doxytag: member="zmq::reader_t::process_pipe_term" ref="a66d6b70e97b659523f89e27062b75461" args="()" -->
@@ -925,10 +736,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00423">423</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a80621df62ff690cd3d0237aab641b5b5"></a><!-- doxytag: member="zmq::reader_t::process_pipe_term_ack" ref="a80621df62ff690cd3d0237aab641b5b5" args="()" -->
@@ -950,19 +758,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00146">146</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  At this point writer may already be deallocated.</span>
-    <span class="comment">//  For safety&#39;s sake drop the reference to it.</span>
-    <a class="code" href="classzmq_1_1reader__t.html#ad1e963f97cc12ccd0284b089a8823d48">writer</a> = NULL;
 
-    <span class="comment">//  Notify owner about the termination.</span>
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<a class="code" href="classzmq_1_1reader__t.html#ab0845f44136cede64517ed2d9f9e966c">sink</a>);
-    <a class="code" href="classzmq_1_1reader__t.html#ab0845f44136cede64517ed2d9f9e966c">sink</a>-&gt;terminated (<span class="keyword">this</span>);
-
-    <span class="comment">//  Deallocate resources.</span>
-    <span class="keyword">delete</span> <span class="keyword">this</span>;
-}
-</pre></div>
 </div>
 </div>
 <a class="anchor" id="ac2ea931f4a6be8b6fabe502cd22b85b7"></a><!-- doxytag: member="zmq::reader_t::process_plug" ref="ac2ea931f4a6be8b6fabe502cd22b85b7" args="()" -->
@@ -984,10 +780,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00391">391</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="acb3ffd3e59f705c54b2449d92230db4e"></a><!-- doxytag: member="zmq::reader_t::process_reap" ref="acb3ffd3e59f705c54b2449d92230db4e" args="(class socket_base_t *socket_)" -->
@@ -1010,10 +803,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00448">448</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="abee5cbec3be7311e39ad5cfee077aefe"></a><!-- doxytag: member="zmq::reader_t::process_reaped" ref="abee5cbec3be7311e39ad5cfee077aefe" args="()" -->
@@ -1035,10 +825,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00453">453</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a05acfcecb80a5e940eaa1fe31a7a16c0"></a><!-- doxytag: member="zmq::reader_t::process_seqnum" ref="a05acfcecb80a5e940eaa1fe31a7a16c0" args="()" -->
@@ -1060,10 +847,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00458">458</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="af74ed6e9b9a96ffc5589e8608e62885a"></a><!-- doxytag: member="zmq::reader_t::process_stop" ref="af74ed6e9b9a96ffc5589e8608e62885a" args="()" -->
@@ -1085,10 +869,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00386">386</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a1aecc6e727edfe308fa8144b3d68ba4f"></a><!-- doxytag: member="zmq::reader_t::process_term" ref="a1aecc6e727edfe308fa8144b3d68ba4f" args="(int linger_)" -->
@@ -1111,10 +892,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00438">438</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a716af8e4fb568b6f2589b73eb8953046"></a><!-- doxytag: member="zmq::reader_t::process_term_ack" ref="a716af8e4fb568b6f2589b73eb8953046" args="()" -->
@@ -1136,10 +914,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00443">443</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a344a7f21ac394b3154c900f9be2d9021"></a><!-- doxytag: member="zmq::reader_t::process_term_req" ref="a344a7f21ac394b3154c900f9be2d9021" args="(class own_t *object_)" -->
@@ -1162,10 +937,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00433">433</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="ac72a9011b99ee618845d2051e44ab063"></a><!-- doxytag: member="zmq::reader_t::read" ref="ac72a9011b99ee618845d2051e44ab063" args="(msg_t *msg_)" -->
@@ -1186,37 +958,12 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00101">101</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
 <p>References <a class="el" href="msg_8hpp_source.html#l00112">zmq::msg_t::flags</a>, <a class="el" href="msg_8cpp_source.html#l00229">zmq::msg_t::is_delimiter()</a>, and <a class="el" href="msg_8hpp_source.html#l00050">zmq::msg_t::more</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (!<a class="code" href="classzmq_1_1reader__t.html#a5b9b9b677e990ad11dc703ac7b3dba11">active</a>)
-        <span class="keywordflow">return</span> <span class="keyword">false</span>;
 
-    <span class="keywordflow">if</span> (!<a class="code" href="classzmq_1_1reader__t.html#a387bb65b880f7329f46f9aa2d5c429f9">pipe</a>-&gt;read (msg_)) {
-        <a class="code" href="classzmq_1_1reader__t.html#a5b9b9b677e990ad11dc703ac7b3dba11">active</a> = <span class="keyword">false</span>;
-        <span class="keywordflow">return</span> <span class="keyword">false</span>;
-    }
-
-    <span class="comment">//  If delimiter was read, start termination process of the pipe.</span>
-    <span class="keywordflow">if</span> (msg_-&gt;is_delimiter ()) {
-        <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1reader__t.html#ab0845f44136cede64517ed2d9f9e966c">sink</a>)
-            <a class="code" href="classzmq_1_1reader__t.html#ab0845f44136cede64517ed2d9f9e966c">sink</a>-&gt;delimited (<span class="keyword">this</span>);
-        <a class="code" href="classzmq_1_1reader__t.html#a56c12c46a75832e565ba7857a53dab01">terminate</a> ();
-        <span class="keywordflow">return</span> <span class="keyword">false</span>;
-    }
-
-    <span class="keywordflow">if</span> (!(msg_-&gt;flags () &amp; <a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>))
-        <a class="code" href="classzmq_1_1reader__t.html#afd3da2a6daa2c5714c58f69ce1a31c1f">msgs_read</a>++;
-
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1reader__t.html#a0fcec47e59d83c40ef760f74dd9f7a29">lwm</a> &gt; 0 &amp;&amp; <a class="code" href="classzmq_1_1reader__t.html#afd3da2a6daa2c5714c58f69ce1a31c1f">msgs_read</a> % <a class="code" href="classzmq_1_1reader__t.html#a0fcec47e59d83c40ef760f74dd9f7a29">lwm</a> == 0)
-        <a class="code" href="classzmq_1_1object__t.html#a215313f441429d7a01a26c4b7b1b97c0">send_activate_writer</a> (<a class="code" href="classzmq_1_1reader__t.html#ad1e963f97cc12ccd0284b089a8823d48">writer</a>, <a class="code" href="classzmq_1_1reader__t.html#afd3da2a6daa2c5714c58f69ce1a31c1f">msgs_read</a>);
-
-    <span class="keywordflow">return</span> <span class="keyword">true</span>;
-}
-</pre></div>
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="closed.png"/> Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1reader__t_ac72a9011b99ee618845d2051e44ab063_cgraph.png" border="0" usemap="#classzmq_1_1reader__t_ac72a9011b99ee618845d2051e44ab063_cgraph" alt=""/></div>
 <map name="classzmq_1_1reader__t_ac72a9011b99ee618845d2051e44ab063_cgraph" id="classzmq_1_1reader__t_ac72a9011b99ee618845d2051e44ab063_cgraph">
 <area shape="rect" id="node3" href="classzmq_1_1msg__t.html#ac499fa66b21176a7b995be272567ad6e" title="zmq::msg_t::is_delimiter" alt="" coords="189,5,355,35"/></map>
@@ -1251,10 +998,7 @@ Friends</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00136">136</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1object__t.html#a5313713abade537f7bff87afca7fe87d">ctx</a>-&gt;register_endpoint (addr_, endpoint_);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a6019509926465c8f21b7cf5ca5e64fe4"></a><!-- doxytag: member="zmq::reader_t::send_activate_reader" ref="a6019509926465c8f21b7cf5ca5e64fe4" args="(class reader_t *destination_)" -->
@@ -1275,16 +1019,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00270">270</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="structzmq_1_1command__t.html#accaf87a203c86f66eb9df2da34abf70d">zmq::command_t::activate_reader</a>, <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    command_t cmd;
-<span class="preprocessor">#if defined ZMQ_MAKE_VALGRIND_HAPPY</span>
-<span class="preprocessor"></span>    memset (&amp;cmd, 0, <span class="keyword">sizeof</span> (cmd));
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    cmd.destination = destination_;
-    cmd.type = <a class="code" href="structzmq_1_1command__t.html#accaf87a203c86f66eb9df2da34abf70d">command_t::activate_reader</a>;
-    <a class="code" href="classzmq_1_1object__t.html#a3adfcc82a0c622e8ba5fd9543c3b8403">send_command</a> (cmd);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a215313f441429d7a01a26c4b7b1b97c0"></a><!-- doxytag: member="zmq::reader_t::send_activate_writer" ref="a215313f441429d7a01a26c4b7b1b97c0" args="(class writer_t *destination_, uint64_t msgs_read_)" -->
@@ -1315,17 +1050,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00281">281</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="structzmq_1_1command__t.html#a3a7605977c82a2e1228d848456b16828">zmq::command_t::activate_writer</a>, <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    command_t cmd;
-<span class="preprocessor">#if defined ZMQ_MAKE_VALGRIND_HAPPY</span>
-<span class="preprocessor"></span>    memset (&amp;cmd, 0, <span class="keyword">sizeof</span> (cmd));
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    cmd.destination = destination_;
-    cmd.type = <a class="code" href="structzmq_1_1command__t.html#a3a7605977c82a2e1228d848456b16828">command_t::activate_writer</a>;
-    cmd.args.activate_writer.msgs_read = msgs_read_;
-    <a class="code" href="classzmq_1_1object__t.html#a3adfcc82a0c622e8ba5fd9543c3b8403">send_command</a> (cmd);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="ae7d1be5035efda04d5b0f5cb5ee1aff6"></a><!-- doxytag: member="zmq::reader_t::send_attach" ref="ae7d1be5035efda04d5b0f5cb5ee1aff6" args="(class session_t *destination_, struct i_engine *engine_, const blob_t &amp;peer_identity_, bool inc_seqnum_=true)" -->
@@ -1347,7 +1072,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;&#160;</td>
+          <td class="paramtype">const blob_t &amp;&#160;</td>
           <td class="paramname"><em>peer_identity_</em>, </td>
         </tr>
         <tr>
@@ -1368,39 +1093,12 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00209">209</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>, <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="structzmq_1_1command__t.html#a4c7dc393ee89ffd6e42d886c56588088">zmq::command_t::attach</a>, <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="own_8cpp_source.html#l00056">zmq::own_t::inc_seqnum()</a>, <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (inc_seqnum_)
-        destination_-&gt;inc_seqnum ();
 
-    command_t cmd;
-<span class="preprocessor">#if defined ZMQ_MAKE_VALGRIND_HAPPY</span>
-<span class="preprocessor"></span>    memset (&amp;cmd, 0, <span class="keyword">sizeof</span> (cmd));
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    cmd.destination = destination_;
-    cmd.type = <a class="code" href="structzmq_1_1command__t.html#a4c7dc393ee89ffd6e42d886c56588088">command_t::attach</a>;
-    cmd.args.attach.engine = engine_;
-    <span class="keywordflow">if</span> (peer_identity_.empty ()) {
-        cmd.args.attach.peer_identity_size = 0;
-        cmd.args.attach.peer_identity = NULL;
-    }
-    <span class="keywordflow">else</span> {
-        <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (peer_identity_.size () &lt;= 0xff);
-        cmd.args.attach.peer_identity_size =
-            (<span class="keywordtype">unsigned</span> char) peer_identity_.size ();
-        cmd.args.attach.peer_identity =
-            (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) malloc (peer_identity_.size ());
-        <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (cmd.args.attach.peer_identity_size);
-        memcpy (cmd.args.attach.peer_identity, peer_identity_.data (),
-            peer_identity_.size ());
-    }
-    <a class="code" href="classzmq_1_1object__t.html#a3adfcc82a0c622e8ba5fd9543c3b8403">send_command</a> (cmd);
-}
-</pre></div>
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="closed.png"/> Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1object__t_ae7d1be5035efda04d5b0f5cb5ee1aff6_cgraph.png" border="0" usemap="#classzmq_1_1object__t_ae7d1be5035efda04d5b0f5cb5ee1aff6_cgraph" alt=""/></div>
 <map name="classzmq_1_1object__t_ae7d1be5035efda04d5b0f5cb5ee1aff6_cgraph" id="classzmq_1_1object__t_ae7d1be5035efda04d5b0f5cb5ee1aff6_cgraph">
 <area shape="rect" id="node3" href="classzmq_1_1own__t.html#ad152acb0f4d06b1f80c40509775b2d1b" title="zmq::own_t::inc_seqnum" alt="" coords="235,5,403,35"/></map>
@@ -1434,7 +1132,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;&#160;</td>
+          <td class="paramtype">const blob_t &amp;&#160;</td>
           <td class="paramname"><em>peer_identity_</em>, </td>
         </tr>
         <tr>
@@ -1455,40 +1153,12 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00239">239</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>, <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="structzmq_1_1command__t.html#a72973798c00f6a1afaecfd4d6512eaf0">zmq::command_t::bind</a>, <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="own_8cpp_source.html#l00056">zmq::own_t::inc_seqnum()</a>, <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (inc_seqnum_)
-        destination_-&gt;inc_seqnum ();
 
-    command_t cmd;
-<span class="preprocessor">#if defined ZMQ_MAKE_VALGRIND_HAPPY</span>
-<span class="preprocessor"></span>    memset (&amp;cmd, 0, <span class="keyword">sizeof</span> (cmd));
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    cmd.destination = destination_;
-    cmd.type = <a class="code" href="structzmq_1_1command__t.html#a72973798c00f6a1afaecfd4d6512eaf0">command_t::bind</a>;
-    cmd.args.bind.in_pipe = in_pipe_;
-    cmd.args.bind.out_pipe = out_pipe_;
-    <span class="keywordflow">if</span> (peer_identity_.empty ()) {
-        cmd.args.bind.peer_identity_size = 0;
-        cmd.args.bind.peer_identity = NULL;
-    }
-    <span class="keywordflow">else</span> {
-        <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (peer_identity_.size () &lt;= 0xff);
-        cmd.args.bind.peer_identity_size =
-            (<span class="keywordtype">unsigned</span> char) peer_identity_.size ();
-        cmd.args.bind.peer_identity =
-            (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) malloc (peer_identity_.size ());
-        <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (cmd.args.bind.peer_identity_size);
-        memcpy (cmd.args.bind.peer_identity, peer_identity_.data (),
-            peer_identity_.size ());
-    }
-    <a class="code" href="classzmq_1_1object__t.html#a3adfcc82a0c622e8ba5fd9543c3b8403">send_command</a> (cmd);
-}
-</pre></div>
-<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="closed.png"/> Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1object__t_aefe7f36f1370393a301fe849b190b022_cgraph.png" border="0" usemap="#classzmq_1_1object__t_aefe7f36f1370393a301fe849b190b022_cgraph" alt=""/></div>
 <map name="classzmq_1_1object__t_aefe7f36f1370393a301fe849b190b022_cgraph" id="classzmq_1_1object__t_aefe7f36f1370393a301fe849b190b022_cgraph">
 <area shape="rect" id="node3" href="classzmq_1_1own__t.html#ad152acb0f4d06b1f80c40509775b2d1b" title="zmq::own_t::inc_seqnum" alt="" coords="221,5,389,35"/></map>
@@ -1514,16 +1184,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00375">375</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a410fe9a71a98dc5dda09a2ed4e27be48">zmq::command_t::done</a>, <a class="el" href="ctx_8hpp_source.html#l00094">zmq::ctx_t::term_tid</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    command_t cmd;
-<span class="preprocessor">#if defined ZMQ_MAKE_VALGRIND_HAPPY</span>
-<span class="preprocessor"></span>    memset (&amp;cmd, 0, <span class="keyword">sizeof</span> (cmd));
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    cmd.destination = NULL;
-    cmd.type = <a class="code" href="structzmq_1_1command__t.html#a410fe9a71a98dc5dda09a2ed4e27be48">command_t::done</a>;
-    <a class="code" href="classzmq_1_1object__t.html#a5313713abade537f7bff87afca7fe87d">ctx</a>-&gt;send_command (<a class="code" href="classzmq_1_1ctx__t.html#ad3ff47f239cb78f6c0d855b3b72336daa272e86e3e64b0da5f4c5ae42ab3cf572">ctx_t::term_tid</a>, cmd);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a1746fdd6c7b787bfa432dace8c5ca156"></a><!-- doxytag: member="zmq::reader_t::send_own" ref="a1746fdd6c7b787bfa432dace8c5ca156" args="(class own_t *destination_, class own_t *object_)" -->
@@ -1554,23 +1215,12 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00196">196</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="own_8cpp_source.html#l00056">zmq::own_t::inc_seqnum()</a>, <a class="el" href="structzmq_1_1command__t.html#aea530f2505d28c466404996a9e6c4ad7">zmq::command_t::own</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    destination_-&gt;inc_seqnum ();
-    command_t cmd;
-<span class="preprocessor">#if defined ZMQ_MAKE_VALGRIND_HAPPY</span>
-<span class="preprocessor"></span>    memset (&amp;cmd, 0, <span class="keyword">sizeof</span> (cmd));
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    cmd.destination = destination_;
-    cmd.type = <a class="code" href="structzmq_1_1command__t.html#aea530f2505d28c466404996a9e6c4ad7">command_t::own</a>;
-    cmd.args.own.object = object_;
-    <a class="code" href="classzmq_1_1object__t.html#a3adfcc82a0c622e8ba5fd9543c3b8403">send_command</a> (cmd);
-}
-</pre></div>
-<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="closed.png"/> Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1object__t_a1746fdd6c7b787bfa432dace8c5ca156_cgraph.png" border="0" usemap="#classzmq_1_1object__t_a1746fdd6c7b787bfa432dace8c5ca156_cgraph" alt=""/></div>
 <map name="classzmq_1_1object__t_a1746fdd6c7b787bfa432dace8c5ca156_cgraph" id="classzmq_1_1object__t_a1746fdd6c7b787bfa432dace8c5ca156_cgraph">
 <area shape="rect" id="node3" href="classzmq_1_1own__t.html#ad152acb0f4d06b1f80c40509775b2d1b" title="zmq::own_t::inc_seqnum" alt="" coords="221,5,389,35"/></map>
@@ -1597,16 +1247,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00294">294</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a0e1742b051a3f1141b34da535a2fe8a0">zmq::command_t::pipe_term</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    command_t cmd;
-<span class="preprocessor">#if defined ZMQ_MAKE_VALGRIND_HAPPY</span>
-<span class="preprocessor"></span>    memset (&amp;cmd, 0, <span class="keyword">sizeof</span> (cmd));
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    cmd.destination = destination_;
-    cmd.type = <a class="code" href="structzmq_1_1command__t.html#a0e1742b051a3f1141b34da535a2fe8a0">command_t::pipe_term</a>;
-    <a class="code" href="classzmq_1_1object__t.html#a3adfcc82a0c622e8ba5fd9543c3b8403">send_command</a> (cmd);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a659eda516b69e32e9d86284cebace090"></a><!-- doxytag: member="zmq::reader_t::send_pipe_term_ack" ref="a659eda516b69e32e9d86284cebace090" args="(class reader_t *destination_)" -->
@@ -1627,16 +1268,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00305">305</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a54e867c559a03d74d9f83f23ff577c12">zmq::command_t::pipe_term_ack</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    command_t cmd;
-<span class="preprocessor">#if defined ZMQ_MAKE_VALGRIND_HAPPY</span>
-<span class="preprocessor"></span>    memset (&amp;cmd, 0, <span class="keyword">sizeof</span> (cmd));
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    cmd.destination = destination_;
-    cmd.type = <a class="code" href="structzmq_1_1command__t.html#a54e867c559a03d74d9f83f23ff577c12">command_t::pipe_term_ack</a>;
-    <a class="code" href="classzmq_1_1object__t.html#a3adfcc82a0c622e8ba5fd9543c3b8403">send_command</a> (cmd);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="afeec511a9a6ec59f82d12f5e4e8b7e20"></a><!-- doxytag: member="zmq::reader_t::send_plug" ref="afeec511a9a6ec59f82d12f5e4e8b7e20" args="(class own_t *destination_, bool inc_seqnum_=true)" -->
@@ -1667,24 +1299,12 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00182">182</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="own_8cpp_source.html#l00056">zmq::own_t::inc_seqnum()</a>, <a class="el" href="structzmq_1_1command__t.html#a72baf7a4772b48e8ee60d5cab291a52e">zmq::command_t::plug</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (inc_seqnum_)
-        destination_-&gt;inc_seqnum ();
 
-    command_t cmd;
-<span class="preprocessor">#if defined ZMQ_MAKE_VALGRIND_HAPPY</span>
-<span class="preprocessor"></span>    memset (&amp;cmd, 0, <span class="keyword">sizeof</span> (cmd));
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    cmd.destination = destination_;
-    cmd.type = <a class="code" href="structzmq_1_1command__t.html#a72baf7a4772b48e8ee60d5cab291a52e">command_t::plug</a>;
-    <a class="code" href="classzmq_1_1object__t.html#a3adfcc82a0c622e8ba5fd9543c3b8403">send_command</a> (cmd);
-}
-</pre></div>
-<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="closed.png"/> Here is the call graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1object__t_afeec511a9a6ec59f82d12f5e4e8b7e20_cgraph.png" border="0" usemap="#classzmq_1_1object__t_afeec511a9a6ec59f82d12f5e4e8b7e20_cgraph" alt=""/></div>
 <map name="classzmq_1_1object__t_afeec511a9a6ec59f82d12f5e4e8b7e20_cgraph" id="classzmq_1_1object__t_afeec511a9a6ec59f82d12f5e4e8b7e20_cgraph">
 <area shape="rect" id="node3" href="classzmq_1_1own__t.html#ad152acb0f4d06b1f80c40509775b2d1b" title="zmq::own_t::inc_seqnum" alt="" coords="221,5,389,35"/></map>
@@ -1711,17 +1331,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00352">352</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#ac51eefa1348538068eb93c8837e529ca">zmq::command_t::reap</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    command_t cmd;
-<span class="preprocessor">#if defined ZMQ_MAKE_VALGRIND_HAPPY</span>
-<span class="preprocessor"></span>    memset (&amp;cmd, 0, <span class="keyword">sizeof</span> (cmd));
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    cmd.destination = <a class="code" href="classzmq_1_1object__t.html#a5313713abade537f7bff87afca7fe87d">ctx</a>-&gt;get_reaper ();
-    cmd.type = <a class="code" href="structzmq_1_1command__t.html#ac51eefa1348538068eb93c8837e529ca">command_t::reap</a>;
-    cmd.args.reap.socket = socket_;
-    <a class="code" href="classzmq_1_1object__t.html#a3adfcc82a0c622e8ba5fd9543c3b8403">send_command</a> (cmd);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a3101ea5889949f3e09d692cfc93e872c"></a><!-- doxytag: member="zmq::reader_t::send_reaped" ref="a3101ea5889949f3e09d692cfc93e872c" args="()" -->
@@ -1741,16 +1351,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00364">364</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a75bfdb62e23a00bcff2968b7e8548f42">zmq::command_t::reaped</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    command_t cmd;
-<span class="preprocessor">#if defined ZMQ_MAKE_VALGRIND_HAPPY</span>
-<span class="preprocessor"></span>    memset (&amp;cmd, 0, <span class="keyword">sizeof</span> (cmd));
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    cmd.destination = <a class="code" href="classzmq_1_1object__t.html#a5313713abade537f7bff87afca7fe87d">ctx</a>-&gt;get_reaper ();
-    cmd.type = <a class="code" href="structzmq_1_1command__t.html#a75bfdb62e23a00bcff2968b7e8548f42">command_t::reaped</a>;
-    <a class="code" href="classzmq_1_1object__t.html#a3adfcc82a0c622e8ba5fd9543c3b8403">send_command</a> (cmd);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a13fb25d46a714ae5efb51e25ad3fac38"></a><!-- doxytag: member="zmq::reader_t::send_stop" ref="a13fb25d46a714ae5efb51e25ad3fac38" args="()" -->
@@ -1770,18 +1371,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00169">169</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#affea24404521d5c38e56b9ca9e6337ac">zmq::command_t::stop</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  &#39;stop&#39; command goes always from administrative thread to</span>
-    <span class="comment">//  the current object. </span>
-    command_t cmd;
-<span class="preprocessor">#if defined ZMQ_MAKE_VALGRIND_HAPPY</span>
-<span class="preprocessor"></span>    memset (&amp;cmd, 0, <span class="keyword">sizeof</span> (cmd));
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    cmd.destination = <span class="keyword">this</span>;
-    cmd.type = <a class="code" href="structzmq_1_1command__t.html#affea24404521d5c38e56b9ca9e6337ac">command_t::stop</a>;
-    <a class="code" href="classzmq_1_1object__t.html#a5313713abade537f7bff87afca7fe87d">ctx</a>-&gt;send_command (<a class="code" href="classzmq_1_1object__t.html#a85efc078219888868ae23ed6dc4f7600">tid</a>, cmd);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a7b2ab2e5928771704e97658f5a9966d0"></a><!-- doxytag: member="zmq::reader_t::send_term" ref="a7b2ab2e5928771704e97658f5a9966d0" args="(class own_t *destination_, int linger_)" -->
@@ -1812,17 +1402,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00329">329</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#ac140d3142e70880df5c05fa542f4fe0f">zmq::command_t::term</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    command_t cmd;
-<span class="preprocessor">#if defined ZMQ_MAKE_VALGRIND_HAPPY</span>
-<span class="preprocessor"></span>    memset (&amp;cmd, 0, <span class="keyword">sizeof</span> (cmd));
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    cmd.destination = destination_;
-    cmd.type = <a class="code" href="structzmq_1_1command__t.html#ac140d3142e70880df5c05fa542f4fe0f">command_t::term</a>;
-    cmd.args.term.linger = linger_;
-    <a class="code" href="classzmq_1_1object__t.html#a3adfcc82a0c622e8ba5fd9543c3b8403">send_command</a> (cmd);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a4b8dea5074cd1704aaacddabf069179c"></a><!-- doxytag: member="zmq::reader_t::send_term_ack" ref="a4b8dea5074cd1704aaacddabf069179c" args="(class own_t *destination_)" -->
@@ -1843,16 +1423,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00341">341</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a437858476087cf4aca0fff95ce2e881b">zmq::command_t::term_ack</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    command_t cmd;
-<span class="preprocessor">#if defined ZMQ_MAKE_VALGRIND_HAPPY</span>
-<span class="preprocessor"></span>    memset (&amp;cmd, 0, <span class="keyword">sizeof</span> (cmd));
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    cmd.destination = destination_;
-    cmd.type = <a class="code" href="structzmq_1_1command__t.html#a437858476087cf4aca0fff95ce2e881b">command_t::term_ack</a>;
-    <a class="code" href="classzmq_1_1object__t.html#a3adfcc82a0c622e8ba5fd9543c3b8403">send_command</a> (cmd);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a238bcfcaecb6c47b2644dfb7860c7201"></a><!-- doxytag: member="zmq::reader_t::send_term_req" ref="a238bcfcaecb6c47b2644dfb7860c7201" args="(class own_t *destination_, class own_t *object_)" -->
@@ -1883,17 +1454,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00316">316</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 <p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#aa80f3c4fd7479fb198694f059f548f5b">zmq::command_t::term_req</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    command_t cmd;
-<span class="preprocessor">#if defined ZMQ_MAKE_VALGRIND_HAPPY</span>
-<span class="preprocessor"></span>    memset (&amp;cmd, 0, <span class="keyword">sizeof</span> (cmd));
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    cmd.destination = destination_;
-    cmd.type = <a class="code" href="structzmq_1_1command__t.html#aa80f3c4fd7479fb198694f059f548f5b">command_t::term_req</a>;
-    cmd.args.term_req.object = object_;
-    <a class="code" href="classzmq_1_1object__t.html#a3adfcc82a0c622e8ba5fd9543c3b8403">send_command</a> (cmd);
-}
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a0621cebd04cdcc55dab11c01d4c09640"></a><!-- doxytag: member="zmq::reader_t::set_array_index" ref="a0621cebd04cdcc55dab11c01d4c09640" args="(int index_)" -->
@@ -1914,10 +1475,7 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="array_8hpp_source.html#l00048">48</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
 
 <p>References <a class="el" href="array_8hpp_source.html#l00060">zmq::array_item_t::array_index</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <a class="code" href="classzmq_1_1array__item__t.html#a219e5027a1f711babc2e205e2e20e69b">array_index</a> = index_;
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a82debf2a9c8a50587a752c1bbf73a26a"></a><!-- doxytag: member="zmq::reader_t::set_event_sink" ref="a82debf2a9c8a50587a752c1bbf73a26a" args="(i_reader_events *endpoint_)" -->
@@ -1940,16 +1498,12 @@ Friends</h2></td></tr>
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
 <p>Referenced by <a class="el" href="fq_8cpp_source.html#l00041">zmq::fq_t::attach()</a>, <a class="el" href="session_8cpp_source.html#l00137">zmq::session_t::attach_pipes()</a>, <a class="el" href="xrep_8cpp_source.html#l00049">zmq::xrep_t::xattach_pipes()</a>, and <a class="el" href="pair_8cpp_source.html#l00045">zmq::pair_t::xattach_pipes()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!<a class="code" href="classzmq_1_1reader__t.html#ab0845f44136cede64517ed2d9f9e966c">sink</a>);
-    <a class="code" href="classzmq_1_1reader__t.html#ab0845f44136cede64517ed2d9f9e966c">sink</a> = sink_;
-}
-</pre></div>
-<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1reader__t_a82debf2a9c8a50587a752c1bbf73a26a_icgraph.png" border="0" usemap="#classzmq_1_1reader__t_a82debf2a9c8a50587a752c1bbf73a26a_icgraph" alt=""/></div>
 <map name="classzmq_1_1reader__t_a82debf2a9c8a50587a752c1bbf73a26a_icgraph" id="classzmq_1_1reader__t_a82debf2a9c8a50587a752c1bbf73a26a_icgraph">
 <area shape="rect" id="node3" href="classzmq_1_1fq__t.html#a3a944467f99003b64f832cd2f12a5e9e" title="zmq::fq_t::attach" alt="" coords="291,5,411,35"/><area shape="rect" id="node5" href="classzmq_1_1session__t.html#a9f8dfb1c61670320ac84f4751442b8cd" title="zmq::session_t::attach_pipes" alt="" coords="255,59,447,88"/><area shape="rect" id="node9" href="classzmq_1_1xrep__t.html#adb350ccf16995f381d743111e23e2d63" title="zmq::xrep_t::xattach_pipes" alt="" coords="261,112,440,141"/><area shape="rect" id="node11" href="classzmq_1_1pair__t.html#a1fa6b0ec1b2c8a9f9eafa76e902d7d52" title="zmq::pair_t::xattach_pipes" alt="" coords="263,165,439,195"/><area shape="rect" id="node7" href="classzmq_1_1socket__base__t.html#ac47f3f966fabb59f2d304786be37a101" title="zmq::socket_base_t::connect" alt="" coords="496,59,691,88"/></map>
@@ -1978,16 +1532,12 @@ Friends</h2></td></tr>
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
 <p>Referenced by <a class="el" href="pipe_8cpp_source.html#l00160">zmq::writer_t::writer_t()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!<a class="code" href="classzmq_1_1reader__t.html#ad1e963f97cc12ccd0284b089a8823d48">writer</a>);
-    <a class="code" href="classzmq_1_1reader__t.html#ad1e963f97cc12ccd0284b089a8823d48">writer</a> = writer_;
-}
-</pre></div>
-<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1reader__t_a152bc0ddcb79a40f53d23e2c9780af6b_icgraph.png" border="0" usemap="#classzmq_1_1reader__t_a152bc0ddcb79a40f53d23e2c9780af6b_icgraph" alt=""/></div>
 <map name="classzmq_1_1reader__t_a152bc0ddcb79a40f53d23e2c9780af6b_icgraph" id="classzmq_1_1reader__t_a152bc0ddcb79a40f53d23e2c9780af6b_icgraph">
 <area shape="rect" id="node3" href="classzmq_1_1writer__t.html#a39b2921b8c18544b38bd6c957ff6b144" title="zmq::writer_t::writer_t" alt="" coords="221,5,371,35"/></map>
@@ -2013,21 +1563,12 @@ Friends</h2></td></tr>
 <p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00128">128</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="fq_8cpp_source.html#l00041">zmq::fq_t::attach()</a>, <a class="el" href="xrep_8cpp_source.html#l00049">zmq::xrep_t::xattach_pipes()</a>, and <a class="el" href="pair_8cpp_source.html#l00045">zmq::pair_t::xattach_pipes()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="comment">//  If termination was already started by the peer, do nothing.</span>
-    <span class="keywordflow">if</span> (<a class="code" href="classzmq_1_1reader__t.html#a98172f0e3c67e6d6b04e4c2275ab9e78">terminating</a>)
-        <span class="keywordflow">return</span>;
 
-    <a class="code" href="classzmq_1_1reader__t.html#a5b9b9b677e990ad11dc703ac7b3dba11">active</a> = <span class="keyword">false</span>;
-    <a class="code" href="classzmq_1_1reader__t.html#a98172f0e3c67e6d6b04e4c2275ab9e78">terminating</a> = <span class="keyword">true</span>;
-    <a class="code" href="classzmq_1_1object__t.html#aca6916d9f3d21d8ddd29efa697b5c236">send_pipe_term</a> (<a class="code" href="classzmq_1_1reader__t.html#ad1e963f97cc12ccd0284b089a8823d48">writer</a>);
-}
-</pre></div>
-<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1reader__t_a56c12c46a75832e565ba7857a53dab01_icgraph.png" border="0" usemap="#classzmq_1_1reader__t_a56c12c46a75832e565ba7857a53dab01_icgraph" alt=""/></div>
 <map name="classzmq_1_1reader__t_a56c12c46a75832e565ba7857a53dab01_icgraph" id="classzmq_1_1reader__t_a56c12c46a75832e565ba7857a53dab01_icgraph">
 <area shape="rect" id="node3" href="classzmq_1_1fq__t.html#a3a944467f99003b64f832cd2f12a5e9e" title="zmq::fq_t::attach" alt="" coords="249,5,369,35"/><area shape="rect" id="node5" href="classzmq_1_1xrep__t.html#adb350ccf16995f381d743111e23e2d63" title="zmq::xrep_t::xattach_pipes" alt="" coords="220,59,399,88"/><area shape="rect" id="node7" href="classzmq_1_1pair__t.html#a1fa6b0ec1b2c8a9f9eafa76e902d7d52" title="zmq::pair_t::xattach_pipes" alt="" coords="221,112,397,141"/></map>
@@ -2052,10 +1593,7 @@ Friends</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00141">141</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1object__t.html#a5313713abade537f7bff87afca7fe87d">ctx</a>-&gt;unregister_endpoints (socket_);
-}
-</pre></div>
+
 </div>
 </div>
 <hr/><h2>Friends And Related Function Documentation</h2>
@@ -2226,8 +1764,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="pipe_8hpp_source.html">pipe.hpp</a></li>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="pipe_8cpp_source.html">pipe.cpp</a></li>
+<li>src/<a class="el" href="pipe_8hpp_source.html">pipe.hpp</a></li>
+<li>src/<a class="el" href="pipe_8cpp_source.html">pipe.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -2235,7 +1773,7 @@ Friends</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -2244,7 +1782,7 @@ Friends</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:16 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:18 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

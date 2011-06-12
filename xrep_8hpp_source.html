@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/src/libzmq/src/xrep.hpp Source File</title>
+<title>libzmq: src/xrep.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -97,10 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a>      </li>
-      <li class="navelem"><a class="el" href="dir_223207b948e8fa656fe21665415438d6.html">travlr</a>      </li>
-      <li class="navelem"><a class="el" href="dir_fb6bd66a99939deb91cf473b567980dd.html">src</a>      </li>
-      <li class="navelem"><a class="el" href="dir_aef0164114278eee23dc63ccdad22337.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
     </ul>
   </div>
@@ -157,7 +152,7 @@ function toggleVisibility(linkObj) {
 <a name="l00045"></a>00045 
 <a name="l00046"></a>00046         <span class="comment">//  Overloads of functions from socket_base_t.</span>
 <a name="l00047"></a>00047         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xrep__t.html#adb350ccf16995f381d743111e23e2d63">xattach_pipes</a> (<a class="code" href="classzmq_1_1reader__t.html">reader_t</a> *inpipe_, <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *outpipe_,
-<a name="l00048"></a>00048             <span class="keyword">const</span> <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;peer_identity_);
+<a name="l00048"></a>00048             <span class="keyword">const</span> blob_t &amp;peer_identity_);
 <a name="l00049"></a>00049         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1xrep__t.html#ae6a9488f9963afe0023f9556f66d58f1">xsend</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
 <a name="l00050"></a>00050         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1xrep__t.html#a18184c945754ab289027c8115d6654af">xrecv</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
 <a name="l00051"></a>00051         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xrep__t.html#a752a2ecbf1837d0865e9c382ebbb4154">xhas_in</a> ();
@@ -185,7 +180,7 @@ function toggleVisibility(linkObj) {
 <a name="l00073"></a><a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html">00073</a>         <span class="keyword">struct </span><a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html">inpipe_t</a>
 <a name="l00074"></a>00074         {
 <a name="l00075"></a><a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html#abcab0fcaf03d07d753618e587da9a060">00075</a>             <span class="keyword">class </span><a class="code" href="classzmq_1_1reader__t.html">reader_t</a> *<a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html#abcab0fcaf03d07d753618e587da9a060">reader</a>;
-<a name="l00076"></a><a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html#a23caab088946732432d60e4dcb5dca35">00076</a>             <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> <a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html#a23caab088946732432d60e4dcb5dca35">identity</a>;
+<a name="l00076"></a><a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html#a23caab088946732432d60e4dcb5dca35">00076</a>             blob_t <a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html#a23caab088946732432d60e4dcb5dca35">identity</a>;
 <a name="l00077"></a><a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html#a7ce1cde3930cc5dc93f863a6774d88a5">00077</a>             <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html#a7ce1cde3930cc5dc93f863a6774d88a5">active</a>;
 <a name="l00078"></a>00078         };
 <a name="l00079"></a>00079 
@@ -238,7 +233,7 @@ function toggleVisibility(linkObj) {
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -247,7 +242,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:09 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:08 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

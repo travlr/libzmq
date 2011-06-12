@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/src/libzmq/src/socket_base.cpp Source File</title>
+<title>libzmq: src/socket_base.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -97,10 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_75b82e7e4a5feb05200b9ad7adf06257.html">home</a>      </li>
-      <li class="navelem"><a class="el" href="dir_223207b948e8fa656fe21665415438d6.html">travlr</a>      </li>
-      <li class="navelem"><a class="el" href="dir_fb6bd66a99939deb91cf473b567980dd.html">src</a>      </li>
-      <li class="navelem"><a class="el" href="dir_aef0164114278eee23dc63ccdad22337.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
     </ul>
   </div>
@@ -324,15 +319,15 @@ function toggleVisibility(linkObj) {
 <a name="l00212"></a>00212 }
 <a name="l00213"></a>00213 
 <a name="l00214"></a><a class="code" href="classzmq_1_1socket__base__t.html#a54e92d13a5e1d0f554105a028b3b8ec1">00214</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1socket__base__t.html#a54e92d13a5e1d0f554105a028b3b8ec1">zmq::socket_base_t::attach_pipes</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1reader__t.html">reader_t</a> *inpipe_,
-<a name="l00215"></a>00215     <span class="keyword">class</span> <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *outpipe_, <span class="keyword">const</span> <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;peer_identity_)
+<a name="l00215"></a>00215     <span class="keyword">class</span> <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *outpipe_, <span class="keyword">const</span> blob_t &amp;peer_identity_)
 <a name="l00216"></a>00216 {
 <a name="l00217"></a>00217     <span class="comment">// If the peer haven&#39;t specified it&#39;s identity, let&#39;s generate one.</span>
 <a name="l00218"></a>00218     <span class="keywordflow">if</span> (peer_identity_.size ()) {
 <a name="l00219"></a>00219         xattach_pipes (inpipe_, outpipe_, peer_identity_);
 <a name="l00220"></a>00220     }
 <a name="l00221"></a>00221     <span class="keywordflow">else</span> {
-<a name="l00222"></a>00222         <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> identity (17, 0);
-<a name="l00223"></a>00223         <a class="code" href="namespacezmq.html#aba955dc1d654f51695b92ff4a6069780">generate_uuid</a> ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) identity.data () + 1);
+<a name="l00222"></a>00222         blob_t identity (17, 0);
+<a name="l00223"></a>00223         generate_uuid ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) identity.data () + 1);
 <a name="l00224"></a>00224         xattach_pipes (inpipe_, outpipe_, identity);
 <a name="l00225"></a>00225     }
 <a name="l00226"></a>00226 }
@@ -374,12 +369,12 @@ function toggleVisibility(linkObj) {
 <a name="l00262"></a>00262     }
 <a name="l00263"></a>00263 
 <a name="l00264"></a>00264     <span class="keywordflow">if</span> (option_ == <a class="code" href="zmq_8h.html#aa334818e0dcd61b81b0064277aa856cf">ZMQ_FD</a>) {
-<a name="l00265"></a>00265         <span class="keywordflow">if</span> (*optvallen_ &lt; <span class="keyword">sizeof</span> (<a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a>)) {
+<a name="l00265"></a>00265         <span class="keywordflow">if</span> (*optvallen_ &lt; <span class="keyword">sizeof</span> (fd_t)) {
 <a name="l00266"></a>00266             errno = EINVAL;
 <a name="l00267"></a>00267             <span class="keywordflow">return</span> -1;
 <a name="l00268"></a>00268         }
-<a name="l00269"></a>00269         *((<a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a>*) optval_) = mailbox.get_fd ();
-<a name="l00270"></a>00270         *optvallen_ = <span class="keyword">sizeof</span> (<a class="code" href="namespacezmq.html#a206451f4f3d937d650f4afd13da9e306">fd_t</a>);
+<a name="l00269"></a>00269         *((fd_t*) optval_) = mailbox.get_fd ();
+<a name="l00270"></a>00270         *optvallen_ = <span class="keyword">sizeof</span> (fd_t);
 <a name="l00271"></a>00271         <span class="keywordflow">return</span> 0;
 <a name="l00272"></a>00272     }
 <a name="l00273"></a>00273 
@@ -510,12 +505,12 @@ function toggleVisibility(linkObj) {
 <a name="l00398"></a>00398 
 <a name="l00399"></a>00399         <span class="comment">//  Create inbound pipe, if required.</span>
 <a name="l00400"></a>00400         <span class="keywordflow">if</span> (options.requires_in)
-<a name="l00401"></a>00401             <a class="code" href="namespacezmq.html#a298bc554f19da8cd5eac945d1dec8d2d">create_pipe</a> (<span class="keyword">this</span>, peer.<a class="code" href="structzmq_1_1endpoint__t.html#a0b73318aa2fab57e1aa99640093f5186">socket</a>, rcvhwm, &amp;inpipe_reader,
+<a name="l00401"></a>00401             create_pipe (<span class="keyword">this</span>, peer.<a class="code" href="structzmq_1_1endpoint__t.html#a0b73318aa2fab57e1aa99640093f5186">socket</a>, rcvhwm, &amp;inpipe_reader,
 <a name="l00402"></a>00402                 &amp;inpipe_writer);
 <a name="l00403"></a>00403 
 <a name="l00404"></a>00404         <span class="comment">//  Create outbound pipe, if required.</span>
 <a name="l00405"></a>00405         <span class="keywordflow">if</span> (options.requires_out)
-<a name="l00406"></a>00406             <a class="code" href="namespacezmq.html#a298bc554f19da8cd5eac945d1dec8d2d">create_pipe</a> (peer.<a class="code" href="structzmq_1_1endpoint__t.html#a0b73318aa2fab57e1aa99640093f5186">socket</a>, <span class="keyword">this</span>, sndhwm, &amp;outpipe_reader,
+<a name="l00406"></a>00406             create_pipe (peer.<a class="code" href="structzmq_1_1endpoint__t.html#a0b73318aa2fab57e1aa99640093f5186">socket</a>, <span class="keyword">this</span>, sndhwm, &amp;outpipe_reader,
 <a name="l00407"></a>00407                 &amp;outpipe_writer);
 <a name="l00408"></a>00408 
 <a name="l00409"></a>00409         <span class="comment">//  Attach the pipes to this socket object.</span>
@@ -554,19 +549,19 @@ function toggleVisibility(linkObj) {
 <a name="l00442"></a>00442 
 <a name="l00443"></a>00443         <span class="comment">//  Create inbound pipe, if required.</span>
 <a name="l00444"></a>00444         <span class="keywordflow">if</span> (options.requires_in)
-<a name="l00445"></a>00445             <a class="code" href="namespacezmq.html#a298bc554f19da8cd5eac945d1dec8d2d">create_pipe</a> (<span class="keyword">this</span>, session, options.rcvhwm,
+<a name="l00445"></a>00445             create_pipe (<span class="keyword">this</span>, session, options.rcvhwm,
 <a name="l00446"></a>00446                 &amp;inpipe_reader, &amp;inpipe_writer);
 <a name="l00447"></a>00447 
 <a name="l00448"></a>00448         <span class="comment">//  Create outbound pipe, if required.</span>
 <a name="l00449"></a>00449         <span class="keywordflow">if</span> (options.requires_out)
-<a name="l00450"></a>00450             <a class="code" href="namespacezmq.html#a298bc554f19da8cd5eac945d1dec8d2d">create_pipe</a> (session, <span class="keyword">this</span>, options.sndhwm,
+<a name="l00450"></a>00450             create_pipe (session, <span class="keyword">this</span>, options.sndhwm,
 <a name="l00451"></a>00451                 &amp;outpipe_reader, &amp;outpipe_writer);
 <a name="l00452"></a>00452 
 <a name="l00453"></a>00453         <span class="comment">//  Attach the pipes to the socket object.</span>
-<a name="l00454"></a>00454         attach_pipes (inpipe_reader, outpipe_writer, <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> ());
+<a name="l00454"></a>00454         attach_pipes (inpipe_reader, outpipe_writer, blob_t ());
 <a name="l00455"></a>00455 
 <a name="l00456"></a>00456         <span class="comment">//  Attach the pipes to the session object.</span>
-<a name="l00457"></a>00457         session-&gt;<a class="code" href="classzmq_1_1session__t.html#a9f8dfb1c61670320ac84f4751442b8cd">attach_pipes</a> (outpipe_reader, inpipe_writer, <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> ());
+<a name="l00457"></a>00457         session-&gt;<a class="code" href="classzmq_1_1session__t.html#a9f8dfb1c61670320ac84f4751442b8cd">attach_pipes</a> (outpipe_reader, inpipe_writer, blob_t ());
 <a name="l00458"></a>00458     }
 <a name="l00459"></a>00459 
 <a name="l00460"></a>00460     <span class="comment">//  Activate the session. Make it a child of this socket.</span>
@@ -646,7 +641,7 @@ function toggleVisibility(linkObj) {
 <a name="l00534"></a>00534     <span class="comment">//  Note that &#39;recv&#39; uses different command throttling algorithm (the one</span>
 <a name="l00535"></a>00535     <span class="comment">//  described above) from the one used by &#39;send&#39;. This is because counting</span>
 <a name="l00536"></a>00536     <span class="comment">//  ticks is more efficient than doing RDTSC all the time.</span>
-<a name="l00537"></a>00537     <span class="keywordflow">if</span> (++ticks == <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69bac6d02e6c5baae3f769f9091edb36ec0e">inbound_poll_rate</a>) {
+<a name="l00537"></a>00537     <span class="keywordflow">if</span> (++ticks == inbound_poll_rate) {
 <a name="l00538"></a>00538         <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (process_commands (<span class="keyword">false</span>, <span class="keyword">false</span>) != 0))
 <a name="l00539"></a>00539             <span class="keywordflow">return</span> -1;
 <a name="l00540"></a>00540         ticks = 0;
@@ -722,7 +717,7 @@ function toggleVisibility(linkObj) {
 <a name="l00610"></a>00610     <span class="keywordflow">return</span> xhas_out ();
 <a name="l00611"></a>00611 }
 <a name="l00612"></a>00612 
-<a name="l00613"></a><a class="code" href="classzmq_1_1socket__base__t.html#a0eac16b573cc44944c4d63f05782f1b6">00613</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1socket__base__t.html#a0eac16b573cc44944c4d63f05782f1b6">zmq::socket_base_t::register_session</a> (<span class="keyword">const</span> <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;name_,
+<a name="l00613"></a><a class="code" href="classzmq_1_1socket__base__t.html#a0eac16b573cc44944c4d63f05782f1b6">00613</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1socket__base__t.html#a0eac16b573cc44944c4d63f05782f1b6">zmq::socket_base_t::register_session</a> (<span class="keyword">const</span> blob_t &amp;name_,
 <a name="l00614"></a>00614     <a class="code" href="classzmq_1_1session__t.html">session_t</a> *session_)
 <a name="l00615"></a>00615 {
 <a name="l00616"></a>00616     sessions_sync.lock ();
@@ -732,7 +727,7 @@ function toggleVisibility(linkObj) {
 <a name="l00620"></a>00620     <span class="keywordflow">return</span> registered;
 <a name="l00621"></a>00621 }
 <a name="l00622"></a>00622 
-<a name="l00623"></a><a class="code" href="classzmq_1_1socket__base__t.html#ab896bf5d3f7d613b90d4ba54f5904305">00623</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1socket__base__t.html#ab896bf5d3f7d613b90d4ba54f5904305">zmq::socket_base_t::unregister_session</a> (<span class="keyword">const</span> <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;name_)
+<a name="l00623"></a><a class="code" href="classzmq_1_1socket__base__t.html#ab896bf5d3f7d613b90d4ba54f5904305">00623</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1socket__base__t.html#ab896bf5d3f7d613b90d4ba54f5904305">zmq::socket_base_t::unregister_session</a> (<span class="keyword">const</span> blob_t &amp;name_)
 <a name="l00624"></a>00624 {
 <a name="l00625"></a>00625     sessions_sync.lock ();
 <a name="l00626"></a>00626     sessions_t::iterator it = sessions.find (name_);
@@ -741,7 +736,7 @@ function toggleVisibility(linkObj) {
 <a name="l00629"></a>00629     sessions_sync.unlock ();
 <a name="l00630"></a>00630 }
 <a name="l00631"></a>00631 
-<a name="l00632"></a><a class="code" href="classzmq_1_1socket__base__t.html#a62e49da5ba1eebae0bf8d6f26b8bcd78">00632</a> <a class="code" href="classzmq_1_1session__t.html">zmq::session_t</a> *<a class="code" href="classzmq_1_1socket__base__t.html#a62e49da5ba1eebae0bf8d6f26b8bcd78">zmq::socket_base_t::find_session</a> (<span class="keyword">const</span> <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;name_)
+<a name="l00632"></a><a class="code" href="classzmq_1_1socket__base__t.html#a62e49da5ba1eebae0bf8d6f26b8bcd78">00632</a> <a class="code" href="classzmq_1_1session__t.html">zmq::session_t</a> *<a class="code" href="classzmq_1_1socket__base__t.html#a62e49da5ba1eebae0bf8d6f26b8bcd78">zmq::socket_base_t::find_session</a> (<span class="keyword">const</span> blob_t &amp;name_)
 <a name="l00633"></a>00633 {
 <a name="l00634"></a>00634     sessions_sync.lock ();
 <a name="l00635"></a>00635     sessions_t::iterator it = sessions.find (name_);
@@ -793,7 +788,7 @@ function toggleVisibility(linkObj) {
 <a name="l00681"></a>00681             <span class="comment">//  Check whether TSC haven&#39;t jumped backwards (in case of migration</span>
 <a name="l00682"></a>00682             <span class="comment">//  between CPU cores) and whether certain time have elapsed since</span>
 <a name="l00683"></a>00683             <span class="comment">//  last command processing. If it didn&#39;t do nothing.</span>
-<a name="l00684"></a>00684             <span class="keywordflow">if</span> (tsc &gt;= last_tsc &amp;&amp; tsc - last_tsc &lt;= <a class="code" href="namespacezmq.html#a870f5074168307565f97ccafc529c69bab0053eda075aef87bcf9759022cbed3c">max_command_delay</a>)
+<a name="l00684"></a>00684             <span class="keywordflow">if</span> (tsc &gt;= last_tsc &amp;&amp; tsc - last_tsc &lt;= max_command_delay)
 <a name="l00685"></a>00685                 <span class="keywordflow">return</span> 0;
 <a name="l00686"></a>00686             last_tsc = tsc;
 <a name="l00687"></a>00687         }
@@ -831,7 +826,7 @@ function toggleVisibility(linkObj) {
 <a name="l00719"></a>00719 }
 <a name="l00720"></a>00720 
 <a name="l00721"></a><a class="code" href="classzmq_1_1socket__base__t.html#a6c400a8e5a715e91ffb645be8259196d">00721</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1socket__base__t.html#a6c400a8e5a715e91ffb645be8259196d">zmq::socket_base_t::process_bind</a> (<a class="code" href="classzmq_1_1reader__t.html">reader_t</a> *in_pipe_, <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *out_pipe_,
-<a name="l00722"></a>00722     <span class="keyword">const</span> <a class="code" href="namespacezmq.html#a24f462a4365161cb4442ae2507e54a99">blob_t</a> &amp;peer_identity_)
+<a name="l00722"></a>00722     <span class="keyword">const</span> blob_t &amp;peer_identity_)
 <a name="l00723"></a>00723 {
 <a name="l00724"></a>00724     attach_pipes (in_pipe_, out_pipe_, peer_identity_);
 <a name="l00725"></a>00725 }
@@ -928,7 +923,7 @@ function toggleVisibility(linkObj) {
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -937,7 +932,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:09 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:07 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

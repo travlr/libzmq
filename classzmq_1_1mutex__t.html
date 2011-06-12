@@ -67,7 +67,6 @@ function toggleVisibility(linkObj) {
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li><a href="dirs.html"><span>Directories</span></a></li>
@@ -99,7 +98,7 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="namespacezmq.html">zmq</a>      </li>
+      <li class="navelem"><b>zmq</b>      </li>
       <li class="navelem"><a class="el" href="classzmq_1_1mutex__t.html">mutex_t</a>      </li>
     </ul>
   </div>
@@ -153,12 +152,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="mutex_8hpp_source.html#l00080">80</a> of file <a class="el" href="mutex_8hpp_source.html">mutex.hpp</a>.</p>
 
 <p>References <a class="el" href="mutex_8hpp_source.html#l00110">mutex</a>, and <a class="el" href="err_8hpp_source.html#l00118">posix_assert</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordtype">int</span> rc = pthread_mutex_init (&amp;<a class="code" href="classzmq_1_1mutex__t.html#a9870a98cc793df223e2fdb5e7be1e506">mutex</a>, NULL);
-            <span class="keywordflow">if</span> (rc)
-                <a class="code" href="err_8hpp.html#aefb8cf38b365a9e73c3e00e6c5acb950">posix_assert</a> (rc);
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a95ee4ddd3817307c0ef8c88e96135edb"></a><!-- doxytag: member="zmq::mutex_t::~mutex_t" ref="a95ee4ddd3817307c0ef8c88e96135edb" args="()" -->
@@ -178,12 +172,7 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="mutex_8hpp_source.html#l00087">87</a> of file <a class="el" href="mutex_8hpp_source.html">mutex.hpp</a>.</p>
 
 <p>References <a class="el" href="mutex_8hpp_source.html#l00110">mutex</a>, and <a class="el" href="err_8hpp_source.html#l00118">posix_assert</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordtype">int</span> rc = pthread_mutex_destroy (&amp;<a class="code" href="classzmq_1_1mutex__t.html#a9870a98cc793df223e2fdb5e7be1e506">mutex</a>);
-            <span class="keywordflow">if</span> (rc)
-                <a class="code" href="err_8hpp.html#aefb8cf38b365a9e73c3e00e6c5acb950">posix_assert</a> (rc);
-        }
-</pre></div>
+
 </div>
 </div>
 <a class="anchor" id="a07656407b65e4f7828daaf0534dd10fa"></a><!-- doxytag: member="zmq::mutex_t::mutex_t" ref="a07656407b65e4f7828daaf0534dd10fa" args="(const mutex_t &amp;)" -->
@@ -223,12 +212,7 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="mutex_8hpp_source.html#l00110">mutex</a>, and <a class="el" href="err_8hpp_source.html#l00118">posix_assert</a>.</p>
 
 <p>Referenced by <a class="el" href="atomic__counter_8hpp_source.html#l00076">zmq::atomic_counter_t::add()</a>, <a class="el" href="atomic__ptr_8hpp_source.html#l00104">zmq::atomic_ptr_t&lt; chunk_t &gt;::cas()</a>, <a class="el" href="atomic__counter_8hpp_source.html#l00103">zmq::atomic_counter_t::sub()</a>, and <a class="el" href="atomic__ptr_8hpp_source.html#l00076">zmq::atomic_ptr_t&lt; chunk_t &gt;::xchg()</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordtype">int</span> rc = pthread_mutex_lock (&amp;<a class="code" href="classzmq_1_1mutex__t.html#a9870a98cc793df223e2fdb5e7be1e506">mutex</a>);
-            <span class="keywordflow">if</span> (rc)
-                <a class="code" href="err_8hpp.html#aefb8cf38b365a9e73c3e00e6c5acb950">posix_assert</a> (rc);
-        }
-</pre></div>
+
 <p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -278,12 +262,7 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="mutex_8hpp_source.html#l00110">mutex</a>, and <a class="el" href="err_8hpp_source.html#l00118">posix_assert</a>.</p>
 
 <p>Referenced by <a class="el" href="atomic__counter_8hpp_source.html#l00076">zmq::atomic_counter_t::add()</a>, <a class="el" href="atomic__ptr_8hpp_source.html#l00104">zmq::atomic_ptr_t&lt; chunk_t &gt;::cas()</a>, <a class="el" href="atomic__counter_8hpp_source.html#l00103">zmq::atomic_counter_t::sub()</a>, and <a class="el" href="atomic__ptr_8hpp_source.html#l00076">zmq::atomic_ptr_t&lt; chunk_t &gt;::xchg()</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordtype">int</span> rc = pthread_mutex_unlock (&amp;<a class="code" href="classzmq_1_1mutex__t.html#a9870a98cc793df223e2fdb5e7be1e506">mutex</a>);
-            <span class="keywordflow">if</span> (rc)
-                <a class="code" href="err_8hpp.html#aefb8cf38b365a9e73c3e00e6c5acb950">posix_assert</a> (rc);
-        }
-</pre></div>
+
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -316,7 +295,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travlr/src/libzmq/src/<a class="el" href="mutex_8hpp_source.html">mutex.hpp</a></li>
+<li>src/<a class="el" href="mutex_8hpp_source.html">mutex.hpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -324,7 +303,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -333,7 +312,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:29:12 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:17 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
