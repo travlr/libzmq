@@ -154,8 +154,8 @@ function toggleVisibility(linkObj) {
 <a name="l00047"></a>00047         <span class="comment">//  Mesage flags.</span>
 <a name="l00048"></a>00048         <span class="keyword">enum</span>
 <a name="l00049"></a>00049         {
-<a name="l00050"></a><a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">00050</a>             <a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">more</a> = 1,
-<a name="l00051"></a><a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a20cfdc9d298df4c81dec1c578bb8e4f8">00051</a>             <a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a20cfdc9d298df4c81dec1c578bb8e4f8">shared</a> = 128
+<a name="l00050"></a><a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">00050</a>             <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">more</a> = 1,
+<a name="l00051"></a><a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a20cfdc9d298df4c81dec1c578bb8e4f8">00051</a>             <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a20cfdc9d298df4c81dec1c578bb8e4f8">shared</a> = 128
 <a name="l00052"></a>00052         };
 <a name="l00053"></a>00053 
 <a name="l00054"></a>00054         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1msg__t.html#a214637bbec842b66265d7cde0effe6a9">check</a> ();
@@ -217,23 +217,23 @@ function toggleVisibility(linkObj) {
 <a name="l00110"></a>00110             <span class="keyword">struct </span>{
 <a name="l00111"></a><a class="code" href="classzmq_1_1msg__t.html#addf9863fc6ac2c839f8c38b4203fd926">00111</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#addf9863fc6ac2c839f8c38b4203fd926">type</a>;
 <a name="l00112"></a><a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">00112</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a>;
-<a name="l00113"></a>00113             } <a class="code" href="classzmq_1_1msg__t.html#adacba41946de9cd57d3563a46df642d8">base</a>;
+<a name="l00113"></a>00113             } <a class="code" href="classzmq_1_1msg__t.html#a9046e66a3dc15beb7ad413c957d781ae">base</a>;
 <a name="l00114"></a>00114             <span class="keyword">struct </span>{
 <a name="l00115"></a>00115                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#addf9863fc6ac2c839f8c38b4203fd926">type</a>;
 <a name="l00116"></a>00116                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a2032d77113d0b3ff8d7193e2c30fee2b">flags</a>;
 <a name="l00117"></a><a class="code" href="classzmq_1_1msg__t.html#a9089fc10aecfab67a826d3514ef7a7a7">00117</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a9089fc10aecfab67a826d3514ef7a7a7">size</a>;
 <a name="l00118"></a><a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">00118</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a4e0fc015f2725e16687542285250d669">data</a> [max_vsm_size];
-<a name="l00119"></a>00119             } <a class="code" href="classzmq_1_1msg__t.html#aee54fbac1d8488cbb5df112053be0ac2">vsm</a>;
+<a name="l00119"></a>00119             } <a class="code" href="classzmq_1_1msg__t.html#ab97e69e89a4b48733f7d2c864e4da22e">vsm</a>;
 <a name="l00120"></a>00120             <span class="keyword">struct </span>{
 <a name="l00121"></a>00121                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#addf9863fc6ac2c839f8c38b4203fd926">type</a>;
 <a name="l00122"></a>00122                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a2032d77113d0b3ff8d7193e2c30fee2b">flags</a>;
 <a name="l00123"></a><a class="code" href="classzmq_1_1msg__t.html#a4ed3e48e765cf09fa31e7c3fd819b233">00123</a>                 <a class="code" href="structzmq_1_1msg__t_1_1content__t.html">content_t</a> *<a class="code" href="classzmq_1_1msg__t.html#a4ed3e48e765cf09fa31e7c3fd819b233">content</a>;
-<a name="l00124"></a>00124             } <a class="code" href="classzmq_1_1msg__t.html#a8a2830bcfbcd4e4ca15a41a9e20ab42b">lmsg</a>;
+<a name="l00124"></a>00124             } <a class="code" href="classzmq_1_1msg__t.html#aa3f0a60db8035fa632e178a1efcfa938">lmsg</a>;
 <a name="l00125"></a>00125             <span class="keyword">struct </span>{
 <a name="l00126"></a>00126                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#addf9863fc6ac2c839f8c38b4203fd926">type</a>;
 <a name="l00127"></a>00127                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a2032d77113d0b3ff8d7193e2c30fee2b">flags</a>;
-<a name="l00128"></a>00128             } <a class="code" href="classzmq_1_1msg__t.html#a1e8f93e2e5f5e2b9141b8ec5a847b96b">delimiter</a>;
-<a name="l00129"></a>00129         } <a class="code" href="classzmq_1_1msg__t.html#a317c36ae7f976afb339b4db19dd0433c">u</a>;
+<a name="l00128"></a>00128             } <a class="code" href="classzmq_1_1msg__t.html#a39316ac87c18b55d065ff0570b02f649">delimiter</a>;
+<a name="l00129"></a>00129         } <a class="code" href="classzmq_1_1msg__t.html#a5cc6323276edcdfefb24bb60489250dd">u</a>;
 <a name="l00130"></a>00130     };
 <a name="l00131"></a>00131 
 <a name="l00132"></a>00132 }
@@ -255,7 +255,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:06 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:38 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

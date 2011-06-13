@@ -1,8 +1,12 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$dist_8cpp.html" title="src/dist.cpp" alt="" coords="28,83,119,112"/>
-<area shape="rect" id="node5" href="$xpub_8hpp.html" title="src/xpub.hpp" alt="" coords="143,83,239,112"/>
-<area shape="rect" id="node7" href="$pub_8hpp.html" title="src/pub.hpp" alt="" coords="63,160,153,189"/>
-<area shape="rect" id="node11" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="120,237,261,267"/>
-<area shape="rect" id="node14" href="$xpub_8cpp.html" title="src/xpub.cpp" alt="" coords="228,160,324,189"/>
+<area shape="rect" id="node3" href="$dist_8cpp.html" title="src/dist.cpp" alt="" coords="5,83,96,112"/>
+<area shape="rect" id="node5" href="$xpub_8hpp.html" title="src/xpub.hpp" alt="" coords="120,83,216,112"/>
+<area shape="rect" id="node16" href="$xsub_8hpp.html" title="src/xsub.hpp" alt="" coords="273,83,369,112"/>
+<area shape="rect" id="node7" href="$pub_8hpp.html" title="src/pub.hpp" alt="" coords="5,160,96,189"/>
+<area shape="rect" id="node11" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="148,237,289,267"/>
+<area shape="rect" id="node14" href="$xpub_8cpp.html" title="src/xpub.cpp" alt="" coords="171,160,267,189"/>
 <area shape="rect" id="node9" href="$pub_8cpp.html" title="src/pub.cpp" alt="" coords="5,237,96,267"/>
+<area shape="rect" id="node18" href="$sub_8hpp.html" title="src/sub.hpp" alt="" coords="341,160,432,189"/>
+<area shape="rect" id="node24" href="$xsub_8cpp.html" title="src/xsub.cpp" alt="" coords="456,160,552,189"/>
+<area shape="rect" id="node21" href="$sub_8cpp.html" title="src/sub.cpp" alt="" coords="341,237,432,267"/>
 </map>

@@ -140,15 +140,19 @@ function toggleVisibility(linkObj) {
 <a name="l00033"></a>00033         <a class="code" href="classzmq_1_1pub__t.html#a50b8a36d346bb1e42fdefcc91d5bbdc4">pub_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1ctx__t.html">ctx_t</a> *parent_, uint32_t tid_);
 <a name="l00034"></a>00034         <a class="code" href="classzmq_1_1pub__t.html#ae4dccd3905719cf15c37d060c7c21b65">~pub_t</a> ();
 <a name="l00035"></a>00035 
-<a name="l00036"></a>00036     <span class="keyword">private</span>:
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038         <a class="code" href="classzmq_1_1pub__t.html#a50b8a36d346bb1e42fdefcc91d5bbdc4">pub_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1pub__t.html">pub_t</a>&amp;);
-<a name="l00039"></a>00039         <span class="keyword">const</span> <a class="code" href="classzmq_1_1pub__t.html">pub_t</a> &amp;<a class="code" href="classzmq_1_1pub__t.html#a0eb1ae49300145bd6e8437db0a6e683b">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1pub__t.html">pub_t</a>&amp;);
-<a name="l00040"></a>00040     };
+<a name="l00036"></a>00036         <span class="comment">//  Implementations of virtual functions from socket_base_t.</span>
+<a name="l00037"></a>00037         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1pub__t.html#a105236fe109ba47422c8a95f9813a52e">xrecv</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
+<a name="l00038"></a>00038         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pub__t.html#a739706c8b0ea164807403d72284aa2ad">xhas_in</a> ();
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040     <span class="keyword">private</span>:
 <a name="l00041"></a>00041 
-<a name="l00042"></a>00042 }
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044 <span class="preprocessor">#endif</span>
+<a name="l00042"></a>00042         <a class="code" href="classzmq_1_1pub__t.html#a50b8a36d346bb1e42fdefcc91d5bbdc4">pub_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1pub__t.html">pub_t</a>&amp;);
+<a name="l00043"></a>00043         <span class="keyword">const</span> <a class="code" href="classzmq_1_1pub__t.html">pub_t</a> &amp;<a class="code" href="classzmq_1_1pub__t.html#a0eb1ae49300145bd6e8437db0a6e683b">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1pub__t.html">pub_t</a>&amp;);
+<a name="l00044"></a>00044     };
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 }
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -165,7 +169,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:07 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:39 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -165,7 +165,7 @@ function toggleVisibility(linkObj) {
 <a name="l00058"></a>00058     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) msg.<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> ();
 <a name="l00059"></a>00059     put_uint16 (data, <a class="code" href="classzmq_1_1zmq__init__t.html#a0b1e00ea718dd5c2ca86c6c0214556bca7f0144e9cc89879a7c2c5c9ffec4c533">prop_type</a>);
 <a name="l00060"></a>00060     put_uint16 (data + 2, <a class="code" href="classzmq_1_1own__t.html#a2efb752f6444d140ee9ee928559c9b02">options</a>.<a class="code" href="structzmq_1_1options__t.html#a09b8e840a00a79aa02c1e574f8ad817a">type</a>);
-<a name="l00061"></a>00061     msg.<a class="code" href="classzmq_1_1msg__t.html#aea7736e7955f2125dd6298baee851ca7">set_flags</a> (<a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>);
+<a name="l00061"></a>00061     msg.<a class="code" href="classzmq_1_1msg__t.html#aea7736e7955f2125dd6298baee851ca7">set_flags</a> (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>);
 <a name="l00062"></a>00062     <a class="code" href="classzmq_1_1zmq__init__t.html#ab131c51a27238309fded92f6122f2079">to_send</a>.push_back (msg);
 <a name="l00063"></a>00063 
 <a name="l00064"></a>00064     <span class="keywordflow">if</span> (!<a class="code" href="classzmq_1_1own__t.html#a2efb752f6444d140ee9ee928559c9b02">options</a>.<a class="code" href="structzmq_1_1options__t.html#ac14f64051a187fa69b07d4604fd55f2a">identity</a>.empty ()) {
@@ -174,12 +174,12 @@ function toggleVisibility(linkObj) {
 <a name="l00067"></a>00067         data = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) msg.<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> ();
 <a name="l00068"></a>00068         put_uint16 (data, <a class="code" href="classzmq_1_1zmq__init__t.html#a0b1e00ea718dd5c2ca86c6c0214556bcaf8042d78fc30bd21fec8a9c8f01d95c7">prop_identity</a>);
 <a name="l00069"></a>00069         memcpy (data + 2, <a class="code" href="classzmq_1_1own__t.html#a2efb752f6444d140ee9ee928559c9b02">options</a>.<a class="code" href="structzmq_1_1options__t.html#ac14f64051a187fa69b07d4604fd55f2a">identity</a>.data (), <a class="code" href="classzmq_1_1own__t.html#a2efb752f6444d140ee9ee928559c9b02">options</a>.<a class="code" href="structzmq_1_1options__t.html#ac14f64051a187fa69b07d4604fd55f2a">identity</a>.size ());
-<a name="l00070"></a>00070         msg.<a class="code" href="classzmq_1_1msg__t.html#aea7736e7955f2125dd6298baee851ca7">set_flags</a> (<a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>);
+<a name="l00070"></a>00070         msg.<a class="code" href="classzmq_1_1msg__t.html#aea7736e7955f2125dd6298baee851ca7">set_flags</a> (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>);
 <a name="l00071"></a>00071         <a class="code" href="classzmq_1_1zmq__init__t.html#ab131c51a27238309fded92f6122f2079">to_send</a>.push_back (msg);
 <a name="l00072"></a>00072     }
 <a name="l00073"></a>00073 
 <a name="l00074"></a>00074     <span class="comment">//  Remove the MORE flag from the last prop.</span>
-<a name="l00075"></a>00075     <a class="code" href="classzmq_1_1zmq__init__t.html#ab131c51a27238309fded92f6122f2079">to_send</a>.back ().reset_flags (<a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>);
+<a name="l00075"></a>00075     <a class="code" href="classzmq_1_1zmq__init__t.html#ab131c51a27238309fded92f6122f2079">to_send</a>.back ().reset_flags (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>);
 <a name="l00076"></a>00076 }
 <a name="l00077"></a>00077 
 <a name="l00078"></a><a class="code" href="classzmq_1_1zmq__init__t.html#aa9d081a543b4fb7debbf46b00c44a090">00078</a> <a class="code" href="classzmq_1_1zmq__init__t.html#aa9d081a543b4fb7debbf46b00c44a090">zmq::zmq_init_t::~zmq_init_t</a> ()
@@ -244,7 +244,7 @@ function toggleVisibility(linkObj) {
 <a name="l00137"></a>00137         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
 <a name="l00138"></a>00138     }
 <a name="l00139"></a>00139 
-<a name="l00140"></a>00140     <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>)) {
+<a name="l00140"></a>00140     <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>)) {
 <a name="l00141"></a>00141         received = <span class="keyword">true</span>;
 <a name="l00142"></a>00142         finalise_initialisation ();
 <a name="l00143"></a>00143     }
@@ -381,7 +381,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:08 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:40 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

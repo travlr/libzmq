@@ -142,28 +142,44 @@ function toggleVisibility(linkObj) {
 <a name="l00035"></a>00035         <a class="code" href="classzmq_1_1trie__t.html#a475953f88453a0a820e6edb4dfc51e7f">trie_t</a> ();
 <a name="l00036"></a>00036         <a class="code" href="classzmq_1_1trie__t.html#aa9a686de7a3d302b44d34e045adf5926">~trie_t</a> ();
 <a name="l00037"></a>00037 
-<a name="l00038"></a>00038         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1trie__t.html#a0a201f6406876f0f9a89f45d52e2c99c">add</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *prefix_, <span class="keywordtype">size_t</span> size_);
-<a name="l00039"></a>00039         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1trie__t.html#ab15f7f0440899870e962f0697e89b3ac">rm</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *prefix_, <span class="keywordtype">size_t</span> size_);
-<a name="l00040"></a>00040         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1trie__t.html#a65c117c92c8c9c9ff32fcc2c38f9f548">check</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> size_);
+<a name="l00038"></a>00038         <span class="comment">//  Add key to the trie. Returns true if this is a new item in the trie</span>
+<a name="l00039"></a>00039         <span class="comment">//  rather than a duplicate.</span>
+<a name="l00040"></a>00040         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1trie__t.html#a94c4c5b59168b13bf7432f6db59b0c5c">add</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *prefix_, <span class="keywordtype">size_t</span> size_);
 <a name="l00041"></a>00041 
-<a name="l00042"></a>00042     <span class="keyword">private</span>:
-<a name="l00043"></a>00043 
-<a name="l00044"></a><a class="code" href="classzmq_1_1trie__t.html#a4c3411a88044a450f4ddabfeee77a5a5">00044</a>         uint32_t <a class="code" href="classzmq_1_1trie__t.html#a4c3411a88044a450f4ddabfeee77a5a5">refcnt</a>;
-<a name="l00045"></a><a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">00045</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a>;
-<a name="l00046"></a><a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">00046</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a>;
-<a name="l00047"></a>00047         <span class="keyword">union </span>{
-<a name="l00048"></a><a class="code" href="classzmq_1_1trie__t.html#aa9c8884c663f3ad3d1e40d64f9522ce3">00048</a>             <span class="keyword">class </span><a class="code" href="classzmq_1_1trie__t.html">trie_t</a> *<a class="code" href="classzmq_1_1trie__t.html#aa9c8884c663f3ad3d1e40d64f9522ce3">node</a>;
-<a name="l00049"></a><a class="code" href="classzmq_1_1trie__t.html#afe914c9bb7191dcd3341acdf7a334550">00049</a>             <span class="keyword">class </span><a class="code" href="classzmq_1_1trie__t.html">trie_t</a> **<a class="code" href="classzmq_1_1trie__t.html#afe914c9bb7191dcd3341acdf7a334550">table</a>;
-<a name="l00050"></a>00050         } <a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>;
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052         <a class="code" href="classzmq_1_1trie__t.html#a475953f88453a0a820e6edb4dfc51e7f">trie_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1trie__t.html">trie_t</a>&amp;);
-<a name="l00053"></a>00053         <span class="keyword">const</span> <a class="code" href="classzmq_1_1trie__t.html">trie_t</a> &amp;<a class="code" href="classzmq_1_1trie__t.html#a10cee3607d90cab2970ea32dd5479555">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1trie__t.html">trie_t</a>&amp;);
-<a name="l00054"></a>00054     };
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056 }
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058 <span class="preprocessor">#endif</span>
-<a name="l00059"></a>00059 <span class="preprocessor"></span>
+<a name="l00042"></a>00042         <span class="comment">//  Remove key from the trie. Returns true if the item is actually</span>
+<a name="l00043"></a>00043         <span class="comment">//  removed from the trie.</span>
+<a name="l00044"></a>00044         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1trie__t.html#ab15f7f0440899870e962f0697e89b3ac">rm</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *prefix_, <span class="keywordtype">size_t</span> size_);
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046         <span class="comment">//  Check whether particular key is in the trie.</span>
+<a name="l00047"></a>00047         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1trie__t.html#a65c117c92c8c9c9ff32fcc2c38f9f548">check</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> size_);
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049         <span class="comment">//  Apply the function supplied to each subscription in the trie.</span>
+<a name="l00050"></a>00050         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1trie__t.html#aae26e0500d7d81c4835ff5b619498ed6">apply</a> (<span class="keywordtype">void</span> (*func_) (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> size_,
+<a name="l00051"></a>00051             <span class="keywordtype">void</span> *arg_), <span class="keywordtype">void</span> *arg_);
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053     <span class="keyword">private</span>:
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1trie__t.html#a46bb7cca0c7c922d55257e68b9a5d8c9">apply_helper</a> (
+<a name="l00056"></a>00056             <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> **buff_, <span class="keywordtype">size_t</span> buffsize_, <span class="keywordtype">size_t</span> maxbuffsize_,
+<a name="l00057"></a>00057             <span class="keywordtype">void</span> (*func_) (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> size_, <span class="keywordtype">void</span> *arg_),
+<a name="l00058"></a>00058             <span class="keywordtype">void</span> *arg_);
+<a name="l00059"></a>00059 
+<a name="l00060"></a><a class="code" href="classzmq_1_1trie__t.html#a4c3411a88044a450f4ddabfeee77a5a5">00060</a>         uint32_t <a class="code" href="classzmq_1_1trie__t.html#a4c3411a88044a450f4ddabfeee77a5a5">refcnt</a>;
+<a name="l00061"></a><a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">00061</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a>;
+<a name="l00062"></a><a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">00062</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a>;
+<a name="l00063"></a>00063         <span class="keyword">union </span>{
+<a name="l00064"></a><a class="code" href="classzmq_1_1trie__t.html#aa9c8884c663f3ad3d1e40d64f9522ce3">00064</a>             <span class="keyword">class </span><a class="code" href="classzmq_1_1trie__t.html">trie_t</a> *<a class="code" href="classzmq_1_1trie__t.html#aa9c8884c663f3ad3d1e40d64f9522ce3">node</a>;
+<a name="l00065"></a><a class="code" href="classzmq_1_1trie__t.html#afe914c9bb7191dcd3341acdf7a334550">00065</a>             <span class="keyword">class </span><a class="code" href="classzmq_1_1trie__t.html">trie_t</a> **<a class="code" href="classzmq_1_1trie__t.html#afe914c9bb7191dcd3341acdf7a334550">table</a>;
+<a name="l00066"></a>00066         } <a class="code" href="classzmq_1_1trie__t.html#a6af7c0eb12ab0fc21b93ce2a8a45b685">next</a>;
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068         <a class="code" href="classzmq_1_1trie__t.html#a475953f88453a0a820e6edb4dfc51e7f">trie_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1trie__t.html">trie_t</a>&amp;);
+<a name="l00069"></a>00069         <span class="keyword">const</span> <a class="code" href="classzmq_1_1trie__t.html">trie_t</a> &amp;<a class="code" href="classzmq_1_1trie__t.html#a10cee3607d90cab2970ea32dd5479555">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1trie__t.html">trie_t</a>&amp;);
+<a name="l00070"></a>00070     };
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 }
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074 <span class="preprocessor">#endif</span>
+<a name="l00075"></a>00075 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -180,7 +196,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:08 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:40 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -1,13 +1,10 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$session_8hpp.html" title="src/session.hpp" alt="" coords="735,83,849,112"/>
+<area shape="rect" id="node3" href="$session_8hpp.html" title="src/session.hpp" alt="" coords="843,83,957,112"/>
 <area shape="rect" id="node27" href="$zmq__connecter_8hpp.html" title="src/zmq_connecter.hpp" alt="" coords="128,160,285,189"/>
 <area shape="rect" id="node35" href="$socket__base_8hpp.html" title="src/socket_base.hpp" alt="" coords="1867,83,2008,112"/>
-<area shape="rect" id="node103" href="$dist_8cpp.html" title="src/dist.cpp" alt="" coords="873,83,964,112"/>
-<area shape="rect" id="node105" href="$fq_8cpp.html" title="src/fq.cpp" alt="" coords="988,83,1068,112"/>
-<area shape="rect" id="node107" href="$lb_8cpp.html" title="src/lb.cpp" alt="" coords="1092,83,1169,112"/>
-<area shape="rect" id="node109" href="$own_8cpp.html" title="src/own.cpp" alt="" coords="1193,83,1287,112"/>
-<area shape="rect" id="node111" href="$zmq__listener_8hpp.html" title="src/zmq_listener.hpp" alt="" coords="1197,160,1339,189"/>
-<area shape="rect" id="node116" href="$zmq__init_8hpp.html" title="src/zmq_init.hpp" alt="" coords="499,160,616,189"/>
+<area shape="rect" id="node103" href="$own_8cpp.html" title="src/own.cpp" alt="" coords="981,83,1075,112"/>
+<area shape="rect" id="node105" href="$zmq__listener_8hpp.html" title="src/zmq_listener.hpp" alt="" coords="1197,160,1339,189"/>
+<area shape="rect" id="node110" href="$zmq__init_8hpp.html" title="src/zmq_init.hpp" alt="" coords="499,160,616,189"/>
 <area shape="rect" id="node5" href="$connect__session_8hpp.html" title="src/connect_session.hpp" alt="" coords="309,160,475,189"/>
 <area shape="rect" id="node11" href="$named__session_8hpp.html" title="src/named_session.hpp" alt="" coords="885,160,1045,189"/>
 <area shape="rect" id="node15" href="$zmq__init_8cpp.html" title="src/zmq_init.cpp" alt="" coords="1000,237,1117,267"/>
@@ -45,5 +42,5 @@
 <area shape="rect" id="node92" href="$sub_8hpp.html" title="src/sub.hpp" alt="" coords="1448,237,1539,267"/>
 <area shape="rect" id="node98" href="$xsub_8cpp.html" title="src/xsub.cpp" alt="" coords="1613,237,1709,267"/>
 <area shape="rect" id="node95" href="$sub_8cpp.html" title="src/sub.cpp" alt="" coords="1448,315,1539,344"/>
-<area shape="rect" id="node114" href="$zmq__listener_8cpp.html" title="src/zmq_listener.cpp" alt="" coords="835,237,976,267"/>
+<area shape="rect" id="node108" href="$zmq__listener_8cpp.html" title="src/zmq_listener.cpp" alt="" coords="835,237,976,267"/>
 </map>

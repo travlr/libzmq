@@ -1,5 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classzmq_1_1array__t.html" title="zmq::array_t\&lt; reader_t \&gt;" alt="" coords="311,5,476,35"/>
-<area shape="rect" id="node5" href="$classzmq_1_1array__t.html" title="zmq::array_t\&lt; class writer_t \&gt;" alt="" coords="295,59,492,88"/>
-<area shape="rect" id="node7" href="$classzmq_1_1array__t.html" title="zmq::array_t\&lt; socket_base_t \&gt;" alt="" coords="292,112,495,141"/>
+<area shape="rect" id="node3" href="$classzmq_1_1array__t.html" title="zmq::array_t\&lt; socket_base_t \&gt;" alt="" coords="313,5,516,35"/>
+<area shape="rect" id="node5" href="$classzmq_1_1array__t.html" title="zmq::array_t\&lt; pipe_t, 3 \&gt;" alt="" coords="331,59,499,88"/>
+<area shape="rect" id="node7" href="$classzmq_1_1array__t.html" title="zmq::array_t\&lt; pipe_t, 1 \&gt;" alt="" coords="331,112,499,141"/>
+<area shape="rect" id="node9" href="$classzmq_1_1array__t.html" title="zmq::array_t\&lt; class pipe_t, 2 \&gt;" alt="" coords="313,165,516,195"/>
 </map>

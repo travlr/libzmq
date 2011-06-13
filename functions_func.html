@@ -151,27 +151,21 @@ function toggleVisibility(linkObj) {
 , <a class="el" href="classzmq_1_1zmq__engine__t.html#ac0290cda0935b3fb179ab6fab525d1ce">zmq::zmq_engine_t</a>
 </li>
 <li>activated()
-: <a class="el" href="classzmq_1_1lb__t.html#ae7d7dd17271dc0906a4fb69f306e6ece">zmq::lb_t</a>
-, <a class="el" href="classzmq_1_1socket__base__t.html#a26ffc115ddf3317f2d3685e731138577">zmq::socket_base_t</a>
-, <a class="el" href="classzmq_1_1xrep__t.html#ada6b901a15a67b568533ebd5c8687555">zmq::xrep_t</a>
-, <a class="el" href="classzmq_1_1pair__t.html#a885905aaea2b21b5f1d0dbc423c74ee6">zmq::pair_t</a>
-, <a class="el" href="classzmq_1_1xrep__t.html#a90dd1e35614fc323fd997c073ba2448f">zmq::xrep_t</a>
-, <a class="el" href="classzmq_1_1pair__t.html#a055ab99135b269cd624353780a1ea674">zmq::pair_t</a>
-, <a class="el" href="structzmq_1_1i__reader__events.html#a461c55a924e49a33b4cc2627c4a4449e">zmq::i_reader_events</a>
-, <a class="el" href="classzmq_1_1dist__t.html#a91f48ed94d7ad227f3f18c79aa50b730">zmq::dist_t</a>
-, <a class="el" href="structzmq_1_1i__writer__events.html#a84fc061f75f1cd7aecea9da632f1aa9f">zmq::i_writer_events</a>
-, <a class="el" href="classzmq_1_1session__t.html#a049c3c3d9fbbf8cf7925ff2ee2bee118">zmq::session_t</a>
-, <a class="el" href="classzmq_1_1fq__t.html#a6f0f6186f08606bbb0d0a8a3d28612c5">zmq::fq_t</a>
-, <a class="el" href="classzmq_1_1session__t.html#a084cb9e7b84933df7c4e9cd31d30c425">zmq::session_t</a>
-, <a class="el" href="classzmq_1_1socket__base__t.html#a2fc11d9998b2ef15472e232cf619ba9f">zmq::socket_base_t</a>
+: <a class="el" href="classzmq_1_1lb__t.html#ae4e63ce8e010bebed32683348b9a9894">zmq::lb_t</a>
+, <a class="el" href="classzmq_1_1dist__t.html#a311d1d3a46afaec4d0af9fa4207e2efb">zmq::dist_t</a>
+, <a class="el" href="classzmq_1_1fq__t.html#ab0f57aa9fd8d21b6a88da82e277df2cb">zmq::fq_t</a>
 </li>
 <li>add()
 : <a class="el" href="classzmq_1_1atomic__counter__t.html#ab11988f84d9cb8a58a4be3929c3db01a">zmq::atomic_counter_t</a>
-, <a class="el" href="classzmq_1_1trie__t.html#a0a201f6406876f0f9a89f45d52e2c99c">zmq::trie_t</a>
+, <a class="el" href="classzmq_1_1mtrie__t.html#a61fca61b921eecda32b39051506c71d6">zmq::mtrie_t</a>
+, <a class="el" href="classzmq_1_1trie__t.html#a94c4c5b59168b13bf7432f6db59b0c5c">zmq::trie_t</a>
 </li>
 <li>add_fd()
 : <a class="el" href="classzmq_1_1io__object__t.html#a625f6b4af52776132612f008fc2ef99a">zmq::io_object_t</a>
 , <a class="el" href="classzmq_1_1select__t.html#ae49f25933d83c0c9adbd679416fdc0c8">zmq::select_t</a>
+</li>
+<li>add_helper()
+: <a class="el" href="classzmq_1_1mtrie__t.html#a82b066892b978c65d60789d80862a482">zmq::mtrie_t</a>
 </li>
 <li>add_reconnect_timer()
 : <a class="el" href="classzmq_1_1zmq__connecter__t.html#a747d45272753acb315bfe5c7e90f2cdc">zmq::zmq_connecter_t</a>
@@ -186,32 +180,35 @@ function toggleVisibility(linkObj) {
 <li>adjust_load()
 : <a class="el" href="classzmq_1_1poller__base__t.html#a61455c93d9d53ffe68b4e176892459c1">zmq::poller_base_t</a>
 </li>
+<li>apply()
+: <a class="el" href="classzmq_1_1trie__t.html#aae26e0500d7d81c4835ff5b619498ed6">zmq::trie_t</a>
+</li>
+<li>apply_helper()
+: <a class="el" href="classzmq_1_1trie__t.html#a46bb7cca0c7c922d55257e68b9a5d8c9">zmq::trie_t</a>
+</li>
 <li>array_item_t()
-: <a class="el" href="classzmq_1_1array__item__t.html#acd5233ddcd5a4a774b01a10c0dc993f6">zmq::array_item_t</a>
+: <a class="el" href="classzmq_1_1array__item__t.html#a5648fc36c40d2ead008868656f907c35">zmq::array_item_t&lt; ID &gt;</a>
 </li>
 <li>array_t()
-: <a class="el" href="classzmq_1_1array__t.html#a5ceb87c61c48ad2262c703ebfc2cb7c9">zmq::array_t&lt; T &gt;</a>
+: <a class="el" href="classzmq_1_1array__t.html#ad717cf24a6a79736a13f20b771f50f99">zmq::array_t&lt; T, ID &gt;</a>
 </li>
 <li>atomic_counter_t()
-: <a class="el" href="classzmq_1_1atomic__counter__t.html#abec9badc3d7bd39df3bee388b887ace8">zmq::atomic_counter_t</a>
+: <a class="el" href="classzmq_1_1atomic__counter__t.html#abdf722a081ad58e495d15dce1ed9a3af">zmq::atomic_counter_t</a>
 </li>
 <li>atomic_ptr_t()
-: <a class="el" href="classzmq_1_1atomic__ptr__t.html#a04bb9d7cd0d8dcdaf3c7ffbd5254a3d7">zmq::atomic_ptr_t&lt; T &gt;</a>
+: <a class="el" href="classzmq_1_1atomic__ptr__t.html#a9827724772944654ca0fbc23cc4af10a">zmq::atomic_ptr_t&lt; T &gt;</a>
 </li>
 <li>attach()
-: <a class="el" href="classzmq_1_1fq__t.html#a3a944467f99003b64f832cd2f12a5e9e">zmq::fq_t</a>
-, <a class="el" href="classzmq_1_1lb__t.html#abde0931efbb9cb0bf1564f5556fa4fea">zmq::lb_t</a>
-, <a class="el" href="classzmq_1_1dist__t.html#a8eae4982d8473b4b669f720d496a4f10">zmq::dist_t</a>
+: <a class="el" href="classzmq_1_1fq__t.html#ac4fdb58348a55600a5e8b2f8137528ad">zmq::fq_t</a>
+, <a class="el" href="classzmq_1_1lb__t.html#a63c346c85e7485a2d7230e623512a864">zmq::lb_t</a>
+, <a class="el" href="classzmq_1_1dist__t.html#af1120d3072800bdcc969db6cbd3ad4f5">zmq::dist_t</a>
 </li>
-<li>attach_pipes()
-: <a class="el" href="classzmq_1_1session__t.html#a9f8dfb1c61670320ac84f4751442b8cd">zmq::session_t</a>
-, <a class="el" href="classzmq_1_1socket__base__t.html#a54e92d13a5e1d0f554105a028b3b8ec1">zmq::socket_base_t</a>
+<li>attach_pipe()
+: <a class="el" href="classzmq_1_1session__t.html#ab21da5525ed1b86cdedb32fe8ac8f0f8">zmq::session_t</a>
+, <a class="el" href="classzmq_1_1socket__base__t.html#a85e264824404eee2023ef0510dc19dfa">zmq::socket_base_t</a>
 </li>
 <li>attached()
-: <a class="el" href="classzmq_1_1transient__session__t.html#a8bbf587748e4e52be0ead5ba3272e830">zmq::transient_session_t</a>
-, <a class="el" href="classzmq_1_1session__t.html#afb22988deaaf531be140b73d1f5144e0">zmq::session_t</a>
-, <a class="el" href="classzmq_1_1named__session__t.html#a33919c64722611f7a178051f8580bd79">zmq::named_session_t</a>
-, <a class="el" href="classzmq_1_1connect__session__t.html#a67b3f8a6a752104e0ba68ac5cae76042">zmq::connect_session_t</a>
+: <a class="el" href="classzmq_1_1session__t.html#a7a835246e55c441a62d08d7a92f33b59">zmq::session_t</a>
 </li>
 </ul>
 </div>
@@ -229,7 +226,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:14 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:50 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

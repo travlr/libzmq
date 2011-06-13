@@ -156,12 +156,12 @@ function toggleVisibility(linkObj) {
 <a name="l00049"></a>00049     <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (<a class="code" href="classzmq_1_1ctx__t.html#ae5f4652d6e8336b83959443f3f75a5d2">slots</a>);
 <a name="l00050"></a>00050 
 <a name="l00051"></a>00051     <span class="comment">//  Initialise the infrastructure for zmq_term thread.</span>
-<a name="l00052"></a>00052     <a class="code" href="classzmq_1_1ctx__t.html#ae5f4652d6e8336b83959443f3f75a5d2">slots</a> [<a class="code" href="classzmq_1_1ctx__t.html#ad3ff47f239cb78f6c0d855b3b72336daa272e86e3e64b0da5f4c5ae42ab3cf572">term_tid</a>] = &amp;<a class="code" href="classzmq_1_1ctx__t.html#ab9dd36f721c28fa24b1d717a49c5fc25">term_mailbox</a>;
+<a name="l00052"></a>00052     <a class="code" href="classzmq_1_1ctx__t.html#ae5f4652d6e8336b83959443f3f75a5d2">slots</a> [<a class="code" href="classzmq_1_1ctx__t.html#a56ae96d781c0d1faaa7559601dcb00eda272e86e3e64b0da5f4c5ae42ab3cf572">term_tid</a>] = &amp;<a class="code" href="classzmq_1_1ctx__t.html#ab9dd36f721c28fa24b1d717a49c5fc25">term_mailbox</a>;
 <a name="l00053"></a>00053 
 <a name="l00054"></a>00054     <span class="comment">//  Create the reaper thread.</span>
-<a name="l00055"></a>00055     <a class="code" href="classzmq_1_1ctx__t.html#a6eb6acbc8898d3b0942d81a70131de50">reaper</a> = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1reaper__t.html">reaper_t</a> (<span class="keyword">this</span>, <a class="code" href="classzmq_1_1ctx__t.html#ad3ff47f239cb78f6c0d855b3b72336daae17a94cd6dd359d9533c4dd7fc86bcd0">reaper_tid</a>);
+<a name="l00055"></a>00055     <a class="code" href="classzmq_1_1ctx__t.html#a6eb6acbc8898d3b0942d81a70131de50">reaper</a> = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1reaper__t.html">reaper_t</a> (<span class="keyword">this</span>, <a class="code" href="classzmq_1_1ctx__t.html#a56ae96d781c0d1faaa7559601dcb00edae17a94cd6dd359d9533c4dd7fc86bcd0">reaper_tid</a>);
 <a name="l00056"></a>00056     <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (<a class="code" href="classzmq_1_1ctx__t.html#a6eb6acbc8898d3b0942d81a70131de50">reaper</a>);
-<a name="l00057"></a>00057     <a class="code" href="classzmq_1_1ctx__t.html#ae5f4652d6e8336b83959443f3f75a5d2">slots</a> [<a class="code" href="classzmq_1_1ctx__t.html#ad3ff47f239cb78f6c0d855b3b72336daae17a94cd6dd359d9533c4dd7fc86bcd0">reaper_tid</a>] = <a class="code" href="classzmq_1_1ctx__t.html#a6eb6acbc8898d3b0942d81a70131de50">reaper</a>-&gt;<a class="code" href="classzmq_1_1reaper__t.html#aaa7a24f9514a781ec5b73075a32a0a55">get_mailbox</a> ();
+<a name="l00057"></a>00057     <a class="code" href="classzmq_1_1ctx__t.html#ae5f4652d6e8336b83959443f3f75a5d2">slots</a> [<a class="code" href="classzmq_1_1ctx__t.html#a56ae96d781c0d1faaa7559601dcb00edae17a94cd6dd359d9533c4dd7fc86bcd0">reaper_tid</a>] = <a class="code" href="classzmq_1_1ctx__t.html#a6eb6acbc8898d3b0942d81a70131de50">reaper</a>-&gt;<a class="code" href="classzmq_1_1reaper__t.html#aaa7a24f9514a781ec5b73075a32a0a55">get_mailbox</a> ();
 <a name="l00058"></a>00058     <a class="code" href="classzmq_1_1ctx__t.html#a6eb6acbc8898d3b0942d81a70131de50">reaper</a>-&gt;<a class="code" href="classzmq_1_1reaper__t.html#a146d4dab80e8916e49b68d1b3f6ac182">start</a> ();
 <a name="l00059"></a>00059 
 <a name="l00060"></a>00060     <span class="comment">//  Create I/O thread objects and launch them.</span>
@@ -240,7 +240,7 @@ function toggleVisibility(linkObj) {
 <a name="l00133"></a>00133         <span class="comment">//  interrupted. If there are no sockets we can ask reaper thread to stop.</span>
 <a name="l00134"></a>00134         slot_sync.lock ();
 <a name="l00135"></a>00135         terminating = <span class="keyword">true</span>;
-<a name="l00136"></a>00136         <span class="keywordflow">for</span> (<a class="code" href="classzmq_1_1array__t.html#a95098ae535820a060a53645cab6dbb36">sockets_t::size_type</a> i = 0; i != sockets.size (); i++)
+<a name="l00136"></a>00136         <span class="keywordflow">for</span> (<a class="code" href="classzmq_1_1array__t.html#a8f9de296a46821314d27551866b28dd2">sockets_t::size_type</a> i = 0; i != sockets.size (); i++)
 <a name="l00137"></a>00137             sockets [i]-&gt;stop ();
 <a name="l00138"></a>00138         <span class="keywordflow">if</span> (sockets.empty ())
 <a name="l00139"></a>00139             reaper-&gt;stop ();
@@ -253,7 +253,7 @@ function toggleVisibility(linkObj) {
 <a name="l00146"></a>00146     <span class="keywordflow">if</span> (rc == -1 &amp;&amp; errno == EINTR)
 <a name="l00147"></a>00147         <span class="keywordflow">return</span> -1;
 <a name="l00148"></a>00148     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
-<a name="l00149"></a>00149     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (cmd.<a class="code" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">type</a> == <a class="code" href="structzmq_1_1command__t.html#a410fe9a71a98dc5dda09a2ed4e27be48">command_t::done</a>);
+<a name="l00149"></a>00149     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (cmd.<a class="code" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">type</a> == <a class="code" href="structzmq_1_1command__t.html#a9bfda42811471c8271107739dc9f64d5">command_t::done</a>);
 <a name="l00150"></a>00150     slot_sync.lock ();
 <a name="l00151"></a>00151     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (sockets.empty ());
 <a name="l00152"></a>00152     slot_sync.unlock ();
@@ -445,7 +445,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:05 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:37 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

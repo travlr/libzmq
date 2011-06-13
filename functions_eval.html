@@ -112,6 +112,7 @@ function toggleVisibility(linkObj) {
       <li><a href="#index_a"><span>a</span></a></li>
       <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
+      <li><a href="#index_h"><span>h</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
       <li><a href="#index_o"><span>o</span></a></li>
@@ -126,14 +127,14 @@ function toggleVisibility(linkObj) {
 &#160;
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
-<li>activate_reader
-: <a class="el" href="structzmq_1_1command__t.html#add5023dfe333b73666a86921ef64238da3cf47f228ec699692f468de2b69cfd4d">zmq::command_t</a>
+<li>activate_read
+: <a class="el" href="structzmq_1_1command__t.html#add5023dfe333b73666a86921ef64238daddcd73659905a136dd324e6bc0c11293">zmq::command_t</a>
 </li>
-<li>activate_writer
-: <a class="el" href="structzmq_1_1command__t.html#add5023dfe333b73666a86921ef64238da1b28d0e1b752657a4ab17cf81356b9f8">zmq::command_t</a>
+<li>activate_write
+: <a class="el" href="structzmq_1_1command__t.html#add5023dfe333b73666a86921ef64238daf0fb46841ee79695b4447be6bc3a9d7d">zmq::command_t</a>
 </li>
 <li>active
-: <a class="el" href="classzmq_1_1session__t.html#ac8da2e412d1d5c0ea70fe2a1707259faaec63312fc35a037cb59f09cea16e39f9">zmq::session_t</a>
+: <a class="el" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104a8cf3fc1f4dbfbf2c9d87e626158ab523">zmq::pipe_t</a>
 </li>
 <li>attach
 : <a class="el" href="structzmq_1_1command__t.html#add5023dfe333b73666a86921ef64238dad047b3c2f898bb24b7bd6c51375b8859">zmq::command_t</a>
@@ -149,22 +150,35 @@ function toggleVisibility(linkObj) {
 
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
+<li>delimited
+: <a class="el" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104a6dc61f20b18d4b02459d54a666a1fa36">zmq::pipe_t</a>
+</li>
 <li>done
 : <a class="el" href="structzmq_1_1command__t.html#add5023dfe333b73666a86921ef64238da799f1286e3c790ccd40368e9fd280ac5">zmq::command_t</a>
+</li>
+<li>double_terminated
+: <a class="el" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104a2771ee5955fd30f67358e31c6960764d">zmq::pipe_t</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
+<li>hiccup
+: <a class="el" href="structzmq_1_1command__t.html#add5023dfe333b73666a86921ef64238dad7402b4926b9eb3bb3260e37e0007189">zmq::command_t</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
 <li>linger_timer_id
-: <a class="el" href="classzmq_1_1session__t.html#a64951db5c15e715efc273c1869ff1f36af27a92ff0a435c231424fcd3d4e410e9">zmq::session_t</a>
+: <a class="el" href="classzmq_1_1session__t.html#a9b8b9121f8f9a51dde7284b8b6d1d459af27a92ff0a435c231424fcd3d4e410e9">zmq::session_t</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
 <li>more
-: <a class="el" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">zmq::msg_t</a>
+: <a class="el" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">zmq::msg_t</a>
 </li>
 </ul>
 
@@ -178,7 +192,7 @@ function toggleVisibility(linkObj) {
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>pending
-: <a class="el" href="classzmq_1_1session__t.html#ac8da2e412d1d5c0ea70fe2a1707259faa670f81751ee659925274d6bb557948a1">zmq::session_t</a>
+: <a class="el" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104ae05dd8bc48c980a930e345c6c68573b2">zmq::pipe_t</a>
 </li>
 <li>pipe_term
 : <a class="el" href="structzmq_1_1command__t.html#add5023dfe333b73666a86921ef64238da38146875b927a3a80694b95384cb0cf2">zmq::command_t</a>
@@ -206,17 +220,17 @@ function toggleVisibility(linkObj) {
 : <a class="el" href="structzmq_1_1command__t.html#add5023dfe333b73666a86921ef64238da1784608114be1df9f6f4fcb2846f53d8">zmq::command_t</a>
 </li>
 <li>reaper_tid
-: <a class="el" href="classzmq_1_1ctx__t.html#ad3ff47f239cb78f6c0d855b3b72336daae17a94cd6dd359d9533c4dd7fc86bcd0">zmq::ctx_t</a>
+: <a class="el" href="classzmq_1_1ctx__t.html#a56ae96d781c0d1faaa7559601dcb00edae17a94cd6dd359d9533c4dd7fc86bcd0">zmq::ctx_t</a>
 </li>
 <li>reconnect_timer_id
-: <a class="el" href="classzmq_1_1zmq__connecter__t.html#a9a1174a73caa8daea26ed7afa0b49866aac3969525b313557acbfd8a20be094c7">zmq::zmq_connecter_t</a>
+: <a class="el" href="classzmq_1_1zmq__connecter__t.html#a945afa3db928079e23c60d7ea4d00ca2aac3969525b313557acbfd8a20be094c7">zmq::zmq_connecter_t</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
 <li>shared
-: <a class="el" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a20cfdc9d298df4c81dec1c578bb8e4f8">zmq::msg_t</a>
+: <a class="el" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a20cfdc9d298df4c81dec1c578bb8e4f8">zmq::msg_t</a>
 </li>
 <li>stop
 : <a class="el" href="structzmq_1_1command__t.html#add5023dfe333b73666a86921ef64238da2c4918aece790ed948b932ca8d3b70a8">zmq::command_t</a>
@@ -235,10 +249,13 @@ function toggleVisibility(linkObj) {
 : <a class="el" href="structzmq_1_1command__t.html#add5023dfe333b73666a86921ef64238dab6a39d9be5d7f798ab148a4bfaadabfd">zmq::command_t</a>
 </li>
 <li>term_tid
-: <a class="el" href="classzmq_1_1ctx__t.html#ad3ff47f239cb78f6c0d855b3b72336daa272e86e3e64b0da5f4c5ae42ab3cf572">zmq::ctx_t</a>
+: <a class="el" href="classzmq_1_1ctx__t.html#a56ae96d781c0d1faaa7559601dcb00eda272e86e3e64b0da5f4c5ae42ab3cf572">zmq::ctx_t</a>
+</li>
+<li>terminated
+: <a class="el" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104a403cacea12fa9d800d4ef09be832bdc1">zmq::pipe_t</a>
 </li>
 <li>terminating
-: <a class="el" href="classzmq_1_1session__t.html#ac8da2e412d1d5c0ea70fe2a1707259faa53fc557056ff9e1d1a6e489b20912f07">zmq::session_t</a>
+: <a class="el" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104aaf9aa8b59c998136846b13d0ce54aef6">zmq::pipe_t</a>
 </li>
 <li>type_delimiter
 : <a class="el" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8ad54d689e2464ee0fd2478b2c50dbbe2e">zmq::msg_t</a>
@@ -271,7 +288,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:15 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:51 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -157,12 +157,12 @@ function toggleVisibility(linkObj) {
 <a name="l00050"></a>00050     }
 <a name="l00051"></a>00051 }
 <a name="l00052"></a>00052 
-<a name="l00053"></a><a class="code" href="classzmq_1_1trie__t.html#a0a201f6406876f0f9a89f45d52e2c99c">00053</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1trie__t.html#a0a201f6406876f0f9a89f45d52e2c99c">zmq::trie_t::add</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *prefix_, <span class="keywordtype">size_t</span> size_)
+<a name="l00053"></a><a class="code" href="classzmq_1_1trie__t.html#a94c4c5b59168b13bf7432f6db59b0c5c">00053</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1trie__t.html#a94c4c5b59168b13bf7432f6db59b0c5c">zmq::trie_t::add</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *prefix_, <span class="keywordtype">size_t</span> size_)
 <a name="l00054"></a>00054 {
 <a name="l00055"></a>00055     <span class="comment">//  We are at the node corresponding to the prefix. We are done.</span>
 <a name="l00056"></a>00056     <span class="keywordflow">if</span> (!size_) {
 <a name="l00057"></a>00057         ++refcnt;
-<a name="l00058"></a>00058         <span class="keywordflow">return</span>;
+<a name="l00058"></a>00058         <span class="keywordflow">return</span> refcnt == 1;
 <a name="l00059"></a>00059     }
 <a name="l00060"></a>00060 
 <a name="l00061"></a>00061     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c = *prefix_;
@@ -181,7 +181,7 @@ function toggleVisibility(linkObj) {
 <a name="l00074"></a>00074             count = (min &lt; c ? c - min : min - c) + 1;
 <a name="l00075"></a>00075             next.<a class="code" href="classzmq_1_1trie__t.html#afe914c9bb7191dcd3341acdf7a334550">table</a> = (<a class="code" href="classzmq_1_1trie__t.html">trie_t</a>**)
 <a name="l00076"></a>00076                 malloc (<span class="keyword">sizeof</span> (<a class="code" href="classzmq_1_1trie__t.html">trie_t</a>*) * count);
-<a name="l00077"></a>00077             <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (next.table);
+<a name="l00077"></a>00077             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (next.table);
 <a name="l00078"></a>00078             <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> i = 0; i != count; ++i)
 <a name="l00079"></a>00079                 next.table [i] = 0;
 <a name="l00080"></a>00080             min = std::min (min, c);
@@ -218,74 +218,121 @@ function toggleVisibility(linkObj) {
 <a name="l00111"></a>00111     <span class="keywordflow">if</span> (count == 1) {
 <a name="l00112"></a>00112         <span class="keywordflow">if</span> (!next.node) {
 <a name="l00113"></a>00113             next.node = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1trie__t.html">trie_t</a>;
-<a name="l00114"></a>00114             <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (next.node);
+<a name="l00114"></a>00114             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (next.node);
 <a name="l00115"></a>00115         }
-<a name="l00116"></a>00116         next.node-&gt;add (prefix_ + 1, size_ - 1);
+<a name="l00116"></a>00116         <span class="keywordflow">return</span> next.node-&gt;add (prefix_ + 1, size_ - 1);
 <a name="l00117"></a>00117     }
 <a name="l00118"></a>00118     <span class="keywordflow">else</span> {
 <a name="l00119"></a>00119         <span class="keywordflow">if</span> (!next.table [c - min]) {
 <a name="l00120"></a>00120             next.table [c - min] = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1trie__t.html">trie_t</a>;
-<a name="l00121"></a>00121             <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (next.table [c - min]);
+<a name="l00121"></a>00121             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (next.table [c - min]);
 <a name="l00122"></a>00122         }
-<a name="l00123"></a>00123         next.table [c - min]-&gt;add (prefix_ + 1, size_ - 1);
+<a name="l00123"></a>00123         <span class="keywordflow">return</span> next.table [c - min]-&gt;add (prefix_ + 1, size_ - 1);
 <a name="l00124"></a>00124     }
 <a name="l00125"></a>00125 }
 <a name="l00126"></a>00126 
 <a name="l00127"></a><a class="code" href="classzmq_1_1trie__t.html#ab15f7f0440899870e962f0697e89b3ac">00127</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1trie__t.html#ab15f7f0440899870e962f0697e89b3ac">zmq::trie_t::rm</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *prefix_, <span class="keywordtype">size_t</span> size_)
 <a name="l00128"></a>00128 {
-<a name="l00129"></a>00129      <span class="keywordflow">if</span> (!size_) {
-<a name="l00130"></a>00130          <span class="keywordflow">if</span> (!refcnt)
-<a name="l00131"></a>00131              <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00132"></a>00132          refcnt--;
-<a name="l00133"></a>00133          <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00134"></a>00134      }
-<a name="l00135"></a>00135 
-<a name="l00136"></a>00136      <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c = *prefix_;
-<a name="l00137"></a>00137      <span class="keywordflow">if</span> (!count || c &lt; min || c &gt;= min + count)
-<a name="l00138"></a>00138          <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00139"></a>00139 
-<a name="l00140"></a>00140      <a class="code" href="classzmq_1_1trie__t.html">trie_t</a> *next_node =
-<a name="l00141"></a>00141          count == 1 ? next.<a class="code" href="classzmq_1_1trie__t.html#aa9c8884c663f3ad3d1e40d64f9522ce3">node</a> : next.<a class="code" href="classzmq_1_1trie__t.html#afe914c9bb7191dcd3341acdf7a334550">table</a> [c - min];
-<a name="l00142"></a>00142 
-<a name="l00143"></a>00143      <span class="keywordflow">if</span> (!next_node)
-<a name="l00144"></a>00144          <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00145"></a>00145 
-<a name="l00146"></a>00146      <span class="keywordflow">return</span> next_node-&gt;<a class="code" href="classzmq_1_1trie__t.html#ab15f7f0440899870e962f0697e89b3ac">rm</a> (prefix_ + 1, size_ - 1);
-<a name="l00147"></a>00147 }
-<a name="l00148"></a>00148 
-<a name="l00149"></a><a class="code" href="classzmq_1_1trie__t.html#a65c117c92c8c9c9ff32fcc2c38f9f548">00149</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1trie__t.html#a65c117c92c8c9c9ff32fcc2c38f9f548">zmq::trie_t::check</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> size_)
-<a name="l00150"></a>00150 {
-<a name="l00151"></a>00151     <span class="comment">//  This function is on critical path. It deliberately doesn&#39;t use</span>
-<a name="l00152"></a>00152     <span class="comment">//  recursion to get a bit better performance.</span>
-<a name="l00153"></a>00153     <a class="code" href="classzmq_1_1trie__t.html">trie_t</a> *current = <span class="keyword">this</span>;
-<a name="l00154"></a>00154     <span class="keywordflow">while</span> (<span class="keyword">true</span>) {
-<a name="l00155"></a>00155 
-<a name="l00156"></a>00156         <span class="comment">//  We&#39;ve found a corresponding subscription!</span>
-<a name="l00157"></a>00157         <span class="keywordflow">if</span> (current-&gt;<a class="code" href="classzmq_1_1trie__t.html#a4c3411a88044a450f4ddabfeee77a5a5">refcnt</a>)
-<a name="l00158"></a>00158             <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00159"></a>00159 
-<a name="l00160"></a>00160         <span class="comment">//  We&#39;ve checked all the data and haven&#39;t found matching subscription.</span>
-<a name="l00161"></a>00161         <span class="keywordflow">if</span> (!size_)
-<a name="l00162"></a>00162             <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00163"></a>00163 
-<a name="l00164"></a>00164         <span class="comment">//  If there&#39;s no corresponding slot for the first character</span>
-<a name="l00165"></a>00165         <span class="comment">//  of the prefix, the message does not match.</span>
-<a name="l00166"></a>00166         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c = *data_;
-<a name="l00167"></a>00167         <span class="keywordflow">if</span> (c &lt; current-&gt;min || c &gt;= current-&gt;<a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a> + current-&gt;<a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a>)
-<a name="l00168"></a>00168             <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00169"></a>00169 
-<a name="l00170"></a>00170         <span class="comment">//  Move to the next character.</span>
-<a name="l00171"></a>00171         <span class="keywordflow">if</span> (current-&gt;<a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a> == 1)
-<a name="l00172"></a>00172             current = current-&gt;<a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.<a class="code" href="classzmq_1_1trie__t.html#aa9c8884c663f3ad3d1e40d64f9522ce3">node</a>;
-<a name="l00173"></a>00173         <span class="keywordflow">else</span> {
-<a name="l00174"></a>00174             current = current-&gt;<a class="code" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>.<a class="code" href="classzmq_1_1trie__t.html#afe914c9bb7191dcd3341acdf7a334550">table</a> [c - current-&gt;<a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a>];
-<a name="l00175"></a>00175             <span class="keywordflow">if</span> (!current)
-<a name="l00176"></a>00176                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00177"></a>00177         }
-<a name="l00178"></a>00178         data_++;
-<a name="l00179"></a>00179         size_--;
-<a name="l00180"></a>00180     }
-<a name="l00181"></a>00181 }
+<a name="l00129"></a>00129      <span class="comment">//  TODO: Shouldn&#39;t an error be reported if the key does not exist?</span>
+<a name="l00130"></a>00130 
+<a name="l00131"></a>00131      <span class="keywordflow">if</span> (!size_) {
+<a name="l00132"></a>00132          <span class="keywordflow">if</span> (!refcnt)
+<a name="l00133"></a>00133              <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00134"></a>00134          refcnt--;
+<a name="l00135"></a>00135          <span class="keywordflow">return</span> refcnt == 0;
+<a name="l00136"></a>00136      }
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138      <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c = *prefix_;
+<a name="l00139"></a>00139      <span class="keywordflow">if</span> (!count || c &lt; min || c &gt;= min + count)
+<a name="l00140"></a>00140          <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00141"></a>00141 
+<a name="l00142"></a>00142      <a class="code" href="classzmq_1_1trie__t.html">trie_t</a> *next_node =
+<a name="l00143"></a>00143          count == 1 ? next.<a class="code" href="classzmq_1_1trie__t.html#aa9c8884c663f3ad3d1e40d64f9522ce3">node</a> : next.<a class="code" href="classzmq_1_1trie__t.html#afe914c9bb7191dcd3341acdf7a334550">table</a> [c - min];
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145      <span class="keywordflow">if</span> (!next_node)
+<a name="l00146"></a>00146          <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00147"></a>00147 
+<a name="l00148"></a>00148      <span class="keywordflow">return</span> next_node-&gt;<a class="code" href="classzmq_1_1trie__t.html#ab15f7f0440899870e962f0697e89b3ac">rm</a> (prefix_ + 1, size_ - 1);
+<a name="l00149"></a>00149 }
+<a name="l00150"></a>00150 
+<a name="l00151"></a><a class="code" href="classzmq_1_1trie__t.html#a65c117c92c8c9c9ff32fcc2c38f9f548">00151</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1trie__t.html#a65c117c92c8c9c9ff32fcc2c38f9f548">zmq::trie_t::check</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> size_)
+<a name="l00152"></a>00152 {
+<a name="l00153"></a>00153     <span class="comment">//  This function is on critical path. It deliberately doesn&#39;t use</span>
+<a name="l00154"></a>00154     <span class="comment">//  recursion to get a bit better performance.</span>
+<a name="l00155"></a>00155     <a class="code" href="classzmq_1_1trie__t.html">trie_t</a> *current = <span class="keyword">this</span>;
+<a name="l00156"></a>00156     <span class="keywordflow">while</span> (<span class="keyword">true</span>) {
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158         <span class="comment">//  We&#39;ve found a corresponding subscription!</span>
+<a name="l00159"></a>00159         <span class="keywordflow">if</span> (current-&gt;<a class="code" href="classzmq_1_1trie__t.html#a4c3411a88044a450f4ddabfeee77a5a5">refcnt</a>)
+<a name="l00160"></a>00160             <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162         <span class="comment">//  We&#39;ve checked all the data and haven&#39;t found matching subscription.</span>
+<a name="l00163"></a>00163         <span class="keywordflow">if</span> (!size_)
+<a name="l00164"></a>00164             <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00165"></a>00165 
+<a name="l00166"></a>00166         <span class="comment">//  If there&#39;s no corresponding slot for the first character</span>
+<a name="l00167"></a>00167         <span class="comment">//  of the prefix, the message does not match.</span>
+<a name="l00168"></a>00168         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c = *data_;
+<a name="l00169"></a>00169         <span class="keywordflow">if</span> (c &lt; current-&gt;min || c &gt;= current-&gt;<a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a> + current-&gt;<a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a>)
+<a name="l00170"></a>00170             <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00171"></a>00171 
+<a name="l00172"></a>00172         <span class="comment">//  Move to the next character.</span>
+<a name="l00173"></a>00173         <span class="keywordflow">if</span> (current-&gt;<a class="code" href="classzmq_1_1trie__t.html#a431a378d2058a91a117c0e962304bdaa">count</a> == 1)
+<a name="l00174"></a>00174             current = current-&gt;<a class="code" href="classzmq_1_1trie__t.html#a6af7c0eb12ab0fc21b93ce2a8a45b685">next</a>.<a class="code" href="classzmq_1_1trie__t.html#aa9c8884c663f3ad3d1e40d64f9522ce3">node</a>;
+<a name="l00175"></a>00175         <span class="keywordflow">else</span> {
+<a name="l00176"></a>00176             current = current-&gt;<a class="code" href="classzmq_1_1trie__t.html#a6af7c0eb12ab0fc21b93ce2a8a45b685">next</a>.<a class="code" href="classzmq_1_1trie__t.html#afe914c9bb7191dcd3341acdf7a334550">table</a> [c - current-&gt;<a class="code" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">min</a>];
+<a name="l00177"></a>00177             <span class="keywordflow">if</span> (!current)
+<a name="l00178"></a>00178                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00179"></a>00179         }
+<a name="l00180"></a>00180         data_++;
+<a name="l00181"></a>00181         size_--;
+<a name="l00182"></a>00182     }
+<a name="l00183"></a>00183 }
+<a name="l00184"></a>00184 
+<a name="l00185"></a><a class="code" href="classzmq_1_1trie__t.html#aae26e0500d7d81c4835ff5b619498ed6">00185</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1trie__t.html#aae26e0500d7d81c4835ff5b619498ed6">zmq::trie_t::apply</a> (<span class="keywordtype">void</span> (*func_) (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> size_,
+<a name="l00186"></a>00186     <span class="keywordtype">void</span> *arg_), <span class="keywordtype">void</span> *arg_)
+<a name="l00187"></a>00187 {
+<a name="l00188"></a>00188     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *buff = NULL;
+<a name="l00189"></a>00189     apply_helper (&amp;buff, 0, 0, func_, arg_);
+<a name="l00190"></a>00190     free (buff);
+<a name="l00191"></a>00191 }
+<a name="l00192"></a>00192 
+<a name="l00193"></a><a class="code" href="classzmq_1_1trie__t.html#a46bb7cca0c7c922d55257e68b9a5d8c9">00193</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1trie__t.html#a46bb7cca0c7c922d55257e68b9a5d8c9">zmq::trie_t::apply_helper</a> (
+<a name="l00194"></a>00194     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> **buff_, <span class="keywordtype">size_t</span> buffsize_, <span class="keywordtype">size_t</span> maxbuffsize_,
+<a name="l00195"></a>00195     <span class="keywordtype">void</span> (*func_) (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> size_, <span class="keywordtype">void</span> *arg_), <span class="keywordtype">void</span> *arg_)
+<a name="l00196"></a>00196 {
+<a name="l00197"></a>00197     <span class="comment">//  If this node is a subscription, apply the function.</span>
+<a name="l00198"></a>00198     <span class="keywordflow">if</span> (refcnt)
+<a name="l00199"></a>00199         func_ (*buff_, buffsize_, arg_);
+<a name="l00200"></a>00200 
+<a name="l00201"></a>00201     <span class="comment">//  Adjust the buffer.</span>
+<a name="l00202"></a>00202     <span class="keywordflow">if</span> (buffsize_ &gt;= maxbuffsize_) {
+<a name="l00203"></a>00203         maxbuffsize_ = buffsize_ + 256;
+<a name="l00204"></a>00204         *buff_ = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) realloc (*buff_, maxbuffsize_);
+<a name="l00205"></a>00205         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (*buff_);
+<a name="l00206"></a>00206     }
+<a name="l00207"></a>00207 
+<a name="l00208"></a>00208     <span class="comment">//  If there are no subnodes in the trie, return.</span>
+<a name="l00209"></a>00209     <span class="keywordflow">if</span> (count == 0)
+<a name="l00210"></a>00210         <span class="keywordflow">return</span>;
+<a name="l00211"></a>00211 
+<a name="l00212"></a>00212     <span class="comment">//  If there&#39;s one subnode (optimisation).</span>
+<a name="l00213"></a>00213     <span class="keywordflow">if</span> (count == 1) {
+<a name="l00214"></a>00214         (*buff_) [buffsize_] = min;
+<a name="l00215"></a>00215         buffsize_++;
+<a name="l00216"></a>00216         next.node-&gt;apply_helper (buff_, buffsize_, maxbuffsize_, func_, arg_);
+<a name="l00217"></a>00217         <span class="keywordflow">return</span>;
+<a name="l00218"></a>00218     }
+<a name="l00219"></a>00219 
+<a name="l00220"></a>00220     <span class="comment">//  If there are multiple subnodes.</span>
+<a name="l00221"></a>00221     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c = 0; c != count; c++) {
+<a name="l00222"></a>00222         (*buff_) [buffsize_] = min + c;
+<a name="l00223"></a>00223         <span class="keywordflow">if</span> (next.table [c])
+<a name="l00224"></a>00224             next.table [c]-&gt;apply_helper (buff_, buffsize_ + 1, maxbuffsize_,
+<a name="l00225"></a>00225                 func_, arg_);
+<a name="l00226"></a>00226     }   
+<a name="l00227"></a>00227 }
+<a name="l00228"></a>00228 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -302,7 +349,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:08 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:40 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

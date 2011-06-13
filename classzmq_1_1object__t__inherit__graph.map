@@ -1,9 +1,8 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$classzmq_1_1io__thread__t.html" title="zmq::io_thread_t" alt="" coords="156,299,273,328"/>
 <area shape="rect" id="node5" href="$classzmq_1_1own__t.html" title="zmq::own_t" alt="" coords="169,352,260,381"/>
-<area shape="rect" id="node45" href="$classzmq_1_1reader__t.html" title="zmq::reader_t" alt="" coords="164,405,265,435"/>
+<area shape="rect" id="node45" href="$classzmq_1_1pipe__t.html" title="zmq::pipe_t" alt="" coords="169,405,260,435"/>
 <area shape="rect" id="node47" href="$classzmq_1_1reaper__t.html" title="zmq::reaper_t" alt="" coords="164,459,265,488"/>
-<area shape="rect" id="node49" href="$classzmq_1_1writer__t.html" title="zmq::writer_t" alt="" coords="165,512,264,541"/>
 <area shape="rect" id="node7" href="$classzmq_1_1session__t.html" title="zmq::session_t" alt="" coords="345,85,455,115"/>
 <area shape="rect" id="node15" href="$classzmq_1_1socket__base__t.html" title="zmq::socket_base_t" alt="" coords="331,299,469,328"/>
 <area shape="rect" id="node39" href="$classzmq_1_1zmq__connecter__t.html" title="zmq::zmq_connecter_t" alt="" coords="323,352,477,381"/>

@@ -134,56 +134,49 @@ function toggleVisibility(linkObj) {
 <a name="l00027"></a>00027 <span class="keyword">namespace </span>zmq
 <a name="l00028"></a>00028 {
 <a name="l00029"></a>00029 
-<a name="l00030"></a>00030     <span class="comment">//  Class manages a set of outbound pipes. On send it load balances</span>
+<a name="l00030"></a>00030     <span class="comment">//  This class manages a set of outbound pipes. On send it load balances</span>
 <a name="l00031"></a>00031     <span class="comment">//  messages fairly among the pipes.</span>
-<a name="l00032"></a><a class="code" href="classzmq_1_1lb__t.html">00032</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1lb__t.html">lb_t</a> : <span class="keyword">public</span> <a class="code" href="structzmq_1_1i__writer__events.html">i_writer_events</a>
-<a name="l00033"></a>00033     {
-<a name="l00034"></a>00034     <span class="keyword">public</span>:
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036         <a class="code" href="classzmq_1_1lb__t.html#ab202c674d80448d7cf3035d4722239b2">lb_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a> *sink_);
-<a name="l00037"></a>00037         <a class="code" href="classzmq_1_1lb__t.html#a2fe7d32c7f669b6ec72167727aafc95c">~lb_t</a> ();
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1lb__t.html#abde0931efbb9cb0bf1564f5556fa4fea">attach</a> (<a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *pipe_);
-<a name="l00040"></a>00040         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1lb__t.html#afb6a61f0311f549111497c16c7538705">terminate</a> ();
-<a name="l00041"></a>00041         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1lb__t.html#a48f737a68cdfe992109b80ea576ebc98">send</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
-<a name="l00042"></a>00042         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1lb__t.html#a6f6910528d555916d3c34441e0d9b751">has_out</a> ();
+<a name="l00032"></a>00032 
+<a name="l00033"></a><a class="code" href="classzmq_1_1lb__t.html">00033</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1lb__t.html">lb_t</a>
+<a name="l00034"></a>00034     {
+<a name="l00035"></a>00035     <span class="keyword">public</span>:
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037         <a class="code" href="classzmq_1_1lb__t.html#abe096ed718723dc51ba533323ba8bf14">lb_t</a> ();
+<a name="l00038"></a>00038         <a class="code" href="classzmq_1_1lb__t.html#a2fe7d32c7f669b6ec72167727aafc95c">~lb_t</a> ();
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1lb__t.html#a63c346c85e7485a2d7230e623512a864">attach</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00041"></a>00041         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1lb__t.html#ae4e63ce8e010bebed32683348b9a9894">activated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00042"></a>00042         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1lb__t.html#a88a72a25d87f376fa9f0f4ce56660ca4">terminated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
 <a name="l00043"></a>00043 
-<a name="l00044"></a>00044         <span class="comment">//  i_writer_events interface implementation.</span>
-<a name="l00045"></a>00045         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1lb__t.html#ae7d7dd17271dc0906a4fb69f306e6ece">activated</a> (<a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *pipe_);
-<a name="l00046"></a>00046         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1lb__t.html#ad5577c6265448b69a07f50600bda54e0">terminated</a> (<a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *pipe_);
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048     <span class="keyword">private</span>:
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050         <span class="comment">//  List of outbound pipes.</span>
-<a name="l00051"></a><a class="code" href="classzmq_1_1lb__t.html#a228532cc6cf0c3d60f55e014419d01b9">00051</a>         <span class="keyword">typedef</span> <a class="code" href="classzmq_1_1array__t.html">array_t &lt;class writer_t&gt;</a> <a class="code" href="classzmq_1_1lb__t.html#a228532cc6cf0c3d60f55e014419d01b9">pipes_t</a>;
-<a name="l00052"></a><a class="code" href="classzmq_1_1lb__t.html#a3e2dc8079059942863ce560e9c83926a">00052</a>         <a class="code" href="classzmq_1_1array__t.html">pipes_t</a> <a class="code" href="classzmq_1_1lb__t.html#a3e2dc8079059942863ce560e9c83926a">pipes</a>;
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054         <span class="comment">//  Number of active pipes. All the active pipes are located at the</span>
-<a name="l00055"></a>00055         <span class="comment">//  beginning of the pipes array.</span>
-<a name="l00056"></a><a class="code" href="classzmq_1_1lb__t.html#a4785896f0cc3beb5e9240a561cdfb513">00056</a>         <a class="code" href="classzmq_1_1array__t.html#a95098ae535820a060a53645cab6dbb36">pipes_t::size_type</a> <a class="code" href="classzmq_1_1lb__t.html#a4785896f0cc3beb5e9240a561cdfb513">active</a>;
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058         <span class="comment">//  Points to the last pipe that the most recent message was sent to.</span>
-<a name="l00059"></a><a class="code" href="classzmq_1_1lb__t.html#abb356cf831cf0d8eb1f961728a927454">00059</a>         <a class="code" href="classzmq_1_1array__t.html#a95098ae535820a060a53645cab6dbb36">pipes_t::size_type</a> <a class="code" href="classzmq_1_1lb__t.html#abb356cf831cf0d8eb1f961728a927454">current</a>;
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061         <span class="comment">//  True if last we are in the middle of a multipart message.</span>
-<a name="l00062"></a><a class="code" href="classzmq_1_1lb__t.html#a63a3577fc5b87828f042957af44b5b89">00062</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1lb__t.html#a63a3577fc5b87828f042957af44b5b89">more</a>;
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064         <span class="comment">//  True if we are dropping current message.</span>
-<a name="l00065"></a><a class="code" href="classzmq_1_1lb__t.html#a5d43d6eeacc74978b21eabc3bf44e0dc">00065</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1lb__t.html#a5d43d6eeacc74978b21eabc3bf44e0dc">dropping</a>;
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067         <span class="comment">//  Object to send events to.</span>
-<a name="l00068"></a><a class="code" href="classzmq_1_1lb__t.html#ade998be579e944efbda68c74420730d6">00068</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1own__t.html">own_t</a> *<a class="code" href="classzmq_1_1lb__t.html#ade998be579e944efbda68c74420730d6">sink</a>;
+<a name="l00044"></a>00044         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1lb__t.html#a48f737a68cdfe992109b80ea576ebc98">send</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
+<a name="l00045"></a>00045         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1lb__t.html#a6f6910528d555916d3c34441e0d9b751">has_out</a> ();
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047     <span class="keyword">private</span>:
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049         <span class="comment">//  List of outbound pipes.</span>
+<a name="l00050"></a><a class="code" href="classzmq_1_1lb__t.html#a5c3b5e8ba8492be68050fbe7ef50253d">00050</a>         <span class="keyword">typedef</span> <a class="code" href="classzmq_1_1array__t.html">array_t &lt;class pipe_t, 2&gt;</a> <a class="code" href="classzmq_1_1lb__t.html#a5c3b5e8ba8492be68050fbe7ef50253d">pipes_t</a>;
+<a name="l00051"></a><a class="code" href="classzmq_1_1lb__t.html#a3e2dc8079059942863ce560e9c83926a">00051</a>         <a class="code" href="classzmq_1_1array__t.html">pipes_t</a> <a class="code" href="classzmq_1_1lb__t.html#a3e2dc8079059942863ce560e9c83926a">pipes</a>;
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053         <span class="comment">//  Number of active pipes. All the active pipes are located at the</span>
+<a name="l00054"></a>00054         <span class="comment">//  beginning of the pipes array.</span>
+<a name="l00055"></a><a class="code" href="classzmq_1_1lb__t.html#a4785896f0cc3beb5e9240a561cdfb513">00055</a>         <a class="code" href="classzmq_1_1array__t.html#a8f9de296a46821314d27551866b28dd2">pipes_t::size_type</a> <a class="code" href="classzmq_1_1lb__t.html#a4785896f0cc3beb5e9240a561cdfb513">active</a>;
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057         <span class="comment">//  Points to the last pipe that the most recent message was sent to.</span>
+<a name="l00058"></a><a class="code" href="classzmq_1_1lb__t.html#abb356cf831cf0d8eb1f961728a927454">00058</a>         <a class="code" href="classzmq_1_1array__t.html#a8f9de296a46821314d27551866b28dd2">pipes_t::size_type</a> <a class="code" href="classzmq_1_1lb__t.html#abb356cf831cf0d8eb1f961728a927454">current</a>;
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060         <span class="comment">//  True if last we are in the middle of a multipart message.</span>
+<a name="l00061"></a><a class="code" href="classzmq_1_1lb__t.html#a63a3577fc5b87828f042957af44b5b89">00061</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1lb__t.html#a63a3577fc5b87828f042957af44b5b89">more</a>;
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063         <span class="comment">//  True if we are dropping current message.</span>
+<a name="l00064"></a><a class="code" href="classzmq_1_1lb__t.html#a5d43d6eeacc74978b21eabc3bf44e0dc">00064</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1lb__t.html#a5d43d6eeacc74978b21eabc3bf44e0dc">dropping</a>;
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066         <a class="code" href="classzmq_1_1lb__t.html#abe096ed718723dc51ba533323ba8bf14">lb_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1lb__t.html">lb_t</a>&amp;);
+<a name="l00067"></a>00067         <span class="keyword">const</span> <a class="code" href="classzmq_1_1lb__t.html">lb_t</a> &amp;<a class="code" href="classzmq_1_1lb__t.html#a5fdbb930f4a61c34d6e6889a649be8c2">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1lb__t.html">lb_t</a>&amp;);
+<a name="l00068"></a>00068     };
 <a name="l00069"></a>00069 
-<a name="l00070"></a>00070         <span class="comment">//  If true, termination process is already underway.</span>
-<a name="l00071"></a><a class="code" href="classzmq_1_1lb__t.html#ad857af0eb3c14137c2186547fcd9faab">00071</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1lb__t.html#ad857af0eb3c14137c2186547fcd9faab">terminating</a>;
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073         <a class="code" href="classzmq_1_1lb__t.html#ab202c674d80448d7cf3035d4722239b2">lb_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1lb__t.html">lb_t</a>&amp;);
-<a name="l00074"></a>00074         <span class="keyword">const</span> <a class="code" href="classzmq_1_1lb__t.html">lb_t</a> &amp;<a class="code" href="classzmq_1_1lb__t.html#a5fdbb930f4a61c34d6e6889a649be8c2">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1lb__t.html">lb_t</a>&amp;);
-<a name="l00075"></a>00075     };
-<a name="l00076"></a>00076 
-<a name="l00077"></a>00077 }
-<a name="l00078"></a>00078 
-<a name="l00079"></a>00079 <span class="preprocessor">#endif</span>
+<a name="l00070"></a>00070 }
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -200,7 +193,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:06 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:38 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

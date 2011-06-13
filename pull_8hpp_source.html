@@ -134,37 +134,36 @@ function toggleVisibility(linkObj) {
 <a name="l00027"></a>00027 <span class="keyword">namespace </span>zmq
 <a name="l00028"></a>00028 {
 <a name="l00029"></a>00029 
-<a name="l00030"></a><a class="code" href="classzmq_1_1pull__t.html">00030</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1pull__t.html">pull_t</a> : <span class="keyword">public</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a>
-<a name="l00031"></a>00031     {
-<a name="l00032"></a>00032     <span class="keyword">public</span>:
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034         <a class="code" href="classzmq_1_1pull__t.html#adbc52111992a9a29fc25843de19bc71a">pull_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1ctx__t.html">ctx_t</a> *parent_, uint32_t tid_);
-<a name="l00035"></a>00035         <a class="code" href="classzmq_1_1pull__t.html#a2decd7f701c6995fdfa9219092f2a6b7">~pull_t</a> ();
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037     <span class="keyword">protected</span>:
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039         <span class="comment">//  Overloads of functions from socket_base_t.</span>
-<a name="l00040"></a>00040         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pull__t.html#a9e7cebb2807f931e51f0c04e1704eadf">xattach_pipes</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1reader__t.html">reader_t</a> *inpipe_, <span class="keyword">class</span> <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *outpipe_,
-<a name="l00041"></a>00041             <span class="keyword">const</span> blob_t &amp;peer_identity_);
+<a name="l00030"></a><a class="code" href="classzmq_1_1pull__t.html">00030</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1pull__t.html">pull_t</a> :
+<a name="l00031"></a>00031         <span class="keyword">public</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a>
+<a name="l00032"></a>00032     {
+<a name="l00033"></a>00033     <span class="keyword">public</span>:
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035         <a class="code" href="classzmq_1_1pull__t.html#adbc52111992a9a29fc25843de19bc71a">pull_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1ctx__t.html">ctx_t</a> *parent_, uint32_t tid_);
+<a name="l00036"></a>00036         <a class="code" href="classzmq_1_1pull__t.html#a2decd7f701c6995fdfa9219092f2a6b7">~pull_t</a> ();
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038     <span class="keyword">protected</span>:
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040         <span class="comment">//  Overloads of functions from socket_base_t.</span>
+<a name="l00041"></a>00041         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pull__t.html#a9e0e047a6605a9dca9b9da1fb45f7788">xattach_pipe</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, <span class="keyword">const</span> blob_t &amp;peer_identity_);
 <a name="l00042"></a>00042         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1pull__t.html#a58841f9617d68dea766f1b55c0e244f8">xrecv</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
 <a name="l00043"></a>00043         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pull__t.html#a8bc55f15b9e9b34a99a78bc527d21edf">xhas_in</a> ();
-<a name="l00044"></a>00044 
-<a name="l00045"></a>00045     <span class="keyword">private</span>:
+<a name="l00044"></a>00044         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pull__t.html#a99f2f61daf707525d32f8e6ee2f3e8bf">xread_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00045"></a>00045         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pull__t.html#aa4d43c6cdaf18f6560a1f1959b10a028">xterminated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
 <a name="l00046"></a>00046 
-<a name="l00047"></a>00047         <span class="comment">//  Hook into the termination process.</span>
-<a name="l00048"></a>00048         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pull__t.html#a67f5846f8ee0af8d75813a54287f8890">process_term</a> (<span class="keywordtype">int</span> linger_);
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050         <span class="comment">//  Fair queueing object for inbound pipes.</span>
-<a name="l00051"></a><a class="code" href="classzmq_1_1pull__t.html#a1c34d2af5697348b7b40e5f84ea952a6">00051</a>         <a class="code" href="classzmq_1_1fq__t.html">fq_t</a> <a class="code" href="classzmq_1_1pull__t.html#a1c34d2af5697348b7b40e5f84ea952a6">fq</a>;
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053         <a class="code" href="classzmq_1_1pull__t.html#adbc52111992a9a29fc25843de19bc71a">pull_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1pull__t.html">pull_t</a>&amp;);
-<a name="l00054"></a>00054         <span class="keyword">const</span> <a class="code" href="classzmq_1_1pull__t.html">pull_t</a> &amp;<a class="code" href="classzmq_1_1pull__t.html#aecdc7625e07d38d2848796c0effb50f7">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1pull__t.html">pull_t</a>&amp;);
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056     };
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058 }
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060 <span class="preprocessor">#endif</span>
+<a name="l00047"></a>00047     <span class="keyword">private</span>:
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049         <span class="comment">//  Fair queueing object for inbound pipes.</span>
+<a name="l00050"></a><a class="code" href="classzmq_1_1pull__t.html#a1c34d2af5697348b7b40e5f84ea952a6">00050</a>         <a class="code" href="classzmq_1_1fq__t.html">fq_t</a> <a class="code" href="classzmq_1_1pull__t.html#a1c34d2af5697348b7b40e5f84ea952a6">fq</a>;
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052         <a class="code" href="classzmq_1_1pull__t.html#adbc52111992a9a29fc25843de19bc71a">pull_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1pull__t.html">pull_t</a>&amp;);
+<a name="l00053"></a>00053         <span class="keyword">const</span> <a class="code" href="classzmq_1_1pull__t.html">pull_t</a> &amp;<a class="code" href="classzmq_1_1pull__t.html#aecdc7625e07d38d2848796c0effb50f7">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1pull__t.html">pull_t</a>&amp;);
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055     };
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057 }
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -181,7 +180,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:07 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:39 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

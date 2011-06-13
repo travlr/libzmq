@@ -188,14 +188,14 @@ function toggleVisibility(linkObj) {
 <a name="l00081"></a>00081         tmpbuf [0] = (<span class="keywordtype">unsigned</span> char) size;
 <a name="l00082"></a>00082         tmpbuf [1] = (in_progress.flags () &amp; ~<a class="code" href="classzmq_1_1msg__t.html">msg_t</a>::shared);
 <a name="l00083"></a>00083         next_step (tmpbuf, 2, &amp;<a class="code" href="classzmq_1_1encoder__t.html#ac552cef6a68dbf0640465bcf2911dd1e">encoder_t::size_ready</a>,
-<a name="l00084"></a>00084             !(in_progress.flags () &amp; <a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>));
+<a name="l00084"></a>00084             !(in_progress.flags () &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>));
 <a name="l00085"></a>00085     }
 <a name="l00086"></a>00086     <span class="keywordflow">else</span> {
 <a name="l00087"></a>00087         tmpbuf [0] = 0xff;
 <a name="l00088"></a>00088         put_uint64 (tmpbuf + 1, size);
 <a name="l00089"></a>00089         tmpbuf [9] = (in_progress.flags () &amp; ~<a class="code" href="classzmq_1_1msg__t.html">msg_t</a>::shared);
 <a name="l00090"></a>00090         next_step (tmpbuf, 10, &amp;<a class="code" href="classzmq_1_1encoder__t.html#ac552cef6a68dbf0640465bcf2911dd1e">encoder_t::size_ready</a>,
-<a name="l00091"></a>00091             !(in_progress.flags () &amp; <a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>));
+<a name="l00091"></a>00091             !(in_progress.flags () &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>));
 <a name="l00092"></a>00092     }
 <a name="l00093"></a>00093     <span class="keywordflow">return</span> <span class="keyword">true</span>;
 <a name="l00094"></a>00094 }
@@ -215,7 +215,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:05 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:38 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

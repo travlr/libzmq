@@ -136,27 +136,27 @@ function toggleVisibility(linkObj) {
 <a name="l00029"></a>00029 <span class="keyword">namespace </span>zmq
 <a name="l00030"></a>00030 {
 <a name="l00031"></a>00031 
-<a name="l00032"></a><a class="code" href="classzmq_1_1xreq__t.html">00032</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1xreq__t.html">xreq_t</a> : <span class="keyword">public</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a>
-<a name="l00033"></a>00033     {
-<a name="l00034"></a>00034     <span class="keyword">public</span>:
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036         <a class="code" href="classzmq_1_1xreq__t.html#a804924b5ba20f47e3db016816628e93d">xreq_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1ctx__t.html">ctx_t</a> *parent_, uint32_t tid_);
-<a name="l00037"></a>00037         <a class="code" href="classzmq_1_1xreq__t.html#a8477ab39e4355f177ae314f09939fb8b">~xreq_t</a> ();
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039     <span class="keyword">protected</span>:
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041         <span class="comment">//  Overloads of functions from socket_base_t.</span>
-<a name="l00042"></a>00042         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xreq__t.html#aee28b8f079e727eb35b3262d8abc6fdf">xattach_pipes</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1reader__t.html">reader_t</a> *inpipe_, <span class="keyword">class</span> <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *outpipe_,
-<a name="l00043"></a>00043             <span class="keyword">const</span> blob_t &amp;peer_identity_);
+<a name="l00032"></a><a class="code" href="classzmq_1_1xreq__t.html">00032</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1xreq__t.html">xreq_t</a> :
+<a name="l00033"></a>00033         <span class="keyword">public</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a>
+<a name="l00034"></a>00034     {
+<a name="l00035"></a>00035     <span class="keyword">public</span>:
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037         <a class="code" href="classzmq_1_1xreq__t.html#a804924b5ba20f47e3db016816628e93d">xreq_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1ctx__t.html">ctx_t</a> *parent_, uint32_t tid_);
+<a name="l00038"></a>00038         <a class="code" href="classzmq_1_1xreq__t.html#a8477ab39e4355f177ae314f09939fb8b">~xreq_t</a> ();
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040     <span class="keyword">protected</span>:
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042         <span class="comment">//  Overloads of functions from socket_base_t.</span>
+<a name="l00043"></a>00043         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xreq__t.html#a5785d8c03d0fbf8522e8e118410bf13f">xattach_pipe</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, <span class="keyword">const</span> blob_t &amp;peer_identity_);
 <a name="l00044"></a>00044         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1xreq__t.html#abc1ffbf9a4b7a9b1e93aa452e913f172">xsend</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
 <a name="l00045"></a>00045         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1xreq__t.html#aa7bea550a936a44293cfa5452f334109">xrecv</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
 <a name="l00046"></a>00046         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xreq__t.html#af943db4e8c8889467c93a7bcf24b79e4">xhas_in</a> ();
 <a name="l00047"></a>00047         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xreq__t.html#a4090f7e6c099e3472a4d8e62d706c48d">xhas_out</a> ();
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049     <span class="keyword">private</span>:
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051         <span class="comment">//  Hook into the termination process.</span>
-<a name="l00052"></a>00052         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xreq__t.html#ad30c447198f8d21ed1aece589068ea43">process_term</a> (<span class="keywordtype">int</span> linger_);
+<a name="l00048"></a>00048         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xreq__t.html#af4cc8ac25d28cef13f783f460420b5b6">xread_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00049"></a>00049         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xreq__t.html#a91ecdd2effebc5fc17b9513aadb58c95">xwrite_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00050"></a>00050         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xreq__t.html#a71466f3c65d9a0d931b30bea4ac4cfbc">xterminated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052     <span class="keyword">private</span>:
 <a name="l00053"></a>00053 
 <a name="l00054"></a>00054         <span class="comment">//  Messages are fair-queued from inbound pipes. And load-balanced to</span>
 <a name="l00055"></a>00055         <span class="comment">//  the outbound pipes.</span>
@@ -186,7 +186,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:08 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:40 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

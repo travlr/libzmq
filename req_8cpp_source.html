@@ -155,14 +155,14 @@ function toggleVisibility(linkObj) {
 <a name="l00048"></a>00048         <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> prefix;
 <a name="l00049"></a>00049         <span class="keywordtype">int</span> rc = prefix.<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
 <a name="l00050"></a>00050         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00051"></a>00051         prefix.<a class="code" href="classzmq_1_1msg__t.html#aea7736e7955f2125dd6298baee851ca7">set_flags</a> (<a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>);
+<a name="l00051"></a>00051         prefix.<a class="code" href="classzmq_1_1msg__t.html#aea7736e7955f2125dd6298baee851ca7">set_flags</a> (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>);
 <a name="l00052"></a>00052         rc = <a class="code" href="classzmq_1_1xreq__t.html#abc1ffbf9a4b7a9b1e93aa452e913f172">xreq_t::xsend</a> (&amp;prefix, flags_);
 <a name="l00053"></a>00053         <span class="keywordflow">if</span> (rc != 0)
 <a name="l00054"></a>00054             <span class="keywordflow">return</span> rc;
 <a name="l00055"></a>00055         message_begins = <span class="keyword">false</span>;
 <a name="l00056"></a>00056     }
 <a name="l00057"></a>00057 
-<a name="l00058"></a>00058     <span class="keywordtype">bool</span> more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>;
+<a name="l00058"></a>00058     <span class="keywordtype">bool</span> more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>;
 <a name="l00059"></a>00059 
 <a name="l00060"></a>00060     <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1xreq__t.html#abc1ffbf9a4b7a9b1e93aa452e913f172">xreq_t::xsend</a> (msg_, flags_);
 <a name="l00061"></a>00061     <span class="keywordflow">if</span> (rc != 0)
@@ -190,7 +190,7 @@ function toggleVisibility(linkObj) {
 <a name="l00083"></a>00083         <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1xreq__t.html#aa7bea550a936a44293cfa5452f334109">xreq_t::xrecv</a> (msg_, flags_);
 <a name="l00084"></a>00084         <span class="keywordflow">if</span> (rc != 0)
 <a name="l00085"></a>00085             <span class="keywordflow">return</span> rc;
-<a name="l00086"></a>00086         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>);
+<a name="l00086"></a>00086         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>);
 <a name="l00087"></a>00087         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a9089fc10aecfab67a826d3514ef7a7a7">size</a> () == 0);
 <a name="l00088"></a>00088         message_begins = <span class="keyword">false</span>;
 <a name="l00089"></a>00089     }
@@ -200,7 +200,7 @@ function toggleVisibility(linkObj) {
 <a name="l00093"></a>00093         <span class="keywordflow">return</span> rc;
 <a name="l00094"></a>00094 
 <a name="l00095"></a>00095     <span class="comment">//  If the reply is fully received, flip the FSM into request-sending state.</span>
-<a name="l00096"></a>00096     <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>)) {
+<a name="l00096"></a>00096     <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>)) {
 <a name="l00097"></a>00097         receiving_reply = <span class="keyword">false</span>;
 <a name="l00098"></a>00098         message_begins = <span class="keyword">true</span>;
 <a name="l00099"></a>00099     }
@@ -241,7 +241,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:07 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:39 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

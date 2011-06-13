@@ -128,12 +128,14 @@ function toggleVisibility(linkObj) {
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1trie__t.html#a475953f88453a0a820e6edb4dfc51e7f">trie_t</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1trie__t.html#aa9a686de7a3d302b44d34e045adf5926">~trie_t</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1trie__t.html#a0a201f6406876f0f9a89f45d52e2c99c">add</a> (unsigned char *prefix_, size_t size_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1trie__t.html#a94c4c5b59168b13bf7432f6db59b0c5c">add</a> (unsigned char *prefix_, size_t size_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1trie__t.html#aae26e0500d7d81c4835ff5b619498ed6">apply</a> (void(*func_)(unsigned char *data_, size_t size_, void *arg_), void *arg_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1trie__t.html#a65c117c92c8c9c9ff32fcc2c38f9f548">check</a> (unsigned char *data_, size_t size_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1trie__t.html#ab15f7f0440899870e962f0697e89b3ac">rm</a> (unsigned char *prefix_, size_t size_)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1trie__t.html#a480c5aab44643295043053b9b4a53fec">trie_t</a> (const <a class="el" href="classzmq_1_1trie__t.html">trie_t</a> &amp;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1trie__t.html#a46bb7cca0c7c922d55257e68b9a5d8c9">apply_helper</a> (unsigned char **buff_, size_t buffsize_, size_t maxbuffsize_, void(*func_)(unsigned char *data_, size_t size_, void *arg_), void *arg_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classzmq_1_1trie__t.html">trie_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1trie__t.html#a10cee3607d90cab2970ea32dd5479555">operator=</a> (const <a class="el" href="classzmq_1_1trie__t.html">trie_t</a> &amp;)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -142,7 +144,7 @@ Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" >union {</td></tr>
 <tr><td class="memItemLeft" >&#160;&#160;&#160;class <a class="el" href="classzmq_1_1trie__t.html">trie_t</a> *&#160;&#160;&#160;<a class="el" href="classzmq_1_1trie__t.html#aa9c8884c663f3ad3d1e40d64f9522ce3">node</a></td></tr>
 <tr><td class="memItemLeft" >&#160;&#160;&#160;class <a class="el" href="classzmq_1_1trie__t.html">trie_t</a> **&#160;&#160;&#160;<a class="el" href="classzmq_1_1trie__t.html#afe914c9bb7191dcd3341acdf7a334550">table</a></td></tr>
-<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a></td></tr>
+<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1trie__t.html#a6af7c0eb12ab0fc21b93ce2a8a45b685">next</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1trie__t.html#a4c3411a88044a450f4ddabfeee77a5a5">refcnt</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
@@ -203,12 +205,12 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a0a201f6406876f0f9a89f45d52e2c99c"></a><!-- doxytag: member="zmq::trie_t::add" ref="a0a201f6406876f0f9a89f45d52e2c99c" args="(unsigned char *prefix_, size_t size_)" -->
+<a class="anchor" id="a94c4c5b59168b13bf7432f6db59b0c5c"></a><!-- doxytag: member="zmq::trie_t::add" ref="a94c4c5b59168b13bf7432f6db59b0c5c" args="(unsigned char *prefix_, size_t size_)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zmq::trie_t::add </td>
+          <td class="memname">bool zmq::trie_t::add </td>
           <td>(</td>
           <td class="paramtype">unsigned char *&#160;</td>
           <td class="paramname"><em>prefix_</em>, </td>
@@ -230,7 +232,85 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="trie_8cpp_source.html#l00053">53</a> of file <a class="el" href="trie_8cpp_source.html">trie.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>, <a class="el" href="trie_8hpp_source.html#l00048">node</a>, <a class="el" href="trie_8hpp_source.html#l00049">table</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="trie_8hpp_source.html#l00064">node</a>, <a class="el" href="trie_8hpp_source.html#l00065">table</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aae26e0500d7d81c4835ff5b619498ed6"></a><!-- doxytag: member="zmq::trie_t::apply" ref="aae26e0500d7d81c4835ff5b619498ed6" args="(void(*func_)(unsigned char *data_, size_t size_, void *arg_), void *arg_)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmq::trie_t::apply </td>
+          <td>(</td>
+          <td class="paramtype">void(*)(unsigned char *data_, size_t size_, void *arg_)&#160;</td>
+          <td class="paramname"><em>func_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="trie_8cpp_source.html#l00185">185</a> of file <a class="el" href="trie_8cpp_source.html">trie.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a46bb7cca0c7c922d55257e68b9a5d8c9"></a><!-- doxytag: member="zmq::trie_t::apply_helper" ref="a46bb7cca0c7c922d55257e68b9a5d8c9" args="(unsigned char **buff_, size_t buffsize_, size_t maxbuffsize_, void(*func_)(unsigned char *data_, size_t size_, void *arg_), void *arg_)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmq::trie_t::apply_helper </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char **&#160;</td>
+          <td class="paramname"><em>buff_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>buffsize_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>maxbuffsize_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(unsigned char *data_, size_t size_, void *arg_)&#160;</td>
+          <td class="paramname"><em>func_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="trie_8cpp_source.html#l00193">193</a> of file <a class="el" href="trie_8cpp_source.html">trie.cpp</a>.</p>
+
+<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -259,9 +339,9 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="trie_8cpp_source.html#l00149">149</a> of file <a class="el" href="trie_8cpp_source.html">trie.cpp</a>.</p>
+<p>Definition at line <a class="el" href="trie_8cpp_source.html#l00151">151</a> of file <a class="el" href="trie_8cpp_source.html">trie.cpp</a>.</p>
 
-<p>References <a class="el" href="trie_8hpp_source.html#l00046">count</a>, <a class="el" href="trie_8hpp_source.html#l00045">min</a>, <a class="el" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">next</a>, <a class="el" href="trie_8hpp_source.html#l00048">node</a>, <a class="el" href="trie_8hpp_source.html#l00044">refcnt</a>, and <a class="el" href="trie_8hpp_source.html#l00049">table</a>.</p>
+<p>References <a class="el" href="trie_8hpp_source.html#l00062">count</a>, <a class="el" href="trie_8hpp_source.html#l00061">min</a>, <a class="el" href="classzmq_1_1trie__t.html#a6af7c0eb12ab0fc21b93ce2a8a45b685">next</a>, <a class="el" href="trie_8hpp_source.html#l00064">node</a>, <a class="el" href="trie_8hpp_source.html#l00060">refcnt</a>, and <a class="el" href="trie_8hpp_source.html#l00065">table</a>.</p>
 
 </div>
 </div>
@@ -309,7 +389,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="trie_8cpp_source.html#l00127">127</a> of file <a class="el" href="trie_8cpp_source.html">trie.cpp</a>.</p>
 
-<p>References <a class="el" href="trie_8hpp_source.html#l00048">node</a>, <a class="el" href="trie_8cpp_source.html#l00127">rm()</a>, and <a class="el" href="trie_8hpp_source.html#l00049">table</a>.</p>
+<p>References <a class="el" href="trie_8hpp_source.html#l00064">node</a>, <a class="el" href="trie_8cpp_source.html#l00127">rm()</a>, and <a class="el" href="trie_8hpp_source.html#l00065">table</a>.</p>
 
 <p>Referenced by <a class="el" href="trie_8cpp_source.html#l00127">rm()</a>.</p>
 
@@ -345,9 +425,9 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="trie_8hpp_source.html#l00046">46</a> of file <a class="el" href="trie_8hpp_source.html">trie.hpp</a>.</p>
+<p>Definition at line <a class="el" href="trie_8hpp_source.html#l00062">62</a> of file <a class="el" href="trie_8hpp_source.html">trie.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="trie_8cpp_source.html#l00149">check()</a>.</p>
+<p>Referenced by <a class="el" href="trie_8cpp_source.html#l00151">check()</a>.</p>
 
 </div>
 </div>
@@ -362,24 +442,24 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="trie_8hpp_source.html#l00045">45</a> of file <a class="el" href="trie_8hpp_source.html">trie.hpp</a>.</p>
+<p>Definition at line <a class="el" href="trie_8hpp_source.html#l00061">61</a> of file <a class="el" href="trie_8hpp_source.html">trie.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="trie_8cpp_source.html#l00149">check()</a>.</p>
+<p>Referenced by <a class="el" href="trie_8cpp_source.html#l00151">check()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a4218346c8b77d51f4320191fb59d20ab"></a><!-- doxytag: member="zmq::trie_t::next" ref="a4218346c8b77d51f4320191fb59d20ab" args="" -->
+<a class="anchor" id="a6af7c0eb12ab0fc21b93ce2a8a45b685"></a><!-- doxytag: member="zmq::trie_t::next" ref="a6af7c0eb12ab0fc21b93ce2a8a45b685" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">union { ... }   <a class="el" href="classzmq_1_1trie__t.html#a4218346c8b77d51f4320191fb59d20ab">zmq::trie_t::next</a><code> [private]</code></td>
+          <td class="memname">union { ... }   <a class="el" href="classzmq_1_1trie__t.html#a6af7c0eb12ab0fc21b93ce2a8a45b685">zmq::trie_t::next</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Referenced by <a class="el" href="trie_8cpp_source.html#l00149">check()</a>.</p>
+<p>Referenced by <a class="el" href="trie_8cpp_source.html#l00151">check()</a>.</p>
 
 </div>
 </div>
@@ -394,9 +474,9 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="trie_8hpp_source.html#l00048">48</a> of file <a class="el" href="trie_8hpp_source.html">trie.hpp</a>.</p>
+<p>Definition at line <a class="el" href="trie_8hpp_source.html#l00064">64</a> of file <a class="el" href="trie_8hpp_source.html">trie.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="trie_8cpp_source.html#l00053">add()</a>, <a class="el" href="trie_8cpp_source.html#l00149">check()</a>, and <a class="el" href="trie_8cpp_source.html#l00127">rm()</a>.</p>
+<p>Referenced by <a class="el" href="trie_8cpp_source.html#l00053">add()</a>, <a class="el" href="trie_8cpp_source.html#l00151">check()</a>, and <a class="el" href="trie_8cpp_source.html#l00127">rm()</a>.</p>
 
 </div>
 </div>
@@ -411,9 +491,9 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="trie_8hpp_source.html#l00044">44</a> of file <a class="el" href="trie_8hpp_source.html">trie.hpp</a>.</p>
+<p>Definition at line <a class="el" href="trie_8hpp_source.html#l00060">60</a> of file <a class="el" href="trie_8hpp_source.html">trie.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="trie_8cpp_source.html#l00149">check()</a>.</p>
+<p>Referenced by <a class="el" href="trie_8cpp_source.html#l00151">check()</a>.</p>
 
 </div>
 </div>
@@ -428,9 +508,9 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="trie_8hpp_source.html#l00049">49</a> of file <a class="el" href="trie_8hpp_source.html">trie.hpp</a>.</p>
+<p>Definition at line <a class="el" href="trie_8hpp_source.html#l00065">65</a> of file <a class="el" href="trie_8hpp_source.html">trie.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="trie_8cpp_source.html#l00053">add()</a>, <a class="el" href="trie_8cpp_source.html#l00149">check()</a>, and <a class="el" href="trie_8cpp_source.html#l00127">rm()</a>.</p>
+<p>Referenced by <a class="el" href="trie_8cpp_source.html#l00053">add()</a>, <a class="el" href="trie_8cpp_source.html#l00151">check()</a>, and <a class="el" href="trie_8cpp_source.html#l00127">rm()</a>.</p>
 
 </div>
 </div>
@@ -453,7 +533,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:19 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:59 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

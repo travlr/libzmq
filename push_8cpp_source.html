@@ -131,29 +131,29 @@ function toggleVisibility(linkObj) {
 <a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="msg_8hpp.html">msg.hpp</a>&quot;</span>
 <a name="l00025"></a>00025 
 <a name="l00026"></a><a class="code" href="classzmq_1_1push__t.html#ab631bd37c415846c08edd6b11ed09c5a">00026</a> <a class="code" href="classzmq_1_1push__t.html#ab631bd37c415846c08edd6b11ed09c5a">zmq::push_t::push_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1ctx__t.html">ctx_t</a> *parent_, uint32_t tid_) :
-<a name="l00027"></a>00027     <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> (parent_, tid_),
-<a name="l00028"></a>00028     lb (this)
-<a name="l00029"></a>00029 {
-<a name="l00030"></a>00030     <a class="code" href="classzmq_1_1own__t.html#a2efb752f6444d140ee9ee928559c9b02">options</a>.<a class="code" href="structzmq_1_1options__t.html#a09b8e840a00a79aa02c1e574f8ad817a">type</a> = <a class="code" href="zmq_8h.html#aae68598254ac93c3ca95d996d66b53fa">ZMQ_PUSH</a>;
-<a name="l00031"></a>00031     <a class="code" href="classzmq_1_1own__t.html#a2efb752f6444d140ee9ee928559c9b02">options</a>.<a class="code" href="structzmq_1_1options__t.html#adee54de16c503c8f5f2dc4d549225d50">requires_in</a> = <span class="keyword">false</span>;
-<a name="l00032"></a>00032     <a class="code" href="classzmq_1_1own__t.html#a2efb752f6444d140ee9ee928559c9b02">options</a>.<a class="code" href="structzmq_1_1options__t.html#a3c463ab812d4ffc9fd414ee80f9cc349">requires_out</a> = <span class="keyword">true</span>;
-<a name="l00033"></a>00033 }
-<a name="l00034"></a>00034 
-<a name="l00035"></a><a class="code" href="classzmq_1_1push__t.html#a0000b8905620a5057a5dc6b40b8617d7">00035</a> <a class="code" href="classzmq_1_1push__t.html#a0000b8905620a5057a5dc6b40b8617d7">zmq::push_t::~push_t</a> ()
-<a name="l00036"></a>00036 {
-<a name="l00037"></a>00037 }
-<a name="l00038"></a>00038 
-<a name="l00039"></a><a class="code" href="classzmq_1_1push__t.html#a31a22c79362eebd2388e842a57671c23">00039</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1push__t.html#a31a22c79362eebd2388e842a57671c23">zmq::push_t::xattach_pipes</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1reader__t.html">reader_t</a> *inpipe_,
-<a name="l00040"></a>00040     <span class="keyword">class</span> <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *outpipe_, <span class="keyword">const</span> blob_t &amp;peer_identity_)
-<a name="l00041"></a>00041 {
-<a name="l00042"></a>00042     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!inpipe_ &amp;&amp; outpipe_);
-<a name="l00043"></a>00043     lb.attach (outpipe_);
-<a name="l00044"></a>00044 }
-<a name="l00045"></a>00045 
-<a name="l00046"></a><a class="code" href="classzmq_1_1push__t.html#a8e0a923100377a7bc1c46f0350160caa">00046</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1push__t.html#a8e0a923100377a7bc1c46f0350160caa">zmq::push_t::process_term</a> (<span class="keywordtype">int</span> linger_)
-<a name="l00047"></a>00047 {
-<a name="l00048"></a>00048     lb.terminate ();
-<a name="l00049"></a>00049     <a class="code" href="classzmq_1_1socket__base__t.html#a50e07e9557a64314204795949f5af396">socket_base_t::process_term</a> (linger_);
+<a name="l00027"></a>00027     <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> (parent_, tid_)
+<a name="l00028"></a>00028 {
+<a name="l00029"></a>00029     <a class="code" href="classzmq_1_1own__t.html#a2efb752f6444d140ee9ee928559c9b02">options</a>.<a class="code" href="structzmq_1_1options__t.html#a09b8e840a00a79aa02c1e574f8ad817a">type</a> = <a class="code" href="zmq_8h.html#aae68598254ac93c3ca95d996d66b53fa">ZMQ_PUSH</a>;
+<a name="l00030"></a>00030 }
+<a name="l00031"></a>00031 
+<a name="l00032"></a><a class="code" href="classzmq_1_1push__t.html#a0000b8905620a5057a5dc6b40b8617d7">00032</a> <a class="code" href="classzmq_1_1push__t.html#a0000b8905620a5057a5dc6b40b8617d7">zmq::push_t::~push_t</a> ()
+<a name="l00033"></a>00033 {
+<a name="l00034"></a>00034 }
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="classzmq_1_1push__t.html#a7f88fef02f87ae39317711f1b0af9316">00036</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1push__t.html#a7f88fef02f87ae39317711f1b0af9316">zmq::push_t::xattach_pipe</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, <span class="keyword">const</span> blob_t &amp;peer_identity_)
+<a name="l00037"></a>00037 {
+<a name="l00038"></a>00038     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (pipe_);
+<a name="l00039"></a>00039     lb.attach (pipe_);
+<a name="l00040"></a>00040 }
+<a name="l00041"></a>00041 
+<a name="l00042"></a><a class="code" href="classzmq_1_1push__t.html#ae1b07292758d40a9d49f67b3d7da53c4">00042</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1push__t.html#ae1b07292758d40a9d49f67b3d7da53c4">zmq::push_t::xwrite_activated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
+<a name="l00043"></a>00043 {
+<a name="l00044"></a>00044     lb.activated (pipe_);
+<a name="l00045"></a>00045 }
+<a name="l00046"></a>00046 
+<a name="l00047"></a><a class="code" href="classzmq_1_1push__t.html#a2c6d7949e2f151381f6f22b45042bd8b">00047</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1push__t.html#a2c6d7949e2f151381f6f22b45042bd8b">zmq::push_t::xterminated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
+<a name="l00048"></a>00048 {
+<a name="l00049"></a>00049     lb.terminated (pipe_);
 <a name="l00050"></a>00050 }
 <a name="l00051"></a>00051 
 <a name="l00052"></a><a class="code" href="classzmq_1_1push__t.html#a226b9845c237b086ecb0e43d32d188f4">00052</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1push__t.html#a226b9845c237b086ecb0e43d32d188f4">zmq::push_t::xsend</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
@@ -182,7 +182,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:07 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:39 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

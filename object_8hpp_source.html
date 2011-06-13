@@ -173,14 +173,14 @@ function toggleVisibility(linkObj) {
 <a name="l00066"></a>00066         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#ae7d1be5035efda04d5b0f5cb5ee1aff6">send_attach</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1session__t.html">session_t</a> *destination_,
 <a name="l00067"></a>00067              <span class="keyword">struct</span> <a class="code" href="structzmq_1_1i__engine.html">i_engine</a> *engine_, <span class="keyword">const</span> blob_t &amp;peer_identity_,
 <a name="l00068"></a>00068              <span class="keywordtype">bool</span> inc_seqnum_ = <span class="keyword">true</span>);
-<a name="l00069"></a>00069         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#aefe7f36f1370393a301fe849b190b022">send_bind</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a> *destination_,
-<a name="l00070"></a>00070              <span class="keyword">class</span> <a class="code" href="classzmq_1_1reader__t.html">reader_t</a> *in_pipe_, <span class="keyword">class</span> <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *out_pipe_,
-<a name="l00071"></a>00071              <span class="keyword">const</span> blob_t &amp;peer_identity_, <span class="keywordtype">bool</span> inc_seqnum_ = <span class="keyword">true</span>);
-<a name="l00072"></a>00072         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a6019509926465c8f21b7cf5ca5e64fe4">send_activate_reader</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1reader__t.html">reader_t</a> *destination_);
-<a name="l00073"></a>00073         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a215313f441429d7a01a26c4b7b1b97c0">send_activate_writer</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *destination_,
-<a name="l00074"></a>00074              uint64_t msgs_read_);
-<a name="l00075"></a>00075         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#aca6916d9f3d21d8ddd29efa697b5c236">send_pipe_term</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *destination_);
-<a name="l00076"></a>00076         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a659eda516b69e32e9d86284cebace090">send_pipe_term_ack</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1reader__t.html">reader_t</a> *destination_);
+<a name="l00069"></a>00069         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a3a68cbdb8a52eb4b6eb84d34afdf4677">send_bind</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a> *destination_, <span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_,
+<a name="l00070"></a>00070              <span class="keyword">const</span> blob_t &amp;peer_identity_, <span class="keywordtype">bool</span> inc_seqnum_ = <span class="keyword">true</span>);
+<a name="l00071"></a>00071         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#ac870d30c4629955bf7e8c1d6dc768ca2">send_activate_read</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *destination_);
+<a name="l00072"></a>00072         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a659c03bf2997f35a987b64aeb2da5c9f">send_activate_write</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *destination_,
+<a name="l00073"></a>00073              uint64_t msgs_read_);
+<a name="l00074"></a>00074         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a57182450ccbb7042d9b775edf84c6197">send_hiccup</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *destination_, <span class="keywordtype">void</span> *pipe_);
+<a name="l00075"></a>00075         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a644003342f2717a2aeba7883ee71ff0a">send_pipe_term</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *destination_);
+<a name="l00076"></a>00076         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#ad68b1dfc1bffe67b70c5a8dc736cfb14">send_pipe_term_ack</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *destination_);
 <a name="l00077"></a>00077         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a238bcfcaecb6c47b2644dfb7860c7201">send_term_req</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a> *destination_,
 <a name="l00078"></a>00078             <span class="keyword">class</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a> *object_);
 <a name="l00079"></a>00079         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a7b2ab2e5928771704e97658f5a9966d0">send_term</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a> *destination_, <span class="keywordtype">int</span> linger_);
@@ -196,40 +196,41 @@ function toggleVisibility(linkObj) {
 <a name="l00089"></a>00089         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a48b588321f4fdbe7aa573300fc0976f1">process_own</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a> *object_);
 <a name="l00090"></a>00090         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#ad0b54980f3a60dac2a68ced302d7a835">process_attach</a> (<span class="keyword">struct</span> <a class="code" href="structzmq_1_1i__engine.html">i_engine</a> *engine_,
 <a name="l00091"></a>00091             <span class="keyword">const</span> blob_t &amp;peer_identity_);
-<a name="l00092"></a>00092         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a640914b51beb9629e1048199ade635d5">process_bind</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1reader__t.html">reader_t</a> *in_pipe_,
-<a name="l00093"></a>00093             <span class="keyword">class</span> <a class="code" href="classzmq_1_1writer__t.html">writer_t</a> *out_pipe_, <span class="keyword">const</span> blob_t &amp;peer_identity_);
-<a name="l00094"></a>00094         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#ac4cb21fd4f79080ff94f74a071032e7c">process_activate_reader</a> ();
-<a name="l00095"></a>00095         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#adae0d107731853c76b907cd9edaa1912">process_activate_writer</a> (uint64_t msgs_read_);
-<a name="l00096"></a>00096         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a66d6b70e97b659523f89e27062b75461">process_pipe_term</a> ();
-<a name="l00097"></a>00097         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a756d189894a80ff4f9b76f85ea5241f2">process_pipe_term_ack</a> ();
-<a name="l00098"></a>00098         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a344a7f21ac394b3154c900f9be2d9021">process_term_req</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a> *object_);
-<a name="l00099"></a>00099         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a1aecc6e727edfe308fa8144b3d68ba4f">process_term</a> (<span class="keywordtype">int</span> linger_);
-<a name="l00100"></a>00100         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a716af8e4fb568b6f2589b73eb8953046">process_term_ack</a> ();
-<a name="l00101"></a>00101         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#acb3ffd3e59f705c54b2449d92230db4e">process_reap</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_);
-<a name="l00102"></a>00102         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#abee5cbec3be7311e39ad5cfee077aefe">process_reaped</a> ();
-<a name="l00103"></a>00103 
-<a name="l00104"></a>00104         <span class="comment">//  Special handler called after a command that requires a seqnum</span>
-<a name="l00105"></a>00105         <span class="comment">//  was processed. The implementation should catch up with its counter</span>
-<a name="l00106"></a>00106         <span class="comment">//  of processed commands here.</span>
-<a name="l00107"></a>00107         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a05acfcecb80a5e940eaa1fe31a7a16c0">process_seqnum</a> ();
-<a name="l00108"></a>00108 
-<a name="l00109"></a>00109     <span class="keyword">private</span>:
-<a name="l00110"></a>00110 
-<a name="l00111"></a>00111         <span class="comment">//  Context provides access to the global state.</span>
-<a name="l00112"></a><a class="code" href="classzmq_1_1object__t.html#a5313713abade537f7bff87afca7fe87d">00112</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1ctx__t.html">ctx_t</a> *<a class="code" href="classzmq_1_1object__t.html#a5313713abade537f7bff87afca7fe87d">ctx</a>;
-<a name="l00113"></a>00113 
-<a name="l00114"></a>00114         <span class="comment">//  Thread ID of the thread the object belongs to.</span>
-<a name="l00115"></a><a class="code" href="classzmq_1_1object__t.html#a85efc078219888868ae23ed6dc4f7600">00115</a>         uint32_t <a class="code" href="classzmq_1_1object__t.html#a85efc078219888868ae23ed6dc4f7600">tid</a>;
-<a name="l00116"></a>00116 
-<a name="l00117"></a>00117         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a3adfcc82a0c622e8ba5fd9543c3b8403">send_command</a> (<a class="code" href="structzmq_1_1command__t.html">command_t</a> &amp;cmd_);
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119         <a class="code" href="classzmq_1_1object__t.html#a5342a291dc2fc4e39c0904413921935d">object_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1object__t.html">object_t</a>&amp;);
-<a name="l00120"></a>00120         <span class="keyword">const</span> <a class="code" href="classzmq_1_1object__t.html">object_t</a> &amp;<a class="code" href="classzmq_1_1object__t.html#a02f815bc831d08fcd81dc0f477215e85">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1object__t.html">object_t</a>&amp;);
-<a name="l00121"></a>00121     };
-<a name="l00122"></a>00122 
-<a name="l00123"></a>00123 }
-<a name="l00124"></a>00124 
-<a name="l00125"></a>00125 <span class="preprocessor">#endif</span>
+<a name="l00092"></a>00092         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a60ecd93e1e17c49991b15bb4bccafd30">process_bind</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_,
+<a name="l00093"></a>00093             <span class="keyword">const</span> blob_t &amp;peer_identity_);
+<a name="l00094"></a>00094         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a5893941b5cdede6c2b01110000a9590c">process_activate_read</a> ();
+<a name="l00095"></a>00095         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a16fecaa24bc301319f1ec2b777815f78">process_activate_write</a> (uint64_t msgs_read_);
+<a name="l00096"></a>00096         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a82264b374ac8ddea79dd3e357545c63f">process_hiccup</a> (<span class="keywordtype">void</span> *pipe_);
+<a name="l00097"></a>00097         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a66d6b70e97b659523f89e27062b75461">process_pipe_term</a> ();
+<a name="l00098"></a>00098         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a756d189894a80ff4f9b76f85ea5241f2">process_pipe_term_ack</a> ();
+<a name="l00099"></a>00099         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a344a7f21ac394b3154c900f9be2d9021">process_term_req</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a> *object_);
+<a name="l00100"></a>00100         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a1aecc6e727edfe308fa8144b3d68ba4f">process_term</a> (<span class="keywordtype">int</span> linger_);
+<a name="l00101"></a>00101         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a716af8e4fb568b6f2589b73eb8953046">process_term_ack</a> ();
+<a name="l00102"></a>00102         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#acb3ffd3e59f705c54b2449d92230db4e">process_reap</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_);
+<a name="l00103"></a>00103         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#abee5cbec3be7311e39ad5cfee077aefe">process_reaped</a> ();
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105         <span class="comment">//  Special handler called after a command that requires a seqnum</span>
+<a name="l00106"></a>00106         <span class="comment">//  was processed. The implementation should catch up with its counter</span>
+<a name="l00107"></a>00107         <span class="comment">//  of processed commands here.</span>
+<a name="l00108"></a>00108         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a05acfcecb80a5e940eaa1fe31a7a16c0">process_seqnum</a> ();
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110     <span class="keyword">private</span>:
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112         <span class="comment">//  Context provides access to the global state.</span>
+<a name="l00113"></a><a class="code" href="classzmq_1_1object__t.html#a5313713abade537f7bff87afca7fe87d">00113</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1ctx__t.html">ctx_t</a> *<a class="code" href="classzmq_1_1object__t.html#a5313713abade537f7bff87afca7fe87d">ctx</a>;
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115         <span class="comment">//  Thread ID of the thread the object belongs to.</span>
+<a name="l00116"></a><a class="code" href="classzmq_1_1object__t.html#a85efc078219888868ae23ed6dc4f7600">00116</a>         uint32_t <a class="code" href="classzmq_1_1object__t.html#a85efc078219888868ae23ed6dc4f7600">tid</a>;
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1object__t.html#a3adfcc82a0c622e8ba5fd9543c3b8403">send_command</a> (<a class="code" href="structzmq_1_1command__t.html">command_t</a> &amp;cmd_);
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120         <a class="code" href="classzmq_1_1object__t.html#a5342a291dc2fc4e39c0904413921935d">object_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1object__t.html">object_t</a>&amp;);
+<a name="l00121"></a>00121         <span class="keyword">const</span> <a class="code" href="classzmq_1_1object__t.html">object_t</a> &amp;<a class="code" href="classzmq_1_1object__t.html#a02f815bc831d08fcd81dc0f477215e85">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1object__t.html">object_t</a>&amp;);
+<a name="l00122"></a>00122     };
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124 }
+<a name="l00125"></a>00125 
+<a name="l00126"></a>00126 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -246,7 +247,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:06 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:38 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

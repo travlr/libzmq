@@ -1,14 +1,17 @@
 <map id="G" name="G">
-<area shape="rect" id="node4" href="$classzmq_1_1ctx__t.html" title="zmq::ctx_t" alt="" coords="307,237,389,267"/>
-<area shape="rect" id="node2" href="$classzmq_1_1object__t.html" title="zmq::object_t" alt="" coords="484,344,585,373"/>
-<area shape="rect" id="node11" href="$classzmq_1_1own__t.html" title="zmq::own_t" alt="" coords="403,440,493,469"/>
-<area shape="rect" id="node6" href="$classzmq_1_1mailbox__t.html" title="zmq::mailbox_t" alt="" coords="469,5,579,35"/>
-<area shape="rect" id="node9" href="$classzmq_1_1socket__base__t.html" title="zmq::socket_base_t" alt="" coords="484,520,623,549"/>
-<area shape="rect" id="node14" href="$structzmq_1_1options__t.html" title="zmq::options_t" alt="" coords="353,344,460,373"/>
-<area shape="rect" id="node17" href="$classzmq_1_1atomic__counter__t.html" title="zmq::atomic_counter_t" alt="" coords="104,291,259,320"/>
-<area shape="rect" id="node19" href="$classzmq_1_1mutex__t.html" title="zmq::mutex_t" alt="" coords="5,104,107,133"/>
-<area shape="rect" id="node21" href="$classzmq_1_1array__item__t.html" title="zmq::array_item_t" alt="" coords="637,440,763,469"/>
-<area shape="rect" id="node23" href="$structzmq_1_1i__poll__events.html" title="zmq::i_poll_events" alt="" coords="661,5,792,35"/>
-<area shape="rect" id="node28" href="$classzmq_1_1array__t.html" title="zmq::array_t\&lt; socket_base_t \&gt;" alt="" coords="131,104,333,133"/>
-<area shape="rect" id="node30" href="$classzmq_1_1array__t.html" title="zmq::array_t\&lt; T \&gt;" alt="" coords="169,5,295,35"/>
+<area shape="rect" id="node4" href="$classzmq_1_1ctx__t.html" title="zmq::ctx_t" alt="" coords="737,204,820,233"/>
+<area shape="rect" id="node2" href="$classzmq_1_1object__t.html" title="zmq::object_t" alt="" coords="1056,172,1157,201"/>
+<area shape="rect" id="node11" href="$classzmq_1_1own__t.html" title="zmq::own_t" alt="" coords="1328,225,1419,255"/>
+<area shape="rect" id="node6" href="$classzmq_1_1mailbox__t.html" title="zmq::mailbox_t" alt="" coords="25,109,135,139"/>
+<area shape="rect" id="node9" href="$classzmq_1_1socket__base__t.html" title="zmq::socket_base_t" alt="" coords="1497,328,1636,357"/>
+<area shape="rect" id="node14" href="$structzmq_1_1options__t.html" title="zmq::options_t" alt="" coords="1053,225,1160,255"/>
+<area shape="rect" id="node17" href="$classzmq_1_1atomic__counter__t.html" title="zmq::atomic_counter_t" alt="" coords="845,340,1000,369"/>
+<area shape="rect" id="node19" href="$classzmq_1_1mutex__t.html" title="zmq::mutex_t" alt="" coords="364,353,465,383"/>
+<area shape="rect" id="node21" href="$classzmq_1_1array__item__t.html" title="zmq::array_item_t\&lt;\&gt;" alt="" coords="1303,429,1444,459"/>
+<area shape="rect" id="node23" href="$classzmq_1_1array__item__t.html" title="zmq::array_item_t\&lt; ID \&gt;" alt="" coords="1024,460,1189,489"/>
+<area shape="rect" id="node25" href="$structzmq_1_1i__poll__events.html" title="zmq::i_poll_events" alt="" coords="15,8,145,37"/>
+<area shape="rect" id="node27" href="$structzmq_1_1i__pipe__events.html" title="zmq::i_pipe_events" alt="" coords="1307,483,1440,512"/>
+<area shape="rect" id="node31" href="$classzmq_1_1array__t.html" title="zmq::array_t\&lt; pipe_t, 3 \&gt;" alt="" coords="543,483,711,512"/>
+<area shape="rect" id="node33" href="$classzmq_1_1array__t.html" title="zmq::array_t\&lt; T, ID \&gt;" alt="" coords="5,389,155,419"/>
+<area shape="rect" id="node36" href="$classzmq_1_1array__t.html" title="zmq::array_t\&lt; socket_base_t \&gt;" alt="" coords="313,275,516,304"/>
 </map>

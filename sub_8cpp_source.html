@@ -141,46 +141,42 @@ function toggleVisibility(linkObj) {
 <a name="l00034"></a><a class="code" href="classzmq_1_1sub__t.html#ab582f8ea3a8a1a5f84e60b65745514bf">00034</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1sub__t.html#ab582f8ea3a8a1a5f84e60b65745514bf">zmq::sub_t::xsetsockopt</a> (<span class="keywordtype">int</span> option_, <span class="keyword">const</span> <span class="keywordtype">void</span> *optval_,
 <a name="l00035"></a>00035     <span class="keywordtype">size_t</span> optvallen_)
 <a name="l00036"></a>00036 {
-<a name="l00037"></a>00037     <span class="keywordflow">if</span> (option_ != <a class="code" href="zmq_8h.html#af9e304eb1481a4458b5c63c342d57b23">ZMQ_SUBSCRIBE</a> &amp;&amp; option_ != <a class="code" href="zmq_8h.html#aa25fa5ae6dfec5b162473bcf1c8abaf7">ZMQ_UNSUBSCRIBE</a>) {
-<a name="l00038"></a>00038         errno = EINVAL;
-<a name="l00039"></a>00039         <span class="keywordflow">return</span> -1;
-<a name="l00040"></a>00040     }
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042     <span class="comment">//  Create the subscription message.</span>
-<a name="l00043"></a>00043     <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> msg;
-<a name="l00044"></a>00044     <span class="keywordtype">int</span> rc = msg.<a class="code" href="classzmq_1_1msg__t.html#a2d40a80f7828b6ab4f63a1d2afa2af82">init_size</a> (optvallen_ + 1);
-<a name="l00045"></a>00045     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00046"></a>00046     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) msg.<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> ();
-<a name="l00047"></a>00047     <span class="keywordflow">if</span> (option_ == <a class="code" href="zmq_8h.html#af9e304eb1481a4458b5c63c342d57b23">ZMQ_SUBSCRIBE</a>)
-<a name="l00048"></a>00048         *data = 1;
-<a name="l00049"></a>00049     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (option_ == <a class="code" href="zmq_8h.html#aa25fa5ae6dfec5b162473bcf1c8abaf7">ZMQ_UNSUBSCRIBE</a>)
-<a name="l00050"></a>00050         *data = 0;
-<a name="l00051"></a>00051     memcpy (data + 1, optval_, optvallen_);
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053     <span class="comment">//  Pass it further on in the stack.</span>
-<a name="l00054"></a>00054     <span class="keywordtype">int</span> err = 0;
-<a name="l00055"></a>00055     rc = <a class="code" href="classzmq_1_1xsub__t.html#a5774c36efd46bb29921be83836c30f7b">xsub_t::xsend</a> (&amp;msg, 0);
-<a name="l00056"></a>00056     <span class="keywordflow">if</span> (rc != 0)
-<a name="l00057"></a>00057         err = errno;
-<a name="l00058"></a>00058     <span class="keywordtype">int</span> rc2 = msg.<a class="code" href="classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d">close</a> ();
-<a name="l00059"></a>00059     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc2 == 0);
-<a name="l00060"></a>00060     <span class="keywordflow">if</span> (rc != 0)
-<a name="l00061"></a>00061         errno = err;
-<a name="l00062"></a>00062     <span class="keywordflow">return</span> rc;
-<a name="l00063"></a>00063 }
-<a name="l00064"></a>00064 
-<a name="l00065"></a><a class="code" href="classzmq_1_1sub__t.html#af07d8bfa2d71cd35d4156a07e11a850b">00065</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1sub__t.html#af07d8bfa2d71cd35d4156a07e11a850b">zmq::sub_t::xsend</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> options_)
-<a name="l00066"></a>00066 {
-<a name="l00067"></a>00067     <span class="comment">//  Overload the XSUB&#39;s send.</span>
-<a name="l00068"></a>00068     errno = <a class="code" href="zmq_8h.html#a91457bbf35f0f1085619a99423bb1f33">ENOTSUP</a>;
-<a name="l00069"></a>00069     <span class="keywordflow">return</span> -1;
-<a name="l00070"></a>00070 }
-<a name="l00071"></a>00071 
-<a name="l00072"></a><a class="code" href="classzmq_1_1sub__t.html#a2e6b7e69f5553d84ea0dc579b85727c5">00072</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1sub__t.html#a2e6b7e69f5553d84ea0dc579b85727c5">zmq::sub_t::xhas_out</a> ()
-<a name="l00073"></a>00073 {
-<a name="l00074"></a>00074     <span class="comment">//  Overload the XSUB&#39;s send.</span>
-<a name="l00075"></a>00075     <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00076"></a>00076 }
+<a name="l00037"></a>00037     <span class="comment">//  Create the subscription message.</span>
+<a name="l00038"></a>00038     <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> msg;
+<a name="l00039"></a>00039     <span class="keywordtype">int</span> rc = msg.<a class="code" href="classzmq_1_1msg__t.html#a2d40a80f7828b6ab4f63a1d2afa2af82">init_size</a> (optvallen_ + 1);
+<a name="l00040"></a>00040     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00041"></a>00041     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) msg.<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> ();
+<a name="l00042"></a>00042     <span class="keywordflow">if</span> (option_ == <a class="code" href="zmq_8h.html#af9e304eb1481a4458b5c63c342d57b23">ZMQ_SUBSCRIBE</a>)
+<a name="l00043"></a>00043         *data = 1;
+<a name="l00044"></a>00044     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (option_ == <a class="code" href="zmq_8h.html#aa25fa5ae6dfec5b162473bcf1c8abaf7">ZMQ_UNSUBSCRIBE</a>)
+<a name="l00045"></a>00045         *data = 0;
+<a name="l00046"></a>00046     memcpy (data + 1, optval_, optvallen_);
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048     <span class="comment">//  Pass it further on in the stack.</span>
+<a name="l00049"></a>00049     <span class="keywordtype">int</span> err = 0;
+<a name="l00050"></a>00050     rc = <a class="code" href="classzmq_1_1xsub__t.html#aa6f0c1c3085211c4a3299f4c4b6f200a">xsub_t::xsend</a> (&amp;msg, 0);
+<a name="l00051"></a>00051     <span class="keywordflow">if</span> (rc != 0)
+<a name="l00052"></a>00052         err = errno;
+<a name="l00053"></a>00053     <span class="keywordtype">int</span> rc2 = msg.<a class="code" href="classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d">close</a> ();
+<a name="l00054"></a>00054     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc2 == 0);
+<a name="l00055"></a>00055     <span class="keywordflow">if</span> (rc != 0)
+<a name="l00056"></a>00056         errno = err;
+<a name="l00057"></a>00057     <span class="keywordflow">return</span> rc;
+<a name="l00058"></a>00058 }
+<a name="l00059"></a>00059 
+<a name="l00060"></a><a class="code" href="classzmq_1_1sub__t.html#a89df55fcd9d1c6cbea73538cb8323c58">00060</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1sub__t.html#a89df55fcd9d1c6cbea73538cb8323c58">zmq::sub_t::xsend</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
+<a name="l00061"></a>00061 {
+<a name="l00062"></a>00062     <span class="comment">//  Overload the XSUB&#39;s send.</span>
+<a name="l00063"></a>00063     errno = <a class="code" href="zmq_8h.html#a91457bbf35f0f1085619a99423bb1f33">ENOTSUP</a>;
+<a name="l00064"></a>00064     <span class="keywordflow">return</span> -1;
+<a name="l00065"></a>00065 }
+<a name="l00066"></a>00066 
+<a name="l00067"></a><a class="code" href="classzmq_1_1sub__t.html#a2e6b7e69f5553d84ea0dc579b85727c5">00067</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1sub__t.html#a2e6b7e69f5553d84ea0dc579b85727c5">zmq::sub_t::xhas_out</a> ()
+<a name="l00068"></a>00068 {
+<a name="l00069"></a>00069     <span class="comment">//  Overload the XSUB&#39;s send.</span>
+<a name="l00070"></a>00070     <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00071"></a>00071 }
+<a name="l00072"></a>00072 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -197,7 +193,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:07 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:39 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

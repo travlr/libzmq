@@ -156,8 +156,19 @@ function toggleVisibility(linkObj) {
 <li>make_socketpair()
 : <a class="el" href="classzmq_1_1mailbox__t.html#a111fadf93fe3e74301e7584414a6437c">zmq::mailbox_t</a>
 </li>
+<li>mark_as_matching()
+: <a class="el" href="classzmq_1_1xpub__t.html#af61522f090f43d5d717264d05e5ffe0d">zmq::xpub_t</a>
+</li>
 <li>match()
-: <a class="el" href="classzmq_1_1xsub__t.html#afd5c43b90680af84b1ec996af482c807">zmq::xsub_t</a>
+: <a class="el" href="classzmq_1_1dist__t.html#a0a4cfa1b74be508f36f7785363cafc6d">zmq::dist_t</a>
+, <a class="el" href="classzmq_1_1mtrie__t.html#a525157606b33b9b0107415781d63e718">zmq::mtrie_t</a>
+, <a class="el" href="classzmq_1_1xsub__t.html#afd5c43b90680af84b1ec996af482c807">zmq::xsub_t</a>
+</li>
+<li>match_helper()
+: <a class="el" href="classzmq_1_1mtrie__t.html#a3f7759a055c41667984e0f455fcb9909">zmq::mtrie_t</a>
+</li>
+<li>matching
+: <a class="el" href="classzmq_1_1dist__t.html#aa972486307de4a6a16726d9334a52956">zmq::dist_t</a>
 </li>
 <li>maxfd
 : <a class="el" href="classzmq_1_1select__t.html#a9a81e67ffa734548bcb49a7e1d45c065">zmq::select_t</a>
@@ -173,18 +184,20 @@ function toggleVisibility(linkObj) {
 : <a class="el" href="classzmq_1_1req__t.html#a06c15ab4cf6ff797b0a5b348f2fdff7c">zmq::req_t</a>
 </li>
 <li>message_ready()
-: <a class="el" href="classzmq_1_1encoder__t.html#ab8f436dcceeff8e128791997f63f0eaa">zmq::encoder_t</a>
-, <a class="el" href="classzmq_1_1decoder__t.html#a06cc01035ccb5041a982b8c91add5754">zmq::decoder_t</a>
+: <a class="el" href="classzmq_1_1decoder__t.html#a06cc01035ccb5041a982b8c91add5754">zmq::decoder_t</a>
+, <a class="el" href="classzmq_1_1encoder__t.html#ab8f436dcceeff8e128791997f63f0eaa">zmq::encoder_t</a>
 </li>
 <li>min
 : <a class="el" href="classzmq_1_1trie__t.html#a6a6cb43a51464a845892b74bdd71c636">zmq::trie_t</a>
+, <a class="el" href="classzmq_1_1mtrie__t.html#ae80671b777e7e4f429c85a4b8098d773">zmq::mtrie_t</a>
 </li>
 <li>more
-: <a class="el" href="classzmq_1_1dist__t.html#a6ad9e0d0c272a02d67cdceed54b7bd8b">zmq::dist_t</a>
+: <a class="el" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">zmq::msg_t</a>
+, <a class="el" href="classzmq_1_1dist__t.html#a6ad9e0d0c272a02d67cdceed54b7bd8b">zmq::dist_t</a>
 , <a class="el" href="classzmq_1_1fq__t.html#a518a654bec62facaa28b8c8390518014">zmq::fq_t</a>
 , <a class="el" href="classzmq_1_1lb__t.html#a63a3577fc5b87828f042957af44b5b89">zmq::lb_t</a>
-, <a class="el" href="classzmq_1_1msg__t.html#a1354cf3abbf9562db424dd1a8cceae44a667ab2e09f6cc43b018caca04f9ee2a7">zmq::msg_t</a>
 , <a class="el" href="classzmq_1_1xsub__t.html#ab14a5412fc05842f596537f4d32c084f">zmq::xsub_t</a>
+, <a class="el" href="classzmq_1_1xpub__t.html#acdabbffea0940eeb8a536ff416869a96">zmq::xpub_t</a>
 </li>
 <li>more_in
 : <a class="el" href="classzmq_1_1xrep__t.html#a11d5b9598ac35d485e4d9f2bb9fbbd06">zmq::xrep_t</a>
@@ -196,12 +209,14 @@ function toggleVisibility(linkObj) {
 : <a class="el" href="classzmq_1_1msg__t.html#a39318e9417f38b7f415b85ae591ed606">zmq::msg_t</a>
 </li>
 <li>msgs_read
-: <a class="el" href="structzmq_1_1command__t.html#ac696481470076763b87197bb2d11eb5f">zmq::command_t</a>
-, <a class="el" href="classzmq_1_1reader__t.html#afd3da2a6daa2c5714c58f69ce1a31c1f">zmq::reader_t</a>
-, <a class="el" href="classzmq_1_1writer__t.html#ab0f366251b8e98aee2d260afd0ee338d">zmq::writer_t</a>
+: <a class="el" href="classzmq_1_1pipe__t.html#ae0ba9107e2657dcbdfa001133722ee35">zmq::pipe_t</a>
+, <a class="el" href="structzmq_1_1command__t.html#ac696481470076763b87197bb2d11eb5f">zmq::command_t</a>
 </li>
 <li>msgs_written
-: <a class="el" href="classzmq_1_1writer__t.html#af8331c30499ac64121be786868eb43a3">zmq::writer_t</a>
+: <a class="el" href="classzmq_1_1pipe__t.html#abc7dcb7c06743bd53ab0130bd8b06264">zmq::pipe_t</a>
+</li>
+<li>mtrie_t()
+: <a class="el" href="classzmq_1_1mtrie__t.html#ab98b00b9a08fe7bd0fe5ad69166b7c7e">zmq::mtrie_t</a>
 </li>
 <li>multicast_hops
 : <a class="el" href="structzmq_1_1options__t.html#ab18003835690b2071905d2d90e9cfdcf">zmq::options_t</a>
@@ -210,7 +225,7 @@ function toggleVisibility(linkObj) {
 : <a class="el" href="classzmq_1_1mutex__t.html#a9870a98cc793df223e2fdb5e7be1e506">zmq::mutex_t</a>
 </li>
 <li>mutex_t()
-: <a class="el" href="classzmq_1_1mutex__t.html#a07656407b65e4f7828daaf0534dd10fa">zmq::mutex_t</a>
+: <a class="el" href="classzmq_1_1mutex__t.html#a237e78f8a0be54689b608a0ebf1cee48">zmq::mutex_t</a>
 </li>
 </ul>
 </div>
@@ -228,7 +243,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:14 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:49 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

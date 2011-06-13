@@ -152,7 +152,7 @@ function toggleVisibility(linkObj) {
 <a name="l00045"></a>00045     unregister_session (peer_identity);
 <a name="l00046"></a>00046 }
 <a name="l00047"></a>00047 
-<a name="l00048"></a><a class="code" href="classzmq_1_1named__session__t.html#a33919c64722611f7a178051f8580bd79">00048</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1named__session__t.html#a33919c64722611f7a178051f8580bd79">zmq::named_session_t::attached</a> (<span class="keyword">const</span> blob_t &amp;peer_identity_)
+<a name="l00048"></a><a class="code" href="classzmq_1_1named__session__t.html#ae32d43d1845746455969cffa62e2a90d">00048</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1named__session__t.html#ae32d43d1845746455969cffa62e2a90d">zmq::named_session_t::xattached</a> (<span class="keyword">const</span> blob_t &amp;peer_identity_)
 <a name="l00049"></a>00049 {
 <a name="l00050"></a>00050     <span class="comment">//  Double check that identities match.</span>
 <a name="l00051"></a>00051     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (peer_identity == peer_identity_);
@@ -165,12 +165,13 @@ function toggleVisibility(linkObj) {
 <a name="l00058"></a>00058     <span class="keywordflow">return</span> <span class="keyword">true</span>;
 <a name="l00059"></a>00059 }
 <a name="l00060"></a>00060 
-<a name="l00061"></a><a class="code" href="classzmq_1_1named__session__t.html#aa4b1c255b9daafc3ec1304f57a4503e3">00061</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1named__session__t.html#aa4b1c255b9daafc3ec1304f57a4503e3">zmq::named_session_t::detached</a> ()
+<a name="l00061"></a><a class="code" href="classzmq_1_1named__session__t.html#aa72cc827642c177588f0d32c6f2beb29">00061</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1named__session__t.html#aa72cc827642c177588f0d32c6f2beb29">zmq::named_session_t::xdetached</a> ()
 <a name="l00062"></a>00062 {
 <a name="l00063"></a>00063     <span class="comment">//  Do nothing. Named sessions are never destroyed because of disconnection.</span>
 <a name="l00064"></a>00064     <span class="comment">//  Neither they have to actively reconnect.</span>
-<a name="l00065"></a>00065 }
-<a name="l00066"></a>00066 
+<a name="l00065"></a>00065     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00066"></a>00066 }
+<a name="l00067"></a>00067 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -187,7 +188,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 12 2011 01:59:06 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 13 2011 02:03:38 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

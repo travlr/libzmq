@@ -1,7 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classzmq_1_1writer__t.html#a1d0eade8ec4c983ed9fe87a709ac81e6" title="zmq::writer_t::terminate" alt="" coords="227,85,387,115"/>
-<area shape="rect" id="node5" href="$classzmq_1_1lb__t.html#abde0931efbb9cb0bf1564f5556fa4fea" title="zmq::lb_t::attach" alt="" coords="465,5,585,35"/>
-<area shape="rect" id="node7" href="$classzmq_1_1dist__t.html#a8eae4982d8473b4b669f720d496a4f10" title="zmq::dist_t::attach" alt="" coords="460,59,591,88"/>
-<area shape="rect" id="node9" href="$classzmq_1_1xrep__t.html#adb350ccf16995f381d743111e23e2d63" title="zmq::xrep_t::xattach_pipes" alt="" coords="436,112,615,141"/>
-<area shape="rect" id="node11" href="$classzmq_1_1pair__t.html#a1fa6b0ec1b2c8a9f9eafa76e902d7d52" title="zmq::pair_t::xattach_pipes" alt="" coords="437,165,613,195"/>
+<area shape="rect" id="node3" href="$classzmq_1_1pipe__t.html#ab446c6b26ca34f96ed62a958f37bf8a4" title="zmq::pipe_t::terminate" alt="" coords="227,5,379,35"/>
+<area shape="rect" id="node5" href="$classzmq_1_1socket__base__t.html#a85e264824404eee2023ef0510dc19dfa" title="zmq::socket_base_t::attach_pipe" alt="" coords="428,5,641,35"/>
 </map>
