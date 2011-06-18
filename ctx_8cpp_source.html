@@ -125,24 +125,24 @@ function toggleVisibility(linkObj) {
 <a name="l00018"></a>00018 <span class="comment">    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
 <a name="l00019"></a>00019 <span class="comment">*/</span>
 <a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="preprocessor">#include &lt;new&gt;</span>
-<a name="l00022"></a>00022 <span class="preprocessor">#include &lt;string.h&gt;</span>
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="ctx_8hpp.html">ctx.hpp</a>&quot;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="socket__base_8hpp.html">socket_base.hpp</a>&quot;</span>
-<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="io__thread_8hpp.html">io_thread.hpp</a>&quot;</span>
-<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;platform.hpp&quot;</span>
-<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="reaper_8hpp.html">reaper.hpp</a>&quot;</span>
-<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="pipe_8hpp.html">pipe.hpp</a>&quot;</span>
-<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="err_8hpp.html">err.hpp</a>&quot;</span>
-<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="msg_8hpp.html">msg.hpp</a>&quot;</span>
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033 <span class="preprocessor">#if defined ZMQ_HAVE_WINDOWS</span>
-<a name="l00034"></a>00034 <span class="preprocessor"></span><span class="preprocessor">#include &quot;windows.h&quot;</span>
-<a name="l00035"></a>00035 <span class="preprocessor">#else</span>
-<a name="l00036"></a>00036 <span class="preprocessor"></span><span class="preprocessor">#include &quot;unistd.h&quot;</span>
-<a name="l00037"></a>00037 <span class="preprocessor">#endif</span>
-<a name="l00038"></a>00038 <span class="preprocessor"></span>
+<a name="l00021"></a>00021 <span class="preprocessor">#include &quot;platform.hpp&quot;</span>
+<a name="l00022"></a>00022 <span class="preprocessor">#if defined ZMQ_HAVE_WINDOWS</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="windows_8hpp.html">windows.hpp</a>&quot;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#else</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span><span class="preprocessor">#include &lt;unistd.h&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#endif</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;new&gt;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;string.h&gt;</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="ctx_8hpp.html">ctx.hpp</a>&quot;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="socket__base_8hpp.html">socket_base.hpp</a>&quot;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="io__thread_8hpp.html">io_thread.hpp</a>&quot;</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="reaper_8hpp.html">reaper.hpp</a>&quot;</span>
+<a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="pipe_8hpp.html">pipe.hpp</a>&quot;</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="err_8hpp.html">err.hpp</a>&quot;</span>
+<a name="l00037"></a>00037 <span class="preprocessor">#include &quot;<a class="code" href="msg_8hpp.html">msg.hpp</a>&quot;</span>
+<a name="l00038"></a>00038 
 <a name="l00039"></a><a class="code" href="classzmq_1_1ctx__t.html#a414fa4199643046ffdd08e175124aa81">00039</a> <a class="code" href="classzmq_1_1ctx__t.html#a414fa4199643046ffdd08e175124aa81">zmq::ctx_t::ctx_t</a> (uint32_t io_threads_) :
 <a name="l00040"></a>00040     tag (0xbadcafe0),
 <a name="l00041"></a>00041     terminating (false)
@@ -445,7 +445,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 14 2011 09:52:00 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jun 18 2011 17:16:37 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

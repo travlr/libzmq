@@ -108,7 +108,8 @@ function toggleVisibility(linkObj) {
 </div>
 <div class="contents">
 <div class="textblock"><code>#include &lt;windows.h&gt;</code><br/>
-<code>#include &lt;winsock.h&gt;</code><br/>
+<code>#include &lt;winsock2.h&gt;</code><br/>
+<code>#include &lt;mswsock.h&gt;</code><br/>
 <code>#include &lt;ws2tcpip.h&gt;</code><br/>
 <code>#include &lt;ipexport.h&gt;</code><br/>
 <code>#include &lt;process.h&gt;</code><br/>
@@ -125,14 +126,47 @@ function toggleVisibility(linkObj) {
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#af08ec37a8c99d747fb60fa15bc28678b">_CRT_SECURE_NO_WARNINGS</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#ac50762666aa00bd3a4308158510f1748">_WIN32_WINNT</a>&#160;&#160;&#160;WINVER</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a8d9ac41ded5e14e0ced0dc41b3fb5258">_WINSOCKAPI_</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#ac50762666aa00bd3a4308158510f1748">_WIN32_WINNT</a>&#160;&#160;&#160;0x0501</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a8739abe7bcb9470bcdb021e869b2a76f">AI_NUMERICSERV</a>&#160;&#160;&#160;0x0400</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a8d563d141697adb47ce567859243a2d7">NOIME</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#aa59dc3d2c7dc2ec85638761aeb2d50f7">NOATOM</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a2e4c78354db40d44bea894e472550c11">NOCLIPBOARD</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#ad99d89815bdc61acfe8744c41c96e637">NOCOLOR</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a2ee511fa2fd29a9a1f0efbcb2c364b8f">NOCOMM</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a679a4dcdfeb97910576cff8452efb28e">NOCTLMGR</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a348ad07df4aceda9097d9497b78bccd9">NODEFERWINDOWPOS</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a5ceb8b3e84824f87cae315091546e67f">NODRAWTEXT</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a2bedaca1c6ca66de2397772910fbe140">NOGDI</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a8effd0655f96cc25e57c0b348669df7b">NOGDICAPMASKS</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a34c6896a3b5f4079b3539fb8118be1d5">NOHELP</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a8b8c544b2e9e3359de25f7d89f4f5de9">NOICONS</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a0958eca070bb77eddff0a604acda46f2">NOKANJI</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a1381fe81f9874aa4a669b6bd556f87fa">NOKERNEL</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a6f4a8b3fe02f55fd022b91b3a965e15c">NOKEYSTATES</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a8bd3112472ae1e33be8faf5294230948">NOMB</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a256fe1caeb996b1142c3eb51097fef0e">NOMCX</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a8b2f514658ba28ae0ea3b8b96edf520e">NOMEMMGR</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a15dd7444df67d292b83dc869d6e4b417">NOMENUS</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a37618c72c08b2464576612b2ac595b30">NOMETAFILE</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a9f918755b601cf4bffca775992e6fb90">NOMINMAX</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a1f4e51b89381cd3aecebd55bd4d700b6">NOMSG</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a52be9abe7ca69b513aa7e975284d4f67">NONLS</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a2d7186e4a6dfcc0011461ce1e8b70a05">NOOPENFILE</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#af883320ccbc88fe5ff2d8733ec0a034f">NOPROFILER</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a0293d1b2742d9c9ef401d75a55b81859">NORASTEROPS</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a06f62f70cab65b4c19972202f784e12d">NOSCROLL</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a14ac98af6281e748377693d824e41ca9">NOSERVICE</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#ab2dcc39e73a373330467f5f503c779d3">NOSHOWWINDOW</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#af40cddcc88a6ebeed4f75d4bbbed195e">NOSOUND</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a271ce221dc9c5c8887d443008b3d718c">NOSYSCOMMANDS</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#aea709a8ba0a7d510cefcf625fdb3b4b1">NOSYSMETRICS</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a7d6ea5ce712ed1d05533cf8ebf38d880">NOTEXTMETRIC</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a73886ff6a915a4a92e3ade13eba71f6d">NOUSER</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#ac5ff788cb8638ce5daf99e586083eef2">NOVIRTUALKEYCODES</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#aac388bb1bd11a9a15b594321658ae233">NOWH</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a90d30d395de13a4f31a42b4066cfbb68">NOWINMESSAGES</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a964a6e23899e4f0b1886d86b1981545d">NOWINOFFSETS</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a22c56a31990574a86b40f60b6073cdba">NOWINSTYLES</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#a3a75770af38d05856eb2e9d1867b471c">OEMRESOURCE</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="windows_8hpp.html#ac7bef5d85e3dcd73eef56ad39ffc84a9">WIN32_LEAN_AND_MEAN</a></td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
@@ -147,7 +181,7 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00031">31</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00028">28</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
 
 </div>
 </div>
@@ -156,28 +190,13 @@ Defines</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define _WIN32_WINNT&#160;&#160;&#160;WINVER</td>
+          <td class="memname">#define _WIN32_WINNT&#160;&#160;&#160;0x0501</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00060">60</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a8d9ac41ded5e14e0ced0dc41b3fb5258"></a><!-- doxytag: member="windows.hpp::_WINSOCKAPI_" ref="a8d9ac41ded5e14e0ced0dc41b3fb5258" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _WINSOCKAPI_</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00027">27</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00153">153</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
 
 </div>
 </div>
@@ -192,22 +211,232 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00077">77</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00176">176</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a8d563d141697adb47ce567859243a2d7"></a><!-- doxytag: member="windows.hpp::NOIME" ref="a8d563d141697adb47ce567859243a2d7" args="" -->
+<a class="anchor" id="aa59dc3d2c7dc2ec85638761aeb2d50f7"></a><!-- doxytag: member="windows.hpp::NOATOM" ref="aa59dc3d2c7dc2ec85638761aeb2d50f7" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NOIME</td>
+          <td class="memname">#define NOATOM</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00043">43</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00070">70</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e4c78354db40d44bea894e472550c11"></a><!-- doxytag: member="windows.hpp::NOCLIPBOARD" ref="a2e4c78354db40d44bea894e472550c11" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOCLIPBOARD</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00073">73</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad99d89815bdc61acfe8744c41c96e637"></a><!-- doxytag: member="windows.hpp::NOCOLOR" ref="ad99d89815bdc61acfe8744c41c96e637" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOCOLOR</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00076">76</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2ee511fa2fd29a9a1f0efbcb2c364b8f"></a><!-- doxytag: member="windows.hpp::NOCOMM" ref="a2ee511fa2fd29a9a1f0efbcb2c364b8f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOCOMM</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00133">133</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a679a4dcdfeb97910576cff8452efb28e"></a><!-- doxytag: member="windows.hpp::NOCTLMGR" ref="a679a4dcdfeb97910576cff8452efb28e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOCTLMGR</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00079">79</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a348ad07df4aceda9097d9497b78bccd9"></a><!-- doxytag: member="windows.hpp::NODEFERWINDOWPOS" ref="a348ad07df4aceda9097d9497b78bccd9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NODEFERWINDOWPOS</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00145">145</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5ceb8b3e84824f87cae315091546e67f"></a><!-- doxytag: member="windows.hpp::NODRAWTEXT" ref="a5ceb8b3e84824f87cae315091546e67f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NODRAWTEXT</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00082">82</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2bedaca1c6ca66de2397772910fbe140"></a><!-- doxytag: member="windows.hpp::NOGDI" ref="a2bedaca1c6ca66de2397772910fbe140" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOGDI</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00085">85</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8effd0655f96cc25e57c0b348669df7b"></a><!-- doxytag: member="windows.hpp::NOGDICAPMASKS" ref="a8effd0655f96cc25e57c0b348669df7b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOGDICAPMASKS</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00034">34</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a34c6896a3b5f4079b3539fb8118be1d5"></a><!-- doxytag: member="windows.hpp::NOHELP" ref="a34c6896a3b5f4079b3539fb8118be1d5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOHELP</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00139">139</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8b8c544b2e9e3359de25f7d89f4f5de9"></a><!-- doxytag: member="windows.hpp::NOICONS" ref="a8b8c544b2e9e3359de25f7d89f4f5de9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOICONS</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00052">52</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0958eca070bb77eddff0a604acda46f2"></a><!-- doxytag: member="windows.hpp::NOKANJI" ref="a0958eca070bb77eddff0a604acda46f2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOKANJI</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00136">136</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1381fe81f9874aa4a669b6bd556f87fa"></a><!-- doxytag: member="windows.hpp::NOKERNEL" ref="a1381fe81f9874aa4a669b6bd556f87fa" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOKERNEL</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00088">88</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6f4a8b3fe02f55fd022b91b3a965e15c"></a><!-- doxytag: member="windows.hpp::NOKEYSTATES" ref="a6f4a8b3fe02f55fd022b91b3a965e15c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOKEYSTATES</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00055">55</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8bd3112472ae1e33be8faf5294230948"></a><!-- doxytag: member="windows.hpp::NOMB" ref="a8bd3112472ae1e33be8faf5294230948" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOMB</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00097">97</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
 
 </div>
 </div>
@@ -222,7 +451,52 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00040">40</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00148">148</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8b2f514658ba28ae0ea3b8b96edf520e"></a><!-- doxytag: member="windows.hpp::NOMEMMGR" ref="a8b2f514658ba28ae0ea3b8b96edf520e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOMEMMGR</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00100">100</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a15dd7444df67d292b83dc869d6e4b417"></a><!-- doxytag: member="windows.hpp::NOMENUS" ref="a15dd7444df67d292b83dc869d6e4b417" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOMENUS</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00049">49</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a37618c72c08b2464576612b2ac595b30"></a><!-- doxytag: member="windows.hpp::NOMETAFILE" ref="a37618c72c08b2464576612b2ac595b30" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOMETAFILE</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00103">103</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
 
 </div>
 </div>
@@ -237,7 +511,127 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00029">29</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00106">106</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f4e51b89381cd3aecebd55bd4d700b6"></a><!-- doxytag: member="windows.hpp::NOMSG" ref="a1f4e51b89381cd3aecebd55bd4d700b6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOMSG</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00109">109</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a52be9abe7ca69b513aa7e975284d4f67"></a><!-- doxytag: member="windows.hpp::NONLS" ref="a52be9abe7ca69b513aa7e975284d4f67" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NONLS</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00094">94</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2d7186e4a6dfcc0011461ce1e8b70a05"></a><!-- doxytag: member="windows.hpp::NOOPENFILE" ref="a2d7186e4a6dfcc0011461ce1e8b70a05" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOOPENFILE</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00112">112</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af883320ccbc88fe5ff2d8733ec0a034f"></a><!-- doxytag: member="windows.hpp::NOPROFILER" ref="af883320ccbc88fe5ff2d8733ec0a034f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOPROFILER</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00142">142</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0293d1b2742d9c9ef401d75a55b81859"></a><!-- doxytag: member="windows.hpp::NORASTEROPS" ref="a0293d1b2742d9c9ef401d75a55b81859" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NORASTEROPS</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00061">61</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a06f62f70cab65b4c19972202f784e12d"></a><!-- doxytag: member="windows.hpp::NOSCROLL" ref="a06f62f70cab65b4c19972202f784e12d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOSCROLL</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00115">115</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a14ac98af6281e748377693d824e41ca9"></a><!-- doxytag: member="windows.hpp::NOSERVICE" ref="a14ac98af6281e748377693d824e41ca9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOSERVICE</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00118">118</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab2dcc39e73a373330467f5f503c779d3"></a><!-- doxytag: member="windows.hpp::NOSHOWWINDOW" ref="ab2dcc39e73a373330467f5f503c779d3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOSHOWWINDOW</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00064">64</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
 
 </div>
 </div>
@@ -252,7 +646,52 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00121">121</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a271ce221dc9c5c8887d443008b3d718c"></a><!-- doxytag: member="windows.hpp::NOSYSCOMMANDS" ref="a271ce221dc9c5c8887d443008b3d718c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOSYSCOMMANDS</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00058">58</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aea709a8ba0a7d510cefcf625fdb3b4b1"></a><!-- doxytag: member="windows.hpp::NOSYSMETRICS" ref="aea709a8ba0a7d510cefcf625fdb3b4b1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOSYSMETRICS</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
 <p>Definition at line <a class="el" href="windows_8hpp_source.html#l00046">46</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7d6ea5ce712ed1d05533cf8ebf38d880"></a><!-- doxytag: member="windows.hpp::NOTEXTMETRIC" ref="a7d6ea5ce712ed1d05533cf8ebf38d880" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOTEXTMETRIC</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00124">124</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
 
 </div>
 </div>
@@ -267,7 +706,97 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00091">91</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5ff788cb8638ce5daf99e586083eef2"></a><!-- doxytag: member="windows.hpp::NOVIRTUALKEYCODES" ref="ac5ff788cb8638ce5daf99e586083eef2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOVIRTUALKEYCODES</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
 <p>Definition at line <a class="el" href="windows_8hpp_source.html#l00037">37</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aac388bb1bd11a9a15b594321658ae233"></a><!-- doxytag: member="windows.hpp::NOWH" ref="aac388bb1bd11a9a15b594321658ae233" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOWH</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00127">127</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a90d30d395de13a4f31a42b4066cfbb68"></a><!-- doxytag: member="windows.hpp::NOWINMESSAGES" ref="a90d30d395de13a4f31a42b4066cfbb68" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOWINMESSAGES</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00040">40</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a964a6e23899e4f0b1886d86b1981545d"></a><!-- doxytag: member="windows.hpp::NOWINOFFSETS" ref="a964a6e23899e4f0b1886d86b1981545d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOWINOFFSETS</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00130">130</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a22c56a31990574a86b40f60b6073cdba"></a><!-- doxytag: member="windows.hpp::NOWINSTYLES" ref="a22c56a31990574a86b40f60b6073cdba" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOWINSTYLES</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00043">43</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3a75770af38d05856eb2e9d1867b471c"></a><!-- doxytag: member="windows.hpp::OEMRESOURCE" ref="a3a75770af38d05856eb2e9d1867b471c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OEMRESOURCE</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00067">67</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
 
 </div>
 </div>
@@ -282,7 +811,7 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00034">34</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
+<p>Definition at line <a class="el" href="windows_8hpp_source.html#l00031">31</a> of file <a class="el" href="windows_8hpp_source.html">windows.hpp</a>.</p>
 
 </div>
 </div>
@@ -301,7 +830,7 @@ Defines</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 14 2011 09:52:09 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jun 18 2011 17:16:46 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
