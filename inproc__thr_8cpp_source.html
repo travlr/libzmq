@@ -145,9 +145,9 @@ function toggleVisibility(linkObj) {
 <a name="l00038"></a><a class="code" href="inproc__thr_8cpp.html#a767ba2e8299d0d9a71b552bfb719e9f0">00038</a> <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code" href="inproc__thr_8cpp.html#a767ba2e8299d0d9a71b552bfb719e9f0">message_size</a>;
 <a name="l00039"></a>00039 
 <a name="l00040"></a>00040 <span class="preprocessor">#if defined ZMQ_HAVE_WINDOWS</span>
-<a name="l00041"></a>00041 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> __stdcall <a class="code" href="inproc__thr_8cpp.html#afdde2c05692ce4366f55800934ffdebe">worker</a> (<span class="keywordtype">void</span> *ctx_)
+<a name="l00041"></a>00041 <span class="preprocessor"></span><span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> __stdcall <a class="code" href="inproc__lat_8cpp.html#afdde2c05692ce4366f55800934ffdebe">worker</a> (<span class="keywordtype">void</span> *ctx_)
 <a name="l00042"></a>00042 <span class="preprocessor">#else</span>
-<a name="l00043"></a><a class="code" href="inproc__thr_8cpp.html#afdde2c05692ce4366f55800934ffdebe">00043</a> <span class="preprocessor"></span><span class="keyword">static</span> <span class="keywordtype">void</span> *<a class="code" href="inproc__thr_8cpp.html#afdde2c05692ce4366f55800934ffdebe">worker</a> (<span class="keywordtype">void</span> *ctx_)
+<a name="l00043"></a><a class="code" href="inproc__thr_8cpp.html#afdde2c05692ce4366f55800934ffdebe">00043</a> <span class="preprocessor"></span><span class="keyword">static</span> <span class="keywordtype">void</span> *<a class="code" href="inproc__lat_8cpp.html#afdde2c05692ce4366f55800934ffdebe">worker</a> (<span class="keywordtype">void</span> *ctx_)
 <a name="l00044"></a>00044 <span class="preprocessor">#endif</span>
 <a name="l00045"></a>00045 <span class="preprocessor"></span>{
 <a name="l00046"></a>00046     <span class="keywordtype">void</span> *s;
@@ -155,7 +155,7 @@ function toggleVisibility(linkObj) {
 <a name="l00048"></a>00048     <span class="keywordtype">int</span> i;
 <a name="l00049"></a>00049     <a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> msg;
 <a name="l00050"></a>00050 
-<a name="l00051"></a>00051     s = <a class="code" href="zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd">zmq_socket</a> (ctx_, <a class="code" href="zmq_8h.html#a0755bc624cb1e1a7e897d8b512e17f2a">ZMQ_PUB</a>);
+<a name="l00051"></a>00051     s = <a class="code" href="zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd">zmq_socket</a> (ctx_, <a class="code" href="zmq_8h.html#aae68598254ac93c3ca95d996d66b53fa">ZMQ_PUSH</a>);
 <a name="l00052"></a>00052     <span class="keywordflow">if</span> (!s) {
 <a name="l00053"></a>00053         printf (<span class="stringliteral">&quot;error in zmq_socket: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
 <a name="l00054"></a>00054         exit (1);
@@ -234,123 +234,117 @@ function toggleVisibility(linkObj) {
 <a name="l00127"></a>00127         <span class="keywordflow">return</span> -1;
 <a name="l00128"></a>00128     }
 <a name="l00129"></a>00129 
-<a name="l00130"></a>00130     s = <a class="code" href="zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd">zmq_socket</a> (ctx, <a class="code" href="zmq_8h.html#ad331770f0eec9ed393bf25fe6ea65dcc">ZMQ_SUB</a>);
+<a name="l00130"></a>00130     s = <a class="code" href="zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd">zmq_socket</a> (ctx, <a class="code" href="zmq_8h.html#ab788b374d72190554bed52635f596ca4">ZMQ_PULL</a>);
 <a name="l00131"></a>00131     <span class="keywordflow">if</span> (!s) {
 <a name="l00132"></a>00132         printf (<span class="stringliteral">&quot;error in zmq_socket: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
 <a name="l00133"></a>00133         <span class="keywordflow">return</span> -1;
 <a name="l00134"></a>00134     }
 <a name="l00135"></a>00135 
-<a name="l00136"></a>00136     rc = <a class="code" href="zmq_8h.html#acc51e98041e88b50af242d5847d0c7d7">zmq_setsockopt</a> (s, <a class="code" href="zmq_8h.html#af9e304eb1481a4458b5c63c342d57b23">ZMQ_SUBSCRIBE</a> , <span class="stringliteral">&quot;&quot;</span>, 0);
+<a name="l00136"></a>00136     rc = <a class="code" href="zmq_8h.html#a9b9820b4fd19e3b23bc5dba2da65dc3f">zmq_bind</a> (s, <span class="stringliteral">&quot;inproc://thr_test&quot;</span>);
 <a name="l00137"></a>00137     <span class="keywordflow">if</span> (rc != 0) {
-<a name="l00138"></a>00138         printf (<span class="stringliteral">&quot;error in zmq_setsockopt: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
+<a name="l00138"></a>00138         printf (<span class="stringliteral">&quot;error in zmq_bind: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
 <a name="l00139"></a>00139         <span class="keywordflow">return</span> -1;
 <a name="l00140"></a>00140     }
 <a name="l00141"></a>00141 
-<a name="l00142"></a>00142     rc = <a class="code" href="zmq_8h.html#a9b9820b4fd19e3b23bc5dba2da65dc3f">zmq_bind</a> (s, <span class="stringliteral">&quot;inproc://thr_test&quot;</span>);
-<a name="l00143"></a>00143     <span class="keywordflow">if</span> (rc != 0) {
-<a name="l00144"></a>00144         printf (<span class="stringliteral">&quot;error in zmq_bind: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-<a name="l00145"></a>00145         <span class="keywordflow">return</span> -1;
-<a name="l00146"></a>00146     }
-<a name="l00147"></a>00147 
-<a name="l00148"></a>00148 <span class="preprocessor">#if defined ZMQ_HAVE_WINDOWS</span>
-<a name="l00149"></a>00149 <span class="preprocessor"></span>    local_thread = (HANDLE) _beginthreadex (NULL, 0,
-<a name="l00150"></a>00150         <a class="code" href="inproc__thr_8cpp.html#afdde2c05692ce4366f55800934ffdebe">worker</a>, ctx, 0 , NULL);
-<a name="l00151"></a>00151     <span class="keywordflow">if</span> (local_thread == 0) {
-<a name="l00152"></a>00152         printf (<span class="stringliteral">&quot;error in _beginthreadex\n&quot;</span>);
+<a name="l00142"></a>00142 <span class="preprocessor">#if defined ZMQ_HAVE_WINDOWS</span>
+<a name="l00143"></a>00143 <span class="preprocessor"></span>    local_thread = (HANDLE) _beginthreadex (NULL, 0,
+<a name="l00144"></a>00144         <a class="code" href="inproc__lat_8cpp.html#afdde2c05692ce4366f55800934ffdebe">worker</a>, ctx, 0 , NULL);
+<a name="l00145"></a>00145     <span class="keywordflow">if</span> (local_thread == 0) {
+<a name="l00146"></a>00146         printf (<span class="stringliteral">&quot;error in _beginthreadex\n&quot;</span>);
+<a name="l00147"></a>00147         <span class="keywordflow">return</span> -1;
+<a name="l00148"></a>00148     }
+<a name="l00149"></a>00149 <span class="preprocessor">#else</span>
+<a name="l00150"></a>00150 <span class="preprocessor"></span>    rc = pthread_create (&amp;local_thread, NULL, <a class="code" href="inproc__lat_8cpp.html#afdde2c05692ce4366f55800934ffdebe">worker</a>, ctx);
+<a name="l00151"></a>00151     <span class="keywordflow">if</span> (rc != 0) {
+<a name="l00152"></a>00152         printf (<span class="stringliteral">&quot;error in pthread_create: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (rc));
 <a name="l00153"></a>00153         <span class="keywordflow">return</span> -1;
 <a name="l00154"></a>00154     }
-<a name="l00155"></a>00155 <span class="preprocessor">#else</span>
-<a name="l00156"></a>00156 <span class="preprocessor"></span>    rc = pthread_create (&amp;local_thread, NULL, <a class="code" href="inproc__thr_8cpp.html#afdde2c05692ce4366f55800934ffdebe">worker</a>, ctx);
-<a name="l00157"></a>00157     <span class="keywordflow">if</span> (rc != 0) {
-<a name="l00158"></a>00158         printf (<span class="stringliteral">&quot;error in pthread_create: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (rc));
-<a name="l00159"></a>00159         <span class="keywordflow">return</span> -1;
-<a name="l00160"></a>00160     }
-<a name="l00161"></a>00161 <span class="preprocessor">#endif</span>
-<a name="l00162"></a>00162 <span class="preprocessor"></span>
-<a name="l00163"></a>00163     rc = <a class="code" href="zmq_8h.html#a8c888cf117d859ae0d669e95cf8b64c2">zmq_msg_init</a> (&amp;msg);
-<a name="l00164"></a>00164     <span class="keywordflow">if</span> (rc != 0) {
-<a name="l00165"></a>00165         printf (<span class="stringliteral">&quot;error in zmq_msg_init: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-<a name="l00166"></a>00166         <span class="keywordflow">return</span> -1;
-<a name="l00167"></a>00167     }
-<a name="l00168"></a>00168 
-<a name="l00169"></a>00169     printf (<span class="stringliteral">&quot;message size: %d [B]\n&quot;</span>, (<span class="keywordtype">int</span>) <a class="code" href="inproc__thr_8cpp.html#a767ba2e8299d0d9a71b552bfb719e9f0">message_size</a>);
-<a name="l00170"></a>00170     printf (<span class="stringliteral">&quot;message count: %d\n&quot;</span>, (<span class="keywordtype">int</span>) <a class="code" href="inproc__thr_8cpp.html#a21d557fb1a24b78862f142e9ee2b3324">message_count</a>);
-<a name="l00171"></a>00171 
-<a name="l00172"></a>00172     rc = <a class="code" href="zmq_8h.html#acfaed58455d33fedb9574920c239c9ed">zmq_recvmsg</a> (s, &amp;msg, 0);
-<a name="l00173"></a>00173     <span class="keywordflow">if</span> (rc &lt; 0) {
-<a name="l00174"></a>00174         printf (<span class="stringliteral">&quot;error in zmq_recvmsg: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-<a name="l00175"></a>00175         <span class="keywordflow">return</span> -1;
-<a name="l00176"></a>00176     }
-<a name="l00177"></a>00177     <span class="keywordflow">if</span> (<a class="code" href="zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8">zmq_msg_size</a> (&amp;msg) != message_size) {
-<a name="l00178"></a>00178         printf (<span class="stringliteral">&quot;message of incorrect size received\n&quot;</span>);
-<a name="l00179"></a>00179         <span class="keywordflow">return</span> -1;
-<a name="l00180"></a>00180     }
-<a name="l00181"></a>00181 
-<a name="l00182"></a>00182     watch = <a class="code" href="zmq__utils_8h.html#a4a5508f72f3ee8685b7e0850566d0c13">zmq_stopwatch_start</a> ();
-<a name="l00183"></a>00183 
-<a name="l00184"></a>00184     <span class="keywordflow">for</span> (i = 0; i != message_count - 1; i++) {
-<a name="l00185"></a>00185         rc = <a class="code" href="zmq_8h.html#acfaed58455d33fedb9574920c239c9ed">zmq_recvmsg</a> (s, &amp;msg, 0);
-<a name="l00186"></a>00186         <span class="keywordflow">if</span> (rc &lt; 0) {
-<a name="l00187"></a>00187             printf (<span class="stringliteral">&quot;error in zmq_recvmsg: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-<a name="l00188"></a>00188             <span class="keywordflow">return</span> -1;
-<a name="l00189"></a>00189         }
-<a name="l00190"></a>00190         <span class="keywordflow">if</span> (<a class="code" href="zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8">zmq_msg_size</a> (&amp;msg) != message_size) {
-<a name="l00191"></a>00191             printf (<span class="stringliteral">&quot;message of incorrect size received\n&quot;</span>);
-<a name="l00192"></a>00192             <span class="keywordflow">return</span> -1;
-<a name="l00193"></a>00193         }
-<a name="l00194"></a>00194     }
-<a name="l00195"></a>00195 
-<a name="l00196"></a>00196     elapsed = <a class="code" href="zmq__utils_8h.html#a90ab5c3e9343988ed91d0adc547af90a">zmq_stopwatch_stop</a> (watch);
-<a name="l00197"></a>00197     <span class="keywordflow">if</span> (elapsed == 0)
-<a name="l00198"></a>00198         elapsed = 1;
+<a name="l00155"></a>00155 <span class="preprocessor">#endif</span>
+<a name="l00156"></a>00156 <span class="preprocessor"></span>
+<a name="l00157"></a>00157     rc = <a class="code" href="zmq_8h.html#a8c888cf117d859ae0d669e95cf8b64c2">zmq_msg_init</a> (&amp;msg);
+<a name="l00158"></a>00158     <span class="keywordflow">if</span> (rc != 0) {
+<a name="l00159"></a>00159         printf (<span class="stringliteral">&quot;error in zmq_msg_init: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
+<a name="l00160"></a>00160         <span class="keywordflow">return</span> -1;
+<a name="l00161"></a>00161     }
+<a name="l00162"></a>00162 
+<a name="l00163"></a>00163     printf (<span class="stringliteral">&quot;message size: %d [B]\n&quot;</span>, (<span class="keywordtype">int</span>) <a class="code" href="inproc__thr_8cpp.html#a767ba2e8299d0d9a71b552bfb719e9f0">message_size</a>);
+<a name="l00164"></a>00164     printf (<span class="stringliteral">&quot;message count: %d\n&quot;</span>, (<span class="keywordtype">int</span>) <a class="code" href="inproc__thr_8cpp.html#a21d557fb1a24b78862f142e9ee2b3324">message_count</a>);
+<a name="l00165"></a>00165 
+<a name="l00166"></a>00166     rc = <a class="code" href="zmq_8h.html#acfaed58455d33fedb9574920c239c9ed">zmq_recvmsg</a> (s, &amp;msg, 0);
+<a name="l00167"></a>00167     <span class="keywordflow">if</span> (rc &lt; 0) {
+<a name="l00168"></a>00168         printf (<span class="stringliteral">&quot;error in zmq_recvmsg: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
+<a name="l00169"></a>00169         <span class="keywordflow">return</span> -1;
+<a name="l00170"></a>00170     }
+<a name="l00171"></a>00171     <span class="keywordflow">if</span> (<a class="code" href="zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8">zmq_msg_size</a> (&amp;msg) != message_size) {
+<a name="l00172"></a>00172         printf (<span class="stringliteral">&quot;message of incorrect size received\n&quot;</span>);
+<a name="l00173"></a>00173         <span class="keywordflow">return</span> -1;
+<a name="l00174"></a>00174     }
+<a name="l00175"></a>00175 
+<a name="l00176"></a>00176     watch = <a class="code" href="zmq__utils_8h.html#a4a5508f72f3ee8685b7e0850566d0c13">zmq_stopwatch_start</a> ();
+<a name="l00177"></a>00177 
+<a name="l00178"></a>00178     <span class="keywordflow">for</span> (i = 0; i != message_count - 1; i++) {
+<a name="l00179"></a>00179         rc = <a class="code" href="zmq_8h.html#acfaed58455d33fedb9574920c239c9ed">zmq_recvmsg</a> (s, &amp;msg, 0);
+<a name="l00180"></a>00180         <span class="keywordflow">if</span> (rc &lt; 0) {
+<a name="l00181"></a>00181             printf (<span class="stringliteral">&quot;error in zmq_recvmsg: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
+<a name="l00182"></a>00182             <span class="keywordflow">return</span> -1;
+<a name="l00183"></a>00183         }
+<a name="l00184"></a>00184         <span class="keywordflow">if</span> (<a class="code" href="zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8">zmq_msg_size</a> (&amp;msg) != message_size) {
+<a name="l00185"></a>00185             printf (<span class="stringliteral">&quot;message of incorrect size received\n&quot;</span>);
+<a name="l00186"></a>00186             <span class="keywordflow">return</span> -1;
+<a name="l00187"></a>00187         }
+<a name="l00188"></a>00188     }
+<a name="l00189"></a>00189 
+<a name="l00190"></a>00190     elapsed = <a class="code" href="zmq__utils_8h.html#a90ab5c3e9343988ed91d0adc547af90a">zmq_stopwatch_stop</a> (watch);
+<a name="l00191"></a>00191     <span class="keywordflow">if</span> (elapsed == 0)
+<a name="l00192"></a>00192         elapsed = 1;
+<a name="l00193"></a>00193 
+<a name="l00194"></a>00194     rc = <a class="code" href="zmq_8h.html#a14cc42a7330a4b174dc3b735afd2adcc">zmq_msg_close</a> (&amp;msg);
+<a name="l00195"></a>00195     <span class="keywordflow">if</span> (rc != 0) {
+<a name="l00196"></a>00196         printf (<span class="stringliteral">&quot;error in zmq_msg_close: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
+<a name="l00197"></a>00197         <span class="keywordflow">return</span> -1;
+<a name="l00198"></a>00198     }
 <a name="l00199"></a>00199 
-<a name="l00200"></a>00200     rc = <a class="code" href="zmq_8h.html#a14cc42a7330a4b174dc3b735afd2adcc">zmq_msg_close</a> (&amp;msg);
-<a name="l00201"></a>00201     <span class="keywordflow">if</span> (rc != 0) {
-<a name="l00202"></a>00202         printf (<span class="stringliteral">&quot;error in zmq_msg_close: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-<a name="l00203"></a>00203         <span class="keywordflow">return</span> -1;
-<a name="l00204"></a>00204     }
-<a name="l00205"></a>00205 
-<a name="l00206"></a>00206 <span class="preprocessor">#if defined ZMQ_HAVE_WINDOWS</span>
-<a name="l00207"></a>00207 <span class="preprocessor"></span>    DWORD rc2 = WaitForSingleObject (local_thread, INFINITE);
-<a name="l00208"></a>00208     <span class="keywordflow">if</span> (rc2 == WAIT_FAILED) {
-<a name="l00209"></a>00209         printf (<span class="stringliteral">&quot;error in WaitForSingleObject\n&quot;</span>);
-<a name="l00210"></a>00210         <span class="keywordflow">return</span> -1;
-<a name="l00211"></a>00211     }
-<a name="l00212"></a>00212     BOOL rc3 = CloseHandle (local_thread);
-<a name="l00213"></a>00213     <span class="keywordflow">if</span> (rc3 == 0) {
-<a name="l00214"></a>00214         printf (<span class="stringliteral">&quot;error in CloseHandle\n&quot;</span>);
+<a name="l00200"></a>00200 <span class="preprocessor">#if defined ZMQ_HAVE_WINDOWS</span>
+<a name="l00201"></a>00201 <span class="preprocessor"></span>    DWORD rc2 = WaitForSingleObject (local_thread, INFINITE);
+<a name="l00202"></a>00202     <span class="keywordflow">if</span> (rc2 == WAIT_FAILED) {
+<a name="l00203"></a>00203         printf (<span class="stringliteral">&quot;error in WaitForSingleObject\n&quot;</span>);
+<a name="l00204"></a>00204         <span class="keywordflow">return</span> -1;
+<a name="l00205"></a>00205     }
+<a name="l00206"></a>00206     BOOL rc3 = CloseHandle (local_thread);
+<a name="l00207"></a>00207     <span class="keywordflow">if</span> (rc3 == 0) {
+<a name="l00208"></a>00208         printf (<span class="stringliteral">&quot;error in CloseHandle\n&quot;</span>);
+<a name="l00209"></a>00209         <span class="keywordflow">return</span> -1;
+<a name="l00210"></a>00210     }
+<a name="l00211"></a>00211 <span class="preprocessor">#else</span>
+<a name="l00212"></a>00212 <span class="preprocessor"></span>    rc = pthread_join (local_thread, NULL);
+<a name="l00213"></a>00213     <span class="keywordflow">if</span> (rc != 0) {
+<a name="l00214"></a>00214         printf (<span class="stringliteral">&quot;error in pthread_join: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (rc));
 <a name="l00215"></a>00215         <span class="keywordflow">return</span> -1;
 <a name="l00216"></a>00216     }
-<a name="l00217"></a>00217 <span class="preprocessor">#else</span>
-<a name="l00218"></a>00218 <span class="preprocessor"></span>    rc = pthread_join (local_thread, NULL);
-<a name="l00219"></a>00219     <span class="keywordflow">if</span> (rc != 0) {
-<a name="l00220"></a>00220         printf (<span class="stringliteral">&quot;error in pthread_join: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (rc));
-<a name="l00221"></a>00221         <span class="keywordflow">return</span> -1;
-<a name="l00222"></a>00222     }
-<a name="l00223"></a>00223 <span class="preprocessor">#endif</span>
-<a name="l00224"></a>00224 <span class="preprocessor"></span>
-<a name="l00225"></a>00225     rc = <a class="code" href="zmq_8h.html#a7f3288b9a1241ae2d2cc2a41324a7dd5">zmq_close</a> (s);
+<a name="l00217"></a>00217 <span class="preprocessor">#endif</span>
+<a name="l00218"></a>00218 <span class="preprocessor"></span>
+<a name="l00219"></a>00219     rc = <a class="code" href="zmq_8h.html#a7f3288b9a1241ae2d2cc2a41324a7dd5">zmq_close</a> (s);
+<a name="l00220"></a>00220     <span class="keywordflow">if</span> (rc != 0) {
+<a name="l00221"></a>00221         printf (<span class="stringliteral">&quot;error in zmq_close: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
+<a name="l00222"></a>00222         <span class="keywordflow">return</span> -1;
+<a name="l00223"></a>00223     }
+<a name="l00224"></a>00224 
+<a name="l00225"></a>00225     rc = <a class="code" href="zmq_8h.html#ab6987eb024256ef4ccda6a18ce37a2f0">zmq_term</a> (ctx);
 <a name="l00226"></a>00226     <span class="keywordflow">if</span> (rc != 0) {
-<a name="l00227"></a>00227         printf (<span class="stringliteral">&quot;error in zmq_close: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
+<a name="l00227"></a>00227         printf (<span class="stringliteral">&quot;error in zmq_term: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
 <a name="l00228"></a>00228         <span class="keywordflow">return</span> -1;
 <a name="l00229"></a>00229     }
 <a name="l00230"></a>00230 
-<a name="l00231"></a>00231     rc = <a class="code" href="zmq_8h.html#ab6987eb024256ef4ccda6a18ce37a2f0">zmq_term</a> (ctx);
-<a name="l00232"></a>00232     <span class="keywordflow">if</span> (rc != 0) {
-<a name="l00233"></a>00233         printf (<span class="stringliteral">&quot;error in zmq_term: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
-<a name="l00234"></a>00234         <span class="keywordflow">return</span> -1;
-<a name="l00235"></a>00235     }
-<a name="l00236"></a>00236 
-<a name="l00237"></a>00237     throughput = (<span class="keywordtype">unsigned</span> long)
-<a name="l00238"></a>00238         ((<span class="keywordtype">double</span>) message_count / (double) elapsed * 1000000);
-<a name="l00239"></a>00239     megabits = (double) (throughput * message_size * 8) / 1000000;
+<a name="l00231"></a>00231     throughput = (<span class="keywordtype">unsigned</span> long)
+<a name="l00232"></a>00232         ((<span class="keywordtype">double</span>) message_count / (double) elapsed * 1000000);
+<a name="l00233"></a>00233     megabits = (double) (throughput * message_size * 8) / 1000000;
+<a name="l00234"></a>00234 
+<a name="l00235"></a>00235     printf (<span class="stringliteral">&quot;mean throughput: %d [msg/s]\n&quot;</span>, (<span class="keywordtype">int</span>) throughput);
+<a name="l00236"></a>00236     printf (<span class="stringliteral">&quot;mean throughput: %.3f [Mb/s]\n&quot;</span>, (<span class="keywordtype">double</span>) megabits);
+<a name="l00237"></a>00237 
+<a name="l00238"></a>00238     <span class="keywordflow">return</span> 0;
+<a name="l00239"></a>00239 }
 <a name="l00240"></a>00240 
-<a name="l00241"></a>00241     printf (<span class="stringliteral">&quot;mean throughput: %d [msg/s]\n&quot;</span>, (<span class="keywordtype">int</span>) throughput);
-<a name="l00242"></a>00242     printf (<span class="stringliteral">&quot;mean throughput: %.3f [Mb/s]\n&quot;</span>, (<span class="keywordtype">double</span>) megabits);
-<a name="l00243"></a>00243 
-<a name="l00244"></a>00244     <span class="keywordflow">return</span> 0;
-<a name="l00245"></a>00245 }
-<a name="l00246"></a>00246 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -367,7 +361,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jun 18 2011 17:16:36 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 19 2011 13:33:47 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

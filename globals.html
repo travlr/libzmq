@@ -232,6 +232,7 @@ function toggleVisibility(linkObj) {
 , <a class="el" href="local__thr_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">local_thr.cpp</a>
 , <a class="el" href="test__pair__inproc_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">test_pair_inproc.cpp</a>
 , <a class="el" href="test__pair__ipc_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">test_pair_ipc.cpp</a>
+, <a class="el" href="test__timeo_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">test_timeo.cpp</a>
 , <a class="el" href="test__shutdown__stress_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">test_shutdown_stress.cpp</a>
 , <a class="el" href="test__reqrep__tcp_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">test_reqrep_tcp.cpp</a>
 , <a class="el" href="test__reqrep__ipc_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">test_reqrep_ipc.cpp</a>
@@ -246,8 +247,8 @@ function toggleVisibility(linkObj) {
 : <a class="el" href="inproc__thr_8cpp.html#a21d557fb1a24b78862f142e9ee2b3324">inproc_thr.cpp</a>
 </li>
 <li>message_size
-: <a class="el" href="inproc__lat_8cpp.html#a767ba2e8299d0d9a71b552bfb719e9f0">inproc_lat.cpp</a>
-, <a class="el" href="inproc__thr_8cpp.html#a767ba2e8299d0d9a71b552bfb719e9f0">inproc_thr.cpp</a>
+: <a class="el" href="inproc__thr_8cpp.html#a767ba2e8299d0d9a71b552bfb719e9f0">inproc_thr.cpp</a>
+, <a class="el" href="inproc__lat_8cpp.html#a767ba2e8299d0d9a71b552bfb719e9f0">inproc_lat.cpp</a>
 </li>
 <li>msg_free_fn
 : <a class="el" href="msg_8hpp.html#afce65de211e40cab62117312922487ed">msg.hpp</a>
@@ -419,7 +420,8 @@ function toggleVisibility(linkObj) {
 : <a class="el" href="windows_8hpp.html#ac7bef5d85e3dcd73eef56ad39ffc84a9">windows.hpp</a>
 </li>
 <li>worker()
-: <a class="el" href="test__shutdown__stress_8cpp.html#ab1c51147f2d4042bdee88a40e7992631">test_shutdown_stress.cpp</a>
+: <a class="el" href="test__timeo_8cpp.html#a8a6ea9c073b6bec6d3759ee4cd794eaa">test_timeo.cpp</a>
+, <a class="el" href="test__shutdown__stress_8cpp.html#ab1c51147f2d4042bdee88a40e7992631">test_shutdown_stress.cpp</a>
 , <a class="el" href="inproc__thr_8cpp.html#afdde2c05692ce4366f55800934ffdebe">inproc_thr.cpp</a>
 , <a class="el" href="inproc__lat_8cpp.html#afdde2c05692ce4366f55800934ffdebe">inproc_lat.cpp</a>
 </li>
@@ -575,6 +577,9 @@ function toggleVisibility(linkObj) {
 <li>ZMQ_RCVMORE
 : <a class="el" href="zmq_8h.html#aab168348824c16200f7299483f6cce97">zmq.h</a>
 </li>
+<li>ZMQ_RCVTIMEO
+: <a class="el" href="zmq_8h.html#a3214126ec0a83f867c59cbfd579ab4c6">zmq.h</a>
+</li>
 <li>ZMQ_RECONNECT_IVL
 : <a class="el" href="zmq_8h.html#a96999d707609e36ef85415638fafa146">zmq.h</a>
 </li>
@@ -603,8 +608,8 @@ function toggleVisibility(linkObj) {
 , <a class="el" href="zmq_8cpp.html#a9894b4722d321559d3990898603ec63a">zmq.cpp</a>
 </li>
 <li>zmq_sendmsg()
-: <a class="el" href="zmq_8cpp.html#a8280be9161357a9a4610e94f7de5a3ad">zmq.cpp</a>
-, <a class="el" href="zmq_8h.html#a2d25c972234261a2b683d6376e7b09aa">zmq.h</a>
+: <a class="el" href="zmq_8h.html#a2d25c972234261a2b683d6376e7b09aa">zmq.h</a>
+, <a class="el" href="zmq_8cpp.html#a8280be9161357a9a4610e94f7de5a3ad">zmq.cpp</a>
 </li>
 <li>zmq_setsockopt()
 : <a class="el" href="zmq_8h.html#acc51e98041e88b50af242d5847d0c7d7">zmq.h</a>
@@ -622,6 +627,9 @@ function toggleVisibility(linkObj) {
 </li>
 <li>ZMQ_SNDMORE
 : <a class="el" href="zmq_8h.html#a0e130fcfafb931a05616a369caa2af2f">zmq.h</a>
+</li>
+<li>ZMQ_SNDTIMEO
+: <a class="el" href="zmq_8h.html#aa20f8335b496a526edf71744fff41e86">zmq.h</a>
 </li>
 <li>zmq_socket()
 : <a class="el" href="zmq_8cpp.html#ab8808eefe4acbfe131a3b2a3c50ab801">zmq.cpp</a>
@@ -699,7 +707,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jun 18 2011 17:16:59 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 19 2011 13:33:59 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

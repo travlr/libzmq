@@ -6,11 +6,10 @@
 <area shape="rect" id="node11" href="$zmq_8h.html#a8c888cf117d859ae0d669e95cf8b64c2" title="zmq_msg_init" alt="" coords="127,219,228,248"/>
 <area shape="rect" id="node13" href="$zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8" title="zmq_msg_size" alt="" coords="320,297,429,327"/>
 <area shape="rect" id="node15" href="$zmq_8h.html#acfaed58455d33fedb9574920c239c9ed" title="zmq_recvmsg" alt="" coords="125,323,229,352"/>
-<area shape="rect" id="node18" href="$zmq_8h.html#acc51e98041e88b50af242d5847d0c7d7" title="zmq_setsockopt" alt="" coords="119,376,236,405"/>
-<area shape="rect" id="node20" href="$zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd" title="zmq_socket" alt="" coords="131,429,224,459"/>
-<area shape="rect" id="node22" href="$zmq__utils_8h.html#a4a5508f72f3ee8685b7e0850566d0c13" title="zmq_stopwatch_start" alt="" coords="104,483,251,512"/>
-<area shape="rect" id="node26" href="$zmq__utils_8h.html#a90ab5c3e9343988ed91d0adc547af90a" title="zmq_stopwatch_stop" alt="" coords="104,536,251,565"/>
-<area shape="rect" id="node29" href="$zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27" title="zmq_strerror" alt="" coords="131,589,224,619"/>
-<area shape="rect" id="node31" href="$zmq_8h.html#ab6987eb024256ef4ccda6a18ce37a2f0" title="zmq_term" alt="" coords="137,643,217,672"/>
-<area shape="rect" id="node24" href="$classzmq_1_1clock__t.html#ac1caeb031c357ffe97a3df77a87ed265" title="zmq::clock_t::now_us" alt="" coords="300,509,449,539"/>
+<area shape="rect" id="node18" href="$zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd" title="zmq_socket" alt="" coords="131,376,224,405"/>
+<area shape="rect" id="node20" href="$zmq__utils_8h.html#a4a5508f72f3ee8685b7e0850566d0c13" title="zmq_stopwatch_start" alt="" coords="104,429,251,459"/>
+<area shape="rect" id="node24" href="$zmq__utils_8h.html#a90ab5c3e9343988ed91d0adc547af90a" title="zmq_stopwatch_stop" alt="" coords="104,483,251,512"/>
+<area shape="rect" id="node27" href="$zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27" title="zmq_strerror" alt="" coords="131,536,224,565"/>
+<area shape="rect" id="node29" href="$zmq_8h.html#ab6987eb024256ef4ccda6a18ce37a2f0" title="zmq_term" alt="" coords="137,589,217,619"/>
+<area shape="rect" id="node22" href="$classzmq_1_1clock__t.html#ac1caeb031c357ffe97a3df77a87ed265" title="zmq::clock_t::now_us" alt="" coords="300,456,449,485"/>
 </map>

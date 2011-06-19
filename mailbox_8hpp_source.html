@@ -148,7 +148,7 @@ function toggleVisibility(linkObj) {
 <a name="l00041"></a>00041 
 <a name="l00042"></a>00042         fd_t <a class="code" href="classzmq_1_1mailbox__t.html#aea99b88ae98a776e71c86f5df3cd0d21">get_fd</a> ();
 <a name="l00043"></a>00043         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1mailbox__t.html#a2f137ea3c73f93e944452a0706984451">send</a> (<span class="keyword">const</span> <a class="code" href="structzmq_1_1command__t.html">command_t</a> &amp;cmd_);
-<a name="l00044"></a>00044         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1mailbox__t.html#a5d75d5e0d1ebce4e8e9fb1990b704b72">recv</a> (<a class="code" href="structzmq_1_1command__t.html">command_t</a> *cmd_, <span class="keywordtype">bool</span> block_);
+<a name="l00044"></a>00044         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1mailbox__t.html#a8e63238410c010f3dc6c69cd51394172">recv</a> (<a class="code" href="structzmq_1_1command__t.html">command_t</a> *cmd_, <span class="keywordtype">int</span> timeout_);
 <a name="l00045"></a>00045         
 <a name="l00046"></a>00046     <span class="keyword">private</span>:
 <a name="l00047"></a>00047 
@@ -159,14 +159,19 @@ function toggleVisibility(linkObj) {
 <a name="l00052"></a>00052         <span class="comment">//  Platform-dependent function to create a socketpair.</span>
 <a name="l00053"></a>00053         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1mailbox__t.html#a111fadf93fe3e74301e7584414a6437c">make_socketpair</a> (fd_t *r_, fd_t *w_);
 <a name="l00054"></a>00054 
-<a name="l00055"></a>00055         <span class="comment">//  Disable copying of mailbox_t object.</span>
-<a name="l00056"></a>00056         <a class="code" href="classzmq_1_1mailbox__t.html#a1f6cd7cf138f5538c0d7150c5ffe7773">mailbox_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1mailbox__t.html">mailbox_t</a>&amp;);
-<a name="l00057"></a>00057         <span class="keyword">const</span> <a class="code" href="classzmq_1_1mailbox__t.html">mailbox_t</a> &amp;<a class="code" href="classzmq_1_1mailbox__t.html#afc24b8f515e54ef44f7dfb1c3cedb708">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1mailbox__t.html">mailbox_t</a>&amp;);
-<a name="l00058"></a>00058     };
+<a name="l00055"></a>00055         <span class="comment">//  Receives a command with the specific timeout.</span>
+<a name="l00056"></a>00056         <span class="comment">//  This function is not to be used for non-blocking or inifinitely</span>
+<a name="l00057"></a>00057         <span class="comment">//  blocking recvs.</span>
+<a name="l00058"></a>00058         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1mailbox__t.html#a467f635176604fb7b15153f5f672085b">recv_timeout</a> (<a class="code" href="structzmq_1_1command__t.html">command_t</a> *cmd_, <span class="keywordtype">int</span> timeout_);
 <a name="l00059"></a>00059 
-<a name="l00060"></a>00060 }
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062 <span class="preprocessor">#endif</span>
+<a name="l00060"></a>00060         <span class="comment">//  Disable copying of mailbox_t object.</span>
+<a name="l00061"></a>00061         <a class="code" href="classzmq_1_1mailbox__t.html#a1f6cd7cf138f5538c0d7150c5ffe7773">mailbox_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1mailbox__t.html">mailbox_t</a>&amp;);
+<a name="l00062"></a>00062         <span class="keyword">const</span> <a class="code" href="classzmq_1_1mailbox__t.html">mailbox_t</a> &amp;<a class="code" href="classzmq_1_1mailbox__t.html#afc24b8f515e54ef44f7dfb1c3cedb708">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1mailbox__t.html">mailbox_t</a>&amp;);
+<a name="l00063"></a>00063     };
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065 }
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -183,7 +188,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jun 18 2011 17:16:38 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 19 2011 13:33:47 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

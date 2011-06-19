@@ -403,7 +403,7 @@ function toggleVisibility(linkObj) {
 <a name="l00296"></a>00296         errno = err;
 <a name="l00297"></a>00297         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (errno == <a class="code" href="zmq_8h.html#aad88020b394ef1aa4af2f4ef9b4c8b39">ECONNREFUSED</a> || errno == ECONNRESET ||
 <a name="l00298"></a>00298             errno == ETIMEDOUT || errno == EHOSTUNREACH ||
-<a name="l00299"></a>00299             errno == ENETUNREACH);
+<a name="l00299"></a>00299             errno == ENETUNREACH || errno == <a class="code" href="zmq_8h.html#aac51995026fa19cdd0ad84a272304af0">ENETDOWN</a>);
 <a name="l00300"></a>00300 
 <a name="l00301"></a>00301         <span class="keywordflow">return</span> retired_fd;
 <a name="l00302"></a>00302     }
@@ -430,7 +430,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jun 18 2011 17:16:39 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 19 2011 13:33:47 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

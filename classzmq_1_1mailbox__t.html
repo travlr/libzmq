@@ -123,12 +123,13 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a1f6cd7cf138f5538c0d7150c5ffe7773">mailbox_t</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a5733d60bd33a6ab29085891706356d8b">~mailbox_t</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">fd_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#aea99b88ae98a776e71c86f5df3cd0d21">get_fd</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a5d75d5e0d1ebce4e8e9fb1990b704b72">recv</a> (<a class="el" href="structzmq_1_1command__t.html">command_t</a> *cmd_, bool block_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a8e63238410c010f3dc6c69cd51394172">recv</a> (<a class="el" href="structzmq_1_1command__t.html">command_t</a> *cmd_, int timeout_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a2f137ea3c73f93e944452a0706984451">send</a> (const <a class="el" href="structzmq_1_1command__t.html">command_t</a> &amp;cmd_)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a6b0d588401c2cf869090ba6f787ff2a9">mailbox_t</a> (const <a class="el" href="classzmq_1_1mailbox__t.html">mailbox_t</a> &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classzmq_1_1mailbox__t.html">mailbox_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#afc24b8f515e54ef44f7dfb1c3cedb708">operator=</a> (const <a class="el" href="classzmq_1_1mailbox__t.html">mailbox_t</a> &amp;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a467f635176604fb7b15153f5f672085b">recv_timeout</a> (<a class="el" href="structzmq_1_1command__t.html">command_t</a> *cmd_, int timeout_)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a111fadf93fe3e74301e7584414a6437c">make_socketpair</a> (fd_t *r_, fd_t *w_)</td></tr>
@@ -155,7 +156,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00123">123</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
+<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00163">163</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
@@ -175,7 +176,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00151">151</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
+<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00191">191</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
 
 </div>
 </div>
@@ -211,7 +212,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00039">39</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
+<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00075">75</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
 
 <p>References <a class="el" href="mailbox_8hpp_source.html#l00050">r</a>.</p>
 
@@ -255,7 +256,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00252">252</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
+<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00296">296</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>.</p>
 
@@ -278,7 +279,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5d75d5e0d1ebce4e8e9fb1990b704b72"></a><!-- doxytag: member="zmq::mailbox_t::recv" ref="a5d75d5e0d1ebce4e8e9fb1990b704b72" args="(command_t *cmd_, bool block_)" -->
+<a class="anchor" id="a8e63238410c010f3dc6c69cd51394172"></a><!-- doxytag: member="zmq::mailbox_t::recv" ref="a8e63238410c010f3dc6c69cd51394172" args="(command_t *cmd_, int timeout_)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -291,8 +292,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>block_</em>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout_</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -303,9 +304,40 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00197">197</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
+<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00237">237</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a467f635176604fb7b15153f5f672085b"></a><!-- doxytag: member="zmq::mailbox_t::recv_timeout" ref="a467f635176604fb7b15153f5f672085b" args="(command_t *cmd_, int timeout_)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int zmq::mailbox_t::recv_timeout </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structzmq_1_1command__t.html">command_t</a> *&#160;</td>
+          <td class="paramname"><em>cmd_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00427">427</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
+
+<p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -324,7 +356,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00157">157</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
+<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00197">197</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
@@ -344,7 +376,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="mailbox_8hpp_source.html#l00050">50</a> of file <a class="el" href="mailbox_8hpp_source.html">mailbox.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="mailbox_8cpp_source.html#l00039">get_fd()</a>.</p>
+<p>Referenced by <a class="el" href="mailbox_8cpp_source.html#l00075">get_fd()</a>.</p>
 
 </div>
 </div>
@@ -382,7 +414,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jun 18 2011 17:16:52 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 19 2011 13:33:50 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

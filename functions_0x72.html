@@ -157,6 +157,9 @@ function toggleVisibility(linkObj) {
 <li>rcvmore
 : <a class="el" href="classzmq_1_1socket__base__t.html#a3733086bbeaa43b4e971b45bc88d2b39">zmq::socket_base_t</a>
 </li>
+<li>rcvtimeo
+: <a class="el" href="structzmq_1_1options__t.html#aca04959d4b92ef8a9a12ce1365a52788">zmq::options_t</a>
+</li>
 <li>rdtsc()
 : <a class="el" href="classzmq_1_1clock__t.html#a1ae8e531a4d778cc2a6b9a66d86137eb">zmq::clock_t</a>
 </li>
@@ -169,9 +172,9 @@ function toggleVisibility(linkObj) {
 , <a class="el" href="classzmq_1_1zmq__init__t.html#ac09abab0ce5de2f32a0ac98ed8e14dc3">zmq::zmq_init_t</a>
 </li>
 <li>read_activated()
-: <a class="el" href="classzmq_1_1socket__base__t.html#a93bb15f47c65897c717f6916e4a8f98d">zmq::socket_base_t</a>
+: <a class="el" href="classzmq_1_1session__t.html#ab7743f9b819daac3c752bc733f071721">zmq::session_t</a>
+, <a class="el" href="classzmq_1_1socket__base__t.html#a93bb15f47c65897c717f6916e4a8f98d">zmq::socket_base_t</a>
 , <a class="el" href="structzmq_1_1i__pipe__events.html#a112f3c02be6d51aa956da11658d61ad1">zmq::i_pipe_events</a>
-, <a class="el" href="classzmq_1_1session__t.html#ab7743f9b819daac3c752bc733f071721">zmq::session_t</a>
 </li>
 <li>read_pos
 : <a class="el" href="classzmq_1_1decoder__base__t.html#aa96b939c1f0d25012c95112e7c9d6163">zmq::decoder_base_t&lt; T &gt;</a>
@@ -215,8 +218,11 @@ function toggleVisibility(linkObj) {
 </li>
 <li>recv()
 : <a class="el" href="classzmq_1_1fq__t.html#a9f0e2eda72444f81444dcc1dc3b08dc3">zmq::fq_t</a>
-, <a class="el" href="classzmq_1_1mailbox__t.html#a5d75d5e0d1ebce4e8e9fb1990b704b72">zmq::mailbox_t</a>
+, <a class="el" href="classzmq_1_1mailbox__t.html#a8e63238410c010f3dc6c69cd51394172">zmq::mailbox_t</a>
 , <a class="el" href="classzmq_1_1socket__base__t.html#ab8426636dcb0f15483a5817b26059bed">zmq::socket_base_t</a>
+</li>
+<li>recv_timeout()
+: <a class="el" href="classzmq_1_1mailbox__t.html#a467f635176604fb7b15153f5f672085b">zmq::mailbox_t</a>
 </li>
 <li>recvpipe()
 : <a class="el" href="classzmq_1_1fq__t.html#af191410167583b8ee98a76e2f4f6f2f3">zmq::fq_t</a>
@@ -263,8 +269,9 @@ function toggleVisibility(linkObj) {
 : <a class="el" href="structzmq__pollitem__t.html#a9932842d01802c95c18ab6a296d2e5e8">zmq_pollitem_t</a>
 </li>
 <li>rm()
-: <a class="el" href="classzmq_1_1trie__t.html#ab15f7f0440899870e962f0697e89b3ac">zmq::trie_t</a>
-, <a class="el" href="classzmq_1_1mtrie__t.html#a0c9acd9ea25f75a778f8ddb7e4bd7e93">zmq::mtrie_t</a>
+: <a class="el" href="classzmq_1_1mtrie__t.html#a0c9acd9ea25f75a778f8ddb7e4bd7e93">zmq::mtrie_t</a>
+, <a class="el" href="classzmq_1_1trie__t.html#ab15f7f0440899870e962f0697e89b3ac">zmq::trie_t</a>
+, <a class="el" href="classzmq_1_1mtrie__t.html#a40a6deb057d2d313a37a8497b538d136">zmq::mtrie_t</a>
 </li>
 <li>rm_fd()
 : <a class="el" href="classzmq_1_1io__object__t.html#a3eec6c5d52ffb674f6c44923f21b727f">zmq::io_object_t</a>
@@ -277,8 +284,8 @@ function toggleVisibility(linkObj) {
 : <a class="el" href="classzmq_1_1msg__t.html#a43c78e4688c189c55769eae89a140597">zmq::msg_t</a>
 </li>
 <li>rollback()
-: <a class="el" href="classzmq_1_1pipe__t.html#a7506327540c73c5ef9336c625315ff60">zmq::pipe_t</a>
-, <a class="el" href="classzmq_1_1xrep__t.html#a1bb8754aa30098220778ad7cb10c1b2b">zmq::xrep_t</a>
+: <a class="el" href="classzmq_1_1xrep__t.html#a1bb8754aa30098220778ad7cb10c1b2b">zmq::xrep_t</a>
+, <a class="el" href="classzmq_1_1pipe__t.html#a7506327540c73c5ef9336c625315ff60">zmq::pipe_t</a>
 </li>
 </ul>
 </div>
@@ -296,7 +303,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jun 18 2011 17:16:49 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 19 2011 13:33:49 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

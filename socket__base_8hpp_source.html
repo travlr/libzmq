@@ -267,11 +267,11 @@ function toggleVisibility(linkObj) {
 <a name="l00160"></a>00160         <span class="comment">//  Register the pipe with this socket.</span>
 <a name="l00161"></a>00161         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1socket__base__t.html#a85e264824404eee2023ef0510dc19dfa">attach_pipe</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, <span class="keyword">const</span> blob_t &amp;peer_identity_);
 <a name="l00162"></a>00162 
-<a name="l00163"></a>00163         <span class="comment">//  Processes commands sent to this socket (if any). If &#39;block&#39; is</span>
-<a name="l00164"></a>00164         <span class="comment">//  set to true, returns only after at least one command was processed.</span>
+<a name="l00163"></a>00163         <span class="comment">//  Processes commands sent to this socket (if any). If timeout is -1,</span>
+<a name="l00164"></a>00164         <span class="comment">//  returns only after at least one command was processed.</span>
 <a name="l00165"></a>00165         <span class="comment">//  If throttle argument is true, commands are processed at most once</span>
 <a name="l00166"></a>00166         <span class="comment">//  in a predefined time period.</span>
-<a name="l00167"></a>00167         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1socket__base__t.html#a727c494147ebcd76c661fd198f990d0b">process_commands</a> (<span class="keywordtype">bool</span> block_, <span class="keywordtype">bool</span> throttle_);
+<a name="l00167"></a>00167         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1socket__base__t.html#a1930bd46e6c56df924e9fed0a0436d8c">process_commands</a> (<span class="keywordtype">int</span> timeout_, <span class="keywordtype">bool</span> throttle_);
 <a name="l00168"></a>00168 
 <a name="l00169"></a>00169         <span class="comment">//  Handlers for incoming commands.</span>
 <a name="l00170"></a>00170         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1socket__base__t.html#a71412227c6df194eea21b5c68f9a5668">process_stop</a> ();
@@ -330,7 +330,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jun 18 2011 17:16:39 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 19 2011 13:33:47 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

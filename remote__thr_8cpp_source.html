@@ -157,7 +157,7 @@ function toggleVisibility(linkObj) {
 <a name="l00050"></a>00050         <span class="keywordflow">return</span> -1;
 <a name="l00051"></a>00051     }
 <a name="l00052"></a>00052 
-<a name="l00053"></a>00053     s = <a class="code" href="zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd">zmq_socket</a> (ctx, <a class="code" href="zmq_8h.html#a0755bc624cb1e1a7e897d8b512e17f2a">ZMQ_PUB</a>);
+<a name="l00053"></a>00053     s = <a class="code" href="zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd">zmq_socket</a> (ctx, <a class="code" href="zmq_8h.html#aae68598254ac93c3ca95d996d66b53fa">ZMQ_PUSH</a>);
 <a name="l00054"></a>00054     <span class="keywordflow">if</span> (!s) {
 <a name="l00055"></a>00055         printf (<span class="stringliteral">&quot;error in zmq_socket: %s\n&quot;</span>, <a class="code" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (errno));
 <a name="l00056"></a>00056         <span class="keywordflow">return</span> -1;
@@ -225,7 +225,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jun 18 2011 17:16:36 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 19 2011 13:33:47 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

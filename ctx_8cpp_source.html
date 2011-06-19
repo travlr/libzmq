@@ -249,7 +249,7 @@ function toggleVisibility(linkObj) {
 <a name="l00142"></a>00142 
 <a name="l00143"></a>00143     <span class="comment">//  Wait till reaper thread closes all the sockets.</span>
 <a name="l00144"></a>00144     <a class="code" href="structzmq_1_1command__t.html">command_t</a> cmd;
-<a name="l00145"></a>00145     <span class="keywordtype">int</span> rc = term_mailbox.recv (&amp;cmd, <span class="keyword">true</span>);
+<a name="l00145"></a>00145     <span class="keywordtype">int</span> rc = term_mailbox.recv (&amp;cmd, -1);
 <a name="l00146"></a>00146     <span class="keywordflow">if</span> (rc == -1 &amp;&amp; errno == EINTR)
 <a name="l00147"></a>00147         <span class="keywordflow">return</span> -1;
 <a name="l00148"></a>00148     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
@@ -445,7 +445,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jun 18 2011 17:16:37 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 19 2011 13:33:47 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

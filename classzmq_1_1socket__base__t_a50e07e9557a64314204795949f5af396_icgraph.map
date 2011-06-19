@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classzmq_1_1xsub__t.html#a476721e0563ecac9ef9e9bf83b84c47e" title="zmq::xsub_t::process_term" alt="" coords="280,5,461,35"/>
-<area shape="rect" id="node5" href="$classzmq_1_1xreq__t.html#ad30c447198f8d21ed1aece589068ea43" title="zmq::xreq_t::process_term" alt="" coords="281,59,460,88"/>
-<area shape="rect" id="node7" href="$classzmq_1_1xrep__t.html#a10a83cecc0ad6650056e8d9c17a4800e" title="zmq::xrep_t::process_term" alt="" coords="281,112,460,141"/>
-<area shape="rect" id="node9" href="$classzmq_1_1xpub__t.html#aabf2881c421dd5ec0615cf2f05497a31" title="zmq::xpub_t::process_term" alt="" coords="280,165,461,195"/>
-<area shape="rect" id="node11" href="$classzmq_1_1push__t.html#a8e0a923100377a7bc1c46f0350160caa" title="zmq::push_t::process_term" alt="" coords="280,219,461,248"/>
-<area shape="rect" id="node13" href="$classzmq_1_1pull__t.html#a67f5846f8ee0af8d75813a54287f8890" title="zmq::pull_t::process_term" alt="" coords="284,272,457,301"/>
-<area shape="rect" id="node15" href="$classzmq_1_1pair__t.html#ada47e5ae5b221b71b0cf6439e1777989" title="zmq::pair_t::process_term" alt="" coords="284,325,457,355"/>
-</map>

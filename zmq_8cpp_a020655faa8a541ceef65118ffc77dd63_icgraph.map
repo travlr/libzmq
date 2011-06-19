@@ -1,11 +1,9 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$inproc__thr_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="172,32,223,61"/>
-<area shape="rect" id="node5" href="$inproc__lat_8cpp.html#afdde2c05692ce4366f55800934ffdebe" title="worker" alt="" coords="167,85,228,115"/>
-<area shape="rect" id="node13" href="$zmq_8cpp.html#aed5e040d1f661211601bcb12e67851df" title="zmq_recv" alt="" coords="159,165,236,195"/>
-<area shape="rect" id="node7" href="$inproc__lat_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="341,5,392,35"/>
-<area shape="rect" id="node9" href="$classzmq_1_1select__t.html#ad3f4a2a6b5efb9b431994b5a9cdb2a71" title="zmq::select_t::start" alt="" coords="300,59,433,88"/>
-<area shape="rect" id="node11" href="$classzmq_1_1select__t.html#a5804585770480c0be49bb6b78e5a3cf7" title="zmq::select_t::~select_t" alt="" coords="285,112,448,141"/>
-<area shape="rect" id="node15" href="$testutil_8hpp.html#a706fc073296c3da5fb021a69cc22089d" title="bounce" alt="" coords="335,165,399,195"/>
-<area shape="rect" id="node19" href="$test__hwm_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="341,219,392,248"/>
-<area shape="rect" id="node17" href="$test__pair__inproc_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="496,165,547,195"/>
+<area shape="rect" id="node3" href="$inproc__thr_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="172,5,223,35"/>
+<area shape="rect" id="node5" href="$inproc__lat_8cpp.html#afdde2c05692ce4366f55800934ffdebe" title="worker" alt="" coords="167,59,228,88"/>
+<area shape="rect" id="node9" href="$zmq_8cpp.html#aed5e040d1f661211601bcb12e67851df" title="zmq_recv" alt="" coords="159,112,236,141"/>
+<area shape="rect" id="node7" href="$inproc__lat_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="292,59,343,88"/>
+<area shape="rect" id="node11" href="$testutil_8hpp.html#a706fc073296c3da5fb021a69cc22089d" title="bounce" alt="" coords="285,112,349,141"/>
+<area shape="rect" id="node15" href="$test__hwm_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="292,165,343,195"/>
+<area shape="rect" id="node13" href="$test__pair__inproc_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="397,112,448,141"/>
 </map>

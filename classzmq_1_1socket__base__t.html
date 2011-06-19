@@ -243,7 +243,7 @@ Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classzmq_1_1socket__base__t.html">socket_base_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1socket__base__t.html#a44bc0533bddbcdfb45957c9cd591b2d8">operator=</a> (const <a class="el" href="classzmq_1_1socket__base__t.html">socket_base_t</a> &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1socket__base__t.html#a08241eec93038603fd4d7f1567f4ad44">parse_uri</a> (const char *uri_, std::string &amp;protocol_, std::string &amp;address_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1socket__base__t.html#add43a0e2d7eda9a3f2b47f37d217cffe">process_bind</a> (class <a class="el" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, const blob_t &amp;peer_identity_)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1socket__base__t.html#a727c494147ebcd76c661fd198f990d0b">process_commands</a> (bool block_, bool throttle_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1socket__base__t.html#a1930bd46e6c56df924e9fed0a0436d8c">process_commands</a> (int timeout_, bool throttle_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1socket__base__t.html#a71412227c6df194eea21b5c68f9a5668">process_stop</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1socket__base__t.html#a50e07e9557a64314204795949f5af396">process_term</a> (int linger_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1socket__base__t.html#aaacdceb461d2ea413fa947e9f36a9369">process_unplug</a> ()</td></tr>
@@ -394,7 +394,7 @@ Friends</h2></td></tr>
 
 <p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00214">214</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
-<p>References <a class="el" href="pipe_8cpp_source.html#l00081">zmq::pipe_t::set_event_sink()</a>, and <a class="el" href="pipe_8cpp_source.html#l00304">zmq::pipe_t::terminate()</a>.</p>
+<p>References <a class="el" href="pipe_8cpp_source.html#l00081">zmq::pipe_t::set_event_sink()</a>, and <a class="el" href="pipe_8cpp_source.html#l00311">zmq::pipe_t::terminate()</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -468,7 +468,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00816">816</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00850">850</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 <p>References <a class="el" href="own_8cpp_source.html#l00215">zmq::own_t::process_destroy()</a>.</p>
 
@@ -553,6 +553,8 @@ Friends</h2></td></tr>
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_cgraph.png" border="0" usemap="#classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_cgraph" alt=""/></div>
+<map name="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_cgraph" id="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_cgraph">
+</map>
 </div>
 </p>
 
@@ -562,6 +564,8 @@ Friends</h2></td></tr>
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_icgraph.png" border="0" usemap="#classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_icgraph" alt=""/></div>
+<map name="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_icgraph" id="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_icgraph">
+</map>
 </div>
 </p>
 
@@ -581,7 +585,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00590">590</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00620">620</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 </div>
 </div>
@@ -611,7 +615,7 @@ Friends</h2></td></tr>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1socket__base__t_ac47f3f966fabb59f2d304786be37a101_cgraph.png" border="0" usemap="#classzmq_1_1socket__base__t_ac47f3f966fabb59f2d304786be37a101_cgraph" alt=""/></div>
 <map name="classzmq_1_1socket__base__t_ac47f3f966fabb59f2d304786be37a101_cgraph" id="classzmq_1_1socket__base__t_ac47f3f966fabb59f2d304786be37a101_cgraph">
-<area shape="rect" id="node3" href="classzmq_1_1session__t.html#a9f8dfb1c61670320ac84f4751442b8cd" title="zmq::session_t::attach_pipes" alt="" coords="249,32,441,61"/><area shape="rect" id="node9" href="namespacezmq.html#a298bc554f19da8cd5eac945d1dec8d2d" title="zmq::create_pipe" alt="" coords="284,85,407,115"/><area shape="rect" id="node5" href="classzmq_1_1writer__t.html#afc0fb2d3d43763f14dd8341eb10b26db" title="zmq::writer_t::set_event_sink" alt="" coords="493,5,688,35"/><area shape="rect" id="node7" href="classzmq_1_1reader__t.html#a82debf2a9c8a50587a752c1bbf73a26a" title="zmq::reader_t::set_event_sink" alt="" coords="492,59,689,88"/></map>
+<area shape="rect" id="node3" href="classzmq_1_1session__t.html#ab21da5525ed1b86cdedb32fe8ac8f0f8" title="zmq::session_t::attach_pipe" alt="" coords="248,5,435,35"/><area shape="rect" id="node5" href="classzmq_1_1pipe__t.html#a4d661236931c97f340b7795c87007ff9" title="zmq::pipe_t::set_event_sink" alt="" coords="483,5,669,35"/></map>
 </div>
 </p>
 
@@ -720,7 +724,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00629">629</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00659">659</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 <p>References <a class="el" href="own_8cpp_source.html#l00056">zmq::own_t::inc_seqnum()</a>.</p>
 
@@ -868,7 +872,7 @@ Friends</h2></td></tr>
 
 <p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00258">258</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="zmq_8h_source.html#l00108">ETERM</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, <a class="el" href="zmq_8h_source.html#l00173">ZMQ_EVENTS</a>, <a class="el" href="zmq_8h_source.html#l00172">ZMQ_FD</a>, <a class="el" href="zmq_8h_source.html#l00206">ZMQ_POLLIN</a>, <a class="el" href="zmq_8h_source.html#l00207">ZMQ_POLLOUT</a>, and <a class="el" href="zmq_8h_source.html#l00171">ZMQ_RCVMORE</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="zmq_8h_source.html#l00108">ETERM</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, <a class="el" href="zmq_8h_source.html#l00173">ZMQ_EVENTS</a>, <a class="el" href="zmq_8h_source.html#l00172">ZMQ_FD</a>, <a class="el" href="zmq_8h_source.html#l00208">ZMQ_POLLIN</a>, <a class="el" href="zmq_8h_source.html#l00209">ZMQ_POLLOUT</a>, and <a class="el" href="zmq_8h_source.html#l00171">ZMQ_RCVMORE</a>.</p>
 
 </div>
 </div>
@@ -886,7 +890,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00600">600</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00630">630</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 </div>
 </div>
@@ -904,7 +908,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00605">605</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00635">635</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 </div>
 </div>
@@ -925,7 +929,7 @@ Friends</h2></td></tr>
 
 <p>Implements <a class="el" href="structzmq_1_1i__pipe__events.html#afcbbfd5d9cf38e8c25c66d25ff32199e">zmq::i_pipe_events</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00845">845</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00879">879</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 </div>
 </div>
@@ -945,7 +949,7 @@ Friends</h2></td></tr>
 
 <p>Implements <a class="el" href="structzmq_1_1i__poll__events.html#a6a2db5ef57d3d5e16336be4f0dd5b7cb">zmq::i_poll_events</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00798">798</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00830">830</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 </div>
 </div>
@@ -965,7 +969,7 @@ Friends</h2></td></tr>
 
 <p>Definition at line <a class="el" href="own_8cpp_source.html#l00056">56</a> of file <a class="el" href="own_8cpp_source.html">own.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="ctx_8cpp_source.html#l00282">zmq::ctx_t::find_endpoint()</a>, <a class="el" href="socket__base_8cpp_source.html#l00629">find_session()</a>, <a class="el" href="object_8cpp_source.html#l00213">zmq::object_t::send_attach()</a>, <a class="el" href="object_8cpp_source.html#l00243">zmq::object_t::send_bind()</a>, <a class="el" href="object_8cpp_source.html#l00200">zmq::object_t::send_own()</a>, and <a class="el" href="object_8cpp_source.html#l00186">zmq::object_t::send_plug()</a>.</p>
+<p>Referenced by <a class="el" href="ctx_8cpp_source.html#l00282">zmq::ctx_t::find_endpoint()</a>, <a class="el" href="socket__base_8cpp_source.html#l00659">find_session()</a>, <a class="el" href="object_8cpp_source.html#l00213">zmq::object_t::send_attach()</a>, <a class="el" href="object_8cpp_source.html#l00243">zmq::object_t::send_bind()</a>, <a class="el" href="object_8cpp_source.html#l00200">zmq::object_t::send_own()</a>, and <a class="el" href="object_8cpp_source.html#l00186">zmq::object_t::send_plug()</a>.</p>
 
 <p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-13-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -974,7 +978,7 @@ Friends</h2></td></tr>
 <div id="dynsection-13-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1own__t_ad152acb0f4d06b1f80c40509775b2d1b_icgraph.png" border="0" usemap="#classzmq_1_1own__t_ad152acb0f4d06b1f80c40509775b2d1b_icgraph" alt=""/></div>
 <map name="classzmq_1_1own__t_ad152acb0f4d06b1f80c40509775b2d1b_icgraph" id="classzmq_1_1own__t_ad152acb0f4d06b1f80c40509775b2d1b_icgraph">
-<area shape="rect" id="node3" href="classzmq_1_1ctx__t.html#af14b1742c89990baf8453f8c1d542c0d" title="zmq::ctx_t::find_endpoint" alt="" coords="248,5,416,35"/><area shape="rect" id="node5" href="classzmq_1_1socket__base__t.html#a62e49da5ba1eebae0bf8d6f26b8bcd78" title="zmq::socket_base_t::find_session" alt="" coords="221,59,443,88"/><area shape="rect" id="node7" href="classzmq_1_1object__t.html#ae7d1be5035efda04d5b0f5cb5ee1aff6" title="zmq::object_t::send_attach" alt="" coords="243,112,421,141"/><area shape="rect" id="node9" href="classzmq_1_1object__t.html#aefe7f36f1370393a301fe849b190b022" title="zmq::object_t::send_bind" alt="" coords="248,165,416,195"/><area shape="rect" id="node11" href="classzmq_1_1object__t.html#a1746fdd6c7b787bfa432dace8c5ca156" title="zmq::object_t::send_own" alt="" coords="248,219,416,248"/><area shape="rect" id="node13" href="classzmq_1_1object__t.html#afeec511a9a6ec59f82d12f5e4e8b7e20" title="zmq::object_t::send_plug" alt="" coords="248,272,416,301"/></map>
+<area shape="rect" id="node3" href="classzmq_1_1ctx__t.html#af14b1742c89990baf8453f8c1d542c0d" title="zmq::ctx_t::find_endpoint" alt="" coords="248,5,416,35"/><area shape="rect" id="node5" href="classzmq_1_1socket__base__t.html#a62e49da5ba1eebae0bf8d6f26b8bcd78" title="zmq::socket_base_t::find_session" alt="" coords="221,59,443,88"/><area shape="rect" id="node7" href="classzmq_1_1object__t.html#ae7d1be5035efda04d5b0f5cb5ee1aff6" title="zmq::object_t::send_attach" alt="" coords="243,112,421,141"/><area shape="rect" id="node9" href="classzmq_1_1object__t.html#a3a68cbdb8a52eb4b6eb84d34afdf4677" title="zmq::object_t::send_bind" alt="" coords="248,165,416,195"/><area shape="rect" id="node11" href="classzmq_1_1object__t.html#a1746fdd6c7b787bfa432dace8c5ca156" title="zmq::object_t::send_own" alt="" coords="248,219,416,248"/><area shape="rect" id="node13" href="classzmq_1_1object__t.html#afeec511a9a6ec59f82d12f5e4e8b7e20" title="zmq::object_t::send_plug" alt="" coords="248,272,416,301"/></map>
 </div>
 </p>
 
@@ -1124,7 +1128,7 @@ Friends</h2></td></tr>
 
 <p>Implements <a class="el" href="structzmq_1_1i__poll__events.html#ac02294c753e0ff56bdd1433c824d5076">zmq::i_poll_events</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00806">806</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00840">840</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
@@ -1272,7 +1276,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classzmq_1_1object__t.html#a60ecd93e1e17c49991b15bb4bccafd30">zmq::object_t</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00724">724</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00756">756</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 </div>
 </div>
@@ -1295,7 +1299,7 @@ Friends</h2></td></tr>
 
 <p>References <a class="el" href="structzmq_1_1command__t.html#a5cc233715d15992816c27b3d62776426">zmq::command_t::activate_read</a>, <a class="el" href="structzmq_1_1command__t.html#ae623bb2447e172510456cfa7061c445c">zmq::command_t::activate_write</a>, <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="structzmq_1_1command__t.html#a4c7dc393ee89ffd6e42d886c56588088">zmq::command_t::attach</a>, <a class="el" href="structzmq_1_1command__t.html#a72973798c00f6a1afaecfd4d6512eaf0">zmq::command_t::bind</a>, <a class="el" href="structzmq_1_1command__t.html#aafffe17ec20372725773f98af7d33586">zmq::command_t::hiccup</a>, <a class="el" href="structzmq_1_1command__t.html#aea530f2505d28c466404996a9e6c4ad7">zmq::command_t::own</a>, <a class="el" href="structzmq_1_1command__t.html#a6359a5ded2a03e9e10b8709b697dc4b8">zmq::command_t::pipe_term</a>, <a class="el" href="structzmq_1_1command__t.html#a6f2b644fe0462d5ab0440a3f6b83721a">zmq::command_t::pipe_term_ack</a>, <a class="el" href="structzmq_1_1command__t.html#a72baf7a4772b48e8ee60d5cab291a52e">zmq::command_t::plug</a>, <a class="el" href="structzmq_1_1command__t.html#adca165cfd7d4c1526e7f3cd874dfe96c">zmq::command_t::reap</a>, <a class="el" href="structzmq_1_1command__t.html#a85cdfd597a1747e9eeeae829fe065de8">zmq::command_t::reaped</a>, <a class="el" href="structzmq_1_1command__t.html#affea24404521d5c38e56b9ca9e6337ac">zmq::command_t::stop</a>, <a class="el" href="structzmq_1_1command__t.html#a9a2fcf4e66fef0caa7a00889f48d8cde">zmq::command_t::term</a>, <a class="el" href="structzmq_1_1command__t.html#a62a8ebac69217614d65c25e6156649f8">zmq::command_t::term_ack</a>, <a class="el" href="structzmq_1_1command__t.html#ab4d26bb409717e69ae72408f4280d067">zmq::command_t::term_req</a>, <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
-<p>Referenced by <a class="el" href="reaper_8cpp_source.html#l00058">zmq::reaper_t::in_event()</a>, <a class="el" href="io__thread_8cpp_source.html#l00064">zmq::io_thread_t::in_event()</a>, and <a class="el" href="socket__base_8cpp_source.html#l00661">process_commands()</a>.</p>
+<p>Referenced by <a class="el" href="reaper_8cpp_source.html#l00058">zmq::reaper_t::in_event()</a>, <a class="el" href="io__thread_8cpp_source.html#l00064">zmq::io_thread_t::in_event()</a>, and <a class="el" href="socket__base_8cpp_source.html#l00691">process_commands()</a>.</p>
 
 <p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-16-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -1304,21 +1308,21 @@ Friends</h2></td></tr>
 <div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1object__t_a93b476c058c34d212f7424b881f6104f_icgraph.png" border="0" usemap="#classzmq_1_1object__t_a93b476c058c34d212f7424b881f6104f_icgraph" alt=""/></div>
 <map name="classzmq_1_1object__t_a93b476c058c34d212f7424b881f6104f_icgraph" id="classzmq_1_1object__t_a93b476c058c34d212f7424b881f6104f_icgraph">
-<area shape="rect" id="node3" href="classzmq_1_1reaper__t.html#ad1fd6624c998885d17a912a8798c4650" title="zmq::reaper_t::in_event" alt="" coords="327,5,484,35"/><area shape="rect" id="node5" href="classzmq_1_1io__thread__t.html#a73598fbc4516f6638ce9e901bc736a7b" title="zmq::io_thread_t::in_event" alt="" coords="317,59,493,88"/><area shape="rect" id="node7" href="classzmq_1_1socket__base__t.html#a727c494147ebcd76c661fd198f990d0b" title="zmq::socket_base_t::process_commands" alt="" coords="273,112,537,141"/></map>
+<area shape="rect" id="node3" href="classzmq_1_1reaper__t.html#ad1fd6624c998885d17a912a8798c4650" title="zmq::reaper_t::in_event" alt="" coords="327,5,484,35"/><area shape="rect" id="node5" href="classzmq_1_1io__thread__t.html#a73598fbc4516f6638ce9e901bc736a7b" title="zmq::io_thread_t::in_event" alt="" coords="317,59,493,88"/><area shape="rect" id="node7" href="classzmq_1_1socket__base__t.html#a1930bd46e6c56df924e9fed0a0436d8c" title="zmq::socket_base_t::process_commands" alt="" coords="273,112,537,141"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a727c494147ebcd76c661fd198f990d0b"></a><!-- doxytag: member="zmq::socket_base_t::process_commands" ref="a727c494147ebcd76c661fd198f990d0b" args="(bool block_, bool throttle_)" -->
+<a class="anchor" id="a1930bd46e6c56df924e9fed0a0436d8c"></a><!-- doxytag: member="zmq::socket_base_t::process_commands" ref="a1930bd46e6c56df924e9fed0a0436d8c" args="(int timeout_, bool throttle_)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int zmq::socket_base_t::process_commands </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>block_</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout_</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1335,7 +1339,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00661">661</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00691">691</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 <p>References <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="zmq_8h_source.html#l00108">ETERM</a>, <a class="el" href="object_8cpp_source.html#l00058">zmq::object_t::process_command()</a>, and <a class="el" href="clock_8cpp_source.html#l00094">zmq::clock_t::rdtsc()</a>.</p>
 
@@ -1344,8 +1348,8 @@ Friends</h2></td></tr>
 <div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-17-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="classzmq_1_1socket__base__t_a727c494147ebcd76c661fd198f990d0b_cgraph.png" border="0" usemap="#classzmq_1_1socket__base__t_a727c494147ebcd76c661fd198f990d0b_cgraph" alt=""/></div>
-<map name="classzmq_1_1socket__base__t_a727c494147ebcd76c661fd198f990d0b_cgraph" id="classzmq_1_1socket__base__t_a727c494147ebcd76c661fd198f990d0b_cgraph">
+<div class="center"><img src="classzmq_1_1socket__base__t_a1930bd46e6c56df924e9fed0a0436d8c_cgraph.png" border="0" usemap="#classzmq_1_1socket__base__t_a1930bd46e6c56df924e9fed0a0436d8c_cgraph" alt=""/></div>
+<map name="classzmq_1_1socket__base__t_a1930bd46e6c56df924e9fed0a0436d8c_cgraph" id="classzmq_1_1socket__base__t_a1930bd46e6c56df924e9fed0a0436d8c_cgraph">
 <area shape="rect" id="node3" href="classzmq_1_1object__t.html#a93b476c058c34d212f7424b881f6104f" title="zmq::object_t::process_command" alt="" coords="320,5,539,35"/><area shape="rect" id="node5" href="classzmq_1_1clock__t.html#a1ae8e531a4d778cc2a6b9a66d86137eb" title="zmq::clock_t::rdtsc" alt="" coords="363,59,496,88"/></map>
 </div>
 </p>
@@ -1368,7 +1372,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classzmq_1_1own__t.html#a7b6a4582c7d63a16a701b8e863e317a2">zmq::own_t</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00750">750</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00782">782</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 </div>
 </div>
@@ -1522,7 +1526,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classzmq_1_1object__t.html#af74ed6e9b9a96ffc5589e8608e62885a">zmq::object_t</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00715">715</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00747">747</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 </div>
 </div>
@@ -1543,7 +1547,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classzmq_1_1own__t.html#aa6cf69fab99e823b61cca86e51dbe555">zmq::own_t</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00734">734</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00766">766</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 <p>References <a class="el" href="own_8cpp_source.html#l00161">zmq::own_t::process_term()</a>.</p>
 
@@ -1574,7 +1578,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00730">730</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00762">762</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 </div>
 </div>
@@ -1595,7 +1599,7 @@ Friends</h2></td></tr>
 
 <p>Implements <a class="el" href="structzmq_1_1i__pipe__events.html#a112f3c02be6d51aa956da11658d61ad1">zmq::i_pipe_events</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00835">835</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00869">869</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 </div>
 </div>
@@ -1624,9 +1628,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00508">508</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00526">526</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
-<p>References <a class="el" href="msg_8cpp_source.html#l00032">zmq::msg_t::check()</a>, <a class="el" href="zmq_8h_source.html#l00108">ETERM</a>, <a class="el" href="msg_8hpp_source.html#l00112">zmq::msg_t::flags</a>, <a class="el" href="msg_8hpp_source.html#l00050">zmq::msg_t::more</a>, <a class="el" href="msg_8cpp_source.html#l00224">zmq::msg_t::reset_flags()</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, and <a class="el" href="zmq_8h_source.html#l00186">ZMQ_DONTWAIT</a>.</p>
+<p>References <a class="el" href="msg_8cpp_source.html#l00032">zmq::msg_t::check()</a>, <a class="el" href="zmq_8h_source.html#l00108">ETERM</a>, <a class="el" href="msg_8hpp_source.html#l00112">zmq::msg_t::flags</a>, <a class="el" href="msg_8hpp_source.html#l00050">zmq::msg_t::more</a>, <a class="el" href="clock_8cpp_source.html#l00075">zmq::clock_t::now_ms()</a>, <a class="el" href="msg_8cpp_source.html#l00224">zmq::msg_t::reset_flags()</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, and <a class="el" href="zmq_8h_source.html#l00188">ZMQ_DONTWAIT</a>.</p>
 
 <p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-19-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -1635,7 +1639,7 @@ Friends</h2></td></tr>
 <div id="dynsection-19-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1socket__base__t_ab8426636dcb0f15483a5817b26059bed_cgraph.png" border="0" usemap="#classzmq_1_1socket__base__t_ab8426636dcb0f15483a5817b26059bed_cgraph" alt=""/></div>
 <map name="classzmq_1_1socket__base__t_ab8426636dcb0f15483a5817b26059bed_cgraph" id="classzmq_1_1socket__base__t_ab8426636dcb0f15483a5817b26059bed_cgraph">
-<area shape="rect" id="node3" href="classzmq_1_1msg__t.html#a214637bbec842b66265d7cde0effe6a9" title="zmq::msg_t::check" alt="" coords="241,5,375,35"/><area shape="rect" id="node5" href="classzmq_1_1msg__t.html#a3890f3348df9f0af313eb32fd6f4d808" title="zmq::msg_t::reset_flags" alt="" coords="227,59,389,88"/></map>
+<area shape="rect" id="node3" href="classzmq_1_1msg__t.html#a214637bbec842b66265d7cde0effe6a9" title="zmq::msg_t::check" alt="" coords="241,5,375,35"/><area shape="rect" id="node5" href="classzmq_1_1clock__t.html#a2926d2e5e13a270e6050ec4e24a2770e" title="zmq::clock_t::now_ms" alt="" coords="231,59,385,88"/><area shape="rect" id="node7" href="classzmq_1_1msg__t.html#a3890f3348df9f0af313eb32fd6f4d808" title="zmq::msg_t::reset_flags" alt="" coords="227,112,389,141"/></map>
 </div>
 </p>
 
@@ -1695,7 +1699,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00610">610</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00640">640</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="named__session_8cpp_source.html#l00024">zmq::named_session_t::named_session_t()</a>.</p>
 
@@ -1758,7 +1762,7 @@ Friends</h2></td></tr>
 
 <p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00463">463</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
-<p>References <a class="el" href="msg_8cpp_source.html#l00032">zmq::msg_t::check()</a>, <a class="el" href="zmq_8h_source.html#l00108">ETERM</a>, <a class="el" href="msg_8hpp_source.html#l00050">zmq::msg_t::more</a>, <a class="el" href="msg_8cpp_source.html#l00219">zmq::msg_t::set_flags()</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, <a class="el" href="zmq_8h_source.html#l00186">ZMQ_DONTWAIT</a>, and <a class="el" href="zmq_8h_source.html#l00187">ZMQ_SNDMORE</a>.</p>
+<p>References <a class="el" href="msg_8cpp_source.html#l00032">zmq::msg_t::check()</a>, <a class="el" href="zmq_8h_source.html#l00108">ETERM</a>, <a class="el" href="msg_8hpp_source.html#l00050">zmq::msg_t::more</a>, <a class="el" href="clock_8cpp_source.html#l00075">zmq::clock_t::now_ms()</a>, <a class="el" href="msg_8cpp_source.html#l00219">zmq::msg_t::set_flags()</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, <a class="el" href="zmq_8h_source.html#l00188">ZMQ_DONTWAIT</a>, and <a class="el" href="zmq_8h_source.html#l00189">ZMQ_SNDMORE</a>.</p>
 
 <p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-21-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -1767,7 +1771,7 @@ Friends</h2></td></tr>
 <div id="dynsection-21-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1socket__base__t_a9e24fec8721ca1c6a6b8a666c459b922_cgraph.png" border="0" usemap="#classzmq_1_1socket__base__t_a9e24fec8721ca1c6a6b8a666c459b922_cgraph" alt=""/></div>
 <map name="classzmq_1_1socket__base__t_a9e24fec8721ca1c6a6b8a666c459b922_cgraph" id="classzmq_1_1socket__base__t_a9e24fec8721ca1c6a6b8a666c459b922_cgraph">
-<area shape="rect" id="node3" href="classzmq_1_1msg__t.html#a214637bbec842b66265d7cde0effe6a9" title="zmq::msg_t::check" alt="" coords="239,5,372,35"/><area shape="rect" id="node5" href="classzmq_1_1msg__t.html#aea7736e7955f2125dd6298baee851ca7" title="zmq::msg_t::set_flags" alt="" coords="229,59,381,88"/></map>
+<area shape="rect" id="node3" href="classzmq_1_1msg__t.html#a214637bbec842b66265d7cde0effe6a9" title="zmq::msg_t::check" alt="" coords="240,5,373,35"/><area shape="rect" id="node5" href="classzmq_1_1clock__t.html#a2926d2e5e13a270e6050ec4e24a2770e" title="zmq::clock_t::now_ms" alt="" coords="229,59,384,88"/><area shape="rect" id="node7" href="classzmq_1_1msg__t.html#aea7736e7955f2125dd6298baee851ca7" title="zmq::msg_t::set_flags" alt="" coords="231,112,383,141"/></map>
 </div>
 </p>
 
@@ -2325,7 +2329,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00648">648</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00678">678</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="reaper_8cpp_source.html#l00098">zmq::reaper_t::process_reap()</a>.</p>
 
@@ -2395,7 +2399,7 @@ Friends</h2></td></tr>
 
 <p>Implements <a class="el" href="structzmq_1_1i__pipe__events.html#aebddb176b89c36fd8528564c6ca4aea3">zmq::i_pipe_events</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00850">850</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00884">884</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 </div>
 </div>
@@ -2416,7 +2420,7 @@ Friends</h2></td></tr>
 
 <p>Implements <a class="el" href="structzmq_1_1i__poll__events.html#a0d088aff6e763eda666ec60b29b75d4d">zmq::i_poll_events</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00811">811</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00845">845</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
@@ -2456,7 +2460,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00620">620</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00650">650</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
@@ -2499,7 +2503,7 @@ Friends</h2></td></tr>
 
 <p>Implements <a class="el" href="structzmq_1_1i__pipe__events.html#aa0d02f4ea12372316eaf80eea3702e92">zmq::i_pipe_events</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00840">840</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00874">874</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 </div>
 </div>
@@ -2548,7 +2552,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1pair__t.html#a75b81b571ea71e8b6276dfb521396f70">zmq::pair_t</a>, <a class="el" href="classzmq_1_1pub__t.html#a739706c8b0ea164807403d72284aa2ad">zmq::pub_t</a>, <a class="el" href="classzmq_1_1pull__t.html#a8bc55f15b9e9b34a99a78bc527d21edf">zmq::pull_t</a>, <a class="el" href="classzmq_1_1rep__t.html#ac9b123f0f5e8d9b5c04e5ebcbeca84ec">zmq::rep_t</a>, <a class="el" href="classzmq_1_1req__t.html#a4b6d7b232f9f8e7fb3d48448ca1e5738">zmq::req_t</a>, <a class="el" href="classzmq_1_1xpub__t.html#accc3b056d5cd9f6f74e16a7092bd9386">zmq::xpub_t</a>, <a class="el" href="classzmq_1_1xrep__t.html#a752a2ecbf1837d0865e9c382ebbb4154">zmq::xrep_t</a>, <a class="el" href="classzmq_1_1xreq__t.html#af943db4e8c8889467c93a7bcf24b79e4">zmq::xreq_t</a>, and <a class="el" href="classzmq_1_1xsub__t.html#a8c6e244625eeb25032430126606e9c5b">zmq::xsub_t</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00773">773</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00805">805</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 </div>
 </div>
@@ -2568,7 +2572,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1pair__t.html#a1ea67d539cedd71316abd72bd11f9e30">zmq::pair_t</a>, <a class="el" href="classzmq_1_1push__t.html#aba241ddff2d1d8ddca57c64105d8a376">zmq::push_t</a>, <a class="el" href="classzmq_1_1rep__t.html#a985c57a022e0a8685a8c23797e90df54">zmq::rep_t</a>, <a class="el" href="classzmq_1_1req__t.html#ab354618e9cc942e90dd4c812f46b72b6">zmq::req_t</a>, <a class="el" href="classzmq_1_1sub__t.html#a2e6b7e69f5553d84ea0dc579b85727c5">zmq::sub_t</a>, <a class="el" href="classzmq_1_1xpub__t.html#a2bbf0ac0e69c835f87e845b17d7bd155">zmq::xpub_t</a>, <a class="el" href="classzmq_1_1xrep__t.html#a88986da92e9341ea80396a772ab53606">zmq::xrep_t</a>, <a class="el" href="classzmq_1_1xreq__t.html#a4090f7e6c099e3472a4d8e62d706c48d">zmq::xreq_t</a>, and <a class="el" href="classzmq_1_1xsub__t.html#a1d098e64ead64b8840a6d0897ab3f304">zmq::xsub_t</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00762">762</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00794">794</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 </div>
 </div>
@@ -2589,7 +2593,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1xsub__t.html#afa05d8642687c7061bc0c571eb64ac40">zmq::xsub_t</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00793">793</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00825">825</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
@@ -2612,7 +2616,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1pair__t.html#a9f8359ee61b4dd7925f87bc3e384c54a">zmq::pair_t</a>, <a class="el" href="classzmq_1_1pull__t.html#a99f2f61daf707525d32f8e6ee2f3e8bf">zmq::pull_t</a>, <a class="el" href="classzmq_1_1xpub__t.html#a5eff8c12aa627448d2e92ce1d91395d0">zmq::xpub_t</a>, <a class="el" href="classzmq_1_1xrep__t.html#a9073a465e68ca358b5e9af7c53de33a0">zmq::xrep_t</a>, <a class="el" href="classzmq_1_1xreq__t.html#af4cc8ac25d28cef13f783f460420b5b6">zmq::xreq_t</a>, and <a class="el" href="classzmq_1_1xsub__t.html#a74d033293e46c5a6a9ef007260d760e1">zmq::xsub_t</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00784">784</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00816">816</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
@@ -2645,7 +2649,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1pair__t.html#ac002d20e3c892b2b388ed88c1df1c243">zmq::pair_t</a>, <a class="el" href="classzmq_1_1pub__t.html#a105236fe109ba47422c8a95f9813a52e">zmq::pub_t</a>, <a class="el" href="classzmq_1_1pull__t.html#a58841f9617d68dea766f1b55c0e244f8">zmq::pull_t</a>, <a class="el" href="classzmq_1_1rep__t.html#a509d5fb31ebab99fc0e63c25412a8f1a">zmq::rep_t</a>, <a class="el" href="classzmq_1_1req__t.html#a54acb8e3a80b6faef64e11f383ad73bc">zmq::req_t</a>, <a class="el" href="classzmq_1_1xpub__t.html#ad65cc475bc22e7bfe9b0c5084fdf83dc">zmq::xpub_t</a>, <a class="el" href="classzmq_1_1xrep__t.html#a18184c945754ab289027c8115d6654af">zmq::xrep_t</a>, <a class="el" href="classzmq_1_1xreq__t.html#aa7bea550a936a44293cfa5452f334109">zmq::xreq_t</a>, and <a class="el" href="classzmq_1_1xsub__t.html#a1135fb60ad785fa84c5125b4a33d242d">zmq::xsub_t</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00778">778</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00810">810</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 <p>References <a class="el" href="zmq_8h_source.html#l00078">ENOTSUP</a>.</p>
 
@@ -2678,7 +2682,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1pair__t.html#a42dcc21999342779a35e466e3fbdc5aa">zmq::pair_t</a>, <a class="el" href="classzmq_1_1push__t.html#a226b9845c237b086ecb0e43d32d188f4">zmq::push_t</a>, <a class="el" href="classzmq_1_1rep__t.html#a6b9320f2f9e0b03241f50877e88e2d15">zmq::rep_t</a>, <a class="el" href="classzmq_1_1req__t.html#a07302440eb4bf41efc3d8958f5f52179">zmq::req_t</a>, <a class="el" href="classzmq_1_1sub__t.html#a89df55fcd9d1c6cbea73538cb8323c58">zmq::sub_t</a>, <a class="el" href="classzmq_1_1xpub__t.html#aacff07daddd01376c8d717cfedde7cd3">zmq::xpub_t</a>, <a class="el" href="classzmq_1_1xrep__t.html#ae6a9488f9963afe0023f9556f66d58f1">zmq::xrep_t</a>, <a class="el" href="classzmq_1_1xreq__t.html#abc1ffbf9a4b7a9b1e93aa452e913f172">zmq::xreq_t</a>, and <a class="el" href="classzmq_1_1xsub__t.html#aa6f0c1c3085211c4a3299f4c4b6f200a">zmq::xsub_t</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00767">767</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00799">799</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 <p>References <a class="el" href="zmq_8h_source.html#l00078">ENOTSUP</a>.</p>
 
@@ -2717,7 +2721,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1sub__t.html#ab582f8ea3a8a1a5f84e60b65745514bf">zmq::sub_t</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00755">755</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00787">787</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 </div>
 </div>
@@ -2757,7 +2761,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1pair__t.html#ab1125a5e21bdcb76b3f6727a95aff042">zmq::pair_t</a>, <a class="el" href="classzmq_1_1push__t.html#ae1b07292758d40a9d49f67b3d7da53c4">zmq::push_t</a>, <a class="el" href="classzmq_1_1xpub__t.html#a774a427efe2ce5e4f0a397099ad47f5e">zmq::xpub_t</a>, <a class="el" href="classzmq_1_1xrep__t.html#aab1ba2c5e5d2d7a5066fe4ec35bd05ce">zmq::xrep_t</a>, <a class="el" href="classzmq_1_1xreq__t.html#a91ecdd2effebc5fc17b9513aadb58c95">zmq::xreq_t</a>, and <a class="el" href="classzmq_1_1xsub__t.html#ae934bc38c76e79f0f8d980ef0f95c76b">zmq::xsub_t</a>.</p>
 
-<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00788">788</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
+<p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00820">820</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
@@ -2998,7 +3002,7 @@ Friends</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jun 18 2011 17:16:56 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 19 2011 13:33:55 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -134,7 +134,7 @@ function toggleVisibility(linkObj) {
 <a name="l00027"></a>00027 <span class="preprocessor"></span>
 <a name="l00028"></a>00028 <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span>
 <a name="l00029"></a>00029 {
-<a name="l00030"></a><a class="code" href="test__shutdown__stress_8cpp.html#ab1c51147f2d4042bdee88a40e7992631">00030</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> *<a class="code" href="test__shutdown__stress_8cpp.html#ab1c51147f2d4042bdee88a40e7992631">worker</a> (<span class="keywordtype">void</span> *s)
+<a name="l00030"></a><a class="code" href="test__shutdown__stress_8cpp.html#ab1c51147f2d4042bdee88a40e7992631">00030</a>     <span class="keyword">static</span> <span class="keywordtype">void</span> *<a class="code" href="inproc__lat_8cpp.html#afdde2c05692ce4366f55800934ffdebe">worker</a> (<span class="keywordtype">void</span> *s)
 <a name="l00031"></a>00031     {
 <a name="l00032"></a>00032         <span class="keywordtype">int</span> rc;
 <a name="l00033"></a>00033 
@@ -174,7 +174,7 @@ function toggleVisibility(linkObj) {
 <a name="l00067"></a>00067         <span class="keywordflow">for</span> (i = 0; i != <a class="code" href="test__shutdown__stress_8cpp.html#ae4f10e3506669382a3a5b19ce7a5eb7c">THREAD_COUNT</a>; i++) {
 <a name="l00068"></a>00068             s2 = <a class="code" href="zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd">zmq_socket</a> (ctx, <a class="code" href="zmq_8h.html#ad331770f0eec9ed393bf25fe6ea65dcc">ZMQ_SUB</a>);
 <a name="l00069"></a>00069             assert (s2);
-<a name="l00070"></a>00070             rc = pthread_create (&amp;threads [i], NULL, <a class="code" href="test__shutdown__stress_8cpp.html#ab1c51147f2d4042bdee88a40e7992631">worker</a>, s2);
+<a name="l00070"></a>00070             rc = pthread_create (&amp;threads [i], NULL, <a class="code" href="inproc__lat_8cpp.html#afdde2c05692ce4366f55800934ffdebe">worker</a>, s2);
 <a name="l00071"></a>00071             assert (rc == 0);
 <a name="l00072"></a>00072         }
 <a name="l00073"></a>00073 
@@ -208,7 +208,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jun 18 2011 17:16:40 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 19 2011 13:33:47 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

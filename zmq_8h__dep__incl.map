@@ -1,13 +1,14 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$inproc__lat_8cpp.html" title="perf/inproc_lat.cpp" alt="" coords="1535,83,1663,112"/>
-<area shape="rect" id="node5" href="$inproc__thr_8cpp.html" title="perf/inproc_thr.cpp" alt="" coords="1687,83,1817,112"/>
-<area shape="rect" id="node7" href="$local__lat_8cpp.html" title="perf/local_lat.cpp" alt="" coords="1841,83,1961,112"/>
-<area shape="rect" id="node9" href="$local__thr_8cpp.html" title="perf/local_thr.cpp" alt="" coords="1985,83,2108,112"/>
-<area shape="rect" id="node11" href="$remote__lat_8cpp.html" title="perf/remote_lat.cpp" alt="" coords="2132,83,2265,112"/>
-<area shape="rect" id="node13" href="$remote__thr_8cpp.html" title="perf/remote_thr.cpp" alt="" coords="2289,83,2423,112"/>
-<area shape="rect" id="node15" href="$err_8hpp.html" title="src/err.hpp" alt="" coords="2447,83,2529,112"/>
-<area shape="rect" id="node98" href="$testutil_8hpp.html" title="tests/testutil.hpp" alt="" coords="2553,83,2671,112"/>
-<area shape="rect" id="node100" href="$test__shutdown__stress_8cpp.html" title="tests/test_shutdown_stress.cpp" alt="" coords="2695,83,2903,112"/>
+<area shape="rect" id="node3" href="$inproc__lat_8cpp.html" title="perf/inproc_lat.cpp" alt="" coords="1469,83,1597,112"/>
+<area shape="rect" id="node5" href="$inproc__thr_8cpp.html" title="perf/inproc_thr.cpp" alt="" coords="1621,83,1752,112"/>
+<area shape="rect" id="node7" href="$local__lat_8cpp.html" title="perf/local_lat.cpp" alt="" coords="1776,83,1896,112"/>
+<area shape="rect" id="node9" href="$local__thr_8cpp.html" title="perf/local_thr.cpp" alt="" coords="1920,83,2043,112"/>
+<area shape="rect" id="node11" href="$remote__lat_8cpp.html" title="perf/remote_lat.cpp" alt="" coords="2067,83,2200,112"/>
+<area shape="rect" id="node13" href="$remote__thr_8cpp.html" title="perf/remote_thr.cpp" alt="" coords="2224,83,2357,112"/>
+<area shape="rect" id="node15" href="$err_8hpp.html" title="src/err.hpp" alt="" coords="2381,83,2464,112"/>
+<area shape="rect" id="node96" href="$testutil_8hpp.html" title="tests/testutil.hpp" alt="" coords="2488,83,2605,112"/>
+<area shape="rect" id="node98" href="$test__shutdown__stress_8cpp.html" title="tests/test_shutdown_stress.cpp" alt="" coords="2629,83,2837,112"/>
+<area shape="rect" id="node100" href="$test__timeo_8cpp.html" title="tests/test_timeo.cpp" alt="" coords="2861,83,3003,112"/>
 <area shape="rect" id="node17" href="$mutex_8hpp.html" title="src/mutex.hpp" alt="" coords="5,160,109,189"/>
 <area shape="rect" id="node19" href="$clock_8cpp.html" title="src/clock.cpp" alt="" coords="133,160,232,189"/>
 <area shape="rect" id="node21" href="$yqueue_8hpp.html" title="src/yqueue.hpp" alt="" coords="256,160,365,189"/>
@@ -47,5 +48,4 @@
 <area shape="rect" id="node90" href="$thread_8cpp.html" title="src/thread.cpp" alt="" coords="4640,160,4744,189"/>
 <area shape="rect" id="node92" href="$trie_8cpp.html" title="src/trie.cpp" alt="" coords="4768,160,4853,189"/>
 <area shape="rect" id="node94" href="$uuid_8cpp.html" title="src/uuid.cpp" alt="" coords="4877,160,4971,189"/>
-<area shape="rect" id="node96" href="$xpub_8cpp.html" title="src/xpub.cpp" alt="" coords="4995,160,5091,189"/>
 </map>

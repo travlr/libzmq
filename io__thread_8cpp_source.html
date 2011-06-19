@@ -177,7 +177,7 @@ function toggleVisibility(linkObj) {
 <a name="l00070"></a>00070 
 <a name="l00071"></a>00071         <span class="comment">//  Get the next command. If there is none, exit.</span>
 <a name="l00072"></a>00072         <a class="code" href="structzmq_1_1command__t.html">command_t</a> cmd;
-<a name="l00073"></a>00073         <span class="keywordtype">int</span> rc = mailbox.recv (&amp;cmd, <span class="keyword">false</span>);
+<a name="l00073"></a>00073         <span class="keywordtype">int</span> rc = mailbox.recv (&amp;cmd, 0);
 <a name="l00074"></a>00074         <span class="keywordflow">if</span> (rc != 0 &amp;&amp; errno == EINTR)
 <a name="l00075"></a>00075             <span class="keywordflow">continue</span>;
 <a name="l00076"></a>00076         <span class="keywordflow">if</span> (rc != 0 &amp;&amp; errno == EAGAIN)
@@ -228,7 +228,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jun 18 2011 17:16:37 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 19 2011 13:33:47 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

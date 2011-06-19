@@ -2,7 +2,7 @@
 <area shape="rect" id="node3" href="$classzmq_1_1ctx__t.html#af14b1742c89990baf8453f8c1d542c0d" title="zmq::ctx_t::find_endpoint" alt="" coords="248,5,416,35"/>
 <area shape="rect" id="node5" href="$classzmq_1_1socket__base__t.html#a62e49da5ba1eebae0bf8d6f26b8bcd78" title="zmq::socket_base_t::find_session" alt="" coords="221,59,443,88"/>
 <area shape="rect" id="node7" href="$classzmq_1_1object__t.html#ae7d1be5035efda04d5b0f5cb5ee1aff6" title="zmq::object_t::send_attach" alt="" coords="243,112,421,141"/>
-<area shape="rect" id="node9" href="$classzmq_1_1object__t.html#aefe7f36f1370393a301fe849b190b022" title="zmq::object_t::send_bind" alt="" coords="248,165,416,195"/>
+<area shape="rect" id="node9" href="$classzmq_1_1object__t.html#a3a68cbdb8a52eb4b6eb84d34afdf4677" title="zmq::object_t::send_bind" alt="" coords="248,165,416,195"/>
 <area shape="rect" id="node11" href="$classzmq_1_1object__t.html#a1746fdd6c7b787bfa432dace8c5ca156" title="zmq::object_t::send_own" alt="" coords="248,219,416,248"/>
 <area shape="rect" id="node13" href="$classzmq_1_1object__t.html#afeec511a9a6ec59f82d12f5e4e8b7e20" title="zmq::object_t::send_plug" alt="" coords="248,272,416,301"/>
 </map>
