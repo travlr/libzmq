@@ -291,7 +291,7 @@ function toggleVisibility(linkObj) {
 <a name="l00184"></a>00184     <span class="keywordflow">if</span> (state == terminating)
 <a name="l00185"></a>00185         <span class="keywordflow">return</span>;
 <a name="l00186"></a>00186 
-<a name="l00187"></a>00187     <span class="keywordflow">if</span> (!outpipe-&gt;flush ())
+<a name="l00187"></a>00187     <span class="keywordflow">if</span> (outpipe &amp;&amp; !outpipe-&gt;flush ())
 <a name="l00188"></a>00188         send_activate_read (peer);
 <a name="l00189"></a>00189 }
 <a name="l00190"></a>00190 
@@ -563,7 +563,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 19 2011 13:33:47 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 20 2011 09:32:45 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

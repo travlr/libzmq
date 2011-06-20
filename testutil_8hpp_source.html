@@ -138,26 +138,48 @@ function toggleVisibility(linkObj) {
 <a name="l00031"></a>00031     <span class="keyword">const</span> <span class="keywordtype">char</span> *content = <span class="stringliteral">&quot;12345678ABCDEFGH12345678abcdefgh&quot;</span>;
 <a name="l00032"></a>00032 
 <a name="l00033"></a>00033     <span class="comment">//  Send the message.</span>
-<a name="l00034"></a>00034     <span class="keywordtype">int</span> rc = <a class="code" href="zmq_8h.html#a61be5e8df496263496a3ec39cd669363">zmq_send</a> (sc, content, 32, 0);
+<a name="l00034"></a>00034     <span class="keywordtype">int</span> rc = <a class="code" href="zmq_8h.html#a61be5e8df496263496a3ec39cd669363">zmq_send</a> (sc, content, 32, <a class="code" href="zmq_8h.html#a0e130fcfafb931a05616a369caa2af2f">ZMQ_SNDMORE</a>);
 <a name="l00035"></a>00035     assert (rc == 32);
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037     <span class="comment">//  Bounce the message back.</span>
-<a name="l00038"></a>00038     <span class="keywordtype">char</span> buf1 [32];
-<a name="l00039"></a>00039     rc = <a class="code" href="zmq_8h.html#a3fa5cd19114e8f3f975b4087fa648e08">zmq_recv</a> (sb, buf1, 32, 0);
-<a name="l00040"></a>00040     assert (rc == 32);
-<a name="l00041"></a>00041     rc = <a class="code" href="zmq_8h.html#a61be5e8df496263496a3ec39cd669363">zmq_send</a> (sb, buf1, 32, 0);
+<a name="l00036"></a>00036     rc = <a class="code" href="zmq_8h.html#a61be5e8df496263496a3ec39cd669363">zmq_send</a> (sc, content, 32, 0);
+<a name="l00037"></a>00037     assert (rc == 32);
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039     <span class="comment">//  Bounce the message back.</span>
+<a name="l00040"></a>00040     <span class="keywordtype">char</span> buf1 [32];
+<a name="l00041"></a>00041     rc = <a class="code" href="zmq_8h.html#a3fa5cd19114e8f3f975b4087fa648e08">zmq_recv</a> (sb, buf1, 32, 0);
 <a name="l00042"></a>00042     assert (rc == 32);
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044     <span class="comment">//  Receive the bounced message.</span>
-<a name="l00045"></a>00045     <span class="keywordtype">char</span> buf2 [32];
-<a name="l00046"></a>00046     rc = <a class="code" href="zmq_8h.html#a3fa5cd19114e8f3f975b4087fa648e08">zmq_recv</a> (sc, buf2, 32, 0);
-<a name="l00047"></a>00047     assert (rc == 32);
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049     <span class="comment">//  Check whether the message is still the same.</span>
-<a name="l00050"></a>00050     assert (memcmp (buf2, content, 32) == 0);
-<a name="l00051"></a>00051 }
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053 <span class="preprocessor">#endif</span>
+<a name="l00043"></a>00043     <span class="keywordtype">int</span> rcvmore;
+<a name="l00044"></a>00044     <span class="keywordtype">size_t</span> sz = <span class="keyword">sizeof</span> (rcvmore);
+<a name="l00045"></a>00045     rc = <a class="code" href="zmq_8h.html#a8ee9693ff7f63751670016a4a04d72ae">zmq_getsockopt</a> (sb, <a class="code" href="zmq_8h.html#aab168348824c16200f7299483f6cce97">ZMQ_RCVMORE</a>, &amp;rcvmore, &amp;sz);
+<a name="l00046"></a>00046     assert (rc == 0);
+<a name="l00047"></a>00047     assert (rcvmore);
+<a name="l00048"></a>00048     rc = <a class="code" href="zmq_8h.html#a3fa5cd19114e8f3f975b4087fa648e08">zmq_recv</a> (sb, buf1, 32, 0);
+<a name="l00049"></a>00049     assert (rc == 32);
+<a name="l00050"></a>00050     rc = <a class="code" href="zmq_8h.html#a8ee9693ff7f63751670016a4a04d72ae">zmq_getsockopt</a> (sb, <a class="code" href="zmq_8h.html#aab168348824c16200f7299483f6cce97">ZMQ_RCVMORE</a>, &amp;rcvmore, &amp;sz);
+<a name="l00051"></a>00051     assert (rc == 0);
+<a name="l00052"></a>00052     assert (!rcvmore);
+<a name="l00053"></a>00053     rc = <a class="code" href="zmq_8h.html#a61be5e8df496263496a3ec39cd669363">zmq_send</a> (sb, buf1, 32, <a class="code" href="zmq_8h.html#a0e130fcfafb931a05616a369caa2af2f">ZMQ_SNDMORE</a>);
+<a name="l00054"></a>00054     assert (rc == 32);
+<a name="l00055"></a>00055     rc = <a class="code" href="zmq_8h.html#a61be5e8df496263496a3ec39cd669363">zmq_send</a> (sb, buf1, 32, 0);
+<a name="l00056"></a>00056     assert (rc == 32);
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058     <span class="comment">//  Receive the bounced message.</span>
+<a name="l00059"></a>00059     <span class="keywordtype">char</span> buf2 [32];
+<a name="l00060"></a>00060     rc = <a class="code" href="zmq_8h.html#a3fa5cd19114e8f3f975b4087fa648e08">zmq_recv</a> (sc, buf2, 32, 0);
+<a name="l00061"></a>00061     assert (rc == 32);
+<a name="l00062"></a>00062     rc = <a class="code" href="zmq_8h.html#a8ee9693ff7f63751670016a4a04d72ae">zmq_getsockopt</a> (sc, <a class="code" href="zmq_8h.html#aab168348824c16200f7299483f6cce97">ZMQ_RCVMORE</a>, &amp;rcvmore, &amp;sz);
+<a name="l00063"></a>00063     assert (rc == 0);
+<a name="l00064"></a>00064     assert (rcvmore);
+<a name="l00065"></a>00065     rc = <a class="code" href="zmq_8h.html#a3fa5cd19114e8f3f975b4087fa648e08">zmq_recv</a> (sc, buf2, 32, 0);
+<a name="l00066"></a>00066     assert (rc == 32);
+<a name="l00067"></a>00067     rc = <a class="code" href="zmq_8h.html#a8ee9693ff7f63751670016a4a04d72ae">zmq_getsockopt</a> (sc, <a class="code" href="zmq_8h.html#aab168348824c16200f7299483f6cce97">ZMQ_RCVMORE</a>, &amp;rcvmore, &amp;sz);
+<a name="l00068"></a>00068     assert (rc == 0);
+<a name="l00069"></a>00069     assert (!rcvmore);
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071     <span class="comment">//  Check whether the message is still the same.</span>
+<a name="l00072"></a>00072     assert (memcmp (buf2, content, 32) == 0);
+<a name="l00073"></a>00073 }
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -174,7 +196,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 19 2011 13:33:47 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 20 2011 09:32:45 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

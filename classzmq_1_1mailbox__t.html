@@ -135,6 +135,7 @@ Static Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a111fadf93fe3e74301e7584414a6437c">make_socketpair</a> (fd_t *r_, fd_t *w_)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#aff32b3568275fda0bd321c2730970e09">blocking</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">fd_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a0d42ebd42ccaa776b1924af3ebd7fd33">r</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">fd_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mailbox__t.html#a9d904121ec638b439823b206fffe0b4f">w</a></td></tr>
 </table>
@@ -156,9 +157,20 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00163">163</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
+<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00144">144</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="mailbox_8cpp_source.html#l00255">make_socketpair()</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+
+<p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classzmq_1_1mailbox__t_a1f6cd7cf138f5538c0d7150c5ffe7773_cgraph.png" border="0" usemap="#classzmq_1_1mailbox__t_a1f6cd7cf138f5538c0d7150c5ffe7773_cgraph" alt=""/></div>
+<map name="classzmq_1_1mailbox__t_a1f6cd7cf138f5538c0d7150c5ffe7773_cgraph" id="classzmq_1_1mailbox__t_a1f6cd7cf138f5538c0d7150c5ffe7773_cgraph">
+<area shape="rect" id="node3" href="classzmq_1_1mailbox__t.html#a111fadf93fe3e74301e7584414a6437c" title="zmq::mailbox_t::make_socketpair" alt="" coords="229,5,448,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -176,7 +188,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00191">191</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
+<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00165">165</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
 
 </div>
 </div>
@@ -214,15 +226,15 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00075">75</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
 
-<p>References <a class="el" href="mailbox_8hpp_source.html#l00050">r</a>.</p>
+<p>References <a class="el" href="mailbox_8hpp_source.html#l00058">r</a>.</p>
 
 <p>Referenced by <a class="el" href="io__thread_8cpp_source.html#l00028">zmq::io_thread_t::io_thread_t()</a>, and <a class="el" href="reaper_8cpp_source.html#l00025">zmq::reaper_t::reaper_t()</a>.</p>
 
-<p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1mailbox__t_aea99b88ae98a776e71c86f5df3cd0d21_icgraph.png" border="0" usemap="#classzmq_1_1mailbox__t_aea99b88ae98a776e71c86f5df3cd0d21_icgraph" alt=""/></div>
 <map name="classzmq_1_1mailbox__t_aea99b88ae98a776e71c86f5df3cd0d21_icgraph" id="classzmq_1_1mailbox__t_aea99b88ae98a776e71c86f5df3cd0d21_icgraph">
 <area shape="rect" id="node3" href="classzmq_1_1io__thread__t.html#ae0eb2b90dbd75d6cf98e64496a27e279" title="zmq::io_thread_t::io_thread_t" alt="" coords="209,5,399,35"/><area shape="rect" id="node5" href="classzmq_1_1reaper__t.html#a275a882c7d2aae76b40d8521e0e29897" title="zmq::reaper_t::reaper_t" alt="" coords="225,59,383,88"/></map>
@@ -256,9 +268,22 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00296">296</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
+<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00255">255</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>.</p>
+
+<p>Referenced by <a class="el" href="mailbox_8cpp_source.html#l00144">mailbox_t()</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classzmq_1_1mailbox__t_a111fadf93fe3e74301e7584414a6437c_icgraph.png" border="0" usemap="#classzmq_1_1mailbox__t_a111fadf93fe3e74301e7584414a6437c_icgraph" alt=""/></div>
+<map name="classzmq_1_1mailbox__t_a111fadf93fe3e74301e7584414a6437c_icgraph" id="classzmq_1_1mailbox__t_a111fadf93fe3e74301e7584414a6437c_icgraph">
+<area shape="rect" id="node3" href="classzmq_1_1mailbox__t.html#a1f6cd7cf138f5538c0d7150c5ffe7773" title="zmq::mailbox_t::mailbox_t" alt="" coords="273,5,447,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -304,7 +329,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00237">237</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
+<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00211">211</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
@@ -335,7 +360,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00427">427</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
+<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00386">386</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
@@ -356,13 +381,28 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00197">197</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
+<p>Definition at line <a class="el" href="mailbox_8cpp_source.html#l00171">171</a> of file <a class="el" href="mailbox_8cpp_source.html">mailbox.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="aff32b3568275fda0bd321c2730970e09"></a><!-- doxytag: member="zmq::mailbox_t::blocking" ref="aff32b3568275fda0bd321c2730970e09" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classzmq_1_1mailbox__t.html#aff32b3568275fda0bd321c2730970e09">zmq::mailbox_t::blocking</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="mailbox_8hpp_source.html#l00062">62</a> of file <a class="el" href="mailbox_8hpp_source.html">mailbox.hpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a0d42ebd42ccaa776b1924af3ebd7fd33"></a><!-- doxytag: member="zmq::mailbox_t::r" ref="a0d42ebd42ccaa776b1924af3ebd7fd33" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -374,7 +414,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mailbox_8hpp_source.html#l00050">50</a> of file <a class="el" href="mailbox_8hpp_source.html">mailbox.hpp</a>.</p>
+<p>Definition at line <a class="el" href="mailbox_8hpp_source.html#l00058">58</a> of file <a class="el" href="mailbox_8hpp_source.html">mailbox.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="mailbox_8cpp_source.html#l00075">get_fd()</a>.</p>
 
@@ -391,7 +431,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mailbox_8hpp_source.html#l00049">49</a> of file <a class="el" href="mailbox_8hpp_source.html">mailbox.hpp</a>.</p>
+<p>Definition at line <a class="el" href="mailbox_8hpp_source.html#l00057">57</a> of file <a class="el" href="mailbox_8hpp_source.html">mailbox.hpp</a>.</p>
 
 </div>
 </div>
@@ -414,7 +454,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 19 2011 13:33:50 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 20 2011 09:32:48 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -620,7 +620,7 @@ function toggleVisibility(linkObj) {
 <a name="l00513"></a>00513         <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (errno != EAGAIN))
 <a name="l00514"></a>00514             <span class="keywordflow">return</span> -1;
 <a name="l00515"></a>00515         <span class="keywordflow">if</span> (timeout &gt; 0) {
-<a name="l00516"></a>00516             timeout = end - clock.<a class="code" href="classzmq_1_1clock__t.html#a2926d2e5e13a270e6050ec4e24a2770e">now_ms</a> ();
+<a name="l00516"></a>00516             timeout = (int) (end - clock.<a class="code" href="classzmq_1_1clock__t.html#a2926d2e5e13a270e6050ec4e24a2770e">now_ms</a> ());
 <a name="l00517"></a>00517             <span class="keywordflow">if</span> (timeout &lt;= 0) {
 <a name="l00518"></a>00518                 errno = EAGAIN;
 <a name="l00519"></a>00519                 <span class="keywordflow">return</span> -1;
@@ -710,7 +710,7 @@ function toggleVisibility(linkObj) {
 <a name="l00603"></a>00603             <span class="keywordflow">return</span> -1;
 <a name="l00604"></a>00604         block = <span class="keyword">true</span>;
 <a name="l00605"></a>00605         <span class="keywordflow">if</span> (timeout &gt; 0) {
-<a name="l00606"></a>00606             timeout = end - clock.<a class="code" href="classzmq_1_1clock__t.html#a2926d2e5e13a270e6050ec4e24a2770e">now_ms</a> ();
+<a name="l00606"></a>00606             timeout = (int) (end - clock.<a class="code" href="classzmq_1_1clock__t.html#a2926d2e5e13a270e6050ec4e24a2770e">now_ms</a> ());
 <a name="l00607"></a>00607             <span class="keywordflow">if</span> (timeout &lt;= 0) {
 <a name="l00608"></a>00608                 errno = EAGAIN;
 <a name="l00609"></a>00609                 <span class="keywordflow">return</span> -1;
@@ -1016,7 +1016,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jun 19 2011 13:33:47 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 20 2011 09:32:45 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
