@@ -218,7 +218,7 @@ function toggleVisibility(linkObj) {
 <a name="l00111"></a><a class="code" href="classzmq_1_1dist__t.html#ace0f2df31be5d88686cbfcb78cb8eb4d">00111</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1dist__t.html#ace0f2df31be5d88686cbfcb78cb8eb4d">zmq::dist_t::send_to_matching</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
 <a name="l00112"></a>00112 {
 <a name="l00113"></a>00113     <span class="comment">//  Is this end of a multipart message?</span>
-<a name="l00114"></a>00114     <span class="keywordtype">bool</span> msg_more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>;
+<a name="l00114"></a>00114     <span class="keywordtype">bool</span> msg_more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>);
 <a name="l00115"></a>00115 
 <a name="l00116"></a>00116     <span class="comment">//  Push the message to matching pipes.</span>
 <a name="l00117"></a>00117     distribute (msg_, flags_);
@@ -277,7 +277,7 @@ function toggleVisibility(linkObj) {
 <a name="l00170"></a>00170         eligible--;
 <a name="l00171"></a>00171         <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00172"></a>00172     }
-<a name="l00173"></a>00173     <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>))
+<a name="l00173"></a>00173     <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)))
 <a name="l00174"></a>00174         pipe_-&gt;<a class="code" href="classzmq_1_1pipe__t.html#ad0d0fc83b91e93b690673757a830aa52">flush</a> ();
 <a name="l00175"></a>00175     <span class="keywordflow">return</span> <span class="keyword">true</span>;
 <a name="l00176"></a>00176 }
@@ -298,7 +298,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 20 2011 09:32:45 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 21 2011 10:17:00 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

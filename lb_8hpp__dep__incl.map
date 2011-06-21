@@ -1,10 +1,12 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$lb_8cpp.html" title="src/lb.cpp" alt="" coords="5,83,83,112"/>
-<area shape="rect" id="node5" href="$push_8hpp.html" title="src/push.hpp" alt="" coords="107,83,203,112"/>
-<area shape="rect" id="node11" href="$xreq_8hpp.html" title="src/xreq.hpp" alt="" coords="232,83,325,112"/>
-<area shape="rect" id="node7" href="$push_8cpp.html" title="src/push.cpp" alt="" coords="21,160,117,189"/>
-<area shape="rect" id="node9" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="109,237,251,267"/>
-<area shape="rect" id="node13" href="$req_8hpp.html" title="src/req.hpp" alt="" coords="243,160,328,189"/>
-<area shape="rect" id="node19" href="$xreq_8cpp.html" title="src/xreq.cpp" alt="" coords="352,160,445,189"/>
-<area shape="rect" id="node15" href="$req_8cpp.html" title="src/req.cpp" alt="" coords="275,237,360,267"/>
+<area shape="rect" id="node3" href="$dealer_8hpp.html" title="src/dealer.hpp" alt="" coords="5,83,109,112"/>
+<area shape="rect" id="node9" href="$lb_8cpp.html" title="src/lb.cpp" alt="" coords="133,83,211,112"/>
+<area shape="rect" id="node11" href="$push_8hpp.html" title="src/push.hpp" alt="" coords="235,83,331,112"/>
+<area shape="rect" id="node16" href="$xreq_8hpp.html" title="src/xreq.hpp" alt="" coords="377,83,471,112"/>
+<area shape="rect" id="node5" href="$dealer_8cpp.html" title="src/dealer.cpp" alt="" coords="5,160,109,189"/>
+<area shape="rect" id="node7" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="183,237,324,267"/>
+<area shape="rect" id="node13" href="$push_8cpp.html" title="src/push.cpp" alt="" coords="235,160,331,189"/>
+<area shape="rect" id="node18" href="$req_8hpp.html" title="src/req.hpp" alt="" coords="405,160,491,189"/>
+<area shape="rect" id="node24" href="$xreq_8cpp.html" title="src/xreq.cpp" alt="" coords="515,160,608,189"/>
+<area shape="rect" id="node20" href="$req_8cpp.html" title="src/req.cpp" alt="" coords="405,237,491,267"/>
 </map>

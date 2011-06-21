@@ -182,7 +182,7 @@ function toggleVisibility(linkObj) {
 <a name="l00075"></a>00075     <span class="comment">//  switch back to non-dropping mode.</span>
 <a name="l00076"></a>00076     <span class="keywordflow">if</span> (dropping) {
 <a name="l00077"></a>00077 
-<a name="l00078"></a>00078         more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>;
+<a name="l00078"></a>00078         more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>);
 <a name="l00079"></a>00079         <span class="keywordflow">if</span> (!more)
 <a name="l00080"></a>00080             dropping = <span class="keyword">false</span>;
 <a name="l00081"></a>00081 
@@ -195,7 +195,7 @@ function toggleVisibility(linkObj) {
 <a name="l00088"></a>00088 
 <a name="l00089"></a>00089     <span class="keywordflow">while</span> (active &gt; 0) {
 <a name="l00090"></a>00090         <span class="keywordflow">if</span> (pipes [current]-&gt;write (msg_)) {
-<a name="l00091"></a>00091             more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>;
+<a name="l00091"></a>00091             more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>);
 <a name="l00092"></a>00092             <span class="keywordflow">break</span>;
 <a name="l00093"></a>00093         }
 <a name="l00094"></a>00094 
@@ -274,7 +274,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 20 2011 09:32:45 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 21 2011 10:17:01 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

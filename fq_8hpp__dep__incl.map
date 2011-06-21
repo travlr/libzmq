@@ -1,14 +1,16 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$fq_8cpp.html" title="src/fq.cpp" alt="" coords="5,83,85,112"/>
-<area shape="rect" id="node5" href="$pull_8hpp.html" title="src/pull.hpp" alt="" coords="109,83,197,112"/>
-<area shape="rect" id="node11" href="$xreq_8hpp.html" title="src/xreq.hpp" alt="" coords="241,83,335,112"/>
-<area shape="rect" id="node21" href="$xsub_8hpp.html" title="src/xsub.hpp" alt="" coords="456,83,552,112"/>
-<area shape="rect" id="node7" href="$pull_8cpp.html" title="src/pull.cpp" alt="" coords="8,160,96,189"/>
-<area shape="rect" id="node9" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="340,237,481,267"/>
-<area shape="rect" id="node13" href="$req_8hpp.html" title="src/req.hpp" alt="" coords="171,160,256,189"/>
-<area shape="rect" id="node19" href="$xreq_8cpp.html" title="src/xreq.cpp" alt="" coords="280,160,373,189"/>
-<area shape="rect" id="node15" href="$req_8cpp.html" title="src/req.cpp" alt="" coords="171,237,256,267"/>
-<area shape="rect" id="node23" href="$sub_8hpp.html" title="src/sub.hpp" alt="" coords="619,160,709,189"/>
-<area shape="rect" id="node29" href="$xsub_8cpp.html" title="src/xsub.cpp" alt="" coords="499,160,595,189"/>
-<area shape="rect" id="node26" href="$sub_8cpp.html" title="src/sub.cpp" alt="" coords="619,237,709,267"/>
+<area shape="rect" id="node3" href="$dealer_8hpp.html" title="src/dealer.hpp" alt="" coords="95,83,199,112"/>
+<area shape="rect" id="node9" href="$fq_8cpp.html" title="src/fq.cpp" alt="" coords="709,83,789,112"/>
+<area shape="rect" id="node11" href="$pull_8hpp.html" title="src/pull.hpp" alt="" coords="453,83,541,112"/>
+<area shape="rect" id="node16" href="$xreq_8hpp.html" title="src/xreq.hpp" alt="" coords="315,83,408,112"/>
+<area shape="rect" id="node26" href="$xsub_8hpp.html" title="src/xsub.hpp" alt="" coords="589,83,685,112"/>
+<area shape="rect" id="node5" href="$dealer_8cpp.html" title="src/dealer.cpp" alt="" coords="5,160,109,189"/>
+<area shape="rect" id="node7" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="379,237,520,267"/>
+<area shape="rect" id="node13" href="$pull_8cpp.html" title="src/pull.cpp" alt="" coords="512,160,600,189"/>
+<area shape="rect" id="node18" href="$req_8hpp.html" title="src/req.hpp" alt="" coords="184,160,269,189"/>
+<area shape="rect" id="node24" href="$xreq_8cpp.html" title="src/xreq.cpp" alt="" coords="293,160,387,189"/>
+<area shape="rect" id="node20" href="$req_8cpp.html" title="src/req.cpp" alt="" coords="184,237,269,267"/>
+<area shape="rect" id="node28" href="$sub_8hpp.html" title="src/sub.hpp" alt="" coords="795,160,885,189"/>
+<area shape="rect" id="node34" href="$xsub_8cpp.html" title="src/xsub.cpp" alt="" coords="675,160,771,189"/>
+<area shape="rect" id="node31" href="$sub_8cpp.html" title="src/sub.cpp" alt="" coords="795,237,885,267"/>
 </map>
