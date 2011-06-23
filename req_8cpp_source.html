@@ -128,103 +128,131 @@ function toggleVisibility(linkObj) {
 <a name="l00021"></a>00021 <span class="preprocessor">#include &quot;<a class="code" href="req_8hpp.html">req.hpp</a>&quot;</span>
 <a name="l00022"></a>00022 <span class="preprocessor">#include &quot;<a class="code" href="err_8hpp.html">err.hpp</a>&quot;</span>
 <a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="msg_8hpp.html">msg.hpp</a>&quot;</span>
-<a name="l00024"></a>00024 
-<a name="l00025"></a><a class="code" href="classzmq_1_1req__t.html#a650e82c0bfa1ec2246064358ee3907c4">00025</a> <a class="code" href="classzmq_1_1req__t.html#a650e82c0bfa1ec2246064358ee3907c4">zmq::req_t::req_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1ctx__t.html">ctx_t</a> *parent_, uint32_t tid_) :
-<a name="l00026"></a>00026     <a class="code" href="classzmq_1_1xreq__t.html">xreq_t</a> (parent_, tid_),
-<a name="l00027"></a>00027     receiving_reply (false),
-<a name="l00028"></a>00028     message_begins (true)
-<a name="l00029"></a>00029 {
-<a name="l00030"></a>00030     <a class="code" href="classzmq_1_1own__t.html#a2efb752f6444d140ee9ee928559c9b02">options</a>.<a class="code" href="structzmq_1_1options__t.html#a09b8e840a00a79aa02c1e574f8ad817a">type</a> = <a class="code" href="zmq_8h.html#a7568a433a6653facd6d261113d4fc7ea">ZMQ_REQ</a>;
-<a name="l00031"></a>00031 }
-<a name="l00032"></a>00032 
-<a name="l00033"></a><a class="code" href="classzmq_1_1req__t.html#adc003f177ca32e1fcb3ff455fd8776ca">00033</a> <a class="code" href="classzmq_1_1req__t.html#adc003f177ca32e1fcb3ff455fd8776ca">zmq::req_t::~req_t</a> ()
+<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="uuid_8hpp.html">uuid.hpp</a>&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="wire_8hpp.html">wire.hpp</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="random_8hpp.html">random.hpp</a>&quot;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="likely_8hpp.html">likely.hpp</a>&quot;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a><a class="code" href="classzmq_1_1req__t.html#a650e82c0bfa1ec2246064358ee3907c4">00029</a> <a class="code" href="classzmq_1_1req__t.html#a650e82c0bfa1ec2246064358ee3907c4">zmq::req_t::req_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1ctx__t.html">ctx_t</a> *parent_, uint32_t tid_) :
+<a name="l00030"></a>00030     <a class="code" href="classzmq_1_1xreq__t.html">xreq_t</a> (parent_, tid_),
+<a name="l00031"></a>00031     receiving_reply (false),
+<a name="l00032"></a>00032     message_begins (true),
+<a name="l00033"></a>00033     request_id (0)
 <a name="l00034"></a>00034 {
-<a name="l00035"></a>00035 }
+<a name="l00035"></a>00035     <a class="code" href="classzmq_1_1own__t.html#a2efb752f6444d140ee9ee928559c9b02">options</a>.<a class="code" href="structzmq_1_1options__t.html#a09b8e840a00a79aa02c1e574f8ad817a">type</a> = <a class="code" href="zmq_8h.html#a7568a433a6653facd6d261113d4fc7ea">ZMQ_REQ</a>;
 <a name="l00036"></a>00036 
-<a name="l00037"></a><a class="code" href="classzmq_1_1req__t.html#a07302440eb4bf41efc3d8958f5f52179">00037</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1req__t.html#a07302440eb4bf41efc3d8958f5f52179">zmq::req_t::xsend</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
-<a name="l00038"></a>00038 {
-<a name="l00039"></a>00039     <span class="comment">//  If we&#39;ve sent a request and we still haven&#39;t got the reply,</span>
-<a name="l00040"></a>00040     <span class="comment">//  we can&#39;t send another request.</span>
-<a name="l00041"></a>00041     <span class="keywordflow">if</span> (receiving_reply) {
-<a name="l00042"></a>00042         errno = <a class="code" href="zmq_8h.html#ac98b9d20508095401c7fa316a3247e84">EFSM</a>;
-<a name="l00043"></a>00043         <span class="keywordflow">return</span> -1;
-<a name="l00044"></a>00044     }
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046     <span class="comment">//  First part of the request is empty message part (stack bottom).</span>
-<a name="l00047"></a>00047     <span class="keywordflow">if</span> (message_begins) {
-<a name="l00048"></a>00048         <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> prefix;
-<a name="l00049"></a>00049         <span class="keywordtype">int</span> rc = prefix.<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
-<a name="l00050"></a>00050         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00051"></a>00051         prefix.<a class="code" href="classzmq_1_1msg__t.html#aea7736e7955f2125dd6298baee851ca7">set_flags</a> (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>);
-<a name="l00052"></a>00052         rc = <a class="code" href="classzmq_1_1xreq__t.html#abc1ffbf9a4b7a9b1e93aa452e913f172">xreq_t::xsend</a> (&amp;prefix, flags_);
-<a name="l00053"></a>00053         <span class="keywordflow">if</span> (rc != 0)
-<a name="l00054"></a>00054             <span class="keywordflow">return</span> rc;
-<a name="l00055"></a>00055         message_begins = <span class="keyword">false</span>;
-<a name="l00056"></a>00056     }
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058     <span class="keywordtype">bool</span> more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>);
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060     <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1xreq__t.html#abc1ffbf9a4b7a9b1e93aa452e913f172">xreq_t::xsend</a> (msg_, flags_);
-<a name="l00061"></a>00061     <span class="keywordflow">if</span> (rc != 0)
-<a name="l00062"></a>00062         <span class="keywordflow">return</span> rc;
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064     <span class="comment">//  If the request was fully sent, flip the FSM into reply-receiving state.</span>
-<a name="l00065"></a>00065     <span class="keywordflow">if</span> (!more) {
-<a name="l00066"></a>00066         receiving_reply = <span class="keyword">true</span>;
-<a name="l00067"></a>00067         message_begins = <span class="keyword">true</span>;
-<a name="l00068"></a>00068     }
+<a name="l00037"></a>00037     <span class="comment">//  Start the request ID sequence at an random point.</span>
+<a name="l00038"></a>00038     generate_random (&amp;<a class="code" href="classzmq_1_1req__t.html#afc1b50844e3f947afc5babc3831a9a02">request_id</a>, <span class="keyword">sizeof</span> (<a class="code" href="classzmq_1_1req__t.html#afc1b50844e3f947afc5babc3831a9a02">request_id</a>));
+<a name="l00039"></a>00039 }
+<a name="l00040"></a>00040 
+<a name="l00041"></a><a class="code" href="classzmq_1_1req__t.html#adc003f177ca32e1fcb3ff455fd8776ca">00041</a> <a class="code" href="classzmq_1_1req__t.html#adc003f177ca32e1fcb3ff455fd8776ca">zmq::req_t::~req_t</a> ()
+<a name="l00042"></a>00042 {
+<a name="l00043"></a>00043 }
+<a name="l00044"></a>00044 
+<a name="l00045"></a><a class="code" href="classzmq_1_1req__t.html#a07302440eb4bf41efc3d8958f5f52179">00045</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1req__t.html#a07302440eb4bf41efc3d8958f5f52179">zmq::req_t::xsend</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
+<a name="l00046"></a>00046 {
+<a name="l00047"></a>00047     <span class="comment">//  If we&#39;ve sent a request and we still haven&#39;t got the reply,</span>
+<a name="l00048"></a>00048     <span class="comment">//  we can&#39;t send another request.</span>
+<a name="l00049"></a>00049     <span class="keywordflow">if</span> (receiving_reply) {
+<a name="l00050"></a>00050         errno = <a class="code" href="zmq_8h.html#ac98b9d20508095401c7fa316a3247e84">EFSM</a>;
+<a name="l00051"></a>00051         <span class="keywordflow">return</span> -1;
+<a name="l00052"></a>00052     }
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054     <span class="comment">//  First part of the request is the request identity.</span>
+<a name="l00055"></a>00055     <span class="keywordflow">if</span> (message_begins) {
+<a name="l00056"></a>00056         <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> prefix;
+<a name="l00057"></a>00057         <span class="keywordtype">int</span> rc = prefix.<a class="code" href="classzmq_1_1msg__t.html#a2d40a80f7828b6ab4f63a1d2afa2af82">init_size</a> (4);
+<a name="l00058"></a>00058         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00059"></a>00059         prefix.<a class="code" href="classzmq_1_1msg__t.html#aea7736e7955f2125dd6298baee851ca7">set_flags</a> (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>);
+<a name="l00060"></a>00060         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) prefix.<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> ();
+<a name="l00061"></a>00061         put_uint32 (data, request_id);
+<a name="l00062"></a>00062         rc = <a class="code" href="classzmq_1_1xreq__t.html#abc1ffbf9a4b7a9b1e93aa452e913f172">xreq_t::xsend</a> (&amp;prefix, flags_);
+<a name="l00063"></a>00063         <span class="keywordflow">if</span> (rc != 0)
+<a name="l00064"></a>00064             <span class="keywordflow">return</span> rc;
+<a name="l00065"></a>00065         message_begins = <span class="keyword">false</span>;
+<a name="l00066"></a>00066     }
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068     <span class="keywordtype">bool</span> more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
 <a name="l00069"></a>00069 
-<a name="l00070"></a>00070     <span class="keywordflow">return</span> 0;
-<a name="l00071"></a>00071 }
-<a name="l00072"></a>00072 
-<a name="l00073"></a><a class="code" href="classzmq_1_1req__t.html#a54acb8e3a80b6faef64e11f383ad73bc">00073</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1req__t.html#a54acb8e3a80b6faef64e11f383ad73bc">zmq::req_t::xrecv</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
-<a name="l00074"></a>00074 {
-<a name="l00075"></a>00075     <span class="comment">//  If request wasn&#39;t send, we can&#39;t wait for reply.</span>
-<a name="l00076"></a>00076     <span class="keywordflow">if</span> (!receiving_reply) {
-<a name="l00077"></a>00077         errno = <a class="code" href="zmq_8h.html#ac98b9d20508095401c7fa316a3247e84">EFSM</a>;
-<a name="l00078"></a>00078         <span class="keywordflow">return</span> -1;
-<a name="l00079"></a>00079     }
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081     <span class="comment">//  First part of the reply should be empty message part (stack bottom).</span>
-<a name="l00082"></a>00082     <span class="keywordflow">if</span> (message_begins) {
-<a name="l00083"></a>00083         <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1xreq__t.html#aa7bea550a936a44293cfa5452f334109">xreq_t::xrecv</a> (msg_, flags_);
-<a name="l00084"></a>00084         <span class="keywordflow">if</span> (rc != 0)
-<a name="l00085"></a>00085             <span class="keywordflow">return</span> rc;
-<a name="l00086"></a>00086         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>);
-<a name="l00087"></a>00087         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a9089fc10aecfab67a826d3514ef7a7a7">size</a> () == 0);
-<a name="l00088"></a>00088         message_begins = <span class="keyword">false</span>;
+<a name="l00070"></a>00070     <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1xreq__t.html#abc1ffbf9a4b7a9b1e93aa452e913f172">xreq_t::xsend</a> (msg_, flags_);
+<a name="l00071"></a>00071     <span class="keywordflow">if</span> (rc != 0)
+<a name="l00072"></a>00072         <span class="keywordflow">return</span> rc;
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074     <span class="comment">//  If the request was fully sent, flip the FSM into reply-receiving state.</span>
+<a name="l00075"></a>00075     <span class="keywordflow">if</span> (!more) {
+<a name="l00076"></a>00076         receiving_reply = <span class="keyword">true</span>;
+<a name="l00077"></a>00077         message_begins = <span class="keyword">true</span>;
+<a name="l00078"></a>00078     }
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080     <span class="keywordflow">return</span> 0;
+<a name="l00081"></a>00081 }
+<a name="l00082"></a>00082 
+<a name="l00083"></a><a class="code" href="classzmq_1_1req__t.html#a54acb8e3a80b6faef64e11f383ad73bc">00083</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1req__t.html#a54acb8e3a80b6faef64e11f383ad73bc">zmq::req_t::xrecv</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
+<a name="l00084"></a>00084 {
+<a name="l00085"></a>00085     <span class="comment">//  If request wasn&#39;t send, we can&#39;t wait for reply.</span>
+<a name="l00086"></a>00086     <span class="keywordflow">if</span> (!receiving_reply) {
+<a name="l00087"></a>00087         errno = <a class="code" href="zmq_8h.html#ac98b9d20508095401c7fa316a3247e84">EFSM</a>;
+<a name="l00088"></a>00088         <span class="keywordflow">return</span> -1;
 <a name="l00089"></a>00089     }
 <a name="l00090"></a>00090 
-<a name="l00091"></a>00091     <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1xreq__t.html#aa7bea550a936a44293cfa5452f334109">xreq_t::xrecv</a> (msg_, flags_);
-<a name="l00092"></a>00092     <span class="keywordflow">if</span> (rc != 0)
-<a name="l00093"></a>00093         <span class="keywordflow">return</span> rc;
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095     <span class="comment">//  If the reply is fully received, flip the FSM into request-sending state.</span>
-<a name="l00096"></a>00096     <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>))) {
-<a name="l00097"></a>00097         receiving_reply = <span class="keyword">false</span>;
-<a name="l00098"></a>00098         message_begins = <span class="keyword">true</span>;
-<a name="l00099"></a>00099     }
+<a name="l00091"></a>00091     <span class="comment">//  First part of the reply should be the original request ID.</span>
+<a name="l00092"></a>00092     <span class="keywordflow">if</span> (message_begins) {
+<a name="l00093"></a>00093         <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1xreq__t.html#aa7bea550a936a44293cfa5452f334109">xreq_t::xrecv</a> (msg_, flags_);
+<a name="l00094"></a>00094         <span class="keywordflow">if</span> (rc != 0)
+<a name="l00095"></a>00095             <span class="keywordflow">return</span> rc;
+<a name="l00096"></a>00096         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>);
+<a name="l00097"></a>00097         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a9089fc10aecfab67a826d3514ef7a7a7">size</a> () == 4);
+<a name="l00098"></a>00098         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> ();
+<a name="l00099"></a>00099         <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (get_uint32 (data) != request_id)) {
 <a name="l00100"></a>00100 
-<a name="l00101"></a>00101     <span class="keywordflow">return</span> 0;
-<a name="l00102"></a>00102 }
-<a name="l00103"></a>00103 
-<a name="l00104"></a><a class="code" href="classzmq_1_1req__t.html#a4b6d7b232f9f8e7fb3d48448ca1e5738">00104</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1req__t.html#a4b6d7b232f9f8e7fb3d48448ca1e5738">zmq::req_t::xhas_in</a> ()
-<a name="l00105"></a>00105 {
-<a name="l00106"></a>00106     <span class="keywordflow">if</span> (!receiving_reply)
-<a name="l00107"></a>00107         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00108"></a>00108 
-<a name="l00109"></a>00109     <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1xreq__t.html#af943db4e8c8889467c93a7bcf24b79e4">xreq_t::xhas_in</a> ();
-<a name="l00110"></a>00110 }
-<a name="l00111"></a>00111 
-<a name="l00112"></a><a class="code" href="classzmq_1_1req__t.html#ab354618e9cc942e90dd4c812f46b72b6">00112</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1req__t.html#ab354618e9cc942e90dd4c812f46b72b6">zmq::req_t::xhas_out</a> ()
-<a name="l00113"></a>00113 {
-<a name="l00114"></a>00114     <span class="keywordflow">if</span> (receiving_reply)
-<a name="l00115"></a>00115         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00116"></a>00116 
-<a name="l00117"></a>00117     <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1xreq__t.html#a4090f7e6c099e3472a4d8e62d706c48d">xreq_t::xhas_out</a> ();
-<a name="l00118"></a>00118 }
+<a name="l00101"></a>00101             <span class="comment">//  The request ID does not match. Drop the entire message.</span>
+<a name="l00102"></a>00102             <span class="keywordflow">while</span> (<span class="keyword">true</span>) {
+<a name="l00103"></a>00103                 <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1xreq__t.html#aa7bea550a936a44293cfa5452f334109">xreq_t::xrecv</a> (msg_, flags_);
+<a name="l00104"></a>00104                 <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00105"></a>00105                 <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>)))
+<a name="l00106"></a>00106                     <span class="keywordflow">break</span>;
+<a name="l00107"></a>00107             }
+<a name="l00108"></a>00108             msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d">close</a> ();
+<a name="l00109"></a>00109             msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
+<a name="l00110"></a>00110             errno = EAGAIN;
+<a name="l00111"></a>00111             <span class="keywordflow">return</span> -1;
+<a name="l00112"></a>00112         }
+<a name="l00113"></a>00113         message_begins = <span class="keyword">false</span>;
+<a name="l00114"></a>00114     }
+<a name="l00115"></a>00115 
+<a name="l00116"></a>00116     <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1xreq__t.html#aa7bea550a936a44293cfa5452f334109">xreq_t::xrecv</a> (msg_, flags_);
+<a name="l00117"></a>00117     <span class="keywordflow">if</span> (rc != 0)
+<a name="l00118"></a>00118         <span class="keywordflow">return</span> rc;
 <a name="l00119"></a>00119 
-<a name="l00120"></a>00120 
+<a name="l00120"></a>00120     <span class="comment">//  If the reply is fully received, flip the FSM into request-sending state.</span>
+<a name="l00121"></a>00121     <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>))) {
+<a name="l00122"></a>00122         request_id++;
+<a name="l00123"></a>00123         receiving_reply = <span class="keyword">false</span>;
+<a name="l00124"></a>00124         message_begins = <span class="keyword">true</span>;
+<a name="l00125"></a>00125     }
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127     <span class="keywordflow">return</span> 0;
+<a name="l00128"></a>00128 }
+<a name="l00129"></a>00129 
+<a name="l00130"></a><a class="code" href="classzmq_1_1req__t.html#a4b6d7b232f9f8e7fb3d48448ca1e5738">00130</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1req__t.html#a4b6d7b232f9f8e7fb3d48448ca1e5738">zmq::req_t::xhas_in</a> ()
+<a name="l00131"></a>00131 {
+<a name="l00132"></a>00132     <span class="comment">//  TODO: Duplicates should be removed here.</span>
+<a name="l00133"></a>00133 
+<a name="l00134"></a>00134     <span class="keywordflow">if</span> (!receiving_reply)
+<a name="l00135"></a>00135         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00136"></a>00136 
+<a name="l00137"></a>00137     <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1xreq__t.html#af943db4e8c8889467c93a7bcf24b79e4">xreq_t::xhas_in</a> ();
+<a name="l00138"></a>00138 }
+<a name="l00139"></a>00139 
+<a name="l00140"></a><a class="code" href="classzmq_1_1req__t.html#ab354618e9cc942e90dd4c812f46b72b6">00140</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1req__t.html#ab354618e9cc942e90dd4c812f46b72b6">zmq::req_t::xhas_out</a> ()
+<a name="l00141"></a>00141 {
+<a name="l00142"></a>00142     <span class="keywordflow">if</span> (receiving_reply)
+<a name="l00143"></a>00143         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145     <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1xreq__t.html#a4090f7e6c099e3472a4d8e62d706c48d">xreq_t::xhas_out</a> ();
+<a name="l00146"></a>00146 }
+<a name="l00147"></a>00147 
+<a name="l00148"></a>00148 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -241,7 +269,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 21 2011 10:17:03 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jun 23 2011 12:13:20 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

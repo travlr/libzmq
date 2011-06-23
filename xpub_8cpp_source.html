@@ -207,74 +207,75 @@ function toggleVisibility(linkObj) {
 <a name="l00100"></a>00100 
 <a name="l00101"></a><a class="code" href="classzmq_1_1xpub__t.html#aacff07daddd01376c8d717cfedde7cd3">00101</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1xpub__t.html#aacff07daddd01376c8d717cfedde7cd3">zmq::xpub_t::xsend</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
 <a name="l00102"></a>00102 {
-<a name="l00103"></a>00103     <span class="keywordtype">bool</span> msg_more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>);
-<a name="l00104"></a>00104 
-<a name="l00105"></a>00105     <span class="comment">//  For the first part of multi-part message, find the matching pipes.</span>
-<a name="l00106"></a>00106     <span class="keywordflow">if</span> (!more)
-<a name="l00107"></a>00107         subscriptions.match ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> (), msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a9089fc10aecfab67a826d3514ef7a7a7">size</a> (),
-<a name="l00108"></a>00108             mark_as_matching, <span class="keyword">this</span>);
-<a name="l00109"></a>00109 
-<a name="l00110"></a>00110     <span class="comment">//  Send the message to all the pipes that were marked as matching</span>
-<a name="l00111"></a>00111     <span class="comment">//  in the previous step.</span>
-<a name="l00112"></a>00112     <span class="keywordtype">int</span> rc = dist.send_to_matching (msg_, flags_);
-<a name="l00113"></a>00113     <span class="keywordflow">if</span> (rc != 0)
-<a name="l00114"></a>00114         <span class="keywordflow">return</span> rc;
-<a name="l00115"></a>00115 
-<a name="l00116"></a>00116     <span class="comment">//  If we are at the end of multi-part message we can mark all the pipes</span>
-<a name="l00117"></a>00117     <span class="comment">//  as non-matching.</span>
-<a name="l00118"></a>00118     <span class="keywordflow">if</span> (!msg_more)
-<a name="l00119"></a>00119         dist.unmatch ();
-<a name="l00120"></a>00120 
-<a name="l00121"></a>00121     more = msg_more;
-<a name="l00122"></a>00122 
-<a name="l00123"></a>00123     <span class="keywordflow">return</span> 0;
-<a name="l00124"></a>00124 }
-<a name="l00125"></a>00125 
-<a name="l00126"></a><a class="code" href="classzmq_1_1xpub__t.html#a2bbf0ac0e69c835f87e845b17d7bd155">00126</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xpub__t.html#a2bbf0ac0e69c835f87e845b17d7bd155">zmq::xpub_t::xhas_out</a> ()
-<a name="l00127"></a>00127 {
-<a name="l00128"></a>00128     <span class="keywordflow">return</span> dist.has_out ();
-<a name="l00129"></a>00129 }
-<a name="l00130"></a>00130 
-<a name="l00131"></a><a class="code" href="classzmq_1_1xpub__t.html#ad65cc475bc22e7bfe9b0c5084fdf83dc">00131</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1xpub__t.html#ad65cc475bc22e7bfe9b0c5084fdf83dc">zmq::xpub_t::xrecv</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
-<a name="l00132"></a>00132 {
-<a name="l00133"></a>00133     <span class="comment">//  If there is at least one </span>
-<a name="l00134"></a>00134     <span class="keywordflow">if</span> (pending.empty ()) {
-<a name="l00135"></a>00135         errno = EAGAIN;
-<a name="l00136"></a>00136         <span class="keywordflow">return</span> -1;
-<a name="l00137"></a>00137     }
-<a name="l00138"></a>00138 
-<a name="l00139"></a>00139     <span class="keywordtype">int</span> rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d">close</a> ();
-<a name="l00140"></a>00140     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00141"></a>00141     rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a2d40a80f7828b6ab4f63a1d2afa2af82">init_size</a> (pending.front ().size ());
-<a name="l00142"></a>00142     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00143"></a>00143     memcpy (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> (), pending.front ().data (),
-<a name="l00144"></a>00144         pending.front ().size ());
-<a name="l00145"></a>00145     pending.pop_front ();
-<a name="l00146"></a>00146     <span class="keywordflow">return</span> 0;
-<a name="l00147"></a>00147 }
-<a name="l00148"></a>00148 
-<a name="l00149"></a><a class="code" href="classzmq_1_1xpub__t.html#accc3b056d5cd9f6f74e16a7092bd9386">00149</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xpub__t.html#accc3b056d5cd9f6f74e16a7092bd9386">zmq::xpub_t::xhas_in</a> ()
-<a name="l00150"></a>00150 {
-<a name="l00151"></a>00151     <span class="keywordflow">return</span> !pending.empty ();
-<a name="l00152"></a>00152 }
-<a name="l00153"></a>00153 
-<a name="l00154"></a><a class="code" href="classzmq_1_1xpub__t.html#af9c4e56b9f59afa59aa58b33de28a261">00154</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xpub__t.html#af9c4e56b9f59afa59aa58b33de28a261">zmq::xpub_t::send_unsubscription</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> size_,
-<a name="l00155"></a>00155     <span class="keywordtype">void</span> *arg_)
-<a name="l00156"></a>00156 {
-<a name="l00157"></a>00157     <a class="code" href="classzmq_1_1xpub__t.html">xpub_t</a> *<span class="keyword">self</span> = (<a class="code" href="classzmq_1_1xpub__t.html">xpub_t</a>*) arg_;
-<a name="l00158"></a>00158 
-<a name="l00159"></a>00159     <span class="keywordflow">if</span> (self-&gt;options.type != <a class="code" href="zmq_8h.html#a0755bc624cb1e1a7e897d8b512e17f2a">ZMQ_PUB</a>) {
-<a name="l00160"></a>00160 
-<a name="l00161"></a>00161         <span class="comment">//  Place the unsubscription to the queue of pending (un)sunscriptions</span>
-<a name="l00162"></a>00162         <span class="comment">//  to be retrived by the user later on.</span>
-<a name="l00163"></a>00163         <a class="code" href="classzmq_1_1xpub__t.html">xpub_t</a> *<span class="keyword">self</span> = (<a class="code" href="classzmq_1_1xpub__t.html">xpub_t</a>*) arg_;
-<a name="l00164"></a>00164         blob_t unsub (size_ + 1, 0);
-<a name="l00165"></a>00165         unsub [0] = 0;
-<a name="l00166"></a>00166         memcpy (&amp;unsub [1], data_, size_);
-<a name="l00167"></a>00167         <span class="keyword">self</span>-&gt;pending.push_back (unsub);
-<a name="l00168"></a>00168     }
-<a name="l00169"></a>00169 }
-<a name="l00170"></a>00170 
+<a name="l00103"></a>00103     <span class="keywordtype">bool</span> msg_more =
+<a name="l00104"></a>00104         msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106     <span class="comment">//  For the first part of multi-part message, find the matching pipes.</span>
+<a name="l00107"></a>00107     <span class="keywordflow">if</span> (!more)
+<a name="l00108"></a>00108         subscriptions.match ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> (), msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a9089fc10aecfab67a826d3514ef7a7a7">size</a> (),
+<a name="l00109"></a>00109             mark_as_matching, <span class="keyword">this</span>);
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111     <span class="comment">//  Send the message to all the pipes that were marked as matching</span>
+<a name="l00112"></a>00112     <span class="comment">//  in the previous step.</span>
+<a name="l00113"></a>00113     <span class="keywordtype">int</span> rc = dist.send_to_matching (msg_, flags_);
+<a name="l00114"></a>00114     <span class="keywordflow">if</span> (rc != 0)
+<a name="l00115"></a>00115         <span class="keywordflow">return</span> rc;
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117     <span class="comment">//  If we are at the end of multi-part message we can mark all the pipes</span>
+<a name="l00118"></a>00118     <span class="comment">//  as non-matching.</span>
+<a name="l00119"></a>00119     <span class="keywordflow">if</span> (!msg_more)
+<a name="l00120"></a>00120         dist.unmatch ();
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122     more = msg_more;
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124     <span class="keywordflow">return</span> 0;
+<a name="l00125"></a>00125 }
+<a name="l00126"></a>00126 
+<a name="l00127"></a><a class="code" href="classzmq_1_1xpub__t.html#a2bbf0ac0e69c835f87e845b17d7bd155">00127</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xpub__t.html#a2bbf0ac0e69c835f87e845b17d7bd155">zmq::xpub_t::xhas_out</a> ()
+<a name="l00128"></a>00128 {
+<a name="l00129"></a>00129     <span class="keywordflow">return</span> dist.has_out ();
+<a name="l00130"></a>00130 }
+<a name="l00131"></a>00131 
+<a name="l00132"></a><a class="code" href="classzmq_1_1xpub__t.html#ad65cc475bc22e7bfe9b0c5084fdf83dc">00132</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1xpub__t.html#ad65cc475bc22e7bfe9b0c5084fdf83dc">zmq::xpub_t::xrecv</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
+<a name="l00133"></a>00133 {
+<a name="l00134"></a>00134     <span class="comment">//  If there is at least one </span>
+<a name="l00135"></a>00135     <span class="keywordflow">if</span> (pending.empty ()) {
+<a name="l00136"></a>00136         errno = EAGAIN;
+<a name="l00137"></a>00137         <span class="keywordflow">return</span> -1;
+<a name="l00138"></a>00138     }
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140     <span class="keywordtype">int</span> rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d">close</a> ();
+<a name="l00141"></a>00141     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00142"></a>00142     rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a2d40a80f7828b6ab4f63a1d2afa2af82">init_size</a> (pending.front ().size ());
+<a name="l00143"></a>00143     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00144"></a>00144     memcpy (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> (), pending.front ().data (),
+<a name="l00145"></a>00145         pending.front ().size ());
+<a name="l00146"></a>00146     pending.pop_front ();
+<a name="l00147"></a>00147     <span class="keywordflow">return</span> 0;
+<a name="l00148"></a>00148 }
+<a name="l00149"></a>00149 
+<a name="l00150"></a><a class="code" href="classzmq_1_1xpub__t.html#accc3b056d5cd9f6f74e16a7092bd9386">00150</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xpub__t.html#accc3b056d5cd9f6f74e16a7092bd9386">zmq::xpub_t::xhas_in</a> ()
+<a name="l00151"></a>00151 {
+<a name="l00152"></a>00152     <span class="keywordflow">return</span> !pending.empty ();
+<a name="l00153"></a>00153 }
+<a name="l00154"></a>00154 
+<a name="l00155"></a><a class="code" href="classzmq_1_1xpub__t.html#af9c4e56b9f59afa59aa58b33de28a261">00155</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xpub__t.html#af9c4e56b9f59afa59aa58b33de28a261">zmq::xpub_t::send_unsubscription</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> size_,
+<a name="l00156"></a>00156     <span class="keywordtype">void</span> *arg_)
+<a name="l00157"></a>00157 {
+<a name="l00158"></a>00158     <a class="code" href="classzmq_1_1xpub__t.html">xpub_t</a> *<span class="keyword">self</span> = (<a class="code" href="classzmq_1_1xpub__t.html">xpub_t</a>*) arg_;
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160     <span class="keywordflow">if</span> (self-&gt;options.type != <a class="code" href="zmq_8h.html#a0755bc624cb1e1a7e897d8b512e17f2a">ZMQ_PUB</a>) {
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162         <span class="comment">//  Place the unsubscription to the queue of pending (un)sunscriptions</span>
+<a name="l00163"></a>00163         <span class="comment">//  to be retrived by the user later on.</span>
+<a name="l00164"></a>00164         <a class="code" href="classzmq_1_1xpub__t.html">xpub_t</a> *<span class="keyword">self</span> = (<a class="code" href="classzmq_1_1xpub__t.html">xpub_t</a>*) arg_;
+<a name="l00165"></a>00165         blob_t unsub (size_ + 1, 0);
+<a name="l00166"></a>00166         unsub [0] = 0;
+<a name="l00167"></a>00167         memcpy (&amp;unsub [1], data_, size_);
+<a name="l00168"></a>00168         <span class="keyword">self</span>-&gt;pending.push_back (unsub);
+<a name="l00169"></a>00169     }
+<a name="l00170"></a>00170 }
+<a name="l00171"></a>00171 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -291,7 +292,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 21 2011 10:17:04 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jun 23 2011 12:13:20 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

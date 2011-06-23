@@ -194,11 +194,19 @@ function toggleVisibility(linkObj) {
 <a name="l00087"></a>00087         <span class="comment">//  is not aware of the peer&#39;s identity, however, it is able to send</span>
 <a name="l00088"></a>00088         <span class="comment">//  messages straight away.</span>
 <a name="l00089"></a><a class="code" href="structzmq_1_1options__t.html#a4b9862e97726a033af7105c1bb74e99f">00089</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a4b9862e97726a033af7105c1bb74e99f">immediate_connect</a>;
-<a name="l00090"></a>00090     };
-<a name="l00091"></a>00091 
-<a name="l00092"></a>00092 }
-<a name="l00093"></a>00093 
-<a name="l00094"></a>00094 <span class="preprocessor">#endif</span>
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091         <span class="comment">//  If true, session reads all the pending messages from the pipe and</span>
+<a name="l00092"></a>00092         <span class="comment">//  sends them to the network when socket is closed.</span>
+<a name="l00093"></a><a class="code" href="structzmq_1_1options__t.html#a0c01f11d8a2de9e81f890c8e8673132d">00093</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a0c01f11d8a2de9e81f890c8e8673132d">delay_on_close</a>;
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095         <span class="comment">//  If true, socket reads all the messages from the pipe and delivers</span>
+<a name="l00096"></a>00096         <span class="comment">//  them to the user when the peer terminates.</span>
+<a name="l00097"></a><a class="code" href="structzmq_1_1options__t.html#a8bb26287f7a5a59b3e6c59d106335fbe">00097</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a8bb26287f7a5a59b3e6c59d106335fbe">delay_on_disconnect</a>;
+<a name="l00098"></a>00098     };
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100 }
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -215,7 +223,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 21 2011 10:17:02 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jun 23 2011 12:13:20 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

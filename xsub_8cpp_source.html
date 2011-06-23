@@ -223,7 +223,7 @@ function toggleVisibility(linkObj) {
 <a name="l00116"></a>00116         <span class="keywordtype">int</span> rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a39318e9417f38b7f415b85ae591ed606">move</a> (message);
 <a name="l00117"></a>00117         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
 <a name="l00118"></a>00118         has_message = <span class="keyword">false</span>;
-<a name="l00119"></a>00119         more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>);
+<a name="l00119"></a>00119         more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
 <a name="l00120"></a>00120         <span class="keywordflow">return</span> 0;
 <a name="l00121"></a>00121     }
 <a name="l00122"></a>00122 
@@ -243,84 +243,85 @@ function toggleVisibility(linkObj) {
 <a name="l00136"></a>00136         <span class="comment">//  Check whether the message matches at least one subscription.</span>
 <a name="l00137"></a>00137         <span class="comment">//  Non-initial parts of the message are passed </span>
 <a name="l00138"></a>00138         <span class="keywordflow">if</span> (more || !options.filter || match (msg_)) {
-<a name="l00139"></a>00139             more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>);
-<a name="l00140"></a>00140             <span class="keywordflow">return</span> 0;
-<a name="l00141"></a>00141         }
-<a name="l00142"></a>00142 
-<a name="l00143"></a>00143         <span class="comment">//  Message doesn&#39;t match. Pop any remaining parts of the message</span>
-<a name="l00144"></a>00144         <span class="comment">//  from the pipe.</span>
-<a name="l00145"></a>00145         <span class="keywordflow">while</span> (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)) {
-<a name="l00146"></a>00146             rc = fq.recv (msg_, <a class="code" href="zmq_8h.html#a46faae22df1e63543948385694b144c9">ZMQ_DONTWAIT</a>);
-<a name="l00147"></a>00147             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
-<a name="l00148"></a>00148         }
-<a name="l00149"></a>00149     }
-<a name="l00150"></a>00150 }
-<a name="l00151"></a>00151 
-<a name="l00152"></a><a class="code" href="classzmq_1_1xsub__t.html#a8c6e244625eeb25032430126606e9c5b">00152</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xsub__t.html#a8c6e244625eeb25032430126606e9c5b">zmq::xsub_t::xhas_in</a> ()
-<a name="l00153"></a>00153 {
-<a name="l00154"></a>00154     <span class="comment">//  There are subsequent parts of the partly-read message available.</span>
-<a name="l00155"></a>00155     <span class="keywordflow">if</span> (more)
-<a name="l00156"></a>00156         <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00157"></a>00157 
-<a name="l00158"></a>00158     <span class="comment">//  If there&#39;s already a message prepared by a previous call to zmq_poll,</span>
-<a name="l00159"></a>00159     <span class="comment">//  return straight ahead.</span>
-<a name="l00160"></a>00160     <span class="keywordflow">if</span> (has_message)
-<a name="l00161"></a>00161         <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00162"></a>00162 
-<a name="l00163"></a>00163     <span class="comment">//  TODO: This can result in infinite loop in the case of continuous</span>
-<a name="l00164"></a>00164     <span class="comment">//  stream of non-matching messages.</span>
-<a name="l00165"></a>00165     <span class="keywordflow">while</span> (<span class="keyword">true</span>) {
-<a name="l00166"></a>00166 
-<a name="l00167"></a>00167         <span class="comment">//  Get a message using fair queueing algorithm.</span>
-<a name="l00168"></a>00168         <span class="keywordtype">int</span> rc = fq.recv (&amp;message, <a class="code" href="zmq_8h.html#a46faae22df1e63543948385694b144c9">ZMQ_DONTWAIT</a>);
-<a name="l00169"></a>00169 
-<a name="l00170"></a>00170         <span class="comment">//  If there&#39;s no message available, return immediately.</span>
-<a name="l00171"></a>00171         <span class="comment">//  The same when error occurs.</span>
-<a name="l00172"></a>00172         <span class="keywordflow">if</span> (rc != 0) {
-<a name="l00173"></a>00173             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (errno == EAGAIN);
-<a name="l00174"></a>00174             <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00175"></a>00175         }
-<a name="l00176"></a>00176 
-<a name="l00177"></a>00177         <span class="comment">//  Check whether the message matches at least one subscription.</span>
-<a name="l00178"></a>00178         <span class="keywordflow">if</span> (!options.filter || match (&amp;message)) {
-<a name="l00179"></a>00179             has_message = <span class="keyword">true</span>;
-<a name="l00180"></a>00180             <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00181"></a>00181         }
-<a name="l00182"></a>00182 
-<a name="l00183"></a>00183         <span class="comment">//  Message doesn&#39;t match. Pop any remaining parts of the message</span>
-<a name="l00184"></a>00184         <span class="comment">//  from the pipe.</span>
-<a name="l00185"></a>00185         <span class="keywordflow">while</span> (message.flags () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)) {
-<a name="l00186"></a>00186             rc = fq.recv (&amp;message, <a class="code" href="zmq_8h.html#a46faae22df1e63543948385694b144c9">ZMQ_DONTWAIT</a>);
-<a name="l00187"></a>00187             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
-<a name="l00188"></a>00188         }
-<a name="l00189"></a>00189     }
-<a name="l00190"></a>00190 }
-<a name="l00191"></a>00191 
-<a name="l00192"></a>00192 <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xsub__t.html#afd5c43b90680af84b1ec996af482c807">zmq::xsub_t::match</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_)
-<a name="l00193"></a>00193 {
-<a name="l00194"></a>00194     <span class="keywordflow">return</span> subscriptions.check ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> (), msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a9089fc10aecfab67a826d3514ef7a7a7">size</a> ());
-<a name="l00195"></a>00195 }
-<a name="l00196"></a>00196 
-<a name="l00197"></a><a class="code" href="classzmq_1_1xsub__t.html#a5aaa62d2eb7ef869a984f9b477f56b13">00197</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xsub__t.html#a5aaa62d2eb7ef869a984f9b477f56b13">zmq::xsub_t::send_subscription</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> size_,
-<a name="l00198"></a>00198     <span class="keywordtype">void</span> *arg_)
-<a name="l00199"></a>00199 {
-<a name="l00200"></a>00200     <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe = (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a>*) arg_;
-<a name="l00201"></a>00201 
-<a name="l00202"></a>00202     <span class="comment">//  Create the subsctription message.</span>
-<a name="l00203"></a>00203     <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> msg;
-<a name="l00204"></a>00204     <span class="keywordtype">int</span> rc = msg.<a class="code" href="classzmq_1_1msg__t.html#a2d40a80f7828b6ab4f63a1d2afa2af82">init_size</a> (size_ + 1);
-<a name="l00205"></a>00205     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
-<a name="l00206"></a>00206     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) msg.<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> ();
-<a name="l00207"></a>00207     data [0] = 1;
-<a name="l00208"></a>00208     memcpy (data + 1, data_, size_);
-<a name="l00209"></a>00209 
-<a name="l00210"></a>00210     <span class="comment">//  Send it to the pipe.</span>
-<a name="l00211"></a>00211     <span class="keywordtype">bool</span> sent = pipe-&gt;<a class="code" href="classzmq_1_1pipe__t.html#a4b11ee7b4a4b0c4e2225e0605152d6d6">write</a> (&amp;msg);
-<a name="l00212"></a>00212     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (sent);
-<a name="l00213"></a>00213     msg.<a class="code" href="classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d">close</a> ();
-<a name="l00214"></a>00214 }
-<a name="l00215"></a>00215 
+<a name="l00139"></a>00139             more =
+<a name="l00140"></a>00140                 msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00141"></a>00141             <span class="keywordflow">return</span> 0;
+<a name="l00142"></a>00142         }
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144         <span class="comment">//  Message doesn&#39;t match. Pop any remaining parts of the message</span>
+<a name="l00145"></a>00145         <span class="comment">//  from the pipe.</span>
+<a name="l00146"></a>00146         <span class="keywordflow">while</span> (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)) {
+<a name="l00147"></a>00147             rc = fq.recv (msg_, <a class="code" href="zmq_8h.html#a46faae22df1e63543948385694b144c9">ZMQ_DONTWAIT</a>);
+<a name="l00148"></a>00148             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
+<a name="l00149"></a>00149         }
+<a name="l00150"></a>00150     }
+<a name="l00151"></a>00151 }
+<a name="l00152"></a>00152 
+<a name="l00153"></a><a class="code" href="classzmq_1_1xsub__t.html#a8c6e244625eeb25032430126606e9c5b">00153</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xsub__t.html#a8c6e244625eeb25032430126606e9c5b">zmq::xsub_t::xhas_in</a> ()
+<a name="l00154"></a>00154 {
+<a name="l00155"></a>00155     <span class="comment">//  There are subsequent parts of the partly-read message available.</span>
+<a name="l00156"></a>00156     <span class="keywordflow">if</span> (more)
+<a name="l00157"></a>00157         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00158"></a>00158 
+<a name="l00159"></a>00159     <span class="comment">//  If there&#39;s already a message prepared by a previous call to zmq_poll,</span>
+<a name="l00160"></a>00160     <span class="comment">//  return straight ahead.</span>
+<a name="l00161"></a>00161     <span class="keywordflow">if</span> (has_message)
+<a name="l00162"></a>00162         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00163"></a>00163 
+<a name="l00164"></a>00164     <span class="comment">//  TODO: This can result in infinite loop in the case of continuous</span>
+<a name="l00165"></a>00165     <span class="comment">//  stream of non-matching messages.</span>
+<a name="l00166"></a>00166     <span class="keywordflow">while</span> (<span class="keyword">true</span>) {
+<a name="l00167"></a>00167 
+<a name="l00168"></a>00168         <span class="comment">//  Get a message using fair queueing algorithm.</span>
+<a name="l00169"></a>00169         <span class="keywordtype">int</span> rc = fq.recv (&amp;message, <a class="code" href="zmq_8h.html#a46faae22df1e63543948385694b144c9">ZMQ_DONTWAIT</a>);
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171         <span class="comment">//  If there&#39;s no message available, return immediately.</span>
+<a name="l00172"></a>00172         <span class="comment">//  The same when error occurs.</span>
+<a name="l00173"></a>00173         <span class="keywordflow">if</span> (rc != 0) {
+<a name="l00174"></a>00174             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (errno == EAGAIN);
+<a name="l00175"></a>00175             <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00176"></a>00176         }
+<a name="l00177"></a>00177 
+<a name="l00178"></a>00178         <span class="comment">//  Check whether the message matches at least one subscription.</span>
+<a name="l00179"></a>00179         <span class="keywordflow">if</span> (!options.filter || match (&amp;message)) {
+<a name="l00180"></a>00180             has_message = <span class="keyword">true</span>;
+<a name="l00181"></a>00181             <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00182"></a>00182         }
+<a name="l00183"></a>00183 
+<a name="l00184"></a>00184         <span class="comment">//  Message doesn&#39;t match. Pop any remaining parts of the message</span>
+<a name="l00185"></a>00185         <span class="comment">//  from the pipe.</span>
+<a name="l00186"></a>00186         <span class="keywordflow">while</span> (message.flags () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)) {
+<a name="l00187"></a>00187             rc = fq.recv (&amp;message, <a class="code" href="zmq_8h.html#a46faae22df1e63543948385694b144c9">ZMQ_DONTWAIT</a>);
+<a name="l00188"></a>00188             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
+<a name="l00189"></a>00189         }
+<a name="l00190"></a>00190     }
+<a name="l00191"></a>00191 }
+<a name="l00192"></a>00192 
+<a name="l00193"></a>00193 <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xsub__t.html#afd5c43b90680af84b1ec996af482c807">zmq::xsub_t::match</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_)
+<a name="l00194"></a>00194 {
+<a name="l00195"></a>00195     <span class="keywordflow">return</span> subscriptions.check ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> (), msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a9089fc10aecfab67a826d3514ef7a7a7">size</a> ());
+<a name="l00196"></a>00196 }
+<a name="l00197"></a>00197 
+<a name="l00198"></a><a class="code" href="classzmq_1_1xsub__t.html#a5aaa62d2eb7ef869a984f9b477f56b13">00198</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xsub__t.html#a5aaa62d2eb7ef869a984f9b477f56b13">zmq::xsub_t::send_subscription</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> size_,
+<a name="l00199"></a>00199     <span class="keywordtype">void</span> *arg_)
+<a name="l00200"></a>00200 {
+<a name="l00201"></a>00201     <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe = (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a>*) arg_;
+<a name="l00202"></a>00202 
+<a name="l00203"></a>00203     <span class="comment">//  Create the subsctription message.</span>
+<a name="l00204"></a>00204     <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> msg;
+<a name="l00205"></a>00205     <span class="keywordtype">int</span> rc = msg.<a class="code" href="classzmq_1_1msg__t.html#a2d40a80f7828b6ab4f63a1d2afa2af82">init_size</a> (size_ + 1);
+<a name="l00206"></a>00206     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
+<a name="l00207"></a>00207     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) msg.<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> ();
+<a name="l00208"></a>00208     data [0] = 1;
+<a name="l00209"></a>00209     memcpy (data + 1, data_, size_);
+<a name="l00210"></a>00210 
+<a name="l00211"></a>00211     <span class="comment">//  Send it to the pipe.</span>
+<a name="l00212"></a>00212     <span class="keywordtype">bool</span> sent = pipe-&gt;<a class="code" href="classzmq_1_1pipe__t.html#a4b11ee7b4a4b0c4e2225e0605152d6d6">write</a> (&amp;msg);
+<a name="l00213"></a>00213     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (sent);
+<a name="l00214"></a>00214     msg.<a class="code" href="classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d">close</a> ();
+<a name="l00215"></a>00215 }
 <a name="l00216"></a>00216 
+<a name="l00217"></a>00217 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -337,7 +338,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 21 2011 10:17:04 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jun 23 2011 12:13:20 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

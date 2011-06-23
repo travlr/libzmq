@@ -218,70 +218,71 @@ function toggleVisibility(linkObj) {
 <a name="l00111"></a><a class="code" href="classzmq_1_1dist__t.html#ace0f2df31be5d88686cbfcb78cb8eb4d">00111</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1dist__t.html#ace0f2df31be5d88686cbfcb78cb8eb4d">zmq::dist_t::send_to_matching</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
 <a name="l00112"></a>00112 {
 <a name="l00113"></a>00113     <span class="comment">//  Is this end of a multipart message?</span>
-<a name="l00114"></a>00114     <span class="keywordtype">bool</span> msg_more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>);
-<a name="l00115"></a>00115 
-<a name="l00116"></a>00116     <span class="comment">//  Push the message to matching pipes.</span>
-<a name="l00117"></a>00117     distribute (msg_, flags_);
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119     <span class="comment">//  If mutlipart message is fully sent, activate all the eligible pipes.</span>
-<a name="l00120"></a>00120     <span class="keywordflow">if</span> (!msg_more)
-<a name="l00121"></a>00121         active = eligible;
-<a name="l00122"></a>00122 
-<a name="l00123"></a>00123     more = msg_more;
-<a name="l00124"></a>00124 
-<a name="l00125"></a>00125     <span class="keywordflow">return</span> 0;
-<a name="l00126"></a>00126 }
-<a name="l00127"></a>00127 
-<a name="l00128"></a><a class="code" href="classzmq_1_1dist__t.html#a6dac6abffec2b7606604b3d86485723d">00128</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1dist__t.html#a6dac6abffec2b7606604b3d86485723d">zmq::dist_t::distribute</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
-<a name="l00129"></a>00129 {
-<a name="l00130"></a>00130     <span class="comment">//  If there are no matching pipes available, simply drop the message.</span>
-<a name="l00131"></a>00131     <span class="keywordflow">if</span> (matching == 0) {
-<a name="l00132"></a>00132         <span class="keywordtype">int</span> rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d">close</a> ();
-<a name="l00133"></a>00133         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00134"></a>00134         rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
-<a name="l00135"></a>00135         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
-<a name="l00136"></a>00136         <span class="keywordflow">return</span>;
-<a name="l00137"></a>00137     }
-<a name="l00138"></a>00138 
-<a name="l00139"></a>00139     <span class="comment">//  Add matching-1 references to the message. We already hold one reference,</span>
-<a name="l00140"></a>00140     <span class="comment">//  that&#39;s why -1.</span>
-<a name="l00141"></a>00141     msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a67b20d60d792fe6e3089f6d6edf82adb">add_refs</a> (matching - 1);
-<a name="l00142"></a>00142 
-<a name="l00143"></a>00143     <span class="comment">//  Push copy of the message to each matching pipe.</span>
-<a name="l00144"></a>00144     <span class="keywordflow">for</span> (pipes_t::size_type i = 0; i &lt; matching;) {
-<a name="l00145"></a>00145         <span class="keywordflow">if</span> (!write (pipes [i], msg_))
-<a name="l00146"></a>00146             msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a43c78e4688c189c55769eae89a140597">rm_refs</a> (1);
-<a name="l00147"></a>00147         <span class="keywordflow">else</span>
-<a name="l00148"></a>00148             i++;
-<a name="l00149"></a>00149     }
-<a name="l00150"></a>00150 
-<a name="l00151"></a>00151     <span class="comment">//  Detach the original message from the data buffer. Note that we don&#39;t</span>
-<a name="l00152"></a>00152     <span class="comment">//  close the message. That&#39;s because we&#39;ve already used all the references.</span>
-<a name="l00153"></a>00153     <span class="keywordtype">int</span> rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
-<a name="l00154"></a>00154     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00155"></a>00155 }
-<a name="l00156"></a>00156 
-<a name="l00157"></a><a class="code" href="classzmq_1_1dist__t.html#a010653ad2fc57e8372f2da9c59269d78">00157</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1dist__t.html#a010653ad2fc57e8372f2da9c59269d78">zmq::dist_t::has_out</a> ()
-<a name="l00158"></a>00158 {
-<a name="l00159"></a>00159     <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00160"></a>00160 }
-<a name="l00161"></a>00161 
-<a name="l00162"></a><a class="code" href="classzmq_1_1dist__t.html#af236014a8db3d1adbb0863b0d807158e">00162</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1dist__t.html#af236014a8db3d1adbb0863b0d807158e">zmq::dist_t::write</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_)
-<a name="l00163"></a>00163 {
-<a name="l00164"></a>00164     <span class="keywordflow">if</span> (!pipe_-&gt;<a class="code" href="classzmq_1_1pipe__t.html#a4b11ee7b4a4b0c4e2225e0605152d6d6">write</a> (msg_)) {
-<a name="l00165"></a>00165         pipes.swap (pipes.index (pipe_), matching - 1);
-<a name="l00166"></a>00166         matching--;
-<a name="l00167"></a>00167         pipes.swap (pipes.index (pipe_), active - 1);
-<a name="l00168"></a>00168         active--;
-<a name="l00169"></a>00169         pipes.swap (active, eligible - 1);
-<a name="l00170"></a>00170         eligible--;
-<a name="l00171"></a>00171         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00172"></a>00172     }
-<a name="l00173"></a>00173     <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)))
-<a name="l00174"></a>00174         pipe_-&gt;<a class="code" href="classzmq_1_1pipe__t.html#ad0d0fc83b91e93b690673757a830aa52">flush</a> ();
-<a name="l00175"></a>00175     <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00176"></a>00176 }
-<a name="l00177"></a>00177 
+<a name="l00114"></a>00114     <span class="keywordtype">bool</span> msg_more =
+<a name="l00115"></a>00115         msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117     <span class="comment">//  Push the message to matching pipes.</span>
+<a name="l00118"></a>00118     distribute (msg_, flags_);
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120     <span class="comment">//  If mutlipart message is fully sent, activate all the eligible pipes.</span>
+<a name="l00121"></a>00121     <span class="keywordflow">if</span> (!msg_more)
+<a name="l00122"></a>00122         active = eligible;
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124     more = msg_more;
+<a name="l00125"></a>00125 
+<a name="l00126"></a>00126     <span class="keywordflow">return</span> 0;
+<a name="l00127"></a>00127 }
+<a name="l00128"></a>00128 
+<a name="l00129"></a><a class="code" href="classzmq_1_1dist__t.html#a6dac6abffec2b7606604b3d86485723d">00129</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1dist__t.html#a6dac6abffec2b7606604b3d86485723d">zmq::dist_t::distribute</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
+<a name="l00130"></a>00130 {
+<a name="l00131"></a>00131     <span class="comment">//  If there are no matching pipes available, simply drop the message.</span>
+<a name="l00132"></a>00132     <span class="keywordflow">if</span> (matching == 0) {
+<a name="l00133"></a>00133         <span class="keywordtype">int</span> rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d">close</a> ();
+<a name="l00134"></a>00134         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00135"></a>00135         rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
+<a name="l00136"></a>00136         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
+<a name="l00137"></a>00137         <span class="keywordflow">return</span>;
+<a name="l00138"></a>00138     }
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140     <span class="comment">//  Add matching-1 references to the message. We already hold one reference,</span>
+<a name="l00141"></a>00141     <span class="comment">//  that&#39;s why -1.</span>
+<a name="l00142"></a>00142     msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a67b20d60d792fe6e3089f6d6edf82adb">add_refs</a> (matching - 1);
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144     <span class="comment">//  Push copy of the message to each matching pipe.</span>
+<a name="l00145"></a>00145     <span class="keywordflow">for</span> (pipes_t::size_type i = 0; i &lt; matching;) {
+<a name="l00146"></a>00146         <span class="keywordflow">if</span> (!write (pipes [i], msg_))
+<a name="l00147"></a>00147             msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a43c78e4688c189c55769eae89a140597">rm_refs</a> (1);
+<a name="l00148"></a>00148         <span class="keywordflow">else</span>
+<a name="l00149"></a>00149             i++;
+<a name="l00150"></a>00150     }
+<a name="l00151"></a>00151 
+<a name="l00152"></a>00152     <span class="comment">//  Detach the original message from the data buffer. Note that we don&#39;t</span>
+<a name="l00153"></a>00153     <span class="comment">//  close the message. That&#39;s because we&#39;ve already used all the references.</span>
+<a name="l00154"></a>00154     <span class="keywordtype">int</span> rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
+<a name="l00155"></a>00155     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00156"></a>00156 }
+<a name="l00157"></a>00157 
+<a name="l00158"></a><a class="code" href="classzmq_1_1dist__t.html#a010653ad2fc57e8372f2da9c59269d78">00158</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1dist__t.html#a010653ad2fc57e8372f2da9c59269d78">zmq::dist_t::has_out</a> ()
+<a name="l00159"></a>00159 {
+<a name="l00160"></a>00160     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00161"></a>00161 }
+<a name="l00162"></a>00162 
+<a name="l00163"></a><a class="code" href="classzmq_1_1dist__t.html#af236014a8db3d1adbb0863b0d807158e">00163</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1dist__t.html#af236014a8db3d1adbb0863b0d807158e">zmq::dist_t::write</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_)
+<a name="l00164"></a>00164 {
+<a name="l00165"></a>00165     <span class="keywordflow">if</span> (!pipe_-&gt;<a class="code" href="classzmq_1_1pipe__t.html#a4b11ee7b4a4b0c4e2225e0605152d6d6">write</a> (msg_)) {
+<a name="l00166"></a>00166         pipes.swap (pipes.index (pipe_), matching - 1);
+<a name="l00167"></a>00167         matching--;
+<a name="l00168"></a>00168         pipes.swap (pipes.index (pipe_), active - 1);
+<a name="l00169"></a>00169         active--;
+<a name="l00170"></a>00170         pipes.swap (active, eligible - 1);
+<a name="l00171"></a>00171         eligible--;
+<a name="l00172"></a>00172         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00173"></a>00173     }
+<a name="l00174"></a>00174     <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)))
+<a name="l00175"></a>00175         pipe_-&gt;<a class="code" href="classzmq_1_1pipe__t.html#ad0d0fc83b91e93b690673757a830aa52">flush</a> ();
+<a name="l00176"></a>00176     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00177"></a>00177 }
+<a name="l00178"></a>00178 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -298,7 +299,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 21 2011 10:17:00 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jun 23 2011 12:13:19 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

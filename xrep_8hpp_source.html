@@ -129,11 +129,11 @@ function toggleVisibility(linkObj) {
 <a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define __ZMQ_XREP_HPP_INCLUDED__</span>
 <a name="l00023"></a>00023 <span class="preprocessor"></span>
 <a name="l00024"></a>00024 <span class="preprocessor">#include &lt;map&gt;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;vector&gt;</span>
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="socket__base_8hpp.html">socket_base.hpp</a>&quot;</span>
-<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="blob_8hpp.html">blob.hpp</a>&quot;</span>
-<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="msg_8hpp.html">msg.hpp</a>&quot;</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="socket__base_8hpp.html">socket_base.hpp</a>&quot;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="stdint_8hpp.html">stdint.hpp</a>&quot;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="msg_8hpp.html">msg.hpp</a>&quot;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="fq_8hpp.html">fq.hpp</a>&quot;</span>
 <a name="l00030"></a>00030 
 <a name="l00031"></a>00031 <span class="keyword">namespace </span>zmq
 <a name="l00032"></a>00032 {
@@ -148,68 +148,62 @@ function toggleVisibility(linkObj) {
 <a name="l00041"></a>00041         <a class="code" href="classzmq_1_1xrep__t.html#a6fe505939d3ae5f97554042b5fde3740">~xrep_t</a> ();
 <a name="l00042"></a>00042 
 <a name="l00043"></a>00043         <span class="comment">//  Overloads of functions from socket_base_t.</span>
-<a name="l00044"></a>00044         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xrep__t.html#a61af3acce6e2447a9b488522b56b8aaa">xattach_pipe</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, <span class="keyword">const</span> blob_t &amp;peer_identity_);
-<a name="l00045"></a>00045         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1xrep__t.html#ae6a9488f9963afe0023f9556f66d58f1">xsend</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
-<a name="l00046"></a>00046         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1xrep__t.html#a18184c945754ab289027c8115d6654af">xrecv</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
-<a name="l00047"></a>00047         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xrep__t.html#a752a2ecbf1837d0865e9c382ebbb4154">xhas_in</a> ();
-<a name="l00048"></a>00048         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xrep__t.html#a88986da92e9341ea80396a772ab53606">xhas_out</a> ();
-<a name="l00049"></a>00049         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xrep__t.html#a9073a465e68ca358b5e9af7c53de33a0">xread_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
-<a name="l00050"></a>00050         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xrep__t.html#aab1ba2c5e5d2d7a5066fe4ec35bd05ce">xwrite_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
-<a name="l00051"></a>00051         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xrep__t.html#aa13f4caf24a76d00628926a91afedf86">xterminated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053     <span class="keyword">protected</span>:
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055         <span class="comment">//  Rollback any message parts that were sent but not yet flushed.</span>
-<a name="l00056"></a>00056         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1xrep__t.html#a1bb8754aa30098220778ad7cb10c1b2b">rollback</a> ();
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058     <span class="keyword">private</span>:
-<a name="l00059"></a>00059 
-<a name="l00060"></a><a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html">00060</a>         <span class="keyword">struct </span><a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html">inpipe_t</a>
-<a name="l00061"></a>00061         {
-<a name="l00062"></a><a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html#a3c0760fcaa3ee26faca24faf7f31e185">00062</a>             <span class="keyword">class </span><a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *<a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html#a3c0760fcaa3ee26faca24faf7f31e185">pipe</a>;
-<a name="l00063"></a><a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html#a23caab088946732432d60e4dcb5dca35">00063</a>             blob_t <a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html#a23caab088946732432d60e4dcb5dca35">identity</a>;
-<a name="l00064"></a><a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html#a7ce1cde3930cc5dc93f863a6774d88a5">00064</a>             <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1xrep__t_1_1inpipe__t.html#a7ce1cde3930cc5dc93f863a6774d88a5">active</a>;
-<a name="l00065"></a>00065         };
+<a name="l00044"></a>00044         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xrep__t.html#a61af3acce6e2447a9b488522b56b8aaa">xattach_pipe</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_,
+<a name="l00045"></a>00045             <span class="keyword">const</span> blob_t &amp;peer_identity_);
+<a name="l00046"></a>00046         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1xrep__t.html#ae6a9488f9963afe0023f9556f66d58f1">xsend</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
+<a name="l00047"></a>00047         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1xrep__t.html#a18184c945754ab289027c8115d6654af">xrecv</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
+<a name="l00048"></a>00048         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xrep__t.html#a752a2ecbf1837d0865e9c382ebbb4154">xhas_in</a> ();
+<a name="l00049"></a>00049         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xrep__t.html#a88986da92e9341ea80396a772ab53606">xhas_out</a> ();
+<a name="l00050"></a>00050         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xrep__t.html#a9073a465e68ca358b5e9af7c53de33a0">xread_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00051"></a>00051         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xrep__t.html#aab1ba2c5e5d2d7a5066fe4ec35bd05ce">xwrite_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00052"></a>00052         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xrep__t.html#aa13f4caf24a76d00628926a91afedf86">xterminated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054     <span class="keyword">protected</span>:
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056         <span class="comment">//  Rollback any message parts that were sent but not yet flushed.</span>
+<a name="l00057"></a>00057         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1xrep__t.html#a1bb8754aa30098220778ad7cb10c1b2b">rollback</a> ();
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059     <span class="keyword">private</span>:
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061         <span class="comment">//  Fair queueing object for inbound pipes.</span>
+<a name="l00062"></a><a class="code" href="classzmq_1_1xrep__t.html#a03f3ee385523ce4742ed305772a02162">00062</a>         <a class="code" href="classzmq_1_1fq__t.html">fq_t</a> <a class="code" href="classzmq_1_1xrep__t.html#a03f3ee385523ce4742ed305772a02162">fq</a>;
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064         <span class="comment">//  Have we prefetched a message.</span>
+<a name="l00065"></a><a class="code" href="classzmq_1_1xrep__t.html#a1812d64601be2987241aad2cf07de3bd">00065</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xrep__t.html#a1812d64601be2987241aad2cf07de3bd">prefetched</a>;
 <a name="l00066"></a>00066 
-<a name="l00067"></a>00067         <span class="comment">//  Inbound pipes with the names of corresponging peers.</span>
-<a name="l00068"></a><a class="code" href="classzmq_1_1xrep__t.html#aab821b877ac8f07e9b4c59dc8677486a">00068</a>         <span class="keyword">typedef</span> std::vector &lt;inpipe_t&gt; <a class="code" href="classzmq_1_1xrep__t.html#aab821b877ac8f07e9b4c59dc8677486a">inpipes_t</a>;
-<a name="l00069"></a><a class="code" href="classzmq_1_1xrep__t.html#a1e35d36f18be2501a7e60a951fd8a479">00069</a>         <a class="code" href="classzmq_1_1xrep__t.html#aab821b877ac8f07e9b4c59dc8677486a">inpipes_t</a> <a class="code" href="classzmq_1_1xrep__t.html#a1e35d36f18be2501a7e60a951fd8a479">inpipes</a>;
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071         <span class="comment">//  The pipe we are currently reading from.</span>
-<a name="l00072"></a><a class="code" href="classzmq_1_1xrep__t.html#a20e66b455dc04de90bf67a313fe6acc6">00072</a>         inpipes_t::size_type <a class="code" href="classzmq_1_1xrep__t.html#a20e66b455dc04de90bf67a313fe6acc6">current_in</a>;
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074         <span class="comment">//  Have we prefetched a message.</span>
-<a name="l00075"></a><a class="code" href="classzmq_1_1xrep__t.html#a1812d64601be2987241aad2cf07de3bd">00075</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xrep__t.html#a1812d64601be2987241aad2cf07de3bd">prefetched</a>;
-<a name="l00076"></a>00076 
-<a name="l00077"></a>00077         <span class="comment">//  Holds the prefetched message.</span>
-<a name="l00078"></a><a class="code" href="classzmq_1_1xrep__t.html#af3fbcd88a74ba73d9ebb0eec0420b14d">00078</a>         <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> <a class="code" href="classzmq_1_1xrep__t.html#af3fbcd88a74ba73d9ebb0eec0420b14d">prefetched_msg</a>;
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080         <span class="comment">//  If true, more incoming message parts are expected.</span>
-<a name="l00081"></a><a class="code" href="classzmq_1_1xrep__t.html#a11d5b9598ac35d485e4d9f2bb9fbbd06">00081</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xrep__t.html#a11d5b9598ac35d485e4d9f2bb9fbbd06">more_in</a>;
+<a name="l00067"></a>00067         <span class="comment">//  Holds the prefetched message.</span>
+<a name="l00068"></a><a class="code" href="classzmq_1_1xrep__t.html#af3fbcd88a74ba73d9ebb0eec0420b14d">00068</a>         <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> <a class="code" href="classzmq_1_1xrep__t.html#af3fbcd88a74ba73d9ebb0eec0420b14d">prefetched_msg</a>;
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070         <span class="comment">//  If true, more incoming message parts are expected.</span>
+<a name="l00071"></a><a class="code" href="classzmq_1_1xrep__t.html#a11d5b9598ac35d485e4d9f2bb9fbbd06">00071</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xrep__t.html#a11d5b9598ac35d485e4d9f2bb9fbbd06">more_in</a>;
+<a name="l00072"></a>00072 
+<a name="l00073"></a><a class="code" href="structzmq_1_1xrep__t_1_1outpipe__t.html">00073</a>         <span class="keyword">struct </span><a class="code" href="structzmq_1_1xrep__t_1_1outpipe__t.html">outpipe_t</a>
+<a name="l00074"></a>00074         {
+<a name="l00075"></a><a class="code" href="structzmq_1_1xrep__t_1_1outpipe__t.html#aa2677b2837082433ae8d2b7028a8eaef">00075</a>             <span class="keyword">class </span><a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *<a class="code" href="structzmq_1_1xrep__t_1_1outpipe__t.html#aa2677b2837082433ae8d2b7028a8eaef">pipe</a>;
+<a name="l00076"></a><a class="code" href="structzmq_1_1xrep__t_1_1outpipe__t.html#a02781e87dffac6cab5e89ca934acdb3e">00076</a>             <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1xrep__t_1_1outpipe__t.html#a02781e87dffac6cab5e89ca934acdb3e">active</a>;
+<a name="l00077"></a>00077         };
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079         <span class="comment">//  Outbound pipes indexed by the peer IDs.</span>
+<a name="l00080"></a><a class="code" href="classzmq_1_1xrep__t.html#a5d8e2f70118f44167d894856c9fe018c">00080</a>         <span class="keyword">typedef</span> std::map &lt;uint32_t, outpipe_t&gt; <a class="code" href="classzmq_1_1xrep__t.html#a5d8e2f70118f44167d894856c9fe018c">outpipes_t</a>;
+<a name="l00081"></a><a class="code" href="classzmq_1_1xrep__t.html#a18d2f95c0c5d2f422783a6c6aafcc45f">00081</a>         <a class="code" href="classzmq_1_1xrep__t.html#a5d8e2f70118f44167d894856c9fe018c">outpipes_t</a> <a class="code" href="classzmq_1_1xrep__t.html#a18d2f95c0c5d2f422783a6c6aafcc45f">outpipes</a>;
 <a name="l00082"></a>00082 
-<a name="l00083"></a><a class="code" href="structzmq_1_1xrep__t_1_1outpipe__t.html">00083</a>         <span class="keyword">struct </span><a class="code" href="structzmq_1_1xrep__t_1_1outpipe__t.html">outpipe_t</a>
-<a name="l00084"></a>00084         {
-<a name="l00085"></a><a class="code" href="structzmq_1_1xrep__t_1_1outpipe__t.html#aa2677b2837082433ae8d2b7028a8eaef">00085</a>             <span class="keyword">class </span><a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *<a class="code" href="structzmq_1_1xrep__t_1_1outpipe__t.html#aa2677b2837082433ae8d2b7028a8eaef">pipe</a>;
-<a name="l00086"></a><a class="code" href="structzmq_1_1xrep__t_1_1outpipe__t.html#a02781e87dffac6cab5e89ca934acdb3e">00086</a>             <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1xrep__t_1_1outpipe__t.html#a02781e87dffac6cab5e89ca934acdb3e">active</a>;
-<a name="l00087"></a>00087         };
+<a name="l00083"></a>00083         <span class="comment">//  The pipe we are currently writing to.</span>
+<a name="l00084"></a><a class="code" href="classzmq_1_1xrep__t.html#a68e439cbc2de1cd7c4b8197f785f3a10">00084</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *<a class="code" href="classzmq_1_1xrep__t.html#a68e439cbc2de1cd7c4b8197f785f3a10">current_out</a>;
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086         <span class="comment">//  If true, more outgoing message parts are expected.</span>
+<a name="l00087"></a><a class="code" href="classzmq_1_1xrep__t.html#a72353180c7ae959e1a8ff26133c8b67f">00087</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xrep__t.html#a72353180c7ae959e1a8ff26133c8b67f">more_out</a>;
 <a name="l00088"></a>00088 
-<a name="l00089"></a>00089         <span class="comment">//  Outbound pipes indexed by the peer names.</span>
-<a name="l00090"></a><a class="code" href="classzmq_1_1xrep__t.html#aff16e30040f8036c15fc2b6aa17b0d69">00090</a>         <span class="keyword">typedef</span> std::map &lt;blob_t, outpipe_t&gt; <a class="code" href="classzmq_1_1xrep__t.html#aff16e30040f8036c15fc2b6aa17b0d69">outpipes_t</a>;
-<a name="l00091"></a><a class="code" href="classzmq_1_1xrep__t.html#a18d2f95c0c5d2f422783a6c6aafcc45f">00091</a>         <a class="code" href="classzmq_1_1xrep__t.html#aff16e30040f8036c15fc2b6aa17b0d69">outpipes_t</a> <a class="code" href="classzmq_1_1xrep__t.html#a18d2f95c0c5d2f422783a6c6aafcc45f">outpipes</a>;
+<a name="l00089"></a>00089         <span class="comment">//  Peer ID are generated. It&#39;s a simple increment and wrap-over</span>
+<a name="l00090"></a>00090         <span class="comment">//  algorithm. This value is the next ID to use (if not used already).</span>
+<a name="l00091"></a><a class="code" href="classzmq_1_1xrep__t.html#aa54d8a2ecef91bcc00b0219afd546001">00091</a>         uint32_t <a class="code" href="classzmq_1_1xrep__t.html#aa54d8a2ecef91bcc00b0219afd546001">next_peer_id</a>;
 <a name="l00092"></a>00092 
-<a name="l00093"></a>00093         <span class="comment">//  The pipe we are currently writing to.</span>
-<a name="l00094"></a><a class="code" href="classzmq_1_1xrep__t.html#a68e439cbc2de1cd7c4b8197f785f3a10">00094</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *<a class="code" href="classzmq_1_1xrep__t.html#a68e439cbc2de1cd7c4b8197f785f3a10">current_out</a>;
-<a name="l00095"></a>00095 
-<a name="l00096"></a>00096         <span class="comment">//  If true, more outgoing message parts are expected.</span>
-<a name="l00097"></a><a class="code" href="classzmq_1_1xrep__t.html#a72353180c7ae959e1a8ff26133c8b67f">00097</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xrep__t.html#a72353180c7ae959e1a8ff26133c8b67f">more_out</a>;
+<a name="l00093"></a>00093         <a class="code" href="classzmq_1_1xrep__t.html#ab3d311423c33e4d98409abefe6c5db39">xrep_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1xrep__t.html">xrep_t</a>&amp;);
+<a name="l00094"></a>00094         <span class="keyword">const</span> <a class="code" href="classzmq_1_1xrep__t.html">xrep_t</a> &amp;<a class="code" href="classzmq_1_1xrep__t.html#abd2f8e17fa95b2c29c1d7212a3815028">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1xrep__t.html">xrep_t</a>&amp;);
+<a name="l00095"></a>00095     };
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097 }
 <a name="l00098"></a>00098 
-<a name="l00099"></a>00099         <a class="code" href="classzmq_1_1xrep__t.html#ab3d311423c33e4d98409abefe6c5db39">xrep_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1xrep__t.html">xrep_t</a>&amp;);
-<a name="l00100"></a>00100         <span class="keyword">const</span> <a class="code" href="classzmq_1_1xrep__t.html">xrep_t</a> &amp;<a class="code" href="classzmq_1_1xrep__t.html#abd2f8e17fa95b2c29c1d7212a3815028">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1xrep__t.html">xrep_t</a>&amp;);
-<a name="l00101"></a>00101     };
-<a name="l00102"></a>00102 
-<a name="l00103"></a>00103 }
-<a name="l00104"></a>00104 
-<a name="l00105"></a>00105 <span class="preprocessor">#endif</span>
+<a name="l00099"></a>00099 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -226,7 +220,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 21 2011 10:17:04 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jun 23 2011 12:13:20 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

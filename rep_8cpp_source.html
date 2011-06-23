@@ -149,7 +149,7 @@ function toggleVisibility(linkObj) {
 <a name="l00042"></a>00042         <span class="keywordflow">return</span> -1;
 <a name="l00043"></a>00043     }
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045     <span class="keywordtype">bool</span> more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>);
+<a name="l00045"></a>00045     <span class="keywordtype">bool</span> more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
 <a name="l00046"></a>00046 
 <a name="l00047"></a>00047     <span class="comment">//  Push message to the reply pipe.</span>
 <a name="l00048"></a>00048     <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1xrep__t.html#ae6a9488f9963afe0023f9556f66d58f1">xrep_t::xsend</a> (msg_, flags_);
@@ -171,77 +171,55 @@ function toggleVisibility(linkObj) {
 <a name="l00064"></a>00064         <span class="keywordflow">return</span> -1;
 <a name="l00065"></a>00065     }
 <a name="l00066"></a>00066 
-<a name="l00067"></a>00067     <span class="keywordflow">if</span> (request_begins) {
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069         <span class="comment">//  Copy the backtrace stack to the reply pipe.</span>
+<a name="l00067"></a>00067     <span class="comment">//  First thing to do when receiving a request is to copy all the labels</span>
+<a name="l00068"></a>00068     <span class="comment">//  to the reply pipe.</span>
+<a name="l00069"></a>00069     <span class="keywordflow">if</span> (request_begins) {
 <a name="l00070"></a>00070         <span class="keywordflow">while</span> (<span class="keyword">true</span>) {
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072             <span class="comment">//  TODO: If request can be read but reply pipe is not</span>
-<a name="l00073"></a>00073             <span class="comment">//  ready for writing, we should drop the reply.</span>
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075             <span class="comment">//  Get next part of the backtrace stack.</span>
-<a name="l00076"></a>00076             <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1xrep__t.html#a18184c945754ab289027c8115d6654af">xrep_t::xrecv</a> (msg_, flags_);
-<a name="l00077"></a>00077             <span class="keywordflow">if</span> (rc != 0)
-<a name="l00078"></a>00078                 <span class="keywordflow">return</span> rc;
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080             <span class="keywordflow">if</span> (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)) {
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082                 <span class="comment">//  Empty message part delimits the traceback stack.</span>
-<a name="l00083"></a>00083                 <span class="keywordtype">bool</span> bottom = (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a9089fc10aecfab67a826d3514ef7a7a7">size</a> () == 0);
-<a name="l00084"></a>00084 
-<a name="l00085"></a>00085                 <span class="comment">//  Push it to the reply pipe.</span>
-<a name="l00086"></a>00086                 rc = <a class="code" href="classzmq_1_1xrep__t.html#ae6a9488f9963afe0023f9556f66d58f1">xrep_t::xsend</a> (msg_, flags_);
-<a name="l00087"></a>00087                 <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
-<a name="l00088"></a>00088 
-<a name="l00089"></a>00089                 <span class="comment">//  The end of the traceback, move to processing message body.</span>
-<a name="l00090"></a>00090                 <span class="keywordflow">if</span> (bottom)
-<a name="l00091"></a>00091                     <span class="keywordflow">break</span>;
-<a name="l00092"></a>00092             }
-<a name="l00093"></a>00093             <span class="keywordflow">else</span> {
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095                 <span class="comment">//  If the traceback stack is malformed, discard anything</span>
-<a name="l00096"></a>00096                 <span class="comment">//  already sent to pipe (we&#39;re at end of invalid message)</span>
-<a name="l00097"></a>00097                 <span class="comment">//  and continue reading -- that&#39;ll switch us to the next pipe</span>
-<a name="l00098"></a>00098                 <span class="comment">//  and next request.</span>
-<a name="l00099"></a>00099                 rc = <a class="code" href="classzmq_1_1xrep__t.html#a1bb8754aa30098220778ad7cb10c1b2b">xrep_t::rollback</a> ();
-<a name="l00100"></a>00100                 <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
-<a name="l00101"></a>00101             }
-<a name="l00102"></a>00102         }
-<a name="l00103"></a>00103 
-<a name="l00104"></a>00104         request_begins = <span class="keyword">false</span>;
-<a name="l00105"></a>00105     }
-<a name="l00106"></a>00106 
-<a name="l00107"></a>00107     <span class="comment">//  Now the routing info is safely stored. Get the first part</span>
-<a name="l00108"></a>00108     <span class="comment">//  of the message payload and exit.</span>
-<a name="l00109"></a>00109     <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1xrep__t.html#a18184c945754ab289027c8115d6654af">xrep_t::xrecv</a> (msg_, flags_);
-<a name="l00110"></a>00110     <span class="keywordflow">if</span> (rc != 0)
-<a name="l00111"></a>00111         <span class="keywordflow">return</span> rc;
+<a name="l00071"></a>00071             <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1xrep__t.html#a18184c945754ab289027c8115d6654af">xrep_t::xrecv</a> (msg_, flags_);
+<a name="l00072"></a>00072             <span class="keywordflow">if</span> (rc != 0)
+<a name="l00073"></a>00073                 <span class="keywordflow">return</span> rc;
+<a name="l00074"></a>00074             <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>))
+<a name="l00075"></a>00075                 <span class="keywordflow">break</span>;
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077             <span class="comment">//  TODO: If the reply cannot be sent to the peer because</span>
+<a name="l00078"></a>00078             <span class="comment">//  od congestion, we should drop it.</span>
+<a name="l00079"></a>00079             rc = <a class="code" href="classzmq_1_1xrep__t.html#ae6a9488f9963afe0023f9556f66d58f1">xrep_t::xsend</a> (msg_, flags_);
+<a name="l00080"></a>00080             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
+<a name="l00081"></a>00081         }
+<a name="l00082"></a>00082         request_begins = <span class="keyword">false</span>;
+<a name="l00083"></a>00083     }
+<a name="l00084"></a>00084     <span class="keywordflow">else</span> {
+<a name="l00085"></a>00085         <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1xrep__t.html#a18184c945754ab289027c8115d6654af">xrep_t::xrecv</a> (msg_, flags_);
+<a name="l00086"></a>00086         <span class="keywordflow">if</span> (rc != 0)
+<a name="l00087"></a>00087             <span class="keywordflow">return</span> rc;
+<a name="l00088"></a>00088     }
+<a name="l00089"></a>00089     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>));
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091     <span class="comment">//  If whole request is read, flip the FSM to reply-sending state.</span>
+<a name="l00092"></a>00092     <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>)) {
+<a name="l00093"></a>00093         sending_reply = <span class="keyword">true</span>;
+<a name="l00094"></a>00094         request_begins = <span class="keyword">true</span>;
+<a name="l00095"></a>00095     }
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097     <span class="keywordflow">return</span> 0;
+<a name="l00098"></a>00098 }
+<a name="l00099"></a>00099 
+<a name="l00100"></a><a class="code" href="classzmq_1_1rep__t.html#ac9b123f0f5e8d9b5c04e5ebcbeca84ec">00100</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1rep__t.html#ac9b123f0f5e8d9b5c04e5ebcbeca84ec">zmq::rep_t::xhas_in</a> ()
+<a name="l00101"></a>00101 {
+<a name="l00102"></a>00102     <span class="keywordflow">if</span> (sending_reply)
+<a name="l00103"></a>00103         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105     <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1xrep__t.html#a752a2ecbf1837d0865e9c382ebbb4154">xrep_t::xhas_in</a> ();
+<a name="l00106"></a>00106 }
+<a name="l00107"></a>00107 
+<a name="l00108"></a><a class="code" href="classzmq_1_1rep__t.html#a985c57a022e0a8685a8c23797e90df54">00108</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1rep__t.html#a985c57a022e0a8685a8c23797e90df54">zmq::rep_t::xhas_out</a> ()
+<a name="l00109"></a>00109 {
+<a name="l00110"></a>00110     <span class="keywordflow">if</span> (!sending_reply)
+<a name="l00111"></a>00111         <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00112"></a>00112 
-<a name="l00113"></a>00113     <span class="comment">//  If whole request is read, flip the FSM to reply-sending state.</span>
-<a name="l00114"></a>00114     <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>))) {
-<a name="l00115"></a>00115         sending_reply = <span class="keyword">true</span>;
-<a name="l00116"></a>00116         request_begins = <span class="keyword">true</span>;
-<a name="l00117"></a>00117     }
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119     <span class="keywordflow">return</span> 0;
-<a name="l00120"></a>00120 }
-<a name="l00121"></a>00121 
-<a name="l00122"></a><a class="code" href="classzmq_1_1rep__t.html#ac9b123f0f5e8d9b5c04e5ebcbeca84ec">00122</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1rep__t.html#ac9b123f0f5e8d9b5c04e5ebcbeca84ec">zmq::rep_t::xhas_in</a> ()
-<a name="l00123"></a>00123 {
-<a name="l00124"></a>00124     <span class="keywordflow">if</span> (sending_reply)
-<a name="l00125"></a>00125         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00126"></a>00126 
-<a name="l00127"></a>00127     <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1xrep__t.html#a752a2ecbf1837d0865e9c382ebbb4154">xrep_t::xhas_in</a> ();
-<a name="l00128"></a>00128 }
-<a name="l00129"></a>00129 
-<a name="l00130"></a><a class="code" href="classzmq_1_1rep__t.html#a985c57a022e0a8685a8c23797e90df54">00130</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1rep__t.html#a985c57a022e0a8685a8c23797e90df54">zmq::rep_t::xhas_out</a> ()
-<a name="l00131"></a>00131 {
-<a name="l00132"></a>00132     <span class="keywordflow">if</span> (!sending_reply)
-<a name="l00133"></a>00133         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00134"></a>00134 
-<a name="l00135"></a>00135     <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1xrep__t.html#a88986da92e9341ea80396a772ab53606">xrep_t::xhas_out</a> ();
-<a name="l00136"></a>00136 }
-<a name="l00137"></a>00137 
+<a name="l00113"></a>00113     <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1xrep__t.html#a88986da92e9341ea80396a772ab53606">xrep_t::xhas_out</a> ();
+<a name="l00114"></a>00114 }
+<a name="l00115"></a>00115 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -258,7 +236,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 21 2011 10:17:03 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jun 23 2011 12:13:20 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
