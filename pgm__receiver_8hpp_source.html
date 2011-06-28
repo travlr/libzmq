@@ -159,7 +159,7 @@ function toggleVisibility(linkObj) {
 <a name="l00052"></a>00052         <span class="keywordtype">int</span> init (<span class="keywordtype">bool</span> udp_encapsulation_, <span class="keyword">const</span> <span class="keywordtype">char</span> *network_);
 <a name="l00053"></a>00053 
 <a name="l00054"></a>00054         <span class="comment">//  i_engine interface implementation.</span>
-<a name="l00055"></a>00055         <span class="keywordtype">void</span> plug (<span class="keyword">class</span> io_thread_t *io_thread_, <span class="keyword">struct</span> i_inout *inout_);
+<a name="l00055"></a>00055         <span class="keywordtype">void</span> plug (<span class="keyword">class</span> io_thread_t *io_thread_, <span class="keyword">struct</span> i_engine_sink *sink_);
 <a name="l00056"></a>00056         <span class="keywordtype">void</span> unplug ();
 <a name="l00057"></a>00057         <span class="keywordtype">void</span> terminate ();
 <a name="l00058"></a>00058         <span class="keywordtype">void</span> activate_in ();
@@ -207,8 +207,8 @@ function toggleVisibility(linkObj) {
 <a name="l00100"></a>00100         <span class="comment">//  Socket options.</span>
 <a name="l00101"></a>00101         options_t options;
 <a name="l00102"></a>00102 
-<a name="l00103"></a>00103         <span class="comment">//  Parent session.</span>
-<a name="l00104"></a>00104         i_inout *inout;
+<a name="l00103"></a>00103         <span class="comment">//  Associated session.</span>
+<a name="l00104"></a>00104         i_engine_sink *sink;
 <a name="l00105"></a>00105 
 <a name="l00106"></a>00106         <span class="comment">//  Most recently used decoder.</span>
 <a name="l00107"></a>00107         decoder_t *mru_decoder;
@@ -250,7 +250,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 27 2011 10:22:35 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 28 2011 09:29:21 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

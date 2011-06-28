@@ -1,9 +1,9 @@
 <map id="G" name="G">
 <area shape="rect" id="node2" href="$classzmq_1_1decoder__base__t.html" title="zmq::decoder_base_t\&lt; decoder_t \&gt;" alt="" coords="105,485,332,515"/>
 <area shape="rect" id="node5" href="$classzmq_1_1decoder__base__t.html" title="zmq::decoder_base_t\&lt; T \&gt;" alt="" coords="5,389,184,419"/>
-<area shape="rect" id="node7" href="$classzmq_1_1msg__t.html" title="zmq::msg_t" alt="" coords="156,293,247,323"/>
-<area shape="rect" id="node9" href="$structzmq_1_1msg__t_1_1content__t.html" title="zmq::msg_t::content_t" alt="" coords="125,197,277,227"/>
-<area shape="rect" id="node11" href="$classzmq_1_1atomic__counter__t.html" title="zmq::atomic_counter_t" alt="" coords="124,101,279,131"/>
-<area shape="rect" id="node13" href="$classzmq_1_1mutex__t.html" title="zmq::mutex_t" alt="" coords="151,5,252,35"/>
-<area shape="rect" id="node15" href="$structzmq_1_1i__inout.html" title="zmq::i_inout" alt="" coords="271,293,364,323"/>
+<area shape="rect" id="node7" href="$structzmq_1_1i__engine__sink.html" title="zmq::i_engine_sink" alt="" coords="149,293,283,323"/>
+<area shape="rect" id="node9" href="$classzmq_1_1msg__t.html" title="zmq::msg_t" alt="" coords="307,293,397,323"/>
+<area shape="rect" id="node11" href="$structzmq_1_1msg__t_1_1content__t.html" title="zmq::msg_t::content_t" alt="" coords="276,197,428,227"/>
+<area shape="rect" id="node13" href="$classzmq_1_1atomic__counter__t.html" title="zmq::atomic_counter_t" alt="" coords="275,101,429,131"/>
+<area shape="rect" id="node15" href="$classzmq_1_1mutex__t.html" title="zmq::mutex_t" alt="" coords="301,5,403,35"/>
 </map>

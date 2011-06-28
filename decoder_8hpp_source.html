@@ -291,7 +291,7 @@ function toggleVisibility(linkObj) {
 <a name="l00184"></a>00184         <a class="code" href="classzmq_1_1decoder__t.html#a8d1cb1d15ab637eaf634cc18389831c3">decoder_t</a> (<span class="keywordtype">size_t</span> bufsize_, int64_t maxmsgsize_);
 <a name="l00185"></a>00185         <a class="code" href="classzmq_1_1decoder__t.html#ac1c5ef88c5c4e11a2152294ef41b40e7">~decoder_t</a> ();
 <a name="l00186"></a>00186 
-<a name="l00187"></a>00187         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1decoder__t.html#a679f27cfa7a2870bd45770cef222daea">set_inout</a> (<span class="keyword">struct</span> <a class="code" href="structzmq_1_1i__inout.html">i_inout</a> *destination_);
+<a name="l00187"></a>00187         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1decoder__t.html#aa98d795ea030e15110c83ae34d6426c4">set_sink</a> (<span class="keyword">struct</span> <a class="code" href="structzmq_1_1i__engine__sink.html">i_engine_sink</a> *sink_);
 <a name="l00188"></a>00188 
 <a name="l00189"></a>00189     <span class="keyword">private</span>:
 <a name="l00190"></a>00190 
@@ -300,7 +300,7 @@ function toggleVisibility(linkObj) {
 <a name="l00193"></a>00193         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1decoder__t.html#a0859949bf711edf2b6c9cd1e353a8cc1">flags_ready</a> ();
 <a name="l00194"></a>00194         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1decoder__t.html#a06cc01035ccb5041a982b8c91add5754">message_ready</a> ();
 <a name="l00195"></a>00195 
-<a name="l00196"></a><a class="code" href="classzmq_1_1decoder__t.html#a180beddea800e0a1697f3d44303ac35b">00196</a>         <span class="keyword">struct </span><a class="code" href="structzmq_1_1i__inout.html">i_inout</a> *<a class="code" href="classzmq_1_1decoder__t.html#a180beddea800e0a1697f3d44303ac35b">destination</a>;
+<a name="l00196"></a><a class="code" href="classzmq_1_1decoder__t.html#a8322f6da4d0f64a181443b2d63583db4">00196</a>         <span class="keyword">struct </span><a class="code" href="structzmq_1_1i__engine__sink.html">i_engine_sink</a> *<a class="code" href="classzmq_1_1decoder__t.html#a8322f6da4d0f64a181443b2d63583db4">sink</a>;
 <a name="l00197"></a><a class="code" href="classzmq_1_1decoder__t.html#ae3d86a1139f0a17edb9f44b33925ffda">00197</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1decoder__t.html#ae3d86a1139f0a17edb9f44b33925ffda">tmpbuf</a> [8];
 <a name="l00198"></a><a class="code" href="classzmq_1_1decoder__t.html#ace76017276c49d4c6ff190e2eccc0b93">00198</a>         <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> <a class="code" href="classzmq_1_1decoder__t.html#ace76017276c49d4c6ff190e2eccc0b93">in_progress</a>;
 <a name="l00199"></a>00199 
@@ -330,7 +330,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 27 2011 10:22:34 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 28 2011 09:29:20 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

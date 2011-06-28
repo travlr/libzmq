@@ -129,7 +129,7 @@ function toggleVisibility(linkObj) {
 <a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define __ZMQ_SESSION_HPP_INCLUDED__</span>
 <a name="l00023"></a>00023 <span class="preprocessor"></span>
 <a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="own_8hpp.html">own.hpp</a>&quot;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="i__inout_8hpp.html">i_inout.hpp</a>&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="i__engine_8hpp.html">i_engine.hpp</a>&quot;</span>
 <a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="io__object_8hpp.html">io_object.hpp</a>&quot;</span>
 <a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="blob_8hpp.html">blob.hpp</a>&quot;</span>
 <a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="pipe_8hpp.html">pipe.hpp</a>&quot;</span>
@@ -140,7 +140,7 @@ function toggleVisibility(linkObj) {
 <a name="l00033"></a><a class="code" href="classzmq_1_1session__t.html">00033</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1session__t.html">session_t</a> :
 <a name="l00034"></a>00034         <span class="keyword">public</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a>,
 <a name="l00035"></a>00035         <span class="keyword">public</span> <a class="code" href="classzmq_1_1io__object__t.html">io_object_t</a>,
-<a name="l00036"></a>00036         <span class="keyword">public</span> <a class="code" href="structzmq_1_1i__inout.html">i_inout</a>,
+<a name="l00036"></a>00036         <span class="keyword">public</span> <a class="code" href="structzmq_1_1i__engine__sink.html">i_engine_sink</a>,
 <a name="l00037"></a>00037         <span class="keyword">public</span> <a class="code" href="structzmq_1_1i__pipe__events.html">i_pipe_events</a>
 <a name="l00038"></a>00038     {
 <a name="l00039"></a>00039     <span class="keyword">public</span>:
@@ -151,7 +151,7 @@ function toggleVisibility(linkObj) {
 <a name="l00044"></a>00044         <span class="comment">//  To be used once only, when creating the session.</span>
 <a name="l00045"></a>00045         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__t.html#ab21da5525ed1b86cdedb32fe8ac8f0f8">attach_pipe</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
 <a name="l00046"></a>00046 
-<a name="l00047"></a>00047         <span class="comment">//  i_inout interface implementation.</span>
+<a name="l00047"></a>00047         <span class="comment">//  i_engine_sink interface implementation.</span>
 <a name="l00048"></a>00048         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1session__t.html#a425c8df7e4237132bf44e6102853c4ef">read</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_);
 <a name="l00049"></a>00049         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1session__t.html#aeb4d3f54550d2269ae862063a05f6b7d">write</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_);
 <a name="l00050"></a>00050         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__t.html#a3abd739571af916cde968c4e5c8e8e1c">flush</a> ();
@@ -254,7 +254,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 27 2011 10:22:36 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 28 2011 09:29:21 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

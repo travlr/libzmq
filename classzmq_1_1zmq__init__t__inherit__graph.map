@@ -1,5 +1,5 @@
 <map id="G" name="G">
 <area shape="rect" id="node2" href="$classzmq_1_1own__t.html" title="zmq::own_t" alt="" coords="11,83,101,112"/>
 <area shape="rect" id="node4" href="$classzmq_1_1object__t.html" title="zmq::object_t" alt="" coords="5,5,107,35"/>
-<area shape="rect" id="node6" href="$structzmq_1_1i__inout.html" title="zmq::i_inout" alt="" coords="125,83,219,112"/>
+<area shape="rect" id="node6" href="$structzmq_1_1i__engine__sink.html" title="zmq::i_engine_sink" alt="" coords="125,83,259,112"/>
 </map>

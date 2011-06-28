@@ -2,10 +2,10 @@
 <area shape="rect" id="node15" href="$classzmq_1_1connect__session__t.html" title="zmq::connect_session_t" alt="" coords="5,237,168,267"/>
 <area shape="rect" id="node17" href="$classzmq_1_1named__session__t.html" title="zmq::named_session_t" alt="" coords="192,237,349,267"/>
 <area shape="rect" id="node19" href="$classzmq_1_1transient__session__t.html" title="zmq::transient_session_t" alt="" coords="373,237,541,267"/>
-<area shape="rect" id="node2" href="$classzmq_1_1own__t.html" title="zmq::own_t" alt="" coords="28,83,119,112"/>
-<area shape="rect" id="node4" href="$classzmq_1_1object__t.html" title="zmq::object_t" alt="" coords="20,5,121,35"/>
-<area shape="rect" id="node6" href="$classzmq_1_1io__object__t.html" title="zmq::io_object_t" alt="" coords="148,83,265,112"/>
-<area shape="rect" id="node8" href="$structzmq_1_1i__poll__events.html" title="zmq::i_poll_events" alt="" coords="145,5,276,35"/>
-<area shape="rect" id="node10" href="$structzmq_1_1i__inout.html" title="zmq::i_inout" alt="" coords="289,83,383,112"/>
-<area shape="rect" id="node12" href="$structzmq_1_1i__pipe__events.html" title="zmq::i_pipe_events" alt="" coords="407,83,540,112"/>
+<area shape="rect" id="node2" href="$classzmq_1_1own__t.html" title="zmq::own_t" alt="" coords="17,83,108,112"/>
+<area shape="rect" id="node4" href="$classzmq_1_1object__t.html" title="zmq::object_t" alt="" coords="9,5,111,35"/>
+<area shape="rect" id="node6" href="$classzmq_1_1io__object__t.html" title="zmq::io_object_t" alt="" coords="137,83,255,112"/>
+<area shape="rect" id="node8" href="$structzmq_1_1i__poll__events.html" title="zmq::i_poll_events" alt="" coords="135,5,265,35"/>
+<area shape="rect" id="node10" href="$structzmq_1_1i__engine__sink.html" title="zmq::i_engine_sink" alt="" coords="279,83,412,112"/>
+<area shape="rect" id="node12" href="$structzmq_1_1i__pipe__events.html" title="zmq::i_pipe_events" alt="" coords="436,83,569,112"/>
 </map>

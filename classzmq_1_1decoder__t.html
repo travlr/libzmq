@@ -132,7 +132,7 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1decoder__t__coll__graph.png" border="0" usemap="#zmq_1_1decoder__t_coll__map" alt="Collaboration graph"/></div>
 <map name="zmq_1_1decoder__t_coll__map" id="zmq_1_1decoder__t_coll__map">
-<area shape="rect" id="node2" href="classzmq_1_1decoder__base__t.html" title="zmq::decoder_base_t\&lt; decoder_t \&gt;" alt="" coords="105,485,332,515"/><area shape="rect" id="node5" href="classzmq_1_1decoder__base__t.html" title="zmq::decoder_base_t\&lt; T \&gt;" alt="" coords="5,389,184,419"/><area shape="rect" id="node7" href="classzmq_1_1msg__t.html" title="zmq::msg_t" alt="" coords="156,293,247,323"/><area shape="rect" id="node9" href="structzmq_1_1msg__t_1_1content__t.html" title="zmq::msg_t::content_t" alt="" coords="125,197,277,227"/><area shape="rect" id="node11" href="classzmq_1_1atomic__counter__t.html" title="zmq::atomic_counter_t" alt="" coords="124,101,279,131"/><area shape="rect" id="node13" href="classzmq_1_1mutex__t.html" title="zmq::mutex_t" alt="" coords="151,5,252,35"/><area shape="rect" id="node15" href="structzmq_1_1i__inout.html" title="zmq::i_inout" alt="" coords="271,293,364,323"/></map>
+<area shape="rect" id="node2" href="classzmq_1_1decoder__base__t.html" title="zmq::decoder_base_t\&lt; decoder_t \&gt;" alt="" coords="105,485,332,515"/><area shape="rect" id="node5" href="classzmq_1_1decoder__base__t.html" title="zmq::decoder_base_t\&lt; T \&gt;" alt="" coords="5,389,184,419"/><area shape="rect" id="node7" href="structzmq_1_1i__engine__sink.html" title="zmq::i_engine_sink" alt="" coords="149,293,283,323"/><area shape="rect" id="node9" href="classzmq_1_1msg__t.html" title="zmq::msg_t" alt="" coords="307,293,397,323"/><area shape="rect" id="node11" href="structzmq_1_1msg__t_1_1content__t.html" title="zmq::msg_t::content_t" alt="" coords="276,197,428,227"/><area shape="rect" id="node13" href="classzmq_1_1atomic__counter__t.html" title="zmq::atomic_counter_t" alt="" coords="275,101,429,131"/><area shape="rect" id="node15" href="classzmq_1_1mutex__t.html" title="zmq::mutex_t" alt="" coords="301,5,403,35"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classzmq_1_1decoder__t-members.html">List of all members.</a></p>
@@ -143,7 +143,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1decoder__t.html#ac1c5ef88c5c4e11a2152294ef41b40e7">~decoder_t</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1decoder__base__t.html#aa66c3ad4c663dc59b36170dee1e327a7">get_buffer</a> (unsigned char **data_, size_t *size_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1decoder__base__t.html#a2ab7b77a0cd65f5b0771a3639fbd91ea">process_buffer</a> (unsigned char *data_, size_t size_)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1decoder__t.html#a679f27cfa7a2870bd45770cef222daea">set_inout</a> (struct <a class="el" href="structzmq_1_1i__inout.html">i_inout</a> *destination_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1decoder__t.html#aa98d795ea030e15110c83ae34d6426c4">set_sink</a> (struct <a class="el" href="structzmq_1_1i__engine__sink.html">i_engine_sink</a> *sink_)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-types"></a>
 Protected Types</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(decoder_t::*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1decoder__base__t.html#a770e4ca4cc19c5bd764059442c4ba41c">step_t</a> )()</td></tr>
@@ -161,9 +161,9 @@ Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1decoder__t.html#a6e3aa601593ebdd7d3e828c58410d03a">operator=</a> (const <a class="el" href="classzmq_1_1decoder__t.html">decoder_t</a> &amp;)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structzmq_1_1i__inout.html">i_inout</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1decoder__t.html#a180beddea800e0a1697f3d44303ac35b">destination</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzmq_1_1msg__t.html">msg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1decoder__t.html#ace76017276c49d4c6ff190e2eccc0b93">in_progress</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1decoder__t.html#a5e98911bb1f4cd24a73197c8017b88a7">maxmsgsize</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structzmq_1_1i__engine__sink.html">i_engine_sink</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1decoder__t.html#a8322f6da4d0f64a181443b2d63583db4">sink</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1decoder__t.html#ae3d86a1139f0a17edb9f44b33925ffda">tmpbuf</a> [8]</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
@@ -591,15 +591,15 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a679f27cfa7a2870bd45770cef222daea"></a><!-- doxytag: member="zmq::decoder_t::set_inout" ref="a679f27cfa7a2870bd45770cef222daea" args="(struct i_inout *destination_)" -->
+<a class="anchor" id="aa98d795ea030e15110c83ae34d6426c4"></a><!-- doxytag: member="zmq::decoder_t::set_sink" ref="aa98d795ea030e15110c83ae34d6426c4" args="(struct i_engine_sink *sink_)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zmq::decoder_t::set_inout </td>
+          <td class="memname">void zmq::decoder_t::set_sink </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structzmq_1_1i__inout.html">i_inout</a> *&#160;</td>
-          <td class="paramname"><em>destination_</em></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="structzmq_1_1i__engine__sink.html">i_engine_sink</a> *&#160;</td>
+          <td class="paramname"><em>sink_</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -611,21 +611,6 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a180beddea800e0a1697f3d44303ac35b"></a><!-- doxytag: member="zmq::decoder_t::destination" ref="a180beddea800e0a1697f3d44303ac35b" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structzmq_1_1i__inout.html">i_inout</a>* <a class="el" href="classzmq_1_1decoder__t.html#a180beddea800e0a1697f3d44303ac35b">zmq::decoder_t::destination</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="decoder_8hpp_source.html#l00196">196</a> of file <a class="el" href="decoder_8hpp_source.html">decoder.hpp</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="ace76017276c49d4c6ff190e2eccc0b93"></a><!-- doxytag: member="zmq::decoder_t::in_progress" ref="ace76017276c49d4c6ff190e2eccc0b93" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -655,6 +640,21 @@ Private Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="decoder_8hpp_source.html#l00200">200</a> of file <a class="el" href="decoder_8hpp_source.html">decoder.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8322f6da4d0f64a181443b2d63583db4"></a><!-- doxytag: member="zmq::decoder_t::sink" ref="a8322f6da4d0f64a181443b2d63583db4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structzmq_1_1i__engine__sink.html">i_engine_sink</a>* <a class="el" href="classzmq_1_1decoder__t.html#a8322f6da4d0f64a181443b2d63583db4">zmq::decoder_t::sink</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="decoder_8hpp_source.html#l00196">196</a> of file <a class="el" href="decoder_8hpp_source.html">decoder.hpp</a>.</p>
 
 </div>
 </div>
@@ -694,7 +694,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 27 2011 10:22:49 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 28 2011 09:29:24 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -168,7 +168,7 @@ function toggleVisibility(linkObj) {
 <a name="l00061"></a>00061     <span class="keywordflow">return</span> rc;
 <a name="l00062"></a>00062 }
 <a name="l00063"></a>00063 
-<a name="l00064"></a>00064 <span class="keywordtype">void</span> zmq::pgm_sender_t::plug (io_thread_t *io_thread_, i_inout *inout_)
+<a name="l00064"></a>00064 <span class="keywordtype">void</span> zmq::pgm_sender_t::plug (io_thread_t *io_thread_, i_engine_sink *sink_)
 <a name="l00065"></a>00065 {
 <a name="l00066"></a>00066     <span class="comment">//  Alocate 2 fds for PGM socket.</span>
 <a name="l00067"></a>00067     <span class="keywordtype">int</span> downlink_socket_fd = 0;
@@ -176,7 +176,7 @@ function toggleVisibility(linkObj) {
 <a name="l00069"></a>00069     <span class="keywordtype">int</span> rdata_notify_fd = 0;
 <a name="l00070"></a>00070     <span class="keywordtype">int</span> pending_notify_fd = 0;
 <a name="l00071"></a>00071 
-<a name="l00072"></a>00072     encoder.set_inout (inout_);
+<a name="l00072"></a>00072     encoder.set_sink (sink_);
 <a name="l00073"></a>00073 
 <a name="l00074"></a>00074     <span class="comment">//  Fill fds from PGM transport and add them to the poller.</span>
 <a name="l00075"></a>00075     pgm_socket.get_sender_fds (&amp;downlink_socket_fd, &amp;uplink_socket_fd,
@@ -213,7 +213,7 @@ function toggleVisibility(linkObj) {
 <a name="l00106"></a>00106     rm_fd (uplink_handle);
 <a name="l00107"></a>00107     rm_fd (rdata_notify_handle);
 <a name="l00108"></a>00108     rm_fd (pending_notify_handle);
-<a name="l00109"></a>00109     encoder.set_inout (NULL);
+<a name="l00109"></a>00109     encoder.set_sink (NULL);
 <a name="l00110"></a>00110 }
 <a name="l00111"></a>00111 
 <a name="l00112"></a>00112 <span class="keywordtype">void</span> zmq::pgm_sender_t::terminate ()
@@ -336,7 +336,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 27 2011 10:22:35 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 28 2011 09:29:21 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

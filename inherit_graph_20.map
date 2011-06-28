@@ -20,7 +20,7 @@
 <area shape="rect" id="node36" href="$classzmq_1_1sub__t.html" title="zmq::sub_t" alt="" coords="825,272,911,301"/>
 <area shape="rect" id="node37" href="$structzmq_1_1i__engine.html" title="zmq::i_engine" alt="" coords="235,645,336,675"/>
 <area shape="rect" id="node39" href="$classzmq_1_1zmq__engine__t.html" title="zmq::zmq_engine_t" alt="" coords="415,645,551,675"/>
-<area shape="rect" id="node40" href="$structzmq_1_1i__inout.html" title="zmq::i_inout" alt="" coords="239,432,332,461"/>
+<area shape="rect" id="node40" href="$structzmq_1_1i__engine__sink.html" title="zmq::i_engine_sink" alt="" coords="219,432,352,461"/>
 <area shape="rect" id="node42" href="$classzmq_1_1session__t.html" title="zmq::session_t" alt="" coords="428,485,537,515"/>
 <area shape="rect" id="node50" href="$classzmq_1_1zmq__init__t.html" title="zmq::zmq_init_t" alt="" coords="425,432,540,461"/>
 <area shape="rect" id="node44" href="$classzmq_1_1connect__session__t.html" title="zmq::connect_session_t" alt="" coords="611,485,773,515"/>

@@ -1,11 +1,11 @@
 <map id="G" name="G">
 <area shape="rect" id="node2" href="$classzmq_1_1own__t.html" title="zmq::own_t" alt="" coords="549,141,640,171"/>
 <area shape="rect" id="node16" href="$classzmq_1_1socket__base__t.html" title="zmq::socket_base_t" alt="" coords="935,444,1073,473"/>
-<area shape="rect" id="node53" href="$classzmq_1_1session__t.html" title="zmq::session_t" alt="" coords="2113,431,2223,460"/>
+<area shape="rect" id="node53" href="$classzmq_1_1session__t.html" title="zmq::session_t" alt="" coords="2129,431,2239,460"/>
 <area shape="rect" id="node4" href="$classzmq_1_1object__t.html" title="zmq::object_t" alt="" coords="1599,363,1700,392"/>
-<area shape="rect" id="node10" href="$classzmq_1_1reaper__t.html" title="zmq::reaper_t" alt="" coords="1900,377,2001,407"/>
-<area shape="rect" id="node45" href="$classzmq_1_1io__thread__t.html" title="zmq::io_thread_t" alt="" coords="1892,260,2009,289"/>
-<area shape="rect" id="node64" href="$classzmq_1_1pipe__t.html" title="zmq::pipe_t" alt="" coords="1905,849,1996,879"/>
+<area shape="rect" id="node10" href="$classzmq_1_1reaper__t.html" title="zmq::reaper_t" alt="" coords="1908,377,2009,407"/>
+<area shape="rect" id="node45" href="$classzmq_1_1io__thread__t.html" title="zmq::io_thread_t" alt="" coords="1900,260,2017,289"/>
+<area shape="rect" id="node64" href="$classzmq_1_1pipe__t.html" title="zmq::pipe_t" alt="" coords="1913,849,2004,879"/>
 <area shape="rect" id="node6" href="$classzmq_1_1ctx__t.html" title="zmq::ctx_t" alt="" coords="1284,419,1367,448"/>
 <area shape="rect" id="node8" href="$classzmq_1_1mailbox__t.html" title="zmq::mailbox_t" alt="" coords="540,308,649,337"/>
 <area shape="rect" id="node13" href="$structzmq_1_1i__poll__events.html" title="zmq::i_poll_events" alt="" coords="529,552,660,581"/>
@@ -22,7 +22,7 @@
 <area shape="rect" id="node31" href="$classzmq_1_1array__t.html" title="zmq::array_t\&lt; T, ID \&gt;" alt="" coords="195,533,344,563"/>
 <area shape="rect" id="node34" href="$classzmq_1_1array__t.html" title="zmq::array_t\&lt; socket_base_t \&gt;" alt="" coords="705,659,908,688"/>
 <area shape="rect" id="node37" href="$structzmq_1_1options__t.html" title="zmq::options_t" alt="" coords="216,141,323,171"/>
-<area shape="rect" id="node43" href="$structzmq_1_1i__inout.html" title="zmq::i_inout" alt="" coords="1904,156,1997,185"/>
-<area shape="rect" id="node50" href="$structzmq_1_1i__engine.html" title="zmq::i_engine" alt="" coords="1900,431,2001,460"/>
+<area shape="rect" id="node43" href="$structzmq_1_1i__engine__sink.html" title="zmq::i_engine_sink" alt="" coords="1892,156,2025,185"/>
+<area shape="rect" id="node50" href="$structzmq_1_1i__engine.html" title="zmq::i_engine" alt="" coords="1908,431,2009,460"/>
 <area shape="rect" id="node77" href="$classzmq_1_1ypipe__t.html" title="zmq::ypipe_t\&lt; T, N \&gt;" alt="" coords="1576,847,1723,876"/>
 </map>

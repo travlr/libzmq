@@ -113,7 +113,6 @@ This is the complete list of members for <a class="el" href="classzmq_1_1decoder
   <tr class="memlist"><td><a class="el" href="classzmq_1_1decoder__t.html#a8d1cb1d15ab637eaf634cc18389831c3">decoder_t</a>(size_t bufsize_, int64_t maxmsgsize_)</td><td><a class="el" href="classzmq_1_1decoder__t.html">zmq::decoder_t</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1decoder__t.html#a1bdf2204d5f85e5bb4e56b74f46a40a7">decoder_t</a>(const decoder_t &amp;)</td><td><a class="el" href="classzmq_1_1decoder__t.html">zmq::decoder_t</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1decoder__base__t.html#a7cf8a12f24cfe1d96833785a7e0b122d">decoding_error</a>()</td><td><a class="el" href="classzmq_1_1decoder__base__t.html">zmq::decoder_base_t&lt; decoder_t &gt;</a></td><td><code> [inline, protected]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classzmq_1_1decoder__t.html#a180beddea800e0a1697f3d44303ac35b">destination</a></td><td><a class="el" href="classzmq_1_1decoder__t.html">zmq::decoder_t</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1decoder__t.html#a69280603cde763e3e4e3b66feea3f338">eight_byte_size_ready</a>()</td><td><a class="el" href="classzmq_1_1decoder__t.html">zmq::decoder_t</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1decoder__t.html#a0859949bf711edf2b6c9cd1e353a8cc1">flags_ready</a>()</td><td><a class="el" href="classzmq_1_1decoder__t.html">zmq::decoder_t</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1decoder__base__t.html#aa66c3ad4c663dc59b36170dee1e327a7">get_buffer</a>(unsigned char **data_, size_t *size_)</td><td><a class="el" href="classzmq_1_1decoder__base__t.html">zmq::decoder_base_t&lt; decoder_t &gt;</a></td><td><code> [inline]</code></td></tr>
@@ -124,7 +123,8 @@ This is the complete list of members for <a class="el" href="classzmq_1_1decoder
   <tr class="memlist"><td><a class="el" href="classzmq_1_1decoder__t.html#ab949da14c858a5bbc4ba8728abb2c481">one_byte_size_ready</a>()</td><td><a class="el" href="classzmq_1_1decoder__t.html">zmq::decoder_t</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1decoder__t.html#a6e3aa601593ebdd7d3e828c58410d03a">operator=</a>(const decoder_t &amp;)</td><td><a class="el" href="classzmq_1_1decoder__t.html">zmq::decoder_t</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1decoder__base__t.html#a2ab7b77a0cd65f5b0771a3639fbd91ea">process_buffer</a>(unsigned char *data_, size_t size_)</td><td><a class="el" href="classzmq_1_1decoder__base__t.html">zmq::decoder_base_t&lt; decoder_t &gt;</a></td><td><code> [inline]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classzmq_1_1decoder__t.html#a679f27cfa7a2870bd45770cef222daea">set_inout</a>(struct i_inout *destination_)</td><td><a class="el" href="classzmq_1_1decoder__t.html">zmq::decoder_t</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classzmq_1_1decoder__t.html#aa98d795ea030e15110c83ae34d6426c4">set_sink</a>(struct i_engine_sink *sink_)</td><td><a class="el" href="classzmq_1_1decoder__t.html">zmq::decoder_t</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classzmq_1_1decoder__t.html#a8322f6da4d0f64a181443b2d63583db4">sink</a></td><td><a class="el" href="classzmq_1_1decoder__t.html">zmq::decoder_t</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1decoder__base__t.html#a770e4ca4cc19c5bd764059442c4ba41c">step_t</a> typedef</td><td><a class="el" href="classzmq_1_1decoder__base__t.html">zmq::decoder_base_t&lt; decoder_t &gt;</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1decoder__t.html#ae3d86a1139f0a17edb9f44b33925ffda">tmpbuf</a></td><td><a class="el" href="classzmq_1_1decoder__t.html">zmq::decoder_t</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1decoder__base__t.html#a49c66fd077a8d10356abf9759acc58dd">~decoder_base_t</a>()</td><td><a class="el" href="classzmq_1_1decoder__base__t.html">zmq::decoder_base_t&lt; decoder_t &gt;</a></td><td><code> [inline, virtual]</code></td></tr>
@@ -144,7 +144,7 @@ This is the complete list of members for <a class="el" href="classzmq_1_1decoder
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Jun 27 2011 10:22:49 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 28 2011 09:29:24 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
