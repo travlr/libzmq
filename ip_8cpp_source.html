@@ -379,7 +379,7 @@ function toggleVisibility(linkObj) {
 <a name="l00272"></a>00272     <span class="keyword">const</span> <span class="keywordtype">char</span> *hostname_)
 <a name="l00273"></a>00273 {
 <a name="l00274"></a>00274     <span class="comment">//  Find the &#39;:&#39; that separates hostname name from service.</span>
-<a name="l00275"></a>00275     <span class="keyword">const</span> <span class="keywordtype">char</span> *delimiter = strchr (hostname_, <span class="charliteral">&#39;:&#39;</span>);
+<a name="l00275"></a>00275     <span class="keyword">const</span> <span class="keywordtype">char</span> *delimiter = strrchr (hostname_, <span class="charliteral">&#39;:&#39;</span>);
 <a name="l00276"></a>00276     <span class="keywordflow">if</span> (!delimiter) {
 <a name="l00277"></a>00277         errno = EINVAL;
 <a name="l00278"></a>00278         <span class="keywordflow">return</span> -1;
@@ -467,7 +467,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Jun 28 2011 09:29:21 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Jun 30 2011 09:52:30 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
