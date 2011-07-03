@@ -152,7 +152,7 @@ function toggleVisibility(linkObj) {
 <a name="l00045"></a>00045 
 <a name="l00046"></a><a class="code" href="classzmq_1_1lb__t.html#a88a72a25d87f376fa9f0f4ce56660ca4">00046</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1lb__t.html#a88a72a25d87f376fa9f0f4ce56660ca4">zmq::lb_t::terminated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
 <a name="l00047"></a>00047 {
-<a name="l00048"></a>00048     <a class="code" href="classzmq_1_1array__t.html#a8f9de296a46821314d27551866b28dd2">pipes_t::size_type</a> index = pipes.index (pipe_);
+<a name="l00048"></a>00048     pipes_t::size_type index = pipes.index (pipe_);
 <a name="l00049"></a>00049 
 <a name="l00050"></a>00050     <span class="comment">//  If we are in the middle of multipart message and current pipe</span>
 <a name="l00051"></a>00051     <span class="comment">//  have disconnected, we have to drop the remainder of the message.</span>
@@ -275,7 +275,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Jun 30 2011 09:52:30 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jul 3 2011 13:47:16 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

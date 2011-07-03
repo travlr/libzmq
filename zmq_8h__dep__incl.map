@@ -46,6 +46,6 @@
 <area shape="rect" id="node82" href="$router_8cpp.html" title="src/router.cpp" alt="" coords="3981,160,4083,189"/>
 <area shape="rect" id="node84" href="$select_8cpp.html" title="src/select.cpp" alt="" coords="4107,160,4211,189"/>
 <area shape="rect" id="node86" href="$session_8cpp.html" title="src/session.cpp" alt="" coords="4235,160,4349,189"/>
-<area shape="rect" id="node88" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="4373,160,4515,189"/>
-<area shape="rect" id="node90" href="$tcp__connecter_8cpp.html" title="src/tcp_connecter.cpp" alt="" coords="4539,160,4688,189"/>
+<area shape="rect" id="node88" href="$signaler_8cpp.html" title="src/signaler.cpp" alt="" coords="4373,160,4488,189"/>
+<area shape="rect" id="node90" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="4512,160,4653,189"/>
 </map>

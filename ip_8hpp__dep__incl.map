@@ -1,6 +1,6 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$ip_8cpp.html" title="src/ip.cpp" alt="" coords="5,83,83,112"/>
-<area shape="rect" id="node5" href="$mailbox_8cpp.html" title="src/mailbox.cpp" alt="" coords="107,83,221,112"/>
+<area shape="rect" id="node5" href="$signaler_8cpp.html" title="src/signaler.cpp" alt="" coords="107,83,221,112"/>
 <area shape="rect" id="node7" href="$tcp__listener_8hpp.html" title="src/tcp_listener.hpp" alt="" coords="245,83,381,112"/>
 <area shape="rect" id="node15" href="$tcp__listener_8cpp.html" title="src/tcp_listener.cpp" alt="" coords="351,160,487,189"/>
 <area shape="rect" id="node17" href="$tcp__connecter_8cpp.html" title="src/tcp_connecter.cpp" alt="" coords="456,83,605,112"/>
