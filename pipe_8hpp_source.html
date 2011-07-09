@@ -276,13 +276,13 @@ function toggleVisibility(linkObj) {
 <a name="l00169"></a>00169         <span class="comment">//  by the user. Double_terminated means that user called &#39;terminate&#39;</span>
 <a name="l00170"></a>00170         <span class="comment">//  and then we&#39;ve got term command from the peer as well.</span>
 <a name="l00171"></a>00171         <span class="keyword">enum</span> {
-<a name="l00172"></a><a class="code" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104a8cf3fc1f4dbfbf2c9d87e626158ab523">00172</a>             <a class="code" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104a8cf3fc1f4dbfbf2c9d87e626158ab523">active</a>,
-<a name="l00173"></a><a class="code" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104a6dc61f20b18d4b02459d54a666a1fa36">00173</a>             <a class="code" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104a6dc61f20b18d4b02459d54a666a1fa36">delimited</a>,
-<a name="l00174"></a><a class="code" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104ae05dd8bc48c980a930e345c6c68573b2">00174</a>             <a class="code" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104ae05dd8bc48c980a930e345c6c68573b2">pending</a>,
-<a name="l00175"></a><a class="code" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104aaf9aa8b59c998136846b13d0ce54aef6">00175</a>             <a class="code" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104aaf9aa8b59c998136846b13d0ce54aef6">terminating</a>,
-<a name="l00176"></a><a class="code" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104a403cacea12fa9d800d4ef09be832bdc1">00176</a>             <a class="code" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104a403cacea12fa9d800d4ef09be832bdc1">terminated</a>,
-<a name="l00177"></a><a class="code" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104a2771ee5955fd30f67358e31c6960764d">00177</a>             <a class="code" href="classzmq_1_1pipe__t.html#a89f1bca120318d914e70d0f6651d1104a2771ee5955fd30f67358e31c6960764d">double_terminated</a>
-<a name="l00178"></a>00178         } <a class="code" href="classzmq_1_1pipe__t.html#a72218ff02aa4d1c69b002f59331cfdd9">state</a>;
+<a name="l00172"></a><a class="code" href="classzmq_1_1pipe__t.html#a443516d315ad9ac7a73af56824f06046a8cf3fc1f4dbfbf2c9d87e626158ab523">00172</a>             <a class="code" href="classzmq_1_1pipe__t.html#a443516d315ad9ac7a73af56824f06046a8cf3fc1f4dbfbf2c9d87e626158ab523">active</a>,
+<a name="l00173"></a><a class="code" href="classzmq_1_1pipe__t.html#a443516d315ad9ac7a73af56824f06046a6dc61f20b18d4b02459d54a666a1fa36">00173</a>             <a class="code" href="classzmq_1_1pipe__t.html#a443516d315ad9ac7a73af56824f06046a6dc61f20b18d4b02459d54a666a1fa36">delimited</a>,
+<a name="l00174"></a><a class="code" href="classzmq_1_1pipe__t.html#a443516d315ad9ac7a73af56824f06046ae05dd8bc48c980a930e345c6c68573b2">00174</a>             <a class="code" href="classzmq_1_1pipe__t.html#a443516d315ad9ac7a73af56824f06046ae05dd8bc48c980a930e345c6c68573b2">pending</a>,
+<a name="l00175"></a><a class="code" href="classzmq_1_1pipe__t.html#a443516d315ad9ac7a73af56824f06046aaf9aa8b59c998136846b13d0ce54aef6">00175</a>             <a class="code" href="classzmq_1_1pipe__t.html#a443516d315ad9ac7a73af56824f06046aaf9aa8b59c998136846b13d0ce54aef6">terminating</a>,
+<a name="l00176"></a><a class="code" href="classzmq_1_1pipe__t.html#a443516d315ad9ac7a73af56824f06046a403cacea12fa9d800d4ef09be832bdc1">00176</a>             <a class="code" href="classzmq_1_1pipe__t.html#a443516d315ad9ac7a73af56824f06046a403cacea12fa9d800d4ef09be832bdc1">terminated</a>,
+<a name="l00177"></a><a class="code" href="classzmq_1_1pipe__t.html#a443516d315ad9ac7a73af56824f06046a2771ee5955fd30f67358e31c6960764d">00177</a>             <a class="code" href="classzmq_1_1pipe__t.html#a443516d315ad9ac7a73af56824f06046a2771ee5955fd30f67358e31c6960764d">double_terminated</a>
+<a name="l00178"></a>00178         } <a class="code" href="classzmq_1_1pipe__t.html#a1e4d5d3b606f85f6198dd0eee6417474">state</a>;
 <a name="l00179"></a>00179 
 <a name="l00180"></a>00180         <span class="comment">//  If true, we receive all the pending inbound messages before</span>
 <a name="l00181"></a>00181         <span class="comment">//  terminating. If false, we terminate immediately when the peer</span>
@@ -322,7 +322,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jul 3 2011 13:47:17 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jul 9 2011 15:07:02 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

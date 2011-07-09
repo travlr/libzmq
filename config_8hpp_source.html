@@ -146,56 +146,52 @@ function toggleVisibility(linkObj) {
 <a name="l00039"></a>00039         <span class="comment">//  Commands in pipe per allocation event.</span>
 <a name="l00040"></a>00040         command_pipe_granularity = 16,
 <a name="l00041"></a>00041 
-<a name="l00042"></a>00042         <span class="comment">//  Size in bytes of the largest message that is still copied around</span>
-<a name="l00043"></a>00043         <span class="comment">//  rather than being reference-counted.</span>
-<a name="l00044"></a>00044         max_vsm_size = 29,
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046         <span class="comment">//  Determines how often does socket poll for new commands when it</span>
-<a name="l00047"></a>00047         <span class="comment">//  still has unprocessed messages to handle. Thus, if it is set to 100,</span>
-<a name="l00048"></a>00048         <span class="comment">//  socket will process 100 inbound messages before doing the poll.</span>
-<a name="l00049"></a>00049         <span class="comment">//  If there are no unprocessed messages available, poll is done</span>
-<a name="l00050"></a>00050         <span class="comment">//  immediately. Decreasing the value trades overall latency for more</span>
-<a name="l00051"></a>00051         <span class="comment">//  real-time behaviour (less latency peaks).</span>
-<a name="l00052"></a>00052         inbound_poll_rate = 100,
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054         <span class="comment">//  Maximal batching size for engines with receiving functionality.</span>
-<a name="l00055"></a>00055         <span class="comment">//  So, if there are 10 messages that fit into the batch size, all of</span>
-<a name="l00056"></a>00056         <span class="comment">//  them may be read by a single &#39;recv&#39; system call, thus avoiding</span>
-<a name="l00057"></a>00057         <span class="comment">//  unnecessary network stack traversals.</span>
-<a name="l00058"></a>00058         in_batch_size = 8192,
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060         <span class="comment">//  Maximal batching size for engines with sending functionality.</span>
-<a name="l00061"></a>00061         <span class="comment">//  So, if there are 10 messages that fit into the batch size, all of</span>
-<a name="l00062"></a>00062         <span class="comment">//  them may be written by a single &#39;send&#39; system call, thus avoiding</span>
-<a name="l00063"></a>00063         <span class="comment">//  unnecessary network stack traversals.</span>
-<a name="l00064"></a>00064         out_batch_size = 8192,
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066         <span class="comment">//  Maximal delta between high and low watermark.</span>
-<a name="l00067"></a>00067         max_wm_delta = 1024,
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069         <span class="comment">//  Maximum number of events the I/O thread can process in one go.</span>
-<a name="l00070"></a>00070         max_io_events = 256,
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072         <span class="comment">//  Maximal delay to process command in API thread (in CPU ticks).</span>
-<a name="l00073"></a>00073         <span class="comment">//  3,000,000 ticks equals to 1 - 2 milliseconds on current CPUs.</span>
-<a name="l00074"></a>00074         <span class="comment">//  Note that delay is only applied when there is continuous stream of</span>
-<a name="l00075"></a>00075         <span class="comment">//  messages to process. If not so, commands are processed immediately.</span>
-<a name="l00076"></a>00076         max_command_delay = 3000000,
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078         <span class="comment">//  Low-precision clock precision in CPU ticks. 1ms. Value of 1000000</span>
-<a name="l00079"></a>00079         <span class="comment">//  should be OK for CPU frequencies above 1GHz. If should work</span>
-<a name="l00080"></a>00080         <span class="comment">//  reasonably well for CPU frequencies above 500MHz. For lower CPU</span>
-<a name="l00081"></a>00081         <span class="comment">//  frequencies you may consider lowering this value to get best</span>
-<a name="l00082"></a>00082         <span class="comment">//  possible latencies.</span>
-<a name="l00083"></a>00083         clock_precision = 1000000,
+<a name="l00042"></a>00042         <span class="comment">//  Determines how often does socket poll for new commands when it</span>
+<a name="l00043"></a>00043         <span class="comment">//  still has unprocessed messages to handle. Thus, if it is set to 100,</span>
+<a name="l00044"></a>00044         <span class="comment">//  socket will process 100 inbound messages before doing the poll.</span>
+<a name="l00045"></a>00045         <span class="comment">//  If there are no unprocessed messages available, poll is done</span>
+<a name="l00046"></a>00046         <span class="comment">//  immediately. Decreasing the value trades overall latency for more</span>
+<a name="l00047"></a>00047         <span class="comment">//  real-time behaviour (less latency peaks).</span>
+<a name="l00048"></a>00048         inbound_poll_rate = 100,
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050         <span class="comment">//  Maximal batching size for engines with receiving functionality.</span>
+<a name="l00051"></a>00051         <span class="comment">//  So, if there are 10 messages that fit into the batch size, all of</span>
+<a name="l00052"></a>00052         <span class="comment">//  them may be read by a single &#39;recv&#39; system call, thus avoiding</span>
+<a name="l00053"></a>00053         <span class="comment">//  unnecessary network stack traversals.</span>
+<a name="l00054"></a>00054         in_batch_size = 8192,
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056         <span class="comment">//  Maximal batching size for engines with sending functionality.</span>
+<a name="l00057"></a>00057         <span class="comment">//  So, if there are 10 messages that fit into the batch size, all of</span>
+<a name="l00058"></a>00058         <span class="comment">//  them may be written by a single &#39;send&#39; system call, thus avoiding</span>
+<a name="l00059"></a>00059         <span class="comment">//  unnecessary network stack traversals.</span>
+<a name="l00060"></a>00060         out_batch_size = 8192,
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062         <span class="comment">//  Maximal delta between high and low watermark.</span>
+<a name="l00063"></a>00063         max_wm_delta = 1024,
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065         <span class="comment">//  Maximum number of events the I/O thread can process in one go.</span>
+<a name="l00066"></a>00066         max_io_events = 256,
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068         <span class="comment">//  Maximal delay to process command in API thread (in CPU ticks).</span>
+<a name="l00069"></a>00069         <span class="comment">//  3,000,000 ticks equals to 1 - 2 milliseconds on current CPUs.</span>
+<a name="l00070"></a>00070         <span class="comment">//  Note that delay is only applied when there is continuous stream of</span>
+<a name="l00071"></a>00071         <span class="comment">//  messages to process. If not so, commands are processed immediately.</span>
+<a name="l00072"></a>00072         max_command_delay = 3000000,
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074         <span class="comment">//  Low-precision clock precision in CPU ticks. 1ms. Value of 1000000</span>
+<a name="l00075"></a>00075         <span class="comment">//  should be OK for CPU frequencies above 1GHz. If should work</span>
+<a name="l00076"></a>00076         <span class="comment">//  reasonably well for CPU frequencies above 500MHz. For lower CPU</span>
+<a name="l00077"></a>00077         <span class="comment">//  frequencies you may consider lowering this value to get best</span>
+<a name="l00078"></a>00078         <span class="comment">//  possible latencies.</span>
+<a name="l00079"></a>00079         clock_precision = 1000000,
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081         <span class="comment">//  Maximum transport data unit size for PGM (TPDU).</span>
+<a name="l00082"></a>00082         pgm_max_tpdu = 1500
+<a name="l00083"></a>00083     };
 <a name="l00084"></a>00084 
-<a name="l00085"></a>00085         <span class="comment">//  Maximum transport data unit size for PGM (TPDU).</span>
-<a name="l00086"></a>00086         pgm_max_tpdu = 1500
-<a name="l00087"></a>00087     };
-<a name="l00088"></a>00088 
-<a name="l00089"></a>00089 }
-<a name="l00090"></a>00090 
-<a name="l00091"></a>00091 <span class="preprocessor">#endif</span>
+<a name="l00085"></a>00085 }
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -212,7 +208,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jul 3 2011 13:47:16 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sat Jul 9 2011 15:07:02 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
