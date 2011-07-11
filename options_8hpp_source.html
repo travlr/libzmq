@@ -182,26 +182,26 @@ function toggleVisibility(linkObj) {
 <a name="l00075"></a>00075         <span class="comment">//  Maximal size of message to handle.</span>
 <a name="l00076"></a><a class="code" href="structzmq_1_1options__t.html#ad86b1856fbd893e523566555f3b5543a">00076</a>         int64_t <a class="code" href="structzmq_1_1options__t.html#ad86b1856fbd893e523566555f3b5543a">maxmsgsize</a>;
 <a name="l00077"></a>00077 
-<a name="l00078"></a>00078         <span class="comment">//  If 1, (X)SUB socket should filter the messages. If 0, it should not.</span>
-<a name="l00079"></a><a class="code" href="structzmq_1_1options__t.html#a64546db1e8eb835287e4f32dc6bce29b">00079</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a64546db1e8eb835287e4f32dc6bce29b">filter</a>;
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081         <span class="comment">// The timeout for send/recv operations for this socket.</span>
-<a name="l00082"></a><a class="code" href="structzmq_1_1options__t.html#aca04959d4b92ef8a9a12ce1365a52788">00082</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#aca04959d4b92ef8a9a12ce1365a52788">rcvtimeo</a>;
-<a name="l00083"></a><a class="code" href="structzmq_1_1options__t.html#a8197da24697e9c7416e697d734f3aa47">00083</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a8197da24697e9c7416e697d734f3aa47">sndtimeo</a>;
-<a name="l00084"></a>00084 
-<a name="l00085"></a>00085         <span class="comment">//  If true, when connecting, pipes are created immediately without</span>
-<a name="l00086"></a>00086         <span class="comment">//  waiting for the connection to be established. That way the socket</span>
-<a name="l00087"></a>00087         <span class="comment">//  is not aware of the peer&#39;s identity, however, it is able to send</span>
-<a name="l00088"></a>00088         <span class="comment">//  messages straight away.</span>
-<a name="l00089"></a><a class="code" href="structzmq_1_1options__t.html#a4b9862e97726a033af7105c1bb74e99f">00089</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a4b9862e97726a033af7105c1bb74e99f">immediate_connect</a>;
-<a name="l00090"></a>00090 
-<a name="l00091"></a>00091         <span class="comment">//  If true, session reads all the pending messages from the pipe and</span>
-<a name="l00092"></a>00092         <span class="comment">//  sends them to the network when socket is closed.</span>
-<a name="l00093"></a><a class="code" href="structzmq_1_1options__t.html#a0c01f11d8a2de9e81f890c8e8673132d">00093</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a0c01f11d8a2de9e81f890c8e8673132d">delay_on_close</a>;
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095         <span class="comment">//  If true, socket reads all the messages from the pipe and delivers</span>
-<a name="l00096"></a>00096         <span class="comment">//  them to the user when the peer terminates.</span>
-<a name="l00097"></a><a class="code" href="structzmq_1_1options__t.html#a8bb26287f7a5a59b3e6c59d106335fbe">00097</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a8bb26287f7a5a59b3e6c59d106335fbe">delay_on_disconnect</a>;
+<a name="l00078"></a>00078         <span class="comment">// The timeout for send/recv operations for this socket.</span>
+<a name="l00079"></a><a class="code" href="structzmq_1_1options__t.html#aca04959d4b92ef8a9a12ce1365a52788">00079</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#aca04959d4b92ef8a9a12ce1365a52788">rcvtimeo</a>;
+<a name="l00080"></a><a class="code" href="structzmq_1_1options__t.html#a8197da24697e9c7416e697d734f3aa47">00080</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a8197da24697e9c7416e697d734f3aa47">sndtimeo</a>;
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082         <span class="comment">//  If true, when connecting, pipes are created immediately without</span>
+<a name="l00083"></a>00083         <span class="comment">//  waiting for the connection to be established. That way the socket</span>
+<a name="l00084"></a>00084         <span class="comment">//  is not aware of the peer&#39;s identity, however, it is able to send</span>
+<a name="l00085"></a>00085         <span class="comment">//  messages straight away.</span>
+<a name="l00086"></a><a class="code" href="structzmq_1_1options__t.html#a4b9862e97726a033af7105c1bb74e99f">00086</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a4b9862e97726a033af7105c1bb74e99f">immediate_connect</a>;
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088         <span class="comment">//  If true, session reads all the pending messages from the pipe and</span>
+<a name="l00089"></a>00089         <span class="comment">//  sends them to the network when socket is closed.</span>
+<a name="l00090"></a><a class="code" href="structzmq_1_1options__t.html#a0c01f11d8a2de9e81f890c8e8673132d">00090</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a0c01f11d8a2de9e81f890c8e8673132d">delay_on_close</a>;
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092         <span class="comment">//  If true, socket reads all the messages from the pipe and delivers</span>
+<a name="l00093"></a>00093         <span class="comment">//  them to the user when the peer terminates.</span>
+<a name="l00094"></a><a class="code" href="structzmq_1_1options__t.html#a8bb26287f7a5a59b3e6c59d106335fbe">00094</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a8bb26287f7a5a59b3e6c59d106335fbe">delay_on_disconnect</a>;
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096         <span class="comment">//  If 1, (X)SUB socket should filter the messages. If 0, it should not.</span>
+<a name="l00097"></a><a class="code" href="structzmq_1_1options__t.html#a329d2973d83132fedabc52cee56519f4">00097</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a329d2973d83132fedabc52cee56519f4">filter</a>;
 <a name="l00098"></a>00098     };
 <a name="l00099"></a>00099 
 <a name="l00100"></a>00100 }
@@ -223,7 +223,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jul 9 2011 15:07:02 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jul 11 2011 10:16:08 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

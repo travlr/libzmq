@@ -18,6 +18,7 @@
 <area shape="rect" id="node45" href="$classzmq_1_1router__t.html#a3435704cebf4f778659617bc485069f7" title="zmq::router_t::xsend" alt="" coords="197,856,339,885"/>
 <area shape="rect" id="node47" href="$classzmq_1_1pair__t.html#a42dcc21999342779a35e466e3fbdc5aa" title="zmq::pair_t::xsend" alt="" coords="203,909,333,939"/>
 <area shape="rect" id="node49" href="$classzmq_1_1xsub__t.html#ae40b40cc3373cf13d521a8f9fef8632f" title="zmq::xsub_t::xsub_t" alt="" coords="197,963,339,992"/>
+<area shape="rect" id="node51" href="$classzmq_1_1zmq__init__t.html#a96a5973ad064942fa9ed7a82041cd67e" title="zmq::zmq_init_t::zmq_init_t" alt="" coords="177,1016,359,1045"/>
 <area shape="rect" id="node15" href="$classzmq_1_1xsub__t.html#a1135fb60ad785fa84c5125b4a33d242d" title="zmq::xsub_t::xrecv" alt="" coords="416,219,549,248"/>
 <area shape="rect" id="node17" href="$classzmq_1_1xrep__t.html#a18184c945754ab289027c8115d6654af" title="zmq::xrep_t::xrecv" alt="" coords="417,272,548,301"/>
 <area shape="rect" id="node19" href="$classzmq_1_1rep__t.html#a509d5fb31ebab99fc0e63c25412a8f1a" title="zmq::rep_t::xrecv" alt="" coords="601,419,724,448"/>
