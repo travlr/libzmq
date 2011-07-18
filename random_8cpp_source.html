@@ -125,26 +125,38 @@ function toggleVisibility(linkObj) {
 <a name="l00018"></a>00018 <span class="comment">    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
 <a name="l00019"></a>00019 <span class="comment">*/</span>
 <a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="preprocessor">#include &quot;<a class="code" href="random_8hpp.html">random.hpp</a>&quot;</span>
-<a name="l00022"></a>00022 <span class="preprocessor">#include &quot;<a class="code" href="stdint_8hpp.html">stdint.hpp</a>&quot;</span>
-<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="uuid_8hpp.html">uuid.hpp</a>&quot;</span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="err_8hpp.html">err.hpp</a>&quot;</span>
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="comment">//  Here we can use different ways of generating random data, as avialable</span>
-<a name="l00027"></a>00027 <span class="comment">//  on different platforms. At the moment, we&#39;ll assume the UUID is random</span>
-<a name="l00028"></a>00028 <span class="comment">//  enough to use for that purpose.</span>
-<a name="l00029"></a>00029 <span class="keywordtype">void</span> zmq::generate_random (<span class="keywordtype">void</span> *buf_, <span class="keywordtype">size_t</span> size_)
-<a name="l00030"></a>00030 {
-<a name="l00031"></a>00031     <span class="comment">//  Collapsing an UUID into 4 bytes.</span>
-<a name="l00032"></a>00032     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (size_ == 4);
-<a name="l00033"></a>00033     uint32_t buff [4];
-<a name="l00034"></a>00034     generate_uuid ((<span class="keywordtype">void</span>*) buff);
-<a name="l00035"></a>00035     uint32_t result = buff [0];
-<a name="l00036"></a>00036     result ^= buff [1];
-<a name="l00037"></a>00037     result ^= buff [2];
-<a name="l00038"></a>00038     result ^= buff [3];
-<a name="l00039"></a>00039     *((uint32_t*) buf_) = result;
-<a name="l00040"></a>00040 }
+<a name="l00021"></a>00021 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;platform.hpp&quot;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#if defined ZMQ_HAVE_WINDOWS</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="windows_8hpp.html">windows.hpp</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#else</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span><span class="preprocessor">#include &lt;unistd.h&gt;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#endif</span>
+<a name="l00029"></a>00029 <span class="preprocessor"></span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="random_8hpp.html">random.hpp</a>&quot;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="stdint_8hpp.html">stdint.hpp</a>&quot;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="clock_8hpp.html">clock.hpp</a>&quot;</span>
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 <span class="keywordtype">void</span> zmq::seed_random ()
+<a name="l00035"></a>00035 {
+<a name="l00036"></a>00036 <span class="preprocessor">#if defined ZMQ_HAVE_WINDOWS</span>
+<a name="l00037"></a>00037 <span class="preprocessor"></span>    <span class="keywordtype">int</span> pid = (int) GetCurrentProcessId ();
+<a name="l00038"></a>00038 <span class="preprocessor">#else</span>
+<a name="l00039"></a>00039 <span class="preprocessor"></span>    <span class="keywordtype">int</span> pid = (int) getpid ();
+<a name="l00040"></a>00040 <span class="preprocessor">#endif</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span>    srand ((<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) (clock_t::now_us () + pid));
+<a name="l00042"></a>00042 }
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 uint32_t zmq::generate_random ()
+<a name="l00045"></a>00045 {
+<a name="l00046"></a>00046     <span class="comment">//  Compensate for the fact that rand() returns signed integer.</span>
+<a name="l00047"></a>00047     uint32_t low = (uint32_t) rand ();
+<a name="l00048"></a>00048     uint32_t high = (uint32_t) rand ();
+<a name="l00049"></a>00049     high &lt;&lt;= (<span class="keyword">sizeof</span> (int) * 8 - 1);
+<a name="l00050"></a>00050     <span class="keywordflow">return</span> high | low;
+<a name="l00051"></a>00051 }
+<a name="l00052"></a>00052 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -161,7 +173,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Jul 12 2011 10:42:58 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jul 18 2011 12:36:37 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

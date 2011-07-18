@@ -1,20 +1,17 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$session_8hpp.html" title="src/session.hpp" alt="" coords="769,83,884,112"/>
-<area shape="rect" id="node27" href="$zmq__connecter_8hpp.html" title="src/zmq_connecter.hpp" alt="" coords="195,160,352,189"/>
-<area shape="rect" id="node35" href="$io__object_8cpp.html" title="src/io_object.cpp" alt="" coords="908,83,1028,112"/>
-<area shape="rect" id="node37" href="$zmq__listener_8hpp.html" title="src/zmq_listener.hpp" alt="" coords="427,83,568,112"/>
-<area shape="rect" id="node42" href="$zmq__engine_8hpp.html" title="src/zmq_engine.hpp" alt="" coords="592,160,731,189"/>
+<area shape="rect" id="node3" href="$session_8hpp.html" title="src/session.hpp" alt="" coords="676,83,791,112"/>
+<area shape="rect" id="node21" href="$zmq__connecter_8hpp.html" title="src/zmq_connecter.hpp" alt="" coords="195,160,352,189"/>
+<area shape="rect" id="node29" href="$io__object_8cpp.html" title="src/io_object.cpp" alt="" coords="815,83,935,112"/>
+<area shape="rect" id="node31" href="$zmq__listener_8hpp.html" title="src/zmq_listener.hpp" alt="" coords="376,160,517,189"/>
+<area shape="rect" id="node35" href="$zmq__engine_8hpp.html" title="src/zmq_engine.hpp" alt="" coords="541,160,680,189"/>
 <area shape="rect" id="node5" href="$connect__session_8hpp.html" title="src/connect_session.hpp" alt="" coords="5,160,171,189"/>
-<area shape="rect" id="node11" href="$named__session_8hpp.html" title="src/named_session.hpp" alt="" coords="805,160,965,189"/>
-<area shape="rect" id="node15" href="$zmq__init_8cpp.html" title="src/zmq_init.cpp" alt="" coords="709,237,827,267"/>
-<area shape="rect" id="node17" href="$object_8cpp.html" title="src/object.cpp" alt="" coords="1184,160,1288,189"/>
-<area shape="rect" id="node19" href="$session_8cpp.html" title="src/session.cpp" alt="" coords="1312,160,1427,189"/>
-<area shape="rect" id="node21" href="$transient__session_8hpp.html" title="src/transient_session.hpp" alt="" coords="989,160,1160,189"/>
+<area shape="rect" id="node11" href="$object_8cpp.html" title="src/object.cpp" alt="" coords="843,160,947,189"/>
+<area shape="rect" id="node13" href="$session_8cpp.html" title="src/session.cpp" alt="" coords="704,160,819,189"/>
+<area shape="rect" id="node15" href="$transient__session_8hpp.html" title="src/transient_session.hpp" alt="" coords="971,160,1141,189"/>
 <area shape="rect" id="node7" href="$connect__session_8cpp.html" title="src/connect_session.cpp" alt="" coords="8,237,173,267"/>
-<area shape="rect" id="node9" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="200,237,341,267"/>
-<area shape="rect" id="node13" href="$named__session_8cpp.html" title="src/named_session.cpp" alt="" coords="851,237,1011,267"/>
-<area shape="rect" id="node23" href="$transient__session_8cpp.html" title="src/transient_session.cpp" alt="" coords="1035,237,1205,267"/>
-<area shape="rect" id="node31" href="$zmq__connecter_8cpp.html" title="src/zmq_connecter.cpp" alt="" coords="365,237,523,267"/>
-<area shape="rect" id="node33" href="$zmq__engine_8cpp.html" title="src/zmq_engine.cpp" alt="" coords="547,237,685,267"/>
-<area shape="rect" id="node40" href="$zmq__listener_8cpp.html" title="src/zmq_listener.cpp" alt="" coords="427,160,568,189"/>
+<area shape="rect" id="node9" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="199,237,340,267"/>
+<area shape="rect" id="node17" href="$transient__session_8cpp.html" title="src/transient_session.cpp" alt="" coords="971,237,1141,267"/>
+<area shape="rect" id="node19" href="$zmq__listener_8cpp.html" title="src/zmq_listener.cpp" alt="" coords="708,237,849,267"/>
+<area shape="rect" id="node25" href="$zmq__connecter_8cpp.html" title="src/zmq_connecter.cpp" alt="" coords="527,237,684,267"/>
+<area shape="rect" id="node27" href="$zmq__engine_8cpp.html" title="src/zmq_engine.cpp" alt="" coords="364,237,503,267"/>
 </map>

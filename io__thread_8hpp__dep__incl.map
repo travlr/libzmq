@@ -7,6 +7,5 @@
 <area shape="rect" id="node13" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="651,83,792,112"/>
 <area shape="rect" id="node15" href="$zmq__connecter_8cpp.html" title="src/zmq_connecter.cpp" alt="" coords="816,83,973,112"/>
 <area shape="rect" id="node17" href="$zmq__engine_8cpp.html" title="src/zmq_engine.cpp" alt="" coords="997,83,1136,112"/>
-<area shape="rect" id="node19" href="$zmq__init_8cpp.html" title="src/zmq_init.cpp" alt="" coords="1160,83,1277,112"/>
-<area shape="rect" id="node21" href="$zmq__listener_8cpp.html" title="src/zmq_listener.cpp" alt="" coords="1301,83,1443,112"/>
+<area shape="rect" id="node19" href="$zmq__listener_8cpp.html" title="src/zmq_listener.cpp" alt="" coords="1160,83,1301,112"/>
 </map>

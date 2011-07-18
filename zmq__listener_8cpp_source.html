@@ -128,61 +128,67 @@ function toggleVisibility(linkObj) {
 <a name="l00021"></a>00021 <span class="preprocessor">#include &lt;new&gt;</span>
 <a name="l00022"></a>00022 
 <a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="zmq__listener_8hpp.html">zmq_listener.hpp</a>&quot;</span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="zmq__init_8hpp.html">zmq_init.hpp</a>&quot;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="io__thread_8hpp.html">io_thread.hpp</a>&quot;</span>
-<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="err_8hpp.html">err.hpp</a>&quot;</span>
-<a name="l00027"></a>00027 
-<a name="l00028"></a><a class="code" href="classzmq_1_1zmq__listener__t.html#a3d4db999ab3126567677ee5827d7f822">00028</a> <a class="code" href="classzmq_1_1zmq__listener__t.html#a3d4db999ab3126567677ee5827d7f822">zmq::zmq_listener_t::zmq_listener_t</a> (<a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
-<a name="l00029"></a>00029       <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_) :
-<a name="l00030"></a>00030     <a class="code" href="classzmq_1_1own__t.html">own_t</a> (io_thread_, options_),
-<a name="l00031"></a>00031     <a class="code" href="classzmq_1_1io__object__t.html">io_object_t</a> (io_thread_),
-<a name="l00032"></a>00032     socket (socket_)
-<a name="l00033"></a>00033 {
-<a name="l00034"></a>00034 }
-<a name="l00035"></a>00035 
-<a name="l00036"></a><a class="code" href="classzmq_1_1zmq__listener__t.html#a3d20734cf9e8b33c90a6169a57cae9eb">00036</a> <a class="code" href="classzmq_1_1zmq__listener__t.html#a3d20734cf9e8b33c90a6169a57cae9eb">zmq::zmq_listener_t::~zmq_listener_t</a> ()
-<a name="l00037"></a>00037 {
-<a name="l00038"></a>00038 }
-<a name="l00039"></a>00039 
-<a name="l00040"></a><a class="code" href="classzmq_1_1zmq__listener__t.html#ab971f22f62477433b56cd4525ea212fc">00040</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1zmq__listener__t.html#ab971f22f62477433b56cd4525ea212fc">zmq::zmq_listener_t::set_address</a> (<span class="keyword">const</span> <span class="keywordtype">char</span> *protocol_, <span class="keyword">const</span> <span class="keywordtype">char</span> *addr_)
-<a name="l00041"></a>00041 {
-<a name="l00042"></a>00042      <span class="keywordflow">return</span> tcp_listener.set_address (protocol_, addr_, options.backlog);
-<a name="l00043"></a>00043 }
-<a name="l00044"></a>00044 
-<a name="l00045"></a><a class="code" href="classzmq_1_1zmq__listener__t.html#a4d9cc140781498fb3537570563a7c2d4">00045</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1zmq__listener__t.html#a4d9cc140781498fb3537570563a7c2d4">zmq::zmq_listener_t::process_plug</a> ()
-<a name="l00046"></a>00046 {
-<a name="l00047"></a>00047     <span class="comment">//  Start polling for incoming connections.</span>
-<a name="l00048"></a>00048     handle = add_fd (tcp_listener.get_fd ());
-<a name="l00049"></a>00049     set_pollin (handle);
-<a name="l00050"></a>00050 }
-<a name="l00051"></a>00051 
-<a name="l00052"></a><a class="code" href="classzmq_1_1zmq__listener__t.html#a630cfe7943f44648e84208003a231014">00052</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1zmq__listener__t.html#a630cfe7943f44648e84208003a231014">zmq::zmq_listener_t::process_term</a> (<span class="keywordtype">int</span> linger_)
-<a name="l00053"></a>00053 {
-<a name="l00054"></a>00054     rm_fd (handle);
-<a name="l00055"></a>00055     <a class="code" href="classzmq_1_1own__t.html#aa6cf69fab99e823b61cca86e51dbe555">own_t::process_term</a> (linger_);
-<a name="l00056"></a>00056 }
-<a name="l00057"></a>00057 
-<a name="l00058"></a><a class="code" href="classzmq_1_1zmq__listener__t.html#a4f60b476c7c7282dde356844024c5e03">00058</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1zmq__listener__t.html#a4f60b476c7c7282dde356844024c5e03">zmq::zmq_listener_t::in_event</a> ()
-<a name="l00059"></a>00059 {
-<a name="l00060"></a>00060     fd_t fd = tcp_listener.accept ();
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062     <span class="comment">//  If connection was reset by the peer in the meantime, just ignore it.</span>
-<a name="l00063"></a>00063     <span class="comment">//  TODO: Handle specific errors like ENFILE/EMFILE etc.</span>
-<a name="l00064"></a>00064     <span class="keywordflow">if</span> (fd == retired_fd)
-<a name="l00065"></a>00065         <span class="keywordflow">return</span>;
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067     <span class="comment">//  Choose I/O thread to run connecter in. Given that we are already</span>
-<a name="l00068"></a>00068     <span class="comment">//  running in an I/O thread, there must be at least one available.</span>
-<a name="l00069"></a>00069     <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread = choose_io_thread (options.affinity);
-<a name="l00070"></a>00070     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (io_thread);
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072     <span class="comment">//  Create and launch an init object. </span>
-<a name="l00073"></a>00073     <a class="code" href="classzmq_1_1zmq__init__t.html">zmq_init_t</a> *init = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1zmq__init__t.html">zmq_init_t</a> (io_thread, socket,
-<a name="l00074"></a>00074         NULL, fd, options);
-<a name="l00075"></a>00075     <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (init);
-<a name="l00076"></a>00076     launch_child (init);
-<a name="l00077"></a>00077 }
-<a name="l00078"></a>00078 
+<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="transient__session_8hpp.html">transient_session.hpp</a>&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="zmq__engine_8hpp.html">zmq_engine.hpp</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="io__thread_8hpp.html">io_thread.hpp</a>&quot;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="err_8hpp.html">err.hpp</a>&quot;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a><a class="code" href="classzmq_1_1zmq__listener__t.html#a3d4db999ab3126567677ee5827d7f822">00029</a> <a class="code" href="classzmq_1_1zmq__listener__t.html#a3d4db999ab3126567677ee5827d7f822">zmq::zmq_listener_t::zmq_listener_t</a> (<a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
+<a name="l00030"></a>00030       <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_) :
+<a name="l00031"></a>00031     <a class="code" href="classzmq_1_1own__t.html">own_t</a> (io_thread_, options_),
+<a name="l00032"></a>00032     <a class="code" href="classzmq_1_1io__object__t.html">io_object_t</a> (io_thread_),
+<a name="l00033"></a>00033     socket (socket_)
+<a name="l00034"></a>00034 {
+<a name="l00035"></a>00035 }
+<a name="l00036"></a>00036 
+<a name="l00037"></a><a class="code" href="classzmq_1_1zmq__listener__t.html#a3d20734cf9e8b33c90a6169a57cae9eb">00037</a> <a class="code" href="classzmq_1_1zmq__listener__t.html#a3d20734cf9e8b33c90a6169a57cae9eb">zmq::zmq_listener_t::~zmq_listener_t</a> ()
+<a name="l00038"></a>00038 {
+<a name="l00039"></a>00039 }
+<a name="l00040"></a>00040 
+<a name="l00041"></a><a class="code" href="classzmq_1_1zmq__listener__t.html#ab971f22f62477433b56cd4525ea212fc">00041</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1zmq__listener__t.html#ab971f22f62477433b56cd4525ea212fc">zmq::zmq_listener_t::set_address</a> (<span class="keyword">const</span> <span class="keywordtype">char</span> *protocol_, <span class="keyword">const</span> <span class="keywordtype">char</span> *addr_)
+<a name="l00042"></a>00042 {
+<a name="l00043"></a>00043      <span class="keywordflow">return</span> tcp_listener.set_address (protocol_, addr_, options.backlog);
+<a name="l00044"></a>00044 }
+<a name="l00045"></a>00045 
+<a name="l00046"></a><a class="code" href="classzmq_1_1zmq__listener__t.html#a4d9cc140781498fb3537570563a7c2d4">00046</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1zmq__listener__t.html#a4d9cc140781498fb3537570563a7c2d4">zmq::zmq_listener_t::process_plug</a> ()
+<a name="l00047"></a>00047 {
+<a name="l00048"></a>00048     <span class="comment">//  Start polling for incoming connections.</span>
+<a name="l00049"></a>00049     handle = add_fd (tcp_listener.get_fd ());
+<a name="l00050"></a>00050     set_pollin (handle);
+<a name="l00051"></a>00051 }
+<a name="l00052"></a>00052 
+<a name="l00053"></a><a class="code" href="classzmq_1_1zmq__listener__t.html#a630cfe7943f44648e84208003a231014">00053</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1zmq__listener__t.html#a630cfe7943f44648e84208003a231014">zmq::zmq_listener_t::process_term</a> (<span class="keywordtype">int</span> linger_)
+<a name="l00054"></a>00054 {
+<a name="l00055"></a>00055     rm_fd (handle);
+<a name="l00056"></a>00056     <a class="code" href="classzmq_1_1own__t.html#aa6cf69fab99e823b61cca86e51dbe555">own_t::process_term</a> (linger_);
+<a name="l00057"></a>00057 }
+<a name="l00058"></a>00058 
+<a name="l00059"></a><a class="code" href="classzmq_1_1zmq__listener__t.html#a4f60b476c7c7282dde356844024c5e03">00059</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1zmq__listener__t.html#a4f60b476c7c7282dde356844024c5e03">zmq::zmq_listener_t::in_event</a> ()
+<a name="l00060"></a>00060 {
+<a name="l00061"></a>00061     fd_t fd = tcp_listener.accept ();
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063     <span class="comment">//  If connection was reset by the peer in the meantime, just ignore it.</span>
+<a name="l00064"></a>00064     <span class="comment">//  TODO: Handle specific errors like ENFILE/EMFILE etc.</span>
+<a name="l00065"></a>00065     <span class="keywordflow">if</span> (fd == retired_fd)
+<a name="l00066"></a>00066         <span class="keywordflow">return</span>;
+<a name="l00067"></a>00067     <span class="comment">//  Create the engine object for this connection.</span>
+<a name="l00068"></a>00068     <a class="code" href="classzmq_1_1zmq__engine__t.html">zmq_engine_t</a> *engine = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1zmq__engine__t.html">zmq_engine_t</a> (fd, options);
+<a name="l00069"></a>00069     <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (engine);
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071     <span class="comment">//  Choose I/O thread to run connecter in. Given that we are already</span>
+<a name="l00072"></a>00072     <span class="comment">//  running in an I/O thread, there must be at least one available.</span>
+<a name="l00073"></a>00073     <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread = choose_io_thread (options.affinity);
+<a name="l00074"></a>00074     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (io_thread);
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076     <span class="comment">//  Create and launch a session object. </span>
+<a name="l00077"></a>00077     <a class="code" href="classzmq_1_1transient__session__t.html">transient_session_t</a> *session = <span class="keyword">new</span> (std::nothrow)
+<a name="l00078"></a>00078         <a class="code" href="classzmq_1_1transient__session__t.html">transient_session_t</a> (io_thread, socket, options);
+<a name="l00079"></a>00079     <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (session);
+<a name="l00080"></a>00080     session-&gt;<a class="code" href="classzmq_1_1own__t.html#ad152acb0f4d06b1f80c40509775b2d1b">inc_seqnum</a> ();
+<a name="l00081"></a>00081     launch_child (session);
+<a name="l00082"></a>00082     send_attach (session, engine, <span class="keyword">false</span>);
+<a name="l00083"></a>00083 }
+<a name="l00084"></a>00084 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -199,7 +205,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Jul 12 2011 10:42:59 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jul 18 2011 12:36:38 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

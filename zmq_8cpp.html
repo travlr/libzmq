@@ -109,6 +109,7 @@ function toggleVisibility(linkObj) {
 </div>
 <div class="contents">
 <div class="textblock"><code>#include &quot;platform.hpp&quot;</code><br/>
+<code>#include &lt;unistd.h&gt;</code><br/>
 <code>#include &lt;string.h&gt;</code><br/>
 <code>#include &lt;errno.h&gt;</code><br/>
 <code>#include &lt;stdlib.h&gt;</code><br/>
@@ -122,7 +123,6 @@ function toggleVisibility(linkObj) {
 <code>#include &quot;<a class="el" href="err_8hpp_source.html">err.hpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="msg_8hpp_source.html">msg.hpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="fd_8hpp_source.html">fd.hpp</a>&quot;</code><br/>
-<code>#include &lt;unistd.h&gt;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png"/> Include dependency graph for zmq.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -130,7 +130,7 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="zmq_8cpp__incl.png" border="0" usemap="#src_2zmq_8cpp" alt=""/></div>
 <map name="src_2zmq_8cpp" id="src_2zmq_8cpp">
-<area shape="rect" id="node13" href="socket__base_8hpp.html" title="socket_base.hpp" alt="" coords="1505,83,1625,112"/><area shape="rect" id="node27" href="stdint_8hpp.html" title="stdint.hpp" alt="" coords="2149,392,2227,421"/><area shape="rect" id="node49" href="err_8hpp.html" title="err.hpp" alt="" coords="1363,469,1424,499"/><area shape="rect" id="node63" href="likely_8hpp.html" title="likely.hpp" alt="" coords="1549,547,1627,576"/><area shape="rect" id="node89" href="fd_8hpp.html" title="fd.hpp" alt="" coords="667,392,725,421"/><area shape="rect" id="node113" href="config_8hpp.html" title="config.hpp" alt="" coords="1632,315,1715,344"/><area shape="rect" id="node125" href="msg_8hpp.html" title="msg.hpp" alt="" coords="2256,237,2328,267"/><area shape="rect" id="node138" href="clock_8hpp.html" title="clock.hpp" alt="" coords="2483,160,2560,189"/><area shape="rect" id="node141" href="ctx_8hpp.html" title="ctx.hpp" alt="" coords="1103,160,1167,189"/><area shape="rect" id="node19" href="own_8hpp.html" title="own.hpp" alt="" coords="1969,237,2039,267"/><area shape="rect" id="node32" href="blob_8hpp.html" title="blob.hpp" alt="" coords="1016,392,1085,421"/><area shape="rect" id="node42" href="atomic__counter_8hpp.html" title="atomic_counter.hpp" alt="" coords="2120,315,2256,344"/><area shape="rect" id="node46" href="mutex_8hpp.html" title="mutex.hpp" alt="" coords="1211,392,1293,421"/><area shape="rect" id="node70" href="array_8hpp.html" title="array.hpp" alt="" coords="1515,237,1589,267"/><area shape="rect" id="node76" href="poller_8hpp.html" title="poller.hpp" alt="" coords="301,237,379,267"/><area shape="rect" id="node103" href="i__poll__events_8hpp.html" title="i_poll_events.hpp" alt="" coords="1628,160,1751,189"/><area shape="rect" id="node105" href="mailbox_8hpp.html" title="mailbox.hpp" alt="" coords="1147,237,1237,267"/><area shape="rect" id="node123" href="pipe_8hpp.html" title="pipe.hpp" alt="" coords="1775,160,1844,189"/><area shape="rect" id="node25" href="object_8hpp.html" title="object.hpp" alt="" coords="1949,315,2032,344"/><area shape="rect" id="node36" href="options_8hpp.html" title="options.hpp" alt="" coords="1739,315,1827,344"/><area shape="rect" id="node51" href="zmq_8h.html" title="../include/zmq.h" alt="" coords="1043,547,1157,576"/><area shape="rect" id="node78" href="epoll_8hpp.html" title="epoll.hpp" alt="" coords="196,469,271,499"/><area shape="rect" id="node81" href="poll_8hpp.html" title="poll.hpp" alt="" coords="304,469,371,499"/><area shape="rect" id="node84" href="select_8hpp.html" title="select.hpp" alt="" coords="523,315,605,344"/><area shape="rect" id="node96" href="devpoll_8hpp.html" title="devpoll.hpp" alt="" coords="399,469,487,499"/><area shape="rect" id="node99" href="kqueue_8hpp.html" title="kqueue.hpp" alt="" coords="347,392,435,421"/><area shape="rect" id="node92" href="thread_8hpp.html" title="thread.hpp" alt="" coords="509,392,592,421"/><area shape="rect" id="node109" href="signaler_8hpp.html" title="signaler.hpp" alt="" coords="933,315,1024,344"/><area shape="rect" id="node115" href="command_8hpp.html" title="command.hpp" alt="" coords="1301,315,1405,344"/><area shape="rect" id="node118" href="ypipe_8hpp.html" title="ypipe.hpp" alt="" coords="1099,315,1176,344"/><area shape="rect" id="node149" href="semaphore_8hpp.html" title="semaphore.hpp" alt="" coords="749,392,859,421"/></map>
+<area shape="rect" id="node15" href="socket__base_8hpp.html" title="socket_base.hpp" alt="" coords="573,83,693,112"/><area shape="rect" id="node27" href="stdint_8hpp.html" title="stdint.hpp" alt="" coords="872,392,949,421"/><area shape="rect" id="node44" href="err_8hpp.html" title="err.hpp" alt="" coords="2068,469,2129,499"/><area shape="rect" id="node58" href="likely_8hpp.html" title="likely.hpp" alt="" coords="2381,547,2459,576"/><area shape="rect" id="node82" href="fd_8hpp.html" title="fd.hpp" alt="" coords="1504,469,1563,499"/><area shape="rect" id="node105" href="config_8hpp.html" title="config.hpp" alt="" coords="1763,315,1845,344"/><area shape="rect" id="node120" href="msg_8hpp.html" title="msg.hpp" alt="" coords="1672,237,1744,267"/><area shape="rect" id="node133" href="clock_8hpp.html" title="clock.hpp" alt="" coords="767,83,844,112"/><area shape="rect" id="node136" href="ctx_8hpp.html" title="ctx.hpp" alt="" coords="1399,83,1463,112"/><area shape="rect" id="node19" href="own_8hpp.html" title="own.hpp" alt="" coords="557,237,627,267"/><area shape="rect" id="node37" href="atomic__counter_8hpp.html" title="atomic_counter.hpp" alt="" coords="712,315,848,344"/><area shape="rect" id="node63" href="array_8hpp.html" title="array.hpp" alt="" coords="408,237,483,267"/><area shape="rect" id="node69" href="poller_8hpp.html" title="poller.hpp" alt="" coords="139,315,216,344"/><area shape="rect" id="node95" href="i__poll__events_8hpp.html" title="i_poll_events.hpp" alt="" coords="155,160,277,189"/><area shape="rect" id="node97" href="mailbox_8hpp.html" title="mailbox.hpp" alt="" coords="1427,160,1517,189"/><area shape="rect" id="node118" href="pipe_8hpp.html" title="pipe.hpp" alt="" coords="981,160,1051,189"/><area shape="rect" id="node25" href="object_8hpp.html" title="object.hpp" alt="" coords="605,315,688,344"/><area shape="rect" id="node32" href="options_8hpp.html" title="options.hpp" alt="" coords="1075,315,1163,344"/><area shape="rect" id="node41" href="mutex_8hpp.html" title="mutex.hpp" alt="" coords="1621,392,1704,421"/><area shape="rect" id="node46" href="zmq_8h.html" title="../include/zmq.h" alt="" coords="1749,547,1864,576"/><area shape="rect" id="node71" href="epoll_8hpp.html" title="epoll.hpp" alt="" coords="260,469,335,499"/><area shape="rect" id="node74" href="poll_8hpp.html" title="poll.hpp" alt="" coords="43,392,109,421"/><area shape="rect" id="node77" href="select_8hpp.html" title="select.hpp" alt="" coords="408,392,491,421"/><area shape="rect" id="node88" href="devpoll_8hpp.html" title="devpoll.hpp" alt="" coords="296,392,384,421"/><area shape="rect" id="node91" href="kqueue_8hpp.html" title="kqueue.hpp" alt="" coords="133,392,221,421"/><area shape="rect" id="node85" href="thread_8hpp.html" title="thread.hpp" alt="" coords="1001,469,1084,499"/><area shape="rect" id="node101" href="signaler_8hpp.html" title="signaler.hpp" alt="" coords="1557,237,1648,267"/><area shape="rect" id="node107" href="command_8hpp.html" title="command.hpp" alt="" coords="1227,237,1331,267"/><area shape="rect" id="node110" href="ypipe_8hpp.html" title="ypipe.hpp" alt="" coords="1355,237,1432,267"/><area shape="rect" id="node112" href="atomic__ptr_8hpp.html" title="atomic_ptr.hpp" alt="" coords="1389,315,1496,344"/><area shape="rect" id="node145" href="semaphore_8hpp.html" title="semaphore.hpp" alt="" coords="1987,392,2096,421"/></map>
 </div>
 </div>
 <p><a href="zmq_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -177,7 +177,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00061">61</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00078">78</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
 </div>
 </div>
@@ -207,7 +207,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00193">193</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00210">210</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
 <p>References <a class="el" href="zmq_8h_source.html#l00102">ENOTSOCK</a>.</p>
 
@@ -241,7 +241,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00162">162</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00179">179</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
 <p>References <a class="el" href="zmq_8h_source.html#l00102">ENOTSOCK</a>.</p>
 
@@ -285,7 +285,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00202">202</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00219">219</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
 <p>References <a class="el" href="zmq_8h_source.html#l00102">ENOTSOCK</a>.</p>
 
@@ -319,7 +319,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00688">688</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00684">684</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="test__timeo_8cpp_source.html#l00046">main()</a>.</p>
 
@@ -373,11 +373,11 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00183">183</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00200">200</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
 <p>References <a class="el" href="zmq_8h_source.html#l00102">ENOTSOCK</a>.</p>
 
-<p>Referenced by <a class="el" href="testutil_8hpp_source.html#l00029">bounce()</a>, <a class="el" href="test__reqrep__device_8cpp_source.html#l00026">main()</a>, and <a class="el" href="zmq_8cpp_source.html#l00339">zmq_poll()</a>.</p>
+<p>Referenced by <a class="el" href="testutil_8hpp_source.html#l00029">bounce()</a>, <a class="el" href="test__reqrep__device_8cpp_source.html#l00026">main()</a>, and <a class="el" href="zmq_8cpp_source.html#l00342">zmq_poll()</a>.</p>
 
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -407,7 +407,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00075">75</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00092">92</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
@@ -441,9 +441,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00300">300</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00317">317</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="inproc__lat_8cpp_source.html#l00101">main()</a>, <a class="el" href="inproc__lat_8cpp_source.html#l00043">worker()</a>, <a class="el" href="zmq_8cpp_source.html#l00233">zmq_recv()</a>, and <a class="el" href="zmq_8cpp_source.html#l00211">zmq_send()</a>.</p>
+<p>Referenced by <a class="el" href="inproc__lat_8cpp_source.html#l00101">main()</a>, <a class="el" href="inproc__lat_8cpp_source.html#l00043">worker()</a>, <a class="el" href="zmq_8cpp_source.html#l00250">zmq_recv()</a>, and <a class="el" href="zmq_8cpp_source.html#l00228">zmq_send()</a>.</p>
 
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -483,7 +483,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00310">310</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00327">327</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
 </div>
 </div>
@@ -502,9 +502,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00315">315</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00332">332</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="inproc__lat_8cpp_source.html#l00101">main()</a>, <a class="el" href="inproc__thr_8cpp_source.html#l00043">worker()</a>, <a class="el" href="zmq_8cpp_source.html#l00233">zmq_recv()</a>, and <a class="el" href="zmq_8cpp_source.html#l00211">zmq_send()</a>.</p>
+<p>Referenced by <a class="el" href="inproc__lat_8cpp_source.html#l00101">main()</a>, <a class="el" href="inproc__thr_8cpp_source.html#l00043">worker()</a>, <a class="el" href="zmq_8cpp_source.html#l00250">zmq_recv()</a>, and <a class="el" href="zmq_8cpp_source.html#l00228">zmq_send()</a>.</p>
 
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -534,9 +534,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00284">284</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00301">301</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="inproc__thr_8cpp_source.html#l00099">main()</a>, <a class="el" href="inproc__lat_8cpp_source.html#l00043">worker()</a>, and <a class="el" href="zmq_8cpp_source.html#l00233">zmq_recv()</a>.</p>
+<p>Referenced by <a class="el" href="inproc__thr_8cpp_source.html#l00099">main()</a>, <a class="el" href="inproc__lat_8cpp_source.html#l00043">worker()</a>, and <a class="el" href="zmq_8cpp_source.html#l00250">zmq_recv()</a>.</p>
 
 <p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -594,7 +594,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00294">294</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00311">311</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
 </div>
 </div>
@@ -623,9 +623,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00289">289</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00306">306</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="inproc__lat_8cpp_source.html#l00101">main()</a>, <a class="el" href="inproc__thr_8cpp_source.html#l00043">worker()</a>, and <a class="el" href="zmq_8cpp_source.html#l00211">zmq_send()</a>.</p>
+<p>Referenced by <a class="el" href="inproc__lat_8cpp_source.html#l00101">main()</a>, <a class="el" href="inproc__thr_8cpp_source.html#l00043">worker()</a>, and <a class="el" href="zmq_8cpp_source.html#l00228">zmq_send()</a>.</p>
 
 <p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -665,7 +665,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00305">305</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00322">322</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
 </div>
 </div>
@@ -684,9 +684,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00320">320</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00337">337</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="inproc__lat_8cpp_source.html#l00101">main()</a>, <a class="el" href="zmq_8cpp_source.html#l00272">zmq_recvmsg()</a>, and <a class="el" href="zmq_8cpp_source.html#l00259">zmq_sendmsg()</a>.</p>
+<p>Referenced by <a class="el" href="inproc__lat_8cpp_source.html#l00101">main()</a>, <a class="el" href="zmq_8cpp_source.html#l00289">zmq_recvmsg()</a>, and <a class="el" href="zmq_8cpp_source.html#l00276">zmq_sendmsg()</a>.</p>
 
 <p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-11-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -732,9 +732,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00339">339</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00342">342</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>, <a class="el" href="zmq_8h_source.html#l00078">ENOTSUP</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="zmq_8h_source.html#l00223">zmq_pollitem_t::events</a>, <a class="el" href="zmq_8h_source.html#l00221">zmq_pollitem_t::fd</a>, <a class="el" href="clock_8cpp_source.html#l00075">zmq::clock_t::now_ms()</a>, <a class="el" href="zmq_8h_source.html#l00224">zmq_pollitem_t::revents</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>, <a class="el" href="zmq_8h_source.html#l00175">ZMQ_EVENTS</a>, <a class="el" href="zmq_8h_source.html#l00174">ZMQ_FD</a>, <a class="el" href="zmq_8cpp_source.html#l00183">zmq_getsockopt()</a>, <a class="el" href="zmq_8h_source.html#l00213">ZMQ_POLLERR</a>, <a class="el" href="zmq_8h_source.html#l00211">ZMQ_POLLIN</a>, and <a class="el" href="zmq_8h_source.html#l00212">ZMQ_POLLOUT</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>, <a class="el" href="zmq_8h_source.html#l00078">ENOTSUP</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="zmq_8h_source.html#l00223">zmq_pollitem_t::events</a>, <a class="el" href="zmq_8h_source.html#l00221">zmq_pollitem_t::fd</a>, <a class="el" href="clock_8cpp_source.html#l00075">zmq::clock_t::now_ms()</a>, <a class="el" href="zmq_8h_source.html#l00224">zmq_pollitem_t::revents</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>, <a class="el" href="zmq_8h_source.html#l00173">ZMQ_EVENTS</a>, <a class="el" href="zmq_8h_source.html#l00172">ZMQ_FD</a>, <a class="el" href="zmq_8cpp_source.html#l00200">zmq_getsockopt()</a>, <a class="el" href="zmq_8h_source.html#l00213">ZMQ_POLLERR</a>, <a class="el" href="zmq_8h_source.html#l00211">ZMQ_POLLIN</a>, and <a class="el" href="zmq_8h_source.html#l00212">ZMQ_POLLOUT</a>.</p>
 
 <p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-12-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -786,9 +786,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00233">233</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00250">250</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, <a class="el" href="zmq_8cpp_source.html#l00300">zmq_msg_close()</a>, <a class="el" href="zmq_8cpp_source.html#l00315">zmq_msg_data()</a>, <a class="el" href="zmq_8cpp_source.html#l00284">zmq_msg_init()</a>, and <a class="el" href="zmq_8cpp_source.html#l00272">zmq_recvmsg()</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, <a class="el" href="zmq_8cpp_source.html#l00317">zmq_msg_close()</a>, <a class="el" href="zmq_8cpp_source.html#l00332">zmq_msg_data()</a>, <a class="el" href="zmq_8cpp_source.html#l00301">zmq_msg_init()</a>, and <a class="el" href="zmq_8cpp_source.html#l00289">zmq_recvmsg()</a>.</p>
 
 <p>Referenced by <a class="el" href="testutil_8hpp_source.html#l00029">bounce()</a>, and <a class="el" href="test__hwm_8cpp_source.html#l00026">main()</a>.</p>
 
@@ -847,11 +847,11 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00272">272</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00289">289</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
-<p>References <a class="el" href="zmq_8h_source.html#l00102">ENOTSOCK</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, and <a class="el" href="zmq_8cpp_source.html#l00320">zmq_msg_size()</a>.</p>
+<p>References <a class="el" href="zmq_8h_source.html#l00102">ENOTSOCK</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, and <a class="el" href="zmq_8cpp_source.html#l00337">zmq_msg_size()</a>.</p>
 
-<p>Referenced by <a class="el" href="inproc__lat_8cpp_source.html#l00101">main()</a>, <a class="el" href="inproc__lat_8cpp_source.html#l00043">worker()</a>, and <a class="el" href="zmq_8cpp_source.html#l00233">zmq_recv()</a>.</p>
+<p>Referenced by <a class="el" href="inproc__lat_8cpp_source.html#l00101">main()</a>, <a class="el" href="inproc__lat_8cpp_source.html#l00043">worker()</a>, and <a class="el" href="zmq_8cpp_source.html#l00250">zmq_recv()</a>.</p>
 
 <p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-15-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -914,9 +914,9 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00211">211</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00228">228</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, <a class="el" href="zmq_8cpp_source.html#l00300">zmq_msg_close()</a>, <a class="el" href="zmq_8cpp_source.html#l00315">zmq_msg_data()</a>, <a class="el" href="zmq_8cpp_source.html#l00289">zmq_msg_init_size()</a>, and <a class="el" href="zmq_8cpp_source.html#l00259">zmq_sendmsg()</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, <a class="el" href="zmq_8cpp_source.html#l00317">zmq_msg_close()</a>, <a class="el" href="zmq_8cpp_source.html#l00332">zmq_msg_data()</a>, <a class="el" href="zmq_8cpp_source.html#l00306">zmq_msg_init_size()</a>, and <a class="el" href="zmq_8cpp_source.html#l00276">zmq_sendmsg()</a>.</p>
 
 <p>Referenced by <a class="el" href="testutil_8hpp_source.html#l00029">bounce()</a>, and <a class="el" href="test__hwm_8cpp_source.html#l00026">main()</a>.</p>
 
@@ -975,11 +975,11 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00259">259</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00276">276</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
-<p>References <a class="el" href="zmq_8h_source.html#l00102">ENOTSOCK</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, and <a class="el" href="zmq_8cpp_source.html#l00320">zmq_msg_size()</a>.</p>
+<p>References <a class="el" href="zmq_8h_source.html#l00102">ENOTSOCK</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, and <a class="el" href="zmq_8cpp_source.html#l00337">zmq_msg_size()</a>.</p>
 
-<p>Referenced by <a class="el" href="inproc__lat_8cpp_source.html#l00101">main()</a>, <a class="el" href="inproc__lat_8cpp_source.html#l00043">worker()</a>, and <a class="el" href="zmq_8cpp_source.html#l00211">zmq_send()</a>.</p>
+<p>Referenced by <a class="el" href="inproc__lat_8cpp_source.html#l00101">main()</a>, <a class="el" href="inproc__lat_8cpp_source.html#l00043">worker()</a>, and <a class="el" href="zmq_8cpp_source.html#l00228">zmq_send()</a>.</p>
 
 <p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-19-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -1042,7 +1042,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00172">172</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00189">189</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
 <p>References <a class="el" href="zmq_8h_source.html#l00102">ENOTSOCK</a>.</p>
 
@@ -1086,7 +1086,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00153">153</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00170">170</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="inproc__lat_8cpp_source.html#l00101">main()</a>, and <a class="el" href="inproc__lat_8cpp_source.html#l00043">worker()</a>.</p>
 
@@ -1118,7 +1118,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00070">70</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00087">87</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="inproc__lat_8cpp_source.html#l00101">main()</a>, and <a class="el" href="inproc__lat_8cpp_source.html#l00043">worker()</a>.</p>
 
@@ -1150,7 +1150,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00127">127</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00144">144</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
@@ -1200,7 +1200,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00063">63</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
+<p>Definition at line <a class="el" href="zmq_8cpp_source.html#l00080">80</a> of file <a class="el" href="zmq_8cpp_source.html">zmq.cpp</a>.</p>
 
 <p>References <a class="el" href="zmq_8h_source.html#l00056">ZMQ_VERSION_MAJOR</a>, <a class="el" href="zmq_8h_source.html#l00057">ZMQ_VERSION_MINOR</a>, and <a class="el" href="zmq_8h_source.html#l00058">ZMQ_VERSION_PATCH</a>.</p>
 
@@ -1221,7 +1221,7 @@ Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Jul 12 2011 10:43:01 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jul 18 2011 12:36:39 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

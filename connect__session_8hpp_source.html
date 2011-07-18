@@ -151,7 +151,7 @@ function toggleVisibility(linkObj) {
 <a name="l00044"></a>00044     <span class="keyword">private</span>:
 <a name="l00045"></a>00045 
 <a name="l00046"></a>00046         <span class="comment">//  Handlers for events from session base class.</span>
-<a name="l00047"></a>00047         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1connect__session__t.html#a9b128e5cbc5808a7bbaf57ba80764059">xattached</a> (<span class="keyword">const</span> blob_t &amp;peer_identity_);
+<a name="l00047"></a>00047         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1connect__session__t.html#a0fddb97e59f22d8f9f8450d8b15c4f92">xattached</a> ();
 <a name="l00048"></a>00048         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1connect__session__t.html#af14676ed02aefd99eaeb1a2edb1bfb6b">xdetached</a> ();
 <a name="l00049"></a>00049 
 <a name="l00050"></a>00050         <span class="comment">//  Start the connection process.</span>
@@ -164,20 +164,13 @@ function toggleVisibility(linkObj) {
 <a name="l00057"></a><a class="code" href="classzmq_1_1connect__session__t.html#a2bbd2b27ee0bd9b4c526e390760e7359">00057</a>         std::string <a class="code" href="classzmq_1_1connect__session__t.html#a2bbd2b27ee0bd9b4c526e390760e7359">protocol</a>;
 <a name="l00058"></a><a class="code" href="classzmq_1_1connect__session__t.html#ab07f14749864a3c91a7fcbe18666ac4c">00058</a>         std::string <a class="code" href="classzmq_1_1connect__session__t.html#ab07f14749864a3c91a7fcbe18666ac4c">address</a>;
 <a name="l00059"></a>00059 
-<a name="l00060"></a>00060         <span class="comment">//  If true, the session was already connected to the peer.</span>
-<a name="l00061"></a><a class="code" href="classzmq_1_1connect__session__t.html#a604c96d29778793ebf76fca585e16d8c">00061</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1connect__session__t.html#a604c96d29778793ebf76fca585e16d8c">connected</a>;
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063         <span class="comment">//  Identity of the peer. If &#39;connected&#39; is false, it has no meaning.</span>
-<a name="l00064"></a>00064         <span class="comment">//  Otherwise, if it&#39;s empty, the peer has transient identity.</span>
-<a name="l00065"></a><a class="code" href="classzmq_1_1connect__session__t.html#a30a50e2380427c31948d6d42693dc590">00065</a>         blob_t <a class="code" href="classzmq_1_1connect__session__t.html#a30a50e2380427c31948d6d42693dc590">peer_identity</a>;
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067         <a class="code" href="classzmq_1_1connect__session__t.html#a44ffe7af01fcf4d760419c6319c1627f">connect_session_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1connect__session__t.html">connect_session_t</a>&amp;);
-<a name="l00068"></a>00068         <span class="keyword">const</span> <a class="code" href="classzmq_1_1connect__session__t.html">connect_session_t</a> &amp;<a class="code" href="classzmq_1_1connect__session__t.html#a966a2c8b6cbbab9512301020afa05870">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1connect__session__t.html">connect_session_t</a>&amp;);
-<a name="l00069"></a>00069     };
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071 }
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073 <span class="preprocessor">#endif</span>
+<a name="l00060"></a>00060         <a class="code" href="classzmq_1_1connect__session__t.html#a44ffe7af01fcf4d760419c6319c1627f">connect_session_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1connect__session__t.html">connect_session_t</a>&amp;);
+<a name="l00061"></a>00061         <span class="keyword">const</span> <a class="code" href="classzmq_1_1connect__session__t.html">connect_session_t</a> &amp;<a class="code" href="classzmq_1_1connect__session__t.html#a966a2c8b6cbbab9512301020afa05870">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1connect__session__t.html">connect_session_t</a>&amp;);
+<a name="l00062"></a>00062     };
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064 }
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -194,7 +187,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Jul 12 2011 10:42:58 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jul 18 2011 12:36:36 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

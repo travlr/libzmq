@@ -136,139 +136,99 @@ function toggleVisibility(linkObj) {
 <a name="l00029"></a>00029       <span class="keyword">const</span> <span class="keywordtype">char</span> *protocol_, <span class="keyword">const</span> <span class="keywordtype">char</span> *address_) :
 <a name="l00030"></a>00030     <a class="code" href="classzmq_1_1session__t.html">session_t</a> (io_thread_, socket_, options_),
 <a name="l00031"></a>00031     protocol (protocol_),
-<a name="l00032"></a>00032     address (address_),
-<a name="l00033"></a>00033     connected (false)
-<a name="l00034"></a>00034 {
-<a name="l00035"></a>00035 }
-<a name="l00036"></a>00036 
-<a name="l00037"></a><a class="code" href="classzmq_1_1connect__session__t.html#a2bbb51a4bda6bc45b145e027df152b5a">00037</a> <a class="code" href="classzmq_1_1connect__session__t.html#a2bbb51a4bda6bc45b145e027df152b5a">zmq::connect_session_t::~connect_session_t</a> ()
-<a name="l00038"></a>00038 {
-<a name="l00039"></a>00039     <span class="keywordflow">if</span> (connected &amp;&amp; !peer_identity.empty ())
-<a name="l00040"></a>00040         unregister_session (peer_identity);
-<a name="l00041"></a>00041 }
-<a name="l00042"></a>00042 
-<a name="l00043"></a><a class="code" href="classzmq_1_1connect__session__t.html#ab4e2a52c59589d7208f26a1404906fb6">00043</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1connect__session__t.html#ab4e2a52c59589d7208f26a1404906fb6">zmq::connect_session_t::process_plug</a> ()
-<a name="l00044"></a>00044 {
-<a name="l00045"></a>00045     <span class="comment">//  Start connection process immediately.</span>
-<a name="l00046"></a>00046     start_connecting (<span class="keyword">false</span>);
-<a name="l00047"></a>00047 }
-<a name="l00048"></a>00048 
-<a name="l00049"></a><a class="code" href="classzmq_1_1connect__session__t.html#a64d6c8915476c60eb27761138a177cb4">00049</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1connect__session__t.html#a64d6c8915476c60eb27761138a177cb4">zmq::connect_session_t::start_connecting</a> (<span class="keywordtype">bool</span> wait_)
-<a name="l00050"></a>00050 {
-<a name="l00051"></a>00051     <span class="comment">//  Choose I/O thread to run connecter in. Given that we are already</span>
-<a name="l00052"></a>00052     <span class="comment">//  running in an I/O thread, there must be at least one available.</span>
-<a name="l00053"></a>00053     <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread = choose_io_thread (options.affinity);
-<a name="l00054"></a>00054     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (io_thread);
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056     <span class="comment">//  Create the connecter object.</span>
+<a name="l00032"></a>00032     address (address_)
+<a name="l00033"></a>00033 {
+<a name="l00034"></a>00034 }
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="classzmq_1_1connect__session__t.html#a2bbb51a4bda6bc45b145e027df152b5a">00036</a> <a class="code" href="classzmq_1_1connect__session__t.html#a2bbb51a4bda6bc45b145e027df152b5a">zmq::connect_session_t::~connect_session_t</a> ()
+<a name="l00037"></a>00037 {
+<a name="l00038"></a>00038 }
+<a name="l00039"></a>00039 
+<a name="l00040"></a><a class="code" href="classzmq_1_1connect__session__t.html#ab4e2a52c59589d7208f26a1404906fb6">00040</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1connect__session__t.html#ab4e2a52c59589d7208f26a1404906fb6">zmq::connect_session_t::process_plug</a> ()
+<a name="l00041"></a>00041 {
+<a name="l00042"></a>00042     <span class="comment">//  Start connection process immediately.</span>
+<a name="l00043"></a>00043     start_connecting (<span class="keyword">false</span>);
+<a name="l00044"></a>00044 }
+<a name="l00045"></a>00045 
+<a name="l00046"></a><a class="code" href="classzmq_1_1connect__session__t.html#a64d6c8915476c60eb27761138a177cb4">00046</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1connect__session__t.html#a64d6c8915476c60eb27761138a177cb4">zmq::connect_session_t::start_connecting</a> (<span class="keywordtype">bool</span> wait_)
+<a name="l00047"></a>00047 {
+<a name="l00048"></a>00048     <span class="comment">//  Choose I/O thread to run connecter in. Given that we are already</span>
+<a name="l00049"></a>00049     <span class="comment">//  running in an I/O thread, there must be at least one available.</span>
+<a name="l00050"></a>00050     <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread = choose_io_thread (options.affinity);
+<a name="l00051"></a>00051     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (io_thread);
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053     <span class="comment">//  Create the connecter object.</span>
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055     <span class="comment">//  Both TCP and IPC transports are using the same infrastructure.</span>
+<a name="l00056"></a>00056     <span class="keywordflow">if</span> (protocol == <span class="stringliteral">&quot;tcp&quot;</span> || protocol == <span class="stringliteral">&quot;ipc&quot;</span>) {
 <a name="l00057"></a>00057 
-<a name="l00058"></a>00058     <span class="comment">//  Both TCP and IPC transports are using the same infrastructure.</span>
-<a name="l00059"></a>00059     <span class="keywordflow">if</span> (protocol == <span class="stringliteral">&quot;tcp&quot;</span> || protocol == <span class="stringliteral">&quot;ipc&quot;</span>) {
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061         <a class="code" href="classzmq_1_1zmq__connecter__t.html">zmq_connecter_t</a> *connecter = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1zmq__connecter__t.html">zmq_connecter_t</a> (
-<a name="l00062"></a>00062             io_thread, <span class="keyword">this</span>, options, protocol.c_str (), address.c_str (),
-<a name="l00063"></a>00063             wait_);
-<a name="l00064"></a>00064         <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (connecter);
-<a name="l00065"></a>00065         launch_child (connecter);
-<a name="l00066"></a>00066         <span class="keywordflow">return</span>;
-<a name="l00067"></a>00067     }
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069 <span class="preprocessor">#if defined ZMQ_HAVE_OPENPGM</span>
-<a name="l00070"></a>00070 <span class="preprocessor"></span>
-<a name="l00071"></a>00071     <span class="comment">//  Both PGM and EPGM transports are using the same infrastructure.</span>
-<a name="l00072"></a>00072     <span class="keywordflow">if</span> (protocol == <span class="stringliteral">&quot;pgm&quot;</span> || protocol == <span class="stringliteral">&quot;epgm&quot;</span>) {
+<a name="l00058"></a>00058         <a class="code" href="classzmq_1_1zmq__connecter__t.html">zmq_connecter_t</a> *connecter = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1zmq__connecter__t.html">zmq_connecter_t</a> (
+<a name="l00059"></a>00059             io_thread, <span class="keyword">this</span>, options, protocol.c_str (), address.c_str (),
+<a name="l00060"></a>00060             wait_);
+<a name="l00061"></a>00061         <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (connecter);
+<a name="l00062"></a>00062         launch_child (connecter);
+<a name="l00063"></a>00063         <span class="keywordflow">return</span>;
+<a name="l00064"></a>00064     }
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066 <span class="preprocessor">#if defined ZMQ_HAVE_OPENPGM</span>
+<a name="l00067"></a>00067 <span class="preprocessor"></span>
+<a name="l00068"></a>00068     <span class="comment">//  Both PGM and EPGM transports are using the same infrastructure.</span>
+<a name="l00069"></a>00069     <span class="keywordflow">if</span> (protocol == <span class="stringliteral">&quot;pgm&quot;</span> || protocol == <span class="stringliteral">&quot;epgm&quot;</span>) {
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071         <span class="comment">//  For EPGM transport with UDP encapsulation of PGM is used.</span>
+<a name="l00072"></a>00072         <span class="keywordtype">bool</span> udp_encapsulation = (protocol == <span class="stringliteral">&quot;epgm&quot;</span>);
 <a name="l00073"></a>00073 
-<a name="l00074"></a>00074         <span class="comment">//  For EPGM transport with UDP encapsulation of PGM is used.</span>
-<a name="l00075"></a>00075         <span class="keywordtype">bool</span> udp_encapsulation = (protocol == <span class="stringliteral">&quot;epgm&quot;</span>);
-<a name="l00076"></a>00076 
-<a name="l00077"></a>00077         <span class="comment">//  At this point we&#39;ll create message pipes to the session straight</span>
-<a name="l00078"></a>00078         <span class="comment">//  away. There&#39;s no point in delaying it as no concept of &#39;connect&#39;</span>
-<a name="l00079"></a>00079         <span class="comment">//  exists with PGM anyway.</span>
-<a name="l00080"></a>00080         <span class="keywordflow">if</span> (options.type == <a class="code" href="zmq_8h.html#a0755bc624cb1e1a7e897d8b512e17f2a">ZMQ_PUB</a> || options.type == <a class="code" href="zmq_8h.html#a78a83eb0c7396e987626b6e1b99e0e6c">ZMQ_XPUB</a>) {
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082             <span class="comment">//  PGM sender.</span>
-<a name="l00083"></a>00083             pgm_sender_t *pgm_sender =  <span class="keyword">new</span> (std::nothrow) pgm_sender_t (
-<a name="l00084"></a>00084                 io_thread, options);
-<a name="l00085"></a>00085             <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (pgm_sender);
+<a name="l00074"></a>00074         <span class="comment">//  At this point we&#39;ll create message pipes to the session straight</span>
+<a name="l00075"></a>00075         <span class="comment">//  away. There&#39;s no point in delaying it as no concept of &#39;connect&#39;</span>
+<a name="l00076"></a>00076         <span class="comment">//  exists with PGM anyway.</span>
+<a name="l00077"></a>00077         <span class="keywordflow">if</span> (options.type == <a class="code" href="zmq_8h.html#a0755bc624cb1e1a7e897d8b512e17f2a">ZMQ_PUB</a> || options.type == <a class="code" href="zmq_8h.html#a78a83eb0c7396e987626b6e1b99e0e6c">ZMQ_XPUB</a>) {
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079             <span class="comment">//  PGM sender.</span>
+<a name="l00080"></a>00080             pgm_sender_t *pgm_sender =  <span class="keyword">new</span> (std::nothrow) pgm_sender_t (
+<a name="l00081"></a>00081                 io_thread, options);
+<a name="l00082"></a>00082             <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (pgm_sender);
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084             <span class="keywordtype">int</span> rc = pgm_sender-&gt;init (udp_encapsulation, address.c_str ());
+<a name="l00085"></a>00085             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
 <a name="l00086"></a>00086 
-<a name="l00087"></a>00087             <span class="keywordtype">int</span> rc = pgm_sender-&gt;init (udp_encapsulation, address.c_str ());
-<a name="l00088"></a>00088             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090             send_attach (<span class="keyword">this</span>, pgm_sender, blob_t ());
-<a name="l00091"></a>00091         }
-<a name="l00092"></a>00092         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (options.type == <a class="code" href="zmq_8h.html#ad331770f0eec9ed393bf25fe6ea65dcc">ZMQ_SUB</a> || options.type == <a class="code" href="zmq_8h.html#a9922722259aed3ec260c84ad3cc2ac23">ZMQ_XSUB</a>) {
-<a name="l00093"></a>00093 
-<a name="l00094"></a>00094             <span class="comment">//  PGM receiver.</span>
-<a name="l00095"></a>00095             pgm_receiver_t *pgm_receiver =  <span class="keyword">new</span> (std::nothrow) pgm_receiver_t (
-<a name="l00096"></a>00096                 io_thread, options);
-<a name="l00097"></a>00097             <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (pgm_receiver);
+<a name="l00087"></a>00087             send_attach (<span class="keyword">this</span>, pgm_sender);
+<a name="l00088"></a>00088         }
+<a name="l00089"></a>00089         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (options.type == <a class="code" href="zmq_8h.html#ad331770f0eec9ed393bf25fe6ea65dcc">ZMQ_SUB</a> || options.type == <a class="code" href="zmq_8h.html#a9922722259aed3ec260c84ad3cc2ac23">ZMQ_XSUB</a>) {
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091             <span class="comment">//  PGM receiver.</span>
+<a name="l00092"></a>00092             pgm_receiver_t *pgm_receiver =  <span class="keyword">new</span> (std::nothrow) pgm_receiver_t (
+<a name="l00093"></a>00093                 io_thread, options);
+<a name="l00094"></a>00094             <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (pgm_receiver);
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096             <span class="keywordtype">int</span> rc = pgm_receiver-&gt;init (udp_encapsulation, address.c_str ());
+<a name="l00097"></a>00097             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
 <a name="l00098"></a>00098 
-<a name="l00099"></a>00099             <span class="keywordtype">int</span> rc = pgm_receiver-&gt;init (udp_encapsulation, address.c_str ());
-<a name="l00100"></a>00100             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
-<a name="l00101"></a>00101 
-<a name="l00102"></a>00102             send_attach (<span class="keyword">this</span>, pgm_receiver, blob_t ());
-<a name="l00103"></a>00103         }
-<a name="l00104"></a>00104         <span class="keywordflow">else</span>
-<a name="l00105"></a>00105             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-<a name="l00106"></a>00106 
-<a name="l00107"></a>00107         <span class="keywordflow">return</span>;
-<a name="l00108"></a>00108     }
-<a name="l00109"></a>00109 <span class="preprocessor">#endif</span>
-<a name="l00110"></a>00110 <span class="preprocessor"></span>
-<a name="l00111"></a>00111     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-<a name="l00112"></a>00112 }
-<a name="l00113"></a>00113 
-<a name="l00114"></a><a class="code" href="classzmq_1_1connect__session__t.html#a9b128e5cbc5808a7bbaf57ba80764059">00114</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1connect__session__t.html#a9b128e5cbc5808a7bbaf57ba80764059">zmq::connect_session_t::xattached</a> (<span class="keyword">const</span> blob_t &amp;peer_identity_)
-<a name="l00115"></a>00115 {
-<a name="l00116"></a>00116     <span class="comment">//  If there was no previous connection...</span>
-<a name="l00117"></a>00117     <span class="keywordflow">if</span> (!connected) {
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119         <span class="comment">//  Peer has transient identity.</span>
-<a name="l00120"></a>00120         <span class="keywordflow">if</span> (peer_identity_.empty () || peer_identity_ [0] == 0) {
-<a name="l00121"></a>00121             connected = <span class="keyword">true</span>;
-<a name="l00122"></a>00122             <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00123"></a>00123         }
+<a name="l00099"></a>00099             send_attach (<span class="keyword">this</span>, pgm_receiver);
+<a name="l00100"></a>00100         }
+<a name="l00101"></a>00101         <span class="keywordflow">else</span>
+<a name="l00102"></a>00102             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104         <span class="keywordflow">return</span>;
+<a name="l00105"></a>00105     }
+<a name="l00106"></a>00106 <span class="preprocessor">#endif</span>
+<a name="l00107"></a>00107 <span class="preprocessor"></span>
+<a name="l00108"></a>00108     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
+<a name="l00109"></a>00109 }
+<a name="l00110"></a>00110 
+<a name="l00111"></a><a class="code" href="classzmq_1_1connect__session__t.html#a0fddb97e59f22d8f9f8450d8b15c4f92">00111</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1connect__session__t.html#a0fddb97e59f22d8f9f8450d8b15c4f92">zmq::connect_session_t::xattached</a> ()
+<a name="l00112"></a>00112 {
+<a name="l00113"></a>00113     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00114"></a>00114 }
+<a name="l00115"></a>00115 
+<a name="l00116"></a><a class="code" href="classzmq_1_1connect__session__t.html#af14676ed02aefd99eaeb1a2edb1bfb6b">00116</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1connect__session__t.html#af14676ed02aefd99eaeb1a2edb1bfb6b">zmq::connect_session_t::xdetached</a> ()
+<a name="l00117"></a>00117 {
+<a name="l00118"></a>00118     <span class="comment">//  Reconnect.</span>
+<a name="l00119"></a>00119     start_connecting (<span class="keyword">true</span>);
+<a name="l00120"></a>00120 
+<a name="l00121"></a>00121     <span class="comment">//  Don&#39;t tear the session down.</span>
+<a name="l00122"></a>00122     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00123"></a>00123 }
 <a name="l00124"></a>00124 
-<a name="l00125"></a>00125         <span class="comment">//  Peer has strong identity. Let&#39;s register it and check whether noone</span>
-<a name="l00126"></a>00126         <span class="comment">//  else is using the same identity.</span>
-<a name="l00127"></a>00127         <span class="keywordflow">if</span> (!register_session (peer_identity_, <span class="keyword">this</span>)) {
-<a name="l00128"></a>00128             log (<span class="stringliteral">&quot;DPID: duplicate peer identity - disconnecting peer&quot;</span>);
-<a name="l00129"></a>00129             <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00130"></a>00130         }
-<a name="l00131"></a>00131         connected = <span class="keyword">true</span>;
-<a name="l00132"></a>00132         peer_identity = peer_identity_;
-<a name="l00133"></a>00133         <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00134"></a>00134     }
-<a name="l00135"></a>00135 
-<a name="l00136"></a>00136     <span class="comment">//  New engine from listener can conflict with existing engine.</span>
-<a name="l00137"></a>00137     <span class="comment">//  Alternatively, new engine created by reconnection process can</span>
-<a name="l00138"></a>00138     <span class="comment">//  conflict with engine supplied by listener in the meantime.</span>
-<a name="l00139"></a>00139     <span class="keywordflow">if</span> (has_engine ()) {
-<a name="l00140"></a>00140         log (<span class="stringliteral">&quot;DPID: duplicate peer identity - disconnecting peer&quot;</span>);
-<a name="l00141"></a>00141         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00142"></a>00142     }
-<a name="l00143"></a>00143 
-<a name="l00144"></a>00144     <span class="comment">//  If there have been a connection before, we have to check whether</span>
-<a name="l00145"></a>00145     <span class="comment">//  peer&#39;s identity haven&#39;t changed in the meantime.</span>
-<a name="l00146"></a>00146     <span class="keywordflow">if</span> ((peer_identity_.empty () || peer_identity_ [0] == 0) &amp;&amp;
-<a name="l00147"></a>00147           peer_identity.empty ())
-<a name="l00148"></a>00148         <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00149"></a>00149     <span class="keywordflow">if</span> (peer_identity != peer_identity_) {
-<a name="l00150"></a>00150         log (<span class="stringliteral">&quot;CHID: peer have changed identity - disconnecting peer&quot;</span>);
-<a name="l00151"></a>00151         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00152"></a>00152     }
-<a name="l00153"></a>00153     <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00154"></a>00154 }
-<a name="l00155"></a>00155 
-<a name="l00156"></a><a class="code" href="classzmq_1_1connect__session__t.html#af14676ed02aefd99eaeb1a2edb1bfb6b">00156</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1connect__session__t.html#af14676ed02aefd99eaeb1a2edb1bfb6b">zmq::connect_session_t::xdetached</a> ()
-<a name="l00157"></a>00157 {
-<a name="l00158"></a>00158     <span class="comment">//  Reconnect.</span>
-<a name="l00159"></a>00159     start_connecting (<span class="keyword">true</span>);
-<a name="l00160"></a>00160 
-<a name="l00161"></a>00161     <span class="comment">//  Don&#39;t tear the session down.</span>
-<a name="l00162"></a>00162     <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00163"></a>00163 }
-<a name="l00164"></a>00164 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -285,7 +245,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Jul 12 2011 10:42:58 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jul 18 2011 12:36:36 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

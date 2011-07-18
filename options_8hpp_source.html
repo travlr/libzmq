@@ -130,83 +130,76 @@ function toggleVisibility(linkObj) {
 <a name="l00023"></a>00023 <span class="preprocessor"></span>
 <a name="l00024"></a>00024 <span class="preprocessor">#include &quot;stddef.h&quot;</span>
 <a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="stdint_8hpp.html">stdint.hpp</a>&quot;</span>
-<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="blob_8hpp.html">blob.hpp</a>&quot;</span>
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="keyword">namespace </span>zmq
-<a name="l00029"></a>00029 {
-<a name="l00030"></a>00030 
-<a name="l00031"></a><a class="code" href="structzmq_1_1options__t.html">00031</a>     <span class="keyword">struct </span><a class="code" href="structzmq_1_1options__t.html">options_t</a>
-<a name="l00032"></a>00032     {
-<a name="l00033"></a>00033         <a class="code" href="structzmq_1_1options__t.html#a88ac24e36446d27e0535539ffad62686">options_t</a> ();
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a31ce310554d40a281134800b81ce0803">setsockopt</a> (<span class="keywordtype">int</span> option_, <span class="keyword">const</span> <span class="keywordtype">void</span> *optval_, <span class="keywordtype">size_t</span> optvallen_);
-<a name="l00036"></a>00036         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a0d11957e9f35bfc03ca80d8c2b052a08">getsockopt</a> (<span class="keywordtype">int</span> option_, <span class="keywordtype">void</span> *optval_, <span class="keywordtype">size_t</span> *optvallen_);
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038         <span class="comment">//  High-water marks for message pipes.</span>
-<a name="l00039"></a><a class="code" href="structzmq_1_1options__t.html#a41282f385aa470a689903d31606197e9">00039</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a41282f385aa470a689903d31606197e9">sndhwm</a>;
-<a name="l00040"></a><a class="code" href="structzmq_1_1options__t.html#ab64e67fc828bb2a84d4c05b1f582a9c8">00040</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#ab64e67fc828bb2a84d4c05b1f582a9c8">rcvhwm</a>;
-<a name="l00041"></a>00041 
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="keyword">namespace </span>zmq
+<a name="l00028"></a>00028 {
+<a name="l00029"></a>00029 
+<a name="l00030"></a><a class="code" href="structzmq_1_1options__t.html">00030</a>     <span class="keyword">struct </span><a class="code" href="structzmq_1_1options__t.html">options_t</a>
+<a name="l00031"></a>00031     {
+<a name="l00032"></a>00032         <a class="code" href="structzmq_1_1options__t.html#a88ac24e36446d27e0535539ffad62686">options_t</a> ();
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a31ce310554d40a281134800b81ce0803">setsockopt</a> (<span class="keywordtype">int</span> option_, <span class="keyword">const</span> <span class="keywordtype">void</span> *optval_, <span class="keywordtype">size_t</span> optvallen_);
+<a name="l00035"></a>00035         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a0d11957e9f35bfc03ca80d8c2b052a08">getsockopt</a> (<span class="keywordtype">int</span> option_, <span class="keywordtype">void</span> *optval_, <span class="keywordtype">size_t</span> *optvallen_);
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037         <span class="comment">//  High-water marks for message pipes.</span>
+<a name="l00038"></a><a class="code" href="structzmq_1_1options__t.html#a41282f385aa470a689903d31606197e9">00038</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a41282f385aa470a689903d31606197e9">sndhwm</a>;
+<a name="l00039"></a><a class="code" href="structzmq_1_1options__t.html#ab64e67fc828bb2a84d4c05b1f582a9c8">00039</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#ab64e67fc828bb2a84d4c05b1f582a9c8">rcvhwm</a>;
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041         <span class="comment">//  I/O thread affinity.</span>
 <a name="l00042"></a><a class="code" href="structzmq_1_1options__t.html#afcea2aff5e12c5d5aa93eb6d099564f6">00042</a>         uint64_t <a class="code" href="structzmq_1_1options__t.html#afcea2aff5e12c5d5aa93eb6d099564f6">affinity</a>;
-<a name="l00043"></a><a class="code" href="structzmq_1_1options__t.html#ac14f64051a187fa69b07d4604fd55f2a">00043</a>         blob_t <a class="code" href="structzmq_1_1options__t.html#ac14f64051a187fa69b07d4604fd55f2a">identity</a>;
-<a name="l00044"></a>00044 
-<a name="l00045"></a>00045         <span class="comment">//  Maximum tranfer rate [kb/s]. Default 100kb/s.</span>
-<a name="l00046"></a><a class="code" href="structzmq_1_1options__t.html#ae145acb3d13f959cecbf7bb1e45b58ff">00046</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#ae145acb3d13f959cecbf7bb1e45b58ff">rate</a>;
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048         <span class="comment">//  Reliability time interval [ms]. Default 10 seconds.</span>
-<a name="l00049"></a><a class="code" href="structzmq_1_1options__t.html#a5029576975db404bb61b834d8957c6c3">00049</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a5029576975db404bb61b834d8957c6c3">recovery_ivl</a>;
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051         <span class="comment">// Sets the time-to-live field in every multicast packet sent.</span>
-<a name="l00052"></a><a class="code" href="structzmq_1_1options__t.html#ab18003835690b2071905d2d90e9cfdcf">00052</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#ab18003835690b2071905d2d90e9cfdcf">multicast_hops</a>;
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054         <span class="comment">// SO_SNDBUF and SO_RCVBUF to be passed to underlying transport sockets.</span>
-<a name="l00055"></a><a class="code" href="structzmq_1_1options__t.html#aad8b70994ae7f7bb1772040f55abfb23">00055</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#aad8b70994ae7f7bb1772040f55abfb23">sndbuf</a>;
-<a name="l00056"></a><a class="code" href="structzmq_1_1options__t.html#ac2656cd05eba309c410d50f04f44d5f2">00056</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#ac2656cd05eba309c410d50f04f44d5f2">rcvbuf</a>;
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058         <span class="comment">//  Socket type.</span>
-<a name="l00059"></a><a class="code" href="structzmq_1_1options__t.html#a09b8e840a00a79aa02c1e574f8ad817a">00059</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a09b8e840a00a79aa02c1e574f8ad817a">type</a>;
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061         <span class="comment">//  Linger time, in milliseconds.</span>
-<a name="l00062"></a><a class="code" href="structzmq_1_1options__t.html#a0dede560932dfc3dd1344888c774ab81">00062</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a0dede560932dfc3dd1344888c774ab81">linger</a>;
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064         <span class="comment">//  Minimum interval between attempts to reconnect, in milliseconds.</span>
-<a name="l00065"></a>00065         <span class="comment">//  Default 100ms</span>
-<a name="l00066"></a><a class="code" href="structzmq_1_1options__t.html#a4c4a66d8792d7dcd199357558b96353f">00066</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a4c4a66d8792d7dcd199357558b96353f">reconnect_ivl</a>;
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068         <span class="comment">//  Maximum interval between attempts to reconnect, in milliseconds.</span>
-<a name="l00069"></a>00069         <span class="comment">//  Default 0 (unused)</span>
-<a name="l00070"></a><a class="code" href="structzmq_1_1options__t.html#aba9afbb4d938fa778b9fdf064ec3546e">00070</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#aba9afbb4d938fa778b9fdf064ec3546e">reconnect_ivl_max</a>;
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072         <span class="comment">//  Maximum backlog for pending connections.</span>
-<a name="l00073"></a><a class="code" href="structzmq_1_1options__t.html#a114241e93812f02aabc7ee20f536e93e">00073</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a114241e93812f02aabc7ee20f536e93e">backlog</a>;
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075         <span class="comment">//  Maximal size of message to handle.</span>
-<a name="l00076"></a><a class="code" href="structzmq_1_1options__t.html#ad86b1856fbd893e523566555f3b5543a">00076</a>         int64_t <a class="code" href="structzmq_1_1options__t.html#ad86b1856fbd893e523566555f3b5543a">maxmsgsize</a>;
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078         <span class="comment">// The timeout for send/recv operations for this socket.</span>
-<a name="l00079"></a><a class="code" href="structzmq_1_1options__t.html#aca04959d4b92ef8a9a12ce1365a52788">00079</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#aca04959d4b92ef8a9a12ce1365a52788">rcvtimeo</a>;
-<a name="l00080"></a><a class="code" href="structzmq_1_1options__t.html#a8197da24697e9c7416e697d734f3aa47">00080</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a8197da24697e9c7416e697d734f3aa47">sndtimeo</a>;
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082         <span class="comment">//  If true, when connecting, pipes are created immediately without</span>
-<a name="l00083"></a>00083         <span class="comment">//  waiting for the connection to be established. That way the socket</span>
-<a name="l00084"></a>00084         <span class="comment">//  is not aware of the peer&#39;s identity, however, it is able to send</span>
-<a name="l00085"></a>00085         <span class="comment">//  messages straight away.</span>
-<a name="l00086"></a><a class="code" href="structzmq_1_1options__t.html#a4b9862e97726a033af7105c1bb74e99f">00086</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a4b9862e97726a033af7105c1bb74e99f">immediate_connect</a>;
-<a name="l00087"></a>00087 
-<a name="l00088"></a>00088         <span class="comment">//  If true, session reads all the pending messages from the pipe and</span>
-<a name="l00089"></a>00089         <span class="comment">//  sends them to the network when socket is closed.</span>
-<a name="l00090"></a><a class="code" href="structzmq_1_1options__t.html#a0c01f11d8a2de9e81f890c8e8673132d">00090</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a0c01f11d8a2de9e81f890c8e8673132d">delay_on_close</a>;
-<a name="l00091"></a>00091 
-<a name="l00092"></a>00092         <span class="comment">//  If true, socket reads all the messages from the pipe and delivers</span>
-<a name="l00093"></a>00093         <span class="comment">//  them to the user when the peer terminates.</span>
-<a name="l00094"></a><a class="code" href="structzmq_1_1options__t.html#a8bb26287f7a5a59b3e6c59d106335fbe">00094</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a8bb26287f7a5a59b3e6c59d106335fbe">delay_on_disconnect</a>;
-<a name="l00095"></a>00095 
-<a name="l00096"></a>00096         <span class="comment">//  If 1, (X)SUB socket should filter the messages. If 0, it should not.</span>
-<a name="l00097"></a><a class="code" href="structzmq_1_1options__t.html#a329d2973d83132fedabc52cee56519f4">00097</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a329d2973d83132fedabc52cee56519f4">filter</a>;
-<a name="l00098"></a>00098     };
-<a name="l00099"></a>00099 
-<a name="l00100"></a>00100 }
-<a name="l00101"></a>00101 
-<a name="l00102"></a>00102 <span class="preprocessor">#endif</span>
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044         <span class="comment">//  Maximum tranfer rate [kb/s]. Default 100kb/s.</span>
+<a name="l00045"></a><a class="code" href="structzmq_1_1options__t.html#ae145acb3d13f959cecbf7bb1e45b58ff">00045</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#ae145acb3d13f959cecbf7bb1e45b58ff">rate</a>;
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047         <span class="comment">//  Reliability time interval [ms]. Default 10 seconds.</span>
+<a name="l00048"></a><a class="code" href="structzmq_1_1options__t.html#a5029576975db404bb61b834d8957c6c3">00048</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a5029576975db404bb61b834d8957c6c3">recovery_ivl</a>;
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050         <span class="comment">// Sets the time-to-live field in every multicast packet sent.</span>
+<a name="l00051"></a><a class="code" href="structzmq_1_1options__t.html#ab18003835690b2071905d2d90e9cfdcf">00051</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#ab18003835690b2071905d2d90e9cfdcf">multicast_hops</a>;
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053         <span class="comment">// SO_SNDBUF and SO_RCVBUF to be passed to underlying transport sockets.</span>
+<a name="l00054"></a><a class="code" href="structzmq_1_1options__t.html#aad8b70994ae7f7bb1772040f55abfb23">00054</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#aad8b70994ae7f7bb1772040f55abfb23">sndbuf</a>;
+<a name="l00055"></a><a class="code" href="structzmq_1_1options__t.html#ac2656cd05eba309c410d50f04f44d5f2">00055</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#ac2656cd05eba309c410d50f04f44d5f2">rcvbuf</a>;
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057         <span class="comment">//  Socket type.</span>
+<a name="l00058"></a><a class="code" href="structzmq_1_1options__t.html#a09b8e840a00a79aa02c1e574f8ad817a">00058</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a09b8e840a00a79aa02c1e574f8ad817a">type</a>;
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060         <span class="comment">//  Linger time, in milliseconds.</span>
+<a name="l00061"></a><a class="code" href="structzmq_1_1options__t.html#a0dede560932dfc3dd1344888c774ab81">00061</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a0dede560932dfc3dd1344888c774ab81">linger</a>;
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063         <span class="comment">//  Minimum interval between attempts to reconnect, in milliseconds.</span>
+<a name="l00064"></a>00064         <span class="comment">//  Default 100ms</span>
+<a name="l00065"></a><a class="code" href="structzmq_1_1options__t.html#a4c4a66d8792d7dcd199357558b96353f">00065</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a4c4a66d8792d7dcd199357558b96353f">reconnect_ivl</a>;
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067         <span class="comment">//  Maximum interval between attempts to reconnect, in milliseconds.</span>
+<a name="l00068"></a>00068         <span class="comment">//  Default 0 (unused)</span>
+<a name="l00069"></a><a class="code" href="structzmq_1_1options__t.html#aba9afbb4d938fa778b9fdf064ec3546e">00069</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#aba9afbb4d938fa778b9fdf064ec3546e">reconnect_ivl_max</a>;
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071         <span class="comment">//  Maximum backlog for pending connections.</span>
+<a name="l00072"></a><a class="code" href="structzmq_1_1options__t.html#a114241e93812f02aabc7ee20f536e93e">00072</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a114241e93812f02aabc7ee20f536e93e">backlog</a>;
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074         <span class="comment">//  Maximal size of message to handle.</span>
+<a name="l00075"></a><a class="code" href="structzmq_1_1options__t.html#ad86b1856fbd893e523566555f3b5543a">00075</a>         int64_t <a class="code" href="structzmq_1_1options__t.html#ad86b1856fbd893e523566555f3b5543a">maxmsgsize</a>;
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077         <span class="comment">// The timeout for send/recv operations for this socket.</span>
+<a name="l00078"></a><a class="code" href="structzmq_1_1options__t.html#aca04959d4b92ef8a9a12ce1365a52788">00078</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#aca04959d4b92ef8a9a12ce1365a52788">rcvtimeo</a>;
+<a name="l00079"></a><a class="code" href="structzmq_1_1options__t.html#a8197da24697e9c7416e697d734f3aa47">00079</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a8197da24697e9c7416e697d734f3aa47">sndtimeo</a>;
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081         <span class="comment">//  If true, session reads all the pending messages from the pipe and</span>
+<a name="l00082"></a>00082         <span class="comment">//  sends them to the network when socket is closed.</span>
+<a name="l00083"></a><a class="code" href="structzmq_1_1options__t.html#a0c01f11d8a2de9e81f890c8e8673132d">00083</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a0c01f11d8a2de9e81f890c8e8673132d">delay_on_close</a>;
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085         <span class="comment">//  If true, socket reads all the messages from the pipe and delivers</span>
+<a name="l00086"></a>00086         <span class="comment">//  them to the user when the peer terminates.</span>
+<a name="l00087"></a><a class="code" href="structzmq_1_1options__t.html#a8bb26287f7a5a59b3e6c59d106335fbe">00087</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a8bb26287f7a5a59b3e6c59d106335fbe">delay_on_disconnect</a>;
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089         <span class="comment">//  If 1, (X)SUB socket should filter the messages. If 0, it should not.</span>
+<a name="l00090"></a><a class="code" href="structzmq_1_1options__t.html#a329d2973d83132fedabc52cee56519f4">00090</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a329d2973d83132fedabc52cee56519f4">filter</a>;
+<a name="l00091"></a>00091     };
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093 }
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -223,7 +216,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Jul 12 2011 10:42:58 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jul 18 2011 12:36:37 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -160,7 +160,7 @@ function toggleVisibility(linkObj) {
 <a name="l00053"></a>00053 <span class="comment">/******************************************************************************/</span>
 <a name="l00054"></a>00054 
 <a name="l00055"></a>00055 <span class="comment">/*  Version macros for compile-time API version detection                     */</span>
-<a name="l00056"></a><a class="code" href="zmq_8h.html#a5c33c7c53c7fb57ae751a9679327863c">00056</a> <span class="preprocessor">#define ZMQ_VERSION_MAJOR 3</span>
+<a name="l00056"></a><a class="code" href="zmq_8h.html#a5c33c7c53c7fb57ae751a9679327863c">00056</a> <span class="preprocessor">#define ZMQ_VERSION_MAJOR 4</span>
 <a name="l00057"></a><a class="code" href="zmq_8h.html#ac91c8462162effac637e2e3e1c1605f2">00057</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_VERSION_MINOR 0</span>
 <a name="l00058"></a><a class="code" href="zmq_8h.html#a5b6dd7eb59a89bf918f2fe33d8368418">00058</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_VERSION_PATCH 0</span>
 <a name="l00059"></a>00059 <span class="preprocessor"></span>
@@ -265,38 +265,38 @@ function toggleVisibility(linkObj) {
 <a name="l00158"></a><a class="code" href="zmq_8h.html#aae68598254ac93c3ca95d996d66b53fa">00158</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_PUSH 8</span>
 <a name="l00159"></a><a class="code" href="zmq_8h.html#a78a83eb0c7396e987626b6e1b99e0e6c">00159</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_XPUB 9</span>
 <a name="l00160"></a><a class="code" href="zmq_8h.html#a9922722259aed3ec260c84ad3cc2ac23">00160</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_XSUB 10</span>
-<a name="l00161"></a><a class="code" href="zmq_8h.html#a0a10a1152014046c50f34325a819ef77">00161</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_ROUTER 11</span>
-<a name="l00162"></a><a class="code" href="zmq_8h.html#ad8eeeebfa2381e1dd87387241d948614">00162</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_DEALER 12</span>
-<a name="l00163"></a>00163 <span class="preprocessor"></span>
-<a name="l00164"></a>00164 <span class="comment">/*  Socket options.                                                           */</span>
-<a name="l00165"></a><a class="code" href="zmq_8h.html#acac0cba274a1e525c6898128aba6efd3">00165</a> <span class="preprocessor">#define ZMQ_AFFINITY 4</span>
-<a name="l00166"></a><a class="code" href="zmq_8h.html#a22f1befa4e2bda1f32efc5e165c0d44c">00166</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_IDENTITY 5</span>
-<a name="l00167"></a><a class="code" href="zmq_8h.html#af9e304eb1481a4458b5c63c342d57b23">00167</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_SUBSCRIBE 6</span>
-<a name="l00168"></a><a class="code" href="zmq_8h.html#aa25fa5ae6dfec5b162473bcf1c8abaf7">00168</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_UNSUBSCRIBE 7</span>
-<a name="l00169"></a><a class="code" href="zmq_8h.html#a17f08ea2b0b2c7c637c082c67f929988">00169</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RATE 8</span>
-<a name="l00170"></a><a class="code" href="zmq_8h.html#a9a0ce4d3c25f6e7b13a24abca084b547">00170</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RECOVERY_IVL 9</span>
-<a name="l00171"></a><a class="code" href="zmq_8h.html#a7f298a93275ab4697a69de2009993488">00171</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_SNDBUF 11</span>
-<a name="l00172"></a><a class="code" href="zmq_8h.html#a437edcff5d378e9562eab235400ecb43">00172</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RCVBUF 12</span>
-<a name="l00173"></a><a class="code" href="zmq_8h.html#aab168348824c16200f7299483f6cce97">00173</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RCVMORE 13</span>
-<a name="l00174"></a><a class="code" href="zmq_8h.html#aa334818e0dcd61b81b0064277aa856cf">00174</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_FD 14</span>
-<a name="l00175"></a><a class="code" href="zmq_8h.html#a8c94548552b49d653a4882d723f3b5f2">00175</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_EVENTS 15</span>
-<a name="l00176"></a><a class="code" href="zmq_8h.html#ae43ff9d067909855ebbbad19c3fe36c2">00176</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_TYPE 16</span>
-<a name="l00177"></a><a class="code" href="zmq_8h.html#a4f19fe8f054ca728f6e73fcb0c3dd973">00177</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_LINGER 17</span>
-<a name="l00178"></a><a class="code" href="zmq_8h.html#a96999d707609e36ef85415638fafa146">00178</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RECONNECT_IVL 18</span>
-<a name="l00179"></a><a class="code" href="zmq_8h.html#ad6373596f7bd6fa5d82b05964a9557b1">00179</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_BACKLOG 19</span>
-<a name="l00180"></a><a class="code" href="zmq_8h.html#a16e88e3edaa0d4df2fac1f5a2e215aa3">00180</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RECONNECT_IVL_MAX 21</span>
-<a name="l00181"></a><a class="code" href="zmq_8h.html#a9d6801ea0fec60d230fd6aa06e08e5e4">00181</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_MAXMSGSIZE 22</span>
-<a name="l00182"></a><a class="code" href="zmq_8h.html#a7b5bb1c600aeb444afd8c2204e25f8c7">00182</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_SNDHWM 23</span>
-<a name="l00183"></a><a class="code" href="zmq_8h.html#aa0871c4cda701dadad1b3c0e22ca9677">00183</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RCVHWM 24</span>
-<a name="l00184"></a><a class="code" href="zmq_8h.html#a09fdb2650edf0d062b071f0138879ddb">00184</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_MULTICAST_HOPS 25</span>
-<a name="l00185"></a><a class="code" href="zmq_8h.html#a3214126ec0a83f867c59cbfd579ab4c6">00185</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RCVTIMEO 27</span>
-<a name="l00186"></a><a class="code" href="zmq_8h.html#aa20f8335b496a526edf71744fff41e86">00186</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_SNDTIMEO 28</span>
-<a name="l00187"></a><a class="code" href="zmq_8h.html#a4dc0d68934b3ba33552024a5d080eb7a">00187</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RCVLABEL 29</span>
-<a name="l00188"></a>00188 <span class="preprocessor"></span>    
-<a name="l00189"></a>00189 <span class="comment">/*  Send/recv options.                                                        */</span>
-<a name="l00190"></a><a class="code" href="zmq_8h.html#a46faae22df1e63543948385694b144c9">00190</a> <span class="preprocessor">#define ZMQ_DONTWAIT 1</span>
-<a name="l00191"></a><a class="code" href="zmq_8h.html#a0e130fcfafb931a05616a369caa2af2f">00191</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_SNDMORE 2</span>
-<a name="l00192"></a><a class="code" href="zmq_8h.html#adbda712b684c6b3b2f5ff009eaab7e16">00192</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_SNDLABEL 4</span>
+<a name="l00161"></a><a class="code" href="zmq_8h.html#ab7ef9aa141cfc4ddca424bd637322771">00161</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_GENERIC 13</span>
+<a name="l00162"></a>00162 <span class="preprocessor"></span>
+<a name="l00163"></a>00163 <span class="comment">/*  Socket options.                                                           */</span>
+<a name="l00164"></a><a class="code" href="zmq_8h.html#acac0cba274a1e525c6898128aba6efd3">00164</a> <span class="preprocessor">#define ZMQ_AFFINITY 4</span>
+<a name="l00165"></a><a class="code" href="zmq_8h.html#af9e304eb1481a4458b5c63c342d57b23">00165</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_SUBSCRIBE 6</span>
+<a name="l00166"></a><a class="code" href="zmq_8h.html#aa25fa5ae6dfec5b162473bcf1c8abaf7">00166</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_UNSUBSCRIBE 7</span>
+<a name="l00167"></a><a class="code" href="zmq_8h.html#a17f08ea2b0b2c7c637c082c67f929988">00167</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RATE 8</span>
+<a name="l00168"></a><a class="code" href="zmq_8h.html#a9a0ce4d3c25f6e7b13a24abca084b547">00168</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RECOVERY_IVL 9</span>
+<a name="l00169"></a><a class="code" href="zmq_8h.html#a7f298a93275ab4697a69de2009993488">00169</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_SNDBUF 11</span>
+<a name="l00170"></a><a class="code" href="zmq_8h.html#a437edcff5d378e9562eab235400ecb43">00170</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RCVBUF 12</span>
+<a name="l00171"></a><a class="code" href="zmq_8h.html#aab168348824c16200f7299483f6cce97">00171</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RCVMORE 13</span>
+<a name="l00172"></a><a class="code" href="zmq_8h.html#aa334818e0dcd61b81b0064277aa856cf">00172</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_FD 14</span>
+<a name="l00173"></a><a class="code" href="zmq_8h.html#a8c94548552b49d653a4882d723f3b5f2">00173</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_EVENTS 15</span>
+<a name="l00174"></a><a class="code" href="zmq_8h.html#ae43ff9d067909855ebbbad19c3fe36c2">00174</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_TYPE 16</span>
+<a name="l00175"></a><a class="code" href="zmq_8h.html#a4f19fe8f054ca728f6e73fcb0c3dd973">00175</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_LINGER 17</span>
+<a name="l00176"></a><a class="code" href="zmq_8h.html#a96999d707609e36ef85415638fafa146">00176</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RECONNECT_IVL 18</span>
+<a name="l00177"></a><a class="code" href="zmq_8h.html#ad6373596f7bd6fa5d82b05964a9557b1">00177</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_BACKLOG 19</span>
+<a name="l00178"></a><a class="code" href="zmq_8h.html#a16e88e3edaa0d4df2fac1f5a2e215aa3">00178</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RECONNECT_IVL_MAX 21</span>
+<a name="l00179"></a><a class="code" href="zmq_8h.html#a9d6801ea0fec60d230fd6aa06e08e5e4">00179</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_MAXMSGSIZE 22</span>
+<a name="l00180"></a><a class="code" href="zmq_8h.html#a7b5bb1c600aeb444afd8c2204e25f8c7">00180</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_SNDHWM 23</span>
+<a name="l00181"></a><a class="code" href="zmq_8h.html#aa0871c4cda701dadad1b3c0e22ca9677">00181</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RCVHWM 24</span>
+<a name="l00182"></a><a class="code" href="zmq_8h.html#a09fdb2650edf0d062b071f0138879ddb">00182</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_MULTICAST_HOPS 25</span>
+<a name="l00183"></a><a class="code" href="zmq_8h.html#a3214126ec0a83f867c59cbfd579ab4c6">00183</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RCVTIMEO 27</span>
+<a name="l00184"></a><a class="code" href="zmq_8h.html#aa20f8335b496a526edf71744fff41e86">00184</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_SNDTIMEO 28</span>
+<a name="l00185"></a><a class="code" href="zmq_8h.html#a4dc0d68934b3ba33552024a5d080eb7a">00185</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RCVLABEL 29</span>
+<a name="l00186"></a><a class="code" href="zmq_8h.html#aef795a79cf25fbebb537b6c10ae31e3e">00186</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_RCVCMD 30</span>
+<a name="l00187"></a>00187 <span class="preprocessor"></span>    
+<a name="l00188"></a>00188 <span class="comment">/*  Send/recv options.                                                        */</span>
+<a name="l00189"></a><a class="code" href="zmq_8h.html#a46faae22df1e63543948385694b144c9">00189</a> <span class="preprocessor">#define ZMQ_DONTWAIT 1</span>
+<a name="l00190"></a><a class="code" href="zmq_8h.html#a0e130fcfafb931a05616a369caa2af2f">00190</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_SNDMORE 2</span>
+<a name="l00191"></a><a class="code" href="zmq_8h.html#adbda712b684c6b3b2f5ff009eaab7e16">00191</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_SNDLABEL 4</span>
+<a name="l00192"></a><a class="code" href="zmq_8h.html#a9963b6acb3194a15eabae6318a1ad905">00192</a> <span class="preprocessor"></span><span class="preprocessor">#define ZMQ_SNDCMD 8</span>
 <a name="l00193"></a>00193 <span class="preprocessor"></span>
 <a name="l00194"></a>00194 <a class="code" href="zmq_8h.html#a96e2d63bdf38c3cc39b1cfce6ec8bcb3">ZMQ_EXPORT</a> <span class="keywordtype">void</span> *<a class="code" href="zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd">zmq_socket</a> (<span class="keywordtype">void</span> *context, <span class="keywordtype">int</span> type);
 <a name="l00195"></a>00195 <a class="code" href="zmq_8h.html#a96e2d63bdf38c3cc39b1cfce6ec8bcb3">ZMQ_EXPORT</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#a7f3288b9a1241ae2d2cc2a41324a7dd5">zmq_close</a> (<span class="keywordtype">void</span> *s);
@@ -357,7 +357,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Jul 12 2011 10:42:57 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jul 18 2011 12:36:36 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

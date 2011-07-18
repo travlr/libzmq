@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d" title="zmq::msg_t::close" alt="" coords="203,5,333,35"/>
-<area shape="rect" id="node5" href="$classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e" title="zmq::msg_t::init" alt="" coords="403,84,517,113"/>
-<area shape="rect" id="node7" href="$classzmq_1_1msg__t.html#a2d40a80f7828b6ab4f63a1d2afa2af82" title="zmq::msg_t::init_size" alt="" coords="195,109,341,139"/>
-<area shape="rect" id="node9" href="$classzmq_1_1msg__t.html#a39318e9417f38b7f415b85ae591ed606" title="zmq::msg_t::move" alt="" coords="203,163,333,192"/>
-<area shape="rect" id="node14" href="$classzmq_1_1msg__t.html#aea7736e7955f2125dd6298baee851ca7" title="zmq::msg_t::set_flags" alt="" coords="192,216,344,245"/>
-<area shape="rect" id="node11" href="$classzmq_1_1msg__t.html#a214637bbec842b66265d7cde0effe6a9" title="zmq::msg_t::check" alt="" coords="393,163,527,192"/>
-</map>
