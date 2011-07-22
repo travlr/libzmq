@@ -165,7 +165,7 @@ function toggleVisibility(linkObj) {
 <a name="l00058"></a>00058 <span class="preprocessor">#include &quot;<a class="code" href="xrep_8hpp.html">xrep.hpp</a>&quot;</span>
 <a name="l00059"></a>00059 <span class="preprocessor">#include &quot;<a class="code" href="xpub_8hpp.html">xpub.hpp</a>&quot;</span>
 <a name="l00060"></a>00060 <span class="preprocessor">#include &quot;<a class="code" href="xsub_8hpp.html">xsub.hpp</a>&quot;</span>
-<a name="l00061"></a>00061 <span class="preprocessor">#include &quot;<a class="code" href="generic_8hpp.html">generic.hpp</a>&quot;</span>
+<a name="l00061"></a>00061 <span class="preprocessor">#include &quot;<a class="code" href="router_8hpp.html">router.hpp</a>&quot;</span>
 <a name="l00062"></a>00062 
 <a name="l00063"></a><a class="code" href="classzmq_1_1socket__base__t.html#aa6c17cea86eaee14dbbc7e4d65099630">00063</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1socket__base__t.html#aa6c17cea86eaee14dbbc7e4d65099630">zmq::socket_base_t::check_tag</a> ()
 <a name="l00064"></a>00064 {
@@ -211,8 +211,8 @@ function toggleVisibility(linkObj) {
 <a name="l00104"></a>00104     <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a9922722259aed3ec260c84ad3cc2ac23">ZMQ_XSUB</a>:
 <a name="l00105"></a>00105         s = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1xsub__t.html">xsub_t</a> (parent_, tid_);
 <a name="l00106"></a>00106         <span class="keywordflow">break</span>;
-<a name="l00107"></a>00107     <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#ab7ef9aa141cfc4ddca424bd637322771">ZMQ_GENERIC</a>:
-<a name="l00108"></a>00108         s = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1generic__t.html">generic_t</a> (parent_, tid_);
+<a name="l00107"></a>00107     <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a0a10a1152014046c50f34325a819ef77">ZMQ_ROUTER</a>:
+<a name="l00108"></a>00108         s = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1router__t.html">router_t</a> (parent_, tid_);
 <a name="l00109"></a>00109         <span class="keywordflow">break</span>;
 <a name="l00110"></a>00110     <span class="keywordflow">default</span>:
 <a name="l00111"></a>00111         errno = EINVAL;
@@ -992,7 +992,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 21 2011 07:07:56 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Jul 22 2011 06:37:29 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -1,7 +1,7 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$classzmq_1_1socket__base__t.html#a9e24fec8721ca1c6a6b8a666c459b922" title="zmq::socket_base_t::send" alt="" coords="205,5,381,35"/>
 <area shape="rect" id="node5" href="$classzmq_1_1xrep__t.html#a18184c945754ab289027c8115d6654af" title="zmq::xrep_t::xrecv" alt="" coords="228,59,359,88"/>
-<area shape="rect" id="node9" href="$classzmq_1_1generic__t.html#a0fbdf0aa99c06a26b87bd191098c8cb6" title="zmq::generic_t::xrecv" alt="" coords="220,112,367,141"/>
+<area shape="rect" id="node9" href="$classzmq_1_1router__t.html#aa5288a14c157f115471413ce788ba69a" title="zmq::router_t::xrecv" alt="" coords="224,112,363,141"/>
 <area shape="rect" id="node11" href="$classzmq_1_1req__t.html#a07302440eb4bf41efc3d8958f5f52179" title="zmq::req_t::xsend" alt="" coords="231,165,356,195"/>
 <area shape="rect" id="node7" href="$classzmq_1_1rep__t.html#a509d5fb31ebab99fc0e63c25412a8f1a" title="zmq::rep_t::xrecv" alt="" coords="431,59,553,88"/>
 </map>

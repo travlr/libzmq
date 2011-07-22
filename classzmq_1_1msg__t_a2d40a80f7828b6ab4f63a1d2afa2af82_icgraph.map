@@ -3,7 +3,7 @@
 <area shape="rect" id="node5" href="$classzmq_1_1xsub__t.html#a5aaa62d2eb7ef869a984f9b477f56b13" title="zmq::xsub_t::send_subscription" alt="" coords="201,59,407,88"/>
 <area shape="rect" id="node7" href="$classzmq_1_1xrep__t.html#a18184c945754ab289027c8115d6654af" title="zmq::xrep_t::xrecv" alt="" coords="239,112,369,141"/>
 <area shape="rect" id="node11" href="$classzmq_1_1xpub__t.html#ad65cc475bc22e7bfe9b0c5084fdf83dc" title="zmq::xpub_t::xrecv" alt="" coords="237,165,371,195"/>
-<area shape="rect" id="node13" href="$classzmq_1_1generic__t.html#a0fbdf0aa99c06a26b87bd191098c8cb6" title="zmq::generic_t::xrecv" alt="" coords="231,219,377,248"/>
+<area shape="rect" id="node13" href="$classzmq_1_1router__t.html#aa5288a14c157f115471413ce788ba69a" title="zmq::router_t::xrecv" alt="" coords="235,219,373,248"/>
 <area shape="rect" id="node15" href="$classzmq_1_1req__t.html#a07302440eb4bf41efc3d8958f5f52179" title="zmq::req_t::xsend" alt="" coords="241,272,367,301"/>
 <area shape="rect" id="node17" href="$classzmq_1_1sub__t.html#ab582f8ea3a8a1a5f84e60b65745514bf" title="zmq::sub_t::xsetsockopt" alt="" coords="221,325,387,355"/>
 <area shape="rect" id="node9" href="$classzmq_1_1rep__t.html#a509d5fb31ebab99fc0e63c25412a8f1a" title="zmq::rep_t::xrecv" alt="" coords="457,112,580,141"/>

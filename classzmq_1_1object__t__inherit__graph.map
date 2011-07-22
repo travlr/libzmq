@@ -9,10 +9,10 @@
 <area shape="rect" id="node41" href="$classzmq_1_1zmq__listener__t.html" title="zmq::zmq_listener_t" alt="" coords="331,379,469,408"/>
 <area shape="rect" id="node9" href="$classzmq_1_1connect__session__t.html" title="zmq::connect_session_t" alt="" coords="528,5,691,35"/>
 <area shape="rect" id="node11" href="$classzmq_1_1transient__session__t.html" title="zmq::transient_session_t" alt="" coords="525,59,693,88"/>
-<area shape="rect" id="node15" href="$classzmq_1_1generic__t.html" title="zmq::generic_t" alt="" coords="556,112,663,141"/>
-<area shape="rect" id="node17" href="$classzmq_1_1pair__t.html" title="zmq::pair_t" alt="" coords="567,165,652,195"/>
-<area shape="rect" id="node19" href="$classzmq_1_1pull__t.html" title="zmq::pull_t" alt="" coords="567,219,652,248"/>
-<area shape="rect" id="node21" href="$classzmq_1_1push__t.html" title="zmq::push_t" alt="" coords="563,272,656,301"/>
+<area shape="rect" id="node15" href="$classzmq_1_1pair__t.html" title="zmq::pair_t" alt="" coords="567,112,652,141"/>
+<area shape="rect" id="node17" href="$classzmq_1_1pull__t.html" title="zmq::pull_t" alt="" coords="567,165,652,195"/>
+<area shape="rect" id="node19" href="$classzmq_1_1push__t.html" title="zmq::push_t" alt="" coords="563,219,656,248"/>
+<area shape="rect" id="node21" href="$classzmq_1_1router__t.html" title="zmq::router_t" alt="" coords="560,272,659,301"/>
 <area shape="rect" id="node23" href="$classzmq_1_1xpub__t.html" title="zmq::xpub_t" alt="" coords="563,325,656,355"/>
 <area shape="rect" id="node27" href="$classzmq_1_1xrep__t.html" title="zmq::xrep_t" alt="" coords="564,379,655,408"/>
 <area shape="rect" id="node31" href="$classzmq_1_1xreq__t.html" title="zmq::xreq_t" alt="" coords="564,432,655,461"/>

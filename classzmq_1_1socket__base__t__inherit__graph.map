@@ -1,20 +1,20 @@
 <map id="G" name="G">
-<area shape="rect" id="node15" href="$classzmq_1_1generic__t.html" title="zmq::generic_t" alt="" coords="625,5,732,35"/>
-<area shape="rect" id="node17" href="$classzmq_1_1pair__t.html" title="zmq::pair_t" alt="" coords="636,59,721,88"/>
-<area shape="rect" id="node19" href="$classzmq_1_1pull__t.html" title="zmq::pull_t" alt="" coords="636,112,721,141"/>
-<area shape="rect" id="node21" href="$classzmq_1_1push__t.html" title="zmq::push_t" alt="" coords="632,165,725,195"/>
-<area shape="rect" id="node23" href="$classzmq_1_1xpub__t.html" title="zmq::xpub_t" alt="" coords="632,219,725,248"/>
-<area shape="rect" id="node27" href="$classzmq_1_1xrep__t.html" title="zmq::xrep_t" alt="" coords="633,272,724,301"/>
-<area shape="rect" id="node31" href="$classzmq_1_1xreq__t.html" title="zmq::xreq_t" alt="" coords="633,325,724,355"/>
-<area shape="rect" id="node35" href="$classzmq_1_1xsub__t.html" title="zmq::xsub_t" alt="" coords="632,379,725,408"/>
+<area shape="rect" id="node15" href="$classzmq_1_1pair__t.html" title="zmq::pair_t" alt="" coords="631,5,716,35"/>
+<area shape="rect" id="node17" href="$classzmq_1_1pull__t.html" title="zmq::pull_t" alt="" coords="631,59,716,88"/>
+<area shape="rect" id="node19" href="$classzmq_1_1push__t.html" title="zmq::push_t" alt="" coords="627,112,720,141"/>
+<area shape="rect" id="node21" href="$classzmq_1_1router__t.html" title="zmq::router_t" alt="" coords="624,165,723,195"/>
+<area shape="rect" id="node23" href="$classzmq_1_1xpub__t.html" title="zmq::xpub_t" alt="" coords="627,219,720,248"/>
+<area shape="rect" id="node27" href="$classzmq_1_1xrep__t.html" title="zmq::xrep_t" alt="" coords="628,272,719,301"/>
+<area shape="rect" id="node31" href="$classzmq_1_1xreq__t.html" title="zmq::xreq_t" alt="" coords="628,325,719,355"/>
+<area shape="rect" id="node35" href="$classzmq_1_1xsub__t.html" title="zmq::xsub_t" alt="" coords="627,379,720,408"/>
 <area shape="rect" id="node2" href="$classzmq_1_1own__t.html" title="zmq::own_t" alt="" coords="264,97,355,127"/>
 <area shape="rect" id="node4" href="$classzmq_1_1object__t.html" title="zmq::object_t" alt="" coords="37,97,139,127"/>
 <area shape="rect" id="node6" href="$classzmq_1_1array__item__t.html" title="zmq::array_item_t\&lt;\&gt;" alt="" coords="239,151,380,180"/>
 <area shape="rect" id="node8" href="$classzmq_1_1array__item__t.html" title="zmq::array_item_t\&lt; ID \&gt;" alt="" coords="5,151,171,180"/>
 <area shape="rect" id="node10" href="$structzmq_1_1i__poll__events.html" title="zmq::i_poll_events" alt="" coords="244,204,375,233"/>
 <area shape="rect" id="node12" href="$structzmq_1_1i__pipe__events.html" title="zmq::i_pipe_events" alt="" coords="243,257,376,287"/>
-<area shape="rect" id="node25" href="$classzmq_1_1pub__t.html" title="zmq::pub_t" alt="" coords="785,219,871,248"/>
-<area shape="rect" id="node29" href="$classzmq_1_1rep__t.html" title="zmq::rep_t" alt="" coords="787,272,869,301"/>
-<area shape="rect" id="node33" href="$classzmq_1_1req__t.html" title="zmq::req_t" alt="" coords="787,325,869,355"/>
-<area shape="rect" id="node37" href="$classzmq_1_1sub__t.html" title="zmq::sub_t" alt="" coords="785,379,871,408"/>
+<area shape="rect" id="node25" href="$classzmq_1_1pub__t.html" title="zmq::pub_t" alt="" coords="775,219,860,248"/>
+<area shape="rect" id="node29" href="$classzmq_1_1rep__t.html" title="zmq::rep_t" alt="" coords="776,272,859,301"/>
+<area shape="rect" id="node33" href="$classzmq_1_1req__t.html" title="zmq::req_t" alt="" coords="776,325,859,355"/>
+<area shape="rect" id="node37" href="$classzmq_1_1sub__t.html" title="zmq::sub_t" alt="" coords="775,379,860,408"/>
 </map>

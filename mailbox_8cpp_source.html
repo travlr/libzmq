@@ -173,7 +173,7 @@ function toggleVisibility(linkObj) {
 <a name="l00066"></a>00066 
 <a name="l00067"></a>00067     <span class="comment">//  Wait for signal from the command sender.</span>
 <a name="l00068"></a>00068     <span class="keywordtype">int</span> rc = signaler.wait (timeout_);
-<a name="l00069"></a>00069     <span class="keywordflow">if</span> (rc != 0 &amp;&amp; errno == EAGAIN)
+<a name="l00069"></a>00069     <span class="keywordflow">if</span> (rc != 0 &amp;&amp; (errno == EAGAIN || errno == EINTR))
 <a name="l00070"></a>00070         <span class="keywordflow">return</span> -1;
 <a name="l00071"></a>00071 
 <a name="l00072"></a>00072     <span class="comment">//  We&#39;ve got the signal. Now we can switch into active state.</span>
@@ -202,7 +202,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Thu Jul 21 2011 07:07:55 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Jul 22 2011 06:37:29 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
