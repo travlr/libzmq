@@ -128,9 +128,9 @@ function toggleVisibility(linkObj) {
 <a name="l00021"></a>00021 <span class="preprocessor">#ifndef __ZMQ_EPOLL_HPP_INCLUDED__</span>
 <a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define __ZMQ_EPOLL_HPP_INCLUDED__</span>
 <a name="l00023"></a>00023 <span class="preprocessor"></span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;platform.hpp&quot;</span>
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="preprocessor">#ifdef ZMQ_HAVE_LINUX</span>
+<a name="l00024"></a>00024 <span class="comment">//  poller.hpp decides which polling mechanism to use.</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="poller_8hpp.html">poller.hpp</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#if defined ZMQ_USE_EPOLL</span>
 <a name="l00027"></a>00027 <span class="preprocessor"></span>
 <a name="l00028"></a>00028 <span class="preprocessor">#include &lt;vector&gt;</span>
 <a name="l00029"></a>00029 <span class="preprocessor">#include &lt;sys/epoll.h&gt;</span>
@@ -196,11 +196,13 @@ function toggleVisibility(linkObj) {
 <a name="l00089"></a>00089         <span class="keyword">const</span> epoll_t &amp;operator = (<span class="keyword">const</span> epoll_t&amp;);
 <a name="l00090"></a>00090     };
 <a name="l00091"></a>00091 
-<a name="l00092"></a>00092 }
+<a name="l00092"></a>00092     <span class="keyword">typedef</span> epoll_t poller_t;
 <a name="l00093"></a>00093 
-<a name="l00094"></a>00094 <span class="preprocessor">#endif</span>
-<a name="l00095"></a>00095 <span class="preprocessor"></span>
+<a name="l00094"></a>00094 }
+<a name="l00095"></a>00095 
 <a name="l00096"></a>00096 <span class="preprocessor">#endif</span>
+<a name="l00097"></a>00097 <span class="preprocessor"></span>
+<a name="l00098"></a>00098 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -217,7 +219,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Jul 22 2011 06:37:29 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jul 24 2011 12:27:19 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

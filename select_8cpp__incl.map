@@ -1,15 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node11" href="$select_8hpp.html" title="select.hpp" alt="" coords="423,83,505,112"/>
-<area shape="rect" id="node45" href="$err_8hpp.html" title="err.hpp" alt="" coords="579,392,640,421"/>
-<area shape="rect" id="node67" href="$config_8hpp.html" title="config.hpp" alt="" coords="967,83,1049,112"/>
-<area shape="rect" id="node69" href="$i__poll__events_8hpp.html" title="i_poll_events.hpp" alt="" coords="1073,83,1196,112"/>
-<area shape="rect" id="node19" href="$fd_8hpp.html" title="fd.hpp" alt="" coords="68,237,127,267"/>
-<area shape="rect" id="node22" href="$thread_8hpp.html" title="thread.hpp" alt="" coords="504,315,587,344"/>
-<area shape="rect" id="node27" href="$poller__base_8hpp.html" title="poller_base.hpp" alt="" coords="327,160,439,189"/>
-<area shape="rect" id="node31" href="$clock_8hpp.html" title="clock.hpp" alt="" coords="201,237,279,267"/>
-<area shape="rect" id="node38" href="$atomic__counter_8hpp.html" title="atomic_counter.hpp" alt="" coords="372,237,508,267"/>
-<area shape="rect" id="node33" href="$stdint_8hpp.html" title="stdint.hpp" alt="" coords="212,315,289,344"/>
-<area shape="rect" id="node42" href="$mutex_8hpp.html" title="mutex.hpp" alt="" coords="397,315,480,344"/>
-<area shape="rect" id="node47" href="$zmq_8h.html" title="../include/zmq.h" alt="" coords="716,469,831,499"/>
-<area shape="rect" id="node61" href="$likely_8hpp.html" title="likely.hpp" alt="" coords="476,469,553,499"/>
+<area shape="rect" id="node3" href="$select_8hpp.html" title="select.hpp" alt="" coords="16,83,99,112"/>
+<area shape="rect" id="node5" href="$poller_8hpp.html" title="poller.hpp" alt="" coords="19,160,96,189"/>
 </map>

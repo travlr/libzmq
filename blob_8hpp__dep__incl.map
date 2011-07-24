@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$connect__session_8hpp.html" title="src/connect_session.hpp" alt="" coords="104,83,269,112"/>
-<area shape="rect" id="node9" href="$xpub_8hpp.html" title="src/xpub.hpp" alt="" coords="293,83,389,112"/>
-<area shape="rect" id="node5" href="$connect__session_8cpp.html" title="src/connect_session.cpp" alt="" coords="5,160,171,189"/>
-<area shape="rect" id="node7" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="163,237,304,267"/>
-<area shape="rect" id="node11" href="$pub_8hpp.html" title="src/pub.hpp" alt="" coords="296,160,387,189"/>
-<area shape="rect" id="node17" href="$xpub_8cpp.html" title="src/xpub.cpp" alt="" coords="411,160,507,189"/>
-<area shape="rect" id="node13" href="$pub_8cpp.html" title="src/pub.cpp" alt="" coords="328,237,419,267"/>
-</map>

@@ -1,13 +1,12 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$ypipe_8hpp.html" title="src/ypipe.hpp" alt="" coords="2391,83,2490,112"/>
-<area shape="rect" id="node5" href="$pipe_8hpp.html" title="src/pipe.hpp" alt="" coords="1038,160,1131,189"/>
-<area shape="rect" id="node116" href="$mailbox_8hpp.html" title="src/mailbox.hpp" alt="" coords="2478,160,2592,189"/>
-<area shape="rect" id="node118" href="$ctx_8hpp.html" title="src/ctx.hpp" alt="" coords="2492,237,2578,267"/>
-<area shape="rect" id="node7" href="$session_8hpp.html" title="src/session.hpp" alt="" coords="1730,237,1844,267"/>
+<area shape="rect" id="node3" href="$ypipe_8hpp.html" title="src/ypipe.hpp" alt="" coords="1730,83,1828,112"/>
+<area shape="rect" id="node5" href="$pipe_8hpp.html" title="src/pipe.hpp" alt="" coords="1036,160,1130,189"/>
+<area shape="rect" id="node116" href="$mailbox_8hpp.html" title="src/mailbox.hpp" alt="" coords="2418,160,2532,189"/>
+<area shape="rect" id="node7" href="$session_8hpp.html" title="src/session.hpp" alt="" coords="1728,237,1843,267"/>
 <area shape="rect" id="node13" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="1095,469,1236,499"/>
 <area shape="rect" id="node15" href="$object_8cpp.html" title="src/object.cpp" alt="" coords="2364,315,2468,344"/>
 <area shape="rect" id="node17" href="$session_8cpp.html" title="src/session.cpp" alt="" coords="1546,315,1660,344"/>
-<area shape="rect" id="node25" href="$socket__base_8hpp.html" title="src/socket_base.hpp" alt="" coords="1514,237,1655,267"/>
+<area shape="rect" id="node25" href="$socket__base_8hpp.html" title="src/socket_base.hpp" alt="" coords="1512,237,1654,267"/>
 <area shape="rect" id="node27" href="$ctx_8cpp.html" title="src/ctx.cpp" alt="" coords="2492,315,2578,344"/>
 <area shape="rect" id="node32" href="$pair_8cpp.html" title="src/pair.cpp" alt="" coords="1424,392,1515,421"/>
 <area shape="rect" id="node41" href="$xpub_8cpp.html" title="src/xpub.cpp" alt="" coords="918,392,1014,421"/>
@@ -19,10 +18,10 @@
 <area shape="rect" id="node81" href="$dist_8cpp.html" title="src/dist.cpp" alt="" coords="127,315,218,344"/>
 <area shape="rect" id="node86" href="$fq_8hpp.html" title="src/fq.hpp" alt="" coords="690,237,770,267"/>
 <area shape="rect" id="node88" href="$fq_8cpp.html" title="src/fq.cpp" alt="" coords="242,315,322,344"/>
-<area shape="rect" id="node96" href="$lb_8hpp.html" title="src/lb.hpp" alt="" coords="1122,237,1199,267"/>
+<area shape="rect" id="node96" href="$lb_8hpp.html" title="src/lb.hpp" alt="" coords="1120,237,1198,267"/>
 <area shape="rect" id="node98" href="$lb_8cpp.html" title="src/lb.cpp" alt="" coords="346,315,423,344"/>
-<area shape="rect" id="node103" href="$mtrie_8cpp.html" title="src/mtrie.cpp" alt="" coords="1274,237,1372,267"/>
-<area shape="rect" id="node107" href="$pipe_8cpp.html" title="src/pipe.cpp" alt="" coords="1396,237,1490,267"/>
+<area shape="rect" id="node103" href="$mtrie_8cpp.html" title="src/mtrie.cpp" alt="" coords="1272,237,1371,267"/>
+<area shape="rect" id="node107" href="$pipe_8cpp.html" title="src/pipe.cpp" alt="" coords="1395,237,1488,267"/>
 <area shape="rect" id="node9" href="$connect__session_8hpp.html" title="src/connect_session.hpp" alt="" coords="1684,315,1850,344"/>
 <area shape="rect" id="node19" href="$transient__session_8hpp.html" title="src/transient_session.hpp" alt="" coords="2170,315,2340,344"/>
 <area shape="rect" id="node11" href="$connect__session_8cpp.html" title="src/connect_session.cpp" alt="" coords="1684,392,1850,421"/>
@@ -40,6 +39,7 @@
 <area shape="rect" id="node76" href="$zmq_8cpp.html" title="src/zmq.cpp" alt="" coords="2052,315,2146,344"/>
 <area shape="rect" id="node37" href="$pub_8hpp.html" title="src/pub.hpp" alt="" coords="1038,392,1128,421"/>
 <area shape="rect" id="node57" href="$rep_8hpp.html" title="src/rep.hpp" alt="" coords="808,392,894,421"/>
+<area shape="rect" id="node118" href="$ctx_8hpp.html" title="src/ctx.hpp" alt="" coords="2492,237,2578,267"/>
 <area shape="rect" id="node127" href="$io__thread_8hpp.html" title="src/io_thread.hpp" alt="" coords="2751,237,2874,267"/>
 <area shape="rect" id="node142" href="$reaper_8hpp.html" title="src/reaper.hpp" alt="" coords="2364,237,2468,267"/>
 <area shape="rect" id="node146" href="$mailbox_8cpp.html" title="src/mailbox.cpp" alt="" coords="2898,237,3012,267"/>

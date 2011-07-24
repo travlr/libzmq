@@ -228,7 +228,9 @@ Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzmq_1_1options__t.html">options_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1own__t.html#a2efb752f6444d140ee9ee928559c9b02">options</a></td></tr>
 <tr><td colspan="2"><h2><a name="pri-types"></a>
 Private Types</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef std::deque&lt; blob_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1xpub__t.html#a1b88aee0a6ad459f986c080bd9c0211d">pending_t</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::basic_string<br class="typebreak"/>
+&lt; unsigned char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1xpub__t.html#a17df20778752487cc00ebd129305192b">blob_t</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::deque&lt; <a class="el" href="classzmq_1_1xpub__t.html#a17df20778752487cc00ebd129305192b">blob_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1xpub__t.html#a1b88aee0a6ad459f986c080bd9c0211d">pending_t</a></td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1xpub__t.html#a526297b3faf706f5c7c11b556ad66b4b">xpub_t</a> (const <a class="el" href="classzmq_1_1xpub__t.html">xpub_t</a> &amp;)</td></tr>
@@ -248,18 +250,33 @@ Private Attributes</h2></td></tr>
 <div class="textblock">
 <p>Definition at line <a class="el" href="xpub_8hpp_source.html#l00035">35</a> of file <a class="el" href="xpub_8hpp_source.html">xpub.hpp</a>.</p>
 </div><hr/><h2>Member Typedef Documentation</h2>
-<a class="anchor" id="a1b88aee0a6ad459f986c080bd9c0211d"></a><!-- doxytag: member="zmq::xpub_t::pending_t" ref="a1b88aee0a6ad459f986c080bd9c0211d" args="" -->
+<a class="anchor" id="a17df20778752487cc00ebd129305192b"></a><!-- doxytag: member="zmq::xpub_t::blob_t" ref="a17df20778752487cc00ebd129305192b" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::deque&lt;blob_t&gt; <a class="el" href="classzmq_1_1xpub__t.html#a1b88aee0a6ad459f986c080bd9c0211d">zmq::xpub_t::pending_t</a><code> [private]</code></td>
+          <td class="memname">typedef std::basic_string&lt;unsigned char&gt; <a class="el" href="classzmq_1_1xpub__t.html#a17df20778752487cc00ebd129305192b">zmq::xpub_t::blob_t</a><code> [private]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="xpub_8hpp_source.html#l00074">74</a> of file <a class="el" href="xpub_8hpp_source.html">xpub.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b88aee0a6ad459f986c080bd9c0211d"></a><!-- doxytag: member="zmq::xpub_t::pending_t" ref="a1b88aee0a6ad459f986c080bd9c0211d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::deque&lt;<a class="el" href="classzmq_1_1xpub__t.html#a17df20778752487cc00ebd129305192b">blob_t</a>&gt; <a class="el" href="classzmq_1_1xpub__t.html#a1b88aee0a6ad459f986c080bd9c0211d">zmq::xpub_t::pending_t</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="xpub_8hpp_source.html#l00075">75</a> of file <a class="el" href="xpub_8hpp_source.html">xpub.hpp</a>.</p>
 
 </div>
 </div>
@@ -476,7 +493,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00375">375</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>, <a class="el" href="session_8cpp_source.html#l00057">zmq::session_t::attach_pipe()</a>, <a class="el" href="zmq_8h_source.html#l00109">EMTHREAD</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="zmq_8h_source.html#l00108">ETERM</a>, <a class="el" href="ctx_8hpp_source.html#l00047">zmq::endpoint_t::options</a>, <a class="el" href="options_8hpp_source.html#l00039">zmq::options_t::rcvhwm</a>, <a class="el" href="options_8hpp_source.html#l00038">zmq::options_t::sndhwm</a>, <a class="el" href="ctx_8hpp_source.html#l00046">zmq::endpoint_t::socket</a>, and <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>, <a class="el" href="session_8cpp_source.html#l00057">zmq::session_t::attach_pipe()</a>, <a class="el" href="zmq_8h_source.html#l00109">EMTHREAD</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="zmq_8h_source.html#l00108">ETERM</a>, <a class="el" href="ctx_8hpp_source.html#l00044">zmq::endpoint_t::options</a>, <a class="el" href="options_8hpp_source.html#l00039">zmq::options_t::rcvhwm</a>, <a class="el" href="options_8hpp_source.html#l00038">zmq::options_t::sndhwm</a>, <a class="el" href="ctx_8hpp_source.html#l00043">zmq::endpoint_t::socket</a>, and <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>.</p>
 
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -1587,7 +1604,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00353">353</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a9bfda42811471c8271107739dc9f64d5">zmq::command_t::done</a>, <a class="el" href="ctx_8hpp_source.html#l00094">zmq::ctx_t::term_tid</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
+<p>References <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a9bfda42811471c8271107739dc9f64d5">zmq::command_t::done</a>, <a class="el" href="ctx_8hpp_source.html#l00091">zmq::ctx_t::term_tid</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
 
 </div>
 </div>
@@ -2498,7 +2515,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="xpub_8hpp_source.html#l00075">75</a> of file <a class="el" href="xpub_8hpp_source.html">xpub.hpp</a>.</p>
+<p>Definition at line <a class="el" href="xpub_8hpp_source.html#l00076">76</a> of file <a class="el" href="xpub_8hpp_source.html">xpub.hpp</a>.</p>
 
 </div>
 </div>
@@ -2536,7 +2553,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Jul 22 2011 06:37:40 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jul 24 2011 12:27:29 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

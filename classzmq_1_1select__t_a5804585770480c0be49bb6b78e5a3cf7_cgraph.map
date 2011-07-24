@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$test__timeo_8cpp.html#a8a6ea9c073b6bec6d3759ee4cd794eaa" title="worker" alt="" coords="216,85,277,115"/>
-<area shape="rect" id="node5" href="$zmq_8h.html#a7f3288b9a1241ae2d2cc2a41324a7dd5" title="zmq_close" alt="" coords="333,5,419,35"/>
-<area shape="rect" id="node7" href="$zmq_8h.html#a451483d734ab7449dde2289d32d76588" title="zmq_connect" alt="" coords="327,59,425,88"/>
-<area shape="rect" id="node9" href="$zmq__utils_8h.html#a22b7c15492228d0d91f3c89da6b6ab32" title="zmq_sleep" alt="" coords="333,112,419,141"/>
-<area shape="rect" id="node11" href="$zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd" title="zmq_socket" alt="" coords="329,165,423,195"/>
-</map>

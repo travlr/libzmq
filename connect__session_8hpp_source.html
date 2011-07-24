@@ -130,47 +130,46 @@ function toggleVisibility(linkObj) {
 <a name="l00023"></a>00023 <span class="preprocessor"></span>
 <a name="l00024"></a>00024 <span class="preprocessor">#include &lt;string&gt;</span>
 <a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="blob_8hpp.html">blob.hpp</a>&quot;</span>
-<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="session_8hpp.html">session.hpp</a>&quot;</span>
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029 <span class="keyword">namespace </span>zmq
-<a name="l00030"></a>00030 {
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032     <span class="comment">//  Connect session contains an address to connect to. On disconnect it</span>
-<a name="l00033"></a>00033     <span class="comment">//  attempts to reconnect.</span>
-<a name="l00034"></a>00034 
-<a name="l00035"></a><a class="code" href="classzmq_1_1connect__session__t.html">00035</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1connect__session__t.html">connect_session_t</a> : <span class="keyword">public</span> <a class="code" href="classzmq_1_1session__t.html">session_t</a>
-<a name="l00036"></a>00036     {
-<a name="l00037"></a>00037     <span class="keyword">public</span>:
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039         <a class="code" href="classzmq_1_1connect__session__t.html#a44ffe7af01fcf4d760419c6319c1627f">connect_session_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
-<a name="l00040"></a>00040             <span class="keyword">class</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_,
-<a name="l00041"></a>00041             <span class="keyword">const</span> <span class="keywordtype">char</span> *protocol_, <span class="keyword">const</span> <span class="keywordtype">char</span> *address_);
-<a name="l00042"></a>00042         <a class="code" href="classzmq_1_1connect__session__t.html#a2bbb51a4bda6bc45b145e027df152b5a">~connect_session_t</a> ();
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044     <span class="keyword">private</span>:
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046         <span class="comment">//  Handlers for events from session base class.</span>
-<a name="l00047"></a>00047         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1connect__session__t.html#a0fddb97e59f22d8f9f8450d8b15c4f92">xattached</a> ();
-<a name="l00048"></a>00048         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1connect__session__t.html#af14676ed02aefd99eaeb1a2edb1bfb6b">xdetached</a> ();
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050         <span class="comment">//  Start the connection process.</span>
-<a name="l00051"></a>00051         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1connect__session__t.html#a64d6c8915476c60eb27761138a177cb4">start_connecting</a> (<span class="keywordtype">bool</span> wait_);
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053         <span class="comment">//  Command handlers.</span>
-<a name="l00054"></a>00054         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1connect__session__t.html#ab4e2a52c59589d7208f26a1404906fb6">process_plug</a> ();
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056         <span class="comment">//  Address to connect to.</span>
-<a name="l00057"></a><a class="code" href="classzmq_1_1connect__session__t.html#a2bbd2b27ee0bd9b4c526e390760e7359">00057</a>         std::string <a class="code" href="classzmq_1_1connect__session__t.html#a2bbd2b27ee0bd9b4c526e390760e7359">protocol</a>;
-<a name="l00058"></a><a class="code" href="classzmq_1_1connect__session__t.html#ab07f14749864a3c91a7fcbe18666ac4c">00058</a>         std::string <a class="code" href="classzmq_1_1connect__session__t.html#ab07f14749864a3c91a7fcbe18666ac4c">address</a>;
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060         <a class="code" href="classzmq_1_1connect__session__t.html#a44ffe7af01fcf4d760419c6319c1627f">connect_session_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1connect__session__t.html">connect_session_t</a>&amp;);
-<a name="l00061"></a>00061         <span class="keyword">const</span> <a class="code" href="classzmq_1_1connect__session__t.html">connect_session_t</a> &amp;<a class="code" href="classzmq_1_1connect__session__t.html#a966a2c8b6cbbab9512301020afa05870">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1connect__session__t.html">connect_session_t</a>&amp;);
-<a name="l00062"></a>00062     };
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064 }
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066 <span class="preprocessor">#endif</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="session_8hpp.html">session.hpp</a>&quot;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="keyword">namespace </span>zmq
+<a name="l00029"></a>00029 {
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031     <span class="comment">//  Connect session contains an address to connect to. On disconnect it</span>
+<a name="l00032"></a>00032     <span class="comment">//  attempts to reconnect.</span>
+<a name="l00033"></a>00033 
+<a name="l00034"></a><a class="code" href="classzmq_1_1connect__session__t.html">00034</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1connect__session__t.html">connect_session_t</a> : <span class="keyword">public</span> <a class="code" href="classzmq_1_1session__t.html">session_t</a>
+<a name="l00035"></a>00035     {
+<a name="l00036"></a>00036     <span class="keyword">public</span>:
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038         <a class="code" href="classzmq_1_1connect__session__t.html#a44ffe7af01fcf4d760419c6319c1627f">connect_session_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
+<a name="l00039"></a>00039             <span class="keyword">class</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_,
+<a name="l00040"></a>00040             <span class="keyword">const</span> <span class="keywordtype">char</span> *protocol_, <span class="keyword">const</span> <span class="keywordtype">char</span> *address_);
+<a name="l00041"></a>00041         <a class="code" href="classzmq_1_1connect__session__t.html#a2bbb51a4bda6bc45b145e027df152b5a">~connect_session_t</a> ();
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043     <span class="keyword">private</span>:
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045         <span class="comment">//  Handlers for events from session base class.</span>
+<a name="l00046"></a>00046         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1connect__session__t.html#a0fddb97e59f22d8f9f8450d8b15c4f92">xattached</a> ();
+<a name="l00047"></a>00047         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1connect__session__t.html#af14676ed02aefd99eaeb1a2edb1bfb6b">xdetached</a> ();
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049         <span class="comment">//  Start the connection process.</span>
+<a name="l00050"></a>00050         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1connect__session__t.html#a64d6c8915476c60eb27761138a177cb4">start_connecting</a> (<span class="keywordtype">bool</span> wait_);
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052         <span class="comment">//  Command handlers.</span>
+<a name="l00053"></a>00053         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1connect__session__t.html#ab4e2a52c59589d7208f26a1404906fb6">process_plug</a> ();
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055         <span class="comment">//  Address to connect to.</span>
+<a name="l00056"></a><a class="code" href="classzmq_1_1connect__session__t.html#a2bbd2b27ee0bd9b4c526e390760e7359">00056</a>         std::string <a class="code" href="classzmq_1_1connect__session__t.html#a2bbd2b27ee0bd9b4c526e390760e7359">protocol</a>;
+<a name="l00057"></a><a class="code" href="classzmq_1_1connect__session__t.html#ab07f14749864a3c91a7fcbe18666ac4c">00057</a>         std::string <a class="code" href="classzmq_1_1connect__session__t.html#ab07f14749864a3c91a7fcbe18666ac4c">address</a>;
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059         <a class="code" href="classzmq_1_1connect__session__t.html#a44ffe7af01fcf4d760419c6319c1627f">connect_session_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1connect__session__t.html">connect_session_t</a>&amp;);
+<a name="l00060"></a>00060         <span class="keyword">const</span> <a class="code" href="classzmq_1_1connect__session__t.html">connect_session_t</a> &amp;<a class="code" href="classzmq_1_1connect__session__t.html#a966a2c8b6cbbab9512301020afa05870">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1connect__session__t.html">connect_session_t</a>&amp;);
+<a name="l00061"></a>00061     };
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 }
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -187,7 +186,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Fri Jul 22 2011 06:37:28 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Jul 24 2011 12:27:19 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
