@@ -223,10 +223,13 @@ function toggleVisibility(linkObj) {
 : <a class="el" href="classzmq_1_1own__t.html#a039b375c319bfb3d527d09c83a9320f4">zmq::own_t</a>
 </li>
 <li>session
-: <a class="el" href="classzmq_1_1zmq__connecter__t.html#a401243ada0ac4a0fb2991bbd873e15b8">zmq::zmq_connecter_t</a>
+: <a class="el" href="classzmq_1_1decoder__t.html#a5fa42d37a216b2ca3859c5878face6b9">zmq::decoder_t</a>
+, <a class="el" href="classzmq_1_1encoder__t.html#a585f37f36fbe3b1ccb3c379895bb2239">zmq::encoder_t</a>
+, <a class="el" href="classzmq_1_1zmq__connecter__t.html#a401243ada0ac4a0fb2991bbd873e15b8">zmq::zmq_connecter_t</a>
+, <a class="el" href="classzmq_1_1zmq__engine__t.html#aa4372f8d05d3993e12576f40d7db8cff">zmq::zmq_engine_t</a>
 </li>
 <li>session_t()
-: <a class="el" href="classzmq_1_1session__t.html#a7df5eb34e36b8d845d039fbc8b5201df">zmq::session_t</a>
+: <a class="el" href="classzmq_1_1session__t.html#a2021ccb03657b9202b7f44daf03cebbc">zmq::session_t</a>
 </li>
 <li>set()
 : <a class="el" href="classzmq_1_1atomic__counter__t.html#af4e57a5d2c5b384598922bfab266f68f">zmq::atomic_counter_t</a>
@@ -261,9 +264,9 @@ function toggleVisibility(linkObj) {
 <li>set_pollout()
 : <a class="el" href="classzmq_1_1io__object__t.html#a58a130c19aeec9529c67cde2e980fd5b">zmq::io_object_t</a>
 </li>
-<li>set_sink()
-: <a class="el" href="classzmq_1_1decoder__t.html#aa98d795ea030e15110c83ae34d6426c4">zmq::decoder_t</a>
-, <a class="el" href="classzmq_1_1encoder__t.html#a3283fe90dc8e6b4583b231e08e767916">zmq::encoder_t</a>
+<li>set_session()
+: <a class="el" href="classzmq_1_1decoder__t.html#ac55b07fd1b89f6a2be4ca27639ecb504">zmq::decoder_t</a>
+, <a class="el" href="classzmq_1_1encoder__t.html#a164d471c80df408e8acb46e356018159">zmq::encoder_t</a>
 </li>
 <li>setsockopt()
 : <a class="el" href="structzmq_1_1options__t.html#a31ce310554d40a281134800b81ce0803">zmq::options_t</a>
@@ -279,11 +282,8 @@ function toggleVisibility(linkObj) {
 : <a class="el" href="classzmq_1_1signaler__t.html#a347cf71752607359a07a401d29c7f871">zmq::signaler_t</a>
 </li>
 <li>sink
-: <a class="el" href="structzmq_1_1poller__base__t_1_1timer__info__t.html#a8edbaa3007cfda8f9904cc345c6ae5c3">zmq::poller_base_t::timer_info_t</a>
-, <a class="el" href="classzmq_1_1decoder__t.html#a8322f6da4d0f64a181443b2d63583db4">zmq::decoder_t</a>
-, <a class="el" href="classzmq_1_1encoder__t.html#a279e96fb42738eb0b24bfee67cbdb3de">zmq::encoder_t</a>
-, <a class="el" href="classzmq_1_1pipe__t.html#a7770ddf227e1ff9f6637e64c420fbeff">zmq::pipe_t</a>
-, <a class="el" href="classzmq_1_1zmq__engine__t.html#af20e2fb8449476c2a6f5f446712d7f62">zmq::zmq_engine_t</a>
+: <a class="el" href="classzmq_1_1pipe__t.html#a7770ddf227e1ff9f6637e64c420fbeff">zmq::pipe_t</a>
+, <a class="el" href="structzmq_1_1poller__base__t_1_1timer__info__t.html#a8edbaa3007cfda8f9904cc345c6ae5c3">zmq::poller_base_t::timer_info_t</a>
 </li>
 <li>size()
 : <a class="el" href="classzmq_1_1msg__t.html#ae3d55d0ce0da89d8cd4b3c4236c710ef">zmq::msg_t</a>
@@ -341,7 +341,7 @@ function toggleVisibility(linkObj) {
 , <a class="el" href="classzmq_1_1reaper__t.html#a146d4dab80e8916e49b68d1b3f6ac182">zmq::reaper_t</a>
 </li>
 <li>start_connecting()
-: <a class="el" href="classzmq_1_1connect__session__t.html#a64d6c8915476c60eb27761138a177cb4">zmq::connect_session_t</a>
+: <a class="el" href="classzmq_1_1session__t.html#a9534255f6b28d72ab27724d0cd489927">zmq::session_t</a>
 , <a class="el" href="classzmq_1_1zmq__connecter__t.html#acdcd57dc1b8469d0a6db8494057fa188">zmq::zmq_connecter_t</a>
 </li>
 <li>start_reaping()
@@ -357,16 +357,16 @@ function toggleVisibility(linkObj) {
 <li>stop()
 : <a class="el" href="classzmq_1_1thread__t.html#a87d27c17586c27b45070d38afd757bbb">zmq::thread_t</a>
 , <a class="el" href="structzmq_1_1command__t.html#add5023dfe333b73666a86921ef64238da2c4918aece790ed948b932ca8d3b70a8">zmq::command_t</a>
-, <a class="el" href="classzmq_1_1reaper__t.html#a17a5067aca1fc34f0809a9c35b0ff907">zmq::reaper_t</a>
-, <a class="el" href="classzmq_1_1socket__base__t.html#a0568cb2445695e4a248ca1f156ebfc82">zmq::socket_base_t</a>
 , <a class="el" href="classzmq_1_1io__thread__t.html#aa64dc14b7980a73fb444f865ea31a8dc">zmq::io_thread_t</a>
+, <a class="el" href="classzmq_1_1socket__base__t.html#a0568cb2445695e4a248ca1f156ebfc82">zmq::socket_base_t</a>
+, <a class="el" href="classzmq_1_1reaper__t.html#a17a5067aca1fc34f0809a9c35b0ff907">zmq::reaper_t</a>
 , <a class="el" href="structzmq_1_1command__t.html#affea24404521d5c38e56b9ca9e6337ac">zmq::command_t</a>
 </li>
 <li>sub()
 : <a class="el" href="classzmq_1_1atomic__counter__t.html#a0d29a10e45fc702fce16907cab738acb">zmq::atomic_counter_t</a>
 </li>
 <li>sub_t()
-: <a class="el" href="classzmq_1_1sub__t.html#a3767544459c6e02a8d00221bd1748c07">zmq::sub_t</a>
+: <a class="el" href="classzmq_1_1sub__t.html#a6cc04ad9125063182f373d0c16e2cabf">zmq::sub_t</a>
 </li>
 <li>subscriptions
 : <a class="el" href="classzmq_1_1xsub__t.html#a69fb5d57414814c55633ef7e6b220558">zmq::xsub_t</a>
@@ -376,9 +376,9 @@ function toggleVisibility(linkObj) {
 : <a class="el" href="classzmq_1_1array__t.html#ac6ad559495a404dfb85eba1db79d7bf3">zmq::array_t&lt; T, ID &gt;</a>
 </li>
 <li>sync
-: <a class="el" href="classzmq_1_1mailbox__t.html#a92860937a955c43ba9403f6b918ffcff">zmq::mailbox_t</a>
+: <a class="el" href="classzmq_1_1atomic__counter__t.html#ad726fe121d72d691ce3ccae6e640002a">zmq::atomic_counter_t</a>
+, <a class="el" href="classzmq_1_1mailbox__t.html#a92860937a955c43ba9403f6b918ffcff">zmq::mailbox_t</a>
 , <a class="el" href="classzmq_1_1atomic__ptr__t.html#a0ca1697a915f2a7f5df31b08f10da216">zmq::atomic_ptr_t&lt; T &gt;</a>
-, <a class="el" href="classzmq_1_1atomic__counter__t.html#ad726fe121d72d691ce3ccae6e640002a">zmq::atomic_counter_t</a>
 </li>
 </ul>
 </div>
@@ -396,7 +396,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jul 24 2011 12:27:21 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jul 25 2011 15:28:47 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classzmq_1_1session__t.html" title="zmq::session_t" alt="" coords="127,83,236,112"/>
-<area shape="rect" id="node5" href="$classzmq_1_1connect__session__t.html" title="zmq::connect_session_t" alt="" coords="5,160,168,189"/>
-<area shape="rect" id="node7" href="$classzmq_1_1transient__session__t.html" title="zmq::transient_session_t" alt="" coords="192,160,360,189"/>
-</map>

@@ -159,7 +159,7 @@ function toggleVisibility(linkObj) {
 <a name="l00052"></a>00052         <span class="keywordtype">int</span> init (<span class="keywordtype">bool</span> udp_encapsulation_, <span class="keyword">const</span> <span class="keywordtype">char</span> *network_);
 <a name="l00053"></a>00053 
 <a name="l00054"></a>00054         <span class="comment">//  i_engine interface implementation.</span>
-<a name="l00055"></a>00055         <span class="keywordtype">void</span> plug (<span class="keyword">class</span> io_thread_t *io_thread_, <span class="keyword">struct</span> i_engine_sink *sink_);
+<a name="l00055"></a>00055         <span class="keywordtype">void</span> plug (<span class="keyword">class</span> io_thread_t *io_thread_, <span class="keyword">class</span> session_t *session_);
 <a name="l00056"></a>00056         <span class="keywordtype">void</span> unplug ();
 <a name="l00057"></a>00057         <span class="keywordtype">void</span> terminate ();
 <a name="l00058"></a>00058         <span class="keywordtype">void</span> activate_in ();
@@ -212,7 +212,7 @@ function toggleVisibility(linkObj) {
 <a name="l00105"></a>00105         options_t options;
 <a name="l00106"></a>00106 
 <a name="l00107"></a>00107         <span class="comment">//  Associated session.</span>
-<a name="l00108"></a>00108         i_engine_sink *sink;
+<a name="l00108"></a>00108         <span class="keyword">class </span>session_t *session;
 <a name="l00109"></a>00109 
 <a name="l00110"></a>00110         <span class="comment">//  Most recently used decoder.</span>
 <a name="l00111"></a>00111         decoder_t *mru_decoder;
@@ -254,7 +254,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jul 24 2011 12:27:19 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jul 25 2011 15:28:45 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -129,13 +129,13 @@ function toggleVisibility(linkObj) {
 <a name="l00022"></a>00022 <span class="preprocessor">#include &lt;string.h&gt;</span>
 <a name="l00023"></a>00023 
 <a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="decoder_8hpp.html">decoder.hpp</a>&quot;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="i__engine_8hpp.html">i_engine.hpp</a>&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="session_8hpp.html">session.hpp</a>&quot;</span>
 <a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="wire_8hpp.html">wire.hpp</a>&quot;</span>
 <a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="err_8hpp.html">err.hpp</a>&quot;</span>
 <a name="l00028"></a>00028 
 <a name="l00029"></a><a class="code" href="classzmq_1_1decoder__t.html#a8d1cb1d15ab637eaf634cc18389831c3">00029</a> <a class="code" href="classzmq_1_1decoder__t.html#a8d1cb1d15ab637eaf634cc18389831c3">zmq::decoder_t::decoder_t</a> (<span class="keywordtype">size_t</span> bufsize_, int64_t maxmsgsize_) :
 <a name="l00030"></a>00030     <a class="code" href="classzmq_1_1decoder__base__t.html">decoder_base_t</a> &lt;<a class="code" href="classzmq_1_1decoder__t.html">decoder_t</a>&gt; (bufsize_),
-<a name="l00031"></a>00031     sink (NULL),
+<a name="l00031"></a>00031     session (NULL),
 <a name="l00032"></a>00032     maxmsgsize (maxmsgsize_)
 <a name="l00033"></a>00033 {
 <a name="l00034"></a>00034     <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1decoder__t.html#ace76017276c49d4c6ff190e2eccc0b93">in_progress</a>.<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
@@ -151,9 +151,9 @@ function toggleVisibility(linkObj) {
 <a name="l00044"></a>00044     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
 <a name="l00045"></a>00045 }
 <a name="l00046"></a>00046 
-<a name="l00047"></a><a class="code" href="classzmq_1_1decoder__t.html#aa98d795ea030e15110c83ae34d6426c4">00047</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1decoder__t.html#aa98d795ea030e15110c83ae34d6426c4">zmq::decoder_t::set_sink</a> (<a class="code" href="structzmq_1_1i__engine__sink.html">i_engine_sink</a> *sink_)
+<a name="l00047"></a><a class="code" href="classzmq_1_1decoder__t.html#ac55b07fd1b89f6a2be4ca27639ecb504">00047</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1decoder__t.html#ac55b07fd1b89f6a2be4ca27639ecb504">zmq::decoder_t::set_session</a> (<a class="code" href="classzmq_1_1session__t.html">session_t</a> *session_)
 <a name="l00048"></a>00048 {
-<a name="l00049"></a>00049     sink = sink_;
+<a name="l00049"></a>00049     session = session_;
 <a name="l00050"></a>00050 }
 <a name="l00051"></a>00051 
 <a name="l00052"></a><a class="code" href="classzmq_1_1decoder__t.html#ab949da14c858a5bbc4ba8728abb2c481">00052</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1decoder__t.html#ab949da14c858a5bbc4ba8728abb2c481">zmq::decoder_t::one_byte_size_ready</a> ()
@@ -243,7 +243,7 @@ function toggleVisibility(linkObj) {
 <a name="l00136"></a>00136 {
 <a name="l00137"></a>00137     <span class="comment">//  Message is completely read. Push it further and start reading</span>
 <a name="l00138"></a>00138     <span class="comment">//  new message. (in_progress is a 0-byte message after this point.)</span>
-<a name="l00139"></a>00139     <span class="keywordflow">if</span> (!sink || !sink-&gt;write (&amp;in_progress))
+<a name="l00139"></a>00139     <span class="keywordflow">if</span> (!session || !session-&gt;write (&amp;in_progress))
 <a name="l00140"></a>00140         <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00141"></a>00141 
 <a name="l00142"></a>00142     next_step (tmpbuf, 1, &amp;<a class="code" href="classzmq_1_1decoder__t.html#ab949da14c858a5bbc4ba8728abb2c481">decoder_t::one_byte_size_ready</a>);
@@ -265,7 +265,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jul 24 2011 12:27:19 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jul 25 2011 15:28:44 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

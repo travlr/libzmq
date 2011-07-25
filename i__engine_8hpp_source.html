@@ -138,8 +138,8 @@ function toggleVisibility(linkObj) {
 <a name="l00031"></a><a class="code" href="structzmq_1_1i__engine.html#a0adc8b9b7b931b20449849b331acad3b">00031</a>         <span class="keyword">virtual</span> <a class="code" href="structzmq_1_1i__engine.html#a0adc8b9b7b931b20449849b331acad3b">~i_engine</a> () {}
 <a name="l00032"></a>00032 
 <a name="l00033"></a>00033         <span class="comment">//  Plug the engine to the session.</span>
-<a name="l00034"></a>00034         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__engine.html#aa2cfb622308bce75c8d051a997320c7f">plug</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
-<a name="l00035"></a>00035             <span class="keyword">struct</span> <a class="code" href="structzmq_1_1i__engine__sink.html">i_engine_sink</a> *sink_) = 0;
+<a name="l00034"></a>00034         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__engine.html#aef9e59c240abcb6c206395fc13bf6755">plug</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
+<a name="l00035"></a>00035             <span class="keyword">class</span> <a class="code" href="classzmq_1_1session__t.html">session_t</a> *session_) = 0;
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037         <span class="comment">//  Unplug the engine from the session.</span>
 <a name="l00038"></a>00038         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__engine.html#af282e68ed0f7db669f49c93317b37484">unplug</a> () = 0;
@@ -157,28 +157,9 @@ function toggleVisibility(linkObj) {
 <a name="l00050"></a>00050         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__engine.html#a9f64a9684d65eb27245058bde5f10e6d">activate_out</a> () = 0;
 <a name="l00051"></a>00051     };
 <a name="l00052"></a>00052 
-<a name="l00053"></a>00053     <span class="comment">//  Abstract interface to be implemented by engine sinks such as sessions.</span>
+<a name="l00053"></a>00053 }
 <a name="l00054"></a>00054 
-<a name="l00055"></a><a class="code" href="structzmq_1_1i__engine__sink.html">00055</a>     <span class="keyword">struct </span><a class="code" href="structzmq_1_1i__engine__sink.html">i_engine_sink</a>
-<a name="l00056"></a>00056     {
-<a name="l00057"></a><a class="code" href="structzmq_1_1i__engine__sink.html#a83ebf8c4b96f0dbddd632ec0370e8760">00057</a>         <span class="keyword">virtual</span> <a class="code" href="structzmq_1_1i__engine__sink.html#a83ebf8c4b96f0dbddd632ec0370e8760">~i_engine_sink</a> () {}
-<a name="l00058"></a>00058 
-<a name="l00059"></a>00059         <span class="comment">//  Engine asks for a message to send to the network.</span>
-<a name="l00060"></a>00060         <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1i__engine__sink.html#a5dc190a0b156021ebfd3f9d5616a24c9">read</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_) = 0;
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062         <span class="comment">//  Engine received message from the network and sends it further on.</span>
-<a name="l00063"></a>00063         <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1i__engine__sink.html#a1a7b2706e17411fab0482456b0fc61af">write</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_) = 0;
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065         <span class="comment">//  Flush all the previously written messages.</span>
-<a name="l00066"></a>00066         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__engine__sink.html#a12c3425b611896359291cf581c9c4ee6">flush</a> () = 0;
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068         <span class="comment">//  Engine is dead. Drop all the references to it.</span>
-<a name="l00069"></a>00069         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__engine__sink.html#a18a98841e25b33738c9d03725d8db514">detach</a> () = 0;
-<a name="l00070"></a>00070     };
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072 }
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074 <span class="preprocessor">#endif</span>
+<a name="l00055"></a>00055 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -195,7 +176,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jul 24 2011 12:27:19 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jul 25 2011 15:28:44 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

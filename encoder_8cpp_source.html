@@ -126,12 +126,12 @@ function toggleVisibility(linkObj) {
 <a name="l00019"></a>00019 <span class="comment">*/</span>
 <a name="l00020"></a>00020 
 <a name="l00021"></a>00021 <span class="preprocessor">#include &quot;<a class="code" href="encoder_8hpp.html">encoder.hpp</a>&quot;</span>
-<a name="l00022"></a>00022 <span class="preprocessor">#include &quot;<a class="code" href="i__engine_8hpp.html">i_engine.hpp</a>&quot;</span>
+<a name="l00022"></a>00022 <span class="preprocessor">#include &quot;<a class="code" href="session_8hpp.html">session.hpp</a>&quot;</span>
 <a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="wire_8hpp.html">wire.hpp</a>&quot;</span>
 <a name="l00024"></a>00024 
 <a name="l00025"></a><a class="code" href="classzmq_1_1encoder__t.html#af7c7635f3837a3c51682a92faa4143f3">00025</a> <a class="code" href="classzmq_1_1encoder__t.html#af7c7635f3837a3c51682a92faa4143f3">zmq::encoder_t::encoder_t</a> (<span class="keywordtype">size_t</span> bufsize_) :
 <a name="l00026"></a>00026     <a class="code" href="classzmq_1_1encoder__base__t.html">encoder_base_t</a> &lt;<a class="code" href="classzmq_1_1encoder__t.html">encoder_t</a>&gt; (bufsize_),
-<a name="l00027"></a>00027     sink (NULL)
+<a name="l00027"></a>00027     session (NULL)
 <a name="l00028"></a>00028 {
 <a name="l00029"></a>00029     <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1encoder__t.html#a980503c9efcea889fde1dfaab507da07">in_progress</a>.<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
 <a name="l00030"></a>00030     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
@@ -146,9 +146,9 @@ function toggleVisibility(linkObj) {
 <a name="l00039"></a>00039     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
 <a name="l00040"></a>00040 }
 <a name="l00041"></a>00041 
-<a name="l00042"></a><a class="code" href="classzmq_1_1encoder__t.html#a3283fe90dc8e6b4583b231e08e767916">00042</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1encoder__t.html#a3283fe90dc8e6b4583b231e08e767916">zmq::encoder_t::set_sink</a> (<a class="code" href="structzmq_1_1i__engine__sink.html">i_engine_sink</a> *sink_)
+<a name="l00042"></a><a class="code" href="classzmq_1_1encoder__t.html#a164d471c80df408e8acb46e356018159">00042</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1encoder__t.html#a164d471c80df408e8acb46e356018159">zmq::encoder_t::set_session</a> (<a class="code" href="classzmq_1_1session__t.html">session_t</a> *session_)
 <a name="l00043"></a>00043 {
-<a name="l00044"></a>00044     sink = sink_;
+<a name="l00044"></a>00044     session = session_;
 <a name="l00045"></a>00045 }
 <a name="l00046"></a>00046 
 <a name="l00047"></a><a class="code" href="classzmq_1_1encoder__t.html#ac552cef6a68dbf0640465bcf2911dd1e">00047</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1encoder__t.html#ac552cef6a68dbf0640465bcf2911dd1e">zmq::encoder_t::size_ready</a> ()
@@ -169,7 +169,7 @@ function toggleVisibility(linkObj) {
 <a name="l00062"></a>00062     <span class="comment">//  Note that new state is set only if write is successful. That way</span>
 <a name="l00063"></a>00063     <span class="comment">//  unsuccessful write will cause retry on the next state machine</span>
 <a name="l00064"></a>00064     <span class="comment">//  invocation.</span>
-<a name="l00065"></a>00065     <span class="keywordflow">if</span> (!sink || !sink-&gt;read (&amp;in_progress)) {
+<a name="l00065"></a>00065     <span class="keywordflow">if</span> (!session || !session-&gt;read (&amp;in_progress)) {
 <a name="l00066"></a>00066         rc = in_progress.init ();
 <a name="l00067"></a>00067         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
 <a name="l00068"></a>00068         <span class="keywordflow">return</span> <span class="keyword">false</span>;
@@ -215,7 +215,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Jul 24 2011 12:27:19 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Jul 25 2011 15:28:44 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
