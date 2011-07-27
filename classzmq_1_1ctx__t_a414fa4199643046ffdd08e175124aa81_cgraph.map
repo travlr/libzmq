@@ -5,7 +5,7 @@
 <area shape="rect" id="node15" href="$classzmq_1_1reaper__t.html#aaa7a24f9514a781ec5b73075a32a0a55" title="zmq::reaper_t::get_mailbox" alt="" coords="185,165,364,195"/>
 <area shape="rect" id="node17" href="$classzmq_1_1io__thread__t.html#a93b907ae25ddcfcef74ed5cb45904d04" title="zmq::io_thread_t::start" alt="" coords="199,219,351,248"/>
 <area shape="rect" id="node19" href="$classzmq_1_1reaper__t.html#a146d4dab80e8916e49b68d1b3f6ac182" title="zmq::reaper_t::start" alt="" coords="207,272,343,301"/>
-<area shape="rect" id="node5" href="$classzmq_1_1zmq__listener__t.html#ab971f22f62477433b56cd4525ea212fc" title="zmq::zmq_listener_t::set_address" alt="" coords="421,5,640,35"/>
+<area shape="rect" id="node5" href="$classzmq_1_1tcp__listener__t.html#a2dfd277dfec511d7ccda2e4648284a00" title="zmq::tcp_listener_t::set_address" alt="" coords="425,5,636,35"/>
 <area shape="rect" id="node9" href="$classzmq_1_1socket__base__t.html#a6015a318d8ff9435c1f505b838833877" title="zmq::socket_base_t::create" alt="" coords="439,59,623,88"/>
 <area shape="rect" id="node11" href="$classzmq_1_1socket__base__t.html#af39a996fe2ccad172fd9ffe0111cd7eb" title="zmq::socket_base_t::get_mailbox" alt="" coords="421,112,640,141"/>
 </map>

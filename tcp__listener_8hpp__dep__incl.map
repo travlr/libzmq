@@ -1,6 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$zmq__listener_8hpp.html" title="src/zmq_listener.hpp" alt="" coords="88,83,229,112"/>
-<area shape="rect" id="node9" href="$tcp__listener_8cpp.html" title="src/tcp_listener.cpp" alt="" coords="253,83,389,112"/>
-<area shape="rect" id="node5" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="5,160,147,189"/>
-<area shape="rect" id="node7" href="$zmq__listener_8cpp.html" title="src/zmq_listener.cpp" alt="" coords="171,160,312,189"/>
+<area shape="rect" id="node3" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="5,83,147,112"/>
+<area shape="rect" id="node5" href="$tcp__listener_8cpp.html" title="src/tcp_listener.cpp" alt="" coords="171,83,307,112"/>
 </map>

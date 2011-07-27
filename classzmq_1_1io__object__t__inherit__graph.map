@@ -1,7 +1,7 @@
 <map id="G" name="G">
 <area shape="rect" id="node5" href="$classzmq_1_1session__t.html" title="zmq::session_t" alt="" coords="5,160,115,189"/>
-<area shape="rect" id="node7" href="$classzmq_1_1zmq__connecter__t.html" title="zmq::zmq_connecter_t" alt="" coords="139,160,293,189"/>
-<area shape="rect" id="node9" href="$classzmq_1_1zmq__engine__t.html" title="zmq::zmq_engine_t" alt="" coords="317,160,453,189"/>
-<area shape="rect" id="node11" href="$classzmq_1_1zmq__listener__t.html" title="zmq::zmq_listener_t" alt="" coords="477,160,616,189"/>
-<area shape="rect" id="node2" href="$structzmq_1_1i__poll__events.html" title="zmq::i_poll_events" alt="" coords="235,5,365,35"/>
+<area shape="rect" id="node7" href="$classzmq_1_1tcp__connecter__t.html" title="zmq::tcp_connecter_t" alt="" coords="139,160,285,189"/>
+<area shape="rect" id="node9" href="$classzmq_1_1tcp__engine__t.html" title="zmq::tcp_engine_t" alt="" coords="309,160,437,189"/>
+<area shape="rect" id="node11" href="$classzmq_1_1tcp__listener__t.html" title="zmq::tcp_listener_t" alt="" coords="461,160,595,189"/>
+<area shape="rect" id="node2" href="$structzmq_1_1i__poll__events.html" title="zmq::i_poll_events" alt="" coords="227,5,357,35"/>
 </map>

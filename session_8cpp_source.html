@@ -131,7 +131,7 @@ function toggleVisibility(linkObj) {
 <a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="err_8hpp.html">err.hpp</a>&quot;</span>
 <a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="pipe_8hpp.html">pipe.hpp</a>&quot;</span>
 <a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="likely_8hpp.html">likely.hpp</a>&quot;</span>
-<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="zmq__connecter_8hpp.html">zmq_connecter.hpp</a>&quot;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="tcp__connecter_8hpp.html">tcp_connecter.hpp</a>&quot;</span>
 <a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="pgm__sender_8hpp.html">pgm_sender.hpp</a>&quot;</span>
 <a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="pgm__receiver_8hpp.html">pgm_receiver.hpp</a>&quot;</span>
 <a name="l00030"></a>00030 
@@ -414,7 +414,7 @@ function toggleVisibility(linkObj) {
 <a name="l00307"></a>00307     <span class="comment">//  Both TCP and IPC transports are using the same infrastructure.</span>
 <a name="l00308"></a>00308     <span class="keywordflow">if</span> (protocol == <span class="stringliteral">&quot;tcp&quot;</span> || protocol == <span class="stringliteral">&quot;ipc&quot;</span>) {
 <a name="l00309"></a>00309 
-<a name="l00310"></a>00310         <a class="code" href="classzmq_1_1zmq__connecter__t.html">zmq_connecter_t</a> *connecter = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1zmq__connecter__t.html">zmq_connecter_t</a> (
+<a name="l00310"></a>00310         <a class="code" href="classzmq_1_1tcp__connecter__t.html">tcp_connecter_t</a> *connecter = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1tcp__connecter__t.html">tcp_connecter_t</a> (
 <a name="l00311"></a>00311             io_thread, <span class="keyword">this</span>, options, protocol.c_str (), address.c_str (),
 <a name="l00312"></a>00312             wait_);
 <a name="l00313"></a>00313         <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (connecter);
@@ -483,7 +483,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Jul 25 2011 15:28:45 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jul 27 2011 03:17:23 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

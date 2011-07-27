@@ -105,13 +105,16 @@ function toggleVisibility(linkObj) {
 <h1>tcp_connecter.cpp File Reference</h1>  </div>
 </div>
 <div class="contents">
-<div class="textblock"><code>#include &lt;string.h&gt;</code><br/>
+<div class="textblock"><code>#include &lt;new&gt;</code><br/>
 <code>#include &lt;string&gt;</code><br/>
 <code>#include &quot;<a class="el" href="tcp__connecter_8hpp_source.html">tcp_connecter.hpp</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="tcp__engine_8hpp_source.html">tcp_engine.hpp</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="io__thread_8hpp_source.html">io_thread.hpp</a>&quot;</code><br/>
 <code>#include &quot;platform.hpp&quot;</code><br/>
 <code>#include &quot;<a class="el" href="ip_8hpp_source.html">ip.hpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="err_8hpp_source.html">err.hpp</a>&quot;</code><br/>
 <code>#include &lt;unistd.h&gt;</code><br/>
+<code>#include &lt;sys/types.h&gt;</code><br/>
 <code>#include &lt;sys/socket.h&gt;</code><br/>
 <code>#include &lt;arpa/inet.h&gt;</code><br/>
 <code>#include &lt;netinet/tcp.h&gt;</code><br/>
@@ -125,7 +128,7 @@ function toggleVisibility(linkObj) {
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="tcp__connecter_8cpp__incl.png" border="0" usemap="#src_2tcp__connecter_8cpp" alt=""/></div>
 <map name="src_2tcp__connecter_8cpp" id="src_2tcp__connecter_8cpp">
-<area shape="rect" id="node7" href="tcp__connecter_8hpp.html" title="tcp_connecter.hpp" alt="" coords="141,83,269,112"/><area shape="rect" id="node19" href="ip_8hpp.html" title="ip.hpp" alt="" coords="506,83,562,112"/><area shape="rect" id="node32" href="err_8hpp.html" title="err.hpp" alt="" coords="905,83,966,112"/><area shape="rect" id="node11" href="fd_8hpp.html" title="fd.hpp" alt="" coords="26,160,85,189"/><area shape="rect" id="node34" href="zmq_8h.html" title="../include/zmq.h" alt="" coords="1402,160,1517,189"/><area shape="rect" id="node49" href="likely_8hpp.html" title="likely.hpp" alt="" coords="1157,160,1234,189"/></map>
+<area shape="rect" id="node7" href="tcp__connecter_8hpp.html" title="tcp_connecter.hpp" alt="" coords="2376,83,2504,112"/><area shape="rect" id="node13" href="ip_8hpp.html" title="ip.hpp" alt="" coords="2779,160,2835,189"/><area shape="rect" id="node53" href="err_8hpp.html" title="err.hpp" alt="" coords="351,469,412,499"/><area shape="rect" id="node84" href="tcp__engine_8hpp.html" title="tcp_engine.hpp" alt="" coords="1122,83,1231,112"/><area shape="rect" id="node114" href="io__thread_8hpp.html" title="io_thread.hpp" alt="" coords="1920,83,2019,112"/><area shape="rect" id="node9" href="fd_8hpp.html" title="fd.hpp" alt="" coords="1732,315,1791,344"/><area shape="rect" id="node28" href="own_8hpp.html" title="own.hpp" alt="" coords="2244,160,2314,189"/><area shape="rect" id="node36" href="stdint_8hpp.html" title="stdint.hpp" alt="" coords="1647,392,1724,421"/><area shape="rect" id="node74" href="io__object_8hpp.html" title="io_object.hpp" alt="" coords="1778,160,1876,189"/><area shape="rect" id="node34" href="object_8hpp.html" title="object.hpp" alt="" coords="2159,237,2242,267"/><area shape="rect" id="node41" href="options_8hpp.html" title="options.hpp" alt="" coords="1492,315,1580,344"/><area shape="rect" id="node46" href="atomic__counter_8hpp.html" title="atomic_counter.hpp" alt="" coords="1231,315,1367,344"/><area shape="rect" id="node50" href="mutex_8hpp.html" title="mutex.hpp" alt="" coords="1112,392,1195,421"/><area shape="rect" id="node55" href="zmq_8h.html" title="../include/zmq.h" alt="" coords="26,547,140,576"/><area shape="rect" id="node70" href="likely_8hpp.html" title="likely.hpp" alt="" coords="343,547,420,576"/><area shape="rect" id="node78" href="poller_8hpp.html" title="poller.hpp" alt="" coords="2007,237,2084,267"/><area shape="rect" id="node81" href="i__poll__events_8hpp.html" title="i_poll_events.hpp" alt="" coords="1860,237,1983,267"/><area shape="rect" id="node88" href="i__engine_8hpp.html" title="i_engine.hpp" alt="" coords="668,160,762,189"/><area shape="rect" id="node91" href="encoder_8hpp.html" title="encoder.hpp" alt="" coords="551,160,644,189"/><area shape="rect" id="node104" href="decoder_8hpp.html" title="decoder.hpp" alt="" coords="786,160,879,189"/><area shape="rect" id="node98" href="msg_8hpp.html" title="msg.hpp" alt="" coords="791,237,863,267"/><area shape="rect" id="node101" href="config_8hpp.html" title="config.hpp" alt="" coords="842,315,924,344"/><area shape="rect" id="node122" href="mailbox_8hpp.html" title="mailbox.hpp" alt="" coords="1391,160,1482,189"/><area shape="rect" id="node126" href="signaler_8hpp.html" title="signaler.hpp" alt="" coords="1442,237,1532,267"/><area shape="rect" id="node131" href="command_8hpp.html" title="command.hpp" alt="" coords="1604,315,1708,344"/><area shape="rect" id="node134" href="ypipe_8hpp.html" title="ypipe.hpp" alt="" coords="1188,237,1266,267"/><area shape="rect" id="node136" href="atomic__ptr_8hpp.html" title="atomic_ptr.hpp" alt="" coords="1100,315,1207,344"/></map>
 </div>
 </div>
 <p><a href="tcp__connecter_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -146,7 +149,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Jul 25 2011 15:28:46 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jul 27 2011 03:17:24 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

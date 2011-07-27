@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$tcp__socket_8hpp.html" title="tcp_socket.hpp" alt="" coords="128,83,237,112"/>
-<area shape="rect" id="node17" href="$err_8hpp.html" title="err.hpp" alt="" coords="579,83,640,112"/>
-<area shape="rect" id="node7" href="$fd_8hpp.html" title="fd.hpp" alt="" coords="23,160,81,189"/>
-<area shape="rect" id="node11" href="$stdint_8hpp.html" title="stdint.hpp" alt="" coords="105,160,183,189"/>
-<area shape="rect" id="node19" href="$zmq_8h.html" title="../include/zmq.h" alt="" coords="495,160,609,189"/>
-<area shape="rect" id="node34" href="$likely_8hpp.html" title="likely.hpp" alt="" coords="393,160,471,189"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$session_8cpp.html" title="src/session.cpp" alt="" coords="5,83,120,112"/>
-<area shape="rect" id="node5" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="144,83,285,112"/>
-<area shape="rect" id="node7" href="$zmq__connecter_8cpp.html" title="src/zmq_connecter.cpp" alt="" coords="309,83,467,112"/>
-<area shape="rect" id="node9" href="$zmq__engine_8cpp.html" title="src/zmq_engine.cpp" alt="" coords="491,83,629,112"/>
-</map>

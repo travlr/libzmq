@@ -141,8 +141,8 @@ function toggleVisibility(linkObj) {
 <a name="l00034"></a>00034 <span class="preprocessor">#endif</span>
 <a name="l00035"></a>00035 <span class="preprocessor"></span>
 <a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="socket__base_8hpp.html">socket_base.hpp</a>&quot;</span>
-<a name="l00037"></a>00037 <span class="preprocessor">#include &quot;<a class="code" href="zmq__listener_8hpp.html">zmq_listener.hpp</a>&quot;</span>
-<a name="l00038"></a>00038 <span class="preprocessor">#include &quot;<a class="code" href="zmq__connecter_8hpp.html">zmq_connecter.hpp</a>&quot;</span>
+<a name="l00037"></a>00037 <span class="preprocessor">#include &quot;<a class="code" href="tcp__listener_8hpp.html">tcp_listener.hpp</a>&quot;</span>
+<a name="l00038"></a>00038 <span class="preprocessor">#include &quot;<a class="code" href="tcp__connecter_8hpp.html">tcp_connecter.hpp</a>&quot;</span>
 <a name="l00039"></a>00039 <span class="preprocessor">#include &quot;<a class="code" href="io__thread_8hpp.html">io_thread.hpp</a>&quot;</span>
 <a name="l00040"></a>00040 <span class="preprocessor">#include &quot;<a class="code" href="session_8hpp.html">session.hpp</a>&quot;</span>
 <a name="l00041"></a>00041 <span class="preprocessor">#include &quot;<a class="code" href="config_8hpp.html">config.hpp</a>&quot;</span>
@@ -455,10 +455,10 @@ function toggleVisibility(linkObj) {
 <a name="l00348"></a>00348         }
 <a name="l00349"></a>00349 
 <a name="l00350"></a>00350         <span class="comment">//  Create and run the listener.</span>
-<a name="l00351"></a>00351         <a class="code" href="classzmq_1_1zmq__listener__t.html">zmq_listener_t</a> *listener = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1zmq__listener__t.html">zmq_listener_t</a> (
+<a name="l00351"></a>00351         <a class="code" href="classzmq_1_1tcp__listener__t.html">tcp_listener_t</a> *listener = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1tcp__listener__t.html">tcp_listener_t</a> (
 <a name="l00352"></a>00352             io_thread, <span class="keyword">this</span>, options);
 <a name="l00353"></a>00353         <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (listener);
-<a name="l00354"></a>00354         <span class="keywordtype">int</span> rc = listener-&gt;<a class="code" href="classzmq_1_1zmq__listener__t.html#ab971f22f62477433b56cd4525ea212fc">set_address</a> (protocol.c_str(), address.c_str ());
+<a name="l00354"></a>00354         <span class="keywordtype">int</span> rc = listener-&gt;<a class="code" href="classzmq_1_1tcp__listener__t.html#a2dfd277dfec511d7ccda2e4648284a00">set_address</a> (protocol.c_str(), address.c_str ());
 <a name="l00355"></a>00355         <span class="keywordflow">if</span> (rc != 0) {
 <a name="l00356"></a>00356             <span class="keyword">delete</span> listener;
 <a name="l00357"></a>00357             <span class="keywordflow">return</span> -1;
@@ -992,7 +992,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Jul 25 2011 15:28:45 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Jul 27 2011 03:17:23 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
