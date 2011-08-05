@@ -1,0 +1,29 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$ipc__listener_8hpp.html" title="ipc_listener.hpp" alt="" coords="1959,160,2071,189"/>
+<area shape="rect" id="node63" href="$tcp__engine_8hpp.html" title="tcp_engine.hpp" alt="" coords="1414,83,1523,112"/>
+<area shape="rect" id="node77" href="$err_8hpp.html" title="err.hpp" alt="" coords="460,237,522,267"/>
+<area shape="rect" id="node98" href="$config_8hpp.html" title="config.hpp" alt="" coords="2955,315,3038,344"/>
+<area shape="rect" id="node111" href="$io__thread_8hpp.html" title="io_thread.hpp" alt="" coords="2710,160,2808,189"/>
+<area shape="rect" id="node134" href="$session_8hpp.html" title="session.hpp" alt="" coords="2256,83,2347,112"/>
+<area shape="rect" id="node7" href="$fd_8hpp.html" title="fd.hpp" alt="" coords="1919,392,1978,421"/>
+<area shape="rect" id="node10" href="$ip_8hpp.html" title="ip.hpp" alt="" coords="1503,237,1559,267"/>
+<area shape="rect" id="node26" href="$own_8hpp.html" title="own.hpp" alt="" coords="2224,237,2294,267"/>
+<area shape="rect" id="node34" href="$stdint_8hpp.html" title="stdint.hpp" alt="" coords="2271,392,2348,421"/>
+<area shape="rect" id="node49" href="$io__object_8hpp.html" title="io_object.hpp" alt="" coords="2318,237,2416,267"/>
+<area shape="rect" id="node32" href="$object_8hpp.html" title="object.hpp" alt="" coords="2499,315,2582,344"/>
+<area shape="rect" id="node39" href="$options_8hpp.html" title="options.hpp" alt="" coords="1910,315,1998,344"/>
+<area shape="rect" id="node44" href="$atomic__counter_8hpp.html" title="atomic_counter.hpp" alt="" coords="2022,315,2158,344"/>
+<area shape="rect" id="node53" href="$poller_8hpp.html" title="poller.hpp" alt="" coords="2606,315,2683,344"/>
+<area shape="rect" id="node56" href="$i__poll__events_8hpp.html" title="i_poll_events.hpp" alt="" coords="2707,315,2830,344"/>
+<area shape="rect" id="node67" href="$i__engine_8hpp.html" title="i_engine.hpp" alt="" coords="2146,160,2239,189"/>
+<area shape="rect" id="node70" href="$encoder_8hpp.html" title="encoder.hpp" alt="" coords="664,160,758,189"/>
+<area shape="rect" id="node101" href="$decoder_8hpp.html" title="decoder.hpp" alt="" coords="836,160,930,189"/>
+<area shape="rect" id="node95" href="$msg_8hpp.html" title="msg.hpp" alt="" coords="1750,237,1822,267"/>
+<area shape="rect" id="node79" href="$zmq_8h.html" title="../include/zmq.h" alt="" coords="54,315,168,344"/>
+<area shape="rect" id="node92" href="$likely_8hpp.html" title="likely.hpp" alt="" coords="379,315,456,344"/>
+<area shape="rect" id="node119" href="$mailbox_8hpp.html" title="mailbox.hpp" alt="" coords="2847,237,2938,267"/>
+<area shape="rect" id="node123" href="$signaler_8hpp.html" title="signaler.hpp" alt="" coords="3163,315,3254,344"/>
+<area shape="rect" id="node128" href="$command_8hpp.html" title="command.hpp" alt="" coords="3278,315,3382,344"/>
+<area shape="rect" id="node131" href="$ypipe_8hpp.html" title="ypipe.hpp" alt="" coords="2854,315,2931,344"/>
+<area shape="rect" id="node141" href="$pipe_8hpp.html" title="pipe.hpp" alt="" coords="2452,160,2522,189"/>
+</map>

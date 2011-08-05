@@ -223,7 +223,7 @@ function toggleVisibility(linkObj) {
 <a name="l00116"></a>00116         <span class="keywordtype">int</span> rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a39318e9417f38b7f415b85ae591ed606">move</a> (message);
 <a name="l00117"></a>00117         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
 <a name="l00118"></a>00118         has_message = <span class="keyword">false</span>;
-<a name="l00119"></a>00119         more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00119"></a>00119         more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
 <a name="l00120"></a>00120         <span class="keywordflow">return</span> 0;
 <a name="l00121"></a>00121     }
 <a name="l00122"></a>00122 
@@ -244,13 +244,13 @@ function toggleVisibility(linkObj) {
 <a name="l00137"></a>00137         <span class="comment">//  Non-initial parts of the message are passed </span>
 <a name="l00138"></a>00138         <span class="keywordflow">if</span> (more || !options.filter || match (msg_)) {
 <a name="l00139"></a>00139             more =
-<a name="l00140"></a>00140                 msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00140"></a>00140                 msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
 <a name="l00141"></a>00141             <span class="keywordflow">return</span> 0;
 <a name="l00142"></a>00142         }
 <a name="l00143"></a>00143 
 <a name="l00144"></a>00144         <span class="comment">//  Message doesn&#39;t match. Pop any remaining parts of the message</span>
 <a name="l00145"></a>00145         <span class="comment">//  from the pipe.</span>
-<a name="l00146"></a>00146         <span class="keywordflow">while</span> (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)) {
+<a name="l00146"></a>00146         <span class="keywordflow">while</span> (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)) {
 <a name="l00147"></a>00147             rc = fq.recv (msg_, <a class="code" href="zmq_8h.html#a46faae22df1e63543948385694b144c9">ZMQ_DONTWAIT</a>);
 <a name="l00148"></a>00148             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
 <a name="l00149"></a>00149         }
@@ -290,7 +290,7 @@ function toggleVisibility(linkObj) {
 <a name="l00183"></a>00183 
 <a name="l00184"></a>00184         <span class="comment">//  Message doesn&#39;t match. Pop any remaining parts of the message</span>
 <a name="l00185"></a>00185         <span class="comment">//  from the pipe.</span>
-<a name="l00186"></a>00186         <span class="keywordflow">while</span> (message.flags () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)) {
+<a name="l00186"></a>00186         <span class="keywordflow">while</span> (message.flags () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)) {
 <a name="l00187"></a>00187             rc = fq.recv (&amp;message, <a class="code" href="zmq_8h.html#a46faae22df1e63543948385694b144c9">ZMQ_DONTWAIT</a>);
 <a name="l00188"></a>00188             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
 <a name="l00189"></a>00189         }
@@ -338,7 +338,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jul 30 2011 15:49:31 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Aug 5 2011 06:26:54 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -243,7 +243,7 @@ function toggleVisibility(linkObj) {
 <a name="l00136"></a>00136         <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00137"></a>00137     }
 <a name="l00138"></a>00138 
-<a name="l00139"></a>00139     <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)))
+<a name="l00139"></a>00139     <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)))
 <a name="l00140"></a>00140         msgs_read++;
 <a name="l00141"></a>00141 
 <a name="l00142"></a>00142     <span class="keywordflow">if</span> (lwm &gt; 0 &amp;&amp; msgs_read % lwm == 0)
@@ -272,7 +272,7 @@ function toggleVisibility(linkObj) {
 <a name="l00165"></a>00165     <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (!check_write (msg_)))
 <a name="l00166"></a>00166         <span class="keywordflow">return</span> <span class="keyword">false</span>;
 <a name="l00167"></a>00167 
-<a name="l00168"></a>00168     <span class="keywordtype">bool</span> more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00168"></a>00168     <span class="keywordtype">bool</span> more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
 <a name="l00169"></a>00169     outpipe-&gt;write (*msg_, more);
 <a name="l00170"></a>00170     <span class="keywordflow">if</span> (!more)
 <a name="l00171"></a>00171         msgs_written++;
@@ -286,7 +286,7 @@ function toggleVisibility(linkObj) {
 <a name="l00179"></a>00179     <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> msg;
 <a name="l00180"></a>00180     <span class="keywordflow">if</span> (outpipe) {
 <a name="l00181"></a>00181         <span class="keywordflow">while</span> (outpipe-&gt;unwrite (&amp;msg)) {
-<a name="l00182"></a>00182             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (msg.<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>));
+<a name="l00182"></a>00182             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (msg.<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>));
 <a name="l00183"></a>00183             <span class="keywordtype">int</span> rc = msg.<a class="code" href="classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d">close</a> ();
 <a name="l00184"></a>00184             <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
 <a name="l00185"></a>00185         }
@@ -575,7 +575,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jul 30 2011 15:49:31 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Aug 5 2011 06:26:53 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

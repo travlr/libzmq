@@ -1,9 +1,10 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$decoder_8cpp.html" title="src/decoder.cpp" alt="" coords="5,83,120,112"/>
 <area shape="rect" id="node5" href="$encoder_8cpp.html" title="src/encoder.cpp" alt="" coords="144,83,259,112"/>
-<area shape="rect" id="node7" href="$object_8cpp.html" title="src/object.cpp" alt="" coords="283,83,387,112"/>
-<area shape="rect" id="node9" href="$session_8cpp.html" title="src/session.cpp" alt="" coords="411,83,525,112"/>
-<area shape="rect" id="node11" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="549,83,691,112"/>
-<area shape="rect" id="node13" href="$tcp__engine_8cpp.html" title="src/tcp_engine.cpp" alt="" coords="715,83,845,112"/>
-<area shape="rect" id="node15" href="$tcp__listener_8cpp.html" title="src/tcp_listener.cpp" alt="" coords="869,83,1005,112"/>
+<area shape="rect" id="node7" href="$ipc__listener_8cpp.html" title="src/ipc_listener.cpp" alt="" coords="283,83,416,112"/>
+<area shape="rect" id="node9" href="$object_8cpp.html" title="src/object.cpp" alt="" coords="440,83,544,112"/>
+<area shape="rect" id="node11" href="$session_8cpp.html" title="src/session.cpp" alt="" coords="568,83,683,112"/>
+<area shape="rect" id="node13" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="707,83,848,112"/>
+<area shape="rect" id="node15" href="$tcp__engine_8cpp.html" title="src/tcp_engine.cpp" alt="" coords="872,83,1003,112"/>
+<area shape="rect" id="node17" href="$tcp__listener_8cpp.html" title="src/tcp_listener.cpp" alt="" coords="1027,83,1163,112"/>
 </map>

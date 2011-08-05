@@ -144,7 +144,7 @@ function toggleVisibility(linkObj) {
 <a name="l00037"></a>00037 
 <a name="l00038"></a><a class="code" href="classzmq_1_1msg__t.html#a214637bbec842b66265d7cde0effe6a9">00038</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1msg__t.html#a214637bbec842b66265d7cde0effe6a9">zmq::msg_t::check</a> ()
 <a name="l00039"></a>00039 {
-<a name="l00040"></a>00040      <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1msg__t.html#a6859823100abc7279bf6ed5b5f91d725">u</a>.base.type &gt;= <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a315f5e5aeac2f3724d8ebeea9e9e8752">type_min</a> &amp;&amp; <a class="code" href="classzmq_1_1msg__t.html#a6859823100abc7279bf6ed5b5f91d725">u</a>.base.type &lt;= <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8aed322e9cbce8fe2c2f4823c3e54c88eb">type_max</a>;
+<a name="l00040"></a>00040      <span class="keywordflow">return</span> <a class="code" href="classzmq_1_1msg__t.html#a3cd85d73936ea710fab9ec205301dead">u</a>.base.type &gt;= <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a315f5e5aeac2f3724d8ebeea9e9e8752">type_min</a> &amp;&amp; <a class="code" href="classzmq_1_1msg__t.html#a3cd85d73936ea710fab9ec205301dead">u</a>.base.type &lt;= <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8aed322e9cbce8fe2c2f4823c3e54c88eb">type_max</a>;
 <a name="l00041"></a>00041 }
 <a name="l00042"></a>00042 
 <a name="l00043"></a><a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">00043</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">zmq::msg_t::init</a> ()
@@ -220,7 +220,7 @@ function toggleVisibility(linkObj) {
 <a name="l00113"></a>00113 
 <a name="l00114"></a>00114         <span class="comment">//  If the content is not shared, or if it is shared and the reference</span>
 <a name="l00115"></a>00115         <span class="comment">//  count has dropped to zero, deallocate it.</span>
-<a name="l00116"></a>00116         <span class="keywordflow">if</span> (!(u.lmsg.flags &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>) ||
+<a name="l00116"></a>00116         <span class="keywordflow">if</span> (!(u.lmsg.flags &amp; <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>) ||
 <a name="l00117"></a>00117               !u.lmsg.content-&gt;refcnt.sub (1)) {
 <a name="l00118"></a>00118 
 <a name="l00119"></a>00119             <span class="comment">//  We used &quot;placement new&quot; operator to initialize the reference</span>
@@ -274,15 +274,15 @@ function toggleVisibility(linkObj) {
 <a name="l00167"></a>00167     <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (rc &lt; 0))
 <a name="l00168"></a>00168         <span class="keywordflow">return</span> rc;
 <a name="l00169"></a>00169 
-<a name="l00170"></a>00170     <span class="keywordflow">if</span> (src_.<a class="code" href="classzmq_1_1msg__t.html#a6859823100abc7279bf6ed5b5f91d725">u</a>.<a class="code" href="classzmq_1_1msg__t.html#a8586657af72795b3483a13aac66b3349">base</a>.type == type_lmsg) {
+<a name="l00170"></a>00170     <span class="keywordflow">if</span> (src_.<a class="code" href="classzmq_1_1msg__t.html#a3cd85d73936ea710fab9ec205301dead">u</a>.<a class="code" href="classzmq_1_1msg__t.html#aa7d3af69fe58b73c440ee25e69ab7d70">base</a>.type == type_lmsg) {
 <a name="l00171"></a>00171 
 <a name="l00172"></a>00172         <span class="comment">//  One reference is added to shared messages. Non-shared messages</span>
 <a name="l00173"></a>00173         <span class="comment">//  are turned into shared messages and reference count is set to 2.</span>
-<a name="l00174"></a>00174         <span class="keywordflow">if</span> (src_.<a class="code" href="classzmq_1_1msg__t.html#a6859823100abc7279bf6ed5b5f91d725">u</a>.<a class="code" href="classzmq_1_1msg__t.html#ad9a588b587bdda930daaedec8f43acf4">lmsg</a>.flags &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>)
-<a name="l00175"></a>00175             src_.<a class="code" href="classzmq_1_1msg__t.html#a6859823100abc7279bf6ed5b5f91d725">u</a>.<a class="code" href="classzmq_1_1msg__t.html#ad9a588b587bdda930daaedec8f43acf4">lmsg</a>.content-&gt;refcnt.add (1);
+<a name="l00174"></a>00174         <span class="keywordflow">if</span> (src_.<a class="code" href="classzmq_1_1msg__t.html#a3cd85d73936ea710fab9ec205301dead">u</a>.<a class="code" href="classzmq_1_1msg__t.html#afc07ee97dc7fb9d7b272512ea511548b">lmsg</a>.flags &amp; <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>)
+<a name="l00175"></a>00175             src_.<a class="code" href="classzmq_1_1msg__t.html#a3cd85d73936ea710fab9ec205301dead">u</a>.<a class="code" href="classzmq_1_1msg__t.html#afc07ee97dc7fb9d7b272512ea511548b">lmsg</a>.content-&gt;refcnt.add (1);
 <a name="l00176"></a>00176         <span class="keywordflow">else</span> {
-<a name="l00177"></a>00177             src_.<a class="code" href="classzmq_1_1msg__t.html#a6859823100abc7279bf6ed5b5f91d725">u</a>.<a class="code" href="classzmq_1_1msg__t.html#ad9a588b587bdda930daaedec8f43acf4">lmsg</a>.flags |= <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>;
-<a name="l00178"></a>00178             src_.<a class="code" href="classzmq_1_1msg__t.html#a6859823100abc7279bf6ed5b5f91d725">u</a>.<a class="code" href="classzmq_1_1msg__t.html#ad9a588b587bdda930daaedec8f43acf4">lmsg</a>.content-&gt;refcnt.set (2);
+<a name="l00177"></a>00177             src_.<a class="code" href="classzmq_1_1msg__t.html#a3cd85d73936ea710fab9ec205301dead">u</a>.<a class="code" href="classzmq_1_1msg__t.html#afc07ee97dc7fb9d7b272512ea511548b">lmsg</a>.flags |= <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>;
+<a name="l00178"></a>00178             src_.<a class="code" href="classzmq_1_1msg__t.html#a3cd85d73936ea710fab9ec205301dead">u</a>.<a class="code" href="classzmq_1_1msg__t.html#afc07ee97dc7fb9d7b272512ea511548b">lmsg</a>.content-&gt;refcnt.set (2);
 <a name="l00179"></a>00179         }
 <a name="l00180"></a>00180     }
 <a name="l00181"></a>00181 
@@ -355,11 +355,11 @@ function toggleVisibility(linkObj) {
 <a name="l00248"></a>00248     <span class="comment">//  VSMs and delimiters can be copied straight away. The only message type</span>
 <a name="l00249"></a>00249     <span class="comment">//  that needs special care are long messages.</span>
 <a name="l00250"></a>00250     <span class="keywordflow">if</span> (u.base.type == type_lmsg) {
-<a name="l00251"></a>00251         <span class="keywordflow">if</span> (u.lmsg.flags &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>)
+<a name="l00251"></a>00251         <span class="keywordflow">if</span> (u.lmsg.flags &amp; <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>)
 <a name="l00252"></a>00252             u.lmsg.content-&gt;refcnt.add (refs_);
 <a name="l00253"></a>00253         <span class="keywordflow">else</span> {
 <a name="l00254"></a>00254             u.lmsg.content-&gt;refcnt.set (refs_ + 1);
-<a name="l00255"></a>00255             u.lmsg.flags |= <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>;
+<a name="l00255"></a>00255             u.lmsg.flags |= <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>;
 <a name="l00256"></a>00256         }
 <a name="l00257"></a>00257     }
 <a name="l00258"></a>00258 }
@@ -374,7 +374,7 @@ function toggleVisibility(linkObj) {
 <a name="l00267"></a>00267 
 <a name="l00268"></a>00268     <span class="comment">//  The only message type that needs special care are long messages.</span>
 <a name="l00269"></a>00269     <span class="keywordflow">if</span> (u.base.type == type_lmsg) {
-<a name="l00270"></a>00270         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (u.lmsg.flags &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>);
+<a name="l00270"></a>00270         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (u.lmsg.flags &amp; <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a20cfdc9d298df4c81dec1c578bb8e4f8">msg_t::shared</a>);
 <a name="l00271"></a>00271         u.lmsg.content-&gt;refcnt.sub (refs_);
 <a name="l00272"></a>00272     }
 <a name="l00273"></a>00273 }
@@ -394,7 +394,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jul 30 2011 15:49:31 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Aug 5 2011 06:26:53 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

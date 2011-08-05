@@ -141,18 +141,19 @@ function toggleVisibility(linkObj) {
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
 <li>accept()
-: <a class="el" href="classzmq_1_1tcp__listener__t.html#a61d3286e4d1a1199b2710d6b193b7076">zmq::tcp_listener_t</a>
+: <a class="el" href="classzmq_1_1ipc__listener__t.html#a72818a5413d8bd25641f2ab92b7f819b">zmq::ipc_listener_t</a>
+, <a class="el" href="classzmq_1_1tcp__listener__t.html#a61d3286e4d1a1199b2710d6b193b7076">zmq::tcp_listener_t</a>
 </li>
 <li>activate_in()
-: <a class="el" href="structzmq_1_1i__engine.html#af7701dbec48bab5f144a9b762f228097">zmq::i_engine</a>
-, <a class="el" href="classzmq_1_1tcp__engine__t.html#a23a8e47f2f6fd99dffcb326fc3dfe53f">zmq::tcp_engine_t</a>
+: <a class="el" href="classzmq_1_1tcp__engine__t.html#a23a8e47f2f6fd99dffcb326fc3dfe53f">zmq::tcp_engine_t</a>
+, <a class="el" href="structzmq_1_1i__engine.html#af7701dbec48bab5f144a9b762f228097">zmq::i_engine</a>
 </li>
 <li>activate_out()
 : <a class="el" href="structzmq_1_1i__engine.html#a9f64a9684d65eb27245058bde5f10e6d">zmq::i_engine</a>
 , <a class="el" href="classzmq_1_1tcp__engine__t.html#a8f5eb80086cd73313bd3e4bb9ac24235">zmq::tcp_engine_t</a>
 </li>
 <li>activate_read
-: <a class="el" href="structzmq_1_1command__t.html#a5cc233715d15992816c27b3d62776426">zmq::command_t</a>
+: <a class="el" href="structzmq_1_1command__t.html#add5023dfe333b73666a86921ef64238daddcd73659905a136dd324e6bc0c11293">zmq::command_t</a>
 </li>
 <li>activate_write
 : <a class="el" href="structzmq_1_1command__t.html#ae623bb2447e172510456cfa7061c445c">zmq::command_t</a>
@@ -163,13 +164,13 @@ function toggleVisibility(linkObj) {
 , <a class="el" href="classzmq_1_1lb__t.html#ae4e63ce8e010bebed32683348b9a9894">zmq::lb_t</a>
 </li>
 <li>active
-: <a class="el" href="classzmq_1_1mailbox__t.html#a3940f4ffb6f1d9d51fc92ec3207eecb8">zmq::mailbox_t</a>
-, <a class="el" href="classzmq_1_1pipe__t.html#a443516d315ad9ac7a73af56824f06046a8cf3fc1f4dbfbf2c9d87e626158ab523">zmq::pipe_t</a>
+: <a class="el" href="classzmq_1_1lb__t.html#a4785896f0cc3beb5e9240a561cdfb513">zmq::lb_t</a>
+, <a class="el" href="classzmq_1_1mailbox__t.html#a3940f4ffb6f1d9d51fc92ec3207eecb8">zmq::mailbox_t</a>
+, <a class="el" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cda8cf3fc1f4dbfbf2c9d87e626158ab523">zmq::pipe_t</a>
 , <a class="el" href="structzmq_1_1router__t_1_1outpipe__t.html#a5fd780f855ee8c1032acde8c7a9765ba">zmq::router_t::outpipe_t</a>
 , <a class="el" href="structzmq_1_1xrep__t_1_1outpipe__t.html#a02781e87dffac6cab5e89ca934acdb3e">zmq::xrep_t::outpipe_t</a>
 , <a class="el" href="classzmq_1_1dist__t.html#afa9553ef4987e735900df21ad84ca76d">zmq::dist_t</a>
 , <a class="el" href="classzmq_1_1fq__t.html#ac96b25ec3973bf0808ad07b54548876e">zmq::fq_t</a>
-, <a class="el" href="classzmq_1_1lb__t.html#a4785896f0cc3beb5e9240a561cdfb513">zmq::lb_t</a>
 </li>
 <li>add()
 : <a class="el" href="classzmq_1_1atomic__counter__t.html#ab11988f84d9cb8a58a4be3929c3db01a">zmq::atomic_counter_t</a>
@@ -183,7 +184,8 @@ function toggleVisibility(linkObj) {
 : <a class="el" href="classzmq_1_1mtrie__t.html#a82b066892b978c65d60789d80862a482">zmq::mtrie_t</a>
 </li>
 <li>add_reconnect_timer()
-: <a class="el" href="classzmq_1_1tcp__connecter__t.html#ad3874801fb1f3fe17a397cab06e7b384">zmq::tcp_connecter_t</a>
+: <a class="el" href="classzmq_1_1ipc__connecter__t.html#a2e04deede2aec014febc69b349e8f0c0">zmq::ipc_connecter_t</a>
+, <a class="el" href="classzmq_1_1tcp__connecter__t.html#ad3874801fb1f3fe17a397cab06e7b384">zmq::tcp_connecter_t</a>
 </li>
 <li>add_refs()
 : <a class="el" href="classzmq_1_1msg__t.html#a67b20d60d792fe6e3089f6d6edf82adb">zmq::msg_t</a>
@@ -193,12 +195,16 @@ function toggleVisibility(linkObj) {
 , <a class="el" href="classzmq_1_1poller__base__t.html#a32155683d4febd61589775286173ba33">zmq::poller_base_t</a>
 </li>
 <li>addr
-: <a class="el" href="classzmq_1_1tcp__connecter__t.html#ab6b9732afd4a6c5fe5c904a69cd11c73">zmq::tcp_connecter_t</a>
+: <a class="el" href="classzmq_1_1ipc__listener__t.html#a9f0fbcf90866a0a7095591cf37cd31d6">zmq::ipc_listener_t</a>
+, <a class="el" href="classzmq_1_1tcp__connecter__t.html#ab6b9732afd4a6c5fe5c904a69cd11c73">zmq::tcp_connecter_t</a>
 , <a class="el" href="classzmq_1_1tcp__listener__t.html#ad4fec3e2587c935085a781d37d2634c7">zmq::tcp_listener_t</a>
+, <a class="el" href="classzmq_1_1ipc__connecter__t.html#a8899cfd508e1d840c3f487e4748b19f7">zmq::ipc_connecter_t</a>
 </li>
 <li>addr_len
-: <a class="el" href="classzmq_1_1tcp__listener__t.html#a7b24104624a46adf84ba0d69a48c6def">zmq::tcp_listener_t</a>
+: <a class="el" href="classzmq_1_1ipc__connecter__t.html#a143777691bafdc9c8d810f9a47653b46">zmq::ipc_connecter_t</a>
+, <a class="el" href="classzmq_1_1ipc__listener__t.html#a2f8e14fa5723f65cb0943929983dca7f">zmq::ipc_listener_t</a>
 , <a class="el" href="classzmq_1_1tcp__connecter__t.html#a98526e3c66107217daf9dfc3d4b28033">zmq::tcp_connecter_t</a>
+, <a class="el" href="classzmq_1_1tcp__listener__t.html#a7b24104624a46adf84ba0d69a48c6def">zmq::tcp_listener_t</a>
 </li>
 <li>address
 : <a class="el" href="classzmq_1_1session__t.html#ac879ae0a137d8d84c2ccd7477febf9ae">zmq::session_t</a>
@@ -225,10 +231,10 @@ function toggleVisibility(linkObj) {
 : <a class="el" href="classzmq_1_1array__item__t.html#a51372dc9105fca6a48a0935d58e6e6c6">zmq::array_item_t&lt; ID &gt;</a>
 </li>
 <li>array_item_t()
-: <a class="el" href="classzmq_1_1array__item__t.html#a6a98343553e8b46803715f2c4b154660">zmq::array_item_t&lt; ID &gt;</a>
+: <a class="el" href="classzmq_1_1array__item__t.html#a5648fc36c40d2ead008868656f907c35">zmq::array_item_t&lt; ID &gt;</a>
 </li>
 <li>array_t()
-: <a class="el" href="classzmq_1_1array__t.html#aa5db347fd81ad51cfc6b27aff23a73e1">zmq::array_t&lt; T, ID &gt;</a>
+: <a class="el" href="classzmq_1_1array__t.html#ad717cf24a6a79736a13f20b771f50f99">zmq::array_t&lt; T, ID &gt;</a>
 </li>
 <li>atomic_counter_t()
 : <a class="el" href="classzmq_1_1atomic__counter__t.html#abdf722a081ad58e495d15dce1ed9a3af">zmq::atomic_counter_t</a>
@@ -237,9 +243,9 @@ function toggleVisibility(linkObj) {
 : <a class="el" href="classzmq_1_1atomic__ptr__t.html#a04bb9d7cd0d8dcdaf3c7ffbd5254a3d7">zmq::atomic_ptr_t&lt; T &gt;</a>
 </li>
 <li>attach()
-: <a class="el" href="classzmq_1_1lb__t.html#a63c346c85e7485a2d7230e623512a864">zmq::lb_t</a>
-, <a class="el" href="classzmq_1_1dist__t.html#af1120d3072800bdcc969db6cbd3ad4f5">zmq::dist_t</a>
+: <a class="el" href="classzmq_1_1dist__t.html#af1120d3072800bdcc969db6cbd3ad4f5">zmq::dist_t</a>
 , <a class="el" href="structzmq_1_1command__t.html#a4c7dc393ee89ffd6e42d886c56588088">zmq::command_t</a>
+, <a class="el" href="classzmq_1_1lb__t.html#a63c346c85e7485a2d7230e623512a864">zmq::lb_t</a>
 , <a class="el" href="classzmq_1_1fq__t.html#ac4fdb58348a55600a5e8b2f8137528ad">zmq::fq_t</a>
 , <a class="el" href="structzmq_1_1command__t.html#add5023dfe333b73666a86921ef64238dad047b3c2f898bb24b7bd6c51375b8859">zmq::command_t</a>
 </li>
@@ -263,7 +269,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jul 30 2011 15:49:33 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Aug 5 2011 06:26:56 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

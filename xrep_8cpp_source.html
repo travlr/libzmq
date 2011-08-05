@@ -231,7 +231,7 @@ function toggleVisibility(linkObj) {
 <a name="l00124"></a>00124         <span class="comment">//  If we have malformed message (prefix with no subsequent message)</span>
 <a name="l00125"></a>00125         <span class="comment">//  then just silently ignore it.</span>
 <a name="l00126"></a>00126         <span class="comment">//  TODO: The connections should be killed instead.</span>
-<a name="l00127"></a>00127         <span class="keywordflow">if</span> (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) {
+<a name="l00127"></a>00127         <span class="keywordflow">if</span> (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) {
 <a name="l00128"></a>00128 
 <a name="l00129"></a>00129             more_out = <span class="keyword">true</span>;
 <a name="l00130"></a>00130 
@@ -264,7 +264,7 @@ function toggleVisibility(linkObj) {
 <a name="l00157"></a>00157     }
 <a name="l00158"></a>00158 
 <a name="l00159"></a>00159     <span class="comment">//  Check whether this is the last part of the message.</span>
-<a name="l00160"></a>00160     more_out = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00160"></a>00160     more_out = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
 <a name="l00161"></a>00161 
 <a name="l00162"></a>00162     <span class="comment">//  Push the message into the pipe. If there&#39;s no out pipe, just drop it.</span>
 <a name="l00163"></a>00163     <span class="keywordflow">if</span> (current_out) {
@@ -293,7 +293,7 @@ function toggleVisibility(linkObj) {
 <a name="l00186"></a>00186     <span class="keywordflow">if</span> (prefetched) {
 <a name="l00187"></a>00187         <span class="keywordtype">int</span> rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a39318e9417f38b7f415b85ae591ed606">move</a> (prefetched_msg);
 <a name="l00188"></a>00188         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00189"></a>00189         more_in = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00189"></a>00189         more_in = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
 <a name="l00190"></a>00190         prefetched = <span class="keyword">false</span>;
 <a name="l00191"></a>00191         <span class="keywordflow">return</span> 0;
 <a name="l00192"></a>00192     }
@@ -306,7 +306,7 @@ function toggleVisibility(linkObj) {
 <a name="l00199"></a>00199 
 <a name="l00200"></a>00200     <span class="comment">//  If we are in the middle of reading a message, just return the next part.</span>
 <a name="l00201"></a>00201     <span class="keywordflow">if</span> (more_in) {
-<a name="l00202"></a>00202         more_in = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00202"></a>00202         more_in = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
 <a name="l00203"></a>00203         <span class="keywordflow">return</span> 0;
 <a name="l00204"></a>00204     }
 <a name="l00205"></a>00205  
@@ -320,7 +320,7 @@ function toggleVisibility(linkObj) {
 <a name="l00213"></a>00213     rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a2d40a80f7828b6ab4f63a1d2afa2af82">init_size</a> (4);
 <a name="l00214"></a>00214     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
 <a name="l00215"></a>00215     put_uint32 ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*) msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> (), pipe-&gt;<a class="code" href="classzmq_1_1pipe__t.html#af5e154df948160cec14facac9e90eca5">get_pipe_id</a> ());
-<a name="l00216"></a>00216     msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#aea7736e7955f2125dd6298baee851ca7">set_flags</a> (<a class="code" href="classzmq_1_1msg__t.html#a01d6e8925ff0b84067fbb41ae653ae05a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>);
+<a name="l00216"></a>00216     msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#aea7736e7955f2125dd6298baee851ca7">set_flags</a> (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>);
 <a name="l00217"></a>00217     <span class="keywordflow">return</span> 0;
 <a name="l00218"></a>00218 }
 <a name="l00219"></a>00219 
@@ -367,7 +367,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jul 30 2011 15:49:31 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Aug 5 2011 06:26:53 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

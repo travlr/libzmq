@@ -721,7 +721,7 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="structzmq_1_1command__t.html#a5cc233715d15992816c27b3d62776426">zmq::command_t::activate_read</a>, <a class="el" href="structzmq_1_1command__t.html#ae623bb2447e172510456cfa7061c445c">zmq::command_t::activate_write</a>, <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="structzmq_1_1command__t.html#a4c7dc393ee89ffd6e42d886c56588088">zmq::command_t::attach</a>, <a class="el" href="structzmq_1_1command__t.html#a72973798c00f6a1afaecfd4d6512eaf0">zmq::command_t::bind</a>, <a class="el" href="structzmq_1_1command__t.html#aafffe17ec20372725773f98af7d33586">zmq::command_t::hiccup</a>, <a class="el" href="structzmq_1_1command__t.html#aea530f2505d28c466404996a9e6c4ad7">zmq::command_t::own</a>, <a class="el" href="structzmq_1_1command__t.html#a6359a5ded2a03e9e10b8709b697dc4b8">zmq::command_t::pipe_term</a>, <a class="el" href="structzmq_1_1command__t.html#a6f2b644fe0462d5ab0440a3f6b83721a">zmq::command_t::pipe_term_ack</a>, <a class="el" href="structzmq_1_1command__t.html#a72baf7a4772b48e8ee60d5cab291a52e">zmq::command_t::plug</a>, <a class="el" href="structzmq_1_1command__t.html#adca165cfd7d4c1526e7f3cd874dfe96c">zmq::command_t::reap</a>, <a class="el" href="structzmq_1_1command__t.html#a85cdfd597a1747e9eeeae829fe065de8">zmq::command_t::reaped</a>, <a class="el" href="structzmq_1_1command__t.html#affea24404521d5c38e56b9ca9e6337ac">zmq::command_t::stop</a>, <a class="el" href="structzmq_1_1command__t.html#a9a2fcf4e66fef0caa7a00889f48d8cde">zmq::command_t::term</a>, <a class="el" href="structzmq_1_1command__t.html#a62a8ebac69217614d65c25e6156649f8">zmq::command_t::term_ack</a>, <a class="el" href="structzmq_1_1command__t.html#ab4d26bb409717e69ae72408f4280d067">zmq::command_t::term_req</a>, <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
-<p>Referenced by <a class="el" href="reaper_8cpp_source.html#l00058">zmq::reaper_t::in_event()</a>, <a class="el" href="io__thread_8cpp_source.html#l00064">in_event()</a>, and <a class="el" href="socket__base_8cpp_source.html#l00656">zmq::socket_base_t::process_commands()</a>.</p>
+<p>Referenced by <a class="el" href="reaper_8cpp_source.html#l00058">zmq::reaper_t::in_event()</a>, <a class="el" href="io__thread_8cpp_source.html#l00064">in_event()</a>, and <a class="el" href="socket__base_8cpp_source.html#l00695">zmq::socket_base_t::process_commands()</a>.</p>
 
 <p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -840,7 +840,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classzmq_1_1session__t.html#acd9081bd88d61a17dad9e82d7fabc5c8">zmq::session_t</a>, <a class="el" href="classzmq_1_1tcp__connecter__t.html#ac48e5c141700982e9c2ebbb0199b3e6c">zmq::tcp_connecter_t</a>, and <a class="el" href="classzmq_1_1tcp__listener__t.html#a1b16eee787896e8207af95d5874b6e05">zmq::tcp_listener_t</a>.</p>
+<p>Reimplemented in <a class="el" href="classzmq_1_1ipc__connecter__t.html#a2094d991c8a1e0d28dbf78e151ddbac5">zmq::ipc_connecter_t</a>, <a class="el" href="classzmq_1_1ipc__listener__t.html#abc8d05a65d7480b6438043c6e1487b30">zmq::ipc_listener_t</a>, <a class="el" href="classzmq_1_1session__t.html#acd9081bd88d61a17dad9e82d7fabc5c8">zmq::session_t</a>, <a class="el" href="classzmq_1_1tcp__connecter__t.html#ac48e5c141700982e9c2ebbb0199b3e6c">zmq::tcp_connecter_t</a>, and <a class="el" href="classzmq_1_1tcp__listener__t.html#a1b16eee787896e8207af95d5874b6e05">zmq::tcp_listener_t</a>.</p>
 
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00369">369</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
@@ -950,7 +950,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classzmq_1_1own__t.html#aa6cf69fab99e823b61cca86e51dbe555">zmq::own_t</a>, <a class="el" href="classzmq_1_1session__t.html#a0f0172bf489b73529a65cd150cdc3a95">zmq::session_t</a>, <a class="el" href="classzmq_1_1socket__base__t.html#a50e07e9557a64314204795949f5af396">zmq::socket_base_t</a>, and <a class="el" href="classzmq_1_1tcp__listener__t.html#ae97b4bf062352eb84c3509134bbebc25">zmq::tcp_listener_t</a>.</p>
+<p>Reimplemented in <a class="el" href="classzmq_1_1ipc__listener__t.html#aeb7ea0351650d8b906aa96a53a5b5352">zmq::ipc_listener_t</a>, <a class="el" href="classzmq_1_1own__t.html#aa6cf69fab99e823b61cca86e51dbe555">zmq::own_t</a>, <a class="el" href="classzmq_1_1session__t.html#a0f0172bf489b73529a65cd150cdc3a95">zmq::session_t</a>, <a class="el" href="classzmq_1_1socket__base__t.html#a50e07e9557a64314204795949f5af396">zmq::socket_base_t</a>, and <a class="el" href="classzmq_1_1tcp__listener__t.html#ae97b4bf062352eb84c3509134bbebc25">zmq::tcp_listener_t</a>.</p>
 
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00419">419</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
@@ -1663,7 +1663,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jul 30 2011 15:49:34 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Aug 5 2011 06:26:57 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

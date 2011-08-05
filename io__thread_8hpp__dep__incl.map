@@ -2,10 +2,12 @@
 <area shape="rect" id="node3" href="$ctx_8cpp.html" title="src/ctx.cpp" alt="" coords="5,83,91,112"/>
 <area shape="rect" id="node5" href="$io__object_8cpp.html" title="src/io_object.cpp" alt="" coords="115,83,235,112"/>
 <area shape="rect" id="node7" href="$io__thread_8cpp.html" title="src/io_thread.cpp" alt="" coords="259,83,381,112"/>
-<area shape="rect" id="node9" href="$object_8cpp.html" title="src/object.cpp" alt="" coords="405,83,509,112"/>
-<area shape="rect" id="node11" href="$own_8cpp.html" title="src/own.cpp" alt="" coords="533,83,627,112"/>
-<area shape="rect" id="node13" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="651,83,792,112"/>
-<area shape="rect" id="node15" href="$tcp__connecter_8cpp.html" title="src/tcp_connecter.cpp" alt="" coords="816,83,965,112"/>
-<area shape="rect" id="node17" href="$tcp__engine_8cpp.html" title="src/tcp_engine.cpp" alt="" coords="989,83,1120,112"/>
-<area shape="rect" id="node19" href="$tcp__listener_8cpp.html" title="src/tcp_listener.cpp" alt="" coords="1144,83,1280,112"/>
+<area shape="rect" id="node9" href="$ipc__connecter_8cpp.html" title="src/ipc_connecter.cpp" alt="" coords="405,83,555,112"/>
+<area shape="rect" id="node11" href="$ipc__listener_8cpp.html" title="src/ipc_listener.cpp" alt="" coords="579,83,712,112"/>
+<area shape="rect" id="node13" href="$object_8cpp.html" title="src/object.cpp" alt="" coords="736,83,840,112"/>
+<area shape="rect" id="node15" href="$own_8cpp.html" title="src/own.cpp" alt="" coords="864,83,957,112"/>
+<area shape="rect" id="node17" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="981,83,1123,112"/>
+<area shape="rect" id="node19" href="$tcp__connecter_8cpp.html" title="src/tcp_connecter.cpp" alt="" coords="1147,83,1296,112"/>
+<area shape="rect" id="node21" href="$tcp__engine_8cpp.html" title="src/tcp_engine.cpp" alt="" coords="1320,83,1451,112"/>
+<area shape="rect" id="node23" href="$tcp__listener_8cpp.html" title="src/tcp_listener.cpp" alt="" coords="1475,83,1611,112"/>
 </map>

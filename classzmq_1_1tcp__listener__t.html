@@ -148,7 +148,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1io__object__t.html#ab57698c45e55f221a3eb4e326281db78">plug</a> (class <a class="el" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#a93b476c058c34d212f7424b881f6104f">process_command</a> (struct <a class="el" href="structzmq_1_1command__t.html">command_t</a> &amp;cmd_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1own__t.html#a9a4aaa41336dc931b064c1f2374080dc">register_term_acks</a> (int count_)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#a2dfd277dfec511d7ccda2e4648284a00">set_address</a> (const char *protocol_, const char *addr_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#a274b3137c2f8962f96d1f53d2e108c8c">set_address</a> (const char *addr_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1io__object__t.html#a3bdc727ee97295a29db7dece653f0ae7">unplug</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1own__t.html#aec1390a8d5aad21d2ec4204ae36234b0">unregister_term_ack</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-types"></a>
@@ -210,7 +210,7 @@ Protected Attributes</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#a7ad38de26201bfd8654a760ded797a28">tcp_listener_t</a> (const <a class="el" href="classzmq_1_1tcp__listener__t.html">tcp_listener_t</a> &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">fd_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#a61d3286e4d1a1199b2710d6b193b7076">accept</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#a786f013879772618d90bb3fc554dc3cd">close</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#ad3c4437a0457ca8374be1cf9592d6e39">close</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#a5768c38ce36c7721bacf332740bb8a1f">in_event</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classzmq_1_1tcp__listener__t.html">tcp_listener_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#a26b7188f805103c354917c56e15f8429">operator=</a> (const <a class="el" href="classzmq_1_1tcp__listener__t.html">tcp_listener_t</a> &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1tcp__listener__t.html#a1b16eee787896e8207af95d5874b6e05">process_plug</a> ()</td></tr>
@@ -331,7 +331,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="tcp__listener_8cpp_source.html#l00325">325</a> of file <a class="el" href="tcp__listener_8cpp_source.html">tcp_listener.cpp</a>.</p>
+<p>Definition at line <a class="el" href="tcp__listener_8cpp_source.html#l00180">180</a> of file <a class="el" href="tcp__listener_8cpp_source.html">tcp_listener.cpp</a>.</p>
 
 <p>References <a class="el" href="zmq_8h_source.html#l00084">ENOBUFS</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
@@ -449,12 +449,12 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a786f013879772618d90bb3fc554dc3cd"></a><!-- doxytag: member="zmq::tcp_listener_t::close" ref="a786f013879772618d90bb3fc554dc3cd" args="()" -->
+<a class="anchor" id="ad3c4437a0457ca8374be1cf9592d6e39"></a><!-- doxytag: member="zmq::tcp_listener_t::close" ref="ad3c4437a0457ca8374be1cf9592d6e39" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int zmq::tcp_listener_t::close </td>
+          <td class="memname">void zmq::tcp_listener_t::close </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [private]</code></td>
@@ -463,9 +463,9 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="tcp__listener_8cpp_source.html#l00303">303</a> of file <a class="el" href="tcp__listener_8cpp_source.html">tcp_listener.cpp</a>.</p>
+<p>Definition at line <a class="el" href="tcp__listener_8cpp_source.html#l00110">110</a> of file <a class="el" href="tcp__listener_8cpp_source.html">tcp_listener.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -605,7 +605,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="own_8cpp_source.html#l00056">56</a> of file <a class="el" href="own_8cpp_source.html">own.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="ctx_8cpp_source.html#l00282">zmq::ctx_t::find_endpoint()</a>, <a class="el" href="tcp__listener_8cpp_source.html#l00081">in_event()</a>, <a class="el" href="object_8cpp_source.html#l00204">zmq::object_t::send_attach()</a>, <a class="el" href="object_8cpp_source.html#l00220">zmq::object_t::send_bind()</a>, <a class="el" href="object_8cpp_source.html#l00191">zmq::object_t::send_own()</a>, and <a class="el" href="object_8cpp_source.html#l00177">zmq::object_t::send_plug()</a>.</p>
+<p>Referenced by <a class="el" href="ctx_8cpp_source.html#l00282">zmq::ctx_t::find_endpoint()</a>, <a class="el" href="tcp__listener_8cpp_source.html#l00081">in_event()</a>, <a class="el" href="ipc__listener_8cpp_source.html#l00071">zmq::ipc_listener_t::in_event()</a>, <a class="el" href="object_8cpp_source.html#l00204">zmq::object_t::send_attach()</a>, <a class="el" href="object_8cpp_source.html#l00220">zmq::object_t::send_bind()</a>, <a class="el" href="object_8cpp_source.html#l00191">zmq::object_t::send_own()</a>, and <a class="el" href="object_8cpp_source.html#l00177">zmq::object_t::send_plug()</a>.</p>
 
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -614,7 +614,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1own__t_ad152acb0f4d06b1f80c40509775b2d1b_icgraph.png" border="0" usemap="#classzmq_1_1own__t_ad152acb0f4d06b1f80c40509775b2d1b_icgraph" alt=""/></div>
 <map name="classzmq_1_1own__t_ad152acb0f4d06b1f80c40509775b2d1b_icgraph" id="classzmq_1_1own__t_ad152acb0f4d06b1f80c40509775b2d1b_icgraph">
-<area shape="rect" id="node3" href="classzmq_1_1ctx__t.html#af14b1742c89990baf8453f8c1d542c0d" title="zmq::ctx_t::find_endpoint" alt="" coords="233,5,401,35"/><area shape="rect" id="node5" href="classzmq_1_1tcp__listener__t.html#a5768c38ce36c7721bacf332740bb8a1f" title="zmq::tcp_listener_t::in_event" alt="" coords="223,59,412,88"/><area shape="rect" id="node7" href="classzmq_1_1object__t.html#aa85b1dd604b176fdbab4b93e3f7697c2" title="zmq::object_t::send_attach" alt="" coords="228,112,407,141"/><area shape="rect" id="node9" href="classzmq_1_1object__t.html#ad5903d7950a3b0d6652cb6dcdc2e484f" title="zmq::object_t::send_bind" alt="" coords="233,165,401,195"/><area shape="rect" id="node11" href="classzmq_1_1object__t.html#a1746fdd6c7b787bfa432dace8c5ca156" title="zmq::object_t::send_own" alt="" coords="233,219,401,248"/><area shape="rect" id="node13" href="classzmq_1_1object__t.html#afeec511a9a6ec59f82d12f5e4e8b7e20" title="zmq::object_t::send_plug" alt="" coords="233,272,401,301"/></map>
+<area shape="rect" id="node3" href="classzmq_1_1ctx__t.html#af14b1742c89990baf8453f8c1d542c0d" title="zmq::ctx_t::find_endpoint" alt="" coords="233,5,401,35"/><area shape="rect" id="node5" href="classzmq_1_1tcp__listener__t.html#a5768c38ce36c7721bacf332740bb8a1f" title="zmq::tcp_listener_t::in_event" alt="" coords="223,59,412,88"/><area shape="rect" id="node7" href="classzmq_1_1ipc__listener__t.html#ab40d9aacf57c5e2b8da596262a052780" title="zmq::ipc_listener_t::in_event" alt="" coords="223,112,412,141"/><area shape="rect" id="node9" href="classzmq_1_1object__t.html#aa85b1dd604b176fdbab4b93e3f7697c2" title="zmq::object_t::send_attach" alt="" coords="228,165,407,195"/><area shape="rect" id="node11" href="classzmq_1_1object__t.html#ad5903d7950a3b0d6652cb6dcdc2e484f" title="zmq::object_t::send_bind" alt="" coords="233,219,401,248"/><area shape="rect" id="node13" href="classzmq_1_1object__t.html#a1746fdd6c7b787bfa432dace8c5ca156" title="zmq::object_t::send_own" alt="" coords="233,272,401,301"/><area shape="rect" id="node15" href="classzmq_1_1object__t.html#afeec511a9a6ec59f82d12f5e4e8b7e20" title="zmq::object_t::send_plug" alt="" coords="233,325,401,355"/></map>
 </div>
 </p>
 
@@ -764,7 +764,7 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="structzmq_1_1i__poll__events.html#ac02294c753e0ff56bdd1433c824d5076">zmq::i_poll_events</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classzmq_1_1tcp__connecter__t.html#a06a9b7123f075426372318d9c0185748">zmq::tcp_connecter_t</a>, and <a class="el" href="classzmq_1_1tcp__engine__t.html#aec652289c20c7cecd788dfa9b74a1b12">zmq::tcp_engine_t</a>.</p>
+<p>Reimplemented in <a class="el" href="classzmq_1_1ipc__connecter__t.html#accab97822a3fdd6e2e2b7b4138bb3158">zmq::ipc_connecter_t</a>, <a class="el" href="classzmq_1_1tcp__connecter__t.html#a06a9b7123f075426372318d9c0185748">zmq::tcp_connecter_t</a>, and <a class="el" href="classzmq_1_1tcp__engine__t.html#aec652289c20c7cecd788dfa9b74a1b12">zmq::tcp_engine_t</a>.</p>
 
 <p>Definition at line <a class="el" href="io__object_8cpp_source.html#l00099">99</a> of file <a class="el" href="io__object_8cpp_source.html">io_object.cpp</a>.</p>
 
@@ -791,7 +791,7 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="io__thread_8cpp_source.html#l00097">zmq::io_thread_t::get_poller()</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
-<p>Referenced by <a class="el" href="io__object_8cpp_source.html#l00025">zmq::io_object_t::io_object_t()</a>, and <a class="el" href="tcp__engine_8cpp_source.html#l00069">zmq::tcp_engine_t::plug()</a>.</p>
+<p>Referenced by <a class="el" href="io__object_8cpp_source.html#l00025">zmq::io_object_t::io_object_t()</a>, and <a class="el" href="tcp__engine_8cpp_source.html#l00105">zmq::tcp_engine_t::plug()</a>.</p>
 
 <p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -927,7 +927,7 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="structzmq_1_1command__t.html#a5cc233715d15992816c27b3d62776426">zmq::command_t::activate_read</a>, <a class="el" href="structzmq_1_1command__t.html#ae623bb2447e172510456cfa7061c445c">zmq::command_t::activate_write</a>, <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="structzmq_1_1command__t.html#a4c7dc393ee89ffd6e42d886c56588088">zmq::command_t::attach</a>, <a class="el" href="structzmq_1_1command__t.html#a72973798c00f6a1afaecfd4d6512eaf0">zmq::command_t::bind</a>, <a class="el" href="structzmq_1_1command__t.html#aafffe17ec20372725773f98af7d33586">zmq::command_t::hiccup</a>, <a class="el" href="structzmq_1_1command__t.html#aea530f2505d28c466404996a9e6c4ad7">zmq::command_t::own</a>, <a class="el" href="structzmq_1_1command__t.html#a6359a5ded2a03e9e10b8709b697dc4b8">zmq::command_t::pipe_term</a>, <a class="el" href="structzmq_1_1command__t.html#a6f2b644fe0462d5ab0440a3f6b83721a">zmq::command_t::pipe_term_ack</a>, <a class="el" href="structzmq_1_1command__t.html#a72baf7a4772b48e8ee60d5cab291a52e">zmq::command_t::plug</a>, <a class="el" href="structzmq_1_1command__t.html#adca165cfd7d4c1526e7f3cd874dfe96c">zmq::command_t::reap</a>, <a class="el" href="structzmq_1_1command__t.html#a85cdfd597a1747e9eeeae829fe065de8">zmq::command_t::reaped</a>, <a class="el" href="structzmq_1_1command__t.html#affea24404521d5c38e56b9ca9e6337ac">zmq::command_t::stop</a>, <a class="el" href="structzmq_1_1command__t.html#a9a2fcf4e66fef0caa7a00889f48d8cde">zmq::command_t::term</a>, <a class="el" href="structzmq_1_1command__t.html#a62a8ebac69217614d65c25e6156649f8">zmq::command_t::term_ack</a>, <a class="el" href="structzmq_1_1command__t.html#ab4d26bb409717e69ae72408f4280d067">zmq::command_t::term_req</a>, <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
-<p>Referenced by <a class="el" href="reaper_8cpp_source.html#l00058">zmq::reaper_t::in_event()</a>, <a class="el" href="io__thread_8cpp_source.html#l00064">zmq::io_thread_t::in_event()</a>, and <a class="el" href="socket__base_8cpp_source.html#l00656">zmq::socket_base_t::process_commands()</a>.</p>
+<p>Referenced by <a class="el" href="reaper_8cpp_source.html#l00058">zmq::reaper_t::in_event()</a>, <a class="el" href="io__thread_8cpp_source.html#l00064">zmq::io_thread_t::in_event()</a>, and <a class="el" href="socket__base_8cpp_source.html#l00695">zmq::socket_base_t::process_commands()</a>.</p>
 
 <p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-11-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -960,7 +960,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="own_8cpp_source.html#l00215">215</a> of file <a class="el" href="own_8cpp_source.html">own.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="socket__base_8cpp_source.html#l00814">zmq::socket_base_t::check_destroy()</a>.</p>
+<p>Referenced by <a class="el" href="socket__base_8cpp_source.html#l00853">zmq::socket_base_t::check_destroy()</a>.</p>
 
 <p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-12-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -1737,7 +1737,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2dfd277dfec511d7ccda2e4648284a00"></a><!-- doxytag: member="zmq::tcp_listener_t::set_address" ref="a2dfd277dfec511d7ccda2e4648284a00" args="(const char *protocol_, const char *addr_)" -->
+<a class="anchor" id="a274b3137c2f8962f96d1f53d2e108c8c"></a><!-- doxytag: member="zmq::tcp_listener_t::set_address" ref="a274b3137c2f8962f96d1f53d2e108c8c" args="(const char *addr_)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1745,36 +1745,26 @@ Private Attributes</h2></td></tr>
           <td class="memname">int zmq::tcp_listener_t::set_address </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>protocol_</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>addr_</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>addr_</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="tcp__listener_8cpp_source.html#l00195">195</a> of file <a class="el" href="tcp__listener_8cpp_source.html">tcp_listener.cpp</a>.</p>
+<p>Definition at line <a class="el" href="tcp__listener_8cpp_source.html#l00123">123</a> of file <a class="el" href="tcp__listener_8cpp_source.html">tcp_listener.cpp</a>.</p>
 
-<p>References <a class="el" href="zmq_8h_source.html#l00081">EPROTONOSUPPORT</a>, and <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>.</p>
 
-<p>Referenced by <a class="el" href="socket__base_8cpp_source.html#l00318">zmq::socket_base_t::bind()</a>.</p>
+<p>Referenced by <a class="el" href="socket__base_8cpp_source.html#l00329">zmq::socket_base_t::bind()</a>.</p>
 
 <p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-18-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-18-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="classzmq_1_1tcp__listener__t_a2dfd277dfec511d7ccda2e4648284a00_icgraph.png" border="0" usemap="#classzmq_1_1tcp__listener__t_a2dfd277dfec511d7ccda2e4648284a00_icgraph" alt=""/></div>
-<map name="classzmq_1_1tcp__listener__t_a2dfd277dfec511d7ccda2e4648284a00_icgraph" id="classzmq_1_1tcp__listener__t_a2dfd277dfec511d7ccda2e4648284a00_icgraph">
+<div class="center"><img src="classzmq_1_1tcp__listener__t_a274b3137c2f8962f96d1f53d2e108c8c_icgraph.png" border="0" usemap="#classzmq_1_1tcp__listener__t_a274b3137c2f8962f96d1f53d2e108c8c_icgraph" alt=""/></div>
+<map name="classzmq_1_1tcp__listener__t_a274b3137c2f8962f96d1f53d2e108c8c_icgraph" id="classzmq_1_1tcp__listener__t_a274b3137c2f8962f96d1f53d2e108c8c_icgraph">
 <area shape="rect" id="node3" href="classzmq_1_1socket__base__t.html#ade02d92860862c008837f641c4aa1b5a" title="zmq::socket_base_t::bind" alt="" coords="268,5,439,35"/><area shape="rect" id="node5" href="classzmq_1_1ctx__t.html#a414fa4199643046ffdd08e175124aa81" title="zmq::ctx_t::ctx_t" alt="" coords="489,5,609,35"/></map>
 </div>
 </p>
@@ -1854,7 +1844,7 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="structzmq_1_1i__poll__events.html#a0d088aff6e763eda666ec60b29b75d4d">zmq::i_poll_events</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classzmq_1_1session__t.html#a3de528a90ffb9682dcb20b3de1426c3e">zmq::session_t</a>, and <a class="el" href="classzmq_1_1tcp__connecter__t.html#a6c3abec095bbadf10de3e8e6394f8959">zmq::tcp_connecter_t</a>.</p>
+<p>Reimplemented in <a class="el" href="classzmq_1_1ipc__connecter__t.html#a0feb48733f7422ad894152be545dfa9c">zmq::ipc_connecter_t</a>, <a class="el" href="classzmq_1_1session__t.html#a3de528a90ffb9682dcb20b3de1426c3e">zmq::session_t</a>, and <a class="el" href="classzmq_1_1tcp__connecter__t.html#a6c3abec095bbadf10de3e8e6394f8959">zmq::tcp_connecter_t</a>.</p>
 
 <p>Definition at line <a class="el" href="io__object_8cpp_source.html#l00104">104</a> of file <a class="el" href="io__object_8cpp_source.html">io_object.cpp</a>.</p>
 
@@ -1882,7 +1872,7 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
-<p>Referenced by <a class="el" href="tcp__engine_8cpp_source.html#l00092">zmq::tcp_engine_t::unplug()</a>.</p>
+<p>Referenced by <a class="el" href="tcp__engine_8cpp_source.html#l00128">zmq::tcp_engine_t::unplug()</a>.</p>
 
 <p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-19-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -2067,7 +2057,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sat Jul 30 2011 15:49:41 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Fri Aug 5 2011 06:27:05 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
