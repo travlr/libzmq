@@ -230,7 +230,7 @@ function toggleVisibility(linkObj) {
 <a name="l00123"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#a274b3137c2f8962f96d1f53d2e108c8c">00123</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1tcp__listener__t.html#a274b3137c2f8962f96d1f53d2e108c8c">zmq::tcp_listener_t::set_address</a> (<span class="keyword">const</span> <span class="keywordtype">char</span> *addr_)
 <a name="l00124"></a>00124 {
 <a name="l00125"></a>00125     <span class="comment">//  Convert the interface into sockaddr_in structure.</span>
-<a name="l00126"></a>00126     <span class="keywordtype">int</span> rc = resolve_ip_interface (&amp;addr, &amp;addr_len, addr_);
+<a name="l00126"></a>00126     <span class="keywordtype">int</span> rc = resolve_ip_interface (&amp;addr, &amp;addr_len, addr_, options.ipv4only);
 <a name="l00127"></a>00127     <span class="keywordflow">if</span> (rc != 0)
 <a name="l00128"></a>00128         <span class="keywordflow">return</span> -1;
 <a name="l00129"></a>00129 
@@ -322,7 +322,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Aug 8 2011 06:59:20 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Aug 8 2011 17:48:22 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
