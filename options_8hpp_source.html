@@ -185,21 +185,26 @@ function toggleVisibility(linkObj) {
 <a name="l00078"></a><a class="code" href="structzmq_1_1options__t.html#aca04959d4b92ef8a9a12ce1365a52788">00078</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#aca04959d4b92ef8a9a12ce1365a52788">rcvtimeo</a>;
 <a name="l00079"></a><a class="code" href="structzmq_1_1options__t.html#a8197da24697e9c7416e697d734f3aa47">00079</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#a8197da24697e9c7416e697d734f3aa47">sndtimeo</a>;
 <a name="l00080"></a>00080 
-<a name="l00081"></a>00081         <span class="comment">//  If true, session reads all the pending messages from the pipe and</span>
-<a name="l00082"></a>00082         <span class="comment">//  sends them to the network when socket is closed.</span>
-<a name="l00083"></a><a class="code" href="structzmq_1_1options__t.html#a0c01f11d8a2de9e81f890c8e8673132d">00083</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a0c01f11d8a2de9e81f890c8e8673132d">delay_on_close</a>;
-<a name="l00084"></a>00084 
-<a name="l00085"></a>00085         <span class="comment">//  If true, socket reads all the messages from the pipe and delivers</span>
-<a name="l00086"></a>00086         <span class="comment">//  them to the user when the peer terminates.</span>
-<a name="l00087"></a><a class="code" href="structzmq_1_1options__t.html#a8bb26287f7a5a59b3e6c59d106335fbe">00087</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a8bb26287f7a5a59b3e6c59d106335fbe">delay_on_disconnect</a>;
-<a name="l00088"></a>00088 
-<a name="l00089"></a>00089         <span class="comment">//  If 1, (X)SUB socket should filter the messages. If 0, it should not.</span>
-<a name="l00090"></a><a class="code" href="structzmq_1_1options__t.html#a329d2973d83132fedabc52cee56519f4">00090</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a329d2973d83132fedabc52cee56519f4">filter</a>;
-<a name="l00091"></a>00091     };
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093 }
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095 <span class="preprocessor">#endif</span>
+<a name="l00081"></a>00081         <span class="comment">//  If 1, indicates the use of IPv4 sockets only, it will not be</span>
+<a name="l00082"></a>00082         <span class="comment">//  possible to communicate with IPv6-only hosts. If 0, the socket can</span>
+<a name="l00083"></a>00083         <span class="comment">//  connect to and accept connections from both IPv4 and IPv6 hosts.</span>
+<a name="l00084"></a><a class="code" href="structzmq_1_1options__t.html#ae7ec88fe24ba4cc1a0d50a18247b31ad">00084</a>         <span class="keywordtype">int</span> <a class="code" href="structzmq_1_1options__t.html#ae7ec88fe24ba4cc1a0d50a18247b31ad">ipv4only</a>;
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086         <span class="comment">//  If true, session reads all the pending messages from the pipe and</span>
+<a name="l00087"></a>00087         <span class="comment">//  sends them to the network when socket is closed.</span>
+<a name="l00088"></a><a class="code" href="structzmq_1_1options__t.html#a0c01f11d8a2de9e81f890c8e8673132d">00088</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a0c01f11d8a2de9e81f890c8e8673132d">delay_on_close</a>;
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090         <span class="comment">//  If true, socket reads all the messages from the pipe and delivers</span>
+<a name="l00091"></a>00091         <span class="comment">//  them to the user when the peer terminates.</span>
+<a name="l00092"></a><a class="code" href="structzmq_1_1options__t.html#a8bb26287f7a5a59b3e6c59d106335fbe">00092</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a8bb26287f7a5a59b3e6c59d106335fbe">delay_on_disconnect</a>;
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094         <span class="comment">//  If 1, (X)SUB socket should filter the messages. If 0, it should not.</span>
+<a name="l00095"></a><a class="code" href="structzmq_1_1options__t.html#a329d2973d83132fedabc52cee56519f4">00095</a>         <span class="keywordtype">bool</span> <a class="code" href="structzmq_1_1options__t.html#a329d2973d83132fedabc52cee56519f4">filter</a>;
+<a name="l00096"></a>00096     };
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 }
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -216,7 +221,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 7 2011 18:40:40 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Aug 8 2011 06:59:20 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
