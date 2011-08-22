@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: src/ip.hpp Source File</title>
+<title>libzmq: /home/travlr/dev/zmq-contribution/repos/libzmq/src/ip.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,7 +96,11 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
+      <li class="navelem"><a class="el" href="dir_8979224d789028e59cd89c908d416115.html">dev</a>      </li>
+      <li class="navelem"><a class="el" href="dir_f51af2f98e6941360ad90b905891520d.html">zmq-contribution</a>      </li>
+      <li class="navelem"><a class="el" href="dir_96988f9353a405a242dd766abb3686b1.html">repos</a>      </li>
+      <li class="navelem"><a class="el" href="dir_60a86e8ac53e169b93a6635e66941031.html">libzmq</a>      </li>
+      <li class="navelem"><a class="el" href="dir_5691c2437afd6102f4ea6926b901bacc.html">src</a>      </li>
     </ul>
   </div>
 </div>
@@ -128,56 +132,23 @@ function toggleVisibility(linkObj) {
 <a name="l00021"></a>00021 <span class="preprocessor">#ifndef __ZMQ_IP_HPP_INCLUDED__</span>
 <a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define __ZMQ_IP_HPP_INCLUDED__</span>
 <a name="l00023"></a>00023 <span class="preprocessor"></span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;platform.hpp&quot;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="fd_8hpp.html">fd.hpp</a>&quot;</span>
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="preprocessor">#ifdef ZMQ_HAVE_WINDOWS</span>
-<a name="l00028"></a>00028 <span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="windows_8hpp.html">windows.hpp</a>&quot;</span>
-<a name="l00029"></a>00029 <span class="preprocessor">#else</span>
-<a name="l00030"></a>00030 <span class="preprocessor"></span><span class="preprocessor">#include &lt;sys/types.h&gt;</span>
-<a name="l00031"></a>00031 <span class="preprocessor">#include &lt;sys/socket.h&gt;</span>
-<a name="l00032"></a>00032 <span class="preprocessor">#include &lt;arpa/inet.h&gt;</span>
-<a name="l00033"></a>00033 <span class="preprocessor">#include &lt;netinet/in.h&gt;</span>
-<a name="l00034"></a>00034 <span class="preprocessor">#include &lt;netinet/tcp.h&gt;</span>
-<a name="l00035"></a>00035 <span class="preprocessor">#include &lt;netdb.h&gt;</span>
-<a name="l00036"></a>00036 <span class="preprocessor">#endif</span>
-<a name="l00037"></a>00037 <span class="preprocessor"></span>
-<a name="l00038"></a>00038 <span class="comment">//  Some platforms (notably Darwin/OSX and NetBSD) do not define all AI_</span>
-<a name="l00039"></a>00039 <span class="comment">//  flags for getaddrinfo(). This can be worked around safely by defining</span>
-<a name="l00040"></a>00040 <span class="comment">//  these to 0.</span>
-<a name="l00041"></a>00041 <span class="preprocessor">#ifndef AI_ADDRCONFIG</span>
-<a name="l00042"></a><a class="code" href="ip_8hpp.html#abe581892df09df05b21fee09e1584659">00042</a> <span class="preprocessor"></span><span class="preprocessor">#define AI_ADDRCONFIG 0</span>
-<a name="l00043"></a>00043 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00044"></a>00044 <span class="preprocessor"></span><span class="preprocessor">#ifndef AI_NUMERICSERV</span>
-<a name="l00045"></a><a class="code" href="ip_8hpp.html#a8739abe7bcb9470bcdb021e869b2a76f">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define AI_NUMERICSERV 0</span>
-<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00047"></a>00047 <span class="preprocessor"></span>
-<a name="l00048"></a>00048 <span class="keyword">namespace </span>zmq
-<a name="l00049"></a>00049 {
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051     <span class="comment">//  Resolves network interface name in &lt;nic-name&gt;:&lt;port&gt; format. Symbol &quot;*&quot;</span>
-<a name="l00052"></a>00052     <span class="comment">//  (asterisk) resolves to INADDR_ANY (all network interfaces).</span>
-<a name="l00053"></a>00053     <span class="keywordtype">int</span> resolve_ip_interface (sockaddr_storage *addr_, socklen_t *addr_len_,
-<a name="l00054"></a>00054         <span class="keywordtype">char</span> <span class="keyword">const</span> *interface_, <span class="keywordtype">bool</span> ipv4only_);
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056     <span class="comment">//  This function resolves a string in &lt;hostname&gt;:&lt;port-number&gt; format.</span>
-<a name="l00057"></a>00057     <span class="comment">//  Hostname can be either the name of the host or its IP address.</span>
-<a name="l00058"></a>00058     <span class="keywordtype">int</span> resolve_ip_hostname (sockaddr_storage *addr_, socklen_t *addr_len_,
-<a name="l00059"></a>00059         <span class="keyword">const</span> <span class="keywordtype">char</span> *hostname_, <span class="keywordtype">bool</span> ipv4only_);
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061     <span class="comment">//  This function sets up address for UNIX domain transport.</span>
-<a name="l00062"></a>00062     <span class="keywordtype">int</span> resolve_local_path (sockaddr_storage *addr_, socklen_t *addr_len_,
-<a name="l00063"></a>00063         <span class="keyword">const</span> <span class="keywordtype">char</span>* pathname_);
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065     <span class="comment">//  Tunes the supplied TCP socket for the best latency.</span>
-<a name="l00066"></a>00066     <span class="keywordtype">void</span> tune_tcp_socket (fd_t s_);
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068     <span class="comment">//  Sets the socket into non-blocking mode.</span>
-<a name="l00069"></a>00069     <span class="keywordtype">void</span> unblock_socket (fd_t s_);
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071 }
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073 <span class="preprocessor">#endif </span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="fd_8hpp.html">fd.hpp</a>&quot;</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="keyword">namespace </span>zmq
+<a name="l00027"></a>00027 {
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029     <span class="comment">//  Tunes the supplied TCP socket for the best latency.</span>
+<a name="l00030"></a>00030     <span class="keywordtype">void</span> tune_tcp_socket (fd_t s_);
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032     <span class="comment">//  Sets the socket into non-blocking mode.</span>
+<a name="l00033"></a>00033     <span class="keywordtype">void</span> unblock_socket (fd_t s_);
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035     <span class="comment">//  Enable IPv4-mapping of addresses in case it is disabled by default.</span>
+<a name="l00036"></a>00036     <span class="keywordtype">void</span> enable_ipv4_mapping (fd_t s_);
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 }
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040 <span class="preprocessor">#endif </span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -194,7 +165,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Aug 8 2011 17:48:21 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 21 2011 23:37:34 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

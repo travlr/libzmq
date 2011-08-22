@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$req_8hpp.html" title="src/req.hpp" alt="" coords="63,83,148,112"/>
-<area shape="rect" id="node7" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="115,160,256,189"/>
-<area shape="rect" id="node10" href="$xreq_8cpp.html" title="src/xreq.cpp" alt="" coords="223,83,316,112"/>
-<area shape="rect" id="node5" href="$req_8cpp.html" title="src/req.cpp" alt="" coords="5,160,91,189"/>
+<area shape="rect" id="node3" href="$req_8hpp.html" title="/home/travlr/dev/zmq&#45;contribution/repos/libzmq/src/req.hpp" alt="" coords="201,83,564,112"/>
+<area shape="rect" id="node7" href="$socket__base_8cpp.html" title="/home/travlr/dev/zmq&#45;contribution/repos/libzmq/src/socket_base.cpp" alt="" coords="392,160,811,189"/>
+<area shape="rect" id="node10" href="$xreq_8cpp.html" title="/home/travlr/dev/zmq&#45;contribution/repos/libzmq/src/xreq.cpp" alt="" coords="639,83,1009,112"/>
+<area shape="rect" id="node5" href="$req_8cpp.html" title="/home/travlr/dev/zmq&#45;contribution/repos/libzmq/src/req.cpp" alt="" coords="5,160,368,189"/>
 </map>

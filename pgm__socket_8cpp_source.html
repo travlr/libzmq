@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: src/pgm_socket.cpp Source File</title>
+<title>libzmq: /home/travlr/dev/zmq-contribution/repos/libzmq/src/pgm_socket.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,7 +96,11 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
+      <li class="navelem"><a class="el" href="dir_8979224d789028e59cd89c908d416115.html">dev</a>      </li>
+      <li class="navelem"><a class="el" href="dir_f51af2f98e6941360ad90b905891520d.html">zmq-contribution</a>      </li>
+      <li class="navelem"><a class="el" href="dir_96988f9353a405a242dd766abb3686b1.html">repos</a>      </li>
+      <li class="navelem"><a class="el" href="dir_60a86e8ac53e169b93a6635e66941031.html">libzmq</a>      </li>
+      <li class="navelem"><a class="el" href="dir_5691c2437afd6102f4ea6926b901bacc.html">src</a>      </li>
     </ul>
   </div>
 </div>
@@ -483,8 +487,8 @@ function toggleVisibility(linkObj) {
 <a name="l00376"></a>00376 
 <a name="l00377"></a>00377 <span class="comment">//  Get receiver fds. receive_fd_ is signaled for incoming packets,</span>
 <a name="l00378"></a>00378 <span class="comment">//  waiting_pipe_fd_ is signaled for state driven events and data.</span>
-<a name="l00379"></a>00379 <span class="keywordtype">void</span> zmq::pgm_socket_t::get_receiver_fds (<span class="keywordtype">int</span> *receive_fd_, 
-<a name="l00380"></a>00380     <span class="keywordtype">int</span> *waiting_pipe_fd_)
+<a name="l00379"></a>00379 <span class="keywordtype">void</span> zmq::pgm_socket_t::get_receiver_fds (fd_t *receive_fd_, 
+<a name="l00380"></a>00380     fd_t *waiting_pipe_fd_)
 <a name="l00381"></a>00381 {
 <a name="l00382"></a>00382     socklen_t socklen;
 <a name="l00383"></a>00383     <span class="keywordtype">bool</span> rc;
@@ -510,8 +514,8 @@ function toggleVisibility(linkObj) {
 <a name="l00403"></a>00403 <span class="comment">//  receive_fd_ is for incoming back-channel protocol packets.</span>
 <a name="l00404"></a>00404 <span class="comment">//  rdata_notify_fd_ is raised for waiting repair transmissions.</span>
 <a name="l00405"></a>00405 <span class="comment">//  pending_notify_fd_ is for state driven events.</span>
-<a name="l00406"></a>00406 <span class="keywordtype">void</span> zmq::pgm_socket_t::get_sender_fds (<span class="keywordtype">int</span> *send_fd_, <span class="keywordtype">int</span> *receive_fd_, 
-<a name="l00407"></a>00407     <span class="keywordtype">int</span> *rdata_notify_fd_, <span class="keywordtype">int</span> *pending_notify_fd_)
+<a name="l00406"></a>00406 <span class="keywordtype">void</span> zmq::pgm_socket_t::get_sender_fds (fd_t *send_fd_, fd_t *receive_fd_, 
+<a name="l00407"></a>00407     fd_t *rdata_notify_fd_, fd_t *pending_notify_fd_)
 <a name="l00408"></a>00408 {
 <a name="l00409"></a>00409     socklen_t socklen;
 <a name="l00410"></a>00410     <span class="keywordtype">bool</span> rc;
@@ -803,7 +807,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Aug 8 2011 17:48:22 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 21 2011 23:37:34 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

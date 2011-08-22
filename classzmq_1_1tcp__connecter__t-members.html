@@ -112,8 +112,7 @@ This is the complete list of members for <a class="el" href="classzmq_1_1tcp__co
   <tr class="memlist"><td><a class="el" href="classzmq_1_1io__object__t.html#a625f6b4af52776132612f008fc2ef99a">add_fd</a>(fd_t fd_)</td><td><a class="el" href="classzmq_1_1io__object__t.html">zmq::io_object_t</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1tcp__connecter__t.html#ad3874801fb1f3fe17a397cab06e7b384">add_reconnect_timer</a>()</td><td><a class="el" href="classzmq_1_1tcp__connecter__t.html">zmq::tcp_connecter_t</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1io__object__t.html#a12bdc0ed9eaef78341e08bb46a6239cc">add_timer</a>(int timout_, int id_)</td><td><a class="el" href="classzmq_1_1io__object__t.html">zmq::io_object_t</a></td><td><code> [protected]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classzmq_1_1tcp__connecter__t.html#ab6b9732afd4a6c5fe5c904a69cd11c73">addr</a></td><td><a class="el" href="classzmq_1_1tcp__connecter__t.html">zmq::tcp_connecter_t</a></td><td><code> [private]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classzmq_1_1tcp__connecter__t.html#a98526e3c66107217daf9dfc3d4b28033">addr_len</a></td><td><a class="el" href="classzmq_1_1tcp__connecter__t.html">zmq::tcp_connecter_t</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classzmq_1_1tcp__connecter__t.html#ae8932f7c3f2e979abdc583533c8e4b92">address</a></td><td><a class="el" href="classzmq_1_1tcp__connecter__t.html">zmq::tcp_connecter_t</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1io__object__t.html#ab54b3f312cbdb8f7787022b1d8313b73">cancel_timer</a>(int id_)</td><td><a class="el" href="classzmq_1_1io__object__t.html">zmq::io_object_t</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1object__t.html#abda1fc9e6c8de7e6f71c724ef01986b0">choose_io_thread</a>(uint64_t affinity_)</td><td><a class="el" href="classzmq_1_1object__t.html">zmq::object_t</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1tcp__connecter__t.html#a0138b138f4bc08e7561e465af5f51130">close</a>()</td><td><a class="el" href="classzmq_1_1tcp__connecter__t.html">zmq::tcp_connecter_t</a></td><td><code> [private]</code></td></tr>
@@ -157,7 +156,7 @@ This is the complete list of members for <a class="el" href="classzmq_1_1tcp__co
   <tr class="memlist"><td><a class="el" href="classzmq_1_1object__t.html#abee5cbec3be7311e39ad5cfee077aefe">process_reaped</a>()</td><td><a class="el" href="classzmq_1_1object__t.html">zmq::object_t</a></td><td><code> [protected, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1object__t.html#af74ed6e9b9a96ffc5589e8608e62885a">process_stop</a>()</td><td><a class="el" href="classzmq_1_1object__t.html">zmq::object_t</a></td><td><code> [protected, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1own__t.html#aa6cf69fab99e823b61cca86e51dbe555">process_term</a>(int linger_)</td><td><a class="el" href="classzmq_1_1own__t.html">zmq::own_t</a></td><td><code> [protected, virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classzmq_1_1tcp__connecter__t.html#aed7fc309506db7ab0318db652880216dadb6b2a53056a0894a9dd5ba871c7595e">reconnect_timer_id</a> enum value</td><td><a class="el" href="classzmq_1_1tcp__connecter__t.html">zmq::tcp_connecter_t</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classzmq_1_1tcp__connecter__t.html#a97d4f418de4b4b2ba84d26eba10900f1adb6b2a53056a0894a9dd5ba871c7595e">reconnect_timer_id</a> enum value</td><td><a class="el" href="classzmq_1_1tcp__connecter__t.html">zmq::tcp_connecter_t</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1object__t.html#ad70bc209ca4bcc4a2f0ea9026108da0e">register_endpoint</a>(const char *addr_, struct endpoint_t &amp;endpoint_)</td><td><a class="el" href="classzmq_1_1object__t.html">zmq::object_t</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1own__t.html#a9a4aaa41336dc931b064c1f2374080dc">register_term_acks</a>(int count_)</td><td><a class="el" href="classzmq_1_1own__t.html">zmq::own_t</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1io__object__t.html#a0a5133d60f91ebe5e617f5056f5c4a35">reset_pollin</a>(handle_t handle_)</td><td><a class="el" href="classzmq_1_1io__object__t.html">zmq::io_object_t</a></td><td><code> [protected]</code></td></tr>
@@ -213,7 +212,7 @@ This is the complete list of members for <a class="el" href="classzmq_1_1tcp__co
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Aug 8 2011 17:48:32 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 21 2011 23:37:37 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

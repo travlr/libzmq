@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: src/vtcp_listener.cpp Source File</title>
+<title>libzmq: /home/travlr/dev/zmq-contribution/repos/libzmq/src/vtcp_listener.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,7 +96,11 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
+      <li class="navelem"><a class="el" href="dir_8979224d789028e59cd89c908d416115.html">dev</a>      </li>
+      <li class="navelem"><a class="el" href="dir_f51af2f98e6941360ad90b905891520d.html">zmq-contribution</a>      </li>
+      <li class="navelem"><a class="el" href="dir_96988f9353a405a242dd766abb3686b1.html">repos</a>      </li>
+      <li class="navelem"><a class="el" href="dir_60a86e8ac53e169b93a6635e66941031.html">libzmq</a>      </li>
+      <li class="navelem"><a class="el" href="dir_5691c2437afd6102f4ea6926b901bacc.html">src</a>      </li>
     </ul>
   </div>
 </div>
@@ -133,7 +137,7 @@ function toggleVisibility(linkObj) {
 <a name="l00026"></a>00026 <span class="preprocessor">#include &lt;string.h&gt;</span>
 <a name="l00027"></a>00027 <span class="preprocessor">#include &lt;vtcp.h&gt;</span>
 <a name="l00028"></a>00028 
-<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="tcp__engine_8hpp.html">tcp_engine.hpp</a>&quot;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="stream__engine_8hpp.html">stream_engine.hpp</a>&quot;</span>
 <a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="session_8hpp.html">session.hpp</a>&quot;</span>
 <a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="stdint_8hpp.html">stdint.hpp</a>&quot;</span>
 <a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="err_8hpp.html">err.hpp</a>&quot;</span>
@@ -211,7 +215,7 @@ function toggleVisibility(linkObj) {
 <a name="l00104"></a>00104     tune_tcp_socket (fd);
 <a name="l00105"></a>00105 
 <a name="l00106"></a>00106     <span class="comment">//  Create the engine object for this connection.</span>
-<a name="l00107"></a>00107     tcp_engine_t *engine = <span class="keyword">new</span> (std::nothrow) tcp_engine_t (fd, options);
+<a name="l00107"></a>00107     stream_engine_t *engine = <span class="keyword">new</span> (std::nothrow) stream_engine_t (fd, options);
 <a name="l00108"></a>00108     <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (engine);
 <a name="l00109"></a>00109 
 <a name="l00110"></a>00110     <span class="comment">//  Choose I/O thread to run connecter in. Given that we are already</span>
@@ -245,7 +249,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Aug 8 2011 17:48:22 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 21 2011 23:37:34 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

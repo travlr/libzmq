@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: src/pgm_socket.hpp Source File</title>
+<title>libzmq: /home/travlr/dev/zmq-contribution/repos/libzmq/src/pgm_socket.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,7 +96,11 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
+      <li class="navelem"><a class="el" href="dir_8979224d789028e59cd89c908d416115.html">dev</a>      </li>
+      <li class="navelem"><a class="el" href="dir_f51af2f98e6941360ad90b905891520d.html">zmq-contribution</a>      </li>
+      <li class="navelem"><a class="el" href="dir_96988f9353a405a242dd766abb3686b1.html">repos</a>      </li>
+      <li class="navelem"><a class="el" href="dir_60a86e8ac53e169b93a6635e66941031.html">libzmq</a>      </li>
+      <li class="navelem"><a class="el" href="dir_5691c2437afd6102f4ea6926b901bacc.html">src</a>      </li>
     </ul>
   </div>
 </div>
@@ -143,86 +147,87 @@ function toggleVisibility(linkObj) {
 <a name="l00036"></a>00036 <span class="preprocessor"></span><span class="preprocessor">#include &lt;pgm/in.h&gt;</span>
 <a name="l00037"></a>00037 <span class="preprocessor">#endif</span>
 <a name="l00038"></a>00038 <span class="preprocessor"></span>
-<a name="l00039"></a>00039 <span class="preprocessor">#include &quot;<a class="code" href="options_8hpp.html">options.hpp</a>&quot;</span>
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041 <span class="keyword">namespace </span>zmq
-<a name="l00042"></a>00042 {
-<a name="l00043"></a>00043     <span class="comment">//  Encapsulates PGM socket.</span>
-<a name="l00044"></a>00044     <span class="keyword">class </span>pgm_socket_t
-<a name="l00045"></a>00045     {
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047     <span class="keyword">public</span>:
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049         <span class="comment">//  If receiver_ is true PGM transport is not generating SPM packets.</span>
-<a name="l00050"></a>00050         pgm_socket_t (<span class="keywordtype">bool</span> receiver_, <span class="keyword">const</span> options_t &amp;options_);
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052         <span class="comment">//  Closes the transport.</span>
-<a name="l00053"></a>00053         ~pgm_socket_t ();
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055         <span class="comment">//  Initialize PGM network structures (GSI, GSRs).</span>
-<a name="l00056"></a>00056         <span class="keywordtype">int</span> init (<span class="keywordtype">bool</span> udp_encapsulation_, <span class="keyword">const</span> <span class="keywordtype">char</span> *network_);
-<a name="l00057"></a>00057         
-<a name="l00058"></a>00058         <span class="comment">//   Get receiver fds and store them into user allocated memory.</span>
-<a name="l00059"></a>00059         <span class="keywordtype">void</span> get_receiver_fds (<span class="keywordtype">int</span> *receive_fd_, <span class="keywordtype">int</span> *waiting_pipe_fd_);
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061         <span class="comment">//   Get sender and receiver fds and store it to user allocated </span>
-<a name="l00062"></a>00062         <span class="comment">//   memory. Receive fd is used to process NAKs from peers.</span>
-<a name="l00063"></a>00063         <span class="keywordtype">void</span> get_sender_fds (<span class="keywordtype">int</span> *send_fd_, <span class="keywordtype">int</span> *receive_fd_,
-<a name="l00064"></a>00064             <span class="keywordtype">int</span> *rdata_notify_fd_, <span class="keywordtype">int</span> *pending_notify_fd_);
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066         <span class="comment">//  Send data as one APDU, transmit window owned memory.</span>
-<a name="l00067"></a>00067         <span class="keywordtype">size_t</span> send (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> data_len_);
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069         <span class="comment">//  Returns max tsdu size without fragmentation.</span>
-<a name="l00070"></a>00070         <span class="keywordtype">size_t</span> get_max_tsdu_size ();
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072         <span class="comment">//  Receive data from pgm socket.</span>
-<a name="l00073"></a>00073         ssize_t receive (<span class="keywordtype">void</span> **data_, <span class="keyword">const</span> pgm_tsi_t **tsi_);
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075         <span class="keywordtype">long</span> get_rx_timeout ();
-<a name="l00076"></a>00076         <span class="keywordtype">long</span> get_tx_timeout ();
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078         <span class="comment">//  POLLIN on sender side should mean NAK or SPMR receiving. </span>
-<a name="l00079"></a>00079         <span class="comment">//  process_upstream function is used to handle such a situation.</span>
-<a name="l00080"></a>00080         <span class="keywordtype">void</span> process_upstream ();
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082     <span class="keyword">private</span>:
-<a name="l00083"></a>00083 
-<a name="l00084"></a>00084         <span class="comment">//  Compute size of the buffer based on rate and recovery interval.</span>
-<a name="l00085"></a>00085         <span class="keywordtype">int</span> compute_sqns (<span class="keywordtype">int</span> tpdu_);
-<a name="l00086"></a>00086     
-<a name="l00087"></a>00087         <span class="comment">//  OpenPGM transport.</span>
-<a name="l00088"></a>00088         pgm_sock_t* sock;
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090         <span class="keywordtype">int</span> last_rx_status, last_tx_status;
-<a name="l00091"></a>00091 
-<a name="l00092"></a>00092         <span class="comment">//  Associated socket options.</span>
-<a name="l00093"></a>00093         options_t options;
-<a name="l00094"></a>00094        
-<a name="l00095"></a>00095         <span class="comment">//  true when pgm_socket should create receiving side.</span>
-<a name="l00096"></a>00096         <span class="keywordtype">bool</span> receiver;
-<a name="l00097"></a>00097 
-<a name="l00098"></a>00098         <span class="comment">//  Array of pgm_msgv_t structures to store received data</span>
-<a name="l00099"></a>00099         <span class="comment">//  from the socket (pgm_transport_recvmsgv).</span>
-<a name="l00100"></a>00100         pgm_msgv_t *pgm_msgv;
-<a name="l00101"></a>00101 
-<a name="l00102"></a>00102         <span class="comment">//  Size of pgm_msgv array.</span>
-<a name="l00103"></a>00103         <span class="keywordtype">size_t</span> pgm_msgv_len;
-<a name="l00104"></a>00104 
-<a name="l00105"></a>00105         <span class="comment">// How many bytes were read from pgm socket.</span>
-<a name="l00106"></a>00106         <span class="keywordtype">size_t</span> nbytes_rec;
-<a name="l00107"></a>00107 
-<a name="l00108"></a>00108         <span class="comment">//  How many bytes were processed from last pgm socket read.</span>
-<a name="l00109"></a>00109         <span class="keywordtype">size_t</span> nbytes_processed;
-<a name="l00110"></a>00110         
-<a name="l00111"></a>00111         <span class="comment">//  How many messages from pgm_msgv were already sent up.</span>
-<a name="l00112"></a>00112         <span class="keywordtype">size_t</span> pgm_msgv_processed;
-<a name="l00113"></a>00113     };
-<a name="l00114"></a>00114 }
-<a name="l00115"></a>00115 <span class="preprocessor">#endif</span>
-<a name="l00116"></a>00116 <span class="preprocessor"></span>
-<a name="l00117"></a>00117 <span class="preprocessor">#endif</span>
-<a name="l00118"></a>00118 <span class="preprocessor"></span>
+<a name="l00039"></a>00039 <span class="preprocessor">#include &quot;<a class="code" href="fd_8hpp.html">fd.hpp</a>&quot;</span>
+<a name="l00040"></a>00040 <span class="preprocessor">#include &quot;<a class="code" href="options_8hpp.html">options.hpp</a>&quot;</span>
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 <span class="keyword">namespace </span>zmq
+<a name="l00043"></a>00043 {
+<a name="l00044"></a>00044     <span class="comment">//  Encapsulates PGM socket.</span>
+<a name="l00045"></a>00045     <span class="keyword">class </span>pgm_socket_t
+<a name="l00046"></a>00046     {
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048     <span class="keyword">public</span>:
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050         <span class="comment">//  If receiver_ is true PGM transport is not generating SPM packets.</span>
+<a name="l00051"></a>00051         pgm_socket_t (<span class="keywordtype">bool</span> receiver_, <span class="keyword">const</span> options_t &amp;options_);
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053         <span class="comment">//  Closes the transport.</span>
+<a name="l00054"></a>00054         ~pgm_socket_t ();
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056         <span class="comment">//  Initialize PGM network structures (GSI, GSRs).</span>
+<a name="l00057"></a>00057         <span class="keywordtype">int</span> init (<span class="keywordtype">bool</span> udp_encapsulation_, <span class="keyword">const</span> <span class="keywordtype">char</span> *network_);
+<a name="l00058"></a>00058         
+<a name="l00059"></a>00059         <span class="comment">//   Get receiver fds and store them into user allocated memory.</span>
+<a name="l00060"></a>00060         <span class="keywordtype">void</span> get_receiver_fds (fd_t *receive_fd_, fd_t *waiting_pipe_fd_);
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062         <span class="comment">//   Get sender and receiver fds and store it to user allocated </span>
+<a name="l00063"></a>00063         <span class="comment">//   memory. Receive fd is used to process NAKs from peers.</span>
+<a name="l00064"></a>00064         <span class="keywordtype">void</span> get_sender_fds (fd_t *send_fd_, fd_t *receive_fd_,
+<a name="l00065"></a>00065             fd_t *rdata_notify_fd_, fd_t *pending_notify_fd_);
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067         <span class="comment">//  Send data as one APDU, transmit window owned memory.</span>
+<a name="l00068"></a>00068         <span class="keywordtype">size_t</span> send (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> data_len_);
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070         <span class="comment">//  Returns max tsdu size without fragmentation.</span>
+<a name="l00071"></a>00071         <span class="keywordtype">size_t</span> get_max_tsdu_size ();
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073         <span class="comment">//  Receive data from pgm socket.</span>
+<a name="l00074"></a>00074         ssize_t receive (<span class="keywordtype">void</span> **data_, <span class="keyword">const</span> pgm_tsi_t **tsi_);
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076         <span class="keywordtype">long</span> get_rx_timeout ();
+<a name="l00077"></a>00077         <span class="keywordtype">long</span> get_tx_timeout ();
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079         <span class="comment">//  POLLIN on sender side should mean NAK or SPMR receiving. </span>
+<a name="l00080"></a>00080         <span class="comment">//  process_upstream function is used to handle such a situation.</span>
+<a name="l00081"></a>00081         <span class="keywordtype">void</span> process_upstream ();
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083     <span class="keyword">private</span>:
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085         <span class="comment">//  Compute size of the buffer based on rate and recovery interval.</span>
+<a name="l00086"></a>00086         <span class="keywordtype">int</span> compute_sqns (<span class="keywordtype">int</span> tpdu_);
+<a name="l00087"></a>00087     
+<a name="l00088"></a>00088         <span class="comment">//  OpenPGM transport.</span>
+<a name="l00089"></a>00089         pgm_sock_t* sock;
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091         <span class="keywordtype">int</span> last_rx_status, last_tx_status;
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093         <span class="comment">//  Associated socket options.</span>
+<a name="l00094"></a>00094         options_t options;
+<a name="l00095"></a>00095        
+<a name="l00096"></a>00096         <span class="comment">//  true when pgm_socket should create receiving side.</span>
+<a name="l00097"></a>00097         <span class="keywordtype">bool</span> receiver;
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099         <span class="comment">//  Array of pgm_msgv_t structures to store received data</span>
+<a name="l00100"></a>00100         <span class="comment">//  from the socket (pgm_transport_recvmsgv).</span>
+<a name="l00101"></a>00101         pgm_msgv_t *pgm_msgv;
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103         <span class="comment">//  Size of pgm_msgv array.</span>
+<a name="l00104"></a>00104         <span class="keywordtype">size_t</span> pgm_msgv_len;
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106         <span class="comment">// How many bytes were read from pgm socket.</span>
+<a name="l00107"></a>00107         <span class="keywordtype">size_t</span> nbytes_rec;
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109         <span class="comment">//  How many bytes were processed from last pgm socket read.</span>
+<a name="l00110"></a>00110         <span class="keywordtype">size_t</span> nbytes_processed;
+<a name="l00111"></a>00111         
+<a name="l00112"></a>00112         <span class="comment">//  How many messages from pgm_msgv were already sent up.</span>
+<a name="l00113"></a>00113         <span class="keywordtype">size_t</span> pgm_msgv_processed;
+<a name="l00114"></a>00114     };
+<a name="l00115"></a>00115 }
+<a name="l00116"></a>00116 <span class="preprocessor">#endif</span>
+<a name="l00117"></a>00117 <span class="preprocessor"></span>
+<a name="l00118"></a>00118 <span class="preprocessor">#endif</span>
+<a name="l00119"></a>00119 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -239,7 +244,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Aug 8 2011 17:48:22 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 21 2011 23:37:34 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

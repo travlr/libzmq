@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: src/pgm_sender.cpp Source File</title>
+<title>libzmq: /home/travlr/dev/zmq-contribution/repos/libzmq/src/pgm_sender.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,7 +96,11 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
+      <li class="navelem"><a class="el" href="dir_8979224d789028e59cd89c908d416115.html">dev</a>      </li>
+      <li class="navelem"><a class="el" href="dir_f51af2f98e6941360ad90b905891520d.html">zmq-contribution</a>      </li>
+      <li class="navelem"><a class="el" href="dir_96988f9353a405a242dd766abb3686b1.html">repos</a>      </li>
+      <li class="navelem"><a class="el" href="dir_60a86e8ac53e169b93a6635e66941031.html">libzmq</a>      </li>
+      <li class="navelem"><a class="el" href="dir_5691c2437afd6102f4ea6926b901bacc.html">src</a>      </li>
     </ul>
   </div>
 </div>
@@ -172,10 +176,10 @@ function toggleVisibility(linkObj) {
 <a name="l00065"></a>00065 <span class="keywordtype">void</span> zmq::pgm_sender_t::plug (io_thread_t *io_thread_, session_t *session_)
 <a name="l00066"></a>00066 {
 <a name="l00067"></a>00067     <span class="comment">//  Alocate 2 fds for PGM socket.</span>
-<a name="l00068"></a>00068     <span class="keywordtype">int</span> downlink_socket_fd = 0;
-<a name="l00069"></a>00069     <span class="keywordtype">int</span> uplink_socket_fd = 0;
-<a name="l00070"></a>00070     <span class="keywordtype">int</span> rdata_notify_fd = 0;
-<a name="l00071"></a>00071     <span class="keywordtype">int</span> pending_notify_fd = 0;
+<a name="l00068"></a>00068     fd_t downlink_socket_fd = retired_fd;
+<a name="l00069"></a>00069     fd_t uplink_socket_fd = retired_fd;
+<a name="l00070"></a>00070     fd_t rdata_notify_fd = retired_fd;
+<a name="l00071"></a>00071     fd_t pending_notify_fd = retired_fd;
 <a name="l00072"></a>00072 
 <a name="l00073"></a>00073     encoder.set_session (session_);
 <a name="l00074"></a>00074 
@@ -347,7 +351,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Aug 8 2011 17:48:22 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 21 2011 23:37:34 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

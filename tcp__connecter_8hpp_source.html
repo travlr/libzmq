@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: src/tcp_connecter.hpp Source File</title>
+<title>libzmq: /home/travlr/dev/zmq-contribution/repos/libzmq/src/tcp_connecter.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,7 +96,11 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_8ab4da8374c595f769c77ba7607c1e0b.html">src</a>      </li>
+      <li class="navelem"><a class="el" href="dir_8979224d789028e59cd89c908d416115.html">dev</a>      </li>
+      <li class="navelem"><a class="el" href="dir_f51af2f98e6941360ad90b905891520d.html">zmq-contribution</a>      </li>
+      <li class="navelem"><a class="el" href="dir_96988f9353a405a242dd766abb3686b1.html">repos</a>      </li>
+      <li class="navelem"><a class="el" href="dir_60a86e8ac53e169b93a6635e66941031.html">libzmq</a>      </li>
+      <li class="navelem"><a class="el" href="dir_5691c2437afd6102f4ea6926b901bacc.html">src</a>      </li>
     </ul>
   </div>
 </div>
@@ -129,10 +133,10 @@ function toggleVisibility(linkObj) {
 <a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define __TCP_CONNECTER_HPP_INCLUDED__</span>
 <a name="l00023"></a>00023 <span class="preprocessor"></span>
 <a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="fd_8hpp.html">fd.hpp</a>&quot;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="ip_8hpp.html">ip.hpp</a>&quot;</span>
-<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="own_8hpp.html">own.hpp</a>&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="own_8hpp.html">own.hpp</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="stdint_8hpp.html">stdint.hpp</a>&quot;</span>
 <a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="io__object_8hpp.html">io_object.hpp</a>&quot;</span>
-<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="stdint_8hpp.html">stdint.hpp</a>&quot;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="tcp__address_8hpp.html">tcp_address.hpp</a>&quot;</span>
 <a name="l00029"></a>00029 
 <a name="l00030"></a>00030 <span class="keyword">namespace </span>zmq
 <a name="l00031"></a>00031 {
@@ -151,7 +155,7 @@ function toggleVisibility(linkObj) {
 <a name="l00044"></a>00044     <span class="keyword">private</span>:
 <a name="l00045"></a>00045 
 <a name="l00046"></a>00046         <span class="comment">//  ID of the timer used to delay the reconnection.</span>
-<a name="l00047"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#aed7fc309506db7ab0318db652880216dadb6b2a53056a0894a9dd5ba871c7595e">00047</a>         <span class="keyword">enum</span> {<a class="code" href="classzmq_1_1tcp__connecter__t.html#aed7fc309506db7ab0318db652880216dadb6b2a53056a0894a9dd5ba871c7595e">reconnect_timer_id</a> = 1};
+<a name="l00047"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#a97d4f418de4b4b2ba84d26eba10900f1adb6b2a53056a0894a9dd5ba871c7595e">00047</a>         <span class="keyword">enum</span> {<a class="code" href="classzmq_1_1tcp__connecter__t.html#a97d4f418de4b4b2ba84d26eba10900f1adb6b2a53056a0894a9dd5ba871c7595e">reconnect_timer_id</a> = 1};
 <a name="l00048"></a>00048 
 <a name="l00049"></a>00049         <span class="comment">//  Handlers for incoming commands.</span>
 <a name="l00050"></a>00050         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html#ac48e5c141700982e9c2ebbb0199b3e6c">process_plug</a> ();
@@ -188,35 +192,34 @@ function toggleVisibility(linkObj) {
 <a name="l00081"></a>00081         fd_t <a class="code" href="classzmq_1_1tcp__connecter__t.html#a7668ac4bf357e78c59a9ac75619c2f5c">connect</a> ();
 <a name="l00082"></a>00082 
 <a name="l00083"></a>00083         <span class="comment">//  Address to connect to.</span>
-<a name="l00084"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#ab6b9732afd4a6c5fe5c904a69cd11c73">00084</a>         sockaddr_storage <a class="code" href="classzmq_1_1tcp__connecter__t.html#ab6b9732afd4a6c5fe5c904a69cd11c73">addr</a>;
-<a name="l00085"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#a98526e3c66107217daf9dfc3d4b28033">00085</a>         socklen_t <a class="code" href="classzmq_1_1tcp__connecter__t.html#a98526e3c66107217daf9dfc3d4b28033">addr_len</a>;
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087         <span class="comment">//  Underlying socket.</span>
-<a name="l00088"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#a8ab1851cfd8ebd7c88548520e440b3bb">00088</a>         fd_t <a class="code" href="classzmq_1_1tcp__connecter__t.html#a8ab1851cfd8ebd7c88548520e440b3bb">s</a>;
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090         <span class="comment">//  Handle corresponding to the listening socket.</span>
-<a name="l00091"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#afc0b6e95fae596e4c3c2f1b035b055bf">00091</a>         <a class="code" href="classzmq_1_1io__object__t.html#a4b6973c60124b9f72305af675e9a4cf4">handle_t</a> <a class="code" href="classzmq_1_1tcp__connecter__t.html#afc0b6e95fae596e4c3c2f1b035b055bf">handle</a>;
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093         <span class="comment">//  If true file descriptor is registered with the poller and &#39;handle&#39;</span>
-<a name="l00094"></a>00094         <span class="comment">//  contains valid value.</span>
-<a name="l00095"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#a9f0ac503db087a22d1cae8d7ae38ea4a">00095</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html#a9f0ac503db087a22d1cae8d7ae38ea4a">handle_valid</a>;
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097         <span class="comment">//  If true, connecter is waiting a while before trying to connect.</span>
-<a name="l00098"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#af54e8490bcaf9cfed8fa36fd13910b3e">00098</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html#af54e8490bcaf9cfed8fa36fd13910b3e">wait</a>;
-<a name="l00099"></a>00099 
-<a name="l00100"></a>00100         <span class="comment">//  Reference to the session we belong to.</span>
-<a name="l00101"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#a09353e27bcabc22c8c20e54a58b527a0">00101</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1session__t.html">session_t</a> *<a class="code" href="classzmq_1_1tcp__connecter__t.html#a09353e27bcabc22c8c20e54a58b527a0">session</a>;
-<a name="l00102"></a>00102 
-<a name="l00103"></a>00103         <span class="comment">//  Current reconnect ivl, updated for backoff strategy</span>
-<a name="l00104"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#a202e5a0536d45091e3e750e0d865911a">00104</a>         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html#a202e5a0536d45091e3e750e0d865911a">current_reconnect_ivl</a>;
-<a name="l00105"></a>00105 
-<a name="l00106"></a>00106         <a class="code" href="classzmq_1_1tcp__connecter__t.html#a4f39ecc61adff4f29c7f6208ffde89e4">tcp_connecter_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html">tcp_connecter_t</a>&amp;);
-<a name="l00107"></a>00107         <span class="keyword">const</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html">tcp_connecter_t</a> &amp;<a class="code" href="classzmq_1_1tcp__connecter__t.html#a5c98ae2de7816eca50ac75f84cf0d36d">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html">tcp_connecter_t</a>&amp;);
-<a name="l00108"></a>00108     };
-<a name="l00109"></a>00109 
-<a name="l00110"></a>00110 }
-<a name="l00111"></a>00111 
-<a name="l00112"></a>00112 <span class="preprocessor">#endif</span>
+<a name="l00084"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#ae8932f7c3f2e979abdc583533c8e4b92">00084</a>         <a class="code" href="classzmq_1_1tcp__address__t.html">tcp_address_t</a> <a class="code" href="classzmq_1_1tcp__connecter__t.html#ae8932f7c3f2e979abdc583533c8e4b92">address</a>;
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086         <span class="comment">//  Underlying socket.</span>
+<a name="l00087"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#a8ab1851cfd8ebd7c88548520e440b3bb">00087</a>         fd_t <a class="code" href="classzmq_1_1tcp__connecter__t.html#a8ab1851cfd8ebd7c88548520e440b3bb">s</a>;
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089         <span class="comment">//  Handle corresponding to the listening socket.</span>
+<a name="l00090"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#afc0b6e95fae596e4c3c2f1b035b055bf">00090</a>         <a class="code" href="classzmq_1_1io__object__t.html#a4b6973c60124b9f72305af675e9a4cf4">handle_t</a> <a class="code" href="classzmq_1_1tcp__connecter__t.html#afc0b6e95fae596e4c3c2f1b035b055bf">handle</a>;
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092         <span class="comment">//  If true file descriptor is registered with the poller and &#39;handle&#39;</span>
+<a name="l00093"></a>00093         <span class="comment">//  contains valid value.</span>
+<a name="l00094"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#a9f0ac503db087a22d1cae8d7ae38ea4a">00094</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html#a9f0ac503db087a22d1cae8d7ae38ea4a">handle_valid</a>;
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096         <span class="comment">//  If true, connecter is waiting a while before trying to connect.</span>
+<a name="l00097"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#af54e8490bcaf9cfed8fa36fd13910b3e">00097</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html#af54e8490bcaf9cfed8fa36fd13910b3e">wait</a>;
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099         <span class="comment">//  Reference to the session we belong to.</span>
+<a name="l00100"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#a09353e27bcabc22c8c20e54a58b527a0">00100</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1session__t.html">session_t</a> *<a class="code" href="classzmq_1_1tcp__connecter__t.html#a09353e27bcabc22c8c20e54a58b527a0">session</a>;
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102         <span class="comment">//  Current reconnect ivl, updated for backoff strategy</span>
+<a name="l00103"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#a202e5a0536d45091e3e750e0d865911a">00103</a>         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html#a202e5a0536d45091e3e750e0d865911a">current_reconnect_ivl</a>;
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105         <a class="code" href="classzmq_1_1tcp__connecter__t.html#a4f39ecc61adff4f29c7f6208ffde89e4">tcp_connecter_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html">tcp_connecter_t</a>&amp;);
+<a name="l00106"></a>00106         <span class="keyword">const</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html">tcp_connecter_t</a> &amp;<a class="code" href="classzmq_1_1tcp__connecter__t.html#a5c98ae2de7816eca50ac75f84cf0d36d">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html">tcp_connecter_t</a>&amp;);
+<a name="l00107"></a>00107     };
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109 }
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -233,7 +236,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Mon Aug 8 2011 17:48:22 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 21 2011 23:37:34 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
