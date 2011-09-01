@@ -186,7 +186,7 @@ function toggleVisibility(linkObj) {
 <a name="l00075"></a>00075 <span class="preprocessor"></span>
 <a name="l00076"></a>00076 <span class="comment">//  Compile time check whether msg_t fits into zmq_msg_t.</span>
 <a name="l00077"></a>00077 <span class="keyword">typedef</span> <span class="keywordtype">char</span> <a class="code" href="zmq_8cpp.html#a9affb22ec85e8e5ed049e46b732874ad">check_msg_t_size</a>
-<a name="l00078"></a><a class="code" href="zmq_8cpp.html#a9affb22ec85e8e5ed049e46b732874ad">00078</a>     [<span class="keyword">sizeof</span> (<a class="code" href="classzmq_1_1msg__t.html">zmq::msg_t</a>) ==  <span class="keyword">sizeof</span> (<a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a>) ? 1 : -1];
+<a name="l00078"></a><a class="code" href="zmq_8cpp.html#a9affb22ec85e8e5ed049e46b732874ad">00078</a>     [<span class="keyword">sizeof</span> (<a class="code" href="classzmq_1_1msg__t.html">zmq::msg_t</a>) ==  <span class="keyword">sizeof</span> (<a class="code" href="structzmq__msg__t.html">zmq_msg_t</a>) ? 1 : -1];
 <a name="l00079"></a>00079 
 <a name="l00080"></a><a class="code" href="zmq_8cpp.html#af79bde1e5309ca8e95463a2ac91e4123">00080</a> <span class="keywordtype">void</span> <a class="code" href="zmq_8h.html#a976cc0a72750d3da28729c0311f9eb8f">zmq_version</a> (<span class="keywordtype">int</span> *major_, <span class="keywordtype">int</span> *minor_, <span class="keywordtype">int</span> *patch_)
 <a name="l00081"></a>00081 {
@@ -338,7 +338,7 @@ function toggleVisibility(linkObj) {
 <a name="l00227"></a>00227 
 <a name="l00228"></a><a class="code" href="zmq_8cpp.html#a9894b4722d321559d3990898603ec63a">00228</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#a61be5e8df496263496a3ec39cd669363">zmq_send</a> (<span class="keywordtype">void</span> *s_, <span class="keyword">const</span> <span class="keywordtype">void</span> *buf_, <span class="keywordtype">size_t</span> len_, <span class="keywordtype">int</span> flags_)
 <a name="l00229"></a>00229 {
-<a name="l00230"></a>00230     <a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> msg;
+<a name="l00230"></a>00230     <a class="code" href="structzmq__msg__t.html">zmq_msg_t</a> msg;
 <a name="l00231"></a>00231     <span class="keywordtype">int</span> rc = <a class="code" href="zmq_8h.html#adabea9817029bab4ac295e1339d79803">zmq_msg_init_size</a> (&amp;msg, len_);
 <a name="l00232"></a>00232     <span class="keywordflow">if</span> (rc != 0)
 <a name="l00233"></a>00233         <span class="keywordflow">return</span> -1;
@@ -360,7 +360,7 @@ function toggleVisibility(linkObj) {
 <a name="l00249"></a>00249 
 <a name="l00250"></a><a class="code" href="zmq_8cpp.html#aed5e040d1f661211601bcb12e67851df">00250</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#a3fa5cd19114e8f3f975b4087fa648e08">zmq_recv</a> (<span class="keywordtype">void</span> *s_, <span class="keywordtype">void</span> *buf_, <span class="keywordtype">size_t</span> len_, <span class="keywordtype">int</span> flags_)
 <a name="l00251"></a>00251 {
-<a name="l00252"></a>00252     <a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> msg;
+<a name="l00252"></a>00252     <a class="code" href="structzmq__msg__t.html">zmq_msg_t</a> msg;
 <a name="l00253"></a>00253     <span class="keywordtype">int</span> rc = <a class="code" href="zmq_8h.html#a8c888cf117d859ae0d669e95cf8b64c2">zmq_msg_init</a> (&amp;msg);
 <a name="l00254"></a>00254     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
 <a name="l00255"></a>00255 
@@ -384,7 +384,7 @@ function toggleVisibility(linkObj) {
 <a name="l00273"></a>00273     <span class="keywordflow">return</span> nbytes;    
 <a name="l00274"></a>00274 }
 <a name="l00275"></a>00275 
-<a name="l00276"></a><a class="code" href="zmq_8cpp.html#a8280be9161357a9a4610e94f7de5a3ad">00276</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#a2d25c972234261a2b683d6376e7b09aa">zmq_sendmsg</a> (<span class="keywordtype">void</span> *s_, <a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
+<a name="l00276"></a><a class="code" href="zmq_8cpp.html#a8280be9161357a9a4610e94f7de5a3ad">00276</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#a2d25c972234261a2b683d6376e7b09aa">zmq_sendmsg</a> (<span class="keywordtype">void</span> *s_, <a class="code" href="structzmq__msg__t.html">zmq_msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
 <a name="l00277"></a>00277 {
 <a name="l00278"></a>00278     <span class="keywordflow">if</span> (!s_ || !((<a class="code" href="classzmq_1_1socket__base__t.html">zmq::socket_base_t</a>*) s_)-&gt;check_tag ()) {
 <a name="l00279"></a>00279         errno = <a class="code" href="zmq_8h.html#ae34fa7a550ac1c415daa2e114a1c0f38">ENOTSOCK</a>;
@@ -397,7 +397,7 @@ function toggleVisibility(linkObj) {
 <a name="l00286"></a>00286     <span class="keywordflow">return</span> sz;
 <a name="l00287"></a>00287 }
 <a name="l00288"></a>00288 
-<a name="l00289"></a><a class="code" href="zmq_8cpp.html#a8cb24b7e54e3380fca751d8e1eaf0a27">00289</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#acfaed58455d33fedb9574920c239c9ed">zmq_recvmsg</a> (<span class="keywordtype">void</span> *s_, <a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
+<a name="l00289"></a><a class="code" href="zmq_8cpp.html#a8cb24b7e54e3380fca751d8e1eaf0a27">00289</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#acfaed58455d33fedb9574920c239c9ed">zmq_recvmsg</a> (<span class="keywordtype">void</span> *s_, <a class="code" href="structzmq__msg__t.html">zmq_msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
 <a name="l00290"></a>00290 {
 <a name="l00291"></a>00291     <span class="keywordflow">if</span> (!s_ || !((<a class="code" href="classzmq_1_1socket__base__t.html">zmq::socket_base_t</a>*) s_)-&gt;check_tag ()) {
 <a name="l00292"></a>00292         errno = <a class="code" href="zmq_8h.html#ae34fa7a550ac1c415daa2e114a1c0f38">ENOTSOCK</a>;
@@ -409,43 +409,43 @@ function toggleVisibility(linkObj) {
 <a name="l00298"></a>00298     <span class="keywordflow">return</span> (<span class="keywordtype">int</span>) <a class="code" href="zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8">zmq_msg_size</a> (msg_);
 <a name="l00299"></a>00299 }
 <a name="l00300"></a>00300 
-<a name="l00301"></a><a class="code" href="zmq_8cpp.html#a020655faa8a541ceef65118ffc77dd63">00301</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#a8c888cf117d859ae0d669e95cf8b64c2">zmq_msg_init</a> (<a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *msg_)
+<a name="l00301"></a><a class="code" href="zmq_8cpp.html#a020655faa8a541ceef65118ffc77dd63">00301</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#a8c888cf117d859ae0d669e95cf8b64c2">zmq_msg_init</a> (<a class="code" href="structzmq__msg__t.html">zmq_msg_t</a> *msg_)
 <a name="l00302"></a>00302 {
 <a name="l00303"></a>00303     <span class="keywordflow">return</span> ((<a class="code" href="classzmq_1_1msg__t.html">zmq::msg_t</a>*) msg_)-&gt;init ();
 <a name="l00304"></a>00304 }
 <a name="l00305"></a>00305 
-<a name="l00306"></a><a class="code" href="zmq_8cpp.html#a221e0871e81888958c39b3037d6beb3f">00306</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#adabea9817029bab4ac295e1339d79803">zmq_msg_init_size</a> (<a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *msg_, <span class="keywordtype">size_t</span> size_)
+<a name="l00306"></a><a class="code" href="zmq_8cpp.html#a221e0871e81888958c39b3037d6beb3f">00306</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#adabea9817029bab4ac295e1339d79803">zmq_msg_init_size</a> (<a class="code" href="structzmq__msg__t.html">zmq_msg_t</a> *msg_, <span class="keywordtype">size_t</span> size_)
 <a name="l00307"></a>00307 {
 <a name="l00308"></a>00308     <span class="keywordflow">return</span> ((<a class="code" href="classzmq_1_1msg__t.html">zmq::msg_t</a>*) msg_)-&gt;init_size (size_);
 <a name="l00309"></a>00309 }
 <a name="l00310"></a>00310 
-<a name="l00311"></a><a class="code" href="zmq_8cpp.html#a74127e7869b651dbd34480e1216e1e6b">00311</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#a33738299f2b1cb0aa45f32b74fd725f1">zmq_msg_init_data</a> (<a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *msg_, <span class="keywordtype">void</span> *data_, <span class="keywordtype">size_t</span> size_,
+<a name="l00311"></a><a class="code" href="zmq_8cpp.html#a74127e7869b651dbd34480e1216e1e6b">00311</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#a33738299f2b1cb0aa45f32b74fd725f1">zmq_msg_init_data</a> (<a class="code" href="structzmq__msg__t.html">zmq_msg_t</a> *msg_, <span class="keywordtype">void</span> *data_, <span class="keywordtype">size_t</span> size_,
 <a name="l00312"></a>00312     <a class="code" href="zmq_8h.html#a77f33646343961de85445109ae5f6526">zmq_free_fn</a> *ffn_, <span class="keywordtype">void</span> *hint_)
 <a name="l00313"></a>00313 {
 <a name="l00314"></a>00314     <span class="keywordflow">return</span> ((<a class="code" href="classzmq_1_1msg__t.html">zmq::msg_t</a>*) msg_)-&gt;init_data (data_, size_, ffn_, hint_);
 <a name="l00315"></a>00315 }
 <a name="l00316"></a>00316 
-<a name="l00317"></a><a class="code" href="zmq_8cpp.html#a17c4b0f85cd3c218f8a7f8ca96b56466">00317</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#a14cc42a7330a4b174dc3b735afd2adcc">zmq_msg_close</a> (<a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *msg_)
+<a name="l00317"></a><a class="code" href="zmq_8cpp.html#a17c4b0f85cd3c218f8a7f8ca96b56466">00317</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#a14cc42a7330a4b174dc3b735afd2adcc">zmq_msg_close</a> (<a class="code" href="structzmq__msg__t.html">zmq_msg_t</a> *msg_)
 <a name="l00318"></a>00318 {
 <a name="l00319"></a>00319     <span class="keywordflow">return</span> ((<a class="code" href="classzmq_1_1msg__t.html">zmq::msg_t</a>*) msg_)-&gt;close ();
 <a name="l00320"></a>00320 }
 <a name="l00321"></a>00321 
-<a name="l00322"></a><a class="code" href="zmq_8cpp.html#a826b9e4c17f1737c585aaefc2d325e67">00322</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#a7d738c33376994b1f0c668a254d78c25">zmq_msg_move</a> (<a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *dest_, <a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *src_)
+<a name="l00322"></a><a class="code" href="zmq_8cpp.html#a826b9e4c17f1737c585aaefc2d325e67">00322</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#a7d738c33376994b1f0c668a254d78c25">zmq_msg_move</a> (<a class="code" href="structzmq__msg__t.html">zmq_msg_t</a> *dest_, <a class="code" href="structzmq__msg__t.html">zmq_msg_t</a> *src_)
 <a name="l00323"></a>00323 {
 <a name="l00324"></a>00324     <span class="keywordflow">return</span> ((<a class="code" href="classzmq_1_1msg__t.html">zmq::msg_t</a>*) dest_)-&gt;move (*(<a class="code" href="classzmq_1_1msg__t.html">zmq::msg_t</a>*) src_);
 <a name="l00325"></a>00325 }
 <a name="l00326"></a>00326 
-<a name="l00327"></a><a class="code" href="zmq_8cpp.html#a720fa88f3050816a86bbb3b7c604675f">00327</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#a56ac4e65d2f6dbeca8e8086e62668df9">zmq_msg_copy</a> (<a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *dest_, <a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *src_)
+<a name="l00327"></a><a class="code" href="zmq_8cpp.html#a720fa88f3050816a86bbb3b7c604675f">00327</a> <span class="keywordtype">int</span> <a class="code" href="zmq_8h.html#a56ac4e65d2f6dbeca8e8086e62668df9">zmq_msg_copy</a> (<a class="code" href="structzmq__msg__t.html">zmq_msg_t</a> *dest_, <a class="code" href="structzmq__msg__t.html">zmq_msg_t</a> *src_)
 <a name="l00328"></a>00328 {
 <a name="l00329"></a>00329     <span class="keywordflow">return</span> ((<a class="code" href="classzmq_1_1msg__t.html">zmq::msg_t</a>*) dest_)-&gt;copy (*(<a class="code" href="classzmq_1_1msg__t.html">zmq::msg_t</a>*) src_);
 <a name="l00330"></a>00330 }
 <a name="l00331"></a>00331 
-<a name="l00332"></a><a class="code" href="zmq_8cpp.html#a33e603d9ad15877e4f878652fa618913">00332</a> <span class="keywordtype">void</span> *<a class="code" href="zmq_8h.html#aabc235325f4161f00acf0657e2e24d83">zmq_msg_data</a> (<a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *msg_)
+<a name="l00332"></a><a class="code" href="zmq_8cpp.html#a33e603d9ad15877e4f878652fa618913">00332</a> <span class="keywordtype">void</span> *<a class="code" href="zmq_8h.html#aabc235325f4161f00acf0657e2e24d83">zmq_msg_data</a> (<a class="code" href="structzmq__msg__t.html">zmq_msg_t</a> *msg_)
 <a name="l00333"></a>00333 {
 <a name="l00334"></a>00334     <span class="keywordflow">return</span> ((<a class="code" href="classzmq_1_1msg__t.html">zmq::msg_t</a>*) msg_)-&gt;data ();
 <a name="l00335"></a>00335 }
 <a name="l00336"></a>00336 
-<a name="l00337"></a><a class="code" href="zmq_8cpp.html#aacfbff54c67878840f26c1287e0be7b1">00337</a> <span class="keywordtype">size_t</span> <a class="code" href="zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8">zmq_msg_size</a> (<a class="code" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *msg_)
+<a name="l00337"></a><a class="code" href="zmq_8cpp.html#aacfbff54c67878840f26c1287e0be7b1">00337</a> <span class="keywordtype">size_t</span> <a class="code" href="zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8">zmq_msg_size</a> (<a class="code" href="structzmq__msg__t.html">zmq_msg_t</a> *msg_)
 <a name="l00338"></a>00338 {
 <a name="l00339"></a>00339     <span class="keywordflow">return</span> ((<a class="code" href="classzmq_1_1msg__t.html">zmq::msg_t</a>*) msg_)-&gt;size ();
 <a name="l00340"></a>00340 }
@@ -830,7 +830,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 21 2011 23:37:35 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Sep 1 2011 09:21:01 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

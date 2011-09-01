@@ -250,7 +250,7 @@ function toggleVisibility(linkObj) {
 <a name="l00139"></a>00139 
 <a name="l00140"></a>00140     <span class="comment">//  Add matching-1 references to the message. We already hold one reference,</span>
 <a name="l00141"></a>00141     <span class="comment">//  that&#39;s why -1.</span>
-<a name="l00142"></a>00142     msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a67b20d60d792fe6e3089f6d6edf82adb">add_refs</a> (matching - 1);
+<a name="l00142"></a>00142     msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a67b20d60d792fe6e3089f6d6edf82adb">add_refs</a> ((<span class="keywordtype">int</span>) matching - 1);
 <a name="l00143"></a>00143 
 <a name="l00144"></a>00144     <span class="comment">//  Push copy of the message to each matching pipe.</span>
 <a name="l00145"></a>00145     <span class="keywordflow">for</span> (pipes_t::size_type i = 0; i &lt; matching;) {
@@ -303,7 +303,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 21 2011 23:37:34 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Sep 1 2011 09:21:00 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

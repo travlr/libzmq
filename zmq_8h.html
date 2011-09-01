@@ -139,6 +139,7 @@ function toggleVisibility(linkObj) {
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq__msg__t.html">zmq_msg_t</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq__pollitem__t.html">zmq_pollitem_t</a></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
@@ -210,7 +211,6 @@ Defines</h2></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a77f33646343961de85445109ae5f6526">zmq_free_fn</a> )(void *data, void *hint)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> [32]</td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a9b9820b4fd19e3b23bc5dba2da65dc3f">zmq_bind</a> (void *s, const char *addr)</td></tr>
@@ -219,19 +219,19 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a96c0bbe31ef74848107352c3ddb10d64">zmq_errno</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a8ee9693ff7f63751670016a4a04d72ae">zmq_getsockopt</a> (void *s, int option, void *optval, size_t *optvallen)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a17913cd15c5dea05267f65c8e2300231">zmq_init</a> (int io_threads)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a14cc42a7330a4b174dc3b735afd2adcc">zmq_msg_close</a> (<a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a56ac4e65d2f6dbeca8e8086e62668df9">zmq_msg_copy</a> (<a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *dest, <a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *src)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#aabc235325f4161f00acf0657e2e24d83">zmq_msg_data</a> (<a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a8c888cf117d859ae0d669e95cf8b64c2">zmq_msg_init</a> (<a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a33738299f2b1cb0aa45f32b74fd725f1">zmq_msg_init_data</a> (<a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *msg, void *data, size_t size, <a class="el" href="zmq_8h.html#a77f33646343961de85445109ae5f6526">zmq_free_fn</a> *ffn, void *hint)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#adabea9817029bab4ac295e1339d79803">zmq_msg_init_size</a> (<a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *msg, size_t size)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a7d738c33376994b1f0c668a254d78c25">zmq_msg_move</a> (<a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *dest, <a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *src)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8">zmq_msg_size</a> (<a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a14cc42a7330a4b174dc3b735afd2adcc">zmq_msg_close</a> (<a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a56ac4e65d2f6dbeca8e8086e62668df9">zmq_msg_copy</a> (<a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *dest, <a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *src)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#aabc235325f4161f00acf0657e2e24d83">zmq_msg_data</a> (<a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a8c888cf117d859ae0d669e95cf8b64c2">zmq_msg_init</a> (<a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a33738299f2b1cb0aa45f32b74fd725f1">zmq_msg_init_data</a> (<a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *msg, void *data, size_t size, <a class="el" href="zmq_8h.html#a77f33646343961de85445109ae5f6526">zmq_free_fn</a> *ffn, void *hint)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#adabea9817029bab4ac295e1339d79803">zmq_msg_init_size</a> (<a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *msg, size_t size)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a7d738c33376994b1f0c668a254d78c25">zmq_msg_move</a> (<a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *dest, <a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *src)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8">zmq_msg_size</a> (<a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *msg)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a70febeb7701da4b0d8ef4c02f6570084">zmq_poll</a> (<a class="el" href="structzmq__pollitem__t.html">zmq_pollitem_t</a> *items, int nitems, long timeout)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a3fa5cd19114e8f3f975b4087fa648e08">zmq_recv</a> (void *s, void *buf, size_t len, int flags)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#acfaed58455d33fedb9574920c239c9ed">zmq_recvmsg</a> (void *s, <a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *msg, int flags)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#acfaed58455d33fedb9574920c239c9ed">zmq_recvmsg</a> (void *s, <a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *msg, int flags)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a61be5e8df496263496a3ec39cd669363">zmq_send</a> (void *s, const void *buf, size_t len, int flags)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a2d25c972234261a2b683d6376e7b09aa">zmq_sendmsg</a> (void *s, <a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *msg, int flags)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#a2d25c972234261a2b683d6376e7b09aa">zmq_sendmsg</a> (void *s, <a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *msg, int flags)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#acc51e98041e88b50af242d5847d0c7d7">zmq_setsockopt</a> (void *s, int option, const void *optval, size_t optvallen)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#aac44f14202f9c37e856fbed6775a06dd">zmq_socket</a> (void *context, int type)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ZMQ_EXPORT const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zmq_8h.html#ae509c85f7490cb120d9fa622b82d4e27">zmq_strerror</a> (int errnum)</td></tr>
@@ -1370,21 +1370,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac64baefe9b3ca8404465f96b792b6cd1"></a><!-- doxytag: member="zmq.h::zmq_msg_t" ref="ac64baefe9b3ca8404465f96b792b6cd1" args="[32]" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef unsigned char <a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a>[32]</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="zmq_8h_source.html#l00128">128</a> of file <a class="el" href="zmq_8h_source.html">zmq.h</a>.</p>
-
-</div>
-</div>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="a9b9820b4fd19e3b23bc5dba2da65dc3f"></a><!-- doxytag: member="zmq.h::zmq_bind" ref="a9b9820b4fd19e3b23bc5dba2da65dc3f" args="(void *s, const char *addr)" -->
 <div class="memitem">
@@ -1637,7 +1622,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">ZMQ_EXPORT int zmq_msg_close </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1669,13 +1654,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">ZMQ_EXPORT int zmq_msg_copy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *&#160;</td>
           <td class="paramname"><em>dest</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *&#160;</td>
           <td class="paramname"><em>src</em>&#160;</td>
         </tr>
         <tr>
@@ -1698,7 +1683,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">ZMQ_EXPORT void* zmq_msg_data </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1730,7 +1715,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">ZMQ_EXPORT int zmq_msg_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1762,7 +1747,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">ZMQ_EXPORT int zmq_msg_init_data </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *&#160;</td>
           <td class="paramname"><em>msg</em>, </td>
         </tr>
         <tr>
@@ -1809,7 +1794,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">ZMQ_EXPORT int zmq_msg_init_size </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *&#160;</td>
           <td class="paramname"><em>msg</em>, </td>
         </tr>
         <tr>
@@ -1851,13 +1836,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">ZMQ_EXPORT int zmq_msg_move </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *&#160;</td>
           <td class="paramname"><em>dest</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *&#160;</td>
           <td class="paramname"><em>src</em>&#160;</td>
         </tr>
         <tr>
@@ -1880,7 +1865,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">ZMQ_EXPORT size_t zmq_msg_size </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2033,7 +2018,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *&#160;</td>
           <td class="paramname"><em>msg</em>, </td>
         </tr>
         <tr>
@@ -2161,7 +2146,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zmq_8h.html#ac64baefe9b3ca8404465f96b792b6cd1">zmq_msg_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structzmq__msg__t.html">zmq_msg_t</a> *&#160;</td>
           <td class="paramname"><em>msg</em>, </td>
         </tr>
         <tr>
@@ -2425,7 +2410,7 @@ Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 21 2011 23:37:35 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Sep 1 2011 09:21:01 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

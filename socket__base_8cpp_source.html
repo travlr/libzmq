@@ -887,7 +887,7 @@ function toggleVisibility(linkObj) {
 <a name="l00776"></a>00776     <span class="comment">//  Ask all attached pipes to terminate.</span>
 <a name="l00777"></a>00777     <span class="keywordflow">for</span> (<a class="code" href="classzmq_1_1array__t.html#a8f9de296a46821314d27551866b28dd2">pipes_t::size_type</a> i = 0; i != pipes.size (); ++i)
 <a name="l00778"></a>00778         pipes [i]-&gt;terminate (<span class="keyword">false</span>);
-<a name="l00779"></a>00779     register_term_acks (pipes.size ());
+<a name="l00779"></a>00779     register_term_acks ((<span class="keywordtype">int</span>) pipes.size ());
 <a name="l00780"></a>00780 
 <a name="l00781"></a>00781     <span class="comment">//  Continue the termination process immediately.</span>
 <a name="l00782"></a>00782     <a class="code" href="classzmq_1_1own__t.html#aa6cf69fab99e823b61cca86e51dbe555">own_t::process_term</a> (linger_);
@@ -1035,7 +1035,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Aug 21 2011 23:37:34 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Thu Sep 1 2011 09:21:01 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
