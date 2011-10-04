@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/mtrie.hpp Source File</title>
+<title>libzmq: libzmq/doxygen/src/mtrie.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,12 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_2c1eec6ca1f471389d323b199c2c395d.html">.OLD_DEV</a>      </li>
-      <li class="navelem"><a class="el" href="dir_b4b5d907625f83c5e5680e5ccc32f2c6.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_ea986dcfc14529d07c8548c42611bb23.html">old</a>      </li>
-      <li class="navelem"><a class="el" href="dir_6f2b54a481f30c2b3c376fbabe2279ce.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_cf51a567d1751d0180c5e836636d67cb.html">zmq-contribution</a>      </li>
-      <li class="navelem"><a class="el" href="dir_c94bd149d2b4d22b9a9ab470faa42877.html">repos</a>      </li>
       <li class="navelem"><a class="el" href="dir_0ccb6cb1b2b0b6c45fe1428b06065a39.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_31b7ba14e0e4ce3739968e3b5c5d9068.html">doxygen</a>      </li>
       <li class="navelem"><a class="el" href="dir_4168df9576885e7a038bdfe4b3935cf4.html">src</a>      </li>
@@ -182,27 +176,25 @@ function toggleVisibility(linkObj) {
 <a name="l00067"></a>00067             <span class="keywordtype">void</span> *arg_);
 <a name="l00068"></a>00068         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1mtrie__t.html#a0b4504bd16aee0ebc17cfde8b3554955">rm_helper</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *prefix_, <span class="keywordtype">size_t</span> size_,
 <a name="l00069"></a>00069             <span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
-<a name="l00070"></a>00070         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1mtrie__t.html#a3f7759a055c41667984e0f455fcb9909">match_helper</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> size_,
-<a name="l00071"></a>00071             <span class="keywordtype">void</span> (*func_) (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, <span class="keywordtype">void</span> *arg_), <span class="keywordtype">void</span> *arg_);
-<a name="l00072"></a>00072 
-<a name="l00073"></a><a class="code" href="classzmq_1_1mtrie__t.html#a4e00ee75267c84984a8d9d5766d7053f">00073</a>         <span class="keyword">typedef</span> std::set &lt;class pipe_t*&gt; <a class="code" href="classzmq_1_1mtrie__t.html#a4e00ee75267c84984a8d9d5766d7053f">pipes_t</a>;
-<a name="l00074"></a><a class="code" href="classzmq_1_1mtrie__t.html#abc5966d8ae3b364cb37a95de131f5e72">00074</a>         <a class="code" href="classzmq_1_1mtrie__t.html#a4e00ee75267c84984a8d9d5766d7053f">pipes_t</a> <a class="code" href="classzmq_1_1mtrie__t.html#abc5966d8ae3b364cb37a95de131f5e72">pipes</a>;
-<a name="l00075"></a>00075 
-<a name="l00076"></a><a class="code" href="classzmq_1_1mtrie__t.html#ae80671b777e7e4f429c85a4b8098d773">00076</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1mtrie__t.html#ae80671b777e7e4f429c85a4b8098d773">min</a>;
-<a name="l00077"></a><a class="code" href="classzmq_1_1mtrie__t.html#a4a4a21be845b1c5b1a40585bf6341585">00077</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="classzmq_1_1mtrie__t.html#a4a4a21be845b1c5b1a40585bf6341585">count</a>;
-<a name="l00078"></a>00078         <span class="keyword">union </span>{
-<a name="l00079"></a><a class="code" href="classzmq_1_1mtrie__t.html#a81f0c80f8b684a3e42d4c0076db4933f">00079</a>             <span class="keyword">class </span><a class="code" href="classzmq_1_1mtrie__t.html">mtrie_t</a> *<a class="code" href="classzmq_1_1mtrie__t.html#a81f0c80f8b684a3e42d4c0076db4933f">node</a>;
-<a name="l00080"></a><a class="code" href="classzmq_1_1mtrie__t.html#a9fa10bcdeae4a8d6b7382513397fc624">00080</a>             <span class="keyword">class </span><a class="code" href="classzmq_1_1mtrie__t.html">mtrie_t</a> **<a class="code" href="classzmq_1_1mtrie__t.html#a9fa10bcdeae4a8d6b7382513397fc624">table</a>;
-<a name="l00081"></a>00081         } <a class="code" href="classzmq_1_1mtrie__t.html#a0876b574f7a59e8ceece89702401d3f4">next</a>;
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083         <a class="code" href="classzmq_1_1mtrie__t.html#a2cbfe1c56bfab5d806ecd4deb0374f4d">mtrie_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1mtrie__t.html">mtrie_t</a>&amp;);
-<a name="l00084"></a>00084         <span class="keyword">const</span> <a class="code" href="classzmq_1_1mtrie__t.html">mtrie_t</a> &amp;<a class="code" href="classzmq_1_1mtrie__t.html#add03a7fd601eabf394b122fe61b5d21b">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1mtrie__t.html">mtrie_t</a>&amp;);
-<a name="l00085"></a>00085     };
+<a name="l00070"></a>00070 
+<a name="l00071"></a><a class="code" href="classzmq_1_1mtrie__t.html#a4e00ee75267c84984a8d9d5766d7053f">00071</a>         <span class="keyword">typedef</span> std::set &lt;class pipe_t*&gt; <a class="code" href="classzmq_1_1mtrie__t.html#a4e00ee75267c84984a8d9d5766d7053f">pipes_t</a>;
+<a name="l00072"></a><a class="code" href="classzmq_1_1mtrie__t.html#abc5966d8ae3b364cb37a95de131f5e72">00072</a>         <a class="code" href="classzmq_1_1mtrie__t.html#a4e00ee75267c84984a8d9d5766d7053f">pipes_t</a> <a class="code" href="classzmq_1_1mtrie__t.html#abc5966d8ae3b364cb37a95de131f5e72">pipes</a>;
+<a name="l00073"></a>00073 
+<a name="l00074"></a><a class="code" href="classzmq_1_1mtrie__t.html#ae80671b777e7e4f429c85a4b8098d773">00074</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1mtrie__t.html#ae80671b777e7e4f429c85a4b8098d773">min</a>;
+<a name="l00075"></a><a class="code" href="classzmq_1_1mtrie__t.html#a4a4a21be845b1c5b1a40585bf6341585">00075</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="classzmq_1_1mtrie__t.html#a4a4a21be845b1c5b1a40585bf6341585">count</a>;
+<a name="l00076"></a>00076         <span class="keyword">union </span>{
+<a name="l00077"></a><a class="code" href="classzmq_1_1mtrie__t.html#a81f0c80f8b684a3e42d4c0076db4933f">00077</a>             <span class="keyword">class </span><a class="code" href="classzmq_1_1mtrie__t.html">mtrie_t</a> *<a class="code" href="classzmq_1_1mtrie__t.html#a81f0c80f8b684a3e42d4c0076db4933f">node</a>;
+<a name="l00078"></a><a class="code" href="classzmq_1_1mtrie__t.html#a9fa10bcdeae4a8d6b7382513397fc624">00078</a>             <span class="keyword">class </span><a class="code" href="classzmq_1_1mtrie__t.html">mtrie_t</a> **<a class="code" href="classzmq_1_1mtrie__t.html#a9fa10bcdeae4a8d6b7382513397fc624">table</a>;
+<a name="l00079"></a>00079         } <a class="code" href="classzmq_1_1mtrie__t.html#a0876b574f7a59e8ceece89702401d3f4">next</a>;
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081         <a class="code" href="classzmq_1_1mtrie__t.html#a2cbfe1c56bfab5d806ecd4deb0374f4d">mtrie_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1mtrie__t.html">mtrie_t</a>&amp;);
+<a name="l00082"></a>00082         <span class="keyword">const</span> <a class="code" href="classzmq_1_1mtrie__t.html">mtrie_t</a> &amp;<a class="code" href="classzmq_1_1mtrie__t.html#add03a7fd601eabf394b122fe61b5d21b">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1mtrie__t.html">mtrie_t</a>&amp;);
+<a name="l00083"></a>00083     };
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085 }
 <a name="l00086"></a>00086 
-<a name="l00087"></a>00087 }
-<a name="l00088"></a>00088 
-<a name="l00089"></a>00089 <span class="preprocessor">#endif</span>
-<a name="l00090"></a>00090 <span class="preprocessor"></span>
+<a name="l00087"></a>00087 <span class="preprocessor">#endif</span>
+<a name="l00088"></a>00088 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -219,7 +211,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:05 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:48 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

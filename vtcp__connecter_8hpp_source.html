@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/vtcp_connecter.hpp Source File</title>
+<title>libzmq: libzmq/doxygen/src/vtcp_connecter.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,12 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_2c1eec6ca1f471389d323b199c2c395d.html">.OLD_DEV</a>      </li>
-      <li class="navelem"><a class="el" href="dir_b4b5d907625f83c5e5680e5ccc32f2c6.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_ea986dcfc14529d07c8548c42611bb23.html">old</a>      </li>
-      <li class="navelem"><a class="el" href="dir_6f2b54a481f30c2b3c376fbabe2279ce.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_cf51a567d1751d0180c5e836636d67cb.html">zmq-contribution</a>      </li>
-      <li class="navelem"><a class="el" href="dir_c94bd149d2b4d22b9a9ab470faa42877.html">repos</a>      </li>
       <li class="navelem"><a class="el" href="dir_0ccb6cb1b2b0b6c45fe1428b06065a39.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_31b7ba14e0e4ce3739968e3b5c5d9068.html">doxygen</a>      </li>
       <li class="navelem"><a class="el" href="dir_4168df9576885e7a038bdfe4b3935cf4.html">src</a>      </li>
@@ -158,7 +152,7 @@ function toggleVisibility(linkObj) {
 <a name="l00043"></a>00043         <span class="comment">//  If &#39;delay&#39; is true connecter first waits for a while, then starts</span>
 <a name="l00044"></a>00044         <span class="comment">//  connection process.</span>
 <a name="l00045"></a>00045         vtcp_connecter_t (<span class="keyword">class</span> io_thread_t *io_thread_,
-<a name="l00046"></a>00046             <span class="keyword">class</span> session_t *session_, <span class="keyword">const</span> options_t &amp;options_,
+<a name="l00046"></a>00046             <span class="keyword">class</span> session_base_t *session_, <span class="keyword">const</span> options_t &amp;options_,
 <a name="l00047"></a>00047             <span class="keyword">const</span> <span class="keywordtype">char</span> *address_, <span class="keywordtype">bool</span> delay_);
 <a name="l00048"></a>00048         ~vtcp_connecter_t ();
 <a name="l00049"></a>00049 
@@ -219,7 +213,7 @@ function toggleVisibility(linkObj) {
 <a name="l00104"></a>00104         <span class="keywordtype">bool</span> wait;
 <a name="l00105"></a>00105 
 <a name="l00106"></a>00106         <span class="comment">//  Reference to the session we belong to.</span>
-<a name="l00107"></a>00107         <span class="keyword">class </span>session_t *session;
+<a name="l00107"></a>00107         <span class="keyword">class </span>session_base_t *session;
 <a name="l00108"></a>00108 
 <a name="l00109"></a>00109         <span class="comment">//  Current reconnect ivl, updated for backoff strategy</span>
 <a name="l00110"></a>00110         <span class="keywordtype">int</span> current_reconnect_ivl;
@@ -249,7 +243,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:06 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:48 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

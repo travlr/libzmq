@@ -1,8 +1,8 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$ipc__connecter_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/ipc_connecter.cpp" alt="" coords="5,83,600,112"/>
-<area shape="rect" id="node5" href="$random_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/random.cpp" alt="" coords="624,83,1181,112"/>
-<area shape="rect" id="node7" href="$req_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/req.cpp" alt="" coords="1205,83,1736,112"/>
-<area shape="rect" id="node9" href="$router_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/router.cpp" alt="" coords="1760,83,2307,112"/>
-<area shape="rect" id="node11" href="$tcp__connecter_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/tcp_connecter.cpp" alt="" coords="2331,83,2925,112"/>
-<area shape="rect" id="node13" href="$xrep_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/xrep.cpp" alt="" coords="2949,83,3488,112"/>
+<area shape="rect" id="node3" href="$ipc__connecter_8cpp.html" title="libzmq/doxygen/src/ipc_connecter.cpp" alt="" coords="5,83,251,112"/>
+<area shape="rect" id="node5" href="$random_8cpp.html" title="libzmq/doxygen/src/random.cpp" alt="" coords="275,83,480,112"/>
+<area shape="rect" id="node7" href="$req_8cpp.html" title="libzmq/doxygen/src/req.cpp" alt="" coords="504,83,685,112"/>
+<area shape="rect" id="node9" href="$router_8cpp.html" title="libzmq/doxygen/src/router.cpp" alt="" coords="709,83,907,112"/>
+<area shape="rect" id="node11" href="$tcp__connecter_8cpp.html" title="libzmq/doxygen/src/tcp_connecter.cpp" alt="" coords="931,83,1176,112"/>
+<area shape="rect" id="node13" href="$xrep_8cpp.html" title="libzmq/doxygen/src/xrep.cpp" alt="" coords="1200,83,1389,112"/>
 </map>

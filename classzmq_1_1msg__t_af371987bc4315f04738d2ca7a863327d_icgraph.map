@@ -1,5 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classzmq_1_1session__t.html#a1fbbb011d4b03631ebe434feae3155ee" title="zmq::session_t::clean_pipes" alt="" coords="209,5,396,35"/>
+<area shape="rect" id="node3" href="$classzmq_1_1session__base__t.html#af128d6b299eb6ed929998a6ad96bd97b" title="zmq::session_base_t::clean_pipes" alt="" coords="192,5,413,35"/>
 <area shape="rect" id="node5" href="$classzmq_1_1dist__t.html#a6dac6abffec2b7606604b3d86485723d" title="zmq::dist_t::distribute" alt="" coords="229,59,376,88"/>
 <area shape="rect" id="node7" href="$classzmq_1_1lb__t.html#a6f6910528d555916d3c34441e0d9b751" title="zmq::lb_t::has_out" alt="" coords="237,112,368,141"/>
 <area shape="rect" id="node9" href="$classzmq_1_1ctx__t.html#a1fe2dd42ad783e9b1f17ed5feeac3ed4" title="zmq::ctx_t::log" alt="" coords="248,165,357,195"/>

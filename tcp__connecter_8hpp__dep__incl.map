@@ -1,5 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$session_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/session.cpp" alt="" coords="5,83,563,112"/>
-<area shape="rect" id="node5" href="$socket__base_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/socket_base.cpp" alt="" coords="587,83,1173,112"/>
-<area shape="rect" id="node7" href="$tcp__connecter_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/tcp_connecter.cpp" alt="" coords="1197,83,1792,112"/>
+<area shape="rect" id="node3" href="$session__base_8cpp.html" title="libzmq/doxygen/src/session_base.cpp" alt="" coords="5,83,248,112"/>
+<area shape="rect" id="node5" href="$socket__base_8cpp.html" title="libzmq/doxygen/src/socket_base.cpp" alt="" coords="272,83,509,112"/>
+<area shape="rect" id="node7" href="$tcp__connecter_8cpp.html" title="libzmq/doxygen/src/tcp_connecter.cpp" alt="" coords="533,83,779,112"/>
 </map>

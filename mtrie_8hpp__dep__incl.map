@@ -1,8 +1,9 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$mtrie_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/mtrie.cpp" alt="" coords="20,83,561,112"/>
-<area shape="rect" id="node5" href="$xpub_8hpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/xpub.hpp" alt="" coords="585,83,1127,112"/>
-<area shape="rect" id="node7" href="$pub_8hpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/pub.hpp" alt="" coords="285,160,819,189"/>
-<area shape="rect" id="node11" href="$socket__base_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/socket_base.cpp" alt="" coords="563,237,1149,267"/>
-<area shape="rect" id="node14" href="$xpub_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/xpub.cpp" alt="" coords="893,160,1435,189"/>
-<area shape="rect" id="node9" href="$pub_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/pub.cpp" alt="" coords="5,237,539,267"/>
+<area shape="rect" id="node3" href="$mtrie_8cpp.html" title="libzmq/doxygen/src/mtrie.cpp" alt="" coords="117,83,309,112"/>
+<area shape="rect" id="node5" href="$xpub_8hpp.html" title="libzmq/doxygen/src/xpub.hpp" alt="" coords="333,83,525,112"/>
+<area shape="rect" id="node7" href="$pub_8hpp.html" title="libzmq/doxygen/src/pub.hpp" alt="" coords="272,160,456,189"/>
+<area shape="rect" id="node11" href="$session__base_8cpp.html" title="libzmq/doxygen/src/session_base.cpp" alt="" coords="5,237,248,267"/>
+<area shape="rect" id="node13" href="$socket__base_8cpp.html" title="libzmq/doxygen/src/socket_base.cpp" alt="" coords="480,237,717,267"/>
+<area shape="rect" id="node17" href="$xpub_8cpp.html" title="libzmq/doxygen/src/xpub.cpp" alt="" coords="531,160,723,189"/>
+<area shape="rect" id="node9" href="$pub_8cpp.html" title="libzmq/doxygen/src/pub.cpp" alt="" coords="272,237,456,267"/>
 </map>

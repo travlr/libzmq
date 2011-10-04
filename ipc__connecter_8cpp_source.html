@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/ipc_connecter.cpp Source File</title>
+<title>libzmq: libzmq/doxygen/src/ipc_connecter.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,12 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_2c1eec6ca1f471389d323b199c2c395d.html">.OLD_DEV</a>      </li>
-      <li class="navelem"><a class="el" href="dir_b4b5d907625f83c5e5680e5ccc32f2c6.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_ea986dcfc14529d07c8548c42611bb23.html">old</a>      </li>
-      <li class="navelem"><a class="el" href="dir_6f2b54a481f30c2b3c376fbabe2279ce.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_cf51a567d1751d0180c5e836636d67cb.html">zmq-contribution</a>      </li>
-      <li class="navelem"><a class="el" href="dir_c94bd149d2b4d22b9a9ab470faa42877.html">repos</a>      </li>
       <li class="navelem"><a class="el" href="dir_0ccb6cb1b2b0b6c45fe1428b06065a39.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_31b7ba14e0e4ce3739968e3b5c5d9068.html">doxygen</a>      </li>
       <li class="navelem"><a class="el" href="dir_4168df9576885e7a038bdfe4b3935cf4.html">src</a>      </li>
@@ -152,8 +146,8 @@ function toggleVisibility(linkObj) {
 <a name="l00037"></a>00037 <span class="preprocessor">#include &lt;sys/socket.h&gt;</span>
 <a name="l00038"></a>00038 <span class="preprocessor">#include &lt;sys/un.h&gt;</span>
 <a name="l00039"></a>00039 
-<a name="l00040"></a><a class="code" href="classzmq_1_1ipc__connecter__t.html#af130c16dfad522a1927b145b8a4c3bb8">00040</a> <a class="code" href="classzmq_1_1ipc__connecter__t.html#af130c16dfad522a1927b145b8a4c3bb8">zmq::ipc_connecter_t::ipc_connecter_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
-<a name="l00041"></a>00041       <span class="keyword">class</span> <a class="code" href="classzmq_1_1session__t.html">session_t</a> *session_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_,
+<a name="l00040"></a><a class="code" href="classzmq_1_1ipc__connecter__t.html#a1da5fae5ff13b3640fe89273cc7b32b9">00040</a> <a class="code" href="classzmq_1_1ipc__connecter__t.html#a1da5fae5ff13b3640fe89273cc7b32b9">zmq::ipc_connecter_t::ipc_connecter_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
+<a name="l00041"></a>00041       <span class="keyword">class</span> <a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a> *session_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_,
 <a name="l00042"></a>00042       <span class="keyword">const</span> <span class="keywordtype">char</span> *address_, <span class="keywordtype">bool</span> wait_) :
 <a name="l00043"></a>00043     <a class="code" href="classzmq_1_1own__t.html">own_t</a> (io_thread_, options_),
 <a name="l00044"></a>00044     <a class="code" href="classzmq_1_1io__object__t.html">io_object_t</a> (io_thread_),
@@ -289,7 +283,7 @@ function toggleVisibility(linkObj) {
 <a name="l00174"></a>00174     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (s == retired_fd);
 <a name="l00175"></a>00175 
 <a name="l00176"></a>00176     <span class="comment">//  Create the socket.</span>
-<a name="l00177"></a>00177     s = socket (AF_UNIX, SOCK_STREAM, 0);
+<a name="l00177"></a>00177     s = open_socket (AF_UNIX, SOCK_STREAM, 0);
 <a name="l00178"></a>00178     <span class="keywordflow">if</span> (s == -1)
 <a name="l00179"></a>00179         <span class="keywordflow">return</span> -1;
 <a name="l00180"></a>00180 
@@ -365,7 +359,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:05 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:48 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

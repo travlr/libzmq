@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/vtcp_listener.cpp Source File</title>
+<title>libzmq: libzmq/doxygen/src/vtcp_listener.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,12 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_2c1eec6ca1f471389d323b199c2c395d.html">.OLD_DEV</a>      </li>
-      <li class="navelem"><a class="el" href="dir_b4b5d907625f83c5e5680e5ccc32f2c6.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_ea986dcfc14529d07c8548c42611bb23.html">old</a>      </li>
-      <li class="navelem"><a class="el" href="dir_6f2b54a481f30c2b3c376fbabe2279ce.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_cf51a567d1751d0180c5e836636d67cb.html">zmq-contribution</a>      </li>
-      <li class="navelem"><a class="el" href="dir_c94bd149d2b4d22b9a9ab470faa42877.html">repos</a>      </li>
       <li class="navelem"><a class="el" href="dir_0ccb6cb1b2b0b6c45fe1428b06065a39.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_31b7ba14e0e4ce3739968e3b5c5d9068.html">doxygen</a>      </li>
       <li class="navelem"><a class="el" href="dir_4168df9576885e7a038bdfe4b3935cf4.html">src</a>      </li>
@@ -142,7 +136,7 @@ function toggleVisibility(linkObj) {
 <a name="l00027"></a>00027 <span class="preprocessor">#include &lt;vtcp.h&gt;</span>
 <a name="l00028"></a>00028 
 <a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="stream__engine_8hpp.html">stream_engine.hpp</a>&quot;</span>
-<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="session_8hpp.html">session.hpp</a>&quot;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="session__base_8hpp.html">session_base.hpp</a>&quot;</span>
 <a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="stdint_8hpp.html">stdint.hpp</a>&quot;</span>
 <a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="err_8hpp.html">err.hpp</a>&quot;</span>
 <a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="ip_8hpp.html">ip.hpp</a>&quot;</span>
@@ -228,8 +222,8 @@ function toggleVisibility(linkObj) {
 <a name="l00113"></a>00113     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (io_thread);
 <a name="l00114"></a>00114 
 <a name="l00115"></a>00115     <span class="comment">//  Create and launch a session object. </span>
-<a name="l00116"></a>00116     session_t *session = <span class="keyword">new</span> (std::nothrow)
-<a name="l00117"></a>00117         session_t (io_thread, <span class="keyword">false</span>, socket, options, NULL, NULL);
+<a name="l00116"></a>00116     session_base_t *session = <a class="code" href="classzmq_1_1session__base__t.html#a2de2535246e2f501e6e01712d809b8c2">session_base_t::create</a> (io_thread, <span class="keyword">false</span>, socket,
+<a name="l00117"></a>00117         options, NULL, NULL);
 <a name="l00118"></a>00118     <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (session);
 <a name="l00119"></a>00119     session-&gt;inc_seqnum ();
 <a name="l00120"></a>00120     launch_child (session);
@@ -253,7 +247,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:06 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:48 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

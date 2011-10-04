@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/mtrie.cpp Source File</title>
+<title>libzmq: libzmq/doxygen/src/mtrie.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,12 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_2c1eec6ca1f471389d323b199c2c395d.html">.OLD_DEV</a>      </li>
-      <li class="navelem"><a class="el" href="dir_b4b5d907625f83c5e5680e5ccc32f2c6.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_ea986dcfc14529d07c8548c42611bb23.html">old</a>      </li>
-      <li class="navelem"><a class="el" href="dir_6f2b54a481f30c2b3c376fbabe2279ce.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_cf51a567d1751d0180c5e836636d67cb.html">zmq-contribution</a>      </li>
-      <li class="navelem"><a class="el" href="dir_c94bd149d2b4d22b9a9ab470faa42877.html">repos</a>      </li>
       <li class="navelem"><a class="el" href="dir_0ccb6cb1b2b0b6c45fe1428b06065a39.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_31b7ba14e0e4ce3739968e3b5c5d9068.html">doxygen</a>      </li>
       <li class="navelem"><a class="el" href="dir_4168df9576885e7a038bdfe4b3935cf4.html">src</a>      </li>
@@ -324,36 +318,44 @@ function toggleVisibility(linkObj) {
 <a name="l00209"></a><a class="code" href="classzmq_1_1xsub__t.html#afd5c43b90680af84b1ec996af482c807">00209</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1mtrie__t.html#a525157606b33b9b0107415781d63e718">zmq::mtrie_t::match</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> size_,
 <a name="l00210"></a>00210     <span class="keywordtype">void</span> (*func_) (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, <span class="keywordtype">void</span> *arg_), <span class="keywordtype">void</span> *arg_)
 <a name="l00211"></a>00211 {
-<a name="l00212"></a>00212     match_helper (data_, size_, func_, arg_);
-<a name="l00213"></a>00213 }
+<a name="l00212"></a>00212     <a class="code" href="classzmq_1_1mtrie__t.html">mtrie_t</a> *current = <span class="keyword">this</span>;
+<a name="l00213"></a>00213     <span class="keywordflow">while</span> (<span class="keyword">true</span>) {
 <a name="l00214"></a>00214 
-<a name="l00215"></a><a class="code" href="classzmq_1_1mtrie__t.html#a3f7759a055c41667984e0f455fcb9909">00215</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1mtrie__t.html#a3f7759a055c41667984e0f455fcb9909">zmq::mtrie_t::match_helper</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> size_,
-<a name="l00216"></a>00216     <span class="keywordtype">void</span> (*func_) (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, <span class="keywordtype">void</span> *arg_), <span class="keywordtype">void</span> *arg_)
-<a name="l00217"></a>00217 {
-<a name="l00218"></a>00218     <span class="comment">//  TODO: This function is on critical path. Rewrite it as iteration</span>
-<a name="l00219"></a>00219     <span class="comment">//  rather than recursion.</span>
-<a name="l00220"></a>00220 
-<a name="l00221"></a>00221     <span class="comment">//  Signal the pipes attached to this node.</span>
-<a name="l00222"></a>00222     <span class="keywordflow">for</span> (pipes_t::iterator it = pipes.begin (); it != pipes.end (); ++it)
-<a name="l00223"></a>00223         func_ (*it, arg_);
-<a name="l00224"></a>00224 
-<a name="l00225"></a>00225     <span class="comment">//  If there are no subnodes in the trie, return.</span>
-<a name="l00226"></a>00226     <span class="keywordflow">if</span> (count == 0)
-<a name="l00227"></a>00227         <span class="keywordflow">return</span>;
-<a name="l00228"></a>00228 
-<a name="l00229"></a>00229     <span class="comment">//  If there&#39;s one subnode (optimisation).</span>
-<a name="l00230"></a>00230     <span class="keywordflow">if</span> (count == 1) {
-<a name="l00231"></a>00231         next.node-&gt;match (data_ + 1, size_ - 1, func_, arg_);
-<a name="l00232"></a>00232         <span class="keywordflow">return</span>;
-<a name="l00233"></a>00233     }
-<a name="l00234"></a>00234 
-<a name="l00235"></a>00235     <span class="comment">//  If there are multiple subnodes.</span>
-<a name="l00236"></a>00236     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c = 0; c != count; c++) {
-<a name="l00237"></a>00237         <span class="keywordflow">if</span> (next.table [c])
-<a name="l00238"></a>00238             next.table [c]-&gt;match (data_ + 1, size_ - 1, func_, arg_);
-<a name="l00239"></a>00239     }   
-<a name="l00240"></a>00240 }
-<a name="l00241"></a>00241 
+<a name="l00215"></a>00215         <span class="comment">//  Signal the pipes attached to this node.</span>
+<a name="l00216"></a>00216         <span class="keywordflow">for</span> (pipes_t::iterator it = current-&gt;<a class="code" href="classzmq_1_1mtrie__t.html#abc5966d8ae3b364cb37a95de131f5e72">pipes</a>.begin ();
+<a name="l00217"></a>00217               it != current-&gt;<a class="code" href="classzmq_1_1mtrie__t.html#abc5966d8ae3b364cb37a95de131f5e72">pipes</a>.end (); ++it)
+<a name="l00218"></a>00218             func_ (*it, arg_);
+<a name="l00219"></a>00219 
+<a name="l00220"></a>00220         <span class="comment">//  If we are at the end of the message, there&#39;s nothing more to match.</span>
+<a name="l00221"></a>00221         <span class="keywordflow">if</span> (!size_)
+<a name="l00222"></a>00222             <span class="keywordflow">break</span>;
+<a name="l00223"></a>00223 
+<a name="l00224"></a>00224         <span class="comment">//  If there are no subnodes in the trie, return.</span>
+<a name="l00225"></a>00225         <span class="keywordflow">if</span> (current-&gt;<a class="code" href="classzmq_1_1mtrie__t.html#a4a4a21be845b1c5b1a40585bf6341585">count</a> == 0)
+<a name="l00226"></a>00226             <span class="keywordflow">break</span>;
+<a name="l00227"></a>00227 
+<a name="l00228"></a>00228         <span class="comment">//  If there&#39;s one subnode (optimisation).</span>
+<a name="l00229"></a>00229         <span class="keywordflow">if</span> (current-&gt;<a class="code" href="classzmq_1_1mtrie__t.html#a4a4a21be845b1c5b1a40585bf6341585">count</a> == 1) {
+<a name="l00230"></a>00230             <span class="keywordflow">if</span> (data_ [0] != current-&gt;<a class="code" href="classzmq_1_1mtrie__t.html#ae80671b777e7e4f429c85a4b8098d773">min</a>)
+<a name="l00231"></a>00231                 <span class="keywordflow">break</span>;
+<a name="l00232"></a>00232             current = current-&gt;<a class="code" href="classzmq_1_1mtrie__t.html#a0876b574f7a59e8ceece89702401d3f4">next</a>.<a class="code" href="classzmq_1_1mtrie__t.html#a81f0c80f8b684a3e42d4c0076db4933f">node</a>;
+<a name="l00233"></a>00233             data_++;
+<a name="l00234"></a>00234             size_--;
+<a name="l00235"></a>00235             <span class="keywordflow">continue</span>;
+<a name="l00236"></a>00236         }
+<a name="l00237"></a>00237 
+<a name="l00238"></a>00238         <span class="comment">//  If there are multiple subnodes.</span>
+<a name="l00239"></a>00239         <span class="keywordflow">if</span> (data_ [0] &lt; current-&gt;<a class="code" href="classzmq_1_1mtrie__t.html#ae80671b777e7e4f429c85a4b8098d773">min</a> || data_ [0] &gt;=
+<a name="l00240"></a>00240               current-&gt;<a class="code" href="classzmq_1_1mtrie__t.html#ae80671b777e7e4f429c85a4b8098d773">min</a> + current-&gt;<a class="code" href="classzmq_1_1mtrie__t.html#a4a4a21be845b1c5b1a40585bf6341585">count</a>)
+<a name="l00241"></a>00241             <span class="keywordflow">break</span>;
+<a name="l00242"></a>00242         <span class="keywordflow">if</span> (!current-&gt;<a class="code" href="classzmq_1_1mtrie__t.html#a0876b574f7a59e8ceece89702401d3f4">next</a>.<a class="code" href="classzmq_1_1mtrie__t.html#a9fa10bcdeae4a8d6b7382513397fc624">table</a> [data_ [0] - current-&gt;<a class="code" href="classzmq_1_1mtrie__t.html#ae80671b777e7e4f429c85a4b8098d773">min</a>])
+<a name="l00243"></a>00243             <span class="keywordflow">break</span>;
+<a name="l00244"></a>00244         current = current-&gt;<a class="code" href="classzmq_1_1mtrie__t.html#a0876b574f7a59e8ceece89702401d3f4">next</a>.<a class="code" href="classzmq_1_1mtrie__t.html#a9fa10bcdeae4a8d6b7382513397fc624">table</a> [data_ [0] - current-&gt;<a class="code" href="classzmq_1_1mtrie__t.html#ae80671b777e7e4f429c85a4b8098d773">min</a>];
+<a name="l00245"></a>00245         data_++;
+<a name="l00246"></a>00246         size_--;
+<a name="l00247"></a>00247     }
+<a name="l00248"></a>00248 }
+<a name="l00249"></a>00249 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -370,7 +372,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:05 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:48 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

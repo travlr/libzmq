@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$classzmq_1_1socket__base__t.html#a2661c12e905da49ee2065cc447e0bc36" title="zmq::socket_base_t::attach_pipe" alt="" coords="241,5,455,35"/>
-<area shape="rect" id="node5" href="$classzmq_1_1session__t.html#ab21da5525ed1b86cdedb32fe8ac8f0f8" title="zmq::session_t::attach_pipe" alt="" coords="255,59,441,88"/>
-<area shape="rect" id="node9" href="$classzmq_1_1session__t.html#ae4adeec44edea2ac452ece851386ab4f" title="zmq::session_t::process_attach" alt="" coords="244,112,452,141"/>
-<area shape="rect" id="node7" href="$classzmq_1_1socket__base__t.html#ac47f3f966fabb59f2d304786be37a101" title="zmq::socket_base_t::connect" alt="" coords="504,59,699,88"/>
+<area shape="rect" id="node3" href="$classzmq_1_1socket__base__t.html#a2661c12e905da49ee2065cc447e0bc36" title="zmq::socket_base_t::attach_pipe" alt="" coords="255,5,468,35"/>
+<area shape="rect" id="node5" href="$classzmq_1_1session__base__t.html#a7ae23d364fd90150bc2a3bcf5ade9ecf" title="zmq::session_base_t::attach_pipe" alt="" coords="251,59,472,88"/>
+<area shape="rect" id="node9" href="$classzmq_1_1session__base__t.html#ad6287689e1caa0a0b364667a4df4e9e6" title="zmq::session_base_t::process_attach" alt="" coords="240,112,483,141"/>
+<area shape="rect" id="node7" href="$classzmq_1_1socket__base__t.html#ac47f3f966fabb59f2d304786be37a101" title="zmq::socket_base_t::connect" alt="" coords="531,59,725,88"/>
 </map>

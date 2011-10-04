@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/dist.cpp Source File</title>
+<title>libzmq: libzmq/doxygen/src/dist.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,12 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_2c1eec6ca1f471389d323b199c2c395d.html">.OLD_DEV</a>      </li>
-      <li class="navelem"><a class="el" href="dir_b4b5d907625f83c5e5680e5ccc32f2c6.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_ea986dcfc14529d07c8548c42611bb23.html">old</a>      </li>
-      <li class="navelem"><a class="el" href="dir_6f2b54a481f30c2b3c376fbabe2279ce.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_cf51a567d1751d0180c5e836636d67cb.html">zmq-contribution</a>      </li>
-      <li class="navelem"><a class="el" href="dir_c94bd149d2b4d22b9a9ab470faa42877.html">repos</a>      </li>
       <li class="navelem"><a class="el" href="dir_0ccb6cb1b2b0b6c45fe1428b06065a39.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_31b7ba14e0e4ce3739968e3b5c5d9068.html">doxygen</a>      </li>
       <li class="navelem"><a class="el" href="dir_4168df9576885e7a038bdfe4b3935cf4.html">src</a>      </li>
@@ -257,12 +251,12 @@ function toggleVisibility(linkObj) {
 <a name="l00142"></a>00142     msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a67b20d60d792fe6e3089f6d6edf82adb">add_refs</a> ((<span class="keywordtype">int</span>) matching - 1);
 <a name="l00143"></a>00143 
 <a name="l00144"></a>00144     <span class="comment">//  Push copy of the message to each matching pipe.</span>
-<a name="l00145"></a>00145     <span class="keywordflow">for</span> (pipes_t::size_type i = 0; i &lt; matching;) {
-<a name="l00146"></a>00146         <span class="keywordflow">if</span> (!write (pipes [i], msg_))
-<a name="l00147"></a>00147             msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a43c78e4688c189c55769eae89a140597">rm_refs</a> (1);
-<a name="l00148"></a>00148         <span class="keywordflow">else</span>
-<a name="l00149"></a>00149             i++;
-<a name="l00150"></a>00150     }
+<a name="l00145"></a>00145     <span class="keywordtype">int</span> failed = 0;
+<a name="l00146"></a>00146     <span class="keywordflow">for</span> (pipes_t::size_type i = 0; i &lt; matching; ++i)
+<a name="l00147"></a>00147         <span class="keywordflow">if</span> (!write (pipes [i], msg_))
+<a name="l00148"></a>00148             ++failed;
+<a name="l00149"></a>00149     <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (failed))
+<a name="l00150"></a>00150         msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#ab083fbbf421f86a2fae30a805f7698a1">rm_refs</a> (failed);
 <a name="l00151"></a>00151 
 <a name="l00152"></a>00152     <span class="comment">//  Detach the original message from the data buffer. Note that we don&#39;t</span>
 <a name="l00153"></a>00153     <span class="comment">//  close the message. That&#39;s because we&#39;ve already used all the references.</span>
@@ -307,7 +301,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:05 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:48 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

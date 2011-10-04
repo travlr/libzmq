@@ -1,7 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$ipc__address_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/ipc_address.cpp" alt="" coords="5,83,589,112"/>
-<area shape="rect" id="node5" href="$ipc__connecter_8hpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/ipc_connecter.hpp" alt="" coords="613,83,1208,112"/>
-<area shape="rect" id="node11" href="$ipc__listener_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/ipc_listener.cpp" alt="" coords="1232,83,1811,112"/>
-<area shape="rect" id="node7" href="$ipc__connecter_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/ipc_connecter.cpp" alt="" coords="313,160,908,189"/>
-<area shape="rect" id="node9" href="$session_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/session.cpp" alt="" coords="932,160,1489,189"/>
+<area shape="rect" id="node3" href="$ipc__address_8cpp.html" title="libzmq/doxygen/src/ipc_address.cpp" alt="" coords="5,83,240,112"/>
+<area shape="rect" id="node5" href="$ipc__connecter_8hpp.html" title="libzmq/doxygen/src/ipc_connecter.hpp" alt="" coords="264,83,509,112"/>
+<area shape="rect" id="node11" href="$ipc__listener_8cpp.html" title="libzmq/doxygen/src/ipc_listener.cpp" alt="" coords="533,83,763,112"/>
+<area shape="rect" id="node7" href="$ipc__connecter_8cpp.html" title="libzmq/doxygen/src/ipc_connecter.cpp" alt="" coords="129,160,375,189"/>
+<area shape="rect" id="node9" href="$session__base_8cpp.html" title="libzmq/doxygen/src/session_base.cpp" alt="" coords="399,160,641,189"/>
 </map>

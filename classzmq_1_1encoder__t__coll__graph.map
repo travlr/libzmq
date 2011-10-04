@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node2" href="$classzmq_1_1encoder__base__t.html" title="zmq::encoder_base_t\&lt; encoder_t \&gt;" alt="" coords="4316,1069,4543,1098"/>
-<area shape="rect" id="node5" href="$classzmq_1_1encoder__base__t.html" title="zmq::encoder_base_t\&lt; T \&gt;" alt="" coords="4005,1117,4184,1146"/>
+<area shape="rect" id="node2" href="$classzmq_1_1encoder__base__t.html" title="zmq::encoder_base_t\&lt; encoder_t \&gt;" alt="" coords="4351,1069,4577,1098"/>
+<area shape="rect" id="node5" href="$classzmq_1_1encoder__base__t.html" title="zmq::encoder_base_t\&lt; T \&gt;" alt="" coords="4040,1117,4219,1146"/>
 <area shape="rect" id="node7" href="$classzmq_1_1msg__t.html" title="zmq::msg_t" alt="" coords="1085,1126,1176,1156"/>
 <area shape="rect" id="node9" href="$structzmq_1_1msg__t_1_1content__t.html" title="zmq::msg_t::content_t" alt="" coords="713,1058,865,1088"/>
 <area shape="rect" id="node11" href="$classzmq_1_1atomic__counter__t.html" title="zmq::atomic_counter_t" alt="" coords="189,812,344,841"/>
@@ -11,7 +11,7 @@
 <area shape="rect" id="node27" href="$classzmq_1_1atomic__ptr__t.html" title="zmq::atomic_ptr_t\&lt; command_t \&gt;" alt="" coords="1211,405,1429,434"/>
 <area shape="rect" id="node70" href="$classzmq_1_1atomic__ptr__t.html" title="zmq::atomic_ptr_t\&lt; T \&gt;" alt="" coords="188,396,345,425"/>
 <area shape="rect" id="node77" href="$classzmq_1_1atomic__ptr__t.html" title="zmq::atomic_ptr_t\&lt; chunk_t \&gt;" alt="" coords="483,421,680,450"/>
-<area shape="rect" id="node15" href="$classzmq_1_1session__t.html" title="zmq::session_t" alt="" coords="3801,682,3911,712"/>
+<area shape="rect" id="node15" href="$classzmq_1_1session__base__t.html" title="zmq::session_base_t" alt="" coords="3800,682,3947,712"/>
 <area shape="rect" id="node29" href="$structzmq_1_1command__t.html" title="zmq::command_t" alt="" coords="909,236,1032,265"/>
 <area shape="rect" id="node34" href="$classzmq_1_1socket__base__t.html" title="zmq::socket_base_t" alt="" coords="2668,588,2807,617"/>
 <area shape="rect" id="node19" href="$classzmq_1_1object__t.html" title="zmq::object_t" alt="" coords="3309,416,3411,445"/>

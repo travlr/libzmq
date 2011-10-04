@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/tcp_connecter.hpp Source File</title>
+<title>libzmq: libzmq/doxygen/src/tcp_connecter.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,12 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_2c1eec6ca1f471389d323b199c2c395d.html">.OLD_DEV</a>      </li>
-      <li class="navelem"><a class="el" href="dir_b4b5d907625f83c5e5680e5ccc32f2c6.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_ea986dcfc14529d07c8548c42611bb23.html">old</a>      </li>
-      <li class="navelem"><a class="el" href="dir_6f2b54a481f30c2b3c376fbabe2279ce.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_cf51a567d1751d0180c5e836636d67cb.html">zmq-contribution</a>      </li>
-      <li class="navelem"><a class="el" href="dir_c94bd149d2b4d22b9a9ab470faa42877.html">repos</a>      </li>
       <li class="navelem"><a class="el" href="dir_0ccb6cb1b2b0b6c45fe1428b06065a39.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_31b7ba14e0e4ce3739968e3b5c5d9068.html">doxygen</a>      </li>
       <li class="navelem"><a class="el" href="dir_4168df9576885e7a038bdfe4b3935cf4.html">src</a>      </li>
@@ -151,15 +145,15 @@ function toggleVisibility(linkObj) {
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037         <span class="comment">//  If &#39;delay&#39; is true connecter first waits for a while, then starts</span>
 <a name="l00038"></a>00038         <span class="comment">//  connection process.</span>
-<a name="l00039"></a>00039         <a class="code" href="classzmq_1_1tcp__connecter__t.html#a4f39ecc61adff4f29c7f6208ffde89e4">tcp_connecter_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
-<a name="l00040"></a>00040             <span class="keyword">class</span> <a class="code" href="classzmq_1_1session__t.html">session_t</a> *session_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_,
+<a name="l00039"></a>00039         <a class="code" href="classzmq_1_1tcp__connecter__t.html#aee5a8bf0515bb57e068ee50f3c01ab38">tcp_connecter_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
+<a name="l00040"></a>00040             <span class="keyword">class</span> <a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a> *session_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_,
 <a name="l00041"></a>00041             <span class="keyword">const</span> <span class="keywordtype">char</span> *address_, <span class="keywordtype">bool</span> delay_);
 <a name="l00042"></a>00042         <a class="code" href="classzmq_1_1tcp__connecter__t.html#aa1f1f60cf0dd9618cf9b413ff6507b8d">~tcp_connecter_t</a> ();
 <a name="l00043"></a>00043 
 <a name="l00044"></a>00044     <span class="keyword">private</span>:
 <a name="l00045"></a>00045 
 <a name="l00046"></a>00046         <span class="comment">//  ID of the timer used to delay the reconnection.</span>
-<a name="l00047"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#a97d4f418de4b4b2ba84d26eba10900f1adb6b2a53056a0894a9dd5ba871c7595e">00047</a>         <span class="keyword">enum</span> {<a class="code" href="classzmq_1_1tcp__connecter__t.html#a97d4f418de4b4b2ba84d26eba10900f1adb6b2a53056a0894a9dd5ba871c7595e">reconnect_timer_id</a> = 1};
+<a name="l00047"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#ab14fd14b4280659a9d3cef8a872db77aadb6b2a53056a0894a9dd5ba871c7595e">00047</a>         <span class="keyword">enum</span> {<a class="code" href="classzmq_1_1tcp__connecter__t.html#ab14fd14b4280659a9d3cef8a872db77aadb6b2a53056a0894a9dd5ba871c7595e">reconnect_timer_id</a> = 1};
 <a name="l00048"></a>00048 
 <a name="l00049"></a>00049         <span class="comment">//  Handlers for incoming commands.</span>
 <a name="l00050"></a>00050         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html#ac48e5c141700982e9c2ebbb0199b3e6c">process_plug</a> ();
@@ -212,12 +206,12 @@ function toggleVisibility(linkObj) {
 <a name="l00097"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#af54e8490bcaf9cfed8fa36fd13910b3e">00097</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html#af54e8490bcaf9cfed8fa36fd13910b3e">wait</a>;
 <a name="l00098"></a>00098 
 <a name="l00099"></a>00099         <span class="comment">//  Reference to the session we belong to.</span>
-<a name="l00100"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#a09353e27bcabc22c8c20e54a58b527a0">00100</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1session__t.html">session_t</a> *<a class="code" href="classzmq_1_1tcp__connecter__t.html#a09353e27bcabc22c8c20e54a58b527a0">session</a>;
+<a name="l00100"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#ab1807050ef9bcb5bdeb014be141a9784">00100</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a> *<a class="code" href="classzmq_1_1tcp__connecter__t.html#ab1807050ef9bcb5bdeb014be141a9784">session</a>;
 <a name="l00101"></a>00101 
 <a name="l00102"></a>00102         <span class="comment">//  Current reconnect ivl, updated for backoff strategy</span>
 <a name="l00103"></a><a class="code" href="classzmq_1_1tcp__connecter__t.html#a202e5a0536d45091e3e750e0d865911a">00103</a>         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html#a202e5a0536d45091e3e750e0d865911a">current_reconnect_ivl</a>;
 <a name="l00104"></a>00104 
-<a name="l00105"></a>00105         <a class="code" href="classzmq_1_1tcp__connecter__t.html#a4f39ecc61adff4f29c7f6208ffde89e4">tcp_connecter_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html">tcp_connecter_t</a>&amp;);
+<a name="l00105"></a>00105         <a class="code" href="classzmq_1_1tcp__connecter__t.html#aee5a8bf0515bb57e068ee50f3c01ab38">tcp_connecter_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html">tcp_connecter_t</a>&amp;);
 <a name="l00106"></a>00106         <span class="keyword">const</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html">tcp_connecter_t</a> &amp;<a class="code" href="classzmq_1_1tcp__connecter__t.html#a5c98ae2de7816eca50ac75f84cf0d36d">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1tcp__connecter__t.html">tcp_connecter_t</a>&amp;);
 <a name="l00107"></a>00107     };
 <a name="l00108"></a>00108 
@@ -240,7 +234,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:06 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:48 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

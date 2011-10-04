@@ -1,6 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$pub_8hpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/pub.hpp" alt="" coords="285,83,819,112"/>
-<area shape="rect" id="node7" href="$socket__base_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/socket_base.cpp" alt="" coords="563,160,1149,189"/>
-<area shape="rect" id="node10" href="$xpub_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/xpub.cpp" alt="" coords="893,83,1435,112"/>
-<area shape="rect" id="node5" href="$pub_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/pub.cpp" alt="" coords="5,160,539,189"/>
+<area shape="rect" id="node3" href="$pub_8hpp.html" title="libzmq/doxygen/src/pub.hpp" alt="" coords="272,83,456,112"/>
+<area shape="rect" id="node7" href="$session__base_8cpp.html" title="libzmq/doxygen/src/session_base.cpp" alt="" coords="5,160,248,189"/>
+<area shape="rect" id="node9" href="$socket__base_8cpp.html" title="libzmq/doxygen/src/socket_base.cpp" alt="" coords="480,160,717,189"/>
+<area shape="rect" id="node13" href="$xpub_8cpp.html" title="libzmq/doxygen/src/xpub.cpp" alt="" coords="531,83,723,112"/>
+<area shape="rect" id="node5" href="$pub_8cpp.html" title="libzmq/doxygen/src/pub.cpp" alt="" coords="272,160,456,189"/>
 </map>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/stream_engine.hpp Source File</title>
+<title>libzmq: libzmq/doxygen/src/stream_engine.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,12 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_2c1eec6ca1f471389d323b199c2c395d.html">.OLD_DEV</a>      </li>
-      <li class="navelem"><a class="el" href="dir_b4b5d907625f83c5e5680e5ccc32f2c6.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_ea986dcfc14529d07c8548c42611bb23.html">old</a>      </li>
-      <li class="navelem"><a class="el" href="dir_6f2b54a481f30c2b3c376fbabe2279ce.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_cf51a567d1751d0180c5e836636d67cb.html">zmq-contribution</a>      </li>
-      <li class="navelem"><a class="el" href="dir_c94bd149d2b4d22b9a9ab470faa42877.html">repos</a>      </li>
       <li class="navelem"><a class="el" href="dir_0ccb6cb1b2b0b6c45fe1428b06065a39.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_31b7ba14e0e4ce3739968e3b5c5d9068.html">doxygen</a>      </li>
       <li class="navelem"><a class="el" href="dir_4168df9576885e7a038bdfe4b3935cf4.html">src</a>      </li>
@@ -159,62 +153,63 @@ function toggleVisibility(linkObj) {
 <a name="l00044"></a>00044         <a class="code" href="classzmq_1_1stream__engine__t.html#ad5d496119bb251d81b2c65574e3e04fa">~stream_engine_t</a> ();
 <a name="l00045"></a>00045 
 <a name="l00046"></a>00046         <span class="comment">//  i_engine interface implementation.</span>
-<a name="l00047"></a>00047         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1stream__engine__t.html#adb6e7f825e61803f7a66c40b2841fc5a">plug</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_, <span class="keyword">class</span> <a class="code" href="classzmq_1_1session__t.html">session_t</a> *session_);
-<a name="l00048"></a>00048         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1stream__engine__t.html#ad8290fba238641b76ebbfec7f86ef8ae">unplug</a> ();
-<a name="l00049"></a>00049         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1stream__engine__t.html#ae158faca7b689c9402a2cf336b695759">terminate</a> ();
-<a name="l00050"></a>00050         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1stream__engine__t.html#a7613a841e37d1a9c276bd6c30fe62a2d">activate_in</a> ();
-<a name="l00051"></a>00051         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1stream__engine__t.html#a82300cccf56f855dbf3ef52253de1391">activate_out</a> ();
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053         <span class="comment">//  i_poll_events interface implementation.</span>
-<a name="l00054"></a>00054         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1stream__engine__t.html#aae9c28324912d1bc8147ebeade33c15d">in_event</a> ();
-<a name="l00055"></a>00055         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1stream__engine__t.html#a324a91b00ba94ecf6687cc2e928f2a0d">out_event</a> ();
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057     <span class="keyword">private</span>:
-<a name="l00058"></a>00058 
-<a name="l00059"></a>00059         <span class="comment">//  Function to handle network disconnections.</span>
-<a name="l00060"></a>00060         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1stream__engine__t.html#a51ea56110ed6e92a88654f080ed37abb">error</a> ();
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062         <span class="comment">//  Writes data to the socket. Returns the number of bytes actually</span>
-<a name="l00063"></a>00063         <span class="comment">//  written (even zero is to be considered to be a success). In case</span>
-<a name="l00064"></a>00064         <span class="comment">//  of error or orderly shutdown by the other peer -1 is returned.</span>
-<a name="l00065"></a>00065         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1stream__engine__t.html#a9b7055eff718707d5a6cf04e92bc8a1a">write</a> (<span class="keyword">const</span> <span class="keywordtype">void</span> *data_, <span class="keywordtype">size_t</span> size_);
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067         <span class="comment">//  Reads data from the socket (up to &#39;size&#39; bytes). Returns the number</span>
-<a name="l00068"></a>00068         <span class="comment">//  of bytes actually read (even zero is to be considered to be</span>
-<a name="l00069"></a>00069         <span class="comment">//  a success). In case of error or orderly shutdown by the other</span>
-<a name="l00070"></a>00070         <span class="comment">//  peer -1 is returned.</span>
-<a name="l00071"></a>00071         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1stream__engine__t.html#abb5bf0c1ce7e57da4f4796dd67175bc7">read</a> (<span class="keywordtype">void</span> *data_, <span class="keywordtype">size_t</span> size_);
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073         <span class="comment">//  Underlying socket.</span>
-<a name="l00074"></a><a class="code" href="classzmq_1_1stream__engine__t.html#ad1b547d7408edfd6af029e9003d02425">00074</a>         fd_t <a class="code" href="classzmq_1_1stream__engine__t.html#ad1b547d7408edfd6af029e9003d02425">s</a>;
-<a name="l00075"></a>00075 
-<a name="l00076"></a><a class="code" href="classzmq_1_1stream__engine__t.html#ab5ce235379720cd8e926abe8f76e3d02">00076</a>         <a class="code" href="classzmq_1_1io__object__t.html#a4b6973c60124b9f72305af675e9a4cf4">handle_t</a> <a class="code" href="classzmq_1_1stream__engine__t.html#ab5ce235379720cd8e926abe8f76e3d02">handle</a>;
-<a name="l00077"></a>00077 
-<a name="l00078"></a><a class="code" href="classzmq_1_1stream__engine__t.html#a042c1eb4ae5bf5548b69272d394fa041">00078</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code" href="classzmq_1_1stream__engine__t.html#a042c1eb4ae5bf5548b69272d394fa041">inpos</a>;
-<a name="l00079"></a><a class="code" href="classzmq_1_1stream__engine__t.html#a83f2f1927efc94af7aa336b37641b691">00079</a>         <span class="keywordtype">size_t</span> <a class="code" href="classzmq_1_1stream__engine__t.html#a83f2f1927efc94af7aa336b37641b691">insize</a>;
-<a name="l00080"></a><a class="code" href="classzmq_1_1stream__engine__t.html#ad90796dd42db586b916c95dbf2dfc89d">00080</a>         <a class="code" href="classzmq_1_1decoder__t.html">decoder_t</a> <a class="code" href="classzmq_1_1stream__engine__t.html#ad90796dd42db586b916c95dbf2dfc89d">decoder</a>;
-<a name="l00081"></a>00081 
-<a name="l00082"></a><a class="code" href="classzmq_1_1stream__engine__t.html#a725c331eac24edd273f252847585d683">00082</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code" href="classzmq_1_1stream__engine__t.html#a725c331eac24edd273f252847585d683">outpos</a>;
-<a name="l00083"></a><a class="code" href="classzmq_1_1stream__engine__t.html#ac29394cc53819bd4ee8918866b60651d">00083</a>         <span class="keywordtype">size_t</span> <a class="code" href="classzmq_1_1stream__engine__t.html#ac29394cc53819bd4ee8918866b60651d">outsize</a>;
-<a name="l00084"></a><a class="code" href="classzmq_1_1stream__engine__t.html#ac71aee9bde4793fe3da87c6ec8882e9d">00084</a>         <a class="code" href="classzmq_1_1encoder__t.html">encoder_t</a> <a class="code" href="classzmq_1_1stream__engine__t.html#ac71aee9bde4793fe3da87c6ec8882e9d">encoder</a>;
-<a name="l00085"></a>00085 
-<a name="l00086"></a>00086         <span class="comment">//  The session this engine is attached to.</span>
-<a name="l00087"></a><a class="code" href="classzmq_1_1stream__engine__t.html#a59f01388a32fe9640c63ecd89a040bac">00087</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1session__t.html">session_t</a> *<a class="code" href="classzmq_1_1stream__engine__t.html#a59f01388a32fe9640c63ecd89a040bac">session</a>;
-<a name="l00088"></a>00088 
-<a name="l00089"></a>00089         <span class="comment">//  Detached transient session.</span>
-<a name="l00090"></a><a class="code" href="classzmq_1_1stream__engine__t.html#ab7d1a2e18e36be7f35ac8c06617a8c0a">00090</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1session__t.html">session_t</a> *<a class="code" href="classzmq_1_1stream__engine__t.html#ab7d1a2e18e36be7f35ac8c06617a8c0a">leftover_session</a>;
-<a name="l00091"></a>00091 
-<a name="l00092"></a><a class="code" href="classzmq_1_1stream__engine__t.html#a6bbcdaad0b4a8a02d981a9eb7a14d419">00092</a>         <a class="code" href="structzmq_1_1options__t.html">options_t</a> <a class="code" href="classzmq_1_1stream__engine__t.html#a6bbcdaad0b4a8a02d981a9eb7a14d419">options</a>;
-<a name="l00093"></a>00093 
-<a name="l00094"></a><a class="code" href="classzmq_1_1stream__engine__t.html#ac98aafe1d06a6391e33748bc86919130">00094</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1stream__engine__t.html#ac98aafe1d06a6391e33748bc86919130">plugged</a>;
-<a name="l00095"></a>00095 
-<a name="l00096"></a>00096         <a class="code" href="classzmq_1_1stream__engine__t.html#a6f41fd9370d53d2c24c9d2e34a4ce758">stream_engine_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1stream__engine__t.html">stream_engine_t</a>&amp;);
-<a name="l00097"></a>00097         <span class="keyword">const</span> <a class="code" href="classzmq_1_1stream__engine__t.html">stream_engine_t</a> &amp;<a class="code" href="classzmq_1_1stream__engine__t.html#ae5f7845c393182531a84e5aa3e28b61f">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1stream__engine__t.html">stream_engine_t</a>&amp;);
-<a name="l00098"></a>00098     };
-<a name="l00099"></a>00099 
-<a name="l00100"></a>00100 }
-<a name="l00101"></a>00101 
-<a name="l00102"></a>00102 <span class="preprocessor">#endif</span>
+<a name="l00047"></a>00047         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1stream__engine__t.html#a52cb0b21ffd615a7ac963c4b6d9847e4">plug</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
+<a name="l00048"></a>00048            <span class="keyword">class</span> <a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a> *session_);
+<a name="l00049"></a>00049         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1stream__engine__t.html#ad8290fba238641b76ebbfec7f86ef8ae">unplug</a> ();
+<a name="l00050"></a>00050         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1stream__engine__t.html#ae158faca7b689c9402a2cf336b695759">terminate</a> ();
+<a name="l00051"></a>00051         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1stream__engine__t.html#a7613a841e37d1a9c276bd6c30fe62a2d">activate_in</a> ();
+<a name="l00052"></a>00052         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1stream__engine__t.html#a82300cccf56f855dbf3ef52253de1391">activate_out</a> ();
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054         <span class="comment">//  i_poll_events interface implementation.</span>
+<a name="l00055"></a>00055         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1stream__engine__t.html#aae9c28324912d1bc8147ebeade33c15d">in_event</a> ();
+<a name="l00056"></a>00056         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1stream__engine__t.html#a324a91b00ba94ecf6687cc2e928f2a0d">out_event</a> ();
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058     <span class="keyword">private</span>:
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060         <span class="comment">//  Function to handle network disconnections.</span>
+<a name="l00061"></a>00061         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1stream__engine__t.html#a51ea56110ed6e92a88654f080ed37abb">error</a> ();
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063         <span class="comment">//  Writes data to the socket. Returns the number of bytes actually</span>
+<a name="l00064"></a>00064         <span class="comment">//  written (even zero is to be considered to be a success). In case</span>
+<a name="l00065"></a>00065         <span class="comment">//  of error or orderly shutdown by the other peer -1 is returned.</span>
+<a name="l00066"></a>00066         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1stream__engine__t.html#a9b7055eff718707d5a6cf04e92bc8a1a">write</a> (<span class="keyword">const</span> <span class="keywordtype">void</span> *data_, <span class="keywordtype">size_t</span> size_);
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068         <span class="comment">//  Reads data from the socket (up to &#39;size&#39; bytes). Returns the number</span>
+<a name="l00069"></a>00069         <span class="comment">//  of bytes actually read (even zero is to be considered to be</span>
+<a name="l00070"></a>00070         <span class="comment">//  a success). In case of error or orderly shutdown by the other</span>
+<a name="l00071"></a>00071         <span class="comment">//  peer -1 is returned.</span>
+<a name="l00072"></a>00072         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1stream__engine__t.html#abb5bf0c1ce7e57da4f4796dd67175bc7">read</a> (<span class="keywordtype">void</span> *data_, <span class="keywordtype">size_t</span> size_);
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074         <span class="comment">//  Underlying socket.</span>
+<a name="l00075"></a><a class="code" href="classzmq_1_1stream__engine__t.html#ad1b547d7408edfd6af029e9003d02425">00075</a>         fd_t <a class="code" href="classzmq_1_1stream__engine__t.html#ad1b547d7408edfd6af029e9003d02425">s</a>;
+<a name="l00076"></a>00076 
+<a name="l00077"></a><a class="code" href="classzmq_1_1stream__engine__t.html#ab5ce235379720cd8e926abe8f76e3d02">00077</a>         <a class="code" href="classzmq_1_1io__object__t.html#a4b6973c60124b9f72305af675e9a4cf4">handle_t</a> <a class="code" href="classzmq_1_1stream__engine__t.html#ab5ce235379720cd8e926abe8f76e3d02">handle</a>;
+<a name="l00078"></a>00078 
+<a name="l00079"></a><a class="code" href="classzmq_1_1stream__engine__t.html#a042c1eb4ae5bf5548b69272d394fa041">00079</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code" href="classzmq_1_1stream__engine__t.html#a042c1eb4ae5bf5548b69272d394fa041">inpos</a>;
+<a name="l00080"></a><a class="code" href="classzmq_1_1stream__engine__t.html#a83f2f1927efc94af7aa336b37641b691">00080</a>         <span class="keywordtype">size_t</span> <a class="code" href="classzmq_1_1stream__engine__t.html#a83f2f1927efc94af7aa336b37641b691">insize</a>;
+<a name="l00081"></a><a class="code" href="classzmq_1_1stream__engine__t.html#ad90796dd42db586b916c95dbf2dfc89d">00081</a>         <a class="code" href="classzmq_1_1decoder__t.html">decoder_t</a> <a class="code" href="classzmq_1_1stream__engine__t.html#ad90796dd42db586b916c95dbf2dfc89d">decoder</a>;
+<a name="l00082"></a>00082 
+<a name="l00083"></a><a class="code" href="classzmq_1_1stream__engine__t.html#a725c331eac24edd273f252847585d683">00083</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code" href="classzmq_1_1stream__engine__t.html#a725c331eac24edd273f252847585d683">outpos</a>;
+<a name="l00084"></a><a class="code" href="classzmq_1_1stream__engine__t.html#ac29394cc53819bd4ee8918866b60651d">00084</a>         <span class="keywordtype">size_t</span> <a class="code" href="classzmq_1_1stream__engine__t.html#ac29394cc53819bd4ee8918866b60651d">outsize</a>;
+<a name="l00085"></a><a class="code" href="classzmq_1_1stream__engine__t.html#ac71aee9bde4793fe3da87c6ec8882e9d">00085</a>         <a class="code" href="classzmq_1_1encoder__t.html">encoder_t</a> <a class="code" href="classzmq_1_1stream__engine__t.html#ac71aee9bde4793fe3da87c6ec8882e9d">encoder</a>;
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087         <span class="comment">//  The session this engine is attached to.</span>
+<a name="l00088"></a><a class="code" href="classzmq_1_1stream__engine__t.html#a21ed286f3020c16ef4bbd8fd49cb7082">00088</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a> *<a class="code" href="classzmq_1_1stream__engine__t.html#a21ed286f3020c16ef4bbd8fd49cb7082">session</a>;
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090         <span class="comment">//  Detached transient session.</span>
+<a name="l00091"></a><a class="code" href="classzmq_1_1stream__engine__t.html#a12f3b762f8555153888cc8856d550514">00091</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a> *<a class="code" href="classzmq_1_1stream__engine__t.html#a12f3b762f8555153888cc8856d550514">leftover_session</a>;
+<a name="l00092"></a>00092 
+<a name="l00093"></a><a class="code" href="classzmq_1_1stream__engine__t.html#a6bbcdaad0b4a8a02d981a9eb7a14d419">00093</a>         <a class="code" href="structzmq_1_1options__t.html">options_t</a> <a class="code" href="classzmq_1_1stream__engine__t.html#a6bbcdaad0b4a8a02d981a9eb7a14d419">options</a>;
+<a name="l00094"></a>00094 
+<a name="l00095"></a><a class="code" href="classzmq_1_1stream__engine__t.html#ac98aafe1d06a6391e33748bc86919130">00095</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1stream__engine__t.html#ac98aafe1d06a6391e33748bc86919130">plugged</a>;
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097         <a class="code" href="classzmq_1_1stream__engine__t.html#a6f41fd9370d53d2c24c9d2e34a4ce758">stream_engine_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1stream__engine__t.html">stream_engine_t</a>&amp;);
+<a name="l00098"></a>00098         <span class="keyword">const</span> <a class="code" href="classzmq_1_1stream__engine__t.html">stream_engine_t</a> &amp;<a class="code" href="classzmq_1_1stream__engine__t.html#ae5f7845c393182531a84e5aa3e28b61f">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1stream__engine__t.html">stream_engine_t</a>&amp;);
+<a name="l00099"></a>00099     };
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101 }
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -231,7 +226,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:06 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:48 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/pull.hpp Source File</title>
+<title>libzmq: libzmq/doxygen/src/pull.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,12 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_2c1eec6ca1f471389d323b199c2c395d.html">.OLD_DEV</a>      </li>
-      <li class="navelem"><a class="el" href="dir_b4b5d907625f83c5e5680e5ccc32f2c6.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_ea986dcfc14529d07c8548c42611bb23.html">old</a>      </li>
-      <li class="navelem"><a class="el" href="dir_6f2b54a481f30c2b3c376fbabe2279ce.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_cf51a567d1751d0180c5e836636d67cb.html">zmq-contribution</a>      </li>
-      <li class="navelem"><a class="el" href="dir_c94bd149d2b4d22b9a9ab470faa42877.html">repos</a>      </li>
       <li class="navelem"><a class="el" href="dir_0ccb6cb1b2b0b6c45fe1428b06065a39.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_31b7ba14e0e4ce3739968e3b5c5d9068.html">doxygen</a>      </li>
       <li class="navelem"><a class="el" href="dir_4168df9576885e7a038bdfe4b3935cf4.html">src</a>      </li>
@@ -137,41 +131,57 @@ function toggleVisibility(linkObj) {
 <a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define __ZMQ_PULL_HPP_INCLUDED__</span>
 <a name="l00023"></a>00023 <span class="preprocessor"></span>
 <a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="socket__base_8hpp.html">socket_base.hpp</a>&quot;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="fq_8hpp.html">fq.hpp</a>&quot;</span>
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="keyword">namespace </span>zmq
-<a name="l00028"></a>00028 {
-<a name="l00029"></a>00029 
-<a name="l00030"></a><a class="code" href="classzmq_1_1pull__t.html">00030</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1pull__t.html">pull_t</a> :
-<a name="l00031"></a>00031         <span class="keyword">public</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a>
-<a name="l00032"></a>00032     {
-<a name="l00033"></a>00033     <span class="keyword">public</span>:
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035         <a class="code" href="classzmq_1_1pull__t.html#adbc52111992a9a29fc25843de19bc71a">pull_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1ctx__t.html">ctx_t</a> *parent_, uint32_t tid_);
-<a name="l00036"></a>00036         <a class="code" href="classzmq_1_1pull__t.html#a2decd7f701c6995fdfa9219092f2a6b7">~pull_t</a> ();
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038     <span class="keyword">protected</span>:
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040         <span class="comment">//  Overloads of functions from socket_base_t.</span>
-<a name="l00041"></a>00041         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pull__t.html#a3abe279dcfe56f369e8aab3ec0e89d73">xattach_pipe</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
-<a name="l00042"></a>00042         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1pull__t.html#a58841f9617d68dea766f1b55c0e244f8">xrecv</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
-<a name="l00043"></a>00043         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pull__t.html#a8bc55f15b9e9b34a99a78bc527d21edf">xhas_in</a> ();
-<a name="l00044"></a>00044         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pull__t.html#a99f2f61daf707525d32f8e6ee2f3e8bf">xread_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
-<a name="l00045"></a>00045         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pull__t.html#aa4d43c6cdaf18f6560a1f1959b10a028">xterminated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047     <span class="keyword">private</span>:
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049         <span class="comment">//  Fair queueing object for inbound pipes.</span>
-<a name="l00050"></a><a class="code" href="classzmq_1_1pull__t.html#a1c34d2af5697348b7b40e5f84ea952a6">00050</a>         <a class="code" href="classzmq_1_1fq__t.html">fq_t</a> <a class="code" href="classzmq_1_1pull__t.html#a1c34d2af5697348b7b40e5f84ea952a6">fq</a>;
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052         <a class="code" href="classzmq_1_1pull__t.html#adbc52111992a9a29fc25843de19bc71a">pull_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1pull__t.html">pull_t</a>&amp;);
-<a name="l00053"></a>00053         <span class="keyword">const</span> <a class="code" href="classzmq_1_1pull__t.html">pull_t</a> &amp;<a class="code" href="classzmq_1_1pull__t.html#aecdc7625e07d38d2848796c0effb50f7">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1pull__t.html">pull_t</a>&amp;);
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055     };
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057 }
-<a name="l00058"></a>00058 
-<a name="l00059"></a>00059 <span class="preprocessor">#endif</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="session__base_8hpp.html">session_base.hpp</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="fq_8hpp.html">fq.hpp</a>&quot;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="keyword">namespace </span>zmq
+<a name="l00029"></a>00029 {
+<a name="l00030"></a>00030 
+<a name="l00031"></a><a class="code" href="classzmq_1_1pull__t.html">00031</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1pull__t.html">pull_t</a> :
+<a name="l00032"></a>00032         <span class="keyword">public</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a>
+<a name="l00033"></a>00033     {
+<a name="l00034"></a>00034     <span class="keyword">public</span>:
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036         <a class="code" href="classzmq_1_1pull__t.html#adbc52111992a9a29fc25843de19bc71a">pull_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1ctx__t.html">ctx_t</a> *parent_, uint32_t tid_);
+<a name="l00037"></a>00037         <a class="code" href="classzmq_1_1pull__t.html#a2decd7f701c6995fdfa9219092f2a6b7">~pull_t</a> ();
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039     <span class="keyword">protected</span>:
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041         <span class="comment">//  Overloads of functions from socket_base_t.</span>
+<a name="l00042"></a>00042         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pull__t.html#a3abe279dcfe56f369e8aab3ec0e89d73">xattach_pipe</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00043"></a>00043         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1pull__t.html#a58841f9617d68dea766f1b55c0e244f8">xrecv</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
+<a name="l00044"></a>00044         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pull__t.html#a8bc55f15b9e9b34a99a78bc527d21edf">xhas_in</a> ();
+<a name="l00045"></a>00045         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pull__t.html#a99f2f61daf707525d32f8e6ee2f3e8bf">xread_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00046"></a>00046         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pull__t.html#aa4d43c6cdaf18f6560a1f1959b10a028">xterminated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048     <span class="keyword">private</span>:
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050         <span class="comment">//  Fair queueing object for inbound pipes.</span>
+<a name="l00051"></a><a class="code" href="classzmq_1_1pull__t.html#a1c34d2af5697348b7b40e5f84ea952a6">00051</a>         <a class="code" href="classzmq_1_1fq__t.html">fq_t</a> <a class="code" href="classzmq_1_1pull__t.html#a1c34d2af5697348b7b40e5f84ea952a6">fq</a>;
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053         <a class="code" href="classzmq_1_1pull__t.html#adbc52111992a9a29fc25843de19bc71a">pull_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1pull__t.html">pull_t</a>&amp;);
+<a name="l00054"></a>00054         <span class="keyword">const</span> <a class="code" href="classzmq_1_1pull__t.html">pull_t</a> &amp;<a class="code" href="classzmq_1_1pull__t.html#aecdc7625e07d38d2848796c0effb50f7">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1pull__t.html">pull_t</a>&amp;);
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056     };
+<a name="l00057"></a>00057 
+<a name="l00058"></a><a class="code" href="classzmq_1_1pull__session__t.html">00058</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1pull__session__t.html">pull_session_t</a> : <span class="keyword">public</span> <a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a>
+<a name="l00059"></a>00059     {
+<a name="l00060"></a>00060     <span class="keyword">public</span>:
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062         <a class="code" href="classzmq_1_1pull__session__t.html#a0aef2ba71623157d86b9e52638b6eef7">pull_session_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_, <span class="keywordtype">bool</span> connect_,
+<a name="l00063"></a>00063             <span class="keyword">class</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_,
+<a name="l00064"></a>00064             <span class="keyword">const</span> <span class="keywordtype">char</span> *protocol_, <span class="keyword">const</span> <span class="keywordtype">char</span> *address_);
+<a name="l00065"></a>00065         <a class="code" href="classzmq_1_1pull__session__t.html#ae2d6f37866ea4f971a4ff57f82db47ee">~pull_session_t</a> ();
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067     <span class="keyword">private</span>:
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069         <a class="code" href="classzmq_1_1pull__session__t.html#a0aef2ba71623157d86b9e52638b6eef7">pull_session_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1pull__session__t.html">pull_session_t</a>&amp;);
+<a name="l00070"></a>00070         <span class="keyword">const</span> <a class="code" href="classzmq_1_1pull__session__t.html">pull_session_t</a> &amp;<a class="code" href="classzmq_1_1pull__session__t.html#ae1f48ab6e653b558d5d7eb5a52283df8">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1pull__session__t.html">pull_session_t</a>&amp;);
+<a name="l00071"></a>00071     };
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073 }
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -188,7 +198,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:06 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:48 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

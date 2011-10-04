@@ -209,7 +209,7 @@ Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1xrep__t.html#a1bb8754aa30098220778ad7cb10c1b2b">rollback</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#ac870d30c4629955bf7e8c1d6dc768ca2">send_activate_read</a> (class <a class="el" href="classzmq_1_1pipe__t.html">pipe_t</a> *destination_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#a659c03bf2997f35a987b64aeb2da5c9f">send_activate_write</a> (class <a class="el" href="classzmq_1_1pipe__t.html">pipe_t</a> *destination_, uint64_t msgs_read_)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#aa85b1dd604b176fdbab4b93e3f7697c2">send_attach</a> (class <a class="el" href="classzmq_1_1session__t.html">session_t</a> *destination_, struct <a class="el" href="structzmq_1_1i__engine.html">i_engine</a> *engine_, bool inc_seqnum_=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#a24df796ef1f3792b4a1badd25f8ac408">send_attach</a> (class <a class="el" href="classzmq_1_1session__base__t.html">session_base_t</a> *destination_, struct <a class="el" href="structzmq_1_1i__engine.html">i_engine</a> *engine_, bool inc_seqnum_=true)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#ad5903d7950a3b0d6652cb6dcdc2e484f">send_bind</a> (class <a class="el" href="classzmq_1_1own__t.html">own_t</a> *destination_, class <a class="el" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, bool inc_seqnum_=true)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#ac8c1e3cde28211481d288ba343bd9856">send_done</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#a57182450ccbb7042d9b775edf84c6197">send_hiccup</a> (class <a class="el" href="classzmq_1_1pipe__t.html">pipe_t</a> *destination_, void *pipe_)</td></tr>
@@ -251,7 +251,7 @@ Private Attributes</h2></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00035">35</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00036">36</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
 </div><hr/><h2>Member Typedef Documentation</h2>
 <a class="anchor" id="a5d8e2f70118f44167d894856c9fe018c"></a><!-- doxytag: member="zmq::xrep_t::outpipes_t" ref="a5d8e2f70118f44167d894856c9fe018c" args="" -->
 <div class="memitem">
@@ -264,7 +264,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00079">79</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00080">80</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
 
 </div>
 </div>
@@ -294,9 +294,9 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00027">27</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00028">28</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
 
-<p>References <a class="el" href="options_8hpp_source.html#l00092">zmq::options_t::delay_on_disconnect</a>, <a class="el" href="msg_8cpp_source.html#l00043">zmq::msg_t::init()</a>, <a class="el" href="own_8hpp_source.html#l00098">zmq::own_t::options</a>, <a class="el" href="xrep_8hpp_source.html#l00067">prefetched_msg</a>, <a class="el" href="options_8hpp_source.html#l00058">zmq::options_t::type</a>, and <a class="el" href="zmq_8h_source.html#l00160">ZMQ_XREP</a>.</p>
+<p>References <a class="el" href="options_8hpp_source.html#l00092">zmq::options_t::delay_on_disconnect</a>, <a class="el" href="msg_8cpp_source.html#l00043">zmq::msg_t::init()</a>, <a class="el" href="own_8hpp_source.html#l00098">zmq::own_t::options</a>, <a class="el" href="xrep_8hpp_source.html#l00068">prefetched_msg</a>, <a class="el" href="options_8hpp_source.html#l00058">zmq::options_t::type</a>, and <a class="el" href="zmq_8h_source.html#l00160">ZMQ_XREP</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -325,7 +325,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00044">44</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00045">45</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
@@ -366,7 +366,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00329">329</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>, <a class="el" href="zmq_8h_source.html#l00112">EMTHREAD</a>, <a class="el" href="zmq_8h_source.html#l00111">ETERM</a>, <a class="el" href="ipc__listener_8cpp_source.html#l00097">zmq::ipc_listener_t::set_address()</a>, <a class="el" href="tcp__listener_8cpp_source.html#l00121">zmq::tcp_listener_t::set_address()</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>, <a class="el" href="zmq_8h_source.html#l00112">EMTHREAD</a>, <a class="el" href="zmq_8h_source.html#l00111">ETERM</a>, <a class="el" href="ipc__listener_8cpp_source.html#l00098">zmq::ipc_listener_t::set_address()</a>, <a class="el" href="tcp__listener_8cpp_source.html#l00121">zmq::tcp_listener_t::set_address()</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
 <p>Referenced by <a class="el" href="ctx_8cpp_source.html#l00039">zmq::ctx_t::ctx_t()</a>.</p>
 
@@ -494,7 +494,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="socket__base_8cpp_source.html#l00414">414</a> of file <a class="el" href="socket__base_8cpp_source.html">socket_base.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>, <a class="el" href="session_8cpp_source.html#l00068">zmq::session_t::attach_pipe()</a>, <a class="el" href="zmq_8h_source.html#l00112">EMTHREAD</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="zmq_8h_source.html#l00111">ETERM</a>, <a class="el" href="ctx_8hpp_source.html#l00044">zmq::endpoint_t::options</a>, <a class="el" href="options_8hpp_source.html#l00039">zmq::options_t::rcvhwm</a>, <a class="el" href="options_8hpp_source.html#l00038">zmq::options_t::sndhwm</a>, <a class="el" href="ctx_8hpp_source.html#l00043">zmq::endpoint_t::socket</a>, and <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>.</p>
+<p>References <a class="el" href="session__base_8cpp_source.html#l00142">zmq::session_base_t::attach_pipe()</a>, <a class="el" href="session__base_8cpp_source.html#l00046">zmq::session_base_t::create()</a>, <a class="el" href="zmq_8h_source.html#l00112">EMTHREAD</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="zmq_8h_source.html#l00111">ETERM</a>, <a class="el" href="ctx_8hpp_source.html#l00044">zmq::endpoint_t::options</a>, <a class="el" href="options_8hpp_source.html#l00039">zmq::options_t::rcvhwm</a>, <a class="el" href="options_8hpp_source.html#l00038">zmq::options_t::sndhwm</a>, <a class="el" href="ctx_8hpp_source.html#l00043">zmq::endpoint_t::socket</a>, and <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>.</p>
 
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -503,7 +503,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1socket__base__t_ac47f3f966fabb59f2d304786be37a101_cgraph.png" border="0" usemap="#classzmq_1_1socket__base__t_ac47f3f966fabb59f2d304786be37a101_cgraph" alt=""/></div>
 <map name="classzmq_1_1socket__base__t_ac47f3f966fabb59f2d304786be37a101_cgraph" id="classzmq_1_1socket__base__t_ac47f3f966fabb59f2d304786be37a101_cgraph">
-<area shape="rect" id="node3" href="classzmq_1_1session__t.html#ab21da5525ed1b86cdedb32fe8ac8f0f8" title="zmq::session_t::attach_pipe" alt="" coords="248,5,435,35"/><area shape="rect" id="node5" href="classzmq_1_1pipe__t.html#a4d661236931c97f340b7795c87007ff9" title="zmq::pipe_t::set_event_sink" alt="" coords="483,5,669,35"/></map>
+<area shape="rect" id="node3" href="classzmq_1_1session__base__t.html#a7ae23d364fd90150bc2a3bcf5ade9ecf" title="zmq::session_base_t::attach_pipe" alt="" coords="248,5,469,35"/><area shape="rect" id="node7" href="classzmq_1_1session__base__t.html#a2de2535246e2f501e6e01712d809b8c2" title="zmq::session_base_t::create" alt="" coords="264,59,453,88"/><area shape="rect" id="node5" href="classzmq_1_1pipe__t.html#a4d661236931c97f340b7795c87007ff9" title="zmq::pipe_t::set_event_sink" alt="" coords="517,5,704,35"/></map>
 </div>
 </p>
 
@@ -825,7 +825,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="own_8cpp_source.html#l00056">56</a> of file <a class="el" href="own_8cpp_source.html">own.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="ctx_8cpp_source.html#l00282">zmq::ctx_t::find_endpoint()</a>, <a class="el" href="tcp__listener_8cpp_source.html#l00079">zmq::tcp_listener_t::in_event()</a>, <a class="el" href="ipc__listener_8cpp_source.html#l00070">zmq::ipc_listener_t::in_event()</a>, <a class="el" href="object_8cpp_source.html#l00204">zmq::object_t::send_attach()</a>, <a class="el" href="object_8cpp_source.html#l00220">zmq::object_t::send_bind()</a>, <a class="el" href="object_8cpp_source.html#l00191">zmq::object_t::send_own()</a>, and <a class="el" href="object_8cpp_source.html#l00177">zmq::object_t::send_plug()</a>.</p>
+<p>Referenced by <a class="el" href="ctx_8cpp_source.html#l00282">zmq::ctx_t::find_endpoint()</a>, <a class="el" href="tcp__listener_8cpp_source.html#l00079">zmq::tcp_listener_t::in_event()</a>, <a class="el" href="ipc__listener_8cpp_source.html#l00071">zmq::ipc_listener_t::in_event()</a>, <a class="el" href="object_8cpp_source.html#l00204">zmq::object_t::send_attach()</a>, <a class="el" href="object_8cpp_source.html#l00220">zmq::object_t::send_bind()</a>, <a class="el" href="object_8cpp_source.html#l00191">zmq::object_t::send_own()</a>, and <a class="el" href="object_8cpp_source.html#l00177">zmq::object_t::send_plug()</a>.</p>
 
 <p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-11-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -834,7 +834,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1own__t_ad152acb0f4d06b1f80c40509775b2d1b_icgraph.png" border="0" usemap="#classzmq_1_1own__t_ad152acb0f4d06b1f80c40509775b2d1b_icgraph" alt=""/></div>
 <map name="classzmq_1_1own__t_ad152acb0f4d06b1f80c40509775b2d1b_icgraph" id="classzmq_1_1own__t_ad152acb0f4d06b1f80c40509775b2d1b_icgraph">
-<area shape="rect" id="node3" href="classzmq_1_1ctx__t.html#af14b1742c89990baf8453f8c1d542c0d" title="zmq::ctx_t::find_endpoint" alt="" coords="233,5,401,35"/><area shape="rect" id="node5" href="classzmq_1_1tcp__listener__t.html#a5768c38ce36c7721bacf332740bb8a1f" title="zmq::tcp_listener_t::in_event" alt="" coords="223,59,412,88"/><area shape="rect" id="node7" href="classzmq_1_1ipc__listener__t.html#ab40d9aacf57c5e2b8da596262a052780" title="zmq::ipc_listener_t::in_event" alt="" coords="223,112,412,141"/><area shape="rect" id="node9" href="classzmq_1_1object__t.html#aa85b1dd604b176fdbab4b93e3f7697c2" title="zmq::object_t::send_attach" alt="" coords="228,165,407,195"/><area shape="rect" id="node11" href="classzmq_1_1object__t.html#ad5903d7950a3b0d6652cb6dcdc2e484f" title="zmq::object_t::send_bind" alt="" coords="233,219,401,248"/><area shape="rect" id="node13" href="classzmq_1_1object__t.html#a1746fdd6c7b787bfa432dace8c5ca156" title="zmq::object_t::send_own" alt="" coords="233,272,401,301"/><area shape="rect" id="node15" href="classzmq_1_1object__t.html#afeec511a9a6ec59f82d12f5e4e8b7e20" title="zmq::object_t::send_plug" alt="" coords="233,325,401,355"/></map>
+<area shape="rect" id="node3" href="classzmq_1_1ctx__t.html#af14b1742c89990baf8453f8c1d542c0d" title="zmq::ctx_t::find_endpoint" alt="" coords="233,5,401,35"/><area shape="rect" id="node5" href="classzmq_1_1tcp__listener__t.html#a5768c38ce36c7721bacf332740bb8a1f" title="zmq::tcp_listener_t::in_event" alt="" coords="223,59,412,88"/><area shape="rect" id="node7" href="classzmq_1_1ipc__listener__t.html#ab40d9aacf57c5e2b8da596262a052780" title="zmq::ipc_listener_t::in_event" alt="" coords="223,112,412,141"/><area shape="rect" id="node9" href="classzmq_1_1object__t.html#a24df796ef1f3792b4a1badd25f8ac408" title="zmq::object_t::send_attach" alt="" coords="228,165,407,195"/><area shape="rect" id="node11" href="classzmq_1_1object__t.html#ad5903d7950a3b0d6652cb6dcdc2e484f" title="zmq::object_t::send_bind" alt="" coords="233,219,401,248"/><area shape="rect" id="node13" href="classzmq_1_1object__t.html#a1746fdd6c7b787bfa432dace8c5ca156" title="zmq::object_t::send_own" alt="" coords="233,272,401,301"/><area shape="rect" id="node15" href="classzmq_1_1object__t.html#afeec511a9a6ec59f82d12f5e4e8b7e20" title="zmq::object_t::send_plug" alt="" coords="233,325,401,355"/></map>
 </div>
 </p>
 
@@ -1050,7 +1050,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classzmq_1_1session__t.html#ae4adeec44edea2ac452ece851386ab4f">zmq::session_t</a>.</p>
+<p>Reimplemented in <a class="el" href="classzmq_1_1session__base__t.html#ad6287689e1caa0a0b364667a4df4e9e6">zmq::session_base_t</a>.</p>
 
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00379">379</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
@@ -1193,7 +1193,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classzmq_1_1ipc__connecter__t.html#a2094d991c8a1e0d28dbf78e151ddbac5">zmq::ipc_connecter_t</a>, <a class="el" href="classzmq_1_1ipc__listener__t.html#abc8d05a65d7480b6438043c6e1487b30">zmq::ipc_listener_t</a>, <a class="el" href="classzmq_1_1session__t.html#acd9081bd88d61a17dad9e82d7fabc5c8">zmq::session_t</a>, <a class="el" href="classzmq_1_1tcp__connecter__t.html#ac48e5c141700982e9c2ebbb0199b3e6c">zmq::tcp_connecter_t</a>, and <a class="el" href="classzmq_1_1tcp__listener__t.html#a1b16eee787896e8207af95d5874b6e05">zmq::tcp_listener_t</a>.</p>
+<p>Reimplemented in <a class="el" href="classzmq_1_1ipc__connecter__t.html#a2094d991c8a1e0d28dbf78e151ddbac5">zmq::ipc_connecter_t</a>, <a class="el" href="classzmq_1_1ipc__listener__t.html#abc8d05a65d7480b6438043c6e1487b30">zmq::ipc_listener_t</a>, <a class="el" href="classzmq_1_1session__base__t.html#ab2fb501fbb9801df9a339097b6b778bd">zmq::session_base_t</a>, <a class="el" href="classzmq_1_1tcp__connecter__t.html#ac48e5c141700982e9c2ebbb0199b3e6c">zmq::tcp_connecter_t</a>, and <a class="el" href="classzmq_1_1tcp__listener__t.html#a1b16eee787896e8207af95d5874b6e05">zmq::tcp_listener_t</a>.</p>
 
 <p>Definition at line <a class="el" href="object_8cpp_source.html#l00369">369</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
@@ -1372,7 +1372,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00220">220</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00223">223</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
 
 </div>
 </div>
@@ -1470,14 +1470,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa85b1dd604b176fdbab4b93e3f7697c2"></a><!-- doxytag: member="zmq::xrep_t::send_attach" ref="aa85b1dd604b176fdbab4b93e3f7697c2" args="(class session_t *destination_, struct i_engine *engine_, bool inc_seqnum_=true)" -->
+<a class="anchor" id="a24df796ef1f3792b4a1badd25f8ac408"></a><!-- doxytag: member="zmq::xrep_t::send_attach" ref="a24df796ef1f3792b4a1badd25f8ac408" args="(class session_base_t *destination_, struct i_engine *engine_, bool inc_seqnum_=true)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void zmq::object_t::send_attach </td>
           <td>(</td>
-          <td class="paramtype">class <a class="el" href="classzmq_1_1session__t.html">session_t</a> *&#160;</td>
+          <td class="paramtype">class <a class="el" href="classzmq_1_1session__base__t.html">session_base_t</a> *&#160;</td>
           <td class="paramname"><em>destination_</em>, </td>
         </tr>
         <tr>
@@ -1510,8 +1510,8 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-17-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="classzmq_1_1object__t_aa85b1dd604b176fdbab4b93e3f7697c2_cgraph.png" border="0" usemap="#classzmq_1_1object__t_aa85b1dd604b176fdbab4b93e3f7697c2_cgraph" alt=""/></div>
-<map name="classzmq_1_1object__t_aa85b1dd604b176fdbab4b93e3f7697c2_cgraph" id="classzmq_1_1object__t_aa85b1dd604b176fdbab4b93e3f7697c2_cgraph">
+<div class="center"><img src="classzmq_1_1object__t_a24df796ef1f3792b4a1badd25f8ac408_cgraph.png" border="0" usemap="#classzmq_1_1object__t_a24df796ef1f3792b4a1badd25f8ac408_cgraph" alt=""/></div>
+<map name="classzmq_1_1object__t_a24df796ef1f3792b4a1badd25f8ac408_cgraph" id="classzmq_1_1object__t_a24df796ef1f3792b4a1badd25f8ac408_cgraph">
 <area shape="rect" id="node3" href="classzmq_1_1own__t.html#ad152acb0f4d06b1f80c40509775b2d1b" title="zmq::own_t::inc_seqnum" alt="" coords="235,5,403,35"/></map>
 </div>
 </p>
@@ -2132,7 +2132,7 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classzmq_1_1socket__base__t.html#a434a5e275c36c237879dc8b35c1d1f8d">zmq::socket_base_t</a>.</p>
 
-<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00050">50</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00051">51</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
 
 <p>References <a class="el" href="pipe_8cpp_source.html#l00089">zmq::pipe_t::set_pipe_id()</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
@@ -2167,7 +2167,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1rep__t.html#ac9b123f0f5e8d9b5c04e5ebcbeca84ec">zmq::rep_t</a>.</p>
 
-<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00230">230</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00233">233</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="rep_8cpp_source.html#l00097">zmq::rep_t::xhas_in()</a>.</p>
 
@@ -2202,7 +2202,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1rep__t.html#a985c57a022e0a8685a8c23797e90df54">zmq::rep_t</a>.</p>
 
-<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00237">237</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00240">240</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="rep_8cpp_source.html#l00105">zmq::rep_t::xhas_out()</a>.</p>
 
@@ -2259,7 +2259,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classzmq_1_1socket__base__t.html#a843c559158c1947a20d98f0be853e62e">zmq::socket_base_t</a>.</p>
 
-<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00099">99</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00100">100</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
 
 </div>
 </div>
@@ -2292,9 +2292,9 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1rep__t.html#a509d5fb31ebab99fc0e63c25412a8f1a">zmq::rep_t</a>.</p>
 
-<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00183">183</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00186">186</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
 
-<p>References <a class="el" href="msg_8cpp_source.html#l00104">zmq::msg_t::close()</a>, <a class="el" href="msg_8hpp_source.html#l00122">zmq::msg_t::data</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="msg_8hpp_source.html#l00119">zmq::msg_t::flags</a>, <a class="el" href="pipe_8cpp_source.html#l00094">zmq::pipe_t::get_pipe_id()</a>, <a class="el" href="msg_8cpp_source.html#l00051">zmq::msg_t::init_size()</a>, <a class="el" href="msg_8hpp_source.html#l00050">zmq::msg_t::label</a>, <a class="el" href="msg_8hpp_source.html#l00053">zmq::msg_t::more</a>, <a class="el" href="msg_8cpp_source.html#l00137">zmq::msg_t::move()</a>, and <a class="el" href="msg_8cpp_source.html#l00225">zmq::msg_t::set_flags()</a>.</p>
+<p>References <a class="el" href="msg_8cpp_source.html#l00104">zmq::msg_t::close()</a>, <a class="el" href="msg_8hpp_source.html#l00123">zmq::msg_t::data</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="msg_8hpp_source.html#l00120">zmq::msg_t::flags</a>, <a class="el" href="pipe_8cpp_source.html#l00094">zmq::pipe_t::get_pipe_id()</a>, <a class="el" href="msg_8cpp_source.html#l00051">zmq::msg_t::init_size()</a>, <a class="el" href="msg_8hpp_source.html#l00050">zmq::msg_t::label</a>, <a class="el" href="msg_8hpp_source.html#l00053">zmq::msg_t::more</a>, <a class="el" href="msg_8cpp_source.html#l00137">zmq::msg_t::move()</a>, and <a class="el" href="msg_8cpp_source.html#l00225">zmq::msg_t::set_flags()</a>.</p>
 
 <p>Referenced by <a class="el" href="rep_8cpp_source.html#l00059">zmq::rep_t::xrecv()</a>.</p>
 
@@ -2351,9 +2351,9 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1rep__t.html#a6b9320f2f9e0b03241f50877e88e2d15">zmq::rep_t</a>.</p>
 
-<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00117">117</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00118">118</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
 
-<p>References <a class="el" href="msg_8cpp_source.html#l00104">zmq::msg_t::close()</a>, <a class="el" href="msg_8hpp_source.html#l00122">zmq::msg_t::data</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="msg_8hpp_source.html#l00119">zmq::msg_t::flags</a>, <a class="el" href="msg_8cpp_source.html#l00043">zmq::msg_t::init()</a>, <a class="el" href="msg_8hpp_source.html#l00050">zmq::msg_t::label</a>, <a class="el" href="msg_8hpp_source.html#l00053">zmq::msg_t::more</a>, <a class="el" href="msg_8hpp_source.html#l00123">zmq::msg_t::size</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="msg_8cpp_source.html#l00104">zmq::msg_t::close()</a>, <a class="el" href="msg_8hpp_source.html#l00123">zmq::msg_t::data</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="msg_8hpp_source.html#l00120">zmq::msg_t::flags</a>, <a class="el" href="msg_8cpp_source.html#l00043">zmq::msg_t::init()</a>, <a class="el" href="msg_8hpp_source.html#l00050">zmq::msg_t::label</a>, <a class="el" href="msg_8hpp_source.html#l00053">zmq::msg_t::more</a>, <a class="el" href="msg_8hpp_source.html#l00124">zmq::msg_t::size</a>, <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
 <p>Referenced by <a class="el" href="rep_8cpp_source.html#l00059">zmq::rep_t::xrecv()</a>, and <a class="el" href="rep_8cpp_source.html#l00037">zmq::rep_t::xsend()</a>.</p>
 
@@ -2435,7 +2435,7 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classzmq_1_1socket__base__t.html#a960275edd30ad4aef0f386bb6d966b29">zmq::socket_base_t</a>.</p>
 
-<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00083">83</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00084">84</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
@@ -2458,7 +2458,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classzmq_1_1socket__base__t.html#a4d2ca9c48d557d7932e25be3d59abc5d">zmq::socket_base_t</a>.</p>
 
-<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00104">104</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8cpp_source.html#l00105">105</a> of file <a class="el" href="xrep_8cpp_source.html">xrep.cpp</a>.</p>
 
 <p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
@@ -2476,7 +2476,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00083">83</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00084">84</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
 
 </div>
 </div>
@@ -2491,7 +2491,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00061">61</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00062">62</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
 
 </div>
 </div>
@@ -2506,7 +2506,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00070">70</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00071">71</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
 
 </div>
 </div>
@@ -2521,7 +2521,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00086">86</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00087">87</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
 
 </div>
 </div>
@@ -2536,7 +2536,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00090">90</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00091">91</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
 
 </div>
 </div>
@@ -2553,7 +2553,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="own_8hpp_source.html#l00098">98</a> of file <a class="el" href="own_8hpp_source.html">own.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="pair_8cpp_source.html#l00026">zmq::pair_t::pair_t()</a>, <a class="el" href="pub_8cpp_source.html#l00024">zmq::pub_t::pub_t()</a>, <a class="el" href="pull_8cpp_source.html#l00026">zmq::pull_t::pull_t()</a>, <a class="el" href="push_8cpp_source.html#l00026">zmq::push_t::push_t()</a>, <a class="el" href="rep_8cpp_source.html#l00025">zmq::rep_t::rep_t()</a>, <a class="el" href="req_8cpp_source.html#l00028">zmq::req_t::req_t()</a>, <a class="el" href="router_8cpp_source.html#l00029">zmq::router_t::router_t()</a>, <a class="el" href="sub_8cpp_source.html#l00024">zmq::sub_t::sub_t()</a>, <a class="el" href="xpub_8cpp_source.html#l00028">zmq::xpub_t::xpub_t()</a>, <a class="el" href="xrep_8cpp_source.html#l00027">xrep_t()</a>, <a class="el" href="xreq_8cpp_source.html#l00025">zmq::xreq_t::xreq_t()</a>, and <a class="el" href="xsub_8cpp_source.html#l00026">zmq::xsub_t::xsub_t()</a>.</p>
+<p>Referenced by <a class="el" href="pair_8cpp_source.html#l00026">zmq::pair_t::pair_t()</a>, <a class="el" href="pub_8cpp_source.html#l00024">zmq::pub_t::pub_t()</a>, <a class="el" href="pull_8cpp_source.html#l00026">zmq::pull_t::pull_t()</a>, <a class="el" href="push_8cpp_source.html#l00026">zmq::push_t::push_t()</a>, <a class="el" href="rep_8cpp_source.html#l00025">zmq::rep_t::rep_t()</a>, <a class="el" href="req_8cpp_source.html#l00028">zmq::req_t::req_t()</a>, <a class="el" href="router_8cpp_source.html#l00029">zmq::router_t::router_t()</a>, <a class="el" href="sub_8cpp_source.html#l00024">zmq::sub_t::sub_t()</a>, <a class="el" href="xpub_8cpp_source.html#l00028">zmq::xpub_t::xpub_t()</a>, <a class="el" href="xrep_8cpp_source.html#l00028">xrep_t()</a>, <a class="el" href="xreq_8cpp_source.html#l00025">zmq::xreq_t::xreq_t()</a>, and <a class="el" href="xsub_8cpp_source.html#l00026">zmq::xsub_t::xsub_t()</a>.</p>
 
 </div>
 </div>
@@ -2568,7 +2568,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00080">80</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00081">81</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
 
 </div>
 </div>
@@ -2583,7 +2583,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00064">64</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00065">65</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
 
 </div>
 </div>
@@ -2598,15 +2598,15 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00067">67</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
+<p>Definition at line <a class="el" href="xrep_8hpp_source.html#l00068">68</a> of file <a class="el" href="xrep_8hpp_source.html">xrep.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="xrep_8cpp_source.html#l00027">xrep_t()</a>.</p>
+<p>Referenced by <a class="el" href="xrep_8cpp_source.html#l00028">xrep_t()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/<a class="el" href="xrep_8hpp_source.html">xrep.hpp</a></li>
-<li>/home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/<a class="el" href="xrep_8cpp_source.html">xrep.cpp</a></li>
+<li>libzmq/doxygen/src/<a class="el" href="xrep_8hpp_source.html">xrep.hpp</a></li>
+<li>libzmq/doxygen/src/<a class="el" href="xrep_8cpp_source.html">xrep.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -2623,7 +2623,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:08 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:52 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

@@ -1,10 +1,10 @@
 <map id="G" name="G">
 <area shape="rect" id="node9" href="$tcp__listener_8hpp.html" title="tcp_listener.hpp" alt="" coords="1764,83,1879,112"/>
-<area shape="rect" id="node39" href="$err_8hpp.html" title="err.hpp" alt="" coords="427,469,488,499"/>
-<area shape="rect" id="node77" href="$stream__engine_8hpp.html" title="stream_engine.hpp" alt="" coords="947,83,1077,112"/>
+<area shape="rect" id="node39" href="$err_8hpp.html" title="err.hpp" alt="" coords="428,469,489,499"/>
+<area shape="rect" id="node77" href="$stream__engine_8hpp.html" title="stream_engine.hpp" alt="" coords="948,83,1079,112"/>
 <area shape="rect" id="node94" href="$config_8hpp.html" title="config.hpp" alt="" coords="1365,315,1448,344"/>
 <area shape="rect" id="node107" href="$io__thread_8hpp.html" title="io_thread.hpp" alt="" coords="1949,160,2048,189"/>
-<area shape="rect" id="node131" href="$session_8hpp.html" title="session.hpp" alt="" coords="1427,83,1517,112"/>
+<area shape="rect" id="node131" href="$session__base_8hpp.html" title="session_base.hpp" alt="" coords="1409,83,1535,112"/>
 <area shape="rect" id="node147" href="$ip_8hpp.html" title="ip.hpp" alt="" coords="2424,315,2480,344"/>
 <area shape="rect" id="node11" href="$fd_8hpp.html" title="fd.hpp" alt="" coords="2181,392,2240,421"/>
 <area shape="rect" id="node14" href="$own_8hpp.html" title="own.hpp" alt="" coords="1259,160,1328,189"/>
@@ -19,7 +19,7 @@
 <area shape="rect" id="node55" href="$likely_8hpp.html" title="likely.hpp" alt="" coords="232,547,309,576"/>
 <area shape="rect" id="node65" href="$poller_8hpp.html" title="poller.hpp" alt="" coords="1923,237,2000,267"/>
 <area shape="rect" id="node68" href="$i__poll__events_8hpp.html" title="i_poll_events.hpp" alt="" coords="1776,237,1899,267"/>
-<area shape="rect" id="node81" href="$i__engine_8hpp.html" title="i_engine.hpp" alt="" coords="1017,160,1111,189"/>
+<area shape="rect" id="node81" href="$i__engine_8hpp.html" title="i_engine.hpp" alt="" coords="1023,160,1116,189"/>
 <area shape="rect" id="node84" href="$encoder_8hpp.html" title="encoder.hpp" alt="" coords="465,160,559,189"/>
 <area shape="rect" id="node97" href="$decoder_8hpp.html" title="decoder.hpp" alt="" coords="701,160,795,189"/>
 <area shape="rect" id="node91" href="$msg_8hpp.html" title="msg.hpp" alt="" coords="1053,237,1125,267"/>

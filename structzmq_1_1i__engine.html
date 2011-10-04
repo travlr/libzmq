@@ -129,7 +129,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1i__engine.html#a0adc8b9b7b931b20449849b331acad3b">~i_engine</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1i__engine.html#af7701dbec48bab5f144a9b762f228097">activate_in</a> ()=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1i__engine.html#a9f64a9684d65eb27245058bde5f10e6d">activate_out</a> ()=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1i__engine.html#aef9e59c240abcb6c206395fc13bf6755">plug</a> (class <a class="el" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_, class <a class="el" href="classzmq_1_1session__t.html">session_t</a> *session_)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1i__engine.html#ac04fd4cb59268c0b5d1cb4fb160fc070">plug</a> (class <a class="el" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_, class <a class="el" href="classzmq_1_1session__base__t.html">session_base_t</a> *session_)=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1i__engine.html#a6289f8f2354de76377112a94c4db0b18">terminate</a> ()=0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1i__engine.html#af282e68ed0f7db669f49c93317b37484">unplug</a> ()=0</td></tr>
 </table>
@@ -192,7 +192,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aef9e59c240abcb6c206395fc13bf6755"></a><!-- doxytag: member="zmq::i_engine::plug" ref="aef9e59c240abcb6c206395fc13bf6755" args="(class io_thread_t *io_thread_, class session_t *session_)=0" -->
+<a class="anchor" id="ac04fd4cb59268c0b5d1cb4fb160fc070"></a><!-- doxytag: member="zmq::i_engine::plug" ref="ac04fd4cb59268c0b5d1cb4fb160fc070" args="(class io_thread_t *io_thread_, class session_base_t *session_)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -205,7 +205,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">class <a class="el" href="classzmq_1_1session__t.html">session_t</a> *&#160;</td>
+          <td class="paramtype">class <a class="el" href="classzmq_1_1session__base__t.html">session_base_t</a> *&#160;</td>
           <td class="paramname"><em>session_</em>&#160;</td>
         </tr>
         <tr>
@@ -217,18 +217,18 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="classzmq_1_1stream__engine__t.html#adb6e7f825e61803f7a66c40b2841fc5a">zmq::stream_engine_t</a>.</p>
+<p>Implemented in <a class="el" href="classzmq_1_1stream__engine__t.html#a52cb0b21ffd615a7ac963c4b6d9847e4">zmq::stream_engine_t</a>.</p>
 
-<p>Referenced by <a class="el" href="session_8cpp_source.html#l00175">zmq::session_t::process_attach()</a>.</p>
+<p>Referenced by <a class="el" href="session__base_8cpp_source.html#l00249">zmq::session_base_t::process_attach()</a>.</p>
 
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="structzmq_1_1i__engine_aef9e59c240abcb6c206395fc13bf6755_icgraph.png" border="0" usemap="#structzmq_1_1i__engine_aef9e59c240abcb6c206395fc13bf6755_icgraph" alt=""/></div>
-<map name="structzmq_1_1i__engine_aef9e59c240abcb6c206395fc13bf6755_icgraph" id="structzmq_1_1i__engine_aef9e59c240abcb6c206395fc13bf6755_icgraph">
-<area shape="rect" id="node3" href="classzmq_1_1session__t.html#ae4adeec44edea2ac452ece851386ab4f" title="zmq::session_t::process_attach" alt="" coords="189,5,397,35"/></map>
+<div class="center"><img src="structzmq_1_1i__engine_ac04fd4cb59268c0b5d1cb4fb160fc070_icgraph.png" border="0" usemap="#structzmq_1_1i__engine_ac04fd4cb59268c0b5d1cb4fb160fc070_icgraph" alt=""/></div>
+<map name="structzmq_1_1i__engine_ac04fd4cb59268c0b5d1cb4fb160fc070_icgraph" id="structzmq_1_1i__engine_ac04fd4cb59268c0b5d1cb4fb160fc070_icgraph">
+<area shape="rect" id="node3" href="classzmq_1_1session__base__t.html#ad6287689e1caa0a0b364667a4df4e9e6" title="zmq::session_base_t::process_attach" alt="" coords="189,5,432,35"/></map>
 </div>
 </p>
 
@@ -271,7 +271,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/<a class="el" href="i__engine_8hpp_source.html">i_engine.hpp</a></li>
+<li>libzmq/doxygen/src/<a class="el" href="i__engine_8hpp_source.html">i_engine.hpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -288,7 +288,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:07 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:49 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

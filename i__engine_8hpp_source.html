@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/i_engine.hpp Source File</title>
+<title>libzmq: libzmq/doxygen/src/i_engine.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,12 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_2c1eec6ca1f471389d323b199c2c395d.html">.OLD_DEV</a>      </li>
-      <li class="navelem"><a class="el" href="dir_b4b5d907625f83c5e5680e5ccc32f2c6.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_ea986dcfc14529d07c8548c42611bb23.html">old</a>      </li>
-      <li class="navelem"><a class="el" href="dir_6f2b54a481f30c2b3c376fbabe2279ce.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_cf51a567d1751d0180c5e836636d67cb.html">zmq-contribution</a>      </li>
-      <li class="navelem"><a class="el" href="dir_c94bd149d2b4d22b9a9ab470faa42877.html">repos</a>      </li>
       <li class="navelem"><a class="el" href="dir_0ccb6cb1b2b0b6c45fe1428b06065a39.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_31b7ba14e0e4ce3739968e3b5c5d9068.html">doxygen</a>      </li>
       <li class="navelem"><a class="el" href="dir_4168df9576885e7a038bdfe4b3935cf4.html">src</a>      </li>
@@ -146,8 +140,8 @@ function toggleVisibility(linkObj) {
 <a name="l00031"></a><a class="code" href="structzmq_1_1i__engine.html#a0adc8b9b7b931b20449849b331acad3b">00031</a>         <span class="keyword">virtual</span> <a class="code" href="structzmq_1_1i__engine.html#a0adc8b9b7b931b20449849b331acad3b">~i_engine</a> () {}
 <a name="l00032"></a>00032 
 <a name="l00033"></a>00033         <span class="comment">//  Plug the engine to the session.</span>
-<a name="l00034"></a>00034         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__engine.html#aef9e59c240abcb6c206395fc13bf6755">plug</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
-<a name="l00035"></a>00035             <span class="keyword">class</span> <a class="code" href="classzmq_1_1session__t.html">session_t</a> *session_) = 0;
+<a name="l00034"></a>00034         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__engine.html#ac04fd4cb59268c0b5d1cb4fb160fc070">plug</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
+<a name="l00035"></a>00035             <span class="keyword">class</span> <a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a> *session_) = 0;
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037         <span class="comment">//  Unplug the engine from the session.</span>
 <a name="l00038"></a>00038         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__engine.html#af282e68ed0f7db669f49c93317b37484">unplug</a> () = 0;
@@ -184,7 +178,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:05 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:48 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

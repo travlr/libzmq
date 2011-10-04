@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/xpub.hpp Source File</title>
+<title>libzmq: libzmq/doxygen/src/xpub.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,12 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_2c1eec6ca1f471389d323b199c2c395d.html">.OLD_DEV</a>      </li>
-      <li class="navelem"><a class="el" href="dir_b4b5d907625f83c5e5680e5ccc32f2c6.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_ea986dcfc14529d07c8548c42611bb23.html">old</a>      </li>
-      <li class="navelem"><a class="el" href="dir_6f2b54a481f30c2b3c376fbabe2279ce.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_cf51a567d1751d0180c5e836636d67cb.html">zmq-contribution</a>      </li>
-      <li class="navelem"><a class="el" href="dir_c94bd149d2b4d22b9a9ab470faa42877.html">repos</a>      </li>
       <li class="navelem"><a class="el" href="dir_0ccb6cb1b2b0b6c45fe1428b06065a39.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_31b7ba14e0e4ce3739968e3b5c5d9068.html">doxygen</a>      </li>
       <li class="navelem"><a class="el" href="dir_4168df9576885e7a038bdfe4b3935cf4.html">src</a>      </li>
@@ -140,63 +134,79 @@ function toggleVisibility(linkObj) {
 <a name="l00025"></a>00025 <span class="preprocessor">#include &lt;string&gt;</span>
 <a name="l00026"></a>00026 
 <a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="socket__base_8hpp.html">socket_base.hpp</a>&quot;</span>
-<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="mtrie_8hpp.html">mtrie.hpp</a>&quot;</span>
-<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="array_8hpp.html">array.hpp</a>&quot;</span>
-<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="dist_8hpp.html">dist.hpp</a>&quot;</span>
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032 <span class="keyword">namespace </span>zmq
-<a name="l00033"></a>00033 {
-<a name="l00034"></a>00034 
-<a name="l00035"></a><a class="code" href="classzmq_1_1xpub__t.html">00035</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1xpub__t.html">xpub_t</a> :
-<a name="l00036"></a>00036         <span class="keyword">public</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a>
-<a name="l00037"></a>00037     {
-<a name="l00038"></a>00038     <span class="keyword">public</span>:
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040         <a class="code" href="classzmq_1_1xpub__t.html#a4e7fa86a2d538db5511f71323304354b">xpub_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1ctx__t.html">ctx_t</a> *parent_, uint32_t tid_);
-<a name="l00041"></a>00041         <a class="code" href="classzmq_1_1xpub__t.html#a1b5ffb0a394f6f0aafd290ffae5fd537">~xpub_t</a> ();
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043         <span class="comment">//  Implementations of virtual functions from socket_base_t.</span>
-<a name="l00044"></a>00044         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xpub__t.html#ac2746c857816357ddbee3f338c4423b5">xattach_pipe</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
-<a name="l00045"></a>00045         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1xpub__t.html#aacff07daddd01376c8d717cfedde7cd3">xsend</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
-<a name="l00046"></a>00046         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xpub__t.html#a2bbf0ac0e69c835f87e845b17d7bd155">xhas_out</a> ();
-<a name="l00047"></a>00047         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1xpub__t.html#ad65cc475bc22e7bfe9b0c5084fdf83dc">xrecv</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
-<a name="l00048"></a>00048         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xpub__t.html#accc3b056d5cd9f6f74e16a7092bd9386">xhas_in</a> ();
-<a name="l00049"></a>00049         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xpub__t.html#a5eff8c12aa627448d2e92ce1d91395d0">xread_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
-<a name="l00050"></a>00050         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xpub__t.html#a774a427efe2ce5e4f0a397099ad47f5e">xwrite_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
-<a name="l00051"></a>00051         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xpub__t.html#aad0df82599810ff1f2f4a0cb415135e2">xterminated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053     <span class="keyword">private</span>:
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055         <span class="comment">//  Function to be applied to the trie to send all the subsciptions</span>
-<a name="l00056"></a>00056         <span class="comment">//  upstream.</span>
-<a name="l00057"></a>00057         <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xpub__t.html#af9c4e56b9f59afa59aa58b33de28a261">send_unsubscription</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> size_,
-<a name="l00058"></a>00058             <span class="keywordtype">void</span> *arg_);
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060         <span class="comment">//  Function to be applied to each matching pipes.</span>
-<a name="l00061"></a>00061         <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xpub__t.html#af61522f090f43d5d717264d05e5ffe0d">mark_as_matching</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, <span class="keywordtype">void</span> *arg_);
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063         <span class="comment">//  List of all subscriptions mapped to corresponding pipes.</span>
-<a name="l00064"></a><a class="code" href="classzmq_1_1xpub__t.html#a90b23f84904946cf12673ceee38eda4d">00064</a>         <a class="code" href="classzmq_1_1mtrie__t.html">mtrie_t</a> <a class="code" href="classzmq_1_1xpub__t.html#a90b23f84904946cf12673ceee38eda4d">subscriptions</a>;
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066         <span class="comment">//  Distributor of messages holding the list of outbound pipes.</span>
-<a name="l00067"></a><a class="code" href="classzmq_1_1xpub__t.html#afd6694ee94e981df84d7f9eda1d05af4">00067</a>         <a class="code" href="classzmq_1_1dist__t.html">dist_t</a> <a class="code" href="classzmq_1_1xpub__t.html#afd6694ee94e981df84d7f9eda1d05af4">dist</a>;
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069         <span class="comment">//  True if we are in the middle of sending a multi-part message.</span>
-<a name="l00070"></a><a class="code" href="classzmq_1_1xpub__t.html#acdabbffea0940eeb8a536ff416869a96">00070</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xpub__t.html#acdabbffea0940eeb8a536ff416869a96">more</a>;
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072         <span class="comment">//  List of pending (un)subscriptions, ie. those that were already</span>
-<a name="l00073"></a>00073         <span class="comment">//  applied to the trie, but not yet received by the user.</span>
-<a name="l00074"></a><a class="code" href="classzmq_1_1xpub__t.html#a17df20778752487cc00ebd129305192b">00074</a>         <span class="keyword">typedef</span> std::basic_string &lt;unsigned char&gt; <a class="code" href="classzmq_1_1xpub__t.html#a17df20778752487cc00ebd129305192b">blob_t</a>;
-<a name="l00075"></a><a class="code" href="classzmq_1_1xpub__t.html#a1b88aee0a6ad459f986c080bd9c0211d">00075</a>         <span class="keyword">typedef</span> std::deque &lt;blob_t&gt; <a class="code" href="classzmq_1_1xpub__t.html#a1b88aee0a6ad459f986c080bd9c0211d">pending_t</a>;
-<a name="l00076"></a><a class="code" href="classzmq_1_1xpub__t.html#aeac639e5817a2dd6bae748cc707c52c9">00076</a>         <a class="code" href="classzmq_1_1xpub__t.html#a1b88aee0a6ad459f986c080bd9c0211d">pending_t</a> <a class="code" href="classzmq_1_1xpub__t.html#aeac639e5817a2dd6bae748cc707c52c9">pending</a>;
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078         <a class="code" href="classzmq_1_1xpub__t.html#a4e7fa86a2d538db5511f71323304354b">xpub_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1xpub__t.html">xpub_t</a>&amp;);
-<a name="l00079"></a>00079         <span class="keyword">const</span> <a class="code" href="classzmq_1_1xpub__t.html">xpub_t</a> &amp;<a class="code" href="classzmq_1_1xpub__t.html#a6cebdb04e7dacf1ca51fc8948b2830a3">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1xpub__t.html">xpub_t</a>&amp;);
-<a name="l00080"></a>00080     };
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082 }
-<a name="l00083"></a>00083 
-<a name="l00084"></a>00084 <span class="preprocessor">#endif</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="session__base_8hpp.html">session_base.hpp</a>&quot;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="mtrie_8hpp.html">mtrie.hpp</a>&quot;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="array_8hpp.html">array.hpp</a>&quot;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="dist_8hpp.html">dist.hpp</a>&quot;</span>
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 <span class="keyword">namespace </span>zmq
+<a name="l00034"></a>00034 {
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="classzmq_1_1xpub__t.html">00036</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1xpub__t.html">xpub_t</a> :
+<a name="l00037"></a>00037         <span class="keyword">public</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a>
+<a name="l00038"></a>00038     {
+<a name="l00039"></a>00039     <span class="keyword">public</span>:
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041         <a class="code" href="classzmq_1_1xpub__t.html#a4e7fa86a2d538db5511f71323304354b">xpub_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1ctx__t.html">ctx_t</a> *parent_, uint32_t tid_);
+<a name="l00042"></a>00042         <a class="code" href="classzmq_1_1xpub__t.html#a1b5ffb0a394f6f0aafd290ffae5fd537">~xpub_t</a> ();
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044         <span class="comment">//  Implementations of virtual functions from socket_base_t.</span>
+<a name="l00045"></a>00045         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xpub__t.html#ac2746c857816357ddbee3f338c4423b5">xattach_pipe</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00046"></a>00046         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1xpub__t.html#aacff07daddd01376c8d717cfedde7cd3">xsend</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
+<a name="l00047"></a>00047         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xpub__t.html#a2bbf0ac0e69c835f87e845b17d7bd155">xhas_out</a> ();
+<a name="l00048"></a>00048         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1xpub__t.html#ad65cc475bc22e7bfe9b0c5084fdf83dc">xrecv</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_);
+<a name="l00049"></a>00049         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xpub__t.html#accc3b056d5cd9f6f74e16a7092bd9386">xhas_in</a> ();
+<a name="l00050"></a>00050         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xpub__t.html#a5eff8c12aa627448d2e92ce1d91395d0">xread_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00051"></a>00051         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xpub__t.html#a774a427efe2ce5e4f0a397099ad47f5e">xwrite_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00052"></a>00052         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xpub__t.html#aad0df82599810ff1f2f4a0cb415135e2">xterminated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054     <span class="keyword">private</span>:
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056         <span class="comment">//  Function to be applied to the trie to send all the subsciptions</span>
+<a name="l00057"></a>00057         <span class="comment">//  upstream.</span>
+<a name="l00058"></a>00058         <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xpub__t.html#af9c4e56b9f59afa59aa58b33de28a261">send_unsubscription</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data_, <span class="keywordtype">size_t</span> size_,
+<a name="l00059"></a>00059             <span class="keywordtype">void</span> *arg_);
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061         <span class="comment">//  Function to be applied to each matching pipes.</span>
+<a name="l00062"></a>00062         <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1xpub__t.html#af61522f090f43d5d717264d05e5ffe0d">mark_as_matching</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, <span class="keywordtype">void</span> *arg_);
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064         <span class="comment">//  List of all subscriptions mapped to corresponding pipes.</span>
+<a name="l00065"></a><a class="code" href="classzmq_1_1xpub__t.html#a90b23f84904946cf12673ceee38eda4d">00065</a>         <a class="code" href="classzmq_1_1mtrie__t.html">mtrie_t</a> <a class="code" href="classzmq_1_1xpub__t.html#a90b23f84904946cf12673ceee38eda4d">subscriptions</a>;
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067         <span class="comment">//  Distributor of messages holding the list of outbound pipes.</span>
+<a name="l00068"></a><a class="code" href="classzmq_1_1xpub__t.html#afd6694ee94e981df84d7f9eda1d05af4">00068</a>         <a class="code" href="classzmq_1_1dist__t.html">dist_t</a> <a class="code" href="classzmq_1_1xpub__t.html#afd6694ee94e981df84d7f9eda1d05af4">dist</a>;
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070         <span class="comment">//  True if we are in the middle of sending a multi-part message.</span>
+<a name="l00071"></a><a class="code" href="classzmq_1_1xpub__t.html#acdabbffea0940eeb8a536ff416869a96">00071</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1xpub__t.html#acdabbffea0940eeb8a536ff416869a96">more</a>;
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073         <span class="comment">//  List of pending (un)subscriptions, ie. those that were already</span>
+<a name="l00074"></a>00074         <span class="comment">//  applied to the trie, but not yet received by the user.</span>
+<a name="l00075"></a><a class="code" href="classzmq_1_1xpub__t.html#a17df20778752487cc00ebd129305192b">00075</a>         <span class="keyword">typedef</span> std::basic_string &lt;unsigned char&gt; <a class="code" href="classzmq_1_1xpub__t.html#a17df20778752487cc00ebd129305192b">blob_t</a>;
+<a name="l00076"></a><a class="code" href="classzmq_1_1xpub__t.html#a1b88aee0a6ad459f986c080bd9c0211d">00076</a>         <span class="keyword">typedef</span> std::deque &lt;blob_t&gt; <a class="code" href="classzmq_1_1xpub__t.html#a1b88aee0a6ad459f986c080bd9c0211d">pending_t</a>;
+<a name="l00077"></a><a class="code" href="classzmq_1_1xpub__t.html#aeac639e5817a2dd6bae748cc707c52c9">00077</a>         <a class="code" href="classzmq_1_1xpub__t.html#a1b88aee0a6ad459f986c080bd9c0211d">pending_t</a> <a class="code" href="classzmq_1_1xpub__t.html#aeac639e5817a2dd6bae748cc707c52c9">pending</a>;
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079         <a class="code" href="classzmq_1_1xpub__t.html#a4e7fa86a2d538db5511f71323304354b">xpub_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1xpub__t.html">xpub_t</a>&amp;);
+<a name="l00080"></a>00080         <span class="keyword">const</span> <a class="code" href="classzmq_1_1xpub__t.html">xpub_t</a> &amp;<a class="code" href="classzmq_1_1xpub__t.html#a6cebdb04e7dacf1ca51fc8948b2830a3">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1xpub__t.html">xpub_t</a>&amp;);
+<a name="l00081"></a>00081     };
+<a name="l00082"></a>00082 
+<a name="l00083"></a><a class="code" href="classzmq_1_1xpub__session__t.html">00083</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1xpub__session__t.html">xpub_session_t</a> : <span class="keyword">public</span> <a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a>
+<a name="l00084"></a>00084     {
+<a name="l00085"></a>00085     <span class="keyword">public</span>:
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087         <a class="code" href="classzmq_1_1xpub__session__t.html#aff47b82b320e6b3e3243dd3e6d225153">xpub_session_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_, <span class="keywordtype">bool</span> connect_,
+<a name="l00088"></a>00088             <span class="keyword">class</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_,
+<a name="l00089"></a>00089             <span class="keyword">const</span> <span class="keywordtype">char</span> *protocol_, <span class="keyword">const</span> <span class="keywordtype">char</span> *address_);
+<a name="l00090"></a>00090         <a class="code" href="classzmq_1_1xpub__session__t.html#aeb5bbc3b901faac7c65a1977890a40b0">~xpub_session_t</a> ();
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092     <span class="keyword">private</span>:
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094         <a class="code" href="classzmq_1_1xpub__session__t.html#aff47b82b320e6b3e3243dd3e6d225153">xpub_session_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1xpub__session__t.html">xpub_session_t</a>&amp;);
+<a name="l00095"></a>00095         <span class="keyword">const</span> <a class="code" href="classzmq_1_1xpub__session__t.html">xpub_session_t</a> &amp;<a class="code" href="classzmq_1_1xpub__session__t.html#a51459d97199f45efa984e79988e9abbb">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1xpub__session__t.html">xpub_session_t</a>&amp;);
+<a name="l00096"></a>00096     };
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 }
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -213,7 +223,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:06 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:48 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

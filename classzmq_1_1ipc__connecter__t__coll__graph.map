@@ -2,7 +2,7 @@
 <area shape="rect" id="node2" href="$classzmq_1_1own__t.html" title="zmq::own_t" alt="" coords="536,800,627,829"/>
 <area shape="rect" id="node14" href="$structzmq_1_1command__t.html" title="zmq::command_t" alt="" coords="848,380,971,409"/>
 <area shape="rect" id="node19" href="$classzmq_1_1socket__base__t.html" title="zmq::socket_base_t" alt="" coords="2607,623,2745,652"/>
-<area shape="rect" id="node100" href="$classzmq_1_1session__t.html" title="zmq::session_t" alt="" coords="3635,703,3744,732"/>
+<area shape="rect" id="node100" href="$classzmq_1_1session__base__t.html" title="zmq::session_base_t" alt="" coords="3621,703,3768,732"/>
 <area shape="rect" id="node4" href="$classzmq_1_1object__t.html" title="zmq::object_t" alt="" coords="3248,519,3349,548"/>
 <area shape="rect" id="node36" href="$classzmq_1_1pipe__t.html" title="zmq::pipe_t" alt="" coords="3415,812,3505,841"/>
 <area shape="rect" id="node79" href="$classzmq_1_1reaper__t.html" title="zmq::reaper_t" alt="" coords="3409,423,3511,452"/>
@@ -33,5 +33,5 @@
 <area shape="rect" id="node71" href="$classzmq_1_1yqueue__t.html" title="zmq::yqueue_t\&lt; T, N \&gt;" alt="" coords="831,119,988,148"/>
 <area shape="rect" id="node77" href="$classzmq_1_1signaler__t.html" title="zmq::signaler_t" alt="" coords="1793,388,1903,417"/>
 <area shape="rect" id="node89" href="$structzmq_1_1options__t.html" title="zmq::options_t" alt="" coords="213,747,320,776"/>
-<area shape="rect" id="node98" href="$classzmq_1_1ipc__address__t.html" title="zmq::ipc_address_t" alt="" coords="3621,1239,3757,1268"/>
+<area shape="rect" id="node98" href="$classzmq_1_1ipc__address__t.html" title="zmq::ipc_address_t" alt="" coords="3627,1239,3763,1268"/>
 </map>

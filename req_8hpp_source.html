@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/req.hpp Source File</title>
+<title>libzmq: libzmq/doxygen/src/req.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,12 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_2c1eec6ca1f471389d323b199c2c395d.html">.OLD_DEV</a>      </li>
-      <li class="navelem"><a class="el" href="dir_b4b5d907625f83c5e5680e5ccc32f2c6.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_ea986dcfc14529d07c8548c42611bb23.html">old</a>      </li>
-      <li class="navelem"><a class="el" href="dir_6f2b54a481f30c2b3c376fbabe2279ce.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_cf51a567d1751d0180c5e836636d67cb.html">zmq-contribution</a>      </li>
-      <li class="navelem"><a class="el" href="dir_c94bd149d2b4d22b9a9ab470faa42877.html">repos</a>      </li>
       <li class="navelem"><a class="el" href="dir_0ccb6cb1b2b0b6c45fe1428b06065a39.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_31b7ba14e0e4ce3739968e3b5c5d9068.html">doxygen</a>      </li>
       <li class="navelem"><a class="el" href="dir_4168df9576885e7a038bdfe4b3935cf4.html">src</a>      </li>
@@ -173,9 +167,32 @@ function toggleVisibility(linkObj) {
 <a name="l00058"></a>00058         <span class="keyword">const</span> <a class="code" href="classzmq_1_1req__t.html">req_t</a> &amp;<a class="code" href="classzmq_1_1req__t.html#a49f34d75e5b6c10a50baa82fb5540598">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1req__t.html">req_t</a>&amp;);
 <a name="l00059"></a>00059     };
 <a name="l00060"></a>00060 
-<a name="l00061"></a>00061 }
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063 <span class="preprocessor">#endif</span>
+<a name="l00061"></a><a class="code" href="classzmq_1_1req__session__t.html">00061</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1req__session__t.html">req_session_t</a> : <span class="keyword">public</span> <a class="code" href="classzmq_1_1xreq__session__t.html">xreq_session_t</a>
+<a name="l00062"></a>00062     {
+<a name="l00063"></a>00063     <span class="keyword">public</span>:
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065         <a class="code" href="classzmq_1_1req__session__t.html#aa985009b18fe16267a38d6e286a02e97">req_session_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_, <span class="keywordtype">bool</span> connect_,
+<a name="l00066"></a>00066             <span class="keyword">class</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_,
+<a name="l00067"></a>00067             <span class="keyword">const</span> <span class="keywordtype">char</span> *protocol_, <span class="keyword">const</span> <span class="keywordtype">char</span> *address_);
+<a name="l00068"></a>00068         <a class="code" href="classzmq_1_1req__session__t.html#a9bdcfaaf99e92dba218f53a049a372cd">~req_session_t</a> ();
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070         <span class="comment">//  Overloads of the functions from session_base_t.</span>
+<a name="l00071"></a>00071         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1req__session__t.html#a1e85280627bb20ad6558db14ac2b0b40">write</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_);
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073     <span class="keyword">private</span>:
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075         <span class="keyword">enum</span> {
+<a name="l00076"></a><a class="code" href="classzmq_1_1req__session__t.html#a12e79f432c8cccbcaa75f65c573b6f07a48eb62b6c7426ebd3fface1081b2a1a5">00076</a>             <a class="code" href="classzmq_1_1req__session__t.html#a12e79f432c8cccbcaa75f65c573b6f07a48eb62b6c7426ebd3fface1081b2a1a5">request_id</a>,
+<a name="l00077"></a><a class="code" href="classzmq_1_1req__session__t.html#a12e79f432c8cccbcaa75f65c573b6f07a1ac4f7e14002abdc58e0f8f77e3780fa">00077</a>             <a class="code" href="classzmq_1_1req__session__t.html#a12e79f432c8cccbcaa75f65c573b6f07a1ac4f7e14002abdc58e0f8f77e3780fa">body</a>
+<a name="l00078"></a>00078         } <a class="code" href="classzmq_1_1req__session__t.html#a39cbd5441d91eee0062e2a7fdc34859a">state</a>;
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080         <a class="code" href="classzmq_1_1req__session__t.html#aa985009b18fe16267a38d6e286a02e97">req_session_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1req__session__t.html">req_session_t</a>&amp;);
+<a name="l00081"></a>00081         <span class="keyword">const</span> <a class="code" href="classzmq_1_1req__session__t.html">req_session_t</a> &amp;<a class="code" href="classzmq_1_1req__session__t.html#a0cfee786ee6907eb3f2c5ed54d2c6772">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1req__session__t.html">req_session_t</a>&amp;);
+<a name="l00082"></a>00082     };
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084 }
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -192,7 +209,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:06 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:48 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

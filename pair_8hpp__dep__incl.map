@@ -1,4 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$pair_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/pair.cpp" alt="" coords="5,83,539,112"/>
-<area shape="rect" id="node5" href="$socket__base_8cpp.html" title="/home/travlr/.OLD_DEV/dev/old/dev/zmq&#45;contribution/repos/libzmq/doxygen/src/socket_base.cpp" alt="" coords="563,83,1149,112"/>
+<area shape="rect" id="node3" href="$pair_8cpp.html" title="libzmq/doxygen/src/pair.cpp" alt="" coords="5,83,189,112"/>
+<area shape="rect" id="node5" href="$session__base_8cpp.html" title="libzmq/doxygen/src/session_base.cpp" alt="" coords="213,83,456,112"/>
+<area shape="rect" id="node7" href="$socket__base_8cpp.html" title="libzmq/doxygen/src/socket_base.cpp" alt="" coords="480,83,717,112"/>
 </map>

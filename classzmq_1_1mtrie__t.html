@@ -142,10 +142,9 @@ Private Types</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mtrie__t.html#ab98b00b9a08fe7bd0fe5ad69166b7c7e">mtrie_t</a> (const <a class="el" href="classzmq_1_1mtrie__t.html">mtrie_t</a> &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mtrie__t.html#a82b066892b978c65d60789d80862a482">add_helper</a> (unsigned char *prefix_, size_t size_, class <a class="el" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mtrie__t.html#a3f7759a055c41667984e0f455fcb9909">match_helper</a> (unsigned char *data_, size_t size_, void(*func_)(class <a class="el" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, void *arg_), void *arg_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classzmq_1_1mtrie__t.html">mtrie_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mtrie__t.html#add03a7fd601eabf394b122fe61b5d21b">operator=</a> (const <a class="el" href="classzmq_1_1mtrie__t.html">mtrie_t</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mtrie__t.html#a0b4504bd16aee0ebc17cfde8b3554955">rm_helper</a> (class <a class="el" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, unsigned char **buff_, size_t buffsize_, size_t maxbuffsize_, void(*func_)(unsigned char *data_, size_t size_, void *arg_), void *arg_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mtrie__t.html#ad5205b24d1108447e72dc9ef72719eb6">rm_helper</a> (unsigned char *prefix_, size_t size_, class <a class="el" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mtrie__t.html#a0b4504bd16aee0ebc17cfde8b3554955">rm_helper</a> (class <a class="el" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, unsigned char **buff_, size_t buffsize_, size_t maxbuffsize_, void(*func_)(unsigned char *data_, size_t size_, void *arg_), void *arg_)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1mtrie__t.html#a4a4a21be845b1c5b1a40585bf6341585">count</a></td></tr>
@@ -171,7 +170,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mtrie_8hpp_source.html#l00073">73</a> of file <a class="el" href="mtrie_8hpp_source.html">mtrie.hpp</a>.</p>
+<p>Definition at line <a class="el" href="mtrie_8hpp_source.html#l00071">71</a> of file <a class="el" href="mtrie_8hpp_source.html">mtrie.hpp</a>.</p>
 
 </div>
 </div>
@@ -298,7 +297,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="mtrie_8cpp_source.html#l00058">58</a> of file <a class="el" href="mtrie_8cpp_source.html">mtrie.cpp</a>.</p>
 
-<p>References <a class="el" href="mtrie_8hpp_source.html#l00079">node</a>, <a class="el" href="mtrie_8hpp_source.html#l00080">table</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="mtrie_8hpp_source.html#l00077">node</a>, <a class="el" href="mtrie_8hpp_source.html#l00078">table</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -338,47 +337,6 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a3f7759a055c41667984e0f455fcb9909"></a><!-- doxytag: member="zmq::mtrie_t::match_helper" ref="a3f7759a055c41667984e0f455fcb9909" args="(unsigned char *data_, size_t size_, void(*func_)(class pipe_t *pipe_, void *arg_), void *arg_)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void zmq::mtrie_t::match_helper </td>
-          <td>(</td>
-          <td class="paramtype">unsigned char *&#160;</td>
-          <td class="paramname"><em>data_</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>size_</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void(*)(class <a class="el" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, void *arg_)&#160;</td>
-          <td class="paramname"><em>func_</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>arg_</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="mtrie_8cpp_source.html#l00215">215</a> of file <a class="el" href="mtrie_8cpp_source.html">mtrie.cpp</a>.</p>
 
 </div>
 </div>
@@ -469,6 +427,54 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ad5205b24d1108447e72dc9ef72719eb6"></a><!-- doxytag: member="zmq::mtrie_t::rm_helper" ref="ad5205b24d1108447e72dc9ef72719eb6" args="(unsigned char *prefix_, size_t size_, class pipe_t *pipe_)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool zmq::mtrie_t::rm_helper </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>prefix_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">class <a class="el" href="classzmq_1_1pipe__t.html">pipe_t</a> *&#160;</td>
+          <td class="paramname"><em>pipe_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="mtrie_8cpp_source.html#l00187">187</a> of file <a class="el" href="mtrie_8cpp_source.html">mtrie.cpp</a>.</p>
+
+<p>References <a class="el" href="mtrie_8hpp_source.html#l00077">node</a>, <a class="el" href="mtrie_8cpp_source.html#l00144">rm_helper()</a>, <a class="el" href="mtrie_8hpp_source.html#l00078">table</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classzmq_1_1mtrie__t_ad5205b24d1108447e72dc9ef72719eb6_cgraph.png" border="0" usemap="#classzmq_1_1mtrie__t_ad5205b24d1108447e72dc9ef72719eb6_cgraph" alt=""/></div>
+<map name="classzmq_1_1mtrie__t_ad5205b24d1108447e72dc9ef72719eb6_cgraph" id="classzmq_1_1mtrie__t_ad5205b24d1108447e72dc9ef72719eb6_cgraph">
+<area shape="rect" id="node3" href="classzmq_1_1mtrie__t.html#a0b4504bd16aee0ebc17cfde8b3554955" title="zmq::mtrie_t::rm_helper" alt="" coords="213,5,373,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a0b4504bd16aee0ebc17cfde8b3554955"></a><!-- doxytag: member="zmq::mtrie_t::rm_helper" ref="a0b4504bd16aee0ebc17cfde8b3554955" args="(class pipe_t *pipe_, unsigned char **buff_, size_t buffsize_, size_t maxbuffsize_, void(*func_)(unsigned char *data_, size_t size_, void *arg_), void *arg_)" -->
 <div class="memitem">
 <div class="memproto">
@@ -524,62 +530,14 @@ Private Attributes</h2></td></tr>
 
 <p>Referenced by <a class="el" href="mtrie_8cpp_source.html#l00187">rm_helper()</a>.</p>
 
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="classzmq_1_1mtrie__t_a0b4504bd16aee0ebc17cfde8b3554955_icgraph.png" border="0" usemap="#classzmq_1_1mtrie__t_a0b4504bd16aee0ebc17cfde8b3554955_icgraph" alt=""/></div>
-<map name="classzmq_1_1mtrie__t_a0b4504bd16aee0ebc17cfde8b3554955_icgraph" id="classzmq_1_1mtrie__t_a0b4504bd16aee0ebc17cfde8b3554955_icgraph">
-<area shape="rect" id="node3" href="classzmq_1_1mtrie__t.html#ad5205b24d1108447e72dc9ef72719eb6" title="zmq::mtrie_t::rm_helper" alt="" coords="213,5,373,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ad5205b24d1108447e72dc9ef72719eb6"></a><!-- doxytag: member="zmq::mtrie_t::rm_helper" ref="ad5205b24d1108447e72dc9ef72719eb6" args="(unsigned char *prefix_, size_t size_, class pipe_t *pipe_)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool zmq::mtrie_t::rm_helper </td>
-          <td>(</td>
-          <td class="paramtype">unsigned char *&#160;</td>
-          <td class="paramname"><em>prefix_</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>size_</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">class <a class="el" href="classzmq_1_1pipe__t.html">pipe_t</a> *&#160;</td>
-          <td class="paramname"><em>pipe_</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="mtrie_8cpp_source.html#l00187">187</a> of file <a class="el" href="mtrie_8cpp_source.html">mtrie.cpp</a>.</p>
-
-<p>References <a class="el" href="mtrie_8hpp_source.html#l00079">node</a>, <a class="el" href="mtrie_8cpp_source.html#l00144">rm_helper()</a>, <a class="el" href="mtrie_8hpp_source.html#l00080">table</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
+  <img id="dynsection-2-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="classzmq_1_1mtrie__t_ad5205b24d1108447e72dc9ef72719eb6_cgraph.png" border="0" usemap="#classzmq_1_1mtrie__t_ad5205b24d1108447e72dc9ef72719eb6_cgraph" alt=""/></div>
-<map name="classzmq_1_1mtrie__t_ad5205b24d1108447e72dc9ef72719eb6_cgraph" id="classzmq_1_1mtrie__t_ad5205b24d1108447e72dc9ef72719eb6_cgraph">
-<area shape="rect" id="node3" href="classzmq_1_1mtrie__t.html#a0b4504bd16aee0ebc17cfde8b3554955" title="zmq::mtrie_t::rm_helper" alt="" coords="213,5,373,35"/></map>
+<div class="center"><img src="classzmq_1_1mtrie__t_a0b4504bd16aee0ebc17cfde8b3554955_icgraph.png" border="0" usemap="#classzmq_1_1mtrie__t_a0b4504bd16aee0ebc17cfde8b3554955_icgraph" alt=""/></div>
+<map name="classzmq_1_1mtrie__t_a0b4504bd16aee0ebc17cfde8b3554955_icgraph" id="classzmq_1_1mtrie__t_a0b4504bd16aee0ebc17cfde8b3554955_icgraph">
+<area shape="rect" id="node3" href="classzmq_1_1mtrie__t.html#ad5205b24d1108447e72dc9ef72719eb6" title="zmq::mtrie_t::rm_helper" alt="" coords="213,5,373,35"/></map>
 </div>
 </p>
 
@@ -597,7 +555,9 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mtrie_8hpp_source.html#l00077">77</a> of file <a class="el" href="mtrie_8hpp_source.html">mtrie.hpp</a>.</p>
+<p>Definition at line <a class="el" href="mtrie_8hpp_source.html#l00075">75</a> of file <a class="el" href="mtrie_8hpp_source.html">mtrie.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="mtrie_8cpp_source.html#l00209">zmq::xsub_t::match()</a>.</p>
 
 </div>
 </div>
@@ -612,7 +572,9 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mtrie_8hpp_source.html#l00076">76</a> of file <a class="el" href="mtrie_8hpp_source.html">mtrie.hpp</a>.</p>
+<p>Definition at line <a class="el" href="mtrie_8hpp_source.html#l00074">74</a> of file <a class="el" href="mtrie_8hpp_source.html">mtrie.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="mtrie_8cpp_source.html#l00209">zmq::xsub_t::match()</a>.</p>
 
 </div>
 </div>
@@ -627,6 +589,8 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Referenced by <a class="el" href="mtrie_8cpp_source.html#l00209">zmq::xsub_t::match()</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a81f0c80f8b684a3e42d4c0076db4933f"></a><!-- doxytag: member="zmq::mtrie_t::node" ref="a81f0c80f8b684a3e42d4c0076db4933f" args="" -->
@@ -640,9 +604,9 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mtrie_8hpp_source.html#l00079">79</a> of file <a class="el" href="mtrie_8hpp_source.html">mtrie.hpp</a>.</p>
+<p>Definition at line <a class="el" href="mtrie_8hpp_source.html#l00077">77</a> of file <a class="el" href="mtrie_8hpp_source.html">mtrie.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="mtrie_8cpp_source.html#l00058">add_helper()</a>, and <a class="el" href="mtrie_8cpp_source.html#l00187">rm_helper()</a>.</p>
+<p>Referenced by <a class="el" href="mtrie_8cpp_source.html#l00058">add_helper()</a>, <a class="el" href="mtrie_8cpp_source.html#l00209">zmq::xsub_t::match()</a>, and <a class="el" href="mtrie_8cpp_source.html#l00187">rm_helper()</a>.</p>
 
 </div>
 </div>
@@ -657,7 +621,9 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mtrie_8hpp_source.html#l00074">74</a> of file <a class="el" href="mtrie_8hpp_source.html">mtrie.hpp</a>.</p>
+<p>Definition at line <a class="el" href="mtrie_8hpp_source.html#l00072">72</a> of file <a class="el" href="mtrie_8hpp_source.html">mtrie.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="mtrie_8cpp_source.html#l00209">zmq::xsub_t::match()</a>.</p>
 
 </div>
 </div>
@@ -672,15 +638,15 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="mtrie_8hpp_source.html#l00080">80</a> of file <a class="el" href="mtrie_8hpp_source.html">mtrie.hpp</a>.</p>
+<p>Definition at line <a class="el" href="mtrie_8hpp_source.html#l00078">78</a> of file <a class="el" href="mtrie_8hpp_source.html">mtrie.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="mtrie_8cpp_source.html#l00058">add_helper()</a>, and <a class="el" href="mtrie_8cpp_source.html#l00187">rm_helper()</a>.</p>
+<p>Referenced by <a class="el" href="mtrie_8cpp_source.html#l00058">add_helper()</a>, <a class="el" href="mtrie_8cpp_source.html#l00209">zmq::xsub_t::match()</a>, and <a class="el" href="mtrie_8cpp_source.html#l00187">rm_helper()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/<a class="el" href="mtrie_8hpp_source.html">mtrie.hpp</a></li>
-<li>/home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/<a class="el" href="mtrie_8cpp_source.html">mtrie.cpp</a></li>
+<li>libzmq/doxygen/src/<a class="el" href="mtrie_8hpp_source.html">mtrie.hpp</a></li>
+<li>libzmq/doxygen/src/<a class="el" href="mtrie_8cpp_source.html">mtrie.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -697,7 +663,7 @@ Private Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:07 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:50 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

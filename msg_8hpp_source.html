@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/msg.hpp Source File</title>
+<title>libzmq: libzmq/doxygen/src/msg.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,12 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_2c1eec6ca1f471389d323b199c2c395d.html">.OLD_DEV</a>      </li>
-      <li class="navelem"><a class="el" href="dir_b4b5d907625f83c5e5680e5ccc32f2c6.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_ea986dcfc14529d07c8548c42611bb23.html">old</a>      </li>
-      <li class="navelem"><a class="el" href="dir_6f2b54a481f30c2b3c376fbabe2279ce.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_cf51a567d1751d0180c5e836636d67cb.html">zmq-contribution</a>      </li>
-      <li class="navelem"><a class="el" href="dir_c94bd149d2b4d22b9a9ab470faa42877.html">repos</a>      </li>
       <li class="navelem"><a class="el" href="dir_0ccb6cb1b2b0b6c45fe1428b06065a39.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_31b7ba14e0e4ce3739968e3b5c5d9068.html">doxygen</a>      </li>
       <li class="navelem"><a class="el" href="dir_4168df9576885e7a038bdfe4b3935cf4.html">src</a>      </li>
@@ -188,74 +182,75 @@ function toggleVisibility(linkObj) {
 <a name="l00073"></a>00073         <span class="comment">//  refs_ times. No need to call copy.</span>
 <a name="l00074"></a>00074         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1msg__t.html#a67b20d60d792fe6e3089f6d6edf82adb">add_refs</a> (<span class="keywordtype">int</span> refs_);
 <a name="l00075"></a>00075 
-<a name="l00076"></a>00076         <span class="comment">//  Removes references previously added by add_refs.</span>
-<a name="l00077"></a>00077         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1msg__t.html#a43c78e4688c189c55769eae89a140597">rm_refs</a> (<span class="keywordtype">int</span> refs_);
-<a name="l00078"></a>00078 
-<a name="l00079"></a>00079     <span class="keyword">private</span>:
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081         <span class="comment">//  Size in bytes of the largest message that is still copied around</span>
-<a name="l00082"></a>00082         <span class="comment">//  rather than being reference-counted.</span>
-<a name="l00083"></a><a class="code" href="classzmq_1_1msg__t.html#a3377297572b2a6fae6c078fa7828eff1aa5455e67a25aff98e39a5517181b6e6b">00083</a>         <span class="keyword">enum</span> {<a class="code" href="classzmq_1_1msg__t.html#a3377297572b2a6fae6c078fa7828eff1aa5455e67a25aff98e39a5517181b6e6b">max_vsm_size</a> = 29};
-<a name="l00084"></a>00084 
-<a name="l00085"></a>00085         <span class="comment">//  Shared message buffer. Message data are either allocated in one</span>
-<a name="l00086"></a>00086         <span class="comment">//  continuous block along with this structure - thus avoiding one</span>
-<a name="l00087"></a>00087         <span class="comment">//  malloc/free pair or they are stored in used-supplied memory.</span>
-<a name="l00088"></a>00088         <span class="comment">//  In the latter case, ffn member stores pointer to the function to be</span>
-<a name="l00089"></a>00089         <span class="comment">//  used to deallocate the data. If the buffer is actually shared (there</span>
-<a name="l00090"></a>00090         <span class="comment">//  are at least 2 references to it) refcount member contains number of</span>
-<a name="l00091"></a>00091         <span class="comment">//  references.</span>
-<a name="l00092"></a><a class="code" href="structzmq_1_1msg__t_1_1content__t.html">00092</a>         <span class="keyword">struct </span><a class="code" href="structzmq_1_1msg__t_1_1content__t.html">content_t</a>
-<a name="l00093"></a>00093         {
-<a name="l00094"></a><a class="code" href="structzmq_1_1msg__t_1_1content__t.html#ad8fd98f4291ba0840d30cc582a768eec">00094</a>             <span class="keywordtype">void</span> *<a class="code" href="structzmq_1_1msg__t_1_1content__t.html#ad8fd98f4291ba0840d30cc582a768eec">data</a>;
-<a name="l00095"></a><a class="code" href="structzmq_1_1msg__t_1_1content__t.html#af1893abf60d3d2b2605527a6d3d8f0cb">00095</a>             <span class="keywordtype">size_t</span> <a class="code" href="structzmq_1_1msg__t_1_1content__t.html#af1893abf60d3d2b2605527a6d3d8f0cb">size</a>;
-<a name="l00096"></a><a class="code" href="structzmq_1_1msg__t_1_1content__t.html#a026c6e7313162f7824214f3ff1686ecb">00096</a>             <a class="code" href="msg_8hpp.html#afce65de211e40cab62117312922487ed">msg_free_fn</a> *<a class="code" href="structzmq_1_1msg__t_1_1content__t.html#a026c6e7313162f7824214f3ff1686ecb">ffn</a>;
-<a name="l00097"></a><a class="code" href="structzmq_1_1msg__t_1_1content__t.html#ae1cd40354330267ebfd5db3c43d6dfd8">00097</a>             <span class="keywordtype">void</span> *<a class="code" href="structzmq_1_1msg__t_1_1content__t.html#ae1cd40354330267ebfd5db3c43d6dfd8">hint</a>;
-<a name="l00098"></a><a class="code" href="structzmq_1_1msg__t_1_1content__t.html#a19888cc853b98a957743014d07f842b6">00098</a>             <a class="code" href="classzmq_1_1atomic__counter__t.html">zmq::atomic_counter_t</a> <a class="code" href="structzmq_1_1msg__t_1_1content__t.html#a19888cc853b98a957743014d07f842b6">refcnt</a>;
-<a name="l00099"></a>00099         };
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101         <span class="comment">//  Different message types.</span>
-<a name="l00102"></a><a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8">00102</a>         <span class="keyword">enum</span> <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8">type_t</a>
-<a name="l00103"></a>00103         {
-<a name="l00104"></a><a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a315f5e5aeac2f3724d8ebeea9e9e8752">00104</a>             <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a315f5e5aeac2f3724d8ebeea9e9e8752">type_min</a> = 101,
-<a name="l00105"></a><a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8ad6316db72334d6ef2b793fb9d6b3a36d">00105</a>             <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8ad6316db72334d6ef2b793fb9d6b3a36d">type_vsm</a> = 101,
-<a name="l00106"></a><a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a930a0cf86864b1324b61d7ab6b0de11a">00106</a>             <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a930a0cf86864b1324b61d7ab6b0de11a">type_lmsg</a> = 102,
-<a name="l00107"></a><a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8ad54d689e2464ee0fd2478b2c50dbbe2e">00107</a>             <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8ad54d689e2464ee0fd2478b2c50dbbe2e">type_delimiter</a> = 103,
-<a name="l00108"></a><a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8aed322e9cbce8fe2c2f4823c3e54c88eb">00108</a>             <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8aed322e9cbce8fe2c2f4823c3e54c88eb">type_max</a> = 103
-<a name="l00109"></a>00109         };
-<a name="l00110"></a>00110 
-<a name="l00111"></a>00111         <span class="comment">//  Note that fields shared between different message types are not</span>
-<a name="l00112"></a>00112         <span class="comment">//  moved to tha parent class (msg_t). This way we ger tighter packing</span>
-<a name="l00113"></a>00113         <span class="comment">//  of the data. Shared fields can be accessed via &#39;base&#39; member of</span>
-<a name="l00114"></a>00114         <span class="comment">//  the union.</span>
-<a name="l00115"></a>00115         <span class="keyword">union </span>{
-<a name="l00116"></a>00116             <span class="keyword">struct </span>{
-<a name="l00117"></a><a class="code" href="classzmq_1_1msg__t.html#a238c89cb2b032915d2567cfc8d6e0cd3">00117</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a238c89cb2b032915d2567cfc8d6e0cd3">unused</a> [<a class="code" href="classzmq_1_1msg__t.html#a3377297572b2a6fae6c078fa7828eff1aa5455e67a25aff98e39a5517181b6e6b">max_vsm_size</a> + 1];
-<a name="l00118"></a><a class="code" href="classzmq_1_1msg__t.html#addf9863fc6ac2c839f8c38b4203fd926">00118</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#addf9863fc6ac2c839f8c38b4203fd926">type</a>;
-<a name="l00119"></a><a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">00119</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a>;
-<a name="l00120"></a>00120             } <a class="code" href="classzmq_1_1msg__t.html#aa7d3af69fe58b73c440ee25e69ab7d70">base</a>;
-<a name="l00121"></a>00121             <span class="keyword">struct </span>{
-<a name="l00122"></a><a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">00122</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a4e0fc015f2725e16687542285250d669">data</a> [<a class="code" href="classzmq_1_1msg__t.html#a3377297572b2a6fae6c078fa7828eff1aa5455e67a25aff98e39a5517181b6e6b">max_vsm_size</a>];
-<a name="l00123"></a><a class="code" href="classzmq_1_1msg__t.html#a9089fc10aecfab67a826d3514ef7a7a7">00123</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a9089fc10aecfab67a826d3514ef7a7a7">size</a>;
-<a name="l00124"></a>00124                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#addf9863fc6ac2c839f8c38b4203fd926">type</a>;
-<a name="l00125"></a>00125                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a2032d77113d0b3ff8d7193e2c30fee2b">flags</a>;
-<a name="l00126"></a>00126             } <a class="code" href="classzmq_1_1msg__t.html#a5fb1722d5005d0f51317b209c35448f9">vsm</a>;
-<a name="l00127"></a>00127             <span class="keyword">struct </span>{
-<a name="l00128"></a><a class="code" href="classzmq_1_1msg__t.html#a4ed3e48e765cf09fa31e7c3fd819b233">00128</a>                 <a class="code" href="structzmq_1_1msg__t_1_1content__t.html">content_t</a> *<a class="code" href="classzmq_1_1msg__t.html#a4ed3e48e765cf09fa31e7c3fd819b233">content</a>;
-<a name="l00129"></a>00129                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a238c89cb2b032915d2567cfc8d6e0cd3">unused</a> [<a class="code" href="classzmq_1_1msg__t.html#a3377297572b2a6fae6c078fa7828eff1aa5455e67a25aff98e39a5517181b6e6b">max_vsm_size</a> + 1 - <span class="keyword">sizeof</span> (<a class="code" href="structzmq_1_1msg__t_1_1content__t.html">content_t</a>*)];
-<a name="l00130"></a>00130                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#addf9863fc6ac2c839f8c38b4203fd926">type</a>;
-<a name="l00131"></a>00131                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a2032d77113d0b3ff8d7193e2c30fee2b">flags</a>;
-<a name="l00132"></a>00132             } <a class="code" href="classzmq_1_1msg__t.html#afc07ee97dc7fb9d7b272512ea511548b">lmsg</a>;
-<a name="l00133"></a>00133             <span class="keyword">struct </span>{
-<a name="l00134"></a>00134                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a238c89cb2b032915d2567cfc8d6e0cd3">unused</a> [<a class="code" href="classzmq_1_1msg__t.html#a3377297572b2a6fae6c078fa7828eff1aa5455e67a25aff98e39a5517181b6e6b">max_vsm_size</a> + 1];
-<a name="l00135"></a>00135                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#addf9863fc6ac2c839f8c38b4203fd926">type</a>;
-<a name="l00136"></a>00136                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a2032d77113d0b3ff8d7193e2c30fee2b">flags</a>;
-<a name="l00137"></a>00137             } <a class="code" href="classzmq_1_1msg__t.html#a039d211b0015c10716bbd3bfc885818a">delimiter</a>;
-<a name="l00138"></a>00138         } <a class="code" href="classzmq_1_1msg__t.html#a3cd85d73936ea710fab9ec205301dead">u</a>;
-<a name="l00139"></a>00139     };
-<a name="l00140"></a>00140 
-<a name="l00141"></a>00141 }
-<a name="l00142"></a>00142 
-<a name="l00143"></a>00143 <span class="preprocessor">#endif</span>
+<a name="l00076"></a>00076         <span class="comment">//  Removes references previously added by add_refs. If the number of</span>
+<a name="l00077"></a>00077         <span class="comment">//  references drops to 0, the message is closed and false is returned.</span>
+<a name="l00078"></a>00078         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1msg__t.html#ab083fbbf421f86a2fae30a805f7698a1">rm_refs</a> (<span class="keywordtype">int</span> refs_);
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080     <span class="keyword">private</span>:
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082         <span class="comment">//  Size in bytes of the largest message that is still copied around</span>
+<a name="l00083"></a>00083         <span class="comment">//  rather than being reference-counted.</span>
+<a name="l00084"></a><a class="code" href="classzmq_1_1msg__t.html#a3377297572b2a6fae6c078fa7828eff1aa5455e67a25aff98e39a5517181b6e6b">00084</a>         <span class="keyword">enum</span> {<a class="code" href="classzmq_1_1msg__t.html#a3377297572b2a6fae6c078fa7828eff1aa5455e67a25aff98e39a5517181b6e6b">max_vsm_size</a> = 29};
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086         <span class="comment">//  Shared message buffer. Message data are either allocated in one</span>
+<a name="l00087"></a>00087         <span class="comment">//  continuous block along with this structure - thus avoiding one</span>
+<a name="l00088"></a>00088         <span class="comment">//  malloc/free pair or they are stored in used-supplied memory.</span>
+<a name="l00089"></a>00089         <span class="comment">//  In the latter case, ffn member stores pointer to the function to be</span>
+<a name="l00090"></a>00090         <span class="comment">//  used to deallocate the data. If the buffer is actually shared (there</span>
+<a name="l00091"></a>00091         <span class="comment">//  are at least 2 references to it) refcount member contains number of</span>
+<a name="l00092"></a>00092         <span class="comment">//  references.</span>
+<a name="l00093"></a><a class="code" href="structzmq_1_1msg__t_1_1content__t.html">00093</a>         <span class="keyword">struct </span><a class="code" href="structzmq_1_1msg__t_1_1content__t.html">content_t</a>
+<a name="l00094"></a>00094         {
+<a name="l00095"></a><a class="code" href="structzmq_1_1msg__t_1_1content__t.html#ad8fd98f4291ba0840d30cc582a768eec">00095</a>             <span class="keywordtype">void</span> *<a class="code" href="structzmq_1_1msg__t_1_1content__t.html#ad8fd98f4291ba0840d30cc582a768eec">data</a>;
+<a name="l00096"></a><a class="code" href="structzmq_1_1msg__t_1_1content__t.html#af1893abf60d3d2b2605527a6d3d8f0cb">00096</a>             <span class="keywordtype">size_t</span> <a class="code" href="structzmq_1_1msg__t_1_1content__t.html#af1893abf60d3d2b2605527a6d3d8f0cb">size</a>;
+<a name="l00097"></a><a class="code" href="structzmq_1_1msg__t_1_1content__t.html#a026c6e7313162f7824214f3ff1686ecb">00097</a>             <a class="code" href="msg_8hpp.html#afce65de211e40cab62117312922487ed">msg_free_fn</a> *<a class="code" href="structzmq_1_1msg__t_1_1content__t.html#a026c6e7313162f7824214f3ff1686ecb">ffn</a>;
+<a name="l00098"></a><a class="code" href="structzmq_1_1msg__t_1_1content__t.html#ae1cd40354330267ebfd5db3c43d6dfd8">00098</a>             <span class="keywordtype">void</span> *<a class="code" href="structzmq_1_1msg__t_1_1content__t.html#ae1cd40354330267ebfd5db3c43d6dfd8">hint</a>;
+<a name="l00099"></a><a class="code" href="structzmq_1_1msg__t_1_1content__t.html#a19888cc853b98a957743014d07f842b6">00099</a>             <a class="code" href="classzmq_1_1atomic__counter__t.html">zmq::atomic_counter_t</a> <a class="code" href="structzmq_1_1msg__t_1_1content__t.html#a19888cc853b98a957743014d07f842b6">refcnt</a>;
+<a name="l00100"></a>00100         };
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102         <span class="comment">//  Different message types.</span>
+<a name="l00103"></a><a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8">00103</a>         <span class="keyword">enum</span> <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8">type_t</a>
+<a name="l00104"></a>00104         {
+<a name="l00105"></a><a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a315f5e5aeac2f3724d8ebeea9e9e8752">00105</a>             <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a315f5e5aeac2f3724d8ebeea9e9e8752">type_min</a> = 101,
+<a name="l00106"></a><a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8ad6316db72334d6ef2b793fb9d6b3a36d">00106</a>             <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8ad6316db72334d6ef2b793fb9d6b3a36d">type_vsm</a> = 101,
+<a name="l00107"></a><a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a930a0cf86864b1324b61d7ab6b0de11a">00107</a>             <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8a930a0cf86864b1324b61d7ab6b0de11a">type_lmsg</a> = 102,
+<a name="l00108"></a><a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8ad54d689e2464ee0fd2478b2c50dbbe2e">00108</a>             <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8ad54d689e2464ee0fd2478b2c50dbbe2e">type_delimiter</a> = 103,
+<a name="l00109"></a><a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8aed322e9cbce8fe2c2f4823c3e54c88eb">00109</a>             <a class="code" href="classzmq_1_1msg__t.html#aba1cea9aa54f2b9a0ccbc187a01831a8aed322e9cbce8fe2c2f4823c3e54c88eb">type_max</a> = 103
+<a name="l00110"></a>00110         };
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112         <span class="comment">//  Note that fields shared between different message types are not</span>
+<a name="l00113"></a>00113         <span class="comment">//  moved to tha parent class (msg_t). This way we ger tighter packing</span>
+<a name="l00114"></a>00114         <span class="comment">//  of the data. Shared fields can be accessed via &#39;base&#39; member of</span>
+<a name="l00115"></a>00115         <span class="comment">//  the union.</span>
+<a name="l00116"></a>00116         <span class="keyword">union </span>{
+<a name="l00117"></a>00117             <span class="keyword">struct </span>{
+<a name="l00118"></a><a class="code" href="classzmq_1_1msg__t.html#a238c89cb2b032915d2567cfc8d6e0cd3">00118</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a238c89cb2b032915d2567cfc8d6e0cd3">unused</a> [<a class="code" href="classzmq_1_1msg__t.html#a3377297572b2a6fae6c078fa7828eff1aa5455e67a25aff98e39a5517181b6e6b">max_vsm_size</a> + 1];
+<a name="l00119"></a><a class="code" href="classzmq_1_1msg__t.html#addf9863fc6ac2c839f8c38b4203fd926">00119</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#addf9863fc6ac2c839f8c38b4203fd926">type</a>;
+<a name="l00120"></a><a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">00120</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a>;
+<a name="l00121"></a>00121             } <a class="code" href="classzmq_1_1msg__t.html#aa7d3af69fe58b73c440ee25e69ab7d70">base</a>;
+<a name="l00122"></a>00122             <span class="keyword">struct </span>{
+<a name="l00123"></a><a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">00123</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a4e0fc015f2725e16687542285250d669">data</a> [<a class="code" href="classzmq_1_1msg__t.html#a3377297572b2a6fae6c078fa7828eff1aa5455e67a25aff98e39a5517181b6e6b">max_vsm_size</a>];
+<a name="l00124"></a><a class="code" href="classzmq_1_1msg__t.html#a9089fc10aecfab67a826d3514ef7a7a7">00124</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a9089fc10aecfab67a826d3514ef7a7a7">size</a>;
+<a name="l00125"></a>00125                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#addf9863fc6ac2c839f8c38b4203fd926">type</a>;
+<a name="l00126"></a>00126                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a2032d77113d0b3ff8d7193e2c30fee2b">flags</a>;
+<a name="l00127"></a>00127             } <a class="code" href="classzmq_1_1msg__t.html#a5fb1722d5005d0f51317b209c35448f9">vsm</a>;
+<a name="l00128"></a>00128             <span class="keyword">struct </span>{
+<a name="l00129"></a><a class="code" href="classzmq_1_1msg__t.html#a4ed3e48e765cf09fa31e7c3fd819b233">00129</a>                 <a class="code" href="structzmq_1_1msg__t_1_1content__t.html">content_t</a> *<a class="code" href="classzmq_1_1msg__t.html#a4ed3e48e765cf09fa31e7c3fd819b233">content</a>;
+<a name="l00130"></a>00130                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a238c89cb2b032915d2567cfc8d6e0cd3">unused</a> [<a class="code" href="classzmq_1_1msg__t.html#a3377297572b2a6fae6c078fa7828eff1aa5455e67a25aff98e39a5517181b6e6b">max_vsm_size</a> + 1 - <span class="keyword">sizeof</span> (<a class="code" href="structzmq_1_1msg__t_1_1content__t.html">content_t</a>*)];
+<a name="l00131"></a>00131                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#addf9863fc6ac2c839f8c38b4203fd926">type</a>;
+<a name="l00132"></a>00132                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a2032d77113d0b3ff8d7193e2c30fee2b">flags</a>;
+<a name="l00133"></a>00133             } <a class="code" href="classzmq_1_1msg__t.html#afc07ee97dc7fb9d7b272512ea511548b">lmsg</a>;
+<a name="l00134"></a>00134             <span class="keyword">struct </span>{
+<a name="l00135"></a>00135                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a238c89cb2b032915d2567cfc8d6e0cd3">unused</a> [<a class="code" href="classzmq_1_1msg__t.html#a3377297572b2a6fae6c078fa7828eff1aa5455e67a25aff98e39a5517181b6e6b">max_vsm_size</a> + 1];
+<a name="l00136"></a>00136                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#addf9863fc6ac2c839f8c38b4203fd926">type</a>;
+<a name="l00137"></a>00137                 <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classzmq_1_1msg__t.html#a2032d77113d0b3ff8d7193e2c30fee2b">flags</a>;
+<a name="l00138"></a>00138             } <a class="code" href="classzmq_1_1msg__t.html#a039d211b0015c10716bbd3bfc885818a">delimiter</a>;
+<a name="l00139"></a>00139         } <a class="code" href="classzmq_1_1msg__t.html#a3cd85d73936ea710fab9ec205301dead">u</a>;
+<a name="l00140"></a>00140     };
+<a name="l00141"></a>00141 
+<a name="l00142"></a>00142 }
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -272,7 +267,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:05 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:48 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

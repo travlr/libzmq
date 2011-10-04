@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/ipc_connecter.hpp Source File</title>
+<title>libzmq: libzmq/doxygen/src/ipc_connecter.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,12 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_2c1eec6ca1f471389d323b199c2c395d.html">.OLD_DEV</a>      </li>
-      <li class="navelem"><a class="el" href="dir_b4b5d907625f83c5e5680e5ccc32f2c6.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_ea986dcfc14529d07c8548c42611bb23.html">old</a>      </li>
-      <li class="navelem"><a class="el" href="dir_6f2b54a481f30c2b3c376fbabe2279ce.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_cf51a567d1751d0180c5e836636d67cb.html">zmq-contribution</a>      </li>
-      <li class="navelem"><a class="el" href="dir_c94bd149d2b4d22b9a9ab470faa42877.html">repos</a>      </li>
       <li class="navelem"><a class="el" href="dir_0ccb6cb1b2b0b6c45fe1428b06065a39.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_31b7ba14e0e4ce3739968e3b5c5d9068.html">doxygen</a>      </li>
       <li class="navelem"><a class="el" href="dir_4168df9576885e7a038bdfe4b3935cf4.html">src</a>      </li>
@@ -155,8 +149,8 @@ function toggleVisibility(linkObj) {
 <a name="l00040"></a>00040 
 <a name="l00041"></a>00041         <span class="comment">//  If &#39;delay&#39; is true connecter first waits for a while, then starts</span>
 <a name="l00042"></a>00042         <span class="comment">//  connection process.</span>
-<a name="l00043"></a>00043         <a class="code" href="classzmq_1_1ipc__connecter__t.html#af130c16dfad522a1927b145b8a4c3bb8">ipc_connecter_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
-<a name="l00044"></a>00044             <span class="keyword">class</span> <a class="code" href="classzmq_1_1session__t.html">session_t</a> *session_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_,
+<a name="l00043"></a>00043         <a class="code" href="classzmq_1_1ipc__connecter__t.html#a1da5fae5ff13b3640fe89273cc7b32b9">ipc_connecter_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
+<a name="l00044"></a>00044             <span class="keyword">class</span> <a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a> *session_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_,
 <a name="l00045"></a>00045             <span class="keyword">const</span> <span class="keywordtype">char</span> *address_, <span class="keywordtype">bool</span> delay_);
 <a name="l00046"></a>00046         <a class="code" href="classzmq_1_1ipc__connecter__t.html#a5c23a4a0280b0c1159f7d68fbb905c27">~ipc_connecter_t</a> ();
 <a name="l00047"></a>00047 
@@ -216,12 +210,12 @@ function toggleVisibility(linkObj) {
 <a name="l00101"></a><a class="code" href="classzmq_1_1ipc__connecter__t.html#a6f8de9fca403faf6cd4c9088aadd5f73">00101</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1ipc__connecter__t.html#a6f8de9fca403faf6cd4c9088aadd5f73">wait</a>;
 <a name="l00102"></a>00102 
 <a name="l00103"></a>00103         <span class="comment">//  Reference to the session we belong to.</span>
-<a name="l00104"></a><a class="code" href="classzmq_1_1ipc__connecter__t.html#a54c4e946b1b7198bd2834756ac5efba7">00104</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1session__t.html">session_t</a> *<a class="code" href="classzmq_1_1ipc__connecter__t.html#a54c4e946b1b7198bd2834756ac5efba7">session</a>;
+<a name="l00104"></a><a class="code" href="classzmq_1_1ipc__connecter__t.html#a0b887865bc435262d8e1b8da66b2bde6">00104</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a> *<a class="code" href="classzmq_1_1ipc__connecter__t.html#a0b887865bc435262d8e1b8da66b2bde6">session</a>;
 <a name="l00105"></a>00105 
 <a name="l00106"></a>00106         <span class="comment">//  Current reconnect ivl, updated for backoff strategy</span>
 <a name="l00107"></a><a class="code" href="classzmq_1_1ipc__connecter__t.html#abc51c80274caec4cd35329ab45f79d86">00107</a>         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1ipc__connecter__t.html#abc51c80274caec4cd35329ab45f79d86">current_reconnect_ivl</a>;
 <a name="l00108"></a>00108 
-<a name="l00109"></a>00109         <a class="code" href="classzmq_1_1ipc__connecter__t.html#af130c16dfad522a1927b145b8a4c3bb8">ipc_connecter_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1ipc__connecter__t.html">ipc_connecter_t</a>&amp;);
+<a name="l00109"></a>00109         <a class="code" href="classzmq_1_1ipc__connecter__t.html#a1da5fae5ff13b3640fe89273cc7b32b9">ipc_connecter_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1ipc__connecter__t.html">ipc_connecter_t</a>&amp;);
 <a name="l00110"></a>00110         <span class="keyword">const</span> <a class="code" href="classzmq_1_1ipc__connecter__t.html">ipc_connecter_t</a> &amp;<a class="code" href="classzmq_1_1ipc__connecter__t.html#a085987212f92f16051e0b086f70eb7a3">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1ipc__connecter__t.html">ipc_connecter_t</a>&amp;);
 <a name="l00111"></a>00111     };
 <a name="l00112"></a>00112 
@@ -247,7 +241,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:05 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:48 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

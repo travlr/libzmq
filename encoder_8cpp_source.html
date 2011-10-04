@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>libzmq: /home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/src/encoder.cpp Source File</title>
+<title>libzmq: libzmq/doxygen/src/encoder.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
@@ -96,12 +96,6 @@ function toggleVisibility(linkObj) {
   </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="dir_2c1eec6ca1f471389d323b199c2c395d.html">.OLD_DEV</a>      </li>
-      <li class="navelem"><a class="el" href="dir_b4b5d907625f83c5e5680e5ccc32f2c6.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_ea986dcfc14529d07c8548c42611bb23.html">old</a>      </li>
-      <li class="navelem"><a class="el" href="dir_6f2b54a481f30c2b3c376fbabe2279ce.html">dev</a>      </li>
-      <li class="navelem"><a class="el" href="dir_cf51a567d1751d0180c5e836636d67cb.html">zmq-contribution</a>      </li>
-      <li class="navelem"><a class="el" href="dir_c94bd149d2b4d22b9a9ab470faa42877.html">repos</a>      </li>
       <li class="navelem"><a class="el" href="dir_0ccb6cb1b2b0b6c45fe1428b06065a39.html">libzmq</a>      </li>
       <li class="navelem"><a class="el" href="dir_31b7ba14e0e4ce3739968e3b5c5d9068.html">doxygen</a>      </li>
       <li class="navelem"><a class="el" href="dir_4168df9576885e7a038bdfe4b3935cf4.html">src</a>      </li>
@@ -134,79 +128,87 @@ function toggleVisibility(linkObj) {
 <a name="l00019"></a>00019 <span class="comment">*/</span>
 <a name="l00020"></a>00020 
 <a name="l00021"></a>00021 <span class="preprocessor">#include &quot;<a class="code" href="encoder_8hpp.html">encoder.hpp</a>&quot;</span>
-<a name="l00022"></a>00022 <span class="preprocessor">#include &quot;<a class="code" href="session_8hpp.html">session.hpp</a>&quot;</span>
-<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="wire_8hpp.html">wire.hpp</a>&quot;</span>
-<a name="l00024"></a>00024 
-<a name="l00025"></a><a class="code" href="classzmq_1_1encoder__t.html#af7c7635f3837a3c51682a92faa4143f3">00025</a> <a class="code" href="classzmq_1_1encoder__t.html#af7c7635f3837a3c51682a92faa4143f3">zmq::encoder_t::encoder_t</a> (<span class="keywordtype">size_t</span> bufsize_) :
-<a name="l00026"></a>00026     <a class="code" href="classzmq_1_1encoder__base__t.html">encoder_base_t</a> &lt;<a class="code" href="classzmq_1_1encoder__t.html">encoder_t</a>&gt; (bufsize_),
-<a name="l00027"></a>00027     session (NULL)
-<a name="l00028"></a>00028 {
-<a name="l00029"></a>00029     <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1encoder__t.html#a980503c9efcea889fde1dfaab507da07">in_progress</a>.<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
-<a name="l00030"></a>00030     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032     <span class="comment">//  Write 0 bytes to the batch and go to message_ready state.</span>
-<a name="l00033"></a>00033     <a class="code" href="classzmq_1_1encoder__base__t.html#a80550bec12ce3a46d8c7487871e4554f">next_step</a> (NULL, 0, &amp;<a class="code" href="classzmq_1_1encoder__t.html#ab8f436dcceeff8e128791997f63f0eaa">encoder_t::message_ready</a>, <span class="keyword">true</span>);
-<a name="l00034"></a>00034 }
-<a name="l00035"></a>00035 
-<a name="l00036"></a><a class="code" href="classzmq_1_1encoder__t.html#a1c2101a8c04489d59bde2e3acbed3392">00036</a> <a class="code" href="classzmq_1_1encoder__t.html#a1c2101a8c04489d59bde2e3acbed3392">zmq::encoder_t::~encoder_t</a> ()
-<a name="l00037"></a>00037 {
-<a name="l00038"></a>00038     <span class="keywordtype">int</span> rc = in_progress.close ();
-<a name="l00039"></a>00039     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00040"></a>00040 }
-<a name="l00041"></a>00041 
-<a name="l00042"></a><a class="code" href="classzmq_1_1encoder__t.html#a164d471c80df408e8acb46e356018159">00042</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1encoder__t.html#a164d471c80df408e8acb46e356018159">zmq::encoder_t::set_session</a> (<a class="code" href="classzmq_1_1session__t.html">session_t</a> *session_)
-<a name="l00043"></a>00043 {
-<a name="l00044"></a>00044     session = session_;
-<a name="l00045"></a>00045 }
-<a name="l00046"></a>00046 
-<a name="l00047"></a><a class="code" href="classzmq_1_1encoder__t.html#ac552cef6a68dbf0640465bcf2911dd1e">00047</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1encoder__t.html#ac552cef6a68dbf0640465bcf2911dd1e">zmq::encoder_t::size_ready</a> ()
-<a name="l00048"></a>00048 {
-<a name="l00049"></a>00049     <span class="comment">//  Write message body into the buffer.</span>
-<a name="l00050"></a>00050     next_step (in_progress.data (), in_progress.size (),
-<a name="l00051"></a>00051         &amp;<a class="code" href="classzmq_1_1encoder__t.html#ab8f436dcceeff8e128791997f63f0eaa">encoder_t::message_ready</a>, <span class="keyword">false</span>);
-<a name="l00052"></a>00052     <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00053"></a>00053 }
-<a name="l00054"></a>00054 
-<a name="l00055"></a><a class="code" href="classzmq_1_1encoder__t.html#ab8f436dcceeff8e128791997f63f0eaa">00055</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1encoder__t.html#ab8f436dcceeff8e128791997f63f0eaa">zmq::encoder_t::message_ready</a> ()
-<a name="l00056"></a>00056 {
-<a name="l00057"></a>00057     <span class="comment">//  Destroy content of the old message.</span>
-<a name="l00058"></a>00058     <span class="keywordtype">int</span> rc = in_progress.close ();
-<a name="l00059"></a>00059     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061     <span class="comment">//  Read new message. If there is none, return false.</span>
-<a name="l00062"></a>00062     <span class="comment">//  Note that new state is set only if write is successful. That way</span>
-<a name="l00063"></a>00063     <span class="comment">//  unsuccessful write will cause retry on the next state machine</span>
-<a name="l00064"></a>00064     <span class="comment">//  invocation.</span>
-<a name="l00065"></a>00065     <span class="keywordflow">if</span> (!session || !session-&gt;read (&amp;in_progress)) {
-<a name="l00066"></a>00066         rc = in_progress.init ();
-<a name="l00067"></a>00067         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00068"></a>00068         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00069"></a>00069     }
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071     <span class="comment">//  Get the message size.</span>
-<a name="l00072"></a>00072     <span class="keywordtype">size_t</span> size = in_progress.size ();
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074     <span class="comment">//  Account for the &#39;flags&#39; byte.</span>
-<a name="l00075"></a>00075     size++;
-<a name="l00076"></a>00076 
-<a name="l00077"></a>00077     <span class="comment">//  For messages less than 255 bytes long, write one byte of message size.</span>
-<a name="l00078"></a>00078     <span class="comment">//  For longer messages write 0xff escape character followed by 8-byte</span>
-<a name="l00079"></a>00079     <span class="comment">//  message size. In both cases &#39;flags&#39; field follows.</span>
-<a name="l00080"></a>00080     <span class="keywordflow">if</span> (size &lt; 255) {
-<a name="l00081"></a>00081         tmpbuf [0] = (<span class="keywordtype">unsigned</span> char) size;
-<a name="l00082"></a>00082         tmpbuf [1] = (in_progress.flags () &amp; ~<a class="code" href="classzmq_1_1msg__t.html">msg_t</a>::shared);
-<a name="l00083"></a>00083         next_step (tmpbuf, 2, &amp;<a class="code" href="classzmq_1_1encoder__t.html#ac552cef6a68dbf0640465bcf2911dd1e">encoder_t::size_ready</a>,
-<a name="l00084"></a>00084             !(in_progress.flags () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)));
-<a name="l00085"></a>00085     }
-<a name="l00086"></a>00086     <span class="keywordflow">else</span> {
-<a name="l00087"></a>00087         tmpbuf [0] = 0xff;
-<a name="l00088"></a>00088         put_uint64 (tmpbuf + 1, size);
-<a name="l00089"></a>00089         tmpbuf [9] = (in_progress.flags () &amp; ~<a class="code" href="classzmq_1_1msg__t.html">msg_t</a>::shared);
-<a name="l00090"></a>00090         next_step (tmpbuf, 10, &amp;<a class="code" href="classzmq_1_1encoder__t.html#ac552cef6a68dbf0640465bcf2911dd1e">encoder_t::size_ready</a>,
-<a name="l00091"></a>00091             !(in_progress.flags () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)));
-<a name="l00092"></a>00092     }
-<a name="l00093"></a>00093     <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00094"></a>00094 }
+<a name="l00022"></a>00022 <span class="preprocessor">#include &quot;<a class="code" href="session__base_8hpp.html">session_base.hpp</a>&quot;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="likely_8hpp.html">likely.hpp</a>&quot;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="wire_8hpp.html">wire.hpp</a>&quot;</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a><a class="code" href="classzmq_1_1encoder__t.html#af7c7635f3837a3c51682a92faa4143f3">00026</a> <a class="code" href="classzmq_1_1encoder__t.html#af7c7635f3837a3c51682a92faa4143f3">zmq::encoder_t::encoder_t</a> (<span class="keywordtype">size_t</span> bufsize_) :
+<a name="l00027"></a>00027     <a class="code" href="classzmq_1_1encoder__base__t.html">encoder_base_t</a> &lt;<a class="code" href="classzmq_1_1encoder__t.html">encoder_t</a>&gt; (bufsize_),
+<a name="l00028"></a>00028     session (NULL)
+<a name="l00029"></a>00029 {
+<a name="l00030"></a>00030     <span class="keywordtype">int</span> rc = <a class="code" href="classzmq_1_1encoder__t.html#a980503c9efcea889fde1dfaab507da07">in_progress</a>.<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
+<a name="l00031"></a>00031     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033     <span class="comment">//  Write 0 bytes to the batch and go to message_ready state.</span>
+<a name="l00034"></a>00034     <a class="code" href="classzmq_1_1encoder__base__t.html#a80550bec12ce3a46d8c7487871e4554f">next_step</a> (NULL, 0, &amp;<a class="code" href="classzmq_1_1encoder__t.html#ab8f436dcceeff8e128791997f63f0eaa">encoder_t::message_ready</a>, <span class="keyword">true</span>);
+<a name="l00035"></a>00035 }
+<a name="l00036"></a>00036 
+<a name="l00037"></a><a class="code" href="classzmq_1_1encoder__t.html#a1c2101a8c04489d59bde2e3acbed3392">00037</a> <a class="code" href="classzmq_1_1encoder__t.html#a1c2101a8c04489d59bde2e3acbed3392">zmq::encoder_t::~encoder_t</a> ()
+<a name="l00038"></a>00038 {
+<a name="l00039"></a>00039     <span class="keywordtype">int</span> rc = in_progress.close ();
+<a name="l00040"></a>00040     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00041"></a>00041 }
+<a name="l00042"></a>00042 
+<a name="l00043"></a><a class="code" href="classzmq_1_1encoder__t.html#ad96e71e8578dbb79bc82594410093875">00043</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1encoder__t.html#ad96e71e8578dbb79bc82594410093875">zmq::encoder_t::set_session</a> (<a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a> *session_)
+<a name="l00044"></a>00044 {
+<a name="l00045"></a>00045     session = session_;
+<a name="l00046"></a>00046 }
+<a name="l00047"></a>00047 
+<a name="l00048"></a><a class="code" href="classzmq_1_1encoder__t.html#ac552cef6a68dbf0640465bcf2911dd1e">00048</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1encoder__t.html#ac552cef6a68dbf0640465bcf2911dd1e">zmq::encoder_t::size_ready</a> ()
+<a name="l00049"></a>00049 {
+<a name="l00050"></a>00050     <span class="comment">//  Write message body into the buffer.</span>
+<a name="l00051"></a>00051     next_step (in_progress.data (), in_progress.size (),
+<a name="l00052"></a>00052         &amp;<a class="code" href="classzmq_1_1encoder__t.html#ab8f436dcceeff8e128791997f63f0eaa">encoder_t::message_ready</a>, <span class="keyword">false</span>);
+<a name="l00053"></a>00053     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00054"></a>00054 }
+<a name="l00055"></a>00055 
+<a name="l00056"></a><a class="code" href="classzmq_1_1encoder__t.html#ab8f436dcceeff8e128791997f63f0eaa">00056</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1encoder__t.html#ab8f436dcceeff8e128791997f63f0eaa">zmq::encoder_t::message_ready</a> ()
+<a name="l00057"></a>00057 {
+<a name="l00058"></a>00058     <span class="comment">//  Destroy content of the old message.</span>
+<a name="l00059"></a>00059     <span class="keywordtype">int</span> rc = in_progress.close ();
+<a name="l00060"></a>00060     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062     <span class="comment">//  Read new message. If there is none, return false.</span>
+<a name="l00063"></a>00063     <span class="comment">//  Note that new state is set only if write is successful. That way</span>
+<a name="l00064"></a>00064     <span class="comment">//  unsuccessful write will cause retry on the next state machine</span>
+<a name="l00065"></a>00065     <span class="comment">//  invocation.</span>
+<a name="l00066"></a>00066     <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (!session)) {
+<a name="l00067"></a>00067         rc = in_progress.init ();
+<a name="l00068"></a>00068         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00069"></a>00069         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00070"></a>00070     }
+<a name="l00071"></a>00071     rc = session-&gt;read (&amp;in_progress);
+<a name="l00072"></a>00072     <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (rc != 0)) {
+<a name="l00073"></a>00073         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (errno == EAGAIN);
+<a name="l00074"></a>00074         rc = in_progress.init ();
+<a name="l00075"></a>00075         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00076"></a>00076         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00077"></a>00077     }
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079     <span class="comment">//  Get the message size.</span>
+<a name="l00080"></a>00080     <span class="keywordtype">size_t</span> size = in_progress.size ();
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082     <span class="comment">//  Account for the &#39;flags&#39; byte.</span>
+<a name="l00083"></a>00083     size++;
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085     <span class="comment">//  For messages less than 255 bytes long, write one byte of message size.</span>
+<a name="l00086"></a>00086     <span class="comment">//  For longer messages write 0xff escape character followed by 8-byte</span>
+<a name="l00087"></a>00087     <span class="comment">//  message size. In both cases &#39;flags&#39; field follows.</span>
+<a name="l00088"></a>00088     <span class="keywordflow">if</span> (size &lt; 255) {
+<a name="l00089"></a>00089         tmpbuf [0] = (<span class="keywordtype">unsigned</span> char) size;
+<a name="l00090"></a>00090         tmpbuf [1] = (in_progress.flags () &amp; ~<a class="code" href="classzmq_1_1msg__t.html">msg_t</a>::shared);
+<a name="l00091"></a>00091         next_step (tmpbuf, 2, &amp;<a class="code" href="classzmq_1_1encoder__t.html#ac552cef6a68dbf0640465bcf2911dd1e">encoder_t::size_ready</a>,
+<a name="l00092"></a>00092             !(in_progress.flags () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)));
+<a name="l00093"></a>00093     }
+<a name="l00094"></a>00094     <span class="keywordflow">else</span> {
+<a name="l00095"></a>00095         tmpbuf [0] = 0xff;
+<a name="l00096"></a>00096         put_uint64 (tmpbuf + 1, size);
+<a name="l00097"></a>00097         tmpbuf [9] = (in_progress.flags () &amp; ~<a class="code" href="classzmq_1_1msg__t.html">msg_t</a>::shared);
+<a name="l00098"></a>00098         next_step (tmpbuf, 10, &amp;<a class="code" href="classzmq_1_1encoder__t.html#ac552cef6a68dbf0640465bcf2911dd1e">encoder_t::size_ready</a>,
+<a name="l00099"></a>00099             !(in_progress.flags () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)));
+<a name="l00100"></a>00100     }
+<a name="l00101"></a>00101     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00102"></a>00102 }
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -223,7 +225,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Sep 18 2011 21:00:05 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 4 2011 00:46:48 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
