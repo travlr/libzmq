@@ -1,7 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$ipc__address_8cpp.html" title="/home/travlr/src/libzmq/master/src/ipc_address.cpp" alt="" coords="5,83,325,112"/>
-<area shape="rect" id="node5" href="$ipc__connecter_8hpp.html" title="/home/travlr/src/libzmq/master/src/ipc_connecter.hpp" alt="" coords="349,83,680,112"/>
-<area shape="rect" id="node11" href="$ipc__listener_8cpp.html" title="/home/travlr/src/libzmq/master/src/ipc_listener.cpp" alt="" coords="704,83,1019,112"/>
-<area shape="rect" id="node7" href="$ipc__connecter_8cpp.html" title="/home/travlr/src/libzmq/master/src/ipc_connecter.cpp" alt="" coords="172,160,503,189"/>
-<area shape="rect" id="node9" href="$session__base_8cpp.html" title="/home/travlr/src/libzmq/master/src/session_base.cpp" alt="" coords="527,160,857,189"/>
+<area shape="rect" id="node3" href="$ipc__address_8cpp.html" title="src/ipc_address.cpp" alt="" coords="5,83,144,112"/>
+<area shape="rect" id="node5" href="$ipc__connecter_8hpp.html" title="src/ipc_connecter.hpp" alt="" coords="168,83,317,112"/>
+<area shape="rect" id="node11" href="$ipc__listener_8cpp.html" title="src/ipc_listener.cpp" alt="" coords="341,83,475,112"/>
+<area shape="rect" id="node7" href="$ipc__connecter_8cpp.html" title="src/ipc_connecter.cpp" alt="" coords="81,160,231,189"/>
+<area shape="rect" id="node9" href="$session__base_8cpp.html" title="src/session_base.cpp" alt="" coords="255,160,404,189"/>
 </map>

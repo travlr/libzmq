@@ -1,9 +1,9 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$tcp__connecter_8hpp.html" title="/home/travlr/src/libzmq/master/src/tcp_connecter.hpp" alt="" coords="361,83,692,112"/>
-<area shape="rect" id="node11" href="$tcp__listener_8hpp.html" title="/home/travlr/src/libzmq/master/src/tcp_listener.hpp" alt="" coords="717,83,1035,112"/>
-<area shape="rect" id="node16" href="$tcp__address_8cpp.html" title="/home/travlr/src/libzmq/master/src/tcp_address.cpp" alt="" coords="1059,83,1379,112"/>
-<area shape="rect" id="node5" href="$session__base_8cpp.html" title="/home/travlr/src/libzmq/master/src/session_base.cpp" alt="" coords="5,160,336,189"/>
-<area shape="rect" id="node7" href="$socket__base_8cpp.html" title="/home/travlr/src/libzmq/master/src/socket_base.cpp" alt="" coords="715,160,1037,189"/>
-<area shape="rect" id="node9" href="$tcp__connecter_8cpp.html" title="/home/travlr/src/libzmq/master/src/tcp_connecter.cpp" alt="" coords="360,160,691,189"/>
-<area shape="rect" id="node14" href="$tcp__listener_8cpp.html" title="/home/travlr/src/libzmq/master/src/tcp_listener.cpp" alt="" coords="1061,160,1379,189"/>
+<area shape="rect" id="node3" href="$tcp__connecter_8hpp.html" title="src/tcp_connecter.hpp" alt="" coords="180,83,329,112"/>
+<area shape="rect" id="node11" href="$tcp__listener_8hpp.html" title="src/tcp_listener.hpp" alt="" coords="355,83,491,112"/>
+<area shape="rect" id="node16" href="$tcp__address_8cpp.html" title="src/tcp_address.cpp" alt="" coords="515,83,653,112"/>
+<area shape="rect" id="node5" href="$session__base_8cpp.html" title="src/session_base.cpp" alt="" coords="5,160,155,189"/>
+<area shape="rect" id="node7" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="352,160,493,189"/>
+<area shape="rect" id="node9" href="$tcp__connecter_8cpp.html" title="src/tcp_connecter.cpp" alt="" coords="179,160,328,189"/>
+<area shape="rect" id="node14" href="$tcp__listener_8cpp.html" title="src/tcp_listener.cpp" alt="" coords="517,160,653,189"/>
 </map>

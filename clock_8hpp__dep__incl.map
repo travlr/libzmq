@@ -1,9 +1,9 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$clock_8cpp.html" title="/home/travlr/src/libzmq/master/src/clock.cpp" alt="" coords="5,83,285,112"/>
-<area shape="rect" id="node5" href="$poller__base_8hpp.html" title="/home/travlr/src/libzmq/master/src/poller_base.hpp" alt="" coords="309,83,624,112"/>
-<area shape="rect" id="node9" href="$random_8cpp.html" title="/home/travlr/src/libzmq/master/src/random.cpp" alt="" coords="648,83,941,112"/>
-<area shape="rect" id="node11" href="$socket__base_8cpp.html" title="/home/travlr/src/libzmq/master/src/socket_base.cpp" alt="" coords="965,83,1288,112"/>
-<area shape="rect" id="node13" href="$zmq_8cpp.html" title="/home/travlr/src/libzmq/master/src/zmq.cpp" alt="" coords="1312,83,1587,112"/>
-<area shape="rect" id="node15" href="$zmq__utils_8cpp.html" title="/home/travlr/src/libzmq/master/src/zmq_utils.cpp" alt="" coords="1611,83,1917,112"/>
-<area shape="rect" id="node7" href="$poller__base_8cpp.html" title="/home/travlr/src/libzmq/master/src/poller_base.cpp" alt="" coords="309,160,624,189"/>
+<area shape="rect" id="node3" href="$clock_8cpp.html" title="src/clock.cpp" alt="" coords="5,83,104,112"/>
+<area shape="rect" id="node5" href="$poller__base_8hpp.html" title="src/poller_base.hpp" alt="" coords="128,83,261,112"/>
+<area shape="rect" id="node9" href="$random_8cpp.html" title="src/random.cpp" alt="" coords="285,83,397,112"/>
+<area shape="rect" id="node11" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="421,83,563,112"/>
+<area shape="rect" id="node13" href="$zmq_8cpp.html" title="src/zmq.cpp" alt="" coords="587,83,680,112"/>
+<area shape="rect" id="node15" href="$zmq__utils_8cpp.html" title="src/zmq_utils.cpp" alt="" coords="704,83,829,112"/>
+<area shape="rect" id="node7" href="$poller__base_8cpp.html" title="src/poller_base.cpp" alt="" coords="128,160,261,189"/>
 </map>

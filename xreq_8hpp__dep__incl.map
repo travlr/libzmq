@@ -1,7 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$req_8hpp.html" title="/home/travlr/src/libzmq/master/src/req.hpp" alt="" coords="360,83,627,112"/>
-<area shape="rect" id="node7" href="$session__base_8cpp.html" title="/home/travlr/src/libzmq/master/src/session_base.cpp" alt="" coords="5,160,336,189"/>
-<area shape="rect" id="node9" href="$socket__base_8cpp.html" title="/home/travlr/src/libzmq/master/src/socket_base.cpp" alt="" coords="651,160,973,189"/>
-<area shape="rect" id="node13" href="$xreq_8cpp.html" title="/home/travlr/src/libzmq/master/src/xreq.cpp" alt="" coords="701,83,976,112"/>
-<area shape="rect" id="node5" href="$req_8cpp.html" title="/home/travlr/src/libzmq/master/src/req.cpp" alt="" coords="360,160,627,189"/>
+<area shape="rect" id="node3" href="$req_8hpp.html" title="src/req.hpp" alt="" coords="179,83,264,112"/>
+<area shape="rect" id="node7" href="$session__base_8cpp.html" title="src/session_base.cpp" alt="" coords="5,160,155,189"/>
+<area shape="rect" id="node9" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="288,160,429,189"/>
+<area shape="rect" id="node13" href="$xreq_8cpp.html" title="src/xreq.cpp" alt="" coords="339,83,432,112"/>
+<area shape="rect" id="node5" href="$req_8cpp.html" title="src/req.cpp" alt="" coords="179,160,264,189"/>
 </map>

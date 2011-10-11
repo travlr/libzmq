@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$ipc__connecter_8cpp.html" title="/home/travlr/src/libzmq/master/src/ipc_connecter.cpp" alt="" coords="5,83,336,112"/>
-<area shape="rect" id="node5" href="$session__base_8cpp.html" title="/home/travlr/src/libzmq/master/src/session_base.cpp" alt="" coords="360,83,691,112"/>
+<area shape="rect" id="node3" href="$ipc__connecter_8cpp.html" title="src/ipc_connecter.cpp" alt="" coords="5,83,155,112"/>
+<area shape="rect" id="node5" href="$session__base_8cpp.html" title="src/session_base.cpp" alt="" coords="179,83,328,112"/>
 </map>

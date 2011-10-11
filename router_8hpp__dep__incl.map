@@ -1,5 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$router_8cpp.html" title="/home/travlr/src/libzmq/master/src/router.cpp" alt="" coords="5,83,288,112"/>
-<area shape="rect" id="node5" href="$session__base_8cpp.html" title="/home/travlr/src/libzmq/master/src/session_base.cpp" alt="" coords="312,83,643,112"/>
-<area shape="rect" id="node7" href="$socket__base_8cpp.html" title="/home/travlr/src/libzmq/master/src/socket_base.cpp" alt="" coords="667,83,989,112"/>
+<area shape="rect" id="node3" href="$router_8cpp.html" title="src/router.cpp" alt="" coords="5,83,107,112"/>
+<area shape="rect" id="node5" href="$session__base_8cpp.html" title="src/session_base.cpp" alt="" coords="131,83,280,112"/>
+<area shape="rect" id="node7" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="304,83,445,112"/>
 </map>

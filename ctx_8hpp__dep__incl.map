@@ -1,7 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$ctx_8cpp.html" title="/home/travlr/src/libzmq/master/src/ctx.cpp" alt="" coords="5,83,272,112"/>
-<area shape="rect" id="node5" href="$io__thread_8cpp.html" title="/home/travlr/src/libzmq/master/src/io_thread.cpp" alt="" coords="296,83,597,112"/>
-<area shape="rect" id="node7" href="$object_8cpp.html" title="/home/travlr/src/libzmq/master/src/object.cpp" alt="" coords="621,83,907,112"/>
-<area shape="rect" id="node9" href="$socket__base_8cpp.html" title="/home/travlr/src/libzmq/master/src/socket_base.cpp" alt="" coords="931,83,1253,112"/>
-<area shape="rect" id="node11" href="$zmq_8cpp.html" title="/home/travlr/src/libzmq/master/src/zmq.cpp" alt="" coords="1277,83,1552,112"/>
+<area shape="rect" id="node3" href="$ctx_8cpp.html" title="src/ctx.cpp" alt="" coords="5,83,91,112"/>
+<area shape="rect" id="node5" href="$io__thread_8cpp.html" title="src/io_thread.cpp" alt="" coords="115,83,237,112"/>
+<area shape="rect" id="node7" href="$object_8cpp.html" title="src/object.cpp" alt="" coords="261,83,365,112"/>
+<area shape="rect" id="node9" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="389,83,531,112"/>
+<area shape="rect" id="node11" href="$zmq_8cpp.html" title="src/zmq.cpp" alt="" coords="555,83,648,112"/>
 </map>
