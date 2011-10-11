@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$classzmq_1_1io__object__t.html" title="zmq::io_object_t" alt="" coords="12,83,129,112"/>
-<area shape="rect" id="node4" href="$structzmq_1_1i__poll__events.html" title="zmq::i_poll_events" alt="" coords="5,5,136,35"/>
-<area shape="rect" id="node6" href="$structzmq_1_1i__engine.html" title="zmq::i_engine" alt="" coords="153,83,255,112"/>
-</map>

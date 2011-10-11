@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$inproc__lat_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="205,5,256,35"/>
-<area shape="rect" id="node5" href="$inproc__thr_8cpp.html#afdde2c05692ce4366f55800934ffdebe" title="worker" alt="" coords="200,59,261,88"/>
-<area shape="rect" id="node7" href="$zmq_8cpp.html#a9894b4722d321559d3990898603ec63a" title="zmq_send" alt="" coords="189,112,272,141"/>
-<area shape="rect" id="node9" href="$testutil_8hpp.html#a706fc073296c3da5fb021a69cc22089d" title="bounce" alt="" coords="320,85,384,115"/>
-<area shape="rect" id="node13" href="$test__hwm_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="327,139,377,168"/>
-<area shape="rect" id="node11" href="$test__pair__inproc_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="432,85,483,115"/>
-</map>

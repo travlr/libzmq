@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classzmq_1_1atomic__counter__t.html#ab11988f84d9cb8a58a4be3929c3db01a" title="zmq::atomic_counter_t::add" alt="" coords="239,5,423,35"/>
-<area shape="rect" id="node5" href="$classzmq_1_1atomic__ptr__t.html#aa1d781438b331d00bbfab3bf828f3f20" title="zmq::atomic_ptr_t\&lt; command_t \&gt;::cas" alt="" coords="207,59,455,88"/>
-<area shape="rect" id="node7" href="$classzmq_1_1atomic__counter__t.html#a0d29a10e45fc702fce16907cab738acb" title="zmq::atomic_counter_t::sub" alt="" coords="239,112,423,141"/>
-<area shape="rect" id="node9" href="$classzmq_1_1atomic__ptr__t.html#a60a96c30aa11722ce31928f6d33befdc" title="zmq::atomic_ptr_t\&lt; command_t \&gt;::xchg" alt="" coords="204,165,457,195"/>
-</map>

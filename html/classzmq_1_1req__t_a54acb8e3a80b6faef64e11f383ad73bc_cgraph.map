@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d" title="zmq::msg_t::close" alt="" coords="179,5,309,35"/>
-<area shape="rect" id="node5" href="$classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e" title="zmq::msg_t::init" alt="" coords="187,59,301,88"/>
-<area shape="rect" id="node7" href="$classzmq_1_1xreq__t.html#aa7bea550a936a44293cfa5452f334109" title="zmq::xreq_t::xrecv" alt="" coords="179,112,309,141"/>
-</map>

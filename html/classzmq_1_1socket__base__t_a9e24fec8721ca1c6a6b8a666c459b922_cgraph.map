@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classzmq_1_1msg__t.html#a214637bbec842b66265d7cde0effe6a9" title="zmq::msg_t::check" alt="" coords="240,5,373,35"/>
-<area shape="rect" id="node5" href="$classzmq_1_1clock__t.html#a2926d2e5e13a270e6050ec4e24a2770e" title="zmq::clock_t::now_ms" alt="" coords="229,59,384,88"/>
-<area shape="rect" id="node7" href="$classzmq_1_1msg__t.html#aea7736e7955f2125dd6298baee851ca7" title="zmq::msg_t::set_flags" alt="" coords="231,112,383,141"/>
-</map>

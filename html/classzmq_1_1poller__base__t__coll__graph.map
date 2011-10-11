@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$classzmq_1_1atomic__counter__t.html" title="zmq::atomic_counter_t" alt="" coords="5,101,160,131"/>
-<area shape="rect" id="node4" href="$classzmq_1_1mutex__t.html" title="zmq::mutex_t" alt="" coords="32,5,133,35"/>
-<area shape="rect" id="node6" href="$classzmq_1_1clock__t.html" title="zmq::clock_t" alt="" coords="184,101,280,131"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classzmq_1_1pipe__t.html#ab446c6b26ca34f96ed62a958f37bf8a4" title="zmq::pipe_t::terminate" alt="" coords="227,5,379,35"/>
-<area shape="rect" id="node5" href="$classzmq_1_1socket__base__t.html#a2661c12e905da49ee2065cc447e0bc36" title="zmq::socket_base_t::attach_pipe" alt="" coords="428,5,641,35"/>
-</map>

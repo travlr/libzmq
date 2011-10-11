@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$classzmq_1_1atomic__ptr__t.html" title="zmq::atomic_ptr_t\&lt; chunk_t \&gt;" alt="" coords="5,225,203,255"/>
-<area shape="rect" id="node4" href="$classzmq_1_1mutex__t.html" title="zmq::mutex_t" alt="" coords="53,5,155,35"/>
-<area shape="rect" id="node6" href="$classzmq_1_1atomic__ptr__t.html" title="zmq::atomic_ptr_t\&lt; T \&gt;" alt="" coords="92,101,249,131"/>
-<area shape="rect" id="node11" href="$structzmq_1_1yqueue__t_1_1chunk__t.html" title="zmq::yqueue_t\&lt; T, N \&gt;::chunk_t" alt="" coords="181,157,392,187"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classzmq_1_1ipc__listener__t.html#a159574986836537ff634e1ef2b87125d" title="zmq::ipc_listener_t::set_address" alt="" coords="240,5,451,35"/>
-<area shape="rect" id="node5" href="$classzmq_1_1socket__base__t.html#ade02d92860862c008837f641c4aa1b5a" title="zmq::socket_base_t::bind" alt="" coords="500,5,671,35"/>
-<area shape="rect" id="node7" href="$classzmq_1_1ctx__t.html#a414fa4199643046ffdd08e175124aa81" title="zmq::ctx_t::ctx_t" alt="" coords="721,5,841,35"/>
-</map>

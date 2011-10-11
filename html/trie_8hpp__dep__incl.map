@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$xsub_8hpp.html" title="src/xsub.hpp" alt="" coords="217,83,313,112"/>
-<area shape="rect" id="node17" href="$trie_8cpp.html" title="src/trie.cpp" alt="" coords="337,83,423,112"/>
-<area shape="rect" id="node5" href="$sub_8hpp.html" title="src/sub.hpp" alt="" coords="179,160,269,189"/>
-<area shape="rect" id="node7" href="$session__base_8cpp.html" title="src/session_base.cpp" alt="" coords="5,237,155,267"/>
-<area shape="rect" id="node9" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="293,237,435,267"/>
-<area shape="rect" id="node15" href="$xsub_8cpp.html" title="src/xsub.cpp" alt="" coords="344,160,440,189"/>
-<area shape="rect" id="node11" href="$sub_8cpp.html" title="src/sub.cpp" alt="" coords="179,237,269,267"/>
-</map>

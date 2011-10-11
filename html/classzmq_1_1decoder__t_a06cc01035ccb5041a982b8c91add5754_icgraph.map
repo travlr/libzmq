@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classzmq_1_1decoder__t.html#a0859949bf711edf2b6c9cd1e353a8cc1" title="zmq::decoder_t::flags_ready" alt="" coords="267,56,453,85"/>
-<area shape="rect" id="node5" href="$classzmq_1_1decoder__t.html#a69280603cde763e3e4e3b66feea3f338" title="zmq::decoder_t::eight_byte_size_ready" alt="" coords="501,5,752,35"/>
-<area shape="rect" id="node7" href="$classzmq_1_1decoder__t.html#ab949da14c858a5bbc4ba8728abb2c481" title="zmq::decoder_t::one_byte_size_ready" alt="" coords="800,57,1043,87"/>
-<area shape="rect" id="node9" href="$classzmq_1_1decoder__t.html#a8d1cb1d15ab637eaf634cc18389831c3" title="zmq::decoder_t::decoder_t" alt="" coords="1092,57,1268,87"/>
-</map>

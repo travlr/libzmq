@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classzmq_1_1socket__base__t.html#ac47f3f966fabb59f2d304786be37a101" title="zmq::socket_base_t::connect" alt="" coords="245,5,440,35"/>
-<area shape="rect" id="node5" href="$classzmq_1_1tcp__listener__t.html#a5768c38ce36c7721bacf332740bb8a1f" title="zmq::tcp_listener_t::in_event" alt="" coords="248,59,437,88"/>
-<area shape="rect" id="node7" href="$classzmq_1_1ipc__listener__t.html#ab40d9aacf57c5e2b8da596262a052780" title="zmq::ipc_listener_t::in_event" alt="" coords="248,112,437,141"/>
-</map>
