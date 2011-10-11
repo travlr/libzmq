@@ -1,12 +1,12 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$inproc__lat_8cpp.html" title="libzmq/doxygen/perf/inproc_lat.cpp" alt="" coords="5,83,229,112"/>
-<area shape="rect" id="node5" href="$inproc__thr_8cpp.html" title="libzmq/doxygen/perf/inproc_thr.cpp" alt="" coords="253,83,477,112"/>
-<area shape="rect" id="node7" href="$local__lat_8cpp.html" title="libzmq/doxygen/perf/local_lat.cpp" alt="" coords="501,83,717,112"/>
-<area shape="rect" id="node9" href="$local__thr_8cpp.html" title="libzmq/doxygen/perf/local_thr.cpp" alt="" coords="741,83,957,112"/>
-<area shape="rect" id="node11" href="$remote__lat_8cpp.html" title="libzmq/doxygen/perf/remote_lat.cpp" alt="" coords="981,83,1211,112"/>
-<area shape="rect" id="node13" href="$remote__thr_8cpp.html" title="libzmq/doxygen/perf/remote_thr.cpp" alt="" coords="1235,83,1464,112"/>
-<area shape="rect" id="node15" href="$zmq__utils_8cpp.html" title="libzmq/doxygen/src/zmq_utils.cpp" alt="" coords="1488,83,1707,112"/>
-<area shape="rect" id="node17" href="$test__reqrep__drop_8cpp.html" title="libzmq/doxygen/tests/test_reqrep_drop.cpp" alt="" coords="1731,83,2003,112"/>
-<area shape="rect" id="node19" href="$test__sub__forward_8cpp.html" title="libzmq/doxygen/tests/test_sub_forward.cpp" alt="" coords="2027,83,2301,112"/>
-<area shape="rect" id="node21" href="$test__timeo_8cpp.html" title="libzmq/doxygen/tests/test_timeo.cpp" alt="" coords="2325,83,2560,112"/>
+<area shape="rect" id="node3" href="$inproc__lat_8cpp.html" title="/home/travlr/src/libzmq/master/perf/inproc_lat.cpp" alt="" coords="5,83,315,112"/>
+<area shape="rect" id="node5" href="$inproc__thr_8cpp.html" title="/home/travlr/src/libzmq/master/perf/inproc_thr.cpp" alt="" coords="339,83,648,112"/>
+<area shape="rect" id="node7" href="$local__lat_8cpp.html" title="/home/travlr/src/libzmq/master/perf/local_lat.cpp" alt="" coords="672,83,973,112"/>
+<area shape="rect" id="node9" href="$local__thr_8cpp.html" title="/home/travlr/src/libzmq/master/perf/local_thr.cpp" alt="" coords="997,83,1299,112"/>
+<area shape="rect" id="node11" href="$remote__lat_8cpp.html" title="/home/travlr/src/libzmq/master/perf/remote_lat.cpp" alt="" coords="1323,83,1637,112"/>
+<area shape="rect" id="node13" href="$remote__thr_8cpp.html" title="/home/travlr/src/libzmq/master/perf/remote_thr.cpp" alt="" coords="1661,83,1976,112"/>
+<area shape="rect" id="node15" href="$zmq__utils_8cpp.html" title="/home/travlr/src/libzmq/master/src/zmq_utils.cpp" alt="" coords="2000,83,2307,112"/>
+<area shape="rect" id="node17" href="$test__reqrep__drop_8cpp.html" title="/home/travlr/src/libzmq/master/tests/test_reqrep_drop.cpp" alt="" coords="2331,83,2688,112"/>
+<area shape="rect" id="node19" href="$test__sub__forward_8cpp.html" title="/home/travlr/src/libzmq/master/tests/test_sub_forward.cpp" alt="" coords="2712,83,3072,112"/>
+<area shape="rect" id="node21" href="$test__timeo_8cpp.html" title="/home/travlr/src/libzmq/master/tests/test_timeo.cpp" alt="" coords="3096,83,3419,112"/>
 </map>

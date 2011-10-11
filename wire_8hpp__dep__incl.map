@@ -1,7 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$decoder_8cpp.html" title="libzmq/doxygen/src/decoder.cpp" alt="" coords="5,83,216,112"/>
-<area shape="rect" id="node5" href="$encoder_8cpp.html" title="libzmq/doxygen/src/encoder.cpp" alt="" coords="240,83,451,112"/>
-<area shape="rect" id="node7" href="$req_8cpp.html" title="libzmq/doxygen/src/req.cpp" alt="" coords="475,83,656,112"/>
-<area shape="rect" id="node9" href="$router_8cpp.html" title="libzmq/doxygen/src/router.cpp" alt="" coords="680,83,877,112"/>
-<area shape="rect" id="node11" href="$xrep_8cpp.html" title="libzmq/doxygen/src/xrep.cpp" alt="" coords="901,83,1091,112"/>
+<area shape="rect" id="node3" href="$decoder_8cpp.html" title="/home/travlr/src/libzmq/master/src/decoder.cpp" alt="" coords="5,83,301,112"/>
+<area shape="rect" id="node5" href="$encoder_8cpp.html" title="/home/travlr/src/libzmq/master/src/encoder.cpp" alt="" coords="325,83,621,112"/>
+<area shape="rect" id="node7" href="$req_8cpp.html" title="/home/travlr/src/libzmq/master/src/req.cpp" alt="" coords="645,83,912,112"/>
+<area shape="rect" id="node9" href="$router_8cpp.html" title="/home/travlr/src/libzmq/master/src/router.cpp" alt="" coords="936,83,1219,112"/>
+<area shape="rect" id="node11" href="$xrep_8cpp.html" title="/home/travlr/src/libzmq/master/src/xrep.cpp" alt="" coords="1243,83,1517,112"/>
 </map>

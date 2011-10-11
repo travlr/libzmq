@@ -1,9 +1,9 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$encoder_8cpp.html" title="libzmq/doxygen/src/encoder.cpp" alt="" coords="293,83,504,112"/>
-<area shape="rect" id="node5" href="$stream__engine_8hpp.html" title="libzmq/doxygen/src/stream_engine.hpp" alt="" coords="528,83,776,112"/>
-<area shape="rect" id="node7" href="$ipc__connecter_8cpp.html" title="libzmq/doxygen/src/ipc_connecter.cpp" alt="" coords="5,160,251,189"/>
-<area shape="rect" id="node9" href="$ipc__listener_8cpp.html" title="libzmq/doxygen/src/ipc_listener.cpp" alt="" coords="275,160,504,189"/>
-<area shape="rect" id="node11" href="$stream__engine_8cpp.html" title="libzmq/doxygen/src/stream_engine.cpp" alt="" coords="528,160,776,189"/>
-<area shape="rect" id="node13" href="$tcp__connecter_8cpp.html" title="libzmq/doxygen/src/tcp_connecter.cpp" alt="" coords="800,160,1045,189"/>
-<area shape="rect" id="node15" href="$tcp__listener_8cpp.html" title="libzmq/doxygen/src/tcp_listener.cpp" alt="" coords="1069,160,1299,189"/>
+<area shape="rect" id="node3" href="$encoder_8cpp.html" title="/home/travlr/src/libzmq/master/src/encoder.cpp" alt="" coords="379,83,675,112"/>
+<area shape="rect" id="node5" href="$stream__engine_8hpp.html" title="/home/travlr/src/libzmq/master/src/stream_engine.hpp" alt="" coords="699,83,1032,112"/>
+<area shape="rect" id="node7" href="$ipc__connecter_8cpp.html" title="/home/travlr/src/libzmq/master/src/ipc_connecter.cpp" alt="" coords="5,160,336,189"/>
+<area shape="rect" id="node9" href="$ipc__listener_8cpp.html" title="/home/travlr/src/libzmq/master/src/ipc_listener.cpp" alt="" coords="360,160,675,189"/>
+<area shape="rect" id="node11" href="$stream__engine_8cpp.html" title="/home/travlr/src/libzmq/master/src/stream_engine.cpp" alt="" coords="699,160,1032,189"/>
+<area shape="rect" id="node13" href="$tcp__connecter_8cpp.html" title="/home/travlr/src/libzmq/master/src/tcp_connecter.cpp" alt="" coords="1056,160,1387,189"/>
+<area shape="rect" id="node15" href="$tcp__listener_8cpp.html" title="/home/travlr/src/libzmq/master/src/tcp_listener.cpp" alt="" coords="1411,160,1728,189"/>
 </map>
