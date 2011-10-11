@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$encoder_8cpp.html" title="src/encoder.cpp" alt="" coords="197,83,312,112"/>
+<area shape="rect" id="node5" href="$stream__engine_8hpp.html" title="src/stream_engine.hpp" alt="" coords="336,83,491,112"/>
+<area shape="rect" id="node7" href="$ipc__connecter_8cpp.html" title="src/ipc_connecter.cpp" alt="" coords="5,160,155,189"/>
+<area shape="rect" id="node9" href="$ipc__listener_8cpp.html" title="src/ipc_listener.cpp" alt="" coords="179,160,312,189"/>
+<area shape="rect" id="node11" href="$stream__engine_8cpp.html" title="src/stream_engine.cpp" alt="" coords="336,160,491,189"/>
+<area shape="rect" id="node13" href="$tcp__connecter_8cpp.html" title="src/tcp_connecter.cpp" alt="" coords="515,160,664,189"/>
+<area shape="rect" id="node15" href="$tcp__listener_8cpp.html" title="src/tcp_listener.cpp" alt="" coords="688,160,824,189"/>
+</map>

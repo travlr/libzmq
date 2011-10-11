@@ -58,3 +58,4 @@ foreign/openpgm/*
 !foreign/openpgm/Makefile.am
 zeromq-*.tar.gz
 zeromq-*.zip
+doxygen/html/

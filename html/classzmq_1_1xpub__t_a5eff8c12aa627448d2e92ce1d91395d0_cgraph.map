@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d" title="zmq::msg_t::close" alt="" coords="248,5,379,35"/>
+<area shape="rect" id="node5" href="$classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e" title="zmq::msg_t::init" alt="" coords="256,59,371,88"/>
+<area shape="rect" id="node7" href="$classzmq_1_1pipe__t.html#a4cf2ae208312309e57fb15f756346514" title="zmq::pipe_t::read" alt="" coords="252,112,375,141"/>
+<area shape="rect" id="node9" href="$classzmq_1_1msg__t.html#ac499fa66b21176a7b995be272567ad6e" title="zmq::msg_t::is_delimiter" alt="" coords="427,112,592,141"/>
+</map>

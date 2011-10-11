@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$zmq_8h.html#a8ee9693ff7f63751670016a4a04d72ae" title="zmq_getsockopt" alt="" coords="119,59,236,88"/>
+<area shape="rect" id="node5" href="$zmq_8h.html#a3fa5cd19114e8f3f975b4087fa648e08" title="zmq_recv" alt="" coords="139,165,216,195"/>
+<area shape="rect" id="node17" href="$zmq_8h.html#a61be5e8df496263496a3ec39cd669363" title="zmq_send" alt="" coords="136,112,219,141"/>
+<area shape="rect" id="node7" href="$zmq_8h.html#a14cc42a7330a4b174dc3b735afd2adcc" title="zmq_msg_close" alt="" coords="295,112,412,141"/>
+<area shape="rect" id="node9" href="$zmq_8h.html#aabc235325f4161f00acf0657e2e24d83" title="zmq_msg_data" alt="" coords="299,165,408,195"/>
+<area shape="rect" id="node11" href="$zmq_8h.html#a8c888cf117d859ae0d669e95cf8b64c2" title="zmq_msg_init" alt="" coords="303,272,404,301"/>
+<area shape="rect" id="node13" href="$zmq_8h.html#acfaed58455d33fedb9574920c239c9ed" title="zmq_recvmsg" alt="" coords="301,219,405,248"/>
+<area shape="rect" id="node15" href="$zmq_8h.html#a4d96fbc340edbc5bce894e65f388edf8" title="zmq_msg_size" alt="" coords="471,139,580,168"/>
+<area shape="rect" id="node21" href="$zmq_8h.html#adabea9817029bab4ac295e1339d79803" title="zmq_msg_init_size" alt="" coords="287,5,420,35"/>
+<area shape="rect" id="node23" href="$zmq_8h.html#a2d25c972234261a2b683d6376e7b09aa" title="zmq_sendmsg" alt="" coords="300,59,407,88"/>
+</map>

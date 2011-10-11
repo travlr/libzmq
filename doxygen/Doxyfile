@@ -44,7 +44,7 @@ PROJECT_BRIEF          = "The Intelligent Transport Layer"
 # exceed 55 pixels and the maximum width should not exceed 200 pixels. 
 # Doxygen will copy the logo to the output directory.
 
-PROJECT_LOGO           = /home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/libzmq/doxygen/doxygen/images/zeromq1-300x115.png
+PROJECT_LOGO           = /home/travlr/src/libzmq/doxygen/doxygen/images/zeromq1-300x115.png
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) 
 # base path where the generated documentation will be put. 
@@ -137,7 +137,7 @@ FULL_PATH_NAMES        = YES
 # If left blank the directory from which doxygen is run is used as the 
 # path to strip.
 
-STRIP_FROM_PATH        = /home/travlr/.OLD_DEV/dev/old/dev/zmq-contribution/repos/
+STRIP_FROM_PATH        = /home/travlr/src/libzmq/master/
 
 # The STRIP_FROM_INC_PATH tag can be used to strip a user-defined part of 
 # the path mentioned in the documentation of a class, which tells 
