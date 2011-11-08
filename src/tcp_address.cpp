@@ -1,5 +1,6 @@
 /*
-    Copyright (c) 2007-2011 iMatix Corporation
+    Copyright (c) 2009-2011 250bpm s.r.o.
+    Copyright (c) 2007-2009 iMatix Corporation
     Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file
 
     This file is part of 0MQ.
@@ -307,7 +308,11 @@ int zmq::tcp_address_t::resolve_interface (char const *interface_,
 int zmq::tcp_address_t::resolve_hostname (const char *hostname_, bool ipv4only_)
 {
     //  Set up the query.
+#if defined ZMQ_HAVE_OPENVMS && defined __ia64 && __INITIAL_POINTER_SIZE == 64
+    __addrinfo64 req;
+#else
     addrinfo req;
+#endif
     memset (&req, 0, sizeof (req));
 
     //  Choose IPv4 or IPv6 protocol family. Note that IPv6 allows for
@@ -328,7 +333,11 @@ int zmq::tcp_address_t::resolve_hostname (const char *hostname_, bool ipv4only_)
 
     //  Resolve host name. Some of the error info is lost in case of error,
     //  however, there's no way to report EAI errors via errno.
+#if defined ZMQ_HAVE_OPENVMS && defined __ia64 && __INITIAL_POINTER_SIZE == 64
+    __addrinfo64 *res;
+#else
     addrinfo *res;
+#endif
     int rc = getaddrinfo (hostname_, NULL, &req, &res);
     if (rc) {
         switch (rc) {

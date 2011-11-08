@@ -1,4 +1,5 @@
 /*
+    Copyright (c) 2009-2011 250bpm s.r.o.
     Copyright (c) 2007-2011 iMatix Corporation
     Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file
 
@@ -339,6 +340,25 @@ size_t zmq_msg_size (zmq_msg_t *msg_)
     return ((zmq::msg_t*) msg_)->size ();
 }
 
+int zmq_getmsgopt (zmq_msg_t *msg_, int option_, void *optval_,
+    size_t *optvallen_)
+{
+    switch (option_) {
+    case ZMQ_MORE:
+        if (*optvallen_ < sizeof (int)) {
+            errno = EINVAL;
+            return -1;
+        }
+        *((int*) optval_) =
+            (((zmq::msg_t*) msg_)->flags () & zmq::msg_t::more) ? 1 : 0;
+        *optvallen_ = sizeof (int);
+        return 0;
+    default:
+        errno = EINVAL;
+        return -1;
+    }
+}
+
 int zmq_poll (zmq_pollitem_t *items_, int nitems_, long timeout_)
 {
 #if defined ZMQ_POLL_BASED_ON_POLL
@@ -603,7 +623,7 @@ int zmq_poll (zmq_pollitem_t *items_, int nitems_, long timeout_)
             }
 #else
             int rc = select (maxfd + 1, &inset, &outset, &errset, ptimeout);
-            if (unlikely (rc == -1) {
+            if (unlikely (rc == -1)) {
                 if (errno == EINTR || errno == EBADF)
                     return -1;
                 errno_assert (false);

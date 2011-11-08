@@ -1,5 +1,6 @@
 /*
-    Copyright (c) 2007-2011 iMatix Corporation
+    Copyright (c) 2009-2011 250bpm s.r.o.
+    Copyright (c) 2007-2009 iMatix Corporation
     Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file
 
     This file is part of 0MQ.
@@ -60,6 +61,19 @@ const char *zmq::errno_to_string (int errno_)
 #pragma warning (pop)
 #endif
     }
+}
+
+void zmq::zmq_abort(const char *errmsg_)
+{
+#if defined ZMQ_HAVE_WINDOWS
+
+    //  Raise STATUS_FATAL_APP_EXIT.
+    ULONG_PTR extra_info [1];
+    extra_info [0] = (ULONG_PTR) errmsg_;
+    RaiseException (0x40000015, EXCEPTION_NONCONTINUABLE, 1, extra_info);
+#else
+    abort ();
+#endif
 }
 
 #ifdef ZMQ_HAVE_WINDOWS

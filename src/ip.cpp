@@ -1,5 +1,6 @@
 /*
-    Copyright (c) 2007-2011 iMatix Corporation
+    Copyright (c) 2010-2011 250bpm s.r.o.
+    Copyright (c) 2007-2009 iMatix Corporation
     Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file
 
     This file is part of 0MQ.
@@ -40,7 +41,7 @@ zmq::fd_t zmq::open_socket (int domain_, int type_, int protocol_)
 {
     //  Setting this option result in sane behaviour when exec() functions
     //  are used. Old sockets are closed and don't block TCP ports etc.
-#if defined SOCK_CLOEXEC
+#if defined ZMQ_HAVE_SOCK_CLOEXEC
     type_ |= SOCK_CLOEXEC;
 #endif
 
@@ -51,7 +52,7 @@ zmq::fd_t zmq::open_socket (int domain_, int type_, int protocol_)
     //  If there's no SOCK_CLOEXEC, let's try the second best option. Note that
     //  race condition can cause socket not to be closed (if fork happens
     //  between socket creation and this point).
-#if !defined SOCK_CLOEXEC && defined FD_CLOEXEC
+#if !defined ZMQ_HAVE_SOCK_CLOEXEC && defined FD_CLOEXEC
     int rc = fcntl (s, F_SETFD, FD_CLOEXEC);
     errno_assert (rc != -1);
 #endif

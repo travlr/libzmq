@@ -1,5 +1,6 @@
 /*
-    Copyright (c) 2007-2011 iMatix Corporation
+    Copyright (c) 2009-2011 250bpm s.r.o.
+    Copyright (c) 2007-2009 iMatix Corporation
     Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file
 
     This file is part of 0MQ.
@@ -79,7 +80,11 @@ namespace zmq
         clock_precision = 1000000,
 
         //  Maximum transport data unit size for PGM (TPDU).
-        pgm_max_tpdu = 1500
+        pgm_max_tpdu = 1500,
+
+        //  On some OSes the signaler has to be emulated using a TCP
+        //  connection. In such cases following port is used.
+        signaler_port = 5905
     };
 
 }

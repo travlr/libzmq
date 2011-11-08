@@ -1,6 +1,6 @@
 /*
-    Copyright (c) 2007-2011 iMatix Corporation
-    Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file
+    Copyright (c) 2011 250bpm s.r.o.
+    Copyright (c) 2011 Other contributors as noted in the AUTHORS file
 
     This file is part of 0MQ.
 
@@ -171,7 +171,7 @@ void zmq::mtrie_t::rm_helper (pipe_t *pipe_, unsigned char **buff_,
     }
 
     //  If there are multiple subnodes.
-    for (unsigned char c = 0; c != count; c++) {
+    for (unsigned short c = 0; c != count; c++) {
         (*buff_) [buffsize_] = min + c;
         if (next.table [c])
             next.table [c]->rm_helper (pipe_, buff_, buffsize_ + 1,

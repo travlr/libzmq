@@ -1,5 +1,7 @@
 /*
-    Copyright (c) 2007-2011 iMatix Corporation
+    Copyright (c) 2009-2011 250bpm s.r.o.
+    Copyright (c) 2007-2010 iMatix Corporation
+    Copyright (c) 2011 VMware, Inc.
     Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file
 
     This file is part of 0MQ.
@@ -53,8 +55,8 @@ extern "C" {
 /******************************************************************************/
 
 /*  Version macros for compile-time API version detection                     */
-#define ZMQ_VERSION_MAJOR 4
-#define ZMQ_VERSION_MINOR 0
+#define ZMQ_VERSION_MAJOR 3
+#define ZMQ_VERSION_MINOR 1
 #define ZMQ_VERSION_PATCH 0
 
 #define ZMQ_MAKE_VERSION(major, minor, patch) \
@@ -110,7 +112,6 @@ ZMQ_EXPORT void zmq_version (int *major, int *minor, int *patch);
 #define ENOCOMPATPROTO (ZMQ_HAUSNUMERO + 52)
 #define ETERM (ZMQ_HAUSNUMERO + 53)
 #define EMTHREAD (ZMQ_HAUSNUMERO + 54)
-#define ECANTROUTE (ZMQ_HAUSNUMERO + 55)
 
 /*  This function retrieves the errno as it is known to 0MQ library. The goal */
 /*  of this function is to make the code 100% portable, including where 0MQ   */
@@ -138,6 +139,8 @@ ZMQ_EXPORT int zmq_msg_move (zmq_msg_t *dest, zmq_msg_t *src);
 ZMQ_EXPORT int zmq_msg_copy (zmq_msg_t *dest, zmq_msg_t *src);
 ZMQ_EXPORT void *zmq_msg_data (zmq_msg_t *msg);
 ZMQ_EXPORT size_t zmq_msg_size (zmq_msg_t *msg);
+ZMQ_EXPORT int zmq_getmsgopt (zmq_msg_t *msg, int option, void *optval,
+    size_t *optvallen);
 
 /******************************************************************************/
 /*  0MQ infrastructure (a.k.a. context) initialisation & termination.         */
@@ -162,10 +165,13 @@ ZMQ_EXPORT int zmq_term (void *context);
 #define ZMQ_PUSH 8
 #define ZMQ_XPUB 9
 #define ZMQ_XSUB 10
-#define ZMQ_ROUTER 13
+
+#define ZMQ_ROUTER ZMQ_XREP
+#define ZMQ_DEALER ZMQ_XREQ
 
 /*  Socket options.                                                           */
 #define ZMQ_AFFINITY 4
+#define ZMQ_IDENTITY 5
 #define ZMQ_SUBSCRIBE 6
 #define ZMQ_UNSUBSCRIBE 7
 #define ZMQ_RATE 8
@@ -186,15 +192,14 @@ ZMQ_EXPORT int zmq_term (void *context);
 #define ZMQ_MULTICAST_HOPS 25
 #define ZMQ_RCVTIMEO 27
 #define ZMQ_SNDTIMEO 28
-#define ZMQ_RCVLABEL 29
-#define ZMQ_RCVCMD 30
 #define ZMQ_IPV4ONLY 31
+
+/*  Message options                                                           */
+#define ZMQ_MORE 1
 
 /*  Send/recv options.                                                        */
 #define ZMQ_DONTWAIT 1
 #define ZMQ_SNDMORE 2
-#define ZMQ_SNDLABEL 4
-#define ZMQ_SNDCMD 8
 
 ZMQ_EXPORT void *zmq_socket (void *context, int type);
 ZMQ_EXPORT int zmq_close (void *s);
