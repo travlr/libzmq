@@ -2,7 +2,6 @@
 <area shape="rect" id="node3" href="$ipc__connecter_8cpp.html" title="src/ipc_connecter.cpp" alt="" coords="5,83,155,112"/>
 <area shape="rect" id="node5" href="$random_8cpp.html" title="src/random.cpp" alt="" coords="179,83,291,112"/>
 <area shape="rect" id="node7" href="$req_8cpp.html" title="src/req.cpp" alt="" coords="315,83,400,112"/>
-<area shape="rect" id="node9" href="$router_8cpp.html" title="src/router.cpp" alt="" coords="424,83,525,112"/>
-<area shape="rect" id="node11" href="$tcp__connecter_8cpp.html" title="src/tcp_connecter.cpp" alt="" coords="549,83,699,112"/>
-<area shape="rect" id="node13" href="$xrep_8cpp.html" title="src/xrep.cpp" alt="" coords="723,83,816,112"/>
+<area shape="rect" id="node9" href="$tcp__connecter_8cpp.html" title="src/tcp_connecter.cpp" alt="" coords="424,83,573,112"/>
+<area shape="rect" id="node11" href="$xrep_8cpp.html" title="src/xrep.cpp" alt="" coords="597,83,691,112"/>
 </map>

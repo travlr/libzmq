@@ -106,206 +106,209 @@ function toggleVisibility(linkObj) {
 </div>
 <div class="contents">
 <a href="pipe_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment">    Copyright (c) 2007-2011 iMatix Corporation</span>
-<a name="l00003"></a>00003 <span class="comment">    Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file</span>
-<a name="l00004"></a>00004 <span class="comment"></span>
-<a name="l00005"></a>00005 <span class="comment">    This file is part of 0MQ.</span>
+<a name="l00002"></a>00002 <span class="comment">    Copyright (c) 2009-2011 250bpm s.r.o.</span>
+<a name="l00003"></a>00003 <span class="comment">    Copyright (c) 2007-2009 iMatix Corporation</span>
+<a name="l00004"></a>00004 <span class="comment">    Copyright (c) 2011 VMware, Inc.</span>
+<a name="l00005"></a>00005 <span class="comment">    Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file</span>
 <a name="l00006"></a>00006 <span class="comment"></span>
-<a name="l00007"></a>00007 <span class="comment">    0MQ is free software; you can redistribute it and/or modify it under</span>
-<a name="l00008"></a>00008 <span class="comment">    the terms of the GNU Lesser General Public License as published by</span>
-<a name="l00009"></a>00009 <span class="comment">    the Free Software Foundation; either version 3 of the License, or</span>
-<a name="l00010"></a>00010 <span class="comment">    (at your option) any later version.</span>
-<a name="l00011"></a>00011 <span class="comment"></span>
-<a name="l00012"></a>00012 <span class="comment">    0MQ is distributed in the hope that it will be useful,</span>
-<a name="l00013"></a>00013 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-<a name="l00014"></a>00014 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
-<a name="l00015"></a>00015 <span class="comment">    GNU Lesser General Public License for more details.</span>
-<a name="l00016"></a>00016 <span class="comment"></span>
-<a name="l00017"></a>00017 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
-<a name="l00018"></a>00018 <span class="comment">    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
-<a name="l00019"></a>00019 <span class="comment">*/</span>
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="preprocessor">#ifndef __ZMQ_PIPE_HPP_INCLUDED__</span>
-<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define __ZMQ_PIPE_HPP_INCLUDED__</span>
-<a name="l00023"></a>00023 <span class="preprocessor"></span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="msg_8hpp.html">msg.hpp</a>&quot;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="ypipe_8hpp.html">ypipe.hpp</a>&quot;</span>
-<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="config_8hpp.html">config.hpp</a>&quot;</span>
-<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="object_8hpp.html">object.hpp</a>&quot;</span>
-<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="stdint_8hpp.html">stdint.hpp</a>&quot;</span>
-<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="array_8hpp.html">array.hpp</a>&quot;</span>
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031 <span class="keyword">namespace </span>zmq
-<a name="l00032"></a>00032 {
+<a name="l00007"></a>00007 <span class="comment">    This file is part of 0MQ.</span>
+<a name="l00008"></a>00008 <span class="comment"></span>
+<a name="l00009"></a>00009 <span class="comment">    0MQ is free software; you can redistribute it and/or modify it under</span>
+<a name="l00010"></a>00010 <span class="comment">    the terms of the GNU Lesser General Public License as published by</span>
+<a name="l00011"></a>00011 <span class="comment">    the Free Software Foundation; either version 3 of the License, or</span>
+<a name="l00012"></a>00012 <span class="comment">    (at your option) any later version.</span>
+<a name="l00013"></a>00013 <span class="comment"></span>
+<a name="l00014"></a>00014 <span class="comment">    0MQ is distributed in the hope that it will be useful,</span>
+<a name="l00015"></a>00015 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00016"></a>00016 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00017"></a>00017 <span class="comment">    GNU Lesser General Public License for more details.</span>
+<a name="l00018"></a>00018 <span class="comment"></span>
+<a name="l00019"></a>00019 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
+<a name="l00020"></a>00020 <span class="comment">    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00021"></a>00021 <span class="comment">*/</span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="preprocessor">#ifndef __ZMQ_PIPE_HPP_INCLUDED__</span>
+<a name="l00024"></a>00024 <span class="preprocessor"></span><span class="preprocessor">#define __ZMQ_PIPE_HPP_INCLUDED__</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="msg_8hpp.html">msg.hpp</a>&quot;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="ypipe_8hpp.html">ypipe.hpp</a>&quot;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="config_8hpp.html">config.hpp</a>&quot;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="object_8hpp.html">object.hpp</a>&quot;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="stdint_8hpp.html">stdint.hpp</a>&quot;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="array_8hpp.html">array.hpp</a>&quot;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="blob_8hpp.html">blob.hpp</a>&quot;</span>
 <a name="l00033"></a>00033 
-<a name="l00034"></a>00034     <span class="comment">//  Create a pipepair for bi-directional transfer of messages.</span>
-<a name="l00035"></a>00035     <span class="comment">//  First HWM is for messages passed from first pipe to the second pipe.</span>
-<a name="l00036"></a>00036     <span class="comment">//  Second HWM is for messages passed from second pipe to the first pipe.</span>
-<a name="l00037"></a>00037     <span class="comment">//  Delay specifies how the pipe behaves when the peer terminates. If true</span>
-<a name="l00038"></a>00038     <span class="comment">//  pipe receives all the pending messages before terminating, otherwise it</span>
-<a name="l00039"></a>00039     <span class="comment">//  terminates straight away.</span>
-<a name="l00040"></a>00040     <span class="keywordtype">int</span> pipepair (<span class="keyword">class</span> object_t *parents_ [2], <span class="keyword">class</span> pipe_t* pipes_ [2],
-<a name="l00041"></a>00041         <span class="keywordtype">int</span> hwms_ [2], <span class="keywordtype">bool</span> delays_ [2]);
-<a name="l00042"></a>00042 
-<a name="l00043"></a><a class="code" href="structzmq_1_1i__pipe__events.html">00043</a>     <span class="keyword">struct </span><a class="code" href="structzmq_1_1i__pipe__events.html">i_pipe_events</a>
-<a name="l00044"></a>00044     {
-<a name="l00045"></a><a class="code" href="structzmq_1_1i__pipe__events.html#ab7a6ba295993f0d9060df9eedf989d80">00045</a>         <span class="keyword">virtual</span> <a class="code" href="structzmq_1_1i__pipe__events.html#ab7a6ba295993f0d9060df9eedf989d80">~i_pipe_events</a> () {}
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__pipe__events.html#a112f3c02be6d51aa956da11658d61ad1">read_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_) = 0;
-<a name="l00048"></a>00048         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__pipe__events.html#aa0d02f4ea12372316eaf80eea3702e92">write_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_) = 0;
-<a name="l00049"></a>00049         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__pipe__events.html#afcbbfd5d9cf38e8c25c66d25ff32199e">hiccuped</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_) = 0;
-<a name="l00050"></a>00050         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__pipe__events.html#aebddb176b89c36fd8528564c6ca4aea3">terminated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_) = 0;
-<a name="l00051"></a>00051     };
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053     <span class="comment">//  Note that pipe can be stored in three different arrays.</span>
-<a name="l00054"></a>00054     <span class="comment">//  The array of inbound pipes (1), the array of outbound pipes (2) and</span>
-<a name="l00055"></a>00055     <span class="comment">//  the generic array of pipes to deallocate (3).</span>
-<a name="l00056"></a>00056 
-<a name="l00057"></a><a class="code" href="classzmq_1_1pipe__t.html">00057</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> :
-<a name="l00058"></a>00058         <span class="keyword">public</span> <a class="code" href="classzmq_1_1object__t.html">object_t</a>,
-<a name="l00059"></a>00059         <span class="keyword">public</span> <a class="code" href="classzmq_1_1array__item__t.html">array_item_t</a> &lt;1&gt;,
-<a name="l00060"></a>00060         <span class="keyword">public</span> <a class="code" href="classzmq_1_1array__item__t.html">array_item_t</a> &lt;2&gt;,
-<a name="l00061"></a>00061         <span class="keyword">public</span> <a class="code" href="classzmq_1_1array__item__t.html">array_item_t</a> &lt;3&gt;
-<a name="l00062"></a>00062     {
-<a name="l00063"></a>00063         <span class="comment">//  This allows pipepair to create pipe objects.</span>
-<a name="l00064"></a>00064         <span class="keyword">friend</span> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1pipe__t.html#a93732eee40c9fcc5ea2a55d25616829d">pipepair</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1object__t.html">object_t</a> *parents_ [2],
-<a name="l00065"></a>00065             <span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a>* pipes_ [2], <span class="keywordtype">int</span> hwms_ [2], <span class="keywordtype">bool</span> delays_ [2]);
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067     <span class="keyword">public</span>:
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069         <span class="comment">//  Specifies the object to send events to.</span>
-<a name="l00070"></a>00070         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#a4d661236931c97f340b7795c87007ff9">set_event_sink</a> (<a class="code" href="structzmq_1_1i__pipe__events.html">i_pipe_events</a> *sink_);
+<a name="l00034"></a>00034 <span class="keyword">namespace </span>zmq
+<a name="l00035"></a>00035 {
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037     <span class="comment">//  Create a pipepair for bi-directional transfer of messages.</span>
+<a name="l00038"></a>00038     <span class="comment">//  First HWM is for messages passed from first pipe to the second pipe.</span>
+<a name="l00039"></a>00039     <span class="comment">//  Second HWM is for messages passed from second pipe to the first pipe.</span>
+<a name="l00040"></a>00040     <span class="comment">//  Delay specifies how the pipe behaves when the peer terminates. If true</span>
+<a name="l00041"></a>00041     <span class="comment">//  pipe receives all the pending messages before terminating, otherwise it</span>
+<a name="l00042"></a>00042     <span class="comment">//  terminates straight away.</span>
+<a name="l00043"></a>00043     <span class="keywordtype">int</span> pipepair (<span class="keyword">class</span> object_t *parents_ [2], <span class="keyword">class</span> pipe_t* pipes_ [2],
+<a name="l00044"></a>00044         <span class="keywordtype">int</span> hwms_ [2], <span class="keywordtype">bool</span> delays_ [2]);
+<a name="l00045"></a>00045 
+<a name="l00046"></a><a class="code" href="structzmq_1_1i__pipe__events.html">00046</a>     <span class="keyword">struct </span><a class="code" href="structzmq_1_1i__pipe__events.html">i_pipe_events</a>
+<a name="l00047"></a>00047     {
+<a name="l00048"></a><a class="code" href="structzmq_1_1i__pipe__events.html#ab7a6ba295993f0d9060df9eedf989d80">00048</a>         <span class="keyword">virtual</span> <a class="code" href="structzmq_1_1i__pipe__events.html#ab7a6ba295993f0d9060df9eedf989d80">~i_pipe_events</a> () {}
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__pipe__events.html#a112f3c02be6d51aa956da11658d61ad1">read_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_) = 0;
+<a name="l00051"></a>00051         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__pipe__events.html#aa0d02f4ea12372316eaf80eea3702e92">write_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_) = 0;
+<a name="l00052"></a>00052         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__pipe__events.html#afcbbfd5d9cf38e8c25c66d25ff32199e">hiccuped</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_) = 0;
+<a name="l00053"></a>00053         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__pipe__events.html#aebddb176b89c36fd8528564c6ca4aea3">terminated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_) = 0;
+<a name="l00054"></a>00054     };
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056     <span class="comment">//  Note that pipe can be stored in three different arrays.</span>
+<a name="l00057"></a>00057     <span class="comment">//  The array of inbound pipes (1), the array of outbound pipes (2) and</span>
+<a name="l00058"></a>00058     <span class="comment">//  the generic array of pipes to deallocate (3).</span>
+<a name="l00059"></a>00059 
+<a name="l00060"></a><a class="code" href="classzmq_1_1pipe__t.html">00060</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> :
+<a name="l00061"></a>00061         <span class="keyword">public</span> <a class="code" href="classzmq_1_1object__t.html">object_t</a>,
+<a name="l00062"></a>00062         <span class="keyword">public</span> <a class="code" href="classzmq_1_1array__item__t.html">array_item_t</a> &lt;1&gt;,
+<a name="l00063"></a>00063         <span class="keyword">public</span> <a class="code" href="classzmq_1_1array__item__t.html">array_item_t</a> &lt;2&gt;,
+<a name="l00064"></a>00064         <span class="keyword">public</span> <a class="code" href="classzmq_1_1array__item__t.html">array_item_t</a> &lt;3&gt;
+<a name="l00065"></a>00065     {
+<a name="l00066"></a>00066         <span class="comment">//  This allows pipepair to create pipe objects.</span>
+<a name="l00067"></a>00067         <span class="keyword">friend</span> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1pipe__t.html#a93732eee40c9fcc5ea2a55d25616829d">pipepair</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1object__t.html">object_t</a> *parents_ [2],
+<a name="l00068"></a>00068             <span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a>* pipes_ [2], <span class="keywordtype">int</span> hwms_ [2], <span class="keywordtype">bool</span> delays_ [2]);
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070     <span class="keyword">public</span>:
 <a name="l00071"></a>00071 
-<a name="l00072"></a>00072         <span class="comment">//  Pipe endpoint can store an opaque ID to be used by its clients.</span>
-<a name="l00073"></a>00073         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#a39729d1e5ca3d2c1116fb8d996024cc8">set_pipe_id</a> (uint32_t id_);
-<a name="l00074"></a>00074         uint32_t <a class="code" href="classzmq_1_1pipe__t.html#af5e154df948160cec14facac9e90eca5">get_pipe_id</a> ();
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076         <span class="comment">//  Returns true if there is at least one message to read in the pipe.</span>
-<a name="l00077"></a>00077         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pipe__t.html#aacd1264679abdf1c8220978346077392">check_read</a> ();
+<a name="l00072"></a>00072         <span class="comment">//  Specifies the object to send events to.</span>
+<a name="l00073"></a>00073         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#a4d661236931c97f340b7795c87007ff9">set_event_sink</a> (<a class="code" href="structzmq_1_1i__pipe__events.html">i_pipe_events</a> *sink_);
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075         <span class="comment">//  Pipe endpoint can store an opaque ID to be used by its clients.</span>
+<a name="l00076"></a>00076         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#af572220354d68f483421d01937bc671b">set_identity</a> (<span class="keyword">const</span> blob_t &amp;identity_);
+<a name="l00077"></a>00077         blob_t <a class="code" href="classzmq_1_1pipe__t.html#acb2956da5f62e61b4c7f1521d957a6e3">get_identity</a> ();
 <a name="l00078"></a>00078 
-<a name="l00079"></a>00079         <span class="comment">//  Reads a message to the underlying pipe.</span>
-<a name="l00080"></a>00080         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pipe__t.html#a4cf2ae208312309e57fb15f756346514">read</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_);
+<a name="l00079"></a>00079         <span class="comment">//  Returns true if there is at least one message to read in the pipe.</span>
+<a name="l00080"></a>00080         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pipe__t.html#aacd1264679abdf1c8220978346077392">check_read</a> ();
 <a name="l00081"></a>00081 
-<a name="l00082"></a>00082         <span class="comment">//  Checks whether messages can be written to the pipe. If writing</span>
-<a name="l00083"></a>00083         <span class="comment">//  the message would cause high watermark the function returns false.</span>
-<a name="l00084"></a>00084         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pipe__t.html#a2a2f3de7c5740a0acf462d2fc610255c">check_write</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_);
-<a name="l00085"></a>00085 
-<a name="l00086"></a>00086         <span class="comment">//  Writes a message to the underlying pipe. Returns false if the</span>
-<a name="l00087"></a>00087         <span class="comment">//  message cannot be written because high watermark was reached.</span>
-<a name="l00088"></a>00088         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pipe__t.html#a4b11ee7b4a4b0c4e2225e0605152d6d6">write</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_);
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090         <span class="comment">//  Remove unfinished parts of the outbound message from the pipe.</span>
-<a name="l00091"></a>00091         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#a7506327540c73c5ef9336c625315ff60">rollback</a> ();
+<a name="l00082"></a>00082         <span class="comment">//  Reads a message to the underlying pipe.</span>
+<a name="l00083"></a>00083         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pipe__t.html#a4cf2ae208312309e57fb15f756346514">read</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_);
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085         <span class="comment">//  Checks whether messages can be written to the pipe. If writing</span>
+<a name="l00086"></a>00086         <span class="comment">//  the message would cause high watermark the function returns false.</span>
+<a name="l00087"></a>00087         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pipe__t.html#a2a2f3de7c5740a0acf462d2fc610255c">check_write</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_);
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089         <span class="comment">//  Writes a message to the underlying pipe. Returns false if the</span>
+<a name="l00090"></a>00090         <span class="comment">//  message cannot be written because high watermark was reached.</span>
+<a name="l00091"></a>00091         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pipe__t.html#a4b11ee7b4a4b0c4e2225e0605152d6d6">write</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_);
 <a name="l00092"></a>00092 
-<a name="l00093"></a>00093         <span class="comment">//  Flush the messages downsteam.</span>
-<a name="l00094"></a>00094         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#ad0d0fc83b91e93b690673757a830aa52">flush</a> ();
+<a name="l00093"></a>00093         <span class="comment">//  Remove unfinished parts of the outbound message from the pipe.</span>
+<a name="l00094"></a>00094         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#a7506327540c73c5ef9336c625315ff60">rollback</a> ();
 <a name="l00095"></a>00095 
-<a name="l00096"></a>00096         <span class="comment">//  Temporaraily disconnects the inbound message stream and drops</span>
-<a name="l00097"></a>00097         <span class="comment">//  all the messages on the fly. Causes &#39;hiccuped&#39; event to be generated</span>
-<a name="l00098"></a>00098         <span class="comment">//  in the peer.</span>
-<a name="l00099"></a>00099         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#a9380f1e1ca66e35393623ec85d530dd0">hiccup</a> ();
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101         <span class="comment">//  Ask pipe to terminate. The termination will happen asynchronously</span>
-<a name="l00102"></a>00102         <span class="comment">//  and user will be notified about actual deallocation by &#39;terminated&#39;</span>
-<a name="l00103"></a>00103         <span class="comment">//  event. If delay is true, the pending messages will be processed</span>
-<a name="l00104"></a>00104         <span class="comment">//  before actual shutdown.</span>
-<a name="l00105"></a>00105         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#ab446c6b26ca34f96ed62a958f37bf8a4">terminate</a> (<span class="keywordtype">bool</span> delay_);
-<a name="l00106"></a>00106 
-<a name="l00107"></a>00107     <span class="keyword">private</span>:
-<a name="l00108"></a>00108 
-<a name="l00109"></a>00109         <span class="comment">//  Type of the underlying lock-free pipe.</span>
-<a name="l00110"></a><a class="code" href="classzmq_1_1pipe__t.html#a94c91c6a46c97902d7cc5fc7a1886cf6">00110</a>         <span class="keyword">typedef</span> <a class="code" href="classzmq_1_1ypipe__t.html">ypipe_t &lt;msg_t, message_pipe_granularity&gt;</a> <a class="code" href="classzmq_1_1pipe__t.html#a94c91c6a46c97902d7cc5fc7a1886cf6">upipe_t</a>;
+<a name="l00096"></a>00096         <span class="comment">//  Flush the messages downsteam.</span>
+<a name="l00097"></a>00097         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#ad0d0fc83b91e93b690673757a830aa52">flush</a> ();
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099         <span class="comment">//  Temporaraily disconnects the inbound message stream and drops</span>
+<a name="l00100"></a>00100         <span class="comment">//  all the messages on the fly. Causes &#39;hiccuped&#39; event to be generated</span>
+<a name="l00101"></a>00101         <span class="comment">//  in the peer.</span>
+<a name="l00102"></a>00102         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#a9380f1e1ca66e35393623ec85d530dd0">hiccup</a> ();
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104         <span class="comment">//  Ask pipe to terminate. The termination will happen asynchronously</span>
+<a name="l00105"></a>00105         <span class="comment">//  and user will be notified about actual deallocation by &#39;terminated&#39;</span>
+<a name="l00106"></a>00106         <span class="comment">//  event. If delay is true, the pending messages will be processed</span>
+<a name="l00107"></a>00107         <span class="comment">//  before actual shutdown.</span>
+<a name="l00108"></a>00108         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#ab446c6b26ca34f96ed62a958f37bf8a4">terminate</a> (<span class="keywordtype">bool</span> delay_);
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110     <span class="keyword">private</span>:
 <a name="l00111"></a>00111 
-<a name="l00112"></a>00112         <span class="comment">//  Command handlers.</span>
-<a name="l00113"></a>00113         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#a070b63be643eaeb3a020def3f96b399d">process_activate_read</a> ();
-<a name="l00114"></a>00114         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#a88c80eca7a24bfa4caf72570cb363a5c">process_activate_write</a> (uint64_t msgs_read_);
-<a name="l00115"></a>00115         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#ac5cf17f7a334e4a794d886ac13c1fc7a">process_hiccup</a> (<span class="keywordtype">void</span> *pipe_);
-<a name="l00116"></a>00116         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#acaf77d0db63f80edf3f58382320a9d11">process_pipe_term</a> ();
-<a name="l00117"></a>00117         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#a05f68a97072418c508a120552eb8fd3c">process_pipe_term_ack</a> ();
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119         <span class="comment">//  Handler for delimiter read from the pipe.</span>
-<a name="l00120"></a>00120         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#a26e4c7b7378197d1d8191da13cb7c3b9">delimit</a> ();
+<a name="l00112"></a>00112         <span class="comment">//  Type of the underlying lock-free pipe.</span>
+<a name="l00113"></a><a class="code" href="classzmq_1_1pipe__t.html#a94c91c6a46c97902d7cc5fc7a1886cf6">00113</a>         <span class="keyword">typedef</span> <a class="code" href="classzmq_1_1ypipe__t.html">ypipe_t &lt;msg_t, message_pipe_granularity&gt;</a> <a class="code" href="classzmq_1_1pipe__t.html#a94c91c6a46c97902d7cc5fc7a1886cf6">upipe_t</a>;
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115         <span class="comment">//  Command handlers.</span>
+<a name="l00116"></a>00116         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#a070b63be643eaeb3a020def3f96b399d">process_activate_read</a> ();
+<a name="l00117"></a>00117         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#a88c80eca7a24bfa4caf72570cb363a5c">process_activate_write</a> (uint64_t msgs_read_);
+<a name="l00118"></a>00118         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#ac5cf17f7a334e4a794d886ac13c1fc7a">process_hiccup</a> (<span class="keywordtype">void</span> *pipe_);
+<a name="l00119"></a>00119         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#acaf77d0db63f80edf3f58382320a9d11">process_pipe_term</a> ();
+<a name="l00120"></a>00120         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#a05f68a97072418c508a120552eb8fd3c">process_pipe_term_ack</a> ();
 <a name="l00121"></a>00121 
-<a name="l00122"></a>00122         <span class="comment">//  Constructor is private. Pipe can only be created using</span>
-<a name="l00123"></a>00123         <span class="comment">//  pipepair function.</span>
-<a name="l00124"></a>00124         <a class="code" href="classzmq_1_1pipe__t.html#ac244f482b87668e440c0bc91cc7f88b5">pipe_t</a> (<a class="code" href="classzmq_1_1object__t.html">object_t</a> *parent_, <a class="code" href="classzmq_1_1ypipe__t.html">upipe_t</a> *inpipe_, <a class="code" href="classzmq_1_1ypipe__t.html">upipe_t</a> *outpipe_,
-<a name="l00125"></a>00125             <span class="keywordtype">int</span> inhwm_, <span class="keywordtype">int</span> outhwm_, <span class="keywordtype">bool</span> delay_);
-<a name="l00126"></a>00126 
-<a name="l00127"></a>00127         <span class="comment">//  Pipepair uses this function to let us know about</span>
-<a name="l00128"></a>00128         <span class="comment">//  the peer pipe object.</span>
-<a name="l00129"></a>00129         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#a914341280e6d4bb1e15c5d8db06ad718">set_peer</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
-<a name="l00130"></a>00130 
-<a name="l00131"></a>00131         <span class="comment">//  Destructor is private. Pipe objects destroy themselves.</span>
-<a name="l00132"></a>00132         <a class="code" href="classzmq_1_1pipe__t.html#ac64e8f0d6d14652403542633a9b6a8f6">~pipe_t</a> ();
+<a name="l00122"></a>00122         <span class="comment">//  Handler for delimiter read from the pipe.</span>
+<a name="l00123"></a>00123         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#a26e4c7b7378197d1d8191da13cb7c3b9">delimit</a> ();
+<a name="l00124"></a>00124 
+<a name="l00125"></a>00125         <span class="comment">//  Constructor is private. Pipe can only be created using</span>
+<a name="l00126"></a>00126         <span class="comment">//  pipepair function.</span>
+<a name="l00127"></a>00127         <a class="code" href="classzmq_1_1pipe__t.html#ac244f482b87668e440c0bc91cc7f88b5">pipe_t</a> (<a class="code" href="classzmq_1_1object__t.html">object_t</a> *parent_, <a class="code" href="classzmq_1_1ypipe__t.html">upipe_t</a> *inpipe_, <a class="code" href="classzmq_1_1ypipe__t.html">upipe_t</a> *outpipe_,
+<a name="l00128"></a>00128             <span class="keywordtype">int</span> inhwm_, <span class="keywordtype">int</span> outhwm_, <span class="keywordtype">bool</span> delay_);
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130         <span class="comment">//  Pipepair uses this function to let us know about</span>
+<a name="l00131"></a>00131         <span class="comment">//  the peer pipe object.</span>
+<a name="l00132"></a>00132         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1pipe__t.html#a914341280e6d4bb1e15c5d8db06ad718">set_peer</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
 <a name="l00133"></a>00133 
-<a name="l00134"></a>00134         <span class="comment">//  Underlying pipes for both directions.</span>
-<a name="l00135"></a><a class="code" href="classzmq_1_1pipe__t.html#a443daef0cd4a3975fd350c2104e58b0f">00135</a>         <a class="code" href="classzmq_1_1ypipe__t.html">upipe_t</a> *<a class="code" href="classzmq_1_1pipe__t.html#a443daef0cd4a3975fd350c2104e58b0f">inpipe</a>;
-<a name="l00136"></a><a class="code" href="classzmq_1_1pipe__t.html#acf04d7c6a21bd6ef8c57435306c2aa3f">00136</a>         <a class="code" href="classzmq_1_1ypipe__t.html">upipe_t</a> *<a class="code" href="classzmq_1_1pipe__t.html#acf04d7c6a21bd6ef8c57435306c2aa3f">outpipe</a>;
-<a name="l00137"></a>00137 
-<a name="l00138"></a>00138         <span class="comment">//  Can the pipe be read from / written to?</span>
-<a name="l00139"></a><a class="code" href="classzmq_1_1pipe__t.html#ae3949e4e28f20954c764b4066b1f531c">00139</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pipe__t.html#ae3949e4e28f20954c764b4066b1f531c">in_active</a>;
-<a name="l00140"></a><a class="code" href="classzmq_1_1pipe__t.html#a80dbd1785baabb427271e749eaa5de33">00140</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pipe__t.html#a80dbd1785baabb427271e749eaa5de33">out_active</a>;
-<a name="l00141"></a>00141 
-<a name="l00142"></a>00142         <span class="comment">//  High watermark for the outbound pipe.</span>
-<a name="l00143"></a><a class="code" href="classzmq_1_1pipe__t.html#aa2ad181a7e06c3d501ba987bad90a087">00143</a>         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1pipe__t.html#aa2ad181a7e06c3d501ba987bad90a087">hwm</a>;
+<a name="l00134"></a>00134         <span class="comment">//  Destructor is private. Pipe objects destroy themselves.</span>
+<a name="l00135"></a>00135         <a class="code" href="classzmq_1_1pipe__t.html#ac64e8f0d6d14652403542633a9b6a8f6">~pipe_t</a> ();
+<a name="l00136"></a>00136 
+<a name="l00137"></a>00137         <span class="comment">//  Underlying pipes for both directions.</span>
+<a name="l00138"></a><a class="code" href="classzmq_1_1pipe__t.html#a443daef0cd4a3975fd350c2104e58b0f">00138</a>         <a class="code" href="classzmq_1_1ypipe__t.html">upipe_t</a> *<a class="code" href="classzmq_1_1pipe__t.html#a443daef0cd4a3975fd350c2104e58b0f">inpipe</a>;
+<a name="l00139"></a><a class="code" href="classzmq_1_1pipe__t.html#acf04d7c6a21bd6ef8c57435306c2aa3f">00139</a>         <a class="code" href="classzmq_1_1ypipe__t.html">upipe_t</a> *<a class="code" href="classzmq_1_1pipe__t.html#acf04d7c6a21bd6ef8c57435306c2aa3f">outpipe</a>;
+<a name="l00140"></a>00140 
+<a name="l00141"></a>00141         <span class="comment">//  Can the pipe be read from / written to?</span>
+<a name="l00142"></a><a class="code" href="classzmq_1_1pipe__t.html#ae3949e4e28f20954c764b4066b1f531c">00142</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pipe__t.html#ae3949e4e28f20954c764b4066b1f531c">in_active</a>;
+<a name="l00143"></a><a class="code" href="classzmq_1_1pipe__t.html#a80dbd1785baabb427271e749eaa5de33">00143</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pipe__t.html#a80dbd1785baabb427271e749eaa5de33">out_active</a>;
 <a name="l00144"></a>00144 
-<a name="l00145"></a>00145         <span class="comment">//  Low watermark for the inbound pipe.</span>
-<a name="l00146"></a><a class="code" href="classzmq_1_1pipe__t.html#a59ccb5b745cefe0a084c03be2d46040b">00146</a>         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1pipe__t.html#a59ccb5b745cefe0a084c03be2d46040b">lwm</a>;
+<a name="l00145"></a>00145         <span class="comment">//  High watermark for the outbound pipe.</span>
+<a name="l00146"></a><a class="code" href="classzmq_1_1pipe__t.html#aa2ad181a7e06c3d501ba987bad90a087">00146</a>         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1pipe__t.html#aa2ad181a7e06c3d501ba987bad90a087">hwm</a>;
 <a name="l00147"></a>00147 
-<a name="l00148"></a>00148         <span class="comment">//  Number of messages read and written so far.</span>
-<a name="l00149"></a><a class="code" href="classzmq_1_1pipe__t.html#ae0ba9107e2657dcbdfa001133722ee35">00149</a>         uint64_t <a class="code" href="classzmq_1_1pipe__t.html#ae0ba9107e2657dcbdfa001133722ee35">msgs_read</a>;
-<a name="l00150"></a><a class="code" href="classzmq_1_1pipe__t.html#abc7dcb7c06743bd53ab0130bd8b06264">00150</a>         uint64_t <a class="code" href="classzmq_1_1pipe__t.html#abc7dcb7c06743bd53ab0130bd8b06264">msgs_written</a>;
-<a name="l00151"></a>00151 
-<a name="l00152"></a>00152         <span class="comment">//  Last received peer&#39;s msgs_read. The actual number in the peer</span>
-<a name="l00153"></a>00153         <span class="comment">//  can be higher at the moment.</span>
-<a name="l00154"></a><a class="code" href="classzmq_1_1pipe__t.html#a21d1ce5dafbbfc658221117d9d1d2a3c">00154</a>         uint64_t <a class="code" href="classzmq_1_1pipe__t.html#a21d1ce5dafbbfc658221117d9d1d2a3c">peers_msgs_read</a>;
-<a name="l00155"></a>00155 
-<a name="l00156"></a>00156         <span class="comment">//  The pipe object on the other side of the pipepair.</span>
-<a name="l00157"></a><a class="code" href="classzmq_1_1pipe__t.html#ae76e98a3a62b76ea820310a53e10e1cb">00157</a>         <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *<a class="code" href="classzmq_1_1pipe__t.html#ae76e98a3a62b76ea820310a53e10e1cb">peer</a>;
+<a name="l00148"></a>00148         <span class="comment">//  Low watermark for the inbound pipe.</span>
+<a name="l00149"></a><a class="code" href="classzmq_1_1pipe__t.html#a59ccb5b745cefe0a084c03be2d46040b">00149</a>         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1pipe__t.html#a59ccb5b745cefe0a084c03be2d46040b">lwm</a>;
+<a name="l00150"></a>00150 
+<a name="l00151"></a>00151         <span class="comment">//  Number of messages read and written so far.</span>
+<a name="l00152"></a><a class="code" href="classzmq_1_1pipe__t.html#ae0ba9107e2657dcbdfa001133722ee35">00152</a>         uint64_t <a class="code" href="classzmq_1_1pipe__t.html#ae0ba9107e2657dcbdfa001133722ee35">msgs_read</a>;
+<a name="l00153"></a><a class="code" href="classzmq_1_1pipe__t.html#abc7dcb7c06743bd53ab0130bd8b06264">00153</a>         uint64_t <a class="code" href="classzmq_1_1pipe__t.html#abc7dcb7c06743bd53ab0130bd8b06264">msgs_written</a>;
+<a name="l00154"></a>00154 
+<a name="l00155"></a>00155         <span class="comment">//  Last received peer&#39;s msgs_read. The actual number in the peer</span>
+<a name="l00156"></a>00156         <span class="comment">//  can be higher at the moment.</span>
+<a name="l00157"></a><a class="code" href="classzmq_1_1pipe__t.html#a21d1ce5dafbbfc658221117d9d1d2a3c">00157</a>         uint64_t <a class="code" href="classzmq_1_1pipe__t.html#a21d1ce5dafbbfc658221117d9d1d2a3c">peers_msgs_read</a>;
 <a name="l00158"></a>00158 
-<a name="l00159"></a>00159         <span class="comment">//  Sink to send events to.</span>
-<a name="l00160"></a><a class="code" href="classzmq_1_1pipe__t.html#a7770ddf227e1ff9f6637e64c420fbeff">00160</a>         <a class="code" href="structzmq_1_1i__pipe__events.html">i_pipe_events</a> *<a class="code" href="classzmq_1_1pipe__t.html#a7770ddf227e1ff9f6637e64c420fbeff">sink</a>;
+<a name="l00159"></a>00159         <span class="comment">//  The pipe object on the other side of the pipepair.</span>
+<a name="l00160"></a><a class="code" href="classzmq_1_1pipe__t.html#ae76e98a3a62b76ea820310a53e10e1cb">00160</a>         <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *<a class="code" href="classzmq_1_1pipe__t.html#ae76e98a3a62b76ea820310a53e10e1cb">peer</a>;
 <a name="l00161"></a>00161 
-<a name="l00162"></a>00162         <span class="comment">//  State of the pipe endpoint. Active is common state before any</span>
-<a name="l00163"></a>00163         <span class="comment">//  termination begins. Delimited means that delimiter was read from</span>
-<a name="l00164"></a>00164         <span class="comment">//  pipe before term command was received. Pending means that term</span>
-<a name="l00165"></a>00165         <span class="comment">//  command was already received from the peer but there are still</span>
-<a name="l00166"></a>00166         <span class="comment">//  pending messages to read. Terminating means that all pending</span>
-<a name="l00167"></a>00167         <span class="comment">//  messages were already read and all we are waiting for is ack from</span>
-<a name="l00168"></a>00168         <span class="comment">//  the peer. Terminated means that &#39;terminate&#39; was explicitly called</span>
-<a name="l00169"></a>00169         <span class="comment">//  by the user. Double_terminated means that user called &#39;terminate&#39;</span>
-<a name="l00170"></a>00170         <span class="comment">//  and then we&#39;ve got term command from the peer as well.</span>
-<a name="l00171"></a>00171         <span class="keyword">enum</span> {
-<a name="l00172"></a><a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cda8cf3fc1f4dbfbf2c9d87e626158ab523">00172</a>             <a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cda8cf3fc1f4dbfbf2c9d87e626158ab523">active</a>,
-<a name="l00173"></a><a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cda6dc61f20b18d4b02459d54a666a1fa36">00173</a>             <a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cda6dc61f20b18d4b02459d54a666a1fa36">delimited</a>,
-<a name="l00174"></a><a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cdae05dd8bc48c980a930e345c6c68573b2">00174</a>             <a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cdae05dd8bc48c980a930e345c6c68573b2">pending</a>,
-<a name="l00175"></a><a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cdaaf9aa8b59c998136846b13d0ce54aef6">00175</a>             <a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cdaaf9aa8b59c998136846b13d0ce54aef6">terminating</a>,
-<a name="l00176"></a><a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cda403cacea12fa9d800d4ef09be832bdc1">00176</a>             <a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cda403cacea12fa9d800d4ef09be832bdc1">terminated</a>,
-<a name="l00177"></a><a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cda2771ee5955fd30f67358e31c6960764d">00177</a>             <a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cda2771ee5955fd30f67358e31c6960764d">double_terminated</a>
-<a name="l00178"></a>00178         } <a class="code" href="classzmq_1_1pipe__t.html#a5da81161878847080f9c7ad578a91985">state</a>;
-<a name="l00179"></a>00179 
-<a name="l00180"></a>00180         <span class="comment">//  If true, we receive all the pending inbound messages before</span>
-<a name="l00181"></a>00181         <span class="comment">//  terminating. If false, we terminate immediately when the peer</span>
-<a name="l00182"></a>00182         <span class="comment">//  asks us to.</span>
-<a name="l00183"></a><a class="code" href="classzmq_1_1pipe__t.html#a6b105499ac4f8842afcc3cf8935bd227">00183</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pipe__t.html#a6b105499ac4f8842afcc3cf8935bd227">delay</a>;
-<a name="l00184"></a>00184 
-<a name="l00185"></a>00185         <span class="comment">//  Opaque ID. To be used by the clients, not the pipe itself.</span>
-<a name="l00186"></a><a class="code" href="classzmq_1_1pipe__t.html#a85756c07b43a2541a92b7eaeb0df5e96">00186</a>         uint32_t <a class="code" href="classzmq_1_1pipe__t.html#a85756c07b43a2541a92b7eaeb0df5e96">pipe_id</a>;
+<a name="l00162"></a>00162         <span class="comment">//  Sink to send events to.</span>
+<a name="l00163"></a><a class="code" href="classzmq_1_1pipe__t.html#a7770ddf227e1ff9f6637e64c420fbeff">00163</a>         <a class="code" href="structzmq_1_1i__pipe__events.html">i_pipe_events</a> *<a class="code" href="classzmq_1_1pipe__t.html#a7770ddf227e1ff9f6637e64c420fbeff">sink</a>;
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165         <span class="comment">//  State of the pipe endpoint. Active is common state before any</span>
+<a name="l00166"></a>00166         <span class="comment">//  termination begins. Delimited means that delimiter was read from</span>
+<a name="l00167"></a>00167         <span class="comment">//  pipe before term command was received. Pending means that term</span>
+<a name="l00168"></a>00168         <span class="comment">//  command was already received from the peer but there are still</span>
+<a name="l00169"></a>00169         <span class="comment">//  pending messages to read. Terminating means that all pending</span>
+<a name="l00170"></a>00170         <span class="comment">//  messages were already read and all we are waiting for is ack from</span>
+<a name="l00171"></a>00171         <span class="comment">//  the peer. Terminated means that &#39;terminate&#39; was explicitly called</span>
+<a name="l00172"></a>00172         <span class="comment">//  by the user. Double_terminated means that user called &#39;terminate&#39;</span>
+<a name="l00173"></a>00173         <span class="comment">//  and then we&#39;ve got term command from the peer as well.</span>
+<a name="l00174"></a>00174         <span class="keyword">enum</span> {
+<a name="l00175"></a><a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cda8cf3fc1f4dbfbf2c9d87e626158ab523">00175</a>             <a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cda8cf3fc1f4dbfbf2c9d87e626158ab523">active</a>,
+<a name="l00176"></a><a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cda6dc61f20b18d4b02459d54a666a1fa36">00176</a>             <a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cda6dc61f20b18d4b02459d54a666a1fa36">delimited</a>,
+<a name="l00177"></a><a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cdae05dd8bc48c980a930e345c6c68573b2">00177</a>             <a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cdae05dd8bc48c980a930e345c6c68573b2">pending</a>,
+<a name="l00178"></a><a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cdaaf9aa8b59c998136846b13d0ce54aef6">00178</a>             <a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cdaaf9aa8b59c998136846b13d0ce54aef6">terminating</a>,
+<a name="l00179"></a><a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cda403cacea12fa9d800d4ef09be832bdc1">00179</a>             <a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cda403cacea12fa9d800d4ef09be832bdc1">terminated</a>,
+<a name="l00180"></a><a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cda2771ee5955fd30f67358e31c6960764d">00180</a>             <a class="code" href="classzmq_1_1pipe__t.html#a54cf590fc55de21a6f2534e5e149e0cda2771ee5955fd30f67358e31c6960764d">double_terminated</a>
+<a name="l00181"></a>00181         } <a class="code" href="classzmq_1_1pipe__t.html#a5da81161878847080f9c7ad578a91985">state</a>;
+<a name="l00182"></a>00182 
+<a name="l00183"></a>00183         <span class="comment">//  If true, we receive all the pending inbound messages before</span>
+<a name="l00184"></a>00184         <span class="comment">//  terminating. If false, we terminate immediately when the peer</span>
+<a name="l00185"></a>00185         <span class="comment">//  asks us to.</span>
+<a name="l00186"></a><a class="code" href="classzmq_1_1pipe__t.html#a6b105499ac4f8842afcc3cf8935bd227">00186</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pipe__t.html#a6b105499ac4f8842afcc3cf8935bd227">delay</a>;
 <a name="l00187"></a>00187 
-<a name="l00188"></a>00188         <span class="comment">//  Returns true if the message is delimiter; false otherwise.</span>
-<a name="l00189"></a>00189         <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pipe__t.html#a260cc14b6208331373c6e6902e4b9198">is_delimiter</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> &amp;msg_);
+<a name="l00188"></a>00188         <span class="comment">//  Identity of the writer. Used uniquely by the reader side.</span>
+<a name="l00189"></a><a class="code" href="classzmq_1_1pipe__t.html#aebc9725486857917199871b38e1837e8">00189</a>         blob_t <a class="code" href="classzmq_1_1pipe__t.html#aebc9725486857917199871b38e1837e8">identity</a>;
 <a name="l00190"></a>00190 
-<a name="l00191"></a>00191         <span class="comment">//  Computes appropriate low watermark from the given high watermark.</span>
-<a name="l00192"></a>00192         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1pipe__t.html#aad802a72ddaff28f9f03f86d7f825f88">compute_lwm</a> (<span class="keywordtype">int</span> hwm_);
+<a name="l00191"></a>00191         <span class="comment">//  Returns true if the message is delimiter; false otherwise.</span>
+<a name="l00192"></a>00192         <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1pipe__t.html#a260cc14b6208331373c6e6902e4b9198">is_delimiter</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> &amp;msg_);
 <a name="l00193"></a>00193 
-<a name="l00194"></a>00194         <span class="comment">//  Disable copying.</span>
-<a name="l00195"></a>00195         <a class="code" href="classzmq_1_1pipe__t.html#ac244f482b87668e440c0bc91cc7f88b5">pipe_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a>&amp;);
-<a name="l00196"></a>00196         <span class="keyword">const</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> &amp;<a class="code" href="classzmq_1_1pipe__t.html#abb036bff0c2df5322311c82a3bcaff69">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a>&amp;);
-<a name="l00197"></a>00197     };
-<a name="l00198"></a>00198 
-<a name="l00199"></a>00199 }
-<a name="l00200"></a>00200 
-<a name="l00201"></a>00201 <span class="preprocessor">#endif</span>
+<a name="l00194"></a>00194         <span class="comment">//  Computes appropriate low watermark from the given high watermark.</span>
+<a name="l00195"></a>00195         <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1pipe__t.html#aad802a72ddaff28f9f03f86d7f825f88">compute_lwm</a> (<span class="keywordtype">int</span> hwm_);
+<a name="l00196"></a>00196 
+<a name="l00197"></a>00197         <span class="comment">//  Disable copying.</span>
+<a name="l00198"></a>00198         <a class="code" href="classzmq_1_1pipe__t.html#ac244f482b87668e440c0bc91cc7f88b5">pipe_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a>&amp;);
+<a name="l00199"></a>00199         <span class="keyword">const</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> &amp;<a class="code" href="classzmq_1_1pipe__t.html#abb036bff0c2df5322311c82a3bcaff69">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a>&amp;);
+<a name="l00200"></a>00200     };
+<a name="l00201"></a>00201 
+<a name="l00202"></a>00202 }
+<a name="l00203"></a>00203 
+<a name="l00204"></a>00204 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -322,7 +325,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 11 2011 03:17:44 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Nov 8 2011 10:17:23 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

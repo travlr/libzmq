@@ -148,7 +148,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1array__item__t.html#ae2b74c02cd26b73ca8e1aeb1d58a22d9">get_array_index</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1array__item__t.html#ae2b74c02cd26b73ca8e1aeb1d58a22d9">get_array_index</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzmq_1_1ctx__t.html">ctx_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#a8e980a312764d4528e5f8df5326cef45">get_ctx</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#af5e154df948160cec14facac9e90eca5">get_pipe_id</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">blob_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#acb2956da5f62e61b4c7f1521d957a6e3">get_identity</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#acdeba12028efedafc912ca126c23c583">get_tid</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#a9380f1e1ca66e35393623ec85d530dd0">hiccup</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1object__t.html#a93b476c058c34d212f7424b881f6104f">process_command</a> (struct <a class="el" href="structzmq_1_1command__t.html">command_t</a> &amp;cmd_)</td></tr>
@@ -158,7 +158,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1array__item__t.html#ac4f592bc7f838588ce43af25e2a5333a">set_array_index</a> (int index_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1array__item__t.html#ac4f592bc7f838588ce43af25e2a5333a">set_array_index</a> (int index_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#a4d661236931c97f340b7795c87007ff9">set_event_sink</a> (<a class="el" href="structzmq_1_1i__pipe__events.html">i_pipe_events</a> *sink_)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#a39729d1e5ca3d2c1116fb8d996024cc8">set_pipe_id</a> (uint32_t id_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#af572220354d68f483421d01937bc671b">set_identity</a> (const blob_t &amp;identity_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#ab446c6b26ca34f96ed62a958f37bf8a4">terminate</a> (bool delay_)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#a4b11ee7b4a4b0c4e2225e0605152d6d6">write</a> (<a class="el" href="classzmq_1_1msg__t.html">msg_t</a> *msg_)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
@@ -231,6 +231,7 @@ Static Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#a6b105499ac4f8842afcc3cf8935bd227">delay</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#aa2ad181a7e06c3d501ba987bad90a087">hwm</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">blob_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#aebc9725486857917199871b38e1837e8">identity</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#ae3949e4e28f20954c764b4066b1f531c">in_active</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzmq_1_1ypipe__t.html">upipe_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#a443daef0cd4a3975fd350c2104e58b0f">inpipe</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#a59ccb5b745cefe0a084c03be2d46040b">lwm</a></td></tr>
@@ -240,7 +241,6 @@ Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzmq_1_1ypipe__t.html">upipe_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#acf04d7c6a21bd6ef8c57435306c2aa3f">outpipe</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzmq_1_1pipe__t.html">pipe_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#ae76e98a3a62b76ea820310a53e10e1cb">peer</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#a21d1ce5dafbbfc658221117d9d1d2a3c">peers_msgs_read</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#a85756c07b43a2541a92b7eaeb0df5e96">pipe_id</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzmq_1_1i__pipe__events.html">i_pipe_events</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#a7770ddf227e1ff9f6637e64c420fbeff">sink</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum zmq::pipe_t:: { ... } &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzmq_1_1pipe__t.html#a5da81161878847080f9c7ad578a91985">state</a></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
@@ -249,7 +249,7 @@ Friends</h2></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00057">57</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00060">60</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
 </div><hr/><h2>Member Typedef Documentation</h2>
 <a class="anchor" id="a94c91c6a46c97902d7cc5fc7a1886cf6"></a><!-- doxytag: member="zmq::pipe_t::upipe_t" ref="a94c91c6a46c97902d7cc5fc7a1886cf6" args="" -->
 <div class="memitem">
@@ -262,7 +262,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00110">110</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00113">113</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
 
 </div>
 </div>
@@ -294,7 +294,7 @@ Friends</h2></td></tr>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00171">171</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00174">174</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
 
 </div>
 </div>
@@ -348,7 +348,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00051">51</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00053">53</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
 </div>
 </div>
@@ -366,7 +366,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00071">71</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00072">72</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
 </div>
 </div>
@@ -402,9 +402,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00099">99</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00100">100</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
-<p>References <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>, and <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -423,7 +423,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00148">148</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00149">149</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
 <p>References <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>.</p>
 
@@ -444,11 +444,11 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00159">159</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00160">160</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="object_8cpp_source.html#l00159">zmq::object_t::choose_io_thread()</a>.</p>
+<p>References <a class="el" href="object_8cpp_source.html#l00160">zmq::object_t::choose_io_thread()</a>.</p>
 
-<p>Referenced by <a class="el" href="object_8cpp_source.html#l00159">zmq::object_t::choose_io_thread()</a>.</p>
+<p>Referenced by <a class="el" href="object_8cpp_source.html#l00160">zmq::object_t::choose_io_thread()</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -456,6 +456,8 @@ Friends</h2></td></tr>
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_cgraph.png" border="0" usemap="#classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_cgraph" alt=""/></div>
+<map name="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_cgraph" id="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_cgraph">
+</map>
 </div>
 </p>
 
@@ -465,6 +467,8 @@ Friends</h2></td></tr>
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_icgraph.png" border="0" usemap="#classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_icgraph" alt=""/></div>
+<map name="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_icgraph" id="classzmq_1_1object__t_abda1fc9e6c8de7e6f71c724ef01986b0_icgraph">
+</map>
 </div>
 </p>
 
@@ -485,7 +489,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00390">390</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00391">391</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
 </div>
 </div>
@@ -503,9 +507,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00418">418</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00419">419</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -524,7 +528,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00146">146</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00147">147</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 </div>
 </div>
@@ -543,7 +547,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00141">141</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00142">142</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 </div>
 </div>
@@ -561,9 +565,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00189">189</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00190">190</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="dist_8cpp_source.html#l00163">zmq::dist_t::write()</a>, <a class="el" href="xsub_8cpp_source.html#l00042">zmq::xsub_t::xattach_pipe()</a>, and <a class="el" href="xsub_8cpp_source.html#l00069">zmq::xsub_t::xhiccuped()</a>.</p>
+<p>Referenced by <a class="el" href="dist_8cpp_source.html#l00173">zmq::dist_t::write()</a>, <a class="el" href="xsub_8cpp_source.html#l00043">zmq::xsub_t::xattach_pipe()</a>, and <a class="el" href="xsub_8cpp_source.html#l00070">zmq::xsub_t::xhiccuped()</a>.</p>
 
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -592,7 +596,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="array_8hpp_source.html#l00055">55</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
+<p>Definition at line <a class="el" href="array_8hpp_source.html#l00056">56</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
 
 </div>
 </div>
@@ -610,7 +614,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="array_8hpp_source.html#l00055">55</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
+<p>Definition at line <a class="el" href="array_8hpp_source.html#l00056">56</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
 
 </div>
 </div>
@@ -628,9 +632,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="array_8hpp_source.html#l00055">55</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
+<p>Definition at line <a class="el" href="array_8hpp_source.html#l00056">56</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
 
-<p>References <a class="el" href="array_8hpp_source.html#l00062">zmq::array_item_t&lt; ID &gt;::array_index</a>.</p>
+<p>References <a class="el" href="array_8hpp_source.html#l00063">zmq::array_item_t&lt; ID &gt;::array_index</a>.</p>
 
 </div>
 </div>
@@ -648,16 +652,16 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00053">53</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00054">54</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="af5e154df948160cec14facac9e90eca5"></a><!-- doxytag: member="zmq::pipe_t::get_pipe_id" ref="af5e154df948160cec14facac9e90eca5" args="()" -->
+<a class="anchor" id="acb2956da5f62e61b4c7f1521d957a6e3"></a><!-- doxytag: member="zmq::pipe_t::get_identity" ref="acb2956da5f62e61b4c7f1521d957a6e3" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t zmq::pipe_t::get_pipe_id </td>
+          <td class="memname">zmq::blob_t zmq::pipe_t::get_identity </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -666,18 +670,18 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00094">94</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00095">95</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="xrep_8cpp_source.html#l00186">zmq::xrep_t::xrecv()</a>, and <a class="el" href="router_8cpp_source.html#l00201">zmq::router_t::xrecv()</a>.</p>
+<p>Referenced by <a class="el" href="xrep_8cpp_source.html#l00181">zmq::xrep_t::xrecv()</a>.</p>
 
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="classzmq_1_1pipe__t_af5e154df948160cec14facac9e90eca5_icgraph.png" border="0" usemap="#classzmq_1_1pipe__t_af5e154df948160cec14facac9e90eca5_icgraph" alt=""/></div>
-<map name="classzmq_1_1pipe__t_af5e154df948160cec14facac9e90eca5_icgraph" id="classzmq_1_1pipe__t_af5e154df948160cec14facac9e90eca5_icgraph">
-<area shape="rect" id="node3" href="classzmq_1_1xrep__t.html#a18184c945754ab289027c8115d6654af" title="zmq::xrep_t::xrecv" alt="" coords="223,5,353,35"/><area shape="rect" id="node7" href="classzmq_1_1router__t.html#aa5288a14c157f115471413ce788ba69a" title="zmq::router_t::xrecv" alt="" coords="219,59,357,88"/><area shape="rect" id="node5" href="classzmq_1_1rep__t.html#a509d5fb31ebab99fc0e63c25412a8f1a" title="zmq::rep_t::xrecv" alt="" coords="407,5,529,35"/></map>
+<div class="center"><img src="classzmq_1_1pipe__t_acb2956da5f62e61b4c7f1521d957a6e3_icgraph.png" border="0" usemap="#classzmq_1_1pipe__t_acb2956da5f62e61b4c7f1521d957a6e3_icgraph" alt=""/></div>
+<map name="classzmq_1_1pipe__t_acb2956da5f62e61b4c7f1521d957a6e3_icgraph" id="classzmq_1_1pipe__t_acb2956da5f62e61b4c7f1521d957a6e3_icgraph">
+<area shape="rect" id="node3" href="classzmq_1_1xrep__t.html#a18184c945754ab289027c8115d6654af" title="zmq::xrep_t::xrecv" alt="" coords="219,5,349,35"/><area shape="rect" id="node5" href="classzmq_1_1rep__t.html#a509d5fb31ebab99fc0e63c25412a8f1a" title="zmq::rep_t::xrecv" alt="" coords="399,5,521,35"/></map>
 </div>
 </p>
 
@@ -697,9 +701,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00048">48</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00049">49</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="ctx_8cpp_source.html#l00197">zmq::ctx_t::destroy_socket()</a>, and <a class="el" href="object_8cpp_source.html#l00444">zmq::object_t::send_command()</a>.</p>
+<p>Referenced by <a class="el" href="ctx_8cpp_source.html#l00198">zmq::ctx_t::destroy_socket()</a>, and <a class="el" href="object_8cpp_source.html#l00445">zmq::object_t::send_command()</a>.</p>
 
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -728,9 +732,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00436">436</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00437">437</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00137">alloc_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00140">alloc_assert</a>.</p>
 
 </div>
 </div>
@@ -749,9 +753,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00385">385</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00386">386</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
-<p>References <a class="el" href="msg_8cpp_source.html#l00235">zmq::msg_t::is_delimiter()</a>.</p>
+<p>References <a class="el" href="msg_8cpp_source.html#l00236">zmq::msg_t::is_delimiter()</a>.</p>
 
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -791,7 +795,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00151">151</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00152">152</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 </div>
 </div>
@@ -828,7 +832,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classzmq_1_1object__t.html#a5893941b5cdede6c2b01110000a9590c">zmq::object_t</a>.</p>
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00203">203</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00204">204</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
 </div>
 </div>
@@ -849,7 +853,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classzmq_1_1object__t.html#a16fecaa24bc301319f1ec2b777815f78">zmq::object_t</a>.</p>
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00211">211</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00212">212</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
 </div>
 </div>
@@ -870,9 +874,9 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1session__base__t.html#ad6287689e1caa0a0b364667a4df4e9e6">zmq::session_base_t</a>.</p>
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00379">379</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00380">380</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -893,9 +897,9 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1socket__base__t.html#a6a1227cd5e7e28c2040d0cfad4ee158d">zmq::socket_base_t</a>.</p>
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00384">384</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00385">385</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -914,11 +918,11 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00058">58</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00059">59</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="structzmq_1_1command__t.html#a5cc233715d15992816c27b3d62776426">zmq::command_t::activate_read</a>, <a class="el" href="structzmq_1_1command__t.html#ae623bb2447e172510456cfa7061c445c">zmq::command_t::activate_write</a>, <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="structzmq_1_1command__t.html#a4c7dc393ee89ffd6e42d886c56588088">zmq::command_t::attach</a>, <a class="el" href="structzmq_1_1command__t.html#a72973798c00f6a1afaecfd4d6512eaf0">zmq::command_t::bind</a>, <a class="el" href="structzmq_1_1command__t.html#aafffe17ec20372725773f98af7d33586">zmq::command_t::hiccup</a>, <a class="el" href="structzmq_1_1command__t.html#aea530f2505d28c466404996a9e6c4ad7">zmq::command_t::own</a>, <a class="el" href="structzmq_1_1command__t.html#a6359a5ded2a03e9e10b8709b697dc4b8">zmq::command_t::pipe_term</a>, <a class="el" href="structzmq_1_1command__t.html#a6f2b644fe0462d5ab0440a3f6b83721a">zmq::command_t::pipe_term_ack</a>, <a class="el" href="structzmq_1_1command__t.html#a72baf7a4772b48e8ee60d5cab291a52e">zmq::command_t::plug</a>, <a class="el" href="structzmq_1_1command__t.html#adca165cfd7d4c1526e7f3cd874dfe96c">zmq::command_t::reap</a>, <a class="el" href="structzmq_1_1command__t.html#a85cdfd597a1747e9eeeae829fe065de8">zmq::command_t::reaped</a>, <a class="el" href="structzmq_1_1command__t.html#affea24404521d5c38e56b9ca9e6337ac">zmq::command_t::stop</a>, <a class="el" href="structzmq_1_1command__t.html#a9a2fcf4e66fef0caa7a00889f48d8cde">zmq::command_t::term</a>, <a class="el" href="structzmq_1_1command__t.html#a62a8ebac69217614d65c25e6156649f8">zmq::command_t::term_ack</a>, <a class="el" href="structzmq_1_1command__t.html#ab4d26bb409717e69ae72408f4280d067">zmq::command_t::term_req</a>, <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="structzmq_1_1command__t.html#a5cc233715d15992816c27b3d62776426">zmq::command_t::activate_read</a>, <a class="el" href="structzmq_1_1command__t.html#ae623bb2447e172510456cfa7061c445c">zmq::command_t::activate_write</a>, <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="structzmq_1_1command__t.html#a4c7dc393ee89ffd6e42d886c56588088">zmq::command_t::attach</a>, <a class="el" href="structzmq_1_1command__t.html#a72973798c00f6a1afaecfd4d6512eaf0">zmq::command_t::bind</a>, <a class="el" href="structzmq_1_1command__t.html#aafffe17ec20372725773f98af7d33586">zmq::command_t::hiccup</a>, <a class="el" href="structzmq_1_1command__t.html#aea530f2505d28c466404996a9e6c4ad7">zmq::command_t::own</a>, <a class="el" href="structzmq_1_1command__t.html#a6359a5ded2a03e9e10b8709b697dc4b8">zmq::command_t::pipe_term</a>, <a class="el" href="structzmq_1_1command__t.html#a6f2b644fe0462d5ab0440a3f6b83721a">zmq::command_t::pipe_term_ack</a>, <a class="el" href="structzmq_1_1command__t.html#a72baf7a4772b48e8ee60d5cab291a52e">zmq::command_t::plug</a>, <a class="el" href="structzmq_1_1command__t.html#adca165cfd7d4c1526e7f3cd874dfe96c">zmq::command_t::reap</a>, <a class="el" href="structzmq_1_1command__t.html#a85cdfd597a1747e9eeeae829fe065de8">zmq::command_t::reaped</a>, <a class="el" href="structzmq_1_1command__t.html#affea24404521d5c38e56b9ca9e6337ac">zmq::command_t::stop</a>, <a class="el" href="structzmq_1_1command__t.html#a9a2fcf4e66fef0caa7a00889f48d8cde">zmq::command_t::term</a>, <a class="el" href="structzmq_1_1command__t.html#a62a8ebac69217614d65c25e6156649f8">zmq::command_t::term_ack</a>, <a class="el" href="structzmq_1_1command__t.html#ab4d26bb409717e69ae72408f4280d067">zmq::command_t::term_req</a>, <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>, and <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
-<p>Referenced by <a class="el" href="reaper_8cpp_source.html#l00058">zmq::reaper_t::in_event()</a>, <a class="el" href="io__thread_8cpp_source.html#l00064">zmq::io_thread_t::in_event()</a>, and <a class="el" href="socket__base_8cpp_source.html#l00695">zmq::socket_base_t::process_commands()</a>.</p>
+<p>Referenced by <a class="el" href="reaper_8cpp_source.html#l00058">zmq::reaper_t::in_event()</a>, <a class="el" href="io__thread_8cpp_source.html#l00065">zmq::io_thread_t::in_event()</a>, and <a class="el" href="socket__base_8cpp_source.html#l00656">zmq::socket_base_t::process_commands()</a>.</p>
 
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -950,9 +954,9 @@ Friends</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classzmq_1_1object__t.html#a82264b374ac8ddea79dd3e357545c63f">zmq::object_t</a>.</p>
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00222">222</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00223">223</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
-<p>References <a class="el" href="msg_8cpp_source.html#l00104">zmq::msg_t::close()</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="msg_8cpp_source.html#l00105">zmq::msg_t::close()</a>, <a class="el" href="err_8hpp_source.html#l00110">errno_assert</a>, and <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 <p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -984,9 +988,9 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1own__t.html#a145dec8765dd1b20c2fc763c82817095">zmq::own_t</a>.</p>
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00374">374</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00375">375</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -1006,9 +1010,9 @@ Friends</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classzmq_1_1object__t.html#a66d6b70e97b659523f89e27062b75461">zmq::object_t</a>.</p>
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00245">245</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00246">246</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -1028,9 +1032,9 @@ Friends</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classzmq_1_1object__t.html#a756d189894a80ff4f9b76f85ea5241f2">zmq::object_t</a>.</p>
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00288">288</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00289">289</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
-<p>References <a class="el" href="msg_8cpp_source.html#l00104">zmq::msg_t::close()</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="msg_8cpp_source.html#l00105">zmq::msg_t::close()</a>, <a class="el" href="err_8hpp_source.html#l00110">errno_assert</a>, and <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 <p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -1061,9 +1065,9 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1ipc__connecter__t.html#a2094d991c8a1e0d28dbf78e151ddbac5">zmq::ipc_connecter_t</a>, <a class="el" href="classzmq_1_1ipc__listener__t.html#abc8d05a65d7480b6438043c6e1487b30">zmq::ipc_listener_t</a>, <a class="el" href="classzmq_1_1session__base__t.html#ab2fb501fbb9801df9a339097b6b778bd">zmq::session_base_t</a>, <a class="el" href="classzmq_1_1tcp__connecter__t.html#ac48e5c141700982e9c2ebbb0199b3e6c">zmq::tcp_connecter_t</a>, and <a class="el" href="classzmq_1_1tcp__listener__t.html#a1b16eee787896e8207af95d5874b6e05">zmq::tcp_listener_t</a>.</p>
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00369">369</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00370">370</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -1084,9 +1088,9 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1reaper__t.html#a58f6f85dc79eecc1d8ae4b49181728b2">zmq::reaper_t</a>.</p>
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00429">429</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00430">430</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -1106,9 +1110,9 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1reaper__t.html#ac14b0f153a278aba791c9c4fca49a779">zmq::reaper_t</a>.</p>
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00434">434</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00435">435</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -1128,9 +1132,9 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1own__t.html#a48739237d8a446e4712119caeebcbcd4">zmq::own_t</a>.</p>
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00439">439</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00440">440</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -1150,9 +1154,9 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1io__thread__t.html#ac268a27a58732bca3e6348e007f40b04">zmq::io_thread_t</a>, <a class="el" href="classzmq_1_1reaper__t.html#a2dbde15a3eb5b76fba0dad47e0a5c1bf">zmq::reaper_t</a>, and <a class="el" href="classzmq_1_1socket__base__t.html#a71412227c6df194eea21b5c68f9a5668">zmq::socket_base_t</a>.</p>
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00364">364</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00365">365</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -1173,9 +1177,9 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1ipc__listener__t.html#aeb7ea0351650d8b906aa96a53a5b5352">zmq::ipc_listener_t</a>, <a class="el" href="classzmq_1_1own__t.html#aa6cf69fab99e823b61cca86e51dbe555">zmq::own_t</a>, <a class="el" href="classzmq_1_1session__base__t.html#a7a7a26911f68b96cb797e9fd7c5ebe61">zmq::session_base_t</a>, <a class="el" href="classzmq_1_1socket__base__t.html#a50e07e9557a64314204795949f5af396">zmq::socket_base_t</a>, and <a class="el" href="classzmq_1_1tcp__listener__t.html#ae97b4bf062352eb84c3509134bbebc25">zmq::tcp_listener_t</a>.</p>
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00419">419</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00420">420</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -1195,9 +1199,9 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1own__t.html#a92343ddbc9b7266abf7615919e609c9b">zmq::own_t</a>.</p>
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00424">424</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00425">425</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -1218,9 +1222,9 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classzmq_1_1own__t.html#aadd79f6522c7fe4c08fe032abe4a2ae1">zmq::own_t</a>.</p>
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00414">414</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00415">415</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -1239,11 +1243,11 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00123">123</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00124">124</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
-<p>References <a class="el" href="msg_8hpp_source.html#l00120">zmq::msg_t::flags</a>, <a class="el" href="msg_8cpp_source.html#l00235">zmq::msg_t::is_delimiter()</a>, <a class="el" href="msg_8hpp_source.html#l00050">zmq::msg_t::label</a>, <a class="el" href="msg_8hpp_source.html#l00053">zmq::msg_t::more</a>, and <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>.</p>
+<p>References <a class="el" href="msg_8hpp_source.html#l00122">zmq::msg_t::flags</a>, <a class="el" href="msg_8cpp_source.html#l00236">zmq::msg_t::is_delimiter()</a>, <a class="el" href="msg_8hpp_source.html#l00052">zmq::msg_t::more</a>, and <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>.</p>
 
-<p>Referenced by <a class="el" href="xpub_8cpp_source.html#l00049">zmq::xpub_t::xread_activated()</a>.</p>
+<p>Referenced by <a class="el" href="xpub_8cpp_source.html#l00050">zmq::xpub_t::xread_activated()</a>.</p>
 
 <p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-11-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -1294,7 +1298,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00131">131</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00132">132</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 </div>
 </div>
@@ -1312,9 +1316,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00176">176</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00177">177</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
-<p>References <a class="el" href="msg_8cpp_source.html#l00104">zmq::msg_t::close()</a>, <a class="el" href="err_8hpp_source.html#l00108">errno_assert</a>, <a class="el" href="msg_8hpp_source.html#l00120">zmq::msg_t::flags</a>, <a class="el" href="msg_8hpp_source.html#l00050">zmq::msg_t::label</a>, <a class="el" href="msg_8hpp_source.html#l00053">zmq::msg_t::more</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="msg_8cpp_source.html#l00105">zmq::msg_t::close()</a>, <a class="el" href="err_8hpp_source.html#l00110">errno_assert</a>, <a class="el" href="msg_8hpp_source.html#l00122">zmq::msg_t::flags</a>, <a class="el" href="msg_8hpp_source.html#l00052">zmq::msg_t::more</a>, and <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 <p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-13-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -1344,9 +1348,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00236">236</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00237">237</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="structzmq_1_1command__t.html#a5cc233715d15992816c27b3d62776426">zmq::command_t::activate_read</a>, <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
+<p>References <a class="el" href="structzmq_1_1command__t.html#a5cc233715d15992816c27b3d62776426">zmq::command_t::activate_read</a>, <a class="el" href="command_8hpp_source.html#l00035">zmq::command_t::destination</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
 
 </div>
 </div>
@@ -1375,9 +1379,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00247">247</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00248">248</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="structzmq_1_1command__t.html#ae623bb2447e172510456cfa7061c445c">zmq::command_t::activate_write</a>, <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
+<p>References <a class="el" href="structzmq_1_1command__t.html#ae623bb2447e172510456cfa7061c445c">zmq::command_t::activate_write</a>, <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="command_8hpp_source.html#l00035">zmq::command_t::destination</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
 
 </div>
 </div>
@@ -1412,9 +1416,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00204">204</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00205">205</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="structzmq_1_1command__t.html#a4c7dc393ee89ffd6e42d886c56588088">zmq::command_t::attach</a>, <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="own_8cpp_source.html#l00056">zmq::own_t::inc_seqnum()</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
+<p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="structzmq_1_1command__t.html#a4c7dc393ee89ffd6e42d886c56588088">zmq::command_t::attach</a>, <a class="el" href="command_8hpp_source.html#l00035">zmq::command_t::destination</a>, <a class="el" href="own_8cpp_source.html#l00056">zmq::own_t::inc_seqnum()</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
 
 <p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-14-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -1460,9 +1464,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00220">220</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00221">221</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="structzmq_1_1command__t.html#a72973798c00f6a1afaecfd4d6512eaf0">zmq::command_t::bind</a>, <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="own_8cpp_source.html#l00056">zmq::own_t::inc_seqnum()</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
+<p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="structzmq_1_1command__t.html#a72973798c00f6a1afaecfd4d6512eaf0">zmq::command_t::bind</a>, <a class="el" href="command_8hpp_source.html#l00035">zmq::command_t::destination</a>, <a class="el" href="own_8cpp_source.html#l00056">zmq::own_t::inc_seqnum()</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
 
 <p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-15-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -1491,9 +1495,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00353">353</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00354">354</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a9bfda42811471c8271107739dc9f64d5">zmq::command_t::done</a>, <a class="el" href="ctx_8hpp_source.html#l00091">zmq::ctx_t::term_tid</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
+<p>References <a class="el" href="command_8hpp_source.html#l00035">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a9bfda42811471c8271107739dc9f64d5">zmq::command_t::done</a>, <a class="el" href="ctx_8hpp_source.html#l00092">zmq::ctx_t::term_tid</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
 
 </div>
 </div>
@@ -1522,9 +1526,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00260">260</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00261">261</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#aafffe17ec20372725773f98af7d33586">zmq::command_t::hiccup</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
+<p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="command_8hpp_source.html#l00035">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#aafffe17ec20372725773f98af7d33586">zmq::command_t::hiccup</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
 
 </div>
 </div>
@@ -1553,9 +1557,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00191">191</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00192">192</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="own_8cpp_source.html#l00056">zmq::own_t::inc_seqnum()</a>, <a class="el" href="structzmq_1_1command__t.html#aea530f2505d28c466404996a9e6c4ad7">zmq::command_t::own</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
+<p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="command_8hpp_source.html#l00035">zmq::command_t::destination</a>, <a class="el" href="own_8cpp_source.html#l00056">zmq::own_t::inc_seqnum()</a>, <a class="el" href="structzmq_1_1command__t.html#aea530f2505d28c466404996a9e6c4ad7">zmq::command_t::own</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
 
 <p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-16-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -1585,9 +1589,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00272">272</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00273">273</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a6359a5ded2a03e9e10b8709b697dc4b8">zmq::command_t::pipe_term</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
+<p>References <a class="el" href="command_8hpp_source.html#l00035">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a6359a5ded2a03e9e10b8709b697dc4b8">zmq::command_t::pipe_term</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
 
 </div>
 </div>
@@ -1606,9 +1610,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00283">283</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00284">284</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a6f2b644fe0462d5ab0440a3f6b83721a">zmq::command_t::pipe_term_ack</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
+<p>References <a class="el" href="command_8hpp_source.html#l00035">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a6f2b644fe0462d5ab0440a3f6b83721a">zmq::command_t::pipe_term_ack</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
 
 </div>
 </div>
@@ -1637,9 +1641,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00177">177</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00178">178</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="own_8cpp_source.html#l00056">zmq::own_t::inc_seqnum()</a>, <a class="el" href="structzmq_1_1command__t.html#a72baf7a4772b48e8ee60d5cab291a52e">zmq::command_t::plug</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
+<p>References <a class="el" href="command_8hpp_source.html#l00035">zmq::command_t::destination</a>, <a class="el" href="own_8cpp_source.html#l00056">zmq::own_t::inc_seqnum()</a>, <a class="el" href="structzmq_1_1command__t.html#a72baf7a4772b48e8ee60d5cab291a52e">zmq::command_t::plug</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
 
 <p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-17-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -1669,9 +1673,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00330">330</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00331">331</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#adca165cfd7d4c1526e7f3cd874dfe96c">zmq::command_t::reap</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
+<p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="command_8hpp_source.html#l00035">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#adca165cfd7d4c1526e7f3cd874dfe96c">zmq::command_t::reap</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
 
 </div>
 </div>
@@ -1689,9 +1693,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00342">342</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00343">343</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a85cdfd597a1747e9eeeae829fe065de8">zmq::command_t::reaped</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
+<p>References <a class="el" href="command_8hpp_source.html#l00035">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a85cdfd597a1747e9eeeae829fe065de8">zmq::command_t::reaped</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
 
 </div>
 </div>
@@ -1709,9 +1713,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00164">164</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00165">165</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#affea24404521d5c38e56b9ca9e6337ac">zmq::command_t::stop</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
+<p>References <a class="el" href="command_8hpp_source.html#l00035">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#affea24404521d5c38e56b9ca9e6337ac">zmq::command_t::stop</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
 
 </div>
 </div>
@@ -1740,9 +1744,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00307">307</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00308">308</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a9a2fcf4e66fef0caa7a00889f48d8cde">zmq::command_t::term</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
+<p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="command_8hpp_source.html#l00035">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a9a2fcf4e66fef0caa7a00889f48d8cde">zmq::command_t::term</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
 
 </div>
 </div>
@@ -1761,9 +1765,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00319">319</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00320">320</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a62a8ebac69217614d65c25e6156649f8">zmq::command_t::term_ack</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
+<p>References <a class="el" href="command_8hpp_source.html#l00035">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#a62a8ebac69217614d65c25e6156649f8">zmq::command_t::term_ack</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
 
 </div>
 </div>
@@ -1792,28 +1796,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00294">294</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00295">295</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
-<p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="command_8hpp_source.html#l00034">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#ab4d26bb409717e69ae72408f4280d067">zmq::command_t::term_req</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac4f592bc7f838588ce43af25e2a5333a"></a><!-- doxytag: member="zmq::pipe_t::set_array_index" ref="ac4f592bc7f838588ce43af25e2a5333a" args="(int index_)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classzmq_1_1array__item__t.html">zmq::array_item_t</a>&lt; ID &gt;::set_array_index </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>index_</em></td><td>)</td>
-          <td><code> [inline, inherited]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="array_8hpp_source.html#l00050">50</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
+<p>References <a class="el" href="structzmq_1_1command__t.html#ab480e9360a9f27888d61afa1183a4d17">zmq::command_t::args</a>, <a class="el" href="command_8hpp_source.html#l00035">zmq::command_t::destination</a>, <a class="el" href="structzmq_1_1command__t.html#ab4d26bb409717e69ae72408f4280d067">zmq::command_t::term_req</a>, and <a class="el" href="structzmq_1_1command__t.html#aedab5f2d325658e55aeadec1946c4726">zmq::command_t::type</a>.</p>
 
 </div>
 </div>
@@ -1832,7 +1817,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="array_8hpp_source.html#l00050">50</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
+<p>Definition at line <a class="el" href="array_8hpp_source.html#l00051">51</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
 
 </div>
 </div>
@@ -1851,9 +1836,28 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="array_8hpp_source.html#l00050">50</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
+<p>Definition at line <a class="el" href="array_8hpp_source.html#l00051">51</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
 
-<p>References <a class="el" href="array_8hpp_source.html#l00062">zmq::array_item_t&lt; ID &gt;::array_index</a>.</p>
+</div>
+</div>
+<a class="anchor" id="ac4f592bc7f838588ce43af25e2a5333a"></a><!-- doxytag: member="zmq::pipe_t::set_array_index" ref="ac4f592bc7f838588ce43af25e2a5333a" args="(int index_)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classzmq_1_1array__item__t.html">zmq::array_item_t</a>&lt; ID &gt;::set_array_index </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index_</em></td><td>)</td>
+          <td><code> [inline, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="array_8hpp_source.html#l00051">51</a> of file <a class="el" href="array_8hpp_source.html">array.hpp</a>.</p>
+
+<p>References <a class="el" href="array_8hpp_source.html#l00063">zmq::array_item_t&lt; ID &gt;::array_index</a>.</p>
 
 </div>
 </div>
@@ -1872,11 +1876,11 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00082">82</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00083">83</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
-<p>Referenced by <a class="el" href="socket__base_8cpp_source.html#l00225">zmq::socket_base_t::attach_pipe()</a>, <a class="el" href="session__base_8cpp_source.html#l00142">zmq::session_base_t::attach_pipe()</a>, and <a class="el" href="session__base_8cpp_source.html#l00249">zmq::session_base_t::process_attach()</a>.</p>
+<p>Referenced by <a class="el" href="socket__base_8cpp_source.html#l00211">zmq::socket_base_t::attach_pipe()</a>, <a class="el" href="session__base_8cpp_source.html#l00140">zmq::session_base_t::attach_pipe()</a>, and <a class="el" href="session__base_8cpp_source.html#l00262">zmq::session_base_t::process_attach()</a>.</p>
 
 <p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-18-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -1886,6 +1890,38 @@ Friends</h2></td></tr>
 <div class="center"><img src="classzmq_1_1pipe__t_a4d661236931c97f340b7795c87007ff9_icgraph.png" border="0" usemap="#classzmq_1_1pipe__t_a4d661236931c97f340b7795c87007ff9_icgraph" alt=""/></div>
 <map name="classzmq_1_1pipe__t_a4d661236931c97f340b7795c87007ff9_icgraph" id="classzmq_1_1pipe__t_a4d661236931c97f340b7795c87007ff9_icgraph">
 <area shape="rect" id="node3" href="classzmq_1_1socket__base__t.html#a2661c12e905da49ee2065cc447e0bc36" title="zmq::socket_base_t::attach_pipe" alt="" coords="255,5,468,35"/><area shape="rect" id="node5" href="classzmq_1_1session__base__t.html#a7ae23d364fd90150bc2a3bcf5ade9ecf" title="zmq::session_base_t::attach_pipe" alt="" coords="251,59,472,88"/><area shape="rect" id="node9" href="classzmq_1_1session__base__t.html#ad6287689e1caa0a0b364667a4df4e9e6" title="zmq::session_base_t::process_attach" alt="" coords="240,112,483,141"/><area shape="rect" id="node7" href="classzmq_1_1socket__base__t.html#ac47f3f966fabb59f2d304786be37a101" title="zmq::socket_base_t::connect" alt="" coords="531,59,725,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af572220354d68f483421d01937bc671b"></a><!-- doxytag: member="zmq::pipe_t::set_identity" ref="af572220354d68f483421d01937bc671b" args="(const blob_t &amp;identity_)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zmq::pipe_t::set_identity </td>
+          <td>(</td>
+          <td class="paramtype">const blob_t &amp;&#160;</td>
+          <td class="paramname"><em>identity_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00090">90</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="xrep_8cpp_source.html#l00058">zmq::xrep_t::xattach_pipe()</a>, and <a class="el" href="xrep_8cpp_source.html#l00181">zmq::xrep_t::xrecv()</a>.</p>
+
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classzmq_1_1pipe__t_af572220354d68f483421d01937bc671b_icgraph.png" border="0" usemap="#classzmq_1_1pipe__t_af572220354d68f483421d01937bc671b_icgraph" alt=""/></div>
+<map name="classzmq_1_1pipe__t_af572220354d68f483421d01937bc671b_icgraph" id="classzmq_1_1pipe__t_af572220354d68f483421d01937bc671b_icgraph">
+<area shape="rect" id="node3" href="classzmq_1_1xrep__t.html#ab60c996de7b97c492496988b709a0c47" title="zmq::xrep_t::xattach_pipe" alt="" coords="219,5,392,35"/><area shape="rect" id="node5" href="classzmq_1_1xrep__t.html#a18184c945754ab289027c8115d6654af" title="zmq::xrep_t::xrecv" alt="" coords="240,59,371,88"/><area shape="rect" id="node7" href="classzmq_1_1rep__t.html#a509d5fb31ebab99fc0e63c25412a8f1a" title="zmq::rep_t::xrecv" alt="" coords="441,59,564,88"/></map>
 </div>
 </p>
 
@@ -1906,41 +1942,9 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00075">75</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00076">76</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
-<p>References <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a39729d1e5ca3d2c1116fb8d996024cc8"></a><!-- doxytag: member="zmq::pipe_t::set_pipe_id" ref="a39729d1e5ca3d2c1116fb8d996024cc8" args="(uint32_t id_)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void zmq::pipe_t::set_pipe_id </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>id_</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00089">89</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="xrep_8cpp_source.html#l00051">zmq::xrep_t::xattach_pipe()</a>, and <a class="el" href="router_8cpp_source.html#l00048">zmq::router_t::xattach_pipe()</a>.</p>
-
-<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-19-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="classzmq_1_1pipe__t_a39729d1e5ca3d2c1116fb8d996024cc8_icgraph.png" border="0" usemap="#classzmq_1_1pipe__t_a39729d1e5ca3d2c1116fb8d996024cc8_icgraph" alt=""/></div>
-<map name="classzmq_1_1pipe__t_a39729d1e5ca3d2c1116fb8d996024cc8_icgraph" id="classzmq_1_1pipe__t_a39729d1e5ca3d2c1116fb8d996024cc8_icgraph">
-<area shape="rect" id="node3" href="classzmq_1_1xrep__t.html#ab60c996de7b97c492496988b709a0c47" title="zmq::xrep_t::xattach_pipe" alt="" coords="223,5,396,35"/><area shape="rect" id="node5" href="classzmq_1_1router__t.html#a12fda79de943e08b65de18dbc1d3acc2" title="zmq::router_t::xattach_pipe" alt="" coords="219,59,400,88"/></map>
-</div>
-</p>
+<p>References <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
 </div>
 </div>
@@ -1959,11 +1963,11 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00323">323</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00324">324</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
-<p>References <a class="el" href="msg_8cpp_source.html#l00097">zmq::msg_t::init_delimiter()</a>, and <a class="el" href="err_8hpp_source.html#l00098">zmq_assert</a>.</p>
+<p>References <a class="el" href="msg_8cpp_source.html#l00098">zmq::msg_t::init_delimiter()</a>, and <a class="el" href="err_8hpp_source.html#l00100">zmq_assert</a>.</p>
 
-<p>Referenced by <a class="el" href="socket__base_8cpp_source.html#l00225">zmq::socket_base_t::attach_pipe()</a>.</p>
+<p>Referenced by <a class="el" href="socket__base_8cpp_source.html#l00211">zmq::socket_base_t::attach_pipe()</a>.</p>
 
 <p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-20-trigger" src="closed.png"/> Here is the call graph for this function:</div>
@@ -2004,7 +2008,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="object_8cpp_source.html#l00136">136</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
+<p>Definition at line <a class="el" href="object_8cpp_source.html#l00137">137</a> of file <a class="el" href="object_8cpp_source.html">object.cpp</a>.</p>
 
 </div>
 </div>
@@ -2023,11 +2027,11 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00163">163</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8cpp_source.html#l00164">164</a> of file <a class="el" href="pipe_8cpp_source.html">pipe.cpp</a>.</p>
 
-<p>References <a class="el" href="msg_8hpp_source.html#l00120">zmq::msg_t::flags</a>, <a class="el" href="msg_8hpp_source.html#l00050">zmq::msg_t::label</a>, <a class="el" href="msg_8hpp_source.html#l00053">zmq::msg_t::more</a>, and <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>.</p>
+<p>References <a class="el" href="msg_8hpp_source.html#l00122">zmq::msg_t::flags</a>, <a class="el" href="msg_8hpp_source.html#l00052">zmq::msg_t::more</a>, and <a class="el" href="likely_8hpp_source.html#l00029">unlikely</a>.</p>
 
-<p>Referenced by <a class="el" href="xsub_8cpp_source.html#l00198">zmq::xsub_t::send_subscription()</a>, and <a class="el" href="dist_8cpp_source.html#l00163">zmq::dist_t::write()</a>.</p>
+<p>Referenced by <a class="el" href="socket__base_8cpp_source.html#l00365">zmq::socket_base_t::connect()</a>, <a class="el" href="xsub_8cpp_source.html#l00198">zmq::xsub_t::send_subscription()</a>, and <a class="el" href="dist_8cpp_source.html#l00173">zmq::dist_t::write()</a>.</p>
 
 <p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-22-trigger" src="closed.png"/> Here is the caller graph for this function:</div>
@@ -2036,7 +2040,7 @@ Friends</h2></td></tr>
 <div id="dynsection-22-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classzmq_1_1pipe__t_a4b11ee7b4a4b0c4e2225e0605152d6d6_icgraph.png" border="0" usemap="#classzmq_1_1pipe__t_a4b11ee7b4a4b0c4e2225e0605152d6d6_icgraph" alt=""/></div>
 <map name="classzmq_1_1pipe__t_a4b11ee7b4a4b0c4e2225e0605152d6d6_icgraph" id="classzmq_1_1pipe__t_a4b11ee7b4a4b0c4e2225e0605152d6d6_icgraph">
-<area shape="rect" id="node3" href="classzmq_1_1xsub__t.html#a5aaa62d2eb7ef869a984f9b477f56b13" title="zmq::xsub_t::send_subscription" alt="" coords="183,5,388,35"/><area shape="rect" id="node5" href="classzmq_1_1dist__t.html#af236014a8db3d1adbb0863b0d807158e" title="zmq::dist_t::write" alt="" coords="224,59,347,88"/></map>
+<area shape="rect" id="node3" href="classzmq_1_1socket__base__t.html#ac47f3f966fabb59f2d304786be37a101" title="zmq::socket_base_t::connect" alt="" coords="188,5,383,35"/><area shape="rect" id="node5" href="classzmq_1_1xsub__t.html#a5aaa62d2eb7ef869a984f9b477f56b13" title="zmq::xsub_t::send_subscription" alt="" coords="183,59,388,88"/><area shape="rect" id="node7" href="classzmq_1_1dist__t.html#af236014a8db3d1adbb0863b0d807158e" title="zmq::dist_t::write" alt="" coords="224,112,347,141"/></map>
 </div>
 </p>
 
@@ -2094,7 +2098,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00183">183</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00186">186</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
 
 </div>
 </div>
@@ -2109,7 +2113,22 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00143">143</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00146">146</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aebc9725486857917199871b38e1837e8"></a><!-- doxytag: member="zmq::pipe_t::identity" ref="aebc9725486857917199871b38e1837e8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">blob_t <a class="el" href="classzmq_1_1pipe__t.html#aebc9725486857917199871b38e1837e8">zmq::pipe_t::identity</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00189">189</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
 
 </div>
 </div>
@@ -2124,7 +2143,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00139">139</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00142">142</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
 
 </div>
 </div>
@@ -2139,7 +2158,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00135">135</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00138">138</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
 
 </div>
 </div>
@@ -2154,7 +2173,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00146">146</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00149">149</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
 
 </div>
 </div>
@@ -2169,7 +2188,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00149">149</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00152">152</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
 
 </div>
 </div>
@@ -2184,7 +2203,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00150">150</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00153">153</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
 
 </div>
 </div>
@@ -2199,7 +2218,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00140">140</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00143">143</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
 
 </div>
 </div>
@@ -2214,7 +2233,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00136">136</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00139">139</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
 
 </div>
 </div>
@@ -2229,7 +2248,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00157">157</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00160">160</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
 
 </div>
 </div>
@@ -2244,22 +2263,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00154">154</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a85756c07b43a2541a92b7eaeb0df5e96"></a><!-- doxytag: member="zmq::pipe_t::pipe_id" ref="a85756c07b43a2541a92b7eaeb0df5e96" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t <a class="el" href="classzmq_1_1pipe__t.html#a85756c07b43a2541a92b7eaeb0df5e96">zmq::pipe_t::pipe_id</a><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00186">186</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00157">157</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
 
 </div>
 </div>
@@ -2274,7 +2278,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00160">160</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
+<p>Definition at line <a class="el" href="pipe_8hpp_source.html#l00163">163</a> of file <a class="el" href="pipe_8hpp_source.html">pipe.hpp</a>.</p>
 
 </div>
 </div>
@@ -2310,7 +2314,7 @@ Friends</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 11 2011 03:17:46 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Nov 8 2011 10:17:25 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

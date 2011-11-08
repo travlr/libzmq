@@ -106,51 +106,52 @@ function toggleVisibility(linkObj) {
 </div>
 <div class="contents">
 <a href="i__poll__events_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment">    Copyright (c) 2007-2011 iMatix Corporation</span>
-<a name="l00003"></a>00003 <span class="comment">    Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file</span>
-<a name="l00004"></a>00004 <span class="comment"></span>
-<a name="l00005"></a>00005 <span class="comment">    This file is part of 0MQ.</span>
-<a name="l00006"></a>00006 <span class="comment"></span>
-<a name="l00007"></a>00007 <span class="comment">    0MQ is free software; you can redistribute it and/or modify it under</span>
-<a name="l00008"></a>00008 <span class="comment">    the terms of the GNU Lesser General Public License as published by</span>
-<a name="l00009"></a>00009 <span class="comment">    the Free Software Foundation; either version 3 of the License, or</span>
-<a name="l00010"></a>00010 <span class="comment">    (at your option) any later version.</span>
-<a name="l00011"></a>00011 <span class="comment"></span>
-<a name="l00012"></a>00012 <span class="comment">    0MQ is distributed in the hope that it will be useful,</span>
-<a name="l00013"></a>00013 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-<a name="l00014"></a>00014 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
-<a name="l00015"></a>00015 <span class="comment">    GNU Lesser General Public License for more details.</span>
-<a name="l00016"></a>00016 <span class="comment"></span>
-<a name="l00017"></a>00017 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
-<a name="l00018"></a>00018 <span class="comment">    along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
-<a name="l00019"></a>00019 <span class="comment">*/</span>
-<a name="l00020"></a>00020  
-<a name="l00021"></a>00021 <span class="preprocessor">#ifndef __ZMQ_I_POLL_EVENTS_HPP_INCLUDED__</span>
-<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define __ZMQ_I_POLL_EVENTS_HPP_INCLUDED__</span>
-<a name="l00023"></a>00023 <span class="preprocessor"></span> 
-<a name="l00024"></a>00024 <span class="keyword">namespace </span>zmq
-<a name="l00025"></a>00025 {
-<a name="l00026"></a>00026  
-<a name="l00027"></a>00027     <span class="comment">// Virtual interface to be exposed by object that want to be notified</span>
-<a name="l00028"></a>00028     <span class="comment">// about events on file descriptors.</span>
-<a name="l00029"></a>00029  
-<a name="l00030"></a><a class="code" href="structzmq_1_1i__poll__events.html">00030</a>     <span class="keyword">struct </span><a class="code" href="structzmq_1_1i__poll__events.html">i_poll_events</a>
-<a name="l00031"></a>00031     {
-<a name="l00032"></a><a class="code" href="structzmq_1_1i__poll__events.html#aa57a7e088326594b36edc3ec7bee9195">00032</a>         <span class="keyword">virtual</span> <a class="code" href="structzmq_1_1i__poll__events.html#aa57a7e088326594b36edc3ec7bee9195">~i_poll_events</a> () {}
-<a name="l00033"></a>00033  
-<a name="l00034"></a>00034         <span class="comment">// Called by I/O thread when file descriptor is ready for reading.</span>
-<a name="l00035"></a>00035         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__poll__events.html#a6a2db5ef57d3d5e16336be4f0dd5b7cb">in_event</a> () = 0;
-<a name="l00036"></a>00036  
-<a name="l00037"></a>00037         <span class="comment">// Called by I/O thread when file descriptor is ready for writing.</span>
-<a name="l00038"></a>00038         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__poll__events.html#ac02294c753e0ff56bdd1433c824d5076">out_event</a> () = 0;
-<a name="l00039"></a>00039  
-<a name="l00040"></a>00040         <span class="comment">// Called when timer expires.</span>
-<a name="l00041"></a>00041         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__poll__events.html#a0d088aff6e763eda666ec60b29b75d4d">timer_event</a> (<span class="keywordtype">int</span> id_) = 0;
-<a name="l00042"></a>00042     };
-<a name="l00043"></a>00043  
-<a name="l00044"></a>00044 }
-<a name="l00045"></a>00045  
-<a name="l00046"></a>00046 <span class="preprocessor">#endif</span>
+<a name="l00002"></a>00002 <span class="comment">    Copyright (c) 2010-2011 250bpm s.r.o.</span>
+<a name="l00003"></a>00003 <span class="comment">    Copyright (c) 2007-2009 iMatix Corporation</span>
+<a name="l00004"></a>00004 <span class="comment">    Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file</span>
+<a name="l00005"></a>00005 <span class="comment"></span>
+<a name="l00006"></a>00006 <span class="comment">    This file is part of 0MQ.</span>
+<a name="l00007"></a>00007 <span class="comment"></span>
+<a name="l00008"></a>00008 <span class="comment">    0MQ is free software; you can redistribute it and/or modify it under</span>
+<a name="l00009"></a>00009 <span class="comment">    the terms of the GNU Lesser General Public License as published by</span>
+<a name="l00010"></a>00010 <span class="comment">    the Free Software Foundation; either version 3 of the License, or</span>
+<a name="l00011"></a>00011 <span class="comment">    (at your option) any later version.</span>
+<a name="l00012"></a>00012 <span class="comment"></span>
+<a name="l00013"></a>00013 <span class="comment">    0MQ is distributed in the hope that it will be useful,</span>
+<a name="l00014"></a>00014 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00015"></a>00015 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the</span>
+<a name="l00016"></a>00016 <span class="comment">    GNU Lesser General Public License for more details.</span>
+<a name="l00017"></a>00017 <span class="comment"></span>
+<a name="l00018"></a>00018 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
+<a name="l00019"></a>00019 <span class="comment">    along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00020"></a>00020 <span class="comment">*/</span>
+<a name="l00021"></a>00021  
+<a name="l00022"></a>00022 <span class="preprocessor">#ifndef __ZMQ_I_POLL_EVENTS_HPP_INCLUDED__</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span><span class="preprocessor">#define __ZMQ_I_POLL_EVENTS_HPP_INCLUDED__</span>
+<a name="l00024"></a>00024 <span class="preprocessor"></span> 
+<a name="l00025"></a>00025 <span class="keyword">namespace </span>zmq
+<a name="l00026"></a>00026 {
+<a name="l00027"></a>00027  
+<a name="l00028"></a>00028     <span class="comment">// Virtual interface to be exposed by object that want to be notified</span>
+<a name="l00029"></a>00029     <span class="comment">// about events on file descriptors.</span>
+<a name="l00030"></a>00030  
+<a name="l00031"></a><a class="code" href="structzmq_1_1i__poll__events.html">00031</a>     <span class="keyword">struct </span><a class="code" href="structzmq_1_1i__poll__events.html">i_poll_events</a>
+<a name="l00032"></a>00032     {
+<a name="l00033"></a><a class="code" href="structzmq_1_1i__poll__events.html#aa57a7e088326594b36edc3ec7bee9195">00033</a>         <span class="keyword">virtual</span> <a class="code" href="structzmq_1_1i__poll__events.html#aa57a7e088326594b36edc3ec7bee9195">~i_poll_events</a> () {}
+<a name="l00034"></a>00034  
+<a name="l00035"></a>00035         <span class="comment">// Called by I/O thread when file descriptor is ready for reading.</span>
+<a name="l00036"></a>00036         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__poll__events.html#a6a2db5ef57d3d5e16336be4f0dd5b7cb">in_event</a> () = 0;
+<a name="l00037"></a>00037  
+<a name="l00038"></a>00038         <span class="comment">// Called by I/O thread when file descriptor is ready for writing.</span>
+<a name="l00039"></a>00039         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__poll__events.html#ac02294c753e0ff56bdd1433c824d5076">out_event</a> () = 0;
+<a name="l00040"></a>00040  
+<a name="l00041"></a>00041         <span class="comment">// Called when timer expires.</span>
+<a name="l00042"></a>00042         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="structzmq_1_1i__poll__events.html#a0d088aff6e763eda666ec60b29b75d4d">timer_event</a> (<span class="keywordtype">int</span> id_) = 0;
+<a name="l00043"></a>00043     };
+<a name="l00044"></a>00044  
+<a name="l00045"></a>00045 }
+<a name="l00046"></a>00046  
+<a name="l00047"></a>00047 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -167,7 +168,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 11 2011 03:17:44 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Nov 8 2011 10:17:23 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

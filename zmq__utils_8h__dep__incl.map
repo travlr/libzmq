@@ -6,7 +6,6 @@
 <area shape="rect" id="node11" href="$remote__lat_8cpp.html" title="perf/remote_lat.cpp" alt="" coords="603,83,736,112"/>
 <area shape="rect" id="node13" href="$remote__thr_8cpp.html" title="perf/remote_thr.cpp" alt="" coords="760,83,893,112"/>
 <area shape="rect" id="node15" href="$zmq__utils_8cpp.html" title="src/zmq_utils.cpp" alt="" coords="917,83,1043,112"/>
-<area shape="rect" id="node17" href="$test__reqrep__drop_8cpp.html" title="tests/test_reqrep_drop.cpp" alt="" coords="1067,83,1243,112"/>
-<area shape="rect" id="node19" href="$test__sub__forward_8cpp.html" title="tests/test_sub_forward.cpp" alt="" coords="1267,83,1445,112"/>
-<area shape="rect" id="node21" href="$test__timeo_8cpp.html" title="tests/test_timeo.cpp" alt="" coords="1469,83,1611,112"/>
+<area shape="rect" id="node17" href="$test__sub__forward_8cpp.html" title="tests/test_sub_forward.cpp" alt="" coords="1067,83,1245,112"/>
+<area shape="rect" id="node19" href="$test__timeo_8cpp.html" title="tests/test_timeo.cpp" alt="" coords="1269,83,1411,112"/>
 </map>

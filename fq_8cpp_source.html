@@ -106,146 +106,148 @@ function toggleVisibility(linkObj) {
 </div>
 <div class="contents">
 <a href="fq_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment">    Copyright (c) 2007-2011 iMatix Corporation</span>
-<a name="l00003"></a>00003 <span class="comment">    Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file</span>
-<a name="l00004"></a>00004 <span class="comment"></span>
-<a name="l00005"></a>00005 <span class="comment">    This file is part of 0MQ.</span>
+<a name="l00002"></a>00002 <span class="comment">    Copyright (c) 2009-2011 250bpm s.r.o.</span>
+<a name="l00003"></a>00003 <span class="comment">    Copyright (c) 2007-2009 iMatix Corporation</span>
+<a name="l00004"></a>00004 <span class="comment">    Copyright (c) 2011 VMware, Inc.</span>
+<a name="l00005"></a>00005 <span class="comment">    Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file</span>
 <a name="l00006"></a>00006 <span class="comment"></span>
-<a name="l00007"></a>00007 <span class="comment">    0MQ is free software; you can redistribute it and/or modify it under</span>
-<a name="l00008"></a>00008 <span class="comment">    the terms of the GNU Lesser General Public License as published by</span>
-<a name="l00009"></a>00009 <span class="comment">    the Free Software Foundation; either version 3 of the License, or</span>
-<a name="l00010"></a>00010 <span class="comment">    (at your option) any later version.</span>
-<a name="l00011"></a>00011 <span class="comment"></span>
-<a name="l00012"></a>00012 <span class="comment">    0MQ is distributed in the hope that it will be useful,</span>
-<a name="l00013"></a>00013 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-<a name="l00014"></a>00014 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
-<a name="l00015"></a>00015 <span class="comment">    GNU Lesser General Public License for more details.</span>
-<a name="l00016"></a>00016 <span class="comment"></span>
-<a name="l00017"></a>00017 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
-<a name="l00018"></a>00018 <span class="comment">    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
-<a name="l00019"></a>00019 <span class="comment">*/</span>
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="preprocessor">#include &quot;<a class="code" href="fq_8hpp.html">fq.hpp</a>&quot;</span>
-<a name="l00022"></a>00022 <span class="preprocessor">#include &quot;<a class="code" href="pipe_8hpp.html">pipe.hpp</a>&quot;</span>
-<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="err_8hpp.html">err.hpp</a>&quot;</span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="msg_8hpp.html">msg.hpp</a>&quot;</span>
-<a name="l00025"></a>00025 
-<a name="l00026"></a><a class="code" href="classzmq_1_1fq__t.html#aa99d6144343a68642bcddd2e65ac9c6d">00026</a> <a class="code" href="classzmq_1_1fq__t.html#aa99d6144343a68642bcddd2e65ac9c6d">zmq::fq_t::fq_t</a> () :
-<a name="l00027"></a>00027     active (0),
-<a name="l00028"></a>00028     current (0),
-<a name="l00029"></a>00029     more (false)
-<a name="l00030"></a>00030 {
-<a name="l00031"></a>00031 }
-<a name="l00032"></a>00032 
-<a name="l00033"></a><a class="code" href="classzmq_1_1fq__t.html#a82cb3ffad3dfef585c701d563cb9689c">00033</a> <a class="code" href="classzmq_1_1fq__t.html#a82cb3ffad3dfef585c701d563cb9689c">zmq::fq_t::~fq_t</a> ()
-<a name="l00034"></a>00034 {
-<a name="l00035"></a>00035     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (pipes.empty ());
-<a name="l00036"></a>00036 }
-<a name="l00037"></a>00037 
-<a name="l00038"></a><a class="code" href="classzmq_1_1fq__t.html#ac4fdb58348a55600a5e8b2f8137528ad">00038</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1fq__t.html#ac4fdb58348a55600a5e8b2f8137528ad">zmq::fq_t::attach</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
-<a name="l00039"></a>00039 {
-<a name="l00040"></a>00040     pipes.push_back (pipe_);
-<a name="l00041"></a>00041     pipes.swap (active, pipes.size () - 1);
-<a name="l00042"></a>00042     active++;
-<a name="l00043"></a>00043 }
-<a name="l00044"></a>00044 
-<a name="l00045"></a><a class="code" href="classzmq_1_1fq__t.html#a33a0da40f84953e558a2cc8080160779">00045</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1fq__t.html#a33a0da40f84953e558a2cc8080160779">zmq::fq_t::terminated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
-<a name="l00046"></a>00046 {
-<a name="l00047"></a>00047     <span class="comment">//  Remove the pipe from the list; adjust number of active pipes</span>
-<a name="l00048"></a>00048     <span class="comment">//  accordingly.</span>
-<a name="l00049"></a>00049     <span class="keywordflow">if</span> (pipes.index (pipe_) &lt; active) {
-<a name="l00050"></a>00050         active--;
-<a name="l00051"></a>00051         <span class="keywordflow">if</span> (current == active)
-<a name="l00052"></a>00052             current = 0;
-<a name="l00053"></a>00053     }
-<a name="l00054"></a>00054     pipes.erase (pipe_);
-<a name="l00055"></a>00055 }
-<a name="l00056"></a>00056 
-<a name="l00057"></a><a class="code" href="classzmq_1_1fq__t.html#ab0f57aa9fd8d21b6a88da82e277df2cb">00057</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1fq__t.html#ab0f57aa9fd8d21b6a88da82e277df2cb">zmq::fq_t::activated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
-<a name="l00058"></a>00058 {
-<a name="l00059"></a>00059     <span class="comment">//  Move the pipe to the list of active pipes.</span>
-<a name="l00060"></a>00060     pipes.swap (pipes.index (pipe_), active);
-<a name="l00061"></a>00061     active++;
-<a name="l00062"></a>00062 }
-<a name="l00063"></a>00063 
-<a name="l00064"></a><a class="code" href="classzmq_1_1fq__t.html#a9f0e2eda72444f81444dcc1dc3b08dc3">00064</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1fq__t.html#a9f0e2eda72444f81444dcc1dc3b08dc3">zmq::fq_t::recv</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
-<a name="l00065"></a>00065 {
-<a name="l00066"></a>00066     <span class="keywordflow">return</span> recvpipe (msg_, flags_, NULL);
-<a name="l00067"></a>00067 }
-<a name="l00068"></a>00068 
-<a name="l00069"></a><a class="code" href="classzmq_1_1fq__t.html#af191410167583b8ee98a76e2f4f6f2f3">00069</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1fq__t.html#af191410167583b8ee98a76e2f4f6f2f3">zmq::fq_t::recvpipe</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_, <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> **pipe_)
-<a name="l00070"></a>00070 {
-<a name="l00071"></a>00071     <span class="comment">//  Deallocate old content of the message.</span>
-<a name="l00072"></a>00072     <span class="keywordtype">int</span> rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d">close</a> ();
-<a name="l00073"></a>00073     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075     <span class="comment">//  Round-robin over the pipes to get the next message.</span>
-<a name="l00076"></a>00076     <span class="keywordflow">for</span> (pipes_t::size_type count = active; count != 0; count--) {
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078         <span class="comment">//  Try to fetch new message. If we&#39;ve already read part of the message</span>
-<a name="l00079"></a>00079         <span class="comment">//  subsequent part should be immediately available.</span>
-<a name="l00080"></a>00080         <span class="keywordtype">bool</span> fetched = pipes [current]-&gt;read (msg_);
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082         <span class="comment">//  Check the atomicity of the message. If we&#39;ve already received the</span>
-<a name="l00083"></a>00083         <span class="comment">//  first part of the message we should get the remaining parts</span>
-<a name="l00084"></a>00084         <span class="comment">//  without blocking.</span>
-<a name="l00085"></a>00085         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!(more &amp;&amp; !fetched));
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087         <span class="comment">//  Note that when message is not fetched, current pipe is deactivated</span>
-<a name="l00088"></a>00088         <span class="comment">//  and replaced by another active pipe. Thus we don&#39;t have to increase</span>
-<a name="l00089"></a>00089         <span class="comment">//  the &#39;current&#39; pointer.</span>
-<a name="l00090"></a>00090         <span class="keywordflow">if</span> (fetched) {
-<a name="l00091"></a>00091             <span class="keywordflow">if</span> (pipe_)
-<a name="l00092"></a>00092                 *pipe_ = pipes [current];
-<a name="l00093"></a>00093             more =
-<a name="l00094"></a>00094                 msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
-<a name="l00095"></a>00095             <span class="keywordflow">if</span> (!more) {
-<a name="l00096"></a>00096                 current++;
-<a name="l00097"></a>00097                 <span class="keywordflow">if</span> (current &gt;= active)
-<a name="l00098"></a>00098                     current = 0;
-<a name="l00099"></a>00099             }
-<a name="l00100"></a>00100             <span class="keywordflow">return</span> 0;
-<a name="l00101"></a>00101         }
-<a name="l00102"></a>00102         <span class="keywordflow">else</span> {
-<a name="l00103"></a>00103             active--;
-<a name="l00104"></a>00104             pipes.swap (current, active);
-<a name="l00105"></a>00105             <span class="keywordflow">if</span> (current == active)
-<a name="l00106"></a>00106                 current = 0;
-<a name="l00107"></a>00107         }
-<a name="l00108"></a>00108     }
-<a name="l00109"></a>00109 
-<a name="l00110"></a>00110     <span class="comment">//  No message is available. Initialise the output parameter</span>
-<a name="l00111"></a>00111     <span class="comment">//  to be a 0-byte message.</span>
-<a name="l00112"></a>00112     rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
-<a name="l00113"></a>00113     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00114"></a>00114     errno = EAGAIN;
-<a name="l00115"></a>00115     <span class="keywordflow">return</span> -1;
-<a name="l00116"></a>00116 }
-<a name="l00117"></a>00117 
-<a name="l00118"></a><a class="code" href="classzmq_1_1fq__t.html#ae1e4c90a7142141ac37c210e1c0fb818">00118</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1fq__t.html#ae1e4c90a7142141ac37c210e1c0fb818">zmq::fq_t::has_in</a> ()
-<a name="l00119"></a>00119 {
-<a name="l00120"></a>00120     <span class="comment">//  There are subsequent parts of the partly-read message available.</span>
-<a name="l00121"></a>00121     <span class="keywordflow">if</span> (more)
-<a name="l00122"></a>00122         <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00123"></a>00123 
-<a name="l00124"></a>00124     <span class="comment">//  Note that messing with current doesn&#39;t break the fairness of fair</span>
-<a name="l00125"></a>00125     <span class="comment">//  queueing algorithm. If there are no messages available current will</span>
-<a name="l00126"></a>00126     <span class="comment">//  get back to its original value. Otherwise it&#39;ll point to the first</span>
-<a name="l00127"></a>00127     <span class="comment">//  pipe holding messages, skipping only pipes with no messages available.</span>
-<a name="l00128"></a>00128     <span class="keywordflow">for</span> (pipes_t::size_type count = active; count != 0; count--) {
-<a name="l00129"></a>00129         <span class="keywordflow">if</span> (pipes [current]-&gt;check_read ())
-<a name="l00130"></a>00130             <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00131"></a>00131 
-<a name="l00132"></a>00132         <span class="comment">//  Deactivate the pipe.</span>
-<a name="l00133"></a>00133         active--;
-<a name="l00134"></a>00134         pipes.swap (current, active);
-<a name="l00135"></a>00135         <span class="keywordflow">if</span> (current == active)
-<a name="l00136"></a>00136             current = 0;
-<a name="l00137"></a>00137     }
-<a name="l00138"></a>00138 
-<a name="l00139"></a>00139     <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00140"></a>00140 }
-<a name="l00141"></a>00141 
+<a name="l00007"></a>00007 <span class="comment">    This file is part of 0MQ.</span>
+<a name="l00008"></a>00008 <span class="comment"></span>
+<a name="l00009"></a>00009 <span class="comment">    0MQ is free software; you can redistribute it and/or modify it under</span>
+<a name="l00010"></a>00010 <span class="comment">    the terms of the GNU Lesser General Public License as published by</span>
+<a name="l00011"></a>00011 <span class="comment">    the Free Software Foundation; either version 3 of the License, or</span>
+<a name="l00012"></a>00012 <span class="comment">    (at your option) any later version.</span>
+<a name="l00013"></a>00013 <span class="comment"></span>
+<a name="l00014"></a>00014 <span class="comment">    0MQ is distributed in the hope that it will be useful,</span>
+<a name="l00015"></a>00015 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00016"></a>00016 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00017"></a>00017 <span class="comment">    GNU Lesser General Public License for more details.</span>
+<a name="l00018"></a>00018 <span class="comment"></span>
+<a name="l00019"></a>00019 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
+<a name="l00020"></a>00020 <span class="comment">    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00021"></a>00021 <span class="comment">*/</span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="fq_8hpp.html">fq.hpp</a>&quot;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="pipe_8hpp.html">pipe.hpp</a>&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="err_8hpp.html">err.hpp</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="msg_8hpp.html">msg.hpp</a>&quot;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a><a class="code" href="classzmq_1_1fq__t.html#aa99d6144343a68642bcddd2e65ac9c6d">00028</a> <a class="code" href="classzmq_1_1fq__t.html#aa99d6144343a68642bcddd2e65ac9c6d">zmq::fq_t::fq_t</a> () :
+<a name="l00029"></a>00029     active (0),
+<a name="l00030"></a>00030     current (0),
+<a name="l00031"></a>00031     more (false)
+<a name="l00032"></a>00032 {
+<a name="l00033"></a>00033 }
+<a name="l00034"></a>00034 
+<a name="l00035"></a><a class="code" href="classzmq_1_1fq__t.html#a82cb3ffad3dfef585c701d563cb9689c">00035</a> <a class="code" href="classzmq_1_1fq__t.html#a82cb3ffad3dfef585c701d563cb9689c">zmq::fq_t::~fq_t</a> ()
+<a name="l00036"></a>00036 {
+<a name="l00037"></a>00037     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (pipes.empty ());
+<a name="l00038"></a>00038 }
+<a name="l00039"></a>00039 
+<a name="l00040"></a><a class="code" href="classzmq_1_1fq__t.html#ac4fdb58348a55600a5e8b2f8137528ad">00040</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1fq__t.html#ac4fdb58348a55600a5e8b2f8137528ad">zmq::fq_t::attach</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
+<a name="l00041"></a>00041 {
+<a name="l00042"></a>00042     pipes.push_back (pipe_);
+<a name="l00043"></a>00043     pipes.swap (active, pipes.size () - 1);
+<a name="l00044"></a>00044     active++;
+<a name="l00045"></a>00045 }
+<a name="l00046"></a>00046 
+<a name="l00047"></a><a class="code" href="classzmq_1_1fq__t.html#a33a0da40f84953e558a2cc8080160779">00047</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1fq__t.html#a33a0da40f84953e558a2cc8080160779">zmq::fq_t::terminated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
+<a name="l00048"></a>00048 {
+<a name="l00049"></a>00049     <span class="comment">//  Remove the pipe from the list; adjust number of active pipes</span>
+<a name="l00050"></a>00050     <span class="comment">//  accordingly.</span>
+<a name="l00051"></a>00051     <span class="keywordflow">if</span> (pipes.index (pipe_) &lt; active) {
+<a name="l00052"></a>00052         active--;
+<a name="l00053"></a>00053         <span class="keywordflow">if</span> (current == active)
+<a name="l00054"></a>00054             current = 0;
+<a name="l00055"></a>00055     }
+<a name="l00056"></a>00056     pipes.erase (pipe_);
+<a name="l00057"></a>00057 }
+<a name="l00058"></a>00058 
+<a name="l00059"></a><a class="code" href="classzmq_1_1fq__t.html#ab0f57aa9fd8d21b6a88da82e277df2cb">00059</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1fq__t.html#ab0f57aa9fd8d21b6a88da82e277df2cb">zmq::fq_t::activated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
+<a name="l00060"></a>00060 {
+<a name="l00061"></a>00061     <span class="comment">//  Move the pipe to the list of active pipes.</span>
+<a name="l00062"></a>00062     pipes.swap (pipes.index (pipe_), active);
+<a name="l00063"></a>00063     active++;
+<a name="l00064"></a>00064 }
+<a name="l00065"></a>00065 
+<a name="l00066"></a><a class="code" href="classzmq_1_1fq__t.html#a9f0e2eda72444f81444dcc1dc3b08dc3">00066</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1fq__t.html#a9f0e2eda72444f81444dcc1dc3b08dc3">zmq::fq_t::recv</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
+<a name="l00067"></a>00067 {
+<a name="l00068"></a>00068     <span class="keywordflow">return</span> recvpipe (msg_, flags_, NULL);
+<a name="l00069"></a>00069 }
+<a name="l00070"></a>00070 
+<a name="l00071"></a><a class="code" href="classzmq_1_1fq__t.html#af191410167583b8ee98a76e2f4f6f2f3">00071</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1fq__t.html#af191410167583b8ee98a76e2f4f6f2f3">zmq::fq_t::recvpipe</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_, <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> **pipe_)
+<a name="l00072"></a>00072 {
+<a name="l00073"></a>00073     <span class="comment">//  Deallocate old content of the message.</span>
+<a name="l00074"></a>00074     <span class="keywordtype">int</span> rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d">close</a> ();
+<a name="l00075"></a>00075     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077     <span class="comment">//  Round-robin over the pipes to get the next message.</span>
+<a name="l00078"></a>00078     <span class="keywordflow">for</span> (pipes_t::size_type count = active; count != 0; count--) {
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080         <span class="comment">//  Try to fetch new message. If we&#39;ve already read part of the message</span>
+<a name="l00081"></a>00081         <span class="comment">//  subsequent part should be immediately available.</span>
+<a name="l00082"></a>00082         <span class="keywordtype">bool</span> fetched = pipes [current]-&gt;read (msg_);
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084         <span class="comment">//  Check the atomicity of the message. If we&#39;ve already received the</span>
+<a name="l00085"></a>00085         <span class="comment">//  first part of the message we should get the remaining parts</span>
+<a name="l00086"></a>00086         <span class="comment">//  without blocking.</span>
+<a name="l00087"></a>00087         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!(more &amp;&amp; !fetched));
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089         <span class="comment">//  Note that when message is not fetched, current pipe is deactivated</span>
+<a name="l00090"></a>00090         <span class="comment">//  and replaced by another active pipe. Thus we don&#39;t have to increase</span>
+<a name="l00091"></a>00091         <span class="comment">//  the &#39;current&#39; pointer.</span>
+<a name="l00092"></a>00092         <span class="keywordflow">if</span> (fetched) {
+<a name="l00093"></a>00093             <span class="keywordflow">if</span> (pipe_)
+<a name="l00094"></a>00094                 *pipe_ = pipes [current];
+<a name="l00095"></a>00095             more =
+<a name="l00096"></a>00096                 msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00097"></a>00097             <span class="keywordflow">if</span> (!more) {
+<a name="l00098"></a>00098                 current++;
+<a name="l00099"></a>00099                 <span class="keywordflow">if</span> (current &gt;= active)
+<a name="l00100"></a>00100                     current = 0;
+<a name="l00101"></a>00101             }
+<a name="l00102"></a>00102             <span class="keywordflow">return</span> 0;
+<a name="l00103"></a>00103         }
+<a name="l00104"></a>00104         <span class="keywordflow">else</span> {
+<a name="l00105"></a>00105             active--;
+<a name="l00106"></a>00106             pipes.swap (current, active);
+<a name="l00107"></a>00107             <span class="keywordflow">if</span> (current == active)
+<a name="l00108"></a>00108                 current = 0;
+<a name="l00109"></a>00109         }
+<a name="l00110"></a>00110     }
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112     <span class="comment">//  No message is available. Initialise the output parameter</span>
+<a name="l00113"></a>00113     <span class="comment">//  to be a 0-byte message.</span>
+<a name="l00114"></a>00114     rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
+<a name="l00115"></a>00115     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00116"></a>00116     errno = EAGAIN;
+<a name="l00117"></a>00117     <span class="keywordflow">return</span> -1;
+<a name="l00118"></a>00118 }
+<a name="l00119"></a>00119 
+<a name="l00120"></a><a class="code" href="classzmq_1_1fq__t.html#ae1e4c90a7142141ac37c210e1c0fb818">00120</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1fq__t.html#ae1e4c90a7142141ac37c210e1c0fb818">zmq::fq_t::has_in</a> ()
+<a name="l00121"></a>00121 {
+<a name="l00122"></a>00122     <span class="comment">//  There are subsequent parts of the partly-read message available.</span>
+<a name="l00123"></a>00123     <span class="keywordflow">if</span> (more)
+<a name="l00124"></a>00124         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00125"></a>00125 
+<a name="l00126"></a>00126     <span class="comment">//  Note that messing with current doesn&#39;t break the fairness of fair</span>
+<a name="l00127"></a>00127     <span class="comment">//  queueing algorithm. If there are no messages available current will</span>
+<a name="l00128"></a>00128     <span class="comment">//  get back to its original value. Otherwise it&#39;ll point to the first</span>
+<a name="l00129"></a>00129     <span class="comment">//  pipe holding messages, skipping only pipes with no messages available.</span>
+<a name="l00130"></a>00130     <span class="keywordflow">for</span> (pipes_t::size_type count = active; count != 0; count--) {
+<a name="l00131"></a>00131         <span class="keywordflow">if</span> (pipes [current]-&gt;check_read ())
+<a name="l00132"></a>00132             <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00133"></a>00133 
+<a name="l00134"></a>00134         <span class="comment">//  Deactivate the pipe.</span>
+<a name="l00135"></a>00135         active--;
+<a name="l00136"></a>00136         pipes.swap (current, active);
+<a name="l00137"></a>00137         <span class="keywordflow">if</span> (current == active)
+<a name="l00138"></a>00138             current = 0;
+<a name="l00139"></a>00139     }
+<a name="l00140"></a>00140 
+<a name="l00141"></a>00141     <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00142"></a>00142 }
+<a name="l00143"></a>00143 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -262,7 +264,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 11 2011 03:17:44 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Nov 8 2011 10:17:23 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

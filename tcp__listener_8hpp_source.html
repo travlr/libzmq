@@ -106,87 +106,88 @@ function toggleVisibility(linkObj) {
 </div>
 <div class="contents">
 <a href="tcp__listener_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment">    Copyright (c) 2007-2011 iMatix Corporation</span>
-<a name="l00003"></a>00003 <span class="comment">    Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file</span>
-<a name="l00004"></a>00004 <span class="comment"></span>
-<a name="l00005"></a>00005 <span class="comment">    This file is part of 0MQ.</span>
-<a name="l00006"></a>00006 <span class="comment"></span>
-<a name="l00007"></a>00007 <span class="comment">    0MQ is free software; you can redistribute it and/or modify it under</span>
-<a name="l00008"></a>00008 <span class="comment">    the terms of the GNU Lesser General Public License as published by</span>
-<a name="l00009"></a>00009 <span class="comment">    the Free Software Foundation; either version 3 of the License, or</span>
-<a name="l00010"></a>00010 <span class="comment">    (at your option) any later version.</span>
-<a name="l00011"></a>00011 <span class="comment"></span>
-<a name="l00012"></a>00012 <span class="comment">    0MQ is distributed in the hope that it will be useful,</span>
-<a name="l00013"></a>00013 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-<a name="l00014"></a>00014 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
-<a name="l00015"></a>00015 <span class="comment">    GNU Lesser General Public License for more details.</span>
-<a name="l00016"></a>00016 <span class="comment"></span>
-<a name="l00017"></a>00017 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
-<a name="l00018"></a>00018 <span class="comment">    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
-<a name="l00019"></a>00019 <span class="comment">*/</span>
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="preprocessor">#ifndef __ZMQ_TCP_LISTENER_HPP_INCLUDED__</span>
-<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define __ZMQ_TCP_LISTENER_HPP_INCLUDED__</span>
-<a name="l00023"></a>00023 <span class="preprocessor"></span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="fd_8hpp.html">fd.hpp</a>&quot;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="own_8hpp.html">own.hpp</a>&quot;</span>
-<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="stdint_8hpp.html">stdint.hpp</a>&quot;</span>
-<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="io__object_8hpp.html">io_object.hpp</a>&quot;</span>
-<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="tcp__address_8hpp.html">tcp_address.hpp</a>&quot;</span>
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030 <span class="keyword">namespace </span>zmq
-<a name="l00031"></a>00031 {
-<a name="l00032"></a>00032 
-<a name="l00033"></a><a class="code" href="classzmq_1_1tcp__listener__t.html">00033</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1tcp__listener__t.html">tcp_listener_t</a> : <span class="keyword">public</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a>, <span class="keyword">public</span> <a class="code" href="classzmq_1_1io__object__t.html">io_object_t</a>
-<a name="l00034"></a>00034     {
-<a name="l00035"></a>00035     <span class="keyword">public</span>:
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037         <a class="code" href="classzmq_1_1tcp__listener__t.html#a6d58bbe3ee44248ad42f3a44db1186b2">tcp_listener_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
-<a name="l00038"></a>00038             <span class="keyword">class</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_);
-<a name="l00039"></a>00039         <a class="code" href="classzmq_1_1tcp__listener__t.html#a5ce2de50a1242c4f43c1d1496b6b2cd8">~tcp_listener_t</a> ();
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041         <span class="comment">//  Set address to listen on.</span>
-<a name="l00042"></a>00042         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1tcp__listener__t.html#a274b3137c2f8962f96d1f53d2e108c8c">set_address</a> (<span class="keyword">const</span> <span class="keywordtype">char</span> *addr_);
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044     <span class="keyword">private</span>:
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046         <span class="comment">//  Handlers for incoming commands.</span>
-<a name="l00047"></a>00047         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1tcp__listener__t.html#a1b16eee787896e8207af95d5874b6e05">process_plug</a> ();
-<a name="l00048"></a>00048         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1tcp__listener__t.html#ae97b4bf062352eb84c3509134bbebc25">process_term</a> (<span class="keywordtype">int</span> linger_);
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050         <span class="comment">//  Handlers for I/O events.</span>
-<a name="l00051"></a>00051         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1tcp__listener__t.html#a5768c38ce36c7721bacf332740bb8a1f">in_event</a> ();
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053         <span class="comment">//  Close the listening socket.</span>
-<a name="l00054"></a>00054         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1tcp__listener__t.html#ad3c4437a0457ca8374be1cf9592d6e39">close</a> ();
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056         <span class="comment">//  Accept the new connection. Returns the file descriptor of the</span>
-<a name="l00057"></a>00057         <span class="comment">//  newly created connection. The function may return retired_fd</span>
-<a name="l00058"></a>00058         <span class="comment">//  if the connection was dropped while waiting in the listen backlog.</span>
-<a name="l00059"></a>00059         fd_t <a class="code" href="classzmq_1_1tcp__listener__t.html#a61d3286e4d1a1199b2710d6b193b7076">accept</a> ();
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061         <span class="comment">//  Address to listen on.</span>
-<a name="l00062"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#ae61a52811c2611caa2ac4696e8f11985">00062</a>         <a class="code" href="classzmq_1_1tcp__address__t.html">tcp_address_t</a> <a class="code" href="classzmq_1_1tcp__listener__t.html#ae61a52811c2611caa2ac4696e8f11985">address</a>;
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064         <span class="comment">//  True, if the undelying file for UNIX domain socket exists.</span>
-<a name="l00065"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#a779ca79d4ef1e64bf8bdf755b51b22be">00065</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1tcp__listener__t.html#a779ca79d4ef1e64bf8bdf755b51b22be">has_file</a>;
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067         <span class="comment">//  Underlying socket.</span>
-<a name="l00068"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">00068</a>         fd_t <a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a>;
-<a name="l00069"></a>00069 
-<a name="l00070"></a>00070         <span class="comment">//  Handle corresponding to the listening socket.</span>
-<a name="l00071"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#a9afa0e6f1c9ac17db2b5216e07bb65c4">00071</a>         <a class="code" href="classzmq_1_1io__object__t.html#a4b6973c60124b9f72305af675e9a4cf4">handle_t</a> <a class="code" href="classzmq_1_1tcp__listener__t.html#a9afa0e6f1c9ac17db2b5216e07bb65c4">handle</a>;
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073         <span class="comment">//  Socket the listerner belongs to.</span>
-<a name="l00074"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#a05c3a15c3244d09cbebb2c50a8302968">00074</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *<a class="code" href="classzmq_1_1tcp__listener__t.html#a05c3a15c3244d09cbebb2c50a8302968">socket</a>;
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076         <a class="code" href="classzmq_1_1tcp__listener__t.html#a6d58bbe3ee44248ad42f3a44db1186b2">tcp_listener_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1tcp__listener__t.html">tcp_listener_t</a>&amp;);
-<a name="l00077"></a>00077         <span class="keyword">const</span> <a class="code" href="classzmq_1_1tcp__listener__t.html">tcp_listener_t</a> &amp;<a class="code" href="classzmq_1_1tcp__listener__t.html#a26b7188f805103c354917c56e15f8429">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1tcp__listener__t.html">tcp_listener_t</a>&amp;);
-<a name="l00078"></a>00078     };
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080 }
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082 <span class="preprocessor">#endif</span>
+<a name="l00002"></a>00002 <span class="comment">    Copyright (c) 2009-2011 250bpm s.r.o.</span>
+<a name="l00003"></a>00003 <span class="comment">    Copyright (c) 2007-2010 iMatix Corporation</span>
+<a name="l00004"></a>00004 <span class="comment">    Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file</span>
+<a name="l00005"></a>00005 <span class="comment"></span>
+<a name="l00006"></a>00006 <span class="comment">    This file is part of 0MQ.</span>
+<a name="l00007"></a>00007 <span class="comment"></span>
+<a name="l00008"></a>00008 <span class="comment">    0MQ is free software; you can redistribute it and/or modify it under</span>
+<a name="l00009"></a>00009 <span class="comment">    the terms of the GNU Lesser General Public License as published by</span>
+<a name="l00010"></a>00010 <span class="comment">    the Free Software Foundation; either version 3 of the License, or</span>
+<a name="l00011"></a>00011 <span class="comment">    (at your option) any later version.</span>
+<a name="l00012"></a>00012 <span class="comment"></span>
+<a name="l00013"></a>00013 <span class="comment">    0MQ is distributed in the hope that it will be useful,</span>
+<a name="l00014"></a>00014 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00015"></a>00015 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00016"></a>00016 <span class="comment">    GNU Lesser General Public License for more details.</span>
+<a name="l00017"></a>00017 <span class="comment"></span>
+<a name="l00018"></a>00018 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
+<a name="l00019"></a>00019 <span class="comment">    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00020"></a>00020 <span class="comment">*/</span>
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="preprocessor">#ifndef __ZMQ_TCP_LISTENER_HPP_INCLUDED__</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span><span class="preprocessor">#define __ZMQ_TCP_LISTENER_HPP_INCLUDED__</span>
+<a name="l00024"></a>00024 <span class="preprocessor"></span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="fd_8hpp.html">fd.hpp</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="own_8hpp.html">own.hpp</a>&quot;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="stdint_8hpp.html">stdint.hpp</a>&quot;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="io__object_8hpp.html">io_object.hpp</a>&quot;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="tcp__address_8hpp.html">tcp_address.hpp</a>&quot;</span>
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="keyword">namespace </span>zmq
+<a name="l00032"></a>00032 {
+<a name="l00033"></a>00033 
+<a name="l00034"></a><a class="code" href="classzmq_1_1tcp__listener__t.html">00034</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1tcp__listener__t.html">tcp_listener_t</a> : <span class="keyword">public</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a>, <span class="keyword">public</span> <a class="code" href="classzmq_1_1io__object__t.html">io_object_t</a>
+<a name="l00035"></a>00035     {
+<a name="l00036"></a>00036     <span class="keyword">public</span>:
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038         <a class="code" href="classzmq_1_1tcp__listener__t.html#a6d58bbe3ee44248ad42f3a44db1186b2">tcp_listener_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
+<a name="l00039"></a>00039             <span class="keyword">class</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_);
+<a name="l00040"></a>00040         <a class="code" href="classzmq_1_1tcp__listener__t.html#a5ce2de50a1242c4f43c1d1496b6b2cd8">~tcp_listener_t</a> ();
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042         <span class="comment">//  Set address to listen on.</span>
+<a name="l00043"></a>00043         <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1tcp__listener__t.html#a274b3137c2f8962f96d1f53d2e108c8c">set_address</a> (<span class="keyword">const</span> <span class="keywordtype">char</span> *addr_);
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045     <span class="keyword">private</span>:
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047         <span class="comment">//  Handlers for incoming commands.</span>
+<a name="l00048"></a>00048         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1tcp__listener__t.html#a1b16eee787896e8207af95d5874b6e05">process_plug</a> ();
+<a name="l00049"></a>00049         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1tcp__listener__t.html#ae97b4bf062352eb84c3509134bbebc25">process_term</a> (<span class="keywordtype">int</span> linger_);
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051         <span class="comment">//  Handlers for I/O events.</span>
+<a name="l00052"></a>00052         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1tcp__listener__t.html#a5768c38ce36c7721bacf332740bb8a1f">in_event</a> ();
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054         <span class="comment">//  Close the listening socket.</span>
+<a name="l00055"></a>00055         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1tcp__listener__t.html#ad3c4437a0457ca8374be1cf9592d6e39">close</a> ();
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057         <span class="comment">//  Accept the new connection. Returns the file descriptor of the</span>
+<a name="l00058"></a>00058         <span class="comment">//  newly created connection. The function may return retired_fd</span>
+<a name="l00059"></a>00059         <span class="comment">//  if the connection was dropped while waiting in the listen backlog.</span>
+<a name="l00060"></a>00060         fd_t <a class="code" href="classzmq_1_1tcp__listener__t.html#a61d3286e4d1a1199b2710d6b193b7076">accept</a> ();
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062         <span class="comment">//  Address to listen on.</span>
+<a name="l00063"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#ae61a52811c2611caa2ac4696e8f11985">00063</a>         <a class="code" href="classzmq_1_1tcp__address__t.html">tcp_address_t</a> <a class="code" href="classzmq_1_1tcp__listener__t.html#ae61a52811c2611caa2ac4696e8f11985">address</a>;
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065         <span class="comment">//  True, if the undelying file for UNIX domain socket exists.</span>
+<a name="l00066"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#a779ca79d4ef1e64bf8bdf755b51b22be">00066</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1tcp__listener__t.html#a779ca79d4ef1e64bf8bdf755b51b22be">has_file</a>;
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068         <span class="comment">//  Underlying socket.</span>
+<a name="l00069"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">00069</a>         fd_t <a class="code" href="classzmq_1_1tcp__listener__t.html#ab77ed434b6b6e0fdb8b86ceb034d0d31">s</a>;
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071         <span class="comment">//  Handle corresponding to the listening socket.</span>
+<a name="l00072"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#a9afa0e6f1c9ac17db2b5216e07bb65c4">00072</a>         <a class="code" href="classzmq_1_1io__object__t.html#a4b6973c60124b9f72305af675e9a4cf4">handle_t</a> <a class="code" href="classzmq_1_1tcp__listener__t.html#a9afa0e6f1c9ac17db2b5216e07bb65c4">handle</a>;
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074         <span class="comment">//  Socket the listerner belongs to.</span>
+<a name="l00075"></a><a class="code" href="classzmq_1_1tcp__listener__t.html#a05c3a15c3244d09cbebb2c50a8302968">00075</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *<a class="code" href="classzmq_1_1tcp__listener__t.html#a05c3a15c3244d09cbebb2c50a8302968">socket</a>;
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077         <a class="code" href="classzmq_1_1tcp__listener__t.html#a6d58bbe3ee44248ad42f3a44db1186b2">tcp_listener_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1tcp__listener__t.html">tcp_listener_t</a>&amp;);
+<a name="l00078"></a>00078         <span class="keyword">const</span> <a class="code" href="classzmq_1_1tcp__listener__t.html">tcp_listener_t</a> &amp;<a class="code" href="classzmq_1_1tcp__listener__t.html#a26b7188f805103c354917c56e15f8429">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1tcp__listener__t.html">tcp_listener_t</a>&amp;);
+<a name="l00079"></a>00079     };
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081 }
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -203,7 +204,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 11 2011 03:17:44 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Nov 8 2011 10:17:24 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

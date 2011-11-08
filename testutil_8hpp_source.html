@@ -106,80 +106,81 @@ function toggleVisibility(linkObj) {
 </div>
 <div class="contents">
 <a href="testutil_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment">    Copyright (c) 2007-2011 iMatix Corporation</span>
-<a name="l00003"></a>00003 <span class="comment">    Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file</span>
-<a name="l00004"></a>00004 <span class="comment"></span>
-<a name="l00005"></a>00005 <span class="comment">    This file is part of 0MQ.</span>
-<a name="l00006"></a>00006 <span class="comment"></span>
-<a name="l00007"></a>00007 <span class="comment">    0MQ is free software; you can redistribute it and/or modify it under</span>
-<a name="l00008"></a>00008 <span class="comment">    the terms of the GNU Lesser General Public License as published by</span>
-<a name="l00009"></a>00009 <span class="comment">    the Free Software Foundation; either version 3 of the License, or</span>
-<a name="l00010"></a>00010 <span class="comment">    (at your option) any later version.</span>
-<a name="l00011"></a>00011 <span class="comment"></span>
-<a name="l00012"></a>00012 <span class="comment">    0MQ is distributed in the hope that it will be useful,</span>
-<a name="l00013"></a>00013 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-<a name="l00014"></a>00014 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
-<a name="l00015"></a>00015 <span class="comment">    GNU Lesser General Public License for more details.</span>
-<a name="l00016"></a>00016 <span class="comment"></span>
-<a name="l00017"></a>00017 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
-<a name="l00018"></a>00018 <span class="comment">    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
-<a name="l00019"></a>00019 <span class="comment">*/</span>
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="preprocessor">#ifndef __ZMQ_TEST_TESTUTIL_HPP_INCLUDED__</span>
-<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define __ZMQ_TEST_TESTUTIL_HPP_INCLUDED__</span>
-<a name="l00023"></a>00023 <span class="preprocessor"></span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;assert.h&gt;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;string.h&gt;</span>
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="zmq_8h.html">../include/zmq.h</a>&quot;</span>
-<a name="l00028"></a>00028 
-<a name="l00029"></a><a class="code" href="testutil_8hpp.html#a706fc073296c3da5fb021a69cc22089d">00029</a> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="testutil_8hpp.html#a706fc073296c3da5fb021a69cc22089d">bounce</a> (<span class="keywordtype">void</span> *sb, <span class="keywordtype">void</span> *sc)
-<a name="l00030"></a>00030 {
-<a name="l00031"></a>00031     <span class="keyword">const</span> <span class="keywordtype">char</span> *content = <span class="stringliteral">&quot;12345678ABCDEFGH12345678abcdefgh&quot;</span>;
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033     <span class="comment">//  Send the message.</span>
-<a name="l00034"></a>00034     <span class="keywordtype">int</span> rc = <a class="code" href="zmq_8h.html#a61be5e8df496263496a3ec39cd669363">zmq_send</a> (sc, content, 32, <a class="code" href="zmq_8h.html#a0e130fcfafb931a05616a369caa2af2f">ZMQ_SNDMORE</a>);
-<a name="l00035"></a>00035     assert (rc == 32);
-<a name="l00036"></a>00036     rc = <a class="code" href="zmq_8h.html#a61be5e8df496263496a3ec39cd669363">zmq_send</a> (sc, content, 32, 0);
-<a name="l00037"></a>00037     assert (rc == 32);
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039     <span class="comment">//  Bounce the message back.</span>
-<a name="l00040"></a>00040     <span class="keywordtype">char</span> buf1 [32];
-<a name="l00041"></a>00041     rc = <a class="code" href="zmq_8h.html#a3fa5cd19114e8f3f975b4087fa648e08">zmq_recv</a> (sb, buf1, 32, 0);
-<a name="l00042"></a>00042     assert (rc == 32);
-<a name="l00043"></a>00043     <span class="keywordtype">int</span> rcvmore;
-<a name="l00044"></a>00044     <span class="keywordtype">size_t</span> sz = <span class="keyword">sizeof</span> (rcvmore);
-<a name="l00045"></a>00045     rc = <a class="code" href="zmq_8h.html#a8ee9693ff7f63751670016a4a04d72ae">zmq_getsockopt</a> (sb, <a class="code" href="zmq_8h.html#aab168348824c16200f7299483f6cce97">ZMQ_RCVMORE</a>, &amp;rcvmore, &amp;sz);
-<a name="l00046"></a>00046     assert (rc == 0);
-<a name="l00047"></a>00047     assert (rcvmore);
-<a name="l00048"></a>00048     rc = <a class="code" href="zmq_8h.html#a3fa5cd19114e8f3f975b4087fa648e08">zmq_recv</a> (sb, buf1, 32, 0);
-<a name="l00049"></a>00049     assert (rc == 32);
-<a name="l00050"></a>00050     rc = <a class="code" href="zmq_8h.html#a8ee9693ff7f63751670016a4a04d72ae">zmq_getsockopt</a> (sb, <a class="code" href="zmq_8h.html#aab168348824c16200f7299483f6cce97">ZMQ_RCVMORE</a>, &amp;rcvmore, &amp;sz);
-<a name="l00051"></a>00051     assert (rc == 0);
-<a name="l00052"></a>00052     assert (!rcvmore);
-<a name="l00053"></a>00053     rc = <a class="code" href="zmq_8h.html#a61be5e8df496263496a3ec39cd669363">zmq_send</a> (sb, buf1, 32, <a class="code" href="zmq_8h.html#a0e130fcfafb931a05616a369caa2af2f">ZMQ_SNDMORE</a>);
-<a name="l00054"></a>00054     assert (rc == 32);
-<a name="l00055"></a>00055     rc = <a class="code" href="zmq_8h.html#a61be5e8df496263496a3ec39cd669363">zmq_send</a> (sb, buf1, 32, 0);
-<a name="l00056"></a>00056     assert (rc == 32);
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058     <span class="comment">//  Receive the bounced message.</span>
-<a name="l00059"></a>00059     <span class="keywordtype">char</span> buf2 [32];
-<a name="l00060"></a>00060     rc = <a class="code" href="zmq_8h.html#a3fa5cd19114e8f3f975b4087fa648e08">zmq_recv</a> (sc, buf2, 32, 0);
-<a name="l00061"></a>00061     assert (rc == 32);
-<a name="l00062"></a>00062     rc = <a class="code" href="zmq_8h.html#a8ee9693ff7f63751670016a4a04d72ae">zmq_getsockopt</a> (sc, <a class="code" href="zmq_8h.html#aab168348824c16200f7299483f6cce97">ZMQ_RCVMORE</a>, &amp;rcvmore, &amp;sz);
-<a name="l00063"></a>00063     assert (rc == 0);
-<a name="l00064"></a>00064     assert (rcvmore);
-<a name="l00065"></a>00065     rc = <a class="code" href="zmq_8h.html#a3fa5cd19114e8f3f975b4087fa648e08">zmq_recv</a> (sc, buf2, 32, 0);
-<a name="l00066"></a>00066     assert (rc == 32);
-<a name="l00067"></a>00067     rc = <a class="code" href="zmq_8h.html#a8ee9693ff7f63751670016a4a04d72ae">zmq_getsockopt</a> (sc, <a class="code" href="zmq_8h.html#aab168348824c16200f7299483f6cce97">ZMQ_RCVMORE</a>, &amp;rcvmore, &amp;sz);
-<a name="l00068"></a>00068     assert (rc == 0);
-<a name="l00069"></a>00069     assert (!rcvmore);
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071     <span class="comment">//  Check whether the message is still the same.</span>
-<a name="l00072"></a>00072     assert (memcmp (buf2, content, 32) == 0);
-<a name="l00073"></a>00073 }
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075 <span class="preprocessor">#endif</span>
+<a name="l00002"></a>00002 <span class="comment">    Copyright (c) 2009-2011 250bpm s.r.o.</span>
+<a name="l00003"></a>00003 <span class="comment">    Copyright (c) 2007-2011 iMatix Corporation</span>
+<a name="l00004"></a>00004 <span class="comment">    Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file</span>
+<a name="l00005"></a>00005 <span class="comment"></span>
+<a name="l00006"></a>00006 <span class="comment">    This file is part of 0MQ.</span>
+<a name="l00007"></a>00007 <span class="comment"></span>
+<a name="l00008"></a>00008 <span class="comment">    0MQ is free software; you can redistribute it and/or modify it under</span>
+<a name="l00009"></a>00009 <span class="comment">    the terms of the GNU Lesser General Public License as published by</span>
+<a name="l00010"></a>00010 <span class="comment">    the Free Software Foundation; either version 3 of the License, or</span>
+<a name="l00011"></a>00011 <span class="comment">    (at your option) any later version.</span>
+<a name="l00012"></a>00012 <span class="comment"></span>
+<a name="l00013"></a>00013 <span class="comment">    0MQ is distributed in the hope that it will be useful,</span>
+<a name="l00014"></a>00014 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00015"></a>00015 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00016"></a>00016 <span class="comment">    GNU Lesser General Public License for more details.</span>
+<a name="l00017"></a>00017 <span class="comment"></span>
+<a name="l00018"></a>00018 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
+<a name="l00019"></a>00019 <span class="comment">    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00020"></a>00020 <span class="comment">*/</span>
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="preprocessor">#ifndef __ZMQ_TEST_TESTUTIL_HPP_INCLUDED__</span>
+<a name="l00023"></a>00023 <span class="preprocessor"></span><span class="preprocessor">#define __ZMQ_TEST_TESTUTIL_HPP_INCLUDED__</span>
+<a name="l00024"></a>00024 <span class="preprocessor"></span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;assert.h&gt;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;string.h&gt;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="zmq_8h.html">../include/zmq.h</a>&quot;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a><a class="code" href="testutil_8hpp.html#a706fc073296c3da5fb021a69cc22089d">00030</a> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="testutil_8hpp.html#a706fc073296c3da5fb021a69cc22089d">bounce</a> (<span class="keywordtype">void</span> *sb, <span class="keywordtype">void</span> *sc)
+<a name="l00031"></a>00031 {
+<a name="l00032"></a>00032     <span class="keyword">const</span> <span class="keywordtype">char</span> *content = <span class="stringliteral">&quot;12345678ABCDEFGH12345678abcdefgh&quot;</span>;
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034     <span class="comment">//  Send the message.</span>
+<a name="l00035"></a>00035     <span class="keywordtype">int</span> rc = <a class="code" href="zmq_8h.html#a61be5e8df496263496a3ec39cd669363">zmq_send</a> (sc, content, 32, <a class="code" href="zmq_8h.html#a0e130fcfafb931a05616a369caa2af2f">ZMQ_SNDMORE</a>);
+<a name="l00036"></a>00036     assert (rc == 32);
+<a name="l00037"></a>00037     rc = <a class="code" href="zmq_8h.html#a61be5e8df496263496a3ec39cd669363">zmq_send</a> (sc, content, 32, 0);
+<a name="l00038"></a>00038     assert (rc == 32);
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040     <span class="comment">//  Bounce the message back.</span>
+<a name="l00041"></a>00041     <span class="keywordtype">char</span> buf1 [32];
+<a name="l00042"></a>00042     rc = <a class="code" href="zmq_8h.html#a3fa5cd19114e8f3f975b4087fa648e08">zmq_recv</a> (sb, buf1, 32, 0);
+<a name="l00043"></a>00043     assert (rc == 32);
+<a name="l00044"></a>00044     <span class="keywordtype">int</span> rcvmore;
+<a name="l00045"></a>00045     <span class="keywordtype">size_t</span> sz = <span class="keyword">sizeof</span> (rcvmore);
+<a name="l00046"></a>00046     rc = <a class="code" href="zmq_8h.html#a8ee9693ff7f63751670016a4a04d72ae">zmq_getsockopt</a> (sb, <a class="code" href="zmq_8h.html#aab168348824c16200f7299483f6cce97">ZMQ_RCVMORE</a>, &amp;rcvmore, &amp;sz);
+<a name="l00047"></a>00047     assert (rc == 0);
+<a name="l00048"></a>00048     assert (rcvmore);
+<a name="l00049"></a>00049     rc = <a class="code" href="zmq_8h.html#a3fa5cd19114e8f3f975b4087fa648e08">zmq_recv</a> (sb, buf1, 32, 0);
+<a name="l00050"></a>00050     assert (rc == 32);
+<a name="l00051"></a>00051     rc = <a class="code" href="zmq_8h.html#a8ee9693ff7f63751670016a4a04d72ae">zmq_getsockopt</a> (sb, <a class="code" href="zmq_8h.html#aab168348824c16200f7299483f6cce97">ZMQ_RCVMORE</a>, &amp;rcvmore, &amp;sz);
+<a name="l00052"></a>00052     assert (rc == 0);
+<a name="l00053"></a>00053     assert (!rcvmore);
+<a name="l00054"></a>00054     rc = <a class="code" href="zmq_8h.html#a61be5e8df496263496a3ec39cd669363">zmq_send</a> (sb, buf1, 32, <a class="code" href="zmq_8h.html#a0e130fcfafb931a05616a369caa2af2f">ZMQ_SNDMORE</a>);
+<a name="l00055"></a>00055     assert (rc == 32);
+<a name="l00056"></a>00056     rc = <a class="code" href="zmq_8h.html#a61be5e8df496263496a3ec39cd669363">zmq_send</a> (sb, buf1, 32, 0);
+<a name="l00057"></a>00057     assert (rc == 32);
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059     <span class="comment">//  Receive the bounced message.</span>
+<a name="l00060"></a>00060     <span class="keywordtype">char</span> buf2 [32];
+<a name="l00061"></a>00061     rc = <a class="code" href="zmq_8h.html#a3fa5cd19114e8f3f975b4087fa648e08">zmq_recv</a> (sc, buf2, 32, 0);
+<a name="l00062"></a>00062     assert (rc == 32);
+<a name="l00063"></a>00063     rc = <a class="code" href="zmq_8h.html#a8ee9693ff7f63751670016a4a04d72ae">zmq_getsockopt</a> (sc, <a class="code" href="zmq_8h.html#aab168348824c16200f7299483f6cce97">ZMQ_RCVMORE</a>, &amp;rcvmore, &amp;sz);
+<a name="l00064"></a>00064     assert (rc == 0);
+<a name="l00065"></a>00065     assert (rcvmore);
+<a name="l00066"></a>00066     rc = <a class="code" href="zmq_8h.html#a3fa5cd19114e8f3f975b4087fa648e08">zmq_recv</a> (sc, buf2, 32, 0);
+<a name="l00067"></a>00067     assert (rc == 32);
+<a name="l00068"></a>00068     rc = <a class="code" href="zmq_8h.html#a8ee9693ff7f63751670016a4a04d72ae">zmq_getsockopt</a> (sc, <a class="code" href="zmq_8h.html#aab168348824c16200f7299483f6cce97">ZMQ_RCVMORE</a>, &amp;rcvmore, &amp;sz);
+<a name="l00069"></a>00069     assert (rc == 0);
+<a name="l00070"></a>00070     assert (!rcvmore);
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072     <span class="comment">//  Check whether the message is still the same.</span>
+<a name="l00073"></a>00073     assert (memcmp (buf2, content, 32) == 0);
+<a name="l00074"></a>00074 }
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -196,7 +197,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 11 2011 03:17:44 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Nov 8 2011 10:17:24 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

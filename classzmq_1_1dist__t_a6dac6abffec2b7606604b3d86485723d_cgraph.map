@@ -2,5 +2,6 @@
 <area shape="rect" id="node3" href="$classzmq_1_1msg__t.html#a67b20d60d792fe6e3089f6d6edf82adb" title="zmq::msg_t::add_refs" alt="" coords="203,5,352,35"/>
 <area shape="rect" id="node5" href="$classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d" title="zmq::msg_t::close" alt="" coords="212,59,343,88"/>
 <area shape="rect" id="node7" href="$classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e" title="zmq::msg_t::init" alt="" coords="220,112,335,141"/>
-<area shape="rect" id="node9" href="$classzmq_1_1msg__t.html#ab083fbbf421f86a2fae30a805f7698a1" title="zmq::msg_t::rm_refs" alt="" coords="207,165,348,195"/>
+<area shape="rect" id="node9" href="$classzmq_1_1msg__t.html#af960210e8f952c78a1e038db8e76c5b9" title="zmq::msg_t::is_vsm" alt="" coords="207,165,348,195"/>
+<area shape="rect" id="node11" href="$classzmq_1_1msg__t.html#ab083fbbf421f86a2fae30a805f7698a1" title="zmq::msg_t::rm_refs" alt="" coords="207,219,348,248"/>
 </map>

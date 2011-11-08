@@ -106,120 +106,120 @@ function toggleVisibility(linkObj) {
 </div>
 <div class="contents">
 <a href="dist_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment">    Copyright (c) 2007-2011 iMatix Corporation</span>
-<a name="l00003"></a>00003 <span class="comment">    Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file</span>
-<a name="l00004"></a>00004 <span class="comment"></span>
-<a name="l00005"></a>00005 <span class="comment">    This file is part of 0MQ.</span>
-<a name="l00006"></a>00006 <span class="comment"></span>
-<a name="l00007"></a>00007 <span class="comment">    0MQ is free software; you can redistribute it and/or modify it under</span>
-<a name="l00008"></a>00008 <span class="comment">    the terms of the GNU Lesser General Public License as published by</span>
-<a name="l00009"></a>00009 <span class="comment">    the Free Software Foundation; either version 3 of the License, or</span>
-<a name="l00010"></a>00010 <span class="comment">    (at your option) any later version.</span>
-<a name="l00011"></a>00011 <span class="comment"></span>
-<a name="l00012"></a>00012 <span class="comment">    0MQ is distributed in the hope that it will be useful,</span>
-<a name="l00013"></a>00013 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-<a name="l00014"></a>00014 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
-<a name="l00015"></a>00015 <span class="comment">    GNU Lesser General Public License for more details.</span>
-<a name="l00016"></a>00016 <span class="comment"></span>
-<a name="l00017"></a>00017 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
-<a name="l00018"></a>00018 <span class="comment">    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
-<a name="l00019"></a>00019 <span class="comment">*/</span>
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="preprocessor">#include &quot;<a class="code" href="dist_8hpp.html">dist.hpp</a>&quot;</span>
-<a name="l00022"></a>00022 <span class="preprocessor">#include &quot;<a class="code" href="pipe_8hpp.html">pipe.hpp</a>&quot;</span>
-<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="err_8hpp.html">err.hpp</a>&quot;</span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="msg_8hpp.html">msg.hpp</a>&quot;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="likely_8hpp.html">likely.hpp</a>&quot;</span>
-<a name="l00026"></a>00026 
-<a name="l00027"></a><a class="code" href="classzmq_1_1dist__t.html#abd8c6349b189a50dd666e08b7ee37279">00027</a> <a class="code" href="classzmq_1_1dist__t.html#abd8c6349b189a50dd666e08b7ee37279">zmq::dist_t::dist_t</a> () :
-<a name="l00028"></a>00028     matching (0),
-<a name="l00029"></a>00029     active (0),
-<a name="l00030"></a>00030     eligible (0),
-<a name="l00031"></a>00031     more (false)
-<a name="l00032"></a>00032 {
-<a name="l00033"></a>00033 }
-<a name="l00034"></a>00034 
-<a name="l00035"></a><a class="code" href="classzmq_1_1dist__t.html#a92c7ce2fb76f4e5b332bf848d8b8fff2">00035</a> <a class="code" href="classzmq_1_1dist__t.html#a92c7ce2fb76f4e5b332bf848d8b8fff2">zmq::dist_t::~dist_t</a> ()
-<a name="l00036"></a>00036 {
-<a name="l00037"></a>00037     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (pipes.empty ());
-<a name="l00038"></a>00038 }
-<a name="l00039"></a>00039 
-<a name="l00040"></a><a class="code" href="classzmq_1_1dist__t.html#af1120d3072800bdcc969db6cbd3ad4f5">00040</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1dist__t.html#af1120d3072800bdcc969db6cbd3ad4f5">zmq::dist_t::attach</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
-<a name="l00041"></a>00041 {
-<a name="l00042"></a>00042     <span class="comment">//  If we are in the middle of sending a message, we&#39;ll add new pipe</span>
-<a name="l00043"></a>00043     <span class="comment">//  into the list of eligible pipes. Otherwise we add it to the list</span>
-<a name="l00044"></a>00044     <span class="comment">//  of active pipes.</span>
-<a name="l00045"></a>00045     <span class="keywordflow">if</span> (more) {
-<a name="l00046"></a>00046         pipes.push_back (pipe_);
-<a name="l00047"></a>00047         pipes.swap (eligible, pipes.size () - 1);
-<a name="l00048"></a>00048         eligible++;
-<a name="l00049"></a>00049     }
-<a name="l00050"></a>00050     <span class="keywordflow">else</span> {
-<a name="l00051"></a>00051         pipes.push_back (pipe_);
-<a name="l00052"></a>00052         pipes.swap (active, pipes.size () - 1);
-<a name="l00053"></a>00053         active++;
-<a name="l00054"></a>00054         eligible++;
-<a name="l00055"></a>00055     }
-<a name="l00056"></a>00056 }
-<a name="l00057"></a>00057 
-<a name="l00058"></a><a class="code" href="classzmq_1_1dist__t.html#a0a4cfa1b74be508f36f7785363cafc6d">00058</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1dist__t.html#a0a4cfa1b74be508f36f7785363cafc6d">zmq::dist_t::match</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
-<a name="l00059"></a>00059 {
-<a name="l00060"></a>00060     <span class="comment">//  If pipe is already matching do nothing.</span>
-<a name="l00061"></a>00061     <span class="keywordflow">if</span> (pipes.index (pipe_) &lt; matching)
-<a name="l00062"></a>00062         <span class="keywordflow">return</span>;
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064     <span class="comment">//  If the pipe isn&#39;t eligible, ignore it.</span>
-<a name="l00065"></a>00065     <span class="keywordflow">if</span> (pipes.index (pipe_) &gt;= eligible)
-<a name="l00066"></a>00066         <span class="keywordflow">return</span>;
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068     <span class="comment">//  Mark the pipe as matching.</span>
-<a name="l00069"></a>00069     pipes.swap (pipes.index (pipe_), matching);
-<a name="l00070"></a>00070     matching++;    
-<a name="l00071"></a>00071 }
-<a name="l00072"></a>00072 
-<a name="l00073"></a><a class="code" href="classzmq_1_1dist__t.html#a035c930a5f374fac7629d828ad9232db">00073</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1dist__t.html#a035c930a5f374fac7629d828ad9232db">zmq::dist_t::unmatch</a> ()
-<a name="l00074"></a>00074 {
-<a name="l00075"></a>00075     matching = 0;
-<a name="l00076"></a>00076 }
-<a name="l00077"></a>00077 
-<a name="l00078"></a><a class="code" href="classzmq_1_1dist__t.html#aa2b7e4ae9d5e017032a085f3fc1a2d5e">00078</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1dist__t.html#aa2b7e4ae9d5e017032a085f3fc1a2d5e">zmq::dist_t::terminated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
-<a name="l00079"></a>00079 {
-<a name="l00080"></a>00080     <span class="comment">//  Remove the pipe from the list; adjust number of matching, active and/or</span>
-<a name="l00081"></a>00081     <span class="comment">//  eligible pipes accordingly.</span>
-<a name="l00082"></a>00082     <span class="keywordflow">if</span> (pipes.index (pipe_) &lt; matching)
-<a name="l00083"></a>00083         matching--;
-<a name="l00084"></a>00084     <span class="keywordflow">if</span> (pipes.index (pipe_) &lt; active)
-<a name="l00085"></a>00085         active--;
-<a name="l00086"></a>00086     <span class="keywordflow">if</span> (pipes.index (pipe_) &lt; eligible)
-<a name="l00087"></a>00087         eligible--;
-<a name="l00088"></a>00088     pipes.erase (pipe_);
-<a name="l00089"></a>00089 }
-<a name="l00090"></a>00090 
-<a name="l00091"></a><a class="code" href="classzmq_1_1dist__t.html#a311d1d3a46afaec4d0af9fa4207e2efb">00091</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1dist__t.html#a311d1d3a46afaec4d0af9fa4207e2efb">zmq::dist_t::activated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
-<a name="l00092"></a>00092 {
-<a name="l00093"></a>00093     <span class="comment">//  Move the pipe from passive to eligible state.</span>
-<a name="l00094"></a>00094     pipes.swap (pipes.index (pipe_), eligible);
-<a name="l00095"></a>00095     eligible++;
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097     <span class="comment">//  If there&#39;s no message being sent at the moment, move it to</span>
-<a name="l00098"></a>00098     <span class="comment">//  the active state.</span>
-<a name="l00099"></a>00099     <span class="keywordflow">if</span> (!more) {
-<a name="l00100"></a>00100         pipes.swap (eligible - 1, active);
-<a name="l00101"></a>00101         active++;
-<a name="l00102"></a>00102     }
-<a name="l00103"></a>00103 }
-<a name="l00104"></a>00104 
-<a name="l00105"></a><a class="code" href="classzmq_1_1dist__t.html#a67222146752e0ecbe50e37f670e16561">00105</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1dist__t.html#a67222146752e0ecbe50e37f670e16561">zmq::dist_t::send_to_all</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
-<a name="l00106"></a>00106 {
-<a name="l00107"></a>00107     matching = active;
-<a name="l00108"></a>00108     <span class="keywordflow">return</span> send_to_matching (msg_, flags_);
-<a name="l00109"></a>00109 }
-<a name="l00110"></a>00110 
-<a name="l00111"></a><a class="code" href="classzmq_1_1dist__t.html#ace0f2df31be5d88686cbfcb78cb8eb4d">00111</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1dist__t.html#ace0f2df31be5d88686cbfcb78cb8eb4d">zmq::dist_t::send_to_matching</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
-<a name="l00112"></a>00112 {
-<a name="l00113"></a>00113     <span class="comment">//  Is this end of a multipart message?</span>
-<a name="l00114"></a>00114     <span class="keywordtype">bool</span> msg_more =
-<a name="l00115"></a>00115         msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00002"></a>00002 <span class="comment">    Copyright (c) 2011 250bpm s.r.o.</span>
+<a name="l00003"></a>00003 <span class="comment">    Copyright (c) 2011 VMware, Inc.</span>
+<a name="l00004"></a>00004 <span class="comment">    Copyright (c) 2011 Other contributors as noted in the AUTHORS file</span>
+<a name="l00005"></a>00005 <span class="comment"></span>
+<a name="l00006"></a>00006 <span class="comment">    This file is part of 0MQ.</span>
+<a name="l00007"></a>00007 <span class="comment"></span>
+<a name="l00008"></a>00008 <span class="comment">    0MQ is free software; you can redistribute it and/or modify it under</span>
+<a name="l00009"></a>00009 <span class="comment">    the terms of the GNU Lesser General Public License as published by</span>
+<a name="l00010"></a>00010 <span class="comment">    the Free Software Foundation; either version 3 of the License, or</span>
+<a name="l00011"></a>00011 <span class="comment">    (at your option) any later version.</span>
+<a name="l00012"></a>00012 <span class="comment"></span>
+<a name="l00013"></a>00013 <span class="comment">    0MQ is distributed in the hope that it will be useful,</span>
+<a name="l00014"></a>00014 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00015"></a>00015 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00016"></a>00016 <span class="comment">    GNU Lesser General Public License for more details.</span>
+<a name="l00017"></a>00017 <span class="comment"></span>
+<a name="l00018"></a>00018 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
+<a name="l00019"></a>00019 <span class="comment">    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00020"></a>00020 <span class="comment">*/</span>
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="preprocessor">#include &quot;<a class="code" href="dist_8hpp.html">dist.hpp</a>&quot;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="pipe_8hpp.html">pipe.hpp</a>&quot;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="err_8hpp.html">err.hpp</a>&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="msg_8hpp.html">msg.hpp</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="likely_8hpp.html">likely.hpp</a>&quot;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a><a class="code" href="classzmq_1_1dist__t.html#abd8c6349b189a50dd666e08b7ee37279">00028</a> <a class="code" href="classzmq_1_1dist__t.html#abd8c6349b189a50dd666e08b7ee37279">zmq::dist_t::dist_t</a> () :
+<a name="l00029"></a>00029     matching (0),
+<a name="l00030"></a>00030     active (0),
+<a name="l00031"></a>00031     eligible (0),
+<a name="l00032"></a>00032     more (false)
+<a name="l00033"></a>00033 {
+<a name="l00034"></a>00034 }
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="classzmq_1_1dist__t.html#a92c7ce2fb76f4e5b332bf848d8b8fff2">00036</a> <a class="code" href="classzmq_1_1dist__t.html#a92c7ce2fb76f4e5b332bf848d8b8fff2">zmq::dist_t::~dist_t</a> ()
+<a name="l00037"></a>00037 {
+<a name="l00038"></a>00038     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (pipes.empty ());
+<a name="l00039"></a>00039 }
+<a name="l00040"></a>00040 
+<a name="l00041"></a><a class="code" href="classzmq_1_1dist__t.html#af1120d3072800bdcc969db6cbd3ad4f5">00041</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1dist__t.html#af1120d3072800bdcc969db6cbd3ad4f5">zmq::dist_t::attach</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
+<a name="l00042"></a>00042 {
+<a name="l00043"></a>00043     <span class="comment">//  If we are in the middle of sending a message, we&#39;ll add new pipe</span>
+<a name="l00044"></a>00044     <span class="comment">//  into the list of eligible pipes. Otherwise we add it to the list</span>
+<a name="l00045"></a>00045     <span class="comment">//  of active pipes.</span>
+<a name="l00046"></a>00046     <span class="keywordflow">if</span> (more) {
+<a name="l00047"></a>00047         pipes.push_back (pipe_);
+<a name="l00048"></a>00048         pipes.swap (eligible, pipes.size () - 1);
+<a name="l00049"></a>00049         eligible++;
+<a name="l00050"></a>00050     }
+<a name="l00051"></a>00051     <span class="keywordflow">else</span> {
+<a name="l00052"></a>00052         pipes.push_back (pipe_);
+<a name="l00053"></a>00053         pipes.swap (active, pipes.size () - 1);
+<a name="l00054"></a>00054         active++;
+<a name="l00055"></a>00055         eligible++;
+<a name="l00056"></a>00056     }
+<a name="l00057"></a>00057 }
+<a name="l00058"></a>00058 
+<a name="l00059"></a><a class="code" href="classzmq_1_1dist__t.html#a0a4cfa1b74be508f36f7785363cafc6d">00059</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1dist__t.html#a0a4cfa1b74be508f36f7785363cafc6d">zmq::dist_t::match</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
+<a name="l00060"></a>00060 {
+<a name="l00061"></a>00061     <span class="comment">//  If pipe is already matching do nothing.</span>
+<a name="l00062"></a>00062     <span class="keywordflow">if</span> (pipes.index (pipe_) &lt; matching)
+<a name="l00063"></a>00063         <span class="keywordflow">return</span>;
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065     <span class="comment">//  If the pipe isn&#39;t eligible, ignore it.</span>
+<a name="l00066"></a>00066     <span class="keywordflow">if</span> (pipes.index (pipe_) &gt;= eligible)
+<a name="l00067"></a>00067         <span class="keywordflow">return</span>;
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069     <span class="comment">//  Mark the pipe as matching.</span>
+<a name="l00070"></a>00070     pipes.swap (pipes.index (pipe_), matching);
+<a name="l00071"></a>00071     matching++;    
+<a name="l00072"></a>00072 }
+<a name="l00073"></a>00073 
+<a name="l00074"></a><a class="code" href="classzmq_1_1dist__t.html#a035c930a5f374fac7629d828ad9232db">00074</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1dist__t.html#a035c930a5f374fac7629d828ad9232db">zmq::dist_t::unmatch</a> ()
+<a name="l00075"></a>00075 {
+<a name="l00076"></a>00076     matching = 0;
+<a name="l00077"></a>00077 }
+<a name="l00078"></a>00078 
+<a name="l00079"></a><a class="code" href="classzmq_1_1dist__t.html#aa2b7e4ae9d5e017032a085f3fc1a2d5e">00079</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1dist__t.html#aa2b7e4ae9d5e017032a085f3fc1a2d5e">zmq::dist_t::terminated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
+<a name="l00080"></a>00080 {
+<a name="l00081"></a>00081     <span class="comment">//  Remove the pipe from the list; adjust number of matching, active and/or</span>
+<a name="l00082"></a>00082     <span class="comment">//  eligible pipes accordingly.</span>
+<a name="l00083"></a>00083     <span class="keywordflow">if</span> (pipes.index (pipe_) &lt; matching)
+<a name="l00084"></a>00084         matching--;
+<a name="l00085"></a>00085     <span class="keywordflow">if</span> (pipes.index (pipe_) &lt; active)
+<a name="l00086"></a>00086         active--;
+<a name="l00087"></a>00087     <span class="keywordflow">if</span> (pipes.index (pipe_) &lt; eligible)
+<a name="l00088"></a>00088         eligible--;
+<a name="l00089"></a>00089     pipes.erase (pipe_);
+<a name="l00090"></a>00090 }
+<a name="l00091"></a>00091 
+<a name="l00092"></a><a class="code" href="classzmq_1_1dist__t.html#a311d1d3a46afaec4d0af9fa4207e2efb">00092</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1dist__t.html#a311d1d3a46afaec4d0af9fa4207e2efb">zmq::dist_t::activated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
+<a name="l00093"></a>00093 {
+<a name="l00094"></a>00094     <span class="comment">//  Move the pipe from passive to eligible state.</span>
+<a name="l00095"></a>00095     pipes.swap (pipes.index (pipe_), eligible);
+<a name="l00096"></a>00096     eligible++;
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098     <span class="comment">//  If there&#39;s no message being sent at the moment, move it to</span>
+<a name="l00099"></a>00099     <span class="comment">//  the active state.</span>
+<a name="l00100"></a>00100     <span class="keywordflow">if</span> (!more) {
+<a name="l00101"></a>00101         pipes.swap (eligible - 1, active);
+<a name="l00102"></a>00102         active++;
+<a name="l00103"></a>00103     }
+<a name="l00104"></a>00104 }
+<a name="l00105"></a>00105 
+<a name="l00106"></a><a class="code" href="classzmq_1_1dist__t.html#a67222146752e0ecbe50e37f670e16561">00106</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1dist__t.html#a67222146752e0ecbe50e37f670e16561">zmq::dist_t::send_to_all</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
+<a name="l00107"></a>00107 {
+<a name="l00108"></a>00108     matching = active;
+<a name="l00109"></a>00109     <span class="keywordflow">return</span> send_to_matching (msg_, flags_);
+<a name="l00110"></a>00110 }
+<a name="l00111"></a>00111 
+<a name="l00112"></a><a class="code" href="classzmq_1_1dist__t.html#ace0f2df31be5d88686cbfcb78cb8eb4d">00112</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1dist__t.html#ace0f2df31be5d88686cbfcb78cb8eb4d">zmq::dist_t::send_to_matching</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_, <span class="keywordtype">int</span> flags_)
+<a name="l00113"></a>00113 {
+<a name="l00114"></a>00114     <span class="comment">//  Is this end of a multipart message?</span>
+<a name="l00115"></a>00115     <span class="keywordtype">bool</span> msg_more = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> ? <span class="keyword">true</span> : <span class="keyword">false</span>;
 <a name="l00116"></a>00116 
 <a name="l00117"></a>00117     <span class="comment">//  Push the message to matching pipes.</span>
 <a name="l00118"></a>00118     distribute (msg_, flags_);
@@ -244,45 +244,55 @@ function toggleVisibility(linkObj) {
 <a name="l00137"></a>00137         <span class="keywordflow">return</span>;
 <a name="l00138"></a>00138     }
 <a name="l00139"></a>00139 
-<a name="l00140"></a>00140     <span class="comment">//  Add matching-1 references to the message. We already hold one reference,</span>
-<a name="l00141"></a>00141     <span class="comment">//  that&#39;s why -1.</span>
-<a name="l00142"></a>00142     msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a67b20d60d792fe6e3089f6d6edf82adb">add_refs</a> ((<span class="keywordtype">int</span>) matching - 1);
-<a name="l00143"></a>00143 
-<a name="l00144"></a>00144     <span class="comment">//  Push copy of the message to each matching pipe.</span>
-<a name="l00145"></a>00145     <span class="keywordtype">int</span> failed = 0;
-<a name="l00146"></a>00146     <span class="keywordflow">for</span> (pipes_t::size_type i = 0; i &lt; matching; ++i)
-<a name="l00147"></a>00147         <span class="keywordflow">if</span> (!write (pipes [i], msg_))
-<a name="l00148"></a>00148             ++failed;
-<a name="l00149"></a>00149     <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (failed))
-<a name="l00150"></a>00150         msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#ab083fbbf421f86a2fae30a805f7698a1">rm_refs</a> (failed);
-<a name="l00151"></a>00151 
-<a name="l00152"></a>00152     <span class="comment">//  Detach the original message from the data buffer. Note that we don&#39;t</span>
-<a name="l00153"></a>00153     <span class="comment">//  close the message. That&#39;s because we&#39;ve already used all the references.</span>
-<a name="l00154"></a>00154     <span class="keywordtype">int</span> rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
-<a name="l00155"></a>00155     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00156"></a>00156 }
-<a name="l00157"></a>00157 
-<a name="l00158"></a><a class="code" href="classzmq_1_1dist__t.html#a010653ad2fc57e8372f2da9c59269d78">00158</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1dist__t.html#a010653ad2fc57e8372f2da9c59269d78">zmq::dist_t::has_out</a> ()
-<a name="l00159"></a>00159 {
-<a name="l00160"></a>00160     <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00161"></a>00161 }
-<a name="l00162"></a>00162 
-<a name="l00163"></a><a class="code" href="classzmq_1_1dist__t.html#af236014a8db3d1adbb0863b0d807158e">00163</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1dist__t.html#af236014a8db3d1adbb0863b0d807158e">zmq::dist_t::write</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_)
-<a name="l00164"></a>00164 {
-<a name="l00165"></a>00165     <span class="keywordflow">if</span> (!pipe_-&gt;<a class="code" href="classzmq_1_1pipe__t.html#a4b11ee7b4a4b0c4e2225e0605152d6d6">write</a> (msg_)) {
-<a name="l00166"></a>00166         pipes.swap (pipes.index (pipe_), matching - 1);
-<a name="l00167"></a>00167         matching--;
-<a name="l00168"></a>00168         pipes.swap (pipes.index (pipe_), active - 1);
-<a name="l00169"></a>00169         active--;
-<a name="l00170"></a>00170         pipes.swap (active, eligible - 1);
-<a name="l00171"></a>00171         eligible--;
-<a name="l00172"></a>00172         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00173"></a>00173     }
-<a name="l00174"></a>00174     <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>)))
-<a name="l00175"></a>00175         pipe_-&gt;<a class="code" href="classzmq_1_1pipe__t.html#ad0d0fc83b91e93b690673757a830aa52">flush</a> ();
-<a name="l00176"></a>00176     <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00177"></a>00177 }
-<a name="l00178"></a>00178 
+<a name="l00140"></a>00140     <span class="keywordflow">if</span> (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#af960210e8f952c78a1e038db8e76c5b9">is_vsm</a> ()) {
+<a name="l00141"></a>00141         <span class="keywordflow">for</span> (pipes_t::size_type i = 0; i &lt; matching; ++i)
+<a name="l00142"></a>00142             write (pipes [i], msg_);
+<a name="l00143"></a>00143         <span class="keywordtype">int</span> rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d">close</a>();
+<a name="l00144"></a>00144         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00145"></a>00145         rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
+<a name="l00146"></a>00146         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00147"></a>00147         <span class="keywordflow">return</span>;
+<a name="l00148"></a>00148     }
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150     <span class="comment">//  Add matching-1 references to the message. We already hold one reference,</span>
+<a name="l00151"></a>00151     <span class="comment">//  that&#39;s why -1.</span>
+<a name="l00152"></a>00152     msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a67b20d60d792fe6e3089f6d6edf82adb">add_refs</a> ((<span class="keywordtype">int</span>) matching - 1);
+<a name="l00153"></a>00153 
+<a name="l00154"></a>00154     <span class="comment">//  Push copy of the message to each matching pipe.</span>
+<a name="l00155"></a>00155     <span class="keywordtype">int</span> failed = 0;
+<a name="l00156"></a>00156     <span class="keywordflow">for</span> (pipes_t::size_type i = 0; i &lt; matching; ++i)
+<a name="l00157"></a>00157         <span class="keywordflow">if</span> (!write (pipes [i], msg_))
+<a name="l00158"></a>00158             ++failed;
+<a name="l00159"></a>00159     <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#ac6c45889010c1bd68631771b64f18101">unlikely</a> (failed))
+<a name="l00160"></a>00160         msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#ab083fbbf421f86a2fae30a805f7698a1">rm_refs</a> (failed);
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162     <span class="comment">//  Detach the original message from the data buffer. Note that we don&#39;t</span>
+<a name="l00163"></a>00163     <span class="comment">//  close the message. That&#39;s because we&#39;ve already used all the references.</span>
+<a name="l00164"></a>00164     <span class="keywordtype">int</span> rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
+<a name="l00165"></a>00165     <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00166"></a>00166 }
+<a name="l00167"></a>00167 
+<a name="l00168"></a><a class="code" href="classzmq_1_1dist__t.html#a010653ad2fc57e8372f2da9c59269d78">00168</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1dist__t.html#a010653ad2fc57e8372f2da9c59269d78">zmq::dist_t::has_out</a> ()
+<a name="l00169"></a>00169 {
+<a name="l00170"></a>00170     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00171"></a>00171 }
+<a name="l00172"></a>00172 
+<a name="l00173"></a><a class="code" href="classzmq_1_1dist__t.html#af236014a8db3d1adbb0863b0d807158e">00173</a> <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1dist__t.html#af236014a8db3d1adbb0863b0d807158e">zmq::dist_t::write</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_, <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_)
+<a name="l00174"></a>00174 {
+<a name="l00175"></a>00175     <span class="keywordflow">if</span> (!pipe_-&gt;<a class="code" href="classzmq_1_1pipe__t.html#a4b11ee7b4a4b0c4e2225e0605152d6d6">write</a> (msg_)) {
+<a name="l00176"></a>00176         pipes.swap (pipes.index (pipe_), matching - 1);
+<a name="l00177"></a>00177         matching--;
+<a name="l00178"></a>00178         pipes.swap (pipes.index (pipe_), active - 1);
+<a name="l00179"></a>00179         active--;
+<a name="l00180"></a>00180         pipes.swap (active, eligible - 1);
+<a name="l00181"></a>00181         eligible--;
+<a name="l00182"></a>00182         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00183"></a>00183     }
+<a name="l00184"></a>00184     <span class="keywordflow">if</span> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>))
+<a name="l00185"></a>00185         pipe_-&gt;<a class="code" href="classzmq_1_1pipe__t.html#ad0d0fc83b91e93b690673757a830aa52">flush</a> ();
+<a name="l00186"></a>00186     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00187"></a>00187 }
+<a name="l00188"></a>00188 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -299,7 +309,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 11 2011 03:17:44 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Nov 8 2011 10:17:23 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

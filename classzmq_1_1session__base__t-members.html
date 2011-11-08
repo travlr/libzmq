@@ -167,6 +167,7 @@ This is the complete list of members for <a class="el" href="classzmq_1_1session
   <tr class="memlist"><td><a class="el" href="classzmq_1_1session__base__t.html#a98a9fe4e559e5dd57b295c5e64d0424f">protocol</a></td><td><a class="el" href="classzmq_1_1session__base__t.html">zmq::session_base_t</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1session__base__t.html#a2fad89793c3f2302032139228b733b2f">read</a>(msg_t *msg_)</td><td><a class="el" href="classzmq_1_1session__base__t.html">zmq::session_base_t</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1session__base__t.html#ac61f54d2eea744306771367b73d1ba81">read_activated</a>(class pipe_t *pipe_)</td><td><a class="el" href="classzmq_1_1session__base__t.html">zmq::session_base_t</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classzmq_1_1session__base__t.html#a11ffbfc491f4ed862bd8fbf0dc33b555">recv_identity</a></td><td><a class="el" href="classzmq_1_1session__base__t.html">zmq::session_base_t</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1object__t.html#ad70bc209ca4bcc4a2f0ea9026108da0e">register_endpoint</a>(const char *addr_, struct endpoint_t &amp;endpoint_)</td><td><a class="el" href="classzmq_1_1object__t.html">zmq::object_t</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1own__t.html#a9a4aaa41336dc931b064c1f2374080dc">register_term_acks</a>(int count_)</td><td><a class="el" href="classzmq_1_1own__t.html">zmq::own_t</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1io__object__t.html#a0a5133d60f91ebe5e617f5056f5c4a35">reset_pollin</a>(handle_t handle_)</td><td><a class="el" href="classzmq_1_1io__object__t.html">zmq::io_object_t</a></td><td><code> [protected]</code></td></tr>
@@ -178,6 +179,7 @@ This is the complete list of members for <a class="el" href="classzmq_1_1session
   <tr class="memlist"><td><a class="el" href="classzmq_1_1object__t.html#ad5903d7950a3b0d6652cb6dcdc2e484f">send_bind</a>(class own_t *destination_, class pipe_t *pipe_, bool inc_seqnum_=true)</td><td><a class="el" href="classzmq_1_1object__t.html">zmq::object_t</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1object__t.html#ac8c1e3cde28211481d288ba343bd9856">send_done</a>()</td><td><a class="el" href="classzmq_1_1object__t.html">zmq::object_t</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1object__t.html#a57182450ccbb7042d9b775edf84c6197">send_hiccup</a>(class pipe_t *destination_, void *pipe_)</td><td><a class="el" href="classzmq_1_1object__t.html">zmq::object_t</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classzmq_1_1session__base__t.html#adf0c1c240bd5b53d97954930bce41119">send_identity</a></td><td><a class="el" href="classzmq_1_1session__base__t.html">zmq::session_base_t</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1object__t.html#a1746fdd6c7b787bfa432dace8c5ca156">send_own</a>(class own_t *destination_, class own_t *object_)</td><td><a class="el" href="classzmq_1_1object__t.html">zmq::object_t</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1object__t.html#a644003342f2717a2aeba7883ee71ff0a">send_pipe_term</a>(class pipe_t *destination_)</td><td><a class="el" href="classzmq_1_1object__t.html">zmq::object_t</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classzmq_1_1object__t.html#ad68b1dfc1bffe67b70c5a8dc736cfb14">send_pipe_term_ack</a>(class pipe_t *destination_)</td><td><a class="el" href="classzmq_1_1object__t.html">zmq::object_t</a></td><td><code> [protected]</code></td></tr>
@@ -223,7 +225,7 @@ This is the complete list of members for <a class="el" href="classzmq_1_1session
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 11 2011 03:17:47 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Nov 8 2011 10:17:26 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

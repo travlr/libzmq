@@ -128,6 +128,8 @@ Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#a0c01f11d8a2de9e81f890c8e8673132d">delay_on_close</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#a8bb26287f7a5a59b3e6c59d106335fbe">delay_on_disconnect</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#a329d2973d83132fedabc52cee56519f4">filter</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#aa63aa1ae9f24a4614990a8d4299f278c">identity</a> [256]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#ad4622bbc8c73c58e3f87e33c40b2f9ef">identity_size</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#ae7ec88fe24ba4cc1a0d50a18247b31ad">ipv4only</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#a0dede560932dfc3dd1344888c774ab81">linger</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#ad86b1856fbd893e523566555f3b5543a">maxmsgsize</a></td></tr>
@@ -139,6 +141,8 @@ Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#a4c4a66d8792d7dcd199357558b96353f">reconnect_ivl</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#aba9afbb4d938fa778b9fdf064ec3546e">reconnect_ivl_max</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#a5029576975db404bb61b834d8957c6c3">recovery_ivl</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#ab2e20ee5af1181b2268ffb1c9daa7963">recv_identity</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#a234656db768ebe2d73a998b368c1d1c6">send_identity</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#aad8b70994ae7f7bb1772040f55abfb23">sndbuf</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#a41282f385aa470a689903d31606197e9">sndhwm</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structzmq_1_1options__t.html#a8197da24697e9c7416e697d734f3aa47">sndtimeo</a></td></tr>
@@ -146,7 +150,7 @@ Public Attributes</h2></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00030">30</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00032">32</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a88ac24e36446d27e0535539ffad62686"></a><!-- doxytag: member="zmq::options_t::options_t" ref="a88ac24e36446d27e0535539ffad62686" args="()" -->
 <div class="memitem">
@@ -162,7 +166,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8cpp_source.html#l00026">26</a> of file <a class="el" href="options_8cpp_source.html">options.cpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8cpp_source.html#l00028">28</a> of file <a class="el" href="options_8cpp_source.html">options.cpp</a>.</p>
 
 </div>
 </div>
@@ -198,9 +202,9 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8cpp_source.html#l00204">204</a> of file <a class="el" href="options_8cpp_source.html">options.cpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8cpp_source.html#l00223">223</a> of file <a class="el" href="options_8cpp_source.html">options.cpp</a>.</p>
 
-<p>References <a class="el" href="zmq_8h_source.html#l00168">ZMQ_AFFINITY</a>, <a class="el" href="zmq_8h_source.html#l00181">ZMQ_BACKLOG</a>, <a class="el" href="zmq_8h_source.html#l00191">ZMQ_IPV4ONLY</a>, <a class="el" href="zmq_8h_source.html#l00179">ZMQ_LINGER</a>, <a class="el" href="zmq_8h_source.html#l00183">ZMQ_MAXMSGSIZE</a>, <a class="el" href="zmq_8h_source.html#l00186">ZMQ_MULTICAST_HOPS</a>, <a class="el" href="zmq_8h_source.html#l00171">ZMQ_RATE</a>, <a class="el" href="zmq_8h_source.html#l00174">ZMQ_RCVBUF</a>, <a class="el" href="zmq_8h_source.html#l00185">ZMQ_RCVHWM</a>, <a class="el" href="zmq_8h_source.html#l00187">ZMQ_RCVTIMEO</a>, <a class="el" href="zmq_8h_source.html#l00180">ZMQ_RECONNECT_IVL</a>, <a class="el" href="zmq_8h_source.html#l00182">ZMQ_RECONNECT_IVL_MAX</a>, <a class="el" href="zmq_8h_source.html#l00172">ZMQ_RECOVERY_IVL</a>, <a class="el" href="zmq_8h_source.html#l00173">ZMQ_SNDBUF</a>, <a class="el" href="zmq_8h_source.html#l00184">ZMQ_SNDHWM</a>, <a class="el" href="zmq_8h_source.html#l00188">ZMQ_SNDTIMEO</a>, and <a class="el" href="zmq_8h_source.html#l00178">ZMQ_TYPE</a>.</p>
+<p>References <a class="el" href="zmq_8h_source.html#l00173">ZMQ_AFFINITY</a>, <a class="el" href="zmq_8h_source.html#l00187">ZMQ_BACKLOG</a>, <a class="el" href="zmq_8h_source.html#l00174">ZMQ_IDENTITY</a>, <a class="el" href="zmq_8h_source.html#l00195">ZMQ_IPV4ONLY</a>, <a class="el" href="zmq_8h_source.html#l00185">ZMQ_LINGER</a>, <a class="el" href="zmq_8h_source.html#l00189">ZMQ_MAXMSGSIZE</a>, <a class="el" href="zmq_8h_source.html#l00192">ZMQ_MULTICAST_HOPS</a>, <a class="el" href="zmq_8h_source.html#l00177">ZMQ_RATE</a>, <a class="el" href="zmq_8h_source.html#l00180">ZMQ_RCVBUF</a>, <a class="el" href="zmq_8h_source.html#l00191">ZMQ_RCVHWM</a>, <a class="el" href="zmq_8h_source.html#l00193">ZMQ_RCVTIMEO</a>, <a class="el" href="zmq_8h_source.html#l00186">ZMQ_RECONNECT_IVL</a>, <a class="el" href="zmq_8h_source.html#l00188">ZMQ_RECONNECT_IVL_MAX</a>, <a class="el" href="zmq_8h_source.html#l00178">ZMQ_RECOVERY_IVL</a>, <a class="el" href="zmq_8h_source.html#l00179">ZMQ_SNDBUF</a>, <a class="el" href="zmq_8h_source.html#l00190">ZMQ_SNDHWM</a>, <a class="el" href="zmq_8h_source.html#l00194">ZMQ_SNDTIMEO</a>, and <a class="el" href="zmq_8h_source.html#l00184">ZMQ_TYPE</a>.</p>
 
 </div>
 </div>
@@ -235,9 +239,9 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8cpp_source.html#l00050">50</a> of file <a class="el" href="options_8cpp_source.html">options.cpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8cpp_source.html#l00055">55</a> of file <a class="el" href="options_8cpp_source.html">options.cpp</a>.</p>
 
-<p>References <a class="el" href="zmq_8h_source.html#l00168">ZMQ_AFFINITY</a>, <a class="el" href="zmq_8h_source.html#l00181">ZMQ_BACKLOG</a>, <a class="el" href="zmq_8h_source.html#l00191">ZMQ_IPV4ONLY</a>, <a class="el" href="zmq_8h_source.html#l00179">ZMQ_LINGER</a>, <a class="el" href="zmq_8h_source.html#l00183">ZMQ_MAXMSGSIZE</a>, <a class="el" href="zmq_8h_source.html#l00186">ZMQ_MULTICAST_HOPS</a>, <a class="el" href="zmq_8h_source.html#l00171">ZMQ_RATE</a>, <a class="el" href="zmq_8h_source.html#l00174">ZMQ_RCVBUF</a>, <a class="el" href="zmq_8h_source.html#l00185">ZMQ_RCVHWM</a>, <a class="el" href="zmq_8h_source.html#l00187">ZMQ_RCVTIMEO</a>, <a class="el" href="zmq_8h_source.html#l00180">ZMQ_RECONNECT_IVL</a>, <a class="el" href="zmq_8h_source.html#l00182">ZMQ_RECONNECT_IVL_MAX</a>, <a class="el" href="zmq_8h_source.html#l00172">ZMQ_RECOVERY_IVL</a>, <a class="el" href="zmq_8h_source.html#l00173">ZMQ_SNDBUF</a>, <a class="el" href="zmq_8h_source.html#l00184">ZMQ_SNDHWM</a>, and <a class="el" href="zmq_8h_source.html#l00188">ZMQ_SNDTIMEO</a>.</p>
+<p>References <a class="el" href="zmq_8h_source.html#l00173">ZMQ_AFFINITY</a>, <a class="el" href="zmq_8h_source.html#l00187">ZMQ_BACKLOG</a>, <a class="el" href="zmq_8h_source.html#l00174">ZMQ_IDENTITY</a>, <a class="el" href="zmq_8h_source.html#l00195">ZMQ_IPV4ONLY</a>, <a class="el" href="zmq_8h_source.html#l00185">ZMQ_LINGER</a>, <a class="el" href="zmq_8h_source.html#l00189">ZMQ_MAXMSGSIZE</a>, <a class="el" href="zmq_8h_source.html#l00192">ZMQ_MULTICAST_HOPS</a>, <a class="el" href="zmq_8h_source.html#l00177">ZMQ_RATE</a>, <a class="el" href="zmq_8h_source.html#l00180">ZMQ_RCVBUF</a>, <a class="el" href="zmq_8h_source.html#l00191">ZMQ_RCVHWM</a>, <a class="el" href="zmq_8h_source.html#l00193">ZMQ_RCVTIMEO</a>, <a class="el" href="zmq_8h_source.html#l00186">ZMQ_RECONNECT_IVL</a>, <a class="el" href="zmq_8h_source.html#l00188">ZMQ_RECONNECT_IVL_MAX</a>, <a class="el" href="zmq_8h_source.html#l00178">ZMQ_RECOVERY_IVL</a>, <a class="el" href="zmq_8h_source.html#l00179">ZMQ_SNDBUF</a>, <a class="el" href="zmq_8h_source.html#l00190">ZMQ_SNDHWM</a>, and <a class="el" href="zmq_8h_source.html#l00194">ZMQ_SNDTIMEO</a>.</p>
 
 </div>
 </div>
@@ -253,7 +257,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00042">42</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00044">44</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
 </div>
 </div>
@@ -268,7 +272,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00072">72</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00078">78</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
 </div>
 </div>
@@ -283,9 +287,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00088">88</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
-
-<p>Referenced by <a class="el" href="xreq_8cpp_source.html#l00025">zmq::xreq_t::xreq_t()</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00094">94</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
 </div>
 </div>
@@ -300,9 +302,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00092">92</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
-
-<p>Referenced by <a class="el" href="xrep_8cpp_source.html#l00028">zmq::xrep_t::xrep_t()</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00098">98</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
 </div>
 </div>
@@ -317,9 +317,39 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00095">95</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00101">101</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="sub_8cpp_source.html#l00024">zmq::sub_t::sub_t()</a>.</p>
+<p>Referenced by <a class="el" href="sub_8cpp_source.html#l00025">zmq::sub_t::sub_t()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa63aa1ae9f24a4614990a8d4299f278c"></a><!-- doxytag: member="zmq::options_t::identity" ref="aa63aa1ae9f24a4614990a8d4299f278c" args="[256]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char <a class="el" href="structzmq_1_1options__t.html#aa63aa1ae9f24a4614990a8d4299f278c">zmq::options_t::identity</a>[256]</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00048">48</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad4622bbc8c73c58e3f87e33c40b2f9ef"></a><!-- doxytag: member="zmq::options_t::identity_size" ref="ad4622bbc8c73c58e3f87e33c40b2f9ef" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char <a class="el" href="structzmq_1_1options__t.html#ad4622bbc8c73c58e3f87e33c40b2f9ef">zmq::options_t::identity_size</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00047">47</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
 </div>
 </div>
@@ -334,7 +364,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00084">84</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00090">90</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
 </div>
 </div>
@@ -349,7 +379,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00061">61</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00067">67</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
 </div>
 </div>
@@ -364,7 +394,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00075">75</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00081">81</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
 </div>
 </div>
@@ -379,7 +409,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00051">51</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00057">57</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
 </div>
 </div>
@@ -394,7 +424,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00045">45</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00051">51</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
 </div>
 </div>
@@ -409,9 +439,9 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00055">55</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00061">61</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="stream__engine_8cpp_source.html#l00044">zmq::stream_engine_t::stream_engine_t()</a>.</p>
+<p>Referenced by <a class="el" href="stream__engine_8cpp_source.html#l00045">zmq::stream_engine_t::stream_engine_t()</a>.</p>
 
 </div>
 </div>
@@ -426,9 +456,9 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00039">39</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00041">41</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="socket__base_8cpp_source.html#l00414">zmq::socket_base_t::connect()</a>.</p>
+<p>Referenced by <a class="el" href="socket__base_8cpp_source.html#l00365">zmq::socket_base_t::connect()</a>.</p>
 
 </div>
 </div>
@@ -443,7 +473,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00078">78</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00084">84</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
 </div>
 </div>
@@ -458,7 +488,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00065">65</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00071">71</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
 </div>
 </div>
@@ -473,7 +503,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00069">69</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00075">75</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
 </div>
 </div>
@@ -488,7 +518,41 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00048">48</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00054">54</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab2e20ee5af1181b2268ffb1c9daa7963"></a><!-- doxytag: member="zmq::options_t::recv_identity" ref="ab2e20ee5af1181b2268ffb1c9daa7963" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="structzmq_1_1options__t.html#ab2e20ee5af1181b2268ffb1c9daa7963">zmq::options_t::recv_identity</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00107">107</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="xrep_8cpp_source.html#l00030">zmq::xrep_t::xrep_t()</a>, and <a class="el" href="xreq_8cpp_source.html#l00026">zmq::xreq_t::xreq_t()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a234656db768ebe2d73a998b368c1d1c6"></a><!-- doxytag: member="zmq::options_t::send_identity" ref="a234656db768ebe2d73a998b368c1d1c6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="structzmq_1_1options__t.html#a234656db768ebe2d73a998b368c1d1c6">zmq::options_t::send_identity</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00104">104</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="xrep_8cpp_source.html#l00030">zmq::xrep_t::xrep_t()</a>, and <a class="el" href="xreq_8cpp_source.html#l00026">zmq::xreq_t::xreq_t()</a>.</p>
 
 </div>
 </div>
@@ -503,9 +567,9 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00054">54</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00060">60</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="stream__engine_8cpp_source.html#l00044">zmq::stream_engine_t::stream_engine_t()</a>.</p>
+<p>Referenced by <a class="el" href="stream__engine_8cpp_source.html#l00045">zmq::stream_engine_t::stream_engine_t()</a>.</p>
 
 </div>
 </div>
@@ -520,9 +584,9 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00038">38</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00040">40</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="socket__base_8cpp_source.html#l00414">zmq::socket_base_t::connect()</a>.</p>
+<p>Referenced by <a class="el" href="socket__base_8cpp_source.html#l00365">zmq::socket_base_t::connect()</a>.</p>
 
 </div>
 </div>
@@ -537,7 +601,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00079">79</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00085">85</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
 </div>
 </div>
@@ -552,9 +616,9 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="options_8hpp_source.html#l00058">58</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
+<p>Definition at line <a class="el" href="options_8hpp_source.html#l00064">64</a> of file <a class="el" href="options_8hpp_source.html">options.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="session__base_8cpp_source.html#l00046">zmq::session_base_t::create()</a>, <a class="el" href="pair_8cpp_source.html#l00026">zmq::pair_t::pair_t()</a>, <a class="el" href="pub_8cpp_source.html#l00024">zmq::pub_t::pub_t()</a>, <a class="el" href="pull_8cpp_source.html#l00026">zmq::pull_t::pull_t()</a>, <a class="el" href="push_8cpp_source.html#l00026">zmq::push_t::push_t()</a>, <a class="el" href="rep_8cpp_source.html#l00025">zmq::rep_t::rep_t()</a>, <a class="el" href="req_8cpp_source.html#l00028">zmq::req_t::req_t()</a>, <a class="el" href="router_8cpp_source.html#l00029">zmq::router_t::router_t()</a>, <a class="el" href="sub_8cpp_source.html#l00024">zmq::sub_t::sub_t()</a>, <a class="el" href="xpub_8cpp_source.html#l00028">zmq::xpub_t::xpub_t()</a>, <a class="el" href="xrep_8cpp_source.html#l00028">zmq::xrep_t::xrep_t()</a>, <a class="el" href="xreq_8cpp_source.html#l00025">zmq::xreq_t::xreq_t()</a>, and <a class="el" href="xsub_8cpp_source.html#l00026">zmq::xsub_t::xsub_t()</a>.</p>
+<p>Referenced by <a class="el" href="session__base_8cpp_source.html#l00046">zmq::session_base_t::create()</a>, <a class="el" href="pair_8cpp_source.html#l00027">zmq::pair_t::pair_t()</a>, <a class="el" href="pub_8cpp_source.html#l00025">zmq::pub_t::pub_t()</a>, <a class="el" href="pull_8cpp_source.html#l00027">zmq::pull_t::pull_t()</a>, <a class="el" href="push_8cpp_source.html#l00027">zmq::push_t::push_t()</a>, <a class="el" href="rep_8cpp_source.html#l00026">zmq::rep_t::rep_t()</a>, <a class="el" href="req_8cpp_source.html#l00030">zmq::req_t::req_t()</a>, <a class="el" href="sub_8cpp_source.html#l00025">zmq::sub_t::sub_t()</a>, <a class="el" href="xpub_8cpp_source.html#l00029">zmq::xpub_t::xpub_t()</a>, <a class="el" href="xrep_8cpp_source.html#l00030">zmq::xrep_t::xrep_t()</a>, <a class="el" href="xreq_8cpp_source.html#l00026">zmq::xreq_t::xreq_t()</a>, and <a class="el" href="xsub_8cpp_source.html#l00027">zmq::xsub_t::xsub_t()</a>.</p>
 
 </div>
 </div>
@@ -577,7 +641,7 @@ Public Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 11 2011 03:17:46 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Nov 8 2011 10:17:25 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

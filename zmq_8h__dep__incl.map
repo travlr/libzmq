@@ -6,14 +6,14 @@
 <area shape="rect" id="node11" href="$remote__lat_8cpp.html" title="perf/remote_lat.cpp" alt="" coords="1905,83,2039,112"/>
 <area shape="rect" id="node13" href="$remote__thr_8cpp.html" title="perf/remote_thr.cpp" alt="" coords="2063,83,2196,112"/>
 <area shape="rect" id="node15" href="$err_8hpp.html" title="src/err.hpp" alt="" coords="2220,83,2303,112"/>
-<area shape="rect" id="node54" href="$msg_8cpp.html" title="src/msg.cpp" alt="" coords="4349,160,4443,189"/>
+<area shape="rect" id="node54" href="$msg_8cpp.html" title="src/msg.cpp" alt="" coords="4403,160,4496,189"/>
 <area shape="rect" id="node89" href="$testutil_8hpp.html" title="tests/testutil.hpp" alt="" coords="2377,83,2495,112"/>
 <area shape="rect" id="node91" href="$test__invalid__rep_8cpp.html" title="tests/test_invalid_rep.cpp" alt="" coords="2519,83,2689,112"/>
-<area shape="rect" id="node93" href="$test__reqrep__device_8cpp.html" title="tests/test_reqrep_device.cpp" alt="" coords="2713,83,2903,112"/>
-<area shape="rect" id="node95" href="$test__reqrep__drop_8cpp.html" title="tests/test_reqrep_drop.cpp" alt="" coords="2927,83,3103,112"/>
-<area shape="rect" id="node97" href="$test__shutdown__stress_8cpp.html" title="tests/test_shutdown_stress.cpp" alt="" coords="3127,83,3335,112"/>
-<area shape="rect" id="node99" href="$test__sub__forward_8cpp.html" title="tests/test_sub_forward.cpp" alt="" coords="3359,83,3537,112"/>
-<area shape="rect" id="node101" href="$test__timeo_8cpp.html" title="tests/test_timeo.cpp" alt="" coords="3561,83,3703,112"/>
+<area shape="rect" id="node93" href="$test__msg__flags_8cpp.html" title="tests/test_msg_flags.cpp" alt="" coords="2713,83,2881,112"/>
+<area shape="rect" id="node95" href="$test__reqrep__device_8cpp.html" title="tests/test_reqrep_device.cpp" alt="" coords="2905,83,3095,112"/>
+<area shape="rect" id="node97" href="$test__shutdown__stress_8cpp.html" title="tests/test_shutdown_stress.cpp" alt="" coords="3119,83,3327,112"/>
+<area shape="rect" id="node99" href="$test__sub__forward_8cpp.html" title="tests/test_sub_forward.cpp" alt="" coords="3351,83,3529,112"/>
+<area shape="rect" id="node101" href="$test__timeo_8cpp.html" title="tests/test_timeo.cpp" alt="" coords="3553,83,3695,112"/>
 <area shape="rect" id="node17" href="$mutex_8hpp.html" title="src/mutex.hpp" alt="" coords="5,160,109,189"/>
 <area shape="rect" id="node19" href="$clock_8cpp.html" title="src/clock.cpp" alt="" coords="133,160,232,189"/>
 <area shape="rect" id="node21" href="$yqueue_8hpp.html" title="src/yqueue.hpp" alt="" coords="256,160,365,189"/>
@@ -44,8 +44,8 @@
 <area shape="rect" id="node74" href="$reaper_8cpp.html" title="src/reaper.cpp" alt="" coords="3400,160,3504,189"/>
 <area shape="rect" id="node76" href="$rep_8cpp.html" title="src/rep.cpp" alt="" coords="3528,160,3613,189"/>
 <area shape="rect" id="node78" href="$req_8cpp.html" title="src/req.cpp" alt="" coords="3637,160,3723,189"/>
-<area shape="rect" id="node80" href="$router_8cpp.html" title="src/router.cpp" alt="" coords="3747,160,3848,189"/>
-<area shape="rect" id="node82" href="$session__base_8cpp.html" title="src/session_base.cpp" alt="" coords="3872,160,4021,189"/>
-<area shape="rect" id="node84" href="$signaler_8cpp.html" title="src/signaler.cpp" alt="" coords="4045,160,4160,189"/>
-<area shape="rect" id="node86" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="4184,160,4325,189"/>
+<area shape="rect" id="node80" href="$session__base_8cpp.html" title="src/session_base.cpp" alt="" coords="3747,160,3896,189"/>
+<area shape="rect" id="node82" href="$signaler_8cpp.html" title="src/signaler.cpp" alt="" coords="3920,160,4035,189"/>
+<area shape="rect" id="node84" href="$socket__base_8cpp.html" title="src/socket_base.cpp" alt="" coords="4059,160,4200,189"/>
+<area shape="rect" id="node86" href="$stream__engine_8cpp.html" title="src/stream_engine.cpp" alt="" coords="4224,160,4379,189"/>
 </map>

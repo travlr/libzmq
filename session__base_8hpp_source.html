@@ -106,136 +106,142 @@ function toggleVisibility(linkObj) {
 </div>
 <div class="contents">
 <a href="session__base_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment">    Copyright (c) 2007-2011 iMatix Corporation</span>
-<a name="l00003"></a>00003 <span class="comment">    Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file</span>
-<a name="l00004"></a>00004 <span class="comment"></span>
-<a name="l00005"></a>00005 <span class="comment">    This file is part of 0MQ.</span>
+<a name="l00002"></a>00002 <span class="comment">    Copyright (c) 2009-2011 250bpm s.r.o.</span>
+<a name="l00003"></a>00003 <span class="comment">    Copyright (c) 2007-2009 iMatix Corporation</span>
+<a name="l00004"></a>00004 <span class="comment">    Copyright (c) 2011 VMware, Inc.</span>
+<a name="l00005"></a>00005 <span class="comment">    Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file</span>
 <a name="l00006"></a>00006 <span class="comment"></span>
-<a name="l00007"></a>00007 <span class="comment">    0MQ is free software; you can redistribute it and/or modify it under</span>
-<a name="l00008"></a>00008 <span class="comment">    the terms of the GNU Lesser General Public License as published by</span>
-<a name="l00009"></a>00009 <span class="comment">    the Free Software Foundation; either version 3 of the License, or</span>
-<a name="l00010"></a>00010 <span class="comment">    (at your option) any later version.</span>
-<a name="l00011"></a>00011 <span class="comment"></span>
-<a name="l00012"></a>00012 <span class="comment">    0MQ is distributed in the hope that it will be useful,</span>
-<a name="l00013"></a>00013 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-<a name="l00014"></a>00014 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
-<a name="l00015"></a>00015 <span class="comment">    GNU Lesser General Public License for more details.</span>
-<a name="l00016"></a>00016 <span class="comment"></span>
-<a name="l00017"></a>00017 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
-<a name="l00018"></a>00018 <span class="comment">    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
-<a name="l00019"></a>00019 <span class="comment">*/</span>
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="preprocessor">#ifndef __ZMQ_SESSION_BASE_HPP_INCLUDED__</span>
-<a name="l00022"></a>00022 <span class="preprocessor"></span><span class="preprocessor">#define __ZMQ_SESSION_BASE_HPP_INCLUDED__</span>
-<a name="l00023"></a>00023 <span class="preprocessor"></span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;string&gt;</span>
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="own_8hpp.html">own.hpp</a>&quot;</span>
-<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="i__engine_8hpp.html">i_engine.hpp</a>&quot;</span>
-<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="io__object_8hpp.html">io_object.hpp</a>&quot;</span>
-<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="pipe_8hpp.html">pipe.hpp</a>&quot;</span>
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031 <span class="keyword">namespace </span>zmq
-<a name="l00032"></a>00032 {
-<a name="l00033"></a>00033 
-<a name="l00034"></a><a class="code" href="classzmq_1_1session__base__t.html">00034</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a> :
-<a name="l00035"></a>00035         <span class="keyword">public</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a>,
-<a name="l00036"></a>00036         <span class="keyword">public</span> <a class="code" href="classzmq_1_1io__object__t.html">io_object_t</a>,
-<a name="l00037"></a>00037         <span class="keyword">public</span> <a class="code" href="structzmq_1_1i__pipe__events.html">i_pipe_events</a>
-<a name="l00038"></a>00038     {
-<a name="l00039"></a>00039     <span class="keyword">public</span>:
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041         <span class="comment">//  Create a session of the particular type.</span>
-<a name="l00042"></a>00042         <span class="keyword">static</span> <a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a> *<a class="code" href="classzmq_1_1session__base__t.html#a2de2535246e2f501e6e01712d809b8c2">create</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
-<a name="l00043"></a>00043             <span class="keywordtype">bool</span> connect_, <span class="keyword">class</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_,
-<a name="l00044"></a>00044             <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_, <span class="keyword">const</span> <span class="keywordtype">char</span> *protocol_,
-<a name="l00045"></a>00045             <span class="keyword">const</span> <span class="keywordtype">char</span> *address_);
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047         <span class="comment">//  To be used once only, when creating the session.</span>
-<a name="l00048"></a>00048         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a7ae23d364fd90150bc2a3bcf5ade9ecf">attach_pipe</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050         <span class="comment">//  Following functions are the interface exposed towards the engine.</span>
-<a name="l00051"></a>00051         <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1session__base__t.html#a2fad89793c3f2302032139228b733b2f">read</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_);
-<a name="l00052"></a>00052         <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1session__base__t.html#afb9623752426a24f3c7897ed1fb21ee4">write</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_);
-<a name="l00053"></a>00053         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a5590017b77892a92a1d10526461e976d">flush</a> ();
-<a name="l00054"></a>00054         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#abbd0391ca6fdc24c167676f01c0d69ba">detach</a> ();
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056         <span class="comment">//  i_pipe_events interface implementation.</span>
-<a name="l00057"></a>00057         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#ac61f54d2eea744306771367b73d1ba81">read_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
-<a name="l00058"></a>00058         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a3d89e1f17279c1932a1162ea02d2b9ee">write_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
-<a name="l00059"></a>00059         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a340322bc40224320cc1ef99747dd3363">hiccuped</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
-<a name="l00060"></a>00060         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a4df884ce246b6b36bd89ef507966a34a">terminated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062     <span class="keyword">protected</span>:
+<a name="l00007"></a>00007 <span class="comment">    This file is part of 0MQ.</span>
+<a name="l00008"></a>00008 <span class="comment"></span>
+<a name="l00009"></a>00009 <span class="comment">    0MQ is free software; you can redistribute it and/or modify it under</span>
+<a name="l00010"></a>00010 <span class="comment">    the terms of the GNU Lesser General Public License as published by</span>
+<a name="l00011"></a>00011 <span class="comment">    the Free Software Foundation; either version 3 of the License, or</span>
+<a name="l00012"></a>00012 <span class="comment">    (at your option) any later version.</span>
+<a name="l00013"></a>00013 <span class="comment"></span>
+<a name="l00014"></a>00014 <span class="comment">    0MQ is distributed in the hope that it will be useful,</span>
+<a name="l00015"></a>00015 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00016"></a>00016 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00017"></a>00017 <span class="comment">    GNU Lesser General Public License for more details.</span>
+<a name="l00018"></a>00018 <span class="comment"></span>
+<a name="l00019"></a>00019 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
+<a name="l00020"></a>00020 <span class="comment">    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00021"></a>00021 <span class="comment">*/</span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="preprocessor">#ifndef __ZMQ_SESSION_BASE_HPP_INCLUDED__</span>
+<a name="l00024"></a>00024 <span class="preprocessor"></span><span class="preprocessor">#define __ZMQ_SESSION_BASE_HPP_INCLUDED__</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="own_8hpp.html">own.hpp</a>&quot;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="i__engine_8hpp.html">i_engine.hpp</a>&quot;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="io__object_8hpp.html">io_object.hpp</a>&quot;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="pipe_8hpp.html">pipe.hpp</a>&quot;</span>
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 <span class="keyword">namespace </span>zmq
+<a name="l00034"></a>00034 {
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="classzmq_1_1session__base__t.html">00036</a>     <span class="keyword">class </span><a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a> :
+<a name="l00037"></a>00037         <span class="keyword">public</span> <a class="code" href="classzmq_1_1own__t.html">own_t</a>,
+<a name="l00038"></a>00038         <span class="keyword">public</span> <a class="code" href="classzmq_1_1io__object__t.html">io_object_t</a>,
+<a name="l00039"></a>00039         <span class="keyword">public</span> <a class="code" href="structzmq_1_1i__pipe__events.html">i_pipe_events</a>
+<a name="l00040"></a>00040     {
+<a name="l00041"></a>00041     <span class="keyword">public</span>:
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043         <span class="comment">//  Create a session of the particular type.</span>
+<a name="l00044"></a>00044         <span class="keyword">static</span> <a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a> *<a class="code" href="classzmq_1_1session__base__t.html#a2de2535246e2f501e6e01712d809b8c2">create</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
+<a name="l00045"></a>00045             <span class="keywordtype">bool</span> connect_, <span class="keyword">class</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_,
+<a name="l00046"></a>00046             <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_, <span class="keyword">const</span> <span class="keywordtype">char</span> *protocol_,
+<a name="l00047"></a>00047             <span class="keyword">const</span> <span class="keywordtype">char</span> *address_);
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049         <span class="comment">//  To be used once only, when creating the session.</span>
+<a name="l00050"></a>00050         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a7ae23d364fd90150bc2a3bcf5ade9ecf">attach_pipe</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052         <span class="comment">//  Following functions are the interface exposed towards the engine.</span>
+<a name="l00053"></a>00053         <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1session__base__t.html#a2fad89793c3f2302032139228b733b2f">read</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_);
+<a name="l00054"></a>00054         <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1session__base__t.html#afb9623752426a24f3c7897ed1fb21ee4">write</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_);
+<a name="l00055"></a>00055         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a5590017b77892a92a1d10526461e976d">flush</a> ();
+<a name="l00056"></a>00056         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#abbd0391ca6fdc24c167676f01c0d69ba">detach</a> ();
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058         <span class="comment">//  i_pipe_events interface implementation.</span>
+<a name="l00059"></a>00059         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#ac61f54d2eea744306771367b73d1ba81">read_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00060"></a>00060         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a3d89e1f17279c1932a1162ea02d2b9ee">write_activated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00061"></a>00061         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a340322bc40224320cc1ef99747dd3363">hiccuped</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
+<a name="l00062"></a>00062         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a4df884ce246b6b36bd89ef507966a34a">terminated</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_);
 <a name="l00063"></a>00063 
-<a name="l00064"></a>00064         <a class="code" href="classzmq_1_1session__base__t.html#a6cba87f32226d3cc69dadc9ec47476fa">session_base_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_, <span class="keywordtype">bool</span> connect_,
-<a name="l00065"></a>00065             <span class="keyword">class</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_,
-<a name="l00066"></a>00066             <span class="keyword">const</span> <span class="keywordtype">char</span> *protocol_, <span class="keyword">const</span> <span class="keywordtype">char</span> *address_);
-<a name="l00067"></a>00067         <a class="code" href="classzmq_1_1session__base__t.html#a7dbd9463fd8c53ba079382a21cdec00f">~session_base_t</a> ();
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069     <span class="keyword">private</span>:
+<a name="l00064"></a>00064     <span class="keyword">protected</span>:
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066         <a class="code" href="classzmq_1_1session__base__t.html#a6cba87f32226d3cc69dadc9ec47476fa">session_base_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_, <span class="keywordtype">bool</span> connect_,
+<a name="l00067"></a>00067             <span class="keyword">class</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_,
+<a name="l00068"></a>00068             <span class="keyword">const</span> <span class="keywordtype">char</span> *protocol_, <span class="keyword">const</span> <span class="keywordtype">char</span> *address_);
+<a name="l00069"></a>00069         <a class="code" href="classzmq_1_1session__base__t.html#a7dbd9463fd8c53ba079382a21cdec00f">~session_base_t</a> ();
 <a name="l00070"></a>00070 
-<a name="l00071"></a>00071         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#addcd71cbdce835b290dfb99c6f5c025a">start_connecting</a> (<span class="keywordtype">bool</span> wait_);
+<a name="l00071"></a>00071     <span class="keyword">private</span>:
 <a name="l00072"></a>00072 
-<a name="l00073"></a>00073         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a277990c7c6647ac4d61657fe10f2bbfc">detached</a> ();
+<a name="l00073"></a>00073         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#addcd71cbdce835b290dfb99c6f5c025a">start_connecting</a> (<span class="keywordtype">bool</span> wait_);
 <a name="l00074"></a>00074 
-<a name="l00075"></a>00075         <span class="comment">//  Handlers for incoming commands.</span>
-<a name="l00076"></a>00076         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#ab2fb501fbb9801df9a339097b6b778bd">process_plug</a> ();
-<a name="l00077"></a>00077         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#ad6287689e1caa0a0b364667a4df4e9e6">process_attach</a> (<span class="keyword">struct</span> <a class="code" href="structzmq_1_1i__engine.html">i_engine</a> *engine_);
-<a name="l00078"></a>00078         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a7a7a26911f68b96cb797e9fd7c5ebe61">process_term</a> (<span class="keywordtype">int</span> linger_);
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080         <span class="comment">//  i_poll_events handlers.</span>
-<a name="l00081"></a>00081         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#ab5c9c92923dd66a435365ce9dba21b92">timer_event</a> (<span class="keywordtype">int</span> id_);
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083         <span class="comment">//  Remove any half processed messages. Flush unflushed messages.</span>
-<a name="l00084"></a>00084         <span class="comment">//  Call this function when engine disconnect to get rid of leftovers.</span>
-<a name="l00085"></a>00085         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#af128d6b299eb6ed929998a6ad96bd97b">clean_pipes</a> ();
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087         <span class="comment">//  Call this function to move on with the delayed process_term.</span>
-<a name="l00088"></a>00088         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a074c5a78dad6b7c9278584c2f52c734e">proceed_with_term</a> ();
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090         <span class="comment">//  If true, this session (re)connects to the peer. Otherwise, it&#39;s</span>
-<a name="l00091"></a>00091         <span class="comment">//  a transient session created by the listener.</span>
-<a name="l00092"></a><a class="code" href="classzmq_1_1session__base__t.html#a09e799cc3d05268a646129ea9dfce744">00092</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1session__base__t.html#a09e799cc3d05268a646129ea9dfce744">connect</a>;
-<a name="l00093"></a>00093 
-<a name="l00094"></a>00094         <span class="comment">//  Pipe connecting the session to its socket.</span>
-<a name="l00095"></a><a class="code" href="classzmq_1_1session__base__t.html#a8539f19386b141f4e67b22e6cf764d56">00095</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *<a class="code" href="classzmq_1_1session__base__t.html#a8539f19386b141f4e67b22e6cf764d56">pipe</a>;
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097         <span class="comment">//  This flag is true if the remainder of the message being processed</span>
-<a name="l00098"></a>00098         <span class="comment">//  is still in the in pipe.</span>
-<a name="l00099"></a><a class="code" href="classzmq_1_1session__base__t.html#a0c9bf636fef3277b71310c23dbdaf07f">00099</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1session__base__t.html#a0c9bf636fef3277b71310c23dbdaf07f">incomplete_in</a>;
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101         <span class="comment">//  True if termination have been suspended to push the pending</span>
-<a name="l00102"></a>00102         <span class="comment">//  messages to the network.</span>
-<a name="l00103"></a><a class="code" href="classzmq_1_1session__base__t.html#a52a9f19c415dc79226e3618ef15caf64">00103</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1session__base__t.html#a52a9f19c415dc79226e3618ef15caf64">pending</a>;
-<a name="l00104"></a>00104 
-<a name="l00105"></a>00105         <span class="comment">//  The protocol I/O engine connected to the session.</span>
-<a name="l00106"></a><a class="code" href="classzmq_1_1session__base__t.html#a8db5e3d5b76d0a29fb92b8eeb6d6920f">00106</a>         <span class="keyword">struct </span><a class="code" href="structzmq_1_1i__engine.html">i_engine</a> *<a class="code" href="classzmq_1_1session__base__t.html#a8db5e3d5b76d0a29fb92b8eeb6d6920f">engine</a>;
-<a name="l00107"></a>00107 
-<a name="l00108"></a>00108         <span class="comment">//  The socket the session belongs to.</span>
-<a name="l00109"></a><a class="code" href="classzmq_1_1session__base__t.html#aed0388ac4863374d8ad3a7a525b79d2f">00109</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *<a class="code" href="classzmq_1_1session__base__t.html#aed0388ac4863374d8ad3a7a525b79d2f">socket</a>;
-<a name="l00110"></a>00110 
-<a name="l00111"></a>00111         <span class="comment">//  I/O thread the session is living in. It will be used to plug in</span>
-<a name="l00112"></a>00112         <span class="comment">//  the engines into the same thread.</span>
-<a name="l00113"></a><a class="code" href="classzmq_1_1session__base__t.html#a2f774bcaceb80176480381eeb3329a4a">00113</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *<a class="code" href="classzmq_1_1session__base__t.html#a2f774bcaceb80176480381eeb3329a4a">io_thread</a>;
-<a name="l00114"></a>00114 
-<a name="l00115"></a>00115         <span class="comment">//  ID of the linger timer</span>
-<a name="l00116"></a><a class="code" href="classzmq_1_1session__base__t.html#a3bbf2b128435ef983d9deb417c778166a2268e7eb68edfaac91fe9bb67aae1a6d">00116</a>         <span class="keyword">enum</span> {<a class="code" href="classzmq_1_1session__base__t.html#a3bbf2b128435ef983d9deb417c778166a2268e7eb68edfaac91fe9bb67aae1a6d">linger_timer_id</a> = 0x20};
-<a name="l00117"></a>00117 
-<a name="l00118"></a>00118         <span class="comment">//  True is linger timer is running.</span>
-<a name="l00119"></a><a class="code" href="classzmq_1_1session__base__t.html#ae2c915e8b36300f8354f4487a7be482b">00119</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1session__base__t.html#ae2c915e8b36300f8354f4487a7be482b">has_linger_timer</a>;
-<a name="l00120"></a>00120 
-<a name="l00121"></a>00121         <span class="comment">//  Protocol and address to use when connecting.</span>
-<a name="l00122"></a><a class="code" href="classzmq_1_1session__base__t.html#a98a9fe4e559e5dd57b295c5e64d0424f">00122</a>         std::string <a class="code" href="classzmq_1_1session__base__t.html#a98a9fe4e559e5dd57b295c5e64d0424f">protocol</a>;
-<a name="l00123"></a><a class="code" href="classzmq_1_1session__base__t.html#a3d138c04ab779a81743c6e172e50ad0c">00123</a>         std::string <a class="code" href="classzmq_1_1session__base__t.html#a3d138c04ab779a81743c6e172e50ad0c">address</a>;
-<a name="l00124"></a>00124 
-<a name="l00125"></a>00125         <a class="code" href="classzmq_1_1session__base__t.html#a6cba87f32226d3cc69dadc9ec47476fa">session_base_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a>&amp;);
-<a name="l00126"></a>00126         <span class="keyword">const</span> <a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a> &amp;<a class="code" href="classzmq_1_1session__base__t.html#a12eda4d1803d92262857ccea95115ca2">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a>&amp;);
-<a name="l00127"></a>00127     };
-<a name="l00128"></a>00128 
-<a name="l00129"></a>00129 }
+<a name="l00075"></a>00075         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a277990c7c6647ac4d61657fe10f2bbfc">detached</a> ();
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077         <span class="comment">//  Handlers for incoming commands.</span>
+<a name="l00078"></a>00078         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#ab2fb501fbb9801df9a339097b6b778bd">process_plug</a> ();
+<a name="l00079"></a>00079         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#ad6287689e1caa0a0b364667a4df4e9e6">process_attach</a> (<span class="keyword">struct</span> <a class="code" href="structzmq_1_1i__engine.html">i_engine</a> *engine_);
+<a name="l00080"></a>00080         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a7a7a26911f68b96cb797e9fd7c5ebe61">process_term</a> (<span class="keywordtype">int</span> linger_);
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082         <span class="comment">//  i_poll_events handlers.</span>
+<a name="l00083"></a>00083         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#ab5c9c92923dd66a435365ce9dba21b92">timer_event</a> (<span class="keywordtype">int</span> id_);
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085         <span class="comment">//  Remove any half processed messages. Flush unflushed messages.</span>
+<a name="l00086"></a>00086         <span class="comment">//  Call this function when engine disconnect to get rid of leftovers.</span>
+<a name="l00087"></a>00087         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#af128d6b299eb6ed929998a6ad96bd97b">clean_pipes</a> ();
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089         <span class="comment">//  Call this function to move on with the delayed process_term.</span>
+<a name="l00090"></a>00090         <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a074c5a78dad6b7c9278584c2f52c734e">proceed_with_term</a> ();
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092         <span class="comment">//  If true, this session (re)connects to the peer. Otherwise, it&#39;s</span>
+<a name="l00093"></a>00093         <span class="comment">//  a transient session created by the listener.</span>
+<a name="l00094"></a><a class="code" href="classzmq_1_1session__base__t.html#a09e799cc3d05268a646129ea9dfce744">00094</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1session__base__t.html#a09e799cc3d05268a646129ea9dfce744">connect</a>;
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096         <span class="comment">//  Pipe connecting the session to its socket.</span>
+<a name="l00097"></a><a class="code" href="classzmq_1_1session__base__t.html#a8539f19386b141f4e67b22e6cf764d56">00097</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *<a class="code" href="classzmq_1_1session__base__t.html#a8539f19386b141f4e67b22e6cf764d56">pipe</a>;
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099         <span class="comment">//  This flag is true if the remainder of the message being processed</span>
+<a name="l00100"></a>00100         <span class="comment">//  is still in the in pipe.</span>
+<a name="l00101"></a><a class="code" href="classzmq_1_1session__base__t.html#a0c9bf636fef3277b71310c23dbdaf07f">00101</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1session__base__t.html#a0c9bf636fef3277b71310c23dbdaf07f">incomplete_in</a>;
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103         <span class="comment">//  True if termination have been suspended to push the pending</span>
+<a name="l00104"></a>00104         <span class="comment">//  messages to the network.</span>
+<a name="l00105"></a><a class="code" href="classzmq_1_1session__base__t.html#a52a9f19c415dc79226e3618ef15caf64">00105</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1session__base__t.html#a52a9f19c415dc79226e3618ef15caf64">pending</a>;
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107         <span class="comment">//  The protocol I/O engine connected to the session.</span>
+<a name="l00108"></a><a class="code" href="classzmq_1_1session__base__t.html#a8db5e3d5b76d0a29fb92b8eeb6d6920f">00108</a>         <span class="keyword">struct </span><a class="code" href="structzmq_1_1i__engine.html">i_engine</a> *<a class="code" href="classzmq_1_1session__base__t.html#a8db5e3d5b76d0a29fb92b8eeb6d6920f">engine</a>;
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110         <span class="comment">//  The socket the session belongs to.</span>
+<a name="l00111"></a><a class="code" href="classzmq_1_1session__base__t.html#aed0388ac4863374d8ad3a7a525b79d2f">00111</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *<a class="code" href="classzmq_1_1session__base__t.html#aed0388ac4863374d8ad3a7a525b79d2f">socket</a>;
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113         <span class="comment">//  I/O thread the session is living in. It will be used to plug in</span>
+<a name="l00114"></a>00114         <span class="comment">//  the engines into the same thread.</span>
+<a name="l00115"></a><a class="code" href="classzmq_1_1session__base__t.html#a2f774bcaceb80176480381eeb3329a4a">00115</a>         <span class="keyword">class </span><a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *<a class="code" href="classzmq_1_1session__base__t.html#a2f774bcaceb80176480381eeb3329a4a">io_thread</a>;
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117         <span class="comment">//  ID of the linger timer</span>
+<a name="l00118"></a><a class="code" href="classzmq_1_1session__base__t.html#a3bbf2b128435ef983d9deb417c778166a2268e7eb68edfaac91fe9bb67aae1a6d">00118</a>         <span class="keyword">enum</span> {<a class="code" href="classzmq_1_1session__base__t.html#a3bbf2b128435ef983d9deb417c778166a2268e7eb68edfaac91fe9bb67aae1a6d">linger_timer_id</a> = 0x20};
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120         <span class="comment">//  True is linger timer is running.</span>
+<a name="l00121"></a><a class="code" href="classzmq_1_1session__base__t.html#ae2c915e8b36300f8354f4487a7be482b">00121</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1session__base__t.html#ae2c915e8b36300f8354f4487a7be482b">has_linger_timer</a>;
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123         <span class="comment">//  If true, identity is to be sent/recvd from the network.</span>
+<a name="l00124"></a><a class="code" href="classzmq_1_1session__base__t.html#adf0c1c240bd5b53d97954930bce41119">00124</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1session__base__t.html#adf0c1c240bd5b53d97954930bce41119">send_identity</a>;
+<a name="l00125"></a><a class="code" href="classzmq_1_1session__base__t.html#a11ffbfc491f4ed862bd8fbf0dc33b555">00125</a>         <span class="keywordtype">bool</span> <a class="code" href="classzmq_1_1session__base__t.html#a11ffbfc491f4ed862bd8fbf0dc33b555">recv_identity</a>;
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127         <span class="comment">//  Protocol and address to use when connecting.</span>
+<a name="l00128"></a><a class="code" href="classzmq_1_1session__base__t.html#a98a9fe4e559e5dd57b295c5e64d0424f">00128</a>         std::string <a class="code" href="classzmq_1_1session__base__t.html#a98a9fe4e559e5dd57b295c5e64d0424f">protocol</a>;
+<a name="l00129"></a><a class="code" href="classzmq_1_1session__base__t.html#a3d138c04ab779a81743c6e172e50ad0c">00129</a>         std::string <a class="code" href="classzmq_1_1session__base__t.html#a3d138c04ab779a81743c6e172e50ad0c">address</a>;
 <a name="l00130"></a>00130 
-<a name="l00131"></a>00131 <span class="preprocessor">#endif</span>
+<a name="l00131"></a>00131         <a class="code" href="classzmq_1_1session__base__t.html#a6cba87f32226d3cc69dadc9ec47476fa">session_base_t</a> (<span class="keyword">const</span> <a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a>&amp;);
+<a name="l00132"></a>00132         <span class="keyword">const</span> <a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a> &amp;<a class="code" href="classzmq_1_1session__base__t.html#a12eda4d1803d92262857ccea95115ca2">operator = </a>(<span class="keyword">const</span> <a class="code" href="classzmq_1_1session__base__t.html">session_base_t</a>&amp;);
+<a name="l00133"></a>00133     };
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135 }
+<a name="l00136"></a>00136 
+<a name="l00137"></a>00137 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -252,7 +258,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 11 2011 03:17:44 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Nov 8 2011 10:17:23 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

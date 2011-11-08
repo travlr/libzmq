@@ -106,48 +106,48 @@ function toggleVisibility(linkObj) {
 </div>
 <div class="contents">
 <a href="session__base_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment">    Copyright (c) 2007-2011 iMatix Corporation</span>
-<a name="l00003"></a>00003 <span class="comment">    Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file</span>
-<a name="l00004"></a>00004 <span class="comment"></span>
-<a name="l00005"></a>00005 <span class="comment">    This file is part of 0MQ.</span>
+<a name="l00002"></a>00002 <span class="comment">    Copyright (c) 2009-2011 250bpm s.r.o.</span>
+<a name="l00003"></a>00003 <span class="comment">    Copyright (c) 2007-2009 iMatix Corporation</span>
+<a name="l00004"></a>00004 <span class="comment">    Copyright (c) 2011 VMware, Inc.</span>
+<a name="l00005"></a>00005 <span class="comment">    Copyright (c) 2007-2011 Other contributors as noted in the AUTHORS file</span>
 <a name="l00006"></a>00006 <span class="comment"></span>
-<a name="l00007"></a>00007 <span class="comment">    0MQ is free software; you can redistribute it and/or modify it under</span>
-<a name="l00008"></a>00008 <span class="comment">    the terms of the GNU Lesser General Public License as published by</span>
-<a name="l00009"></a>00009 <span class="comment">    the Free Software Foundation; either version 3 of the License, or</span>
-<a name="l00010"></a>00010 <span class="comment">    (at your option) any later version.</span>
-<a name="l00011"></a>00011 <span class="comment"></span>
-<a name="l00012"></a>00012 <span class="comment">    0MQ is distributed in the hope that it will be useful,</span>
-<a name="l00013"></a>00013 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
-<a name="l00014"></a>00014 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
-<a name="l00015"></a>00015 <span class="comment">    GNU Lesser General Public License for more details.</span>
-<a name="l00016"></a>00016 <span class="comment"></span>
-<a name="l00017"></a>00017 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
-<a name="l00018"></a>00018 <span class="comment">    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
-<a name="l00019"></a>00019 <span class="comment">*/</span>
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="preprocessor">#include &quot;<a class="code" href="session__base_8hpp.html">session_base.hpp</a>&quot;</span>
-<a name="l00022"></a>00022 <span class="preprocessor">#include &quot;<a class="code" href="socket__base_8hpp.html">socket_base.hpp</a>&quot;</span>
-<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="i__engine_8hpp.html">i_engine.hpp</a>&quot;</span>
-<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="err_8hpp.html">err.hpp</a>&quot;</span>
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="pipe_8hpp.html">pipe.hpp</a>&quot;</span>
-<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="likely_8hpp.html">likely.hpp</a>&quot;</span>
-<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="tcp__connecter_8hpp.html">tcp_connecter.hpp</a>&quot;</span>
-<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="ipc__connecter_8hpp.html">ipc_connecter.hpp</a>&quot;</span>
-<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="vtcp__connecter_8hpp.html">vtcp_connecter.hpp</a>&quot;</span>
-<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="pgm__sender_8hpp.html">pgm_sender.hpp</a>&quot;</span>
-<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="pgm__receiver_8hpp.html">pgm_receiver.hpp</a>&quot;</span>
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033 <span class="preprocessor">#include &quot;<a class="code" href="req_8hpp.html">req.hpp</a>&quot;</span>
-<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="xreq_8hpp.html">xreq.hpp</a>&quot;</span>
-<a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="rep_8hpp.html">rep.hpp</a>&quot;</span>
-<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="xrep_8hpp.html">xrep.hpp</a>&quot;</span>
-<a name="l00037"></a>00037 <span class="preprocessor">#include &quot;<a class="code" href="pub_8hpp.html">pub.hpp</a>&quot;</span>
-<a name="l00038"></a>00038 <span class="preprocessor">#include &quot;<a class="code" href="xpub_8hpp.html">xpub.hpp</a>&quot;</span>
-<a name="l00039"></a>00039 <span class="preprocessor">#include &quot;<a class="code" href="sub_8hpp.html">sub.hpp</a>&quot;</span>
-<a name="l00040"></a>00040 <span class="preprocessor">#include &quot;<a class="code" href="xsub_8hpp.html">xsub.hpp</a>&quot;</span>
-<a name="l00041"></a>00041 <span class="preprocessor">#include &quot;<a class="code" href="push_8hpp.html">push.hpp</a>&quot;</span>
-<a name="l00042"></a>00042 <span class="preprocessor">#include &quot;<a class="code" href="pull_8hpp.html">pull.hpp</a>&quot;</span>
-<a name="l00043"></a>00043 <span class="preprocessor">#include &quot;<a class="code" href="router_8hpp.html">router.hpp</a>&quot;</span>
+<a name="l00007"></a>00007 <span class="comment">    This file is part of 0MQ.</span>
+<a name="l00008"></a>00008 <span class="comment"></span>
+<a name="l00009"></a>00009 <span class="comment">    0MQ is free software; you can redistribute it and/or modify it under</span>
+<a name="l00010"></a>00010 <span class="comment">    the terms of the GNU Lesser General Public License as published by</span>
+<a name="l00011"></a>00011 <span class="comment">    the Free Software Foundation; either version 3 of the License, or</span>
+<a name="l00012"></a>00012 <span class="comment">    (at your option) any later version.</span>
+<a name="l00013"></a>00013 <span class="comment"></span>
+<a name="l00014"></a>00014 <span class="comment">    0MQ is distributed in the hope that it will be useful,</span>
+<a name="l00015"></a>00015 <span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<a name="l00016"></a>00016 <span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<a name="l00017"></a>00017 <span class="comment">    GNU Lesser General Public License for more details.</span>
+<a name="l00018"></a>00018 <span class="comment"></span>
+<a name="l00019"></a>00019 <span class="comment">    You should have received a copy of the GNU Lesser General Public License</span>
+<a name="l00020"></a>00020 <span class="comment">    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<a name="l00021"></a>00021 <span class="comment">*/</span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="session__base_8hpp.html">session_base.hpp</a>&quot;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="socket__base_8hpp.html">socket_base.hpp</a>&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="i__engine_8hpp.html">i_engine.hpp</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="err_8hpp.html">err.hpp</a>&quot;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include &quot;<a class="code" href="pipe_8hpp.html">pipe.hpp</a>&quot;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &quot;<a class="code" href="likely_8hpp.html">likely.hpp</a>&quot;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include &quot;<a class="code" href="tcp__connecter_8hpp.html">tcp_connecter.hpp</a>&quot;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="ipc__connecter_8hpp.html">ipc_connecter.hpp</a>&quot;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="pgm__sender_8hpp.html">pgm_sender.hpp</a>&quot;</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;<a class="code" href="pgm__receiver_8hpp.html">pgm_receiver.hpp</a>&quot;</span>
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 <span class="preprocessor">#include &quot;<a class="code" href="req_8hpp.html">req.hpp</a>&quot;</span>
+<a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="xreq_8hpp.html">xreq.hpp</a>&quot;</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="rep_8hpp.html">rep.hpp</a>&quot;</span>
+<a name="l00037"></a>00037 <span class="preprocessor">#include &quot;<a class="code" href="xrep_8hpp.html">xrep.hpp</a>&quot;</span>
+<a name="l00038"></a>00038 <span class="preprocessor">#include &quot;<a class="code" href="pub_8hpp.html">pub.hpp</a>&quot;</span>
+<a name="l00039"></a>00039 <span class="preprocessor">#include &quot;<a class="code" href="xpub_8hpp.html">xpub.hpp</a>&quot;</span>
+<a name="l00040"></a>00040 <span class="preprocessor">#include &quot;<a class="code" href="sub_8hpp.html">sub.hpp</a>&quot;</span>
+<a name="l00041"></a>00041 <span class="preprocessor">#include &quot;<a class="code" href="xsub_8hpp.html">xsub.hpp</a>&quot;</span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &quot;<a class="code" href="push_8hpp.html">push.hpp</a>&quot;</span>
+<a name="l00043"></a>00043 <span class="preprocessor">#include &quot;<a class="code" href="pull_8hpp.html">pull.hpp</a>&quot;</span>
 <a name="l00044"></a>00044 <span class="preprocessor">#include &quot;<a class="code" href="pair_8hpp.html">pair.hpp</a>&quot;</span>
 <a name="l00045"></a>00045 
 <a name="l00046"></a><a class="code" href="classzmq_1_1session__base__t.html#a2de2535246e2f501e6e01712d809b8c2">00046</a> <a class="code" href="classzmq_1_1session__base__t.html">zmq::session_base_t</a> *<a class="code" href="classzmq_1_1session__base__t.html#a2de2535246e2f501e6e01712d809b8c2">zmq::session_base_t::create</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
@@ -195,373 +195,374 @@ function toggleVisibility(linkObj) {
 <a name="l00088"></a>00088         s = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1pull__session__t.html">pull_session_t</a> (io_thread_, connect_,
 <a name="l00089"></a>00089             socket_, options_, protocol_, address_);
 <a name="l00090"></a>00090         <span class="keywordflow">break</span>;
-<a name="l00091"></a>00091     <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a0a10a1152014046c50f34325a819ef77">ZMQ_ROUTER</a>:
-<a name="l00092"></a>00092         s = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1router__session__t.html">router_session_t</a> (io_thread_, connect_,
+<a name="l00091"></a>00091     <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a260805b4f876d9f54d57d434c2584b6f">ZMQ_PAIR</a>:
+<a name="l00092"></a>00092         s = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1pair__session__t.html">pair_session_t</a> (io_thread_, connect_,
 <a name="l00093"></a>00093             socket_, options_, protocol_, address_);
 <a name="l00094"></a>00094         <span class="keywordflow">break</span>;
-<a name="l00095"></a>00095     <span class="keywordflow">case</span> <a class="code" href="zmq_8h.html#a260805b4f876d9f54d57d434c2584b6f">ZMQ_PAIR</a>:
-<a name="l00096"></a>00096         s = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1pair__session__t.html">pair_session_t</a> (io_thread_, connect_,
-<a name="l00097"></a>00097             socket_, options_, protocol_, address_);
-<a name="l00098"></a>00098         <span class="keywordflow">break</span>;
-<a name="l00099"></a>00099     <span class="keywordflow">default</span>:
-<a name="l00100"></a>00100         errno = EINVAL;
-<a name="l00101"></a>00101         <span class="keywordflow">return</span> NULL;
-<a name="l00102"></a>00102     }
-<a name="l00103"></a>00103     <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (s);
-<a name="l00104"></a>00104     <span class="keywordflow">return</span> s;
-<a name="l00105"></a>00105 }
-<a name="l00106"></a>00106 
-<a name="l00107"></a><a class="code" href="classzmq_1_1session__base__t.html#a6cba87f32226d3cc69dadc9ec47476fa">00107</a> <a class="code" href="classzmq_1_1session__base__t.html#a6cba87f32226d3cc69dadc9ec47476fa">zmq::session_base_t::session_base_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
-<a name="l00108"></a>00108       <span class="keywordtype">bool</span> connect_, <span class="keyword">class</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_,
-<a name="l00109"></a>00109       <span class="keyword">const</span> <span class="keywordtype">char</span> *protocol_, <span class="keyword">const</span> <span class="keywordtype">char</span> *address_) :
-<a name="l00110"></a>00110     <a class="code" href="classzmq_1_1own__t.html">own_t</a> (io_thread_, options_),
-<a name="l00111"></a>00111     <a class="code" href="classzmq_1_1io__object__t.html">io_object_t</a> (io_thread_),
-<a name="l00112"></a>00112     connect (connect_),
-<a name="l00113"></a>00113     pipe (NULL),
-<a name="l00114"></a>00114     incomplete_in (false),
-<a name="l00115"></a>00115     pending (false),
-<a name="l00116"></a>00116     engine (NULL),
-<a name="l00117"></a>00117     socket (socket_),
-<a name="l00118"></a>00118     io_thread (io_thread_),
-<a name="l00119"></a>00119     has_linger_timer (false)
-<a name="l00120"></a>00120 {
-<a name="l00121"></a>00121     <span class="keywordflow">if</span> (protocol_)
-<a name="l00122"></a>00122         <a class="code" href="classzmq_1_1session__base__t.html#a98a9fe4e559e5dd57b295c5e64d0424f">protocol</a> = protocol_;
-<a name="l00123"></a>00123     <span class="keywordflow">if</span> (address_)
-<a name="l00124"></a>00124         <a class="code" href="classzmq_1_1session__base__t.html#a3d138c04ab779a81743c6e172e50ad0c">address</a> = address_;
-<a name="l00125"></a>00125 }
-<a name="l00126"></a>00126 
-<a name="l00127"></a><a class="code" href="classzmq_1_1session__base__t.html#a7dbd9463fd8c53ba079382a21cdec00f">00127</a> <a class="code" href="classzmq_1_1session__base__t.html#a7dbd9463fd8c53ba079382a21cdec00f">zmq::session_base_t::~session_base_t</a> ()
-<a name="l00128"></a>00128 {
-<a name="l00129"></a>00129     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!pipe);
-<a name="l00130"></a>00130 
-<a name="l00131"></a>00131     <span class="comment">//  If there&#39;s still a pending linger timer, remove it.</span>
-<a name="l00132"></a>00132     <span class="keywordflow">if</span> (has_linger_timer) {
-<a name="l00133"></a>00133         cancel_timer (linger_timer_id);
-<a name="l00134"></a>00134         has_linger_timer = <span class="keyword">false</span>;
-<a name="l00135"></a>00135     }
-<a name="l00136"></a>00136 
-<a name="l00137"></a>00137     <span class="comment">//  Close the engine.</span>
-<a name="l00138"></a>00138     <span class="keywordflow">if</span> (engine)
-<a name="l00139"></a>00139         engine-&gt;terminate ();
-<a name="l00140"></a>00140 }
-<a name="l00141"></a>00141 
-<a name="l00142"></a><a class="code" href="classzmq_1_1session__base__t.html#a7ae23d364fd90150bc2a3bcf5ade9ecf">00142</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a7ae23d364fd90150bc2a3bcf5ade9ecf">zmq::session_base_t::attach_pipe</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
-<a name="l00143"></a>00143 {
-<a name="l00144"></a>00144     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!is_terminating ());
-<a name="l00145"></a>00145     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!pipe);
-<a name="l00146"></a>00146     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (pipe_);
-<a name="l00147"></a>00147     pipe = pipe_;
-<a name="l00148"></a>00148     pipe-&gt;<a class="code" href="classzmq_1_1pipe__t.html#a4d661236931c97f340b7795c87007ff9">set_event_sink</a> (<span class="keyword">this</span>);
-<a name="l00149"></a>00149 }
-<a name="l00150"></a>00150 
-<a name="l00151"></a><a class="code" href="classzmq_1_1session__base__t.html#a2fad89793c3f2302032139228b733b2f">00151</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1session__base__t.html#a2fad89793c3f2302032139228b733b2f">zmq::session_base_t::read</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_)
-<a name="l00152"></a>00152 {
-<a name="l00153"></a>00153     <span class="keywordflow">if</span> (!pipe || !pipe-&gt;read (msg_)) {
-<a name="l00154"></a>00154         errno = EAGAIN;
-<a name="l00155"></a>00155         <span class="keywordflow">return</span> -1;
-<a name="l00156"></a>00156     }
-<a name="l00157"></a>00157 
-<a name="l00158"></a>00158     incomplete_in =
-<a name="l00159"></a>00159         msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> | <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a1e7396c54f0f65ff3d7ce9e2a6155d0d">msg_t::label</a>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;
-<a name="l00160"></a>00160     <span class="keywordflow">return</span> 0;
-<a name="l00161"></a>00161 }
-<a name="l00162"></a>00162 
-<a name="l00163"></a><a class="code" href="classzmq_1_1session__base__t.html#afb9623752426a24f3c7897ed1fb21ee4">00163</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1session__base__t.html#afb9623752426a24f3c7897ed1fb21ee4">zmq::session_base_t::write</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_)
-<a name="l00164"></a>00164 {
-<a name="l00165"></a>00165     <span class="keywordflow">if</span> (pipe &amp;&amp; pipe-&gt;write (msg_)) {
-<a name="l00166"></a>00166         <span class="keywordtype">int</span> rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
-<a name="l00167"></a>00167         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00168"></a>00168         <span class="keywordflow">return</span> 0;
-<a name="l00169"></a>00169     }
-<a name="l00170"></a>00170 
-<a name="l00171"></a>00171     errno = EAGAIN;
-<a name="l00172"></a>00172     <span class="keywordflow">return</span> -1;
-<a name="l00173"></a>00173 }
-<a name="l00174"></a>00174 
-<a name="l00175"></a><a class="code" href="classzmq_1_1session__base__t.html#a5590017b77892a92a1d10526461e976d">00175</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a5590017b77892a92a1d10526461e976d">zmq::session_base_t::flush</a> ()
-<a name="l00176"></a>00176 {
-<a name="l00177"></a>00177     <span class="keywordflow">if</span> (pipe)
-<a name="l00178"></a>00178         pipe-&gt;flush ();
-<a name="l00179"></a>00179 }
-<a name="l00180"></a>00180 
-<a name="l00181"></a><a class="code" href="classzmq_1_1session__base__t.html#af128d6b299eb6ed929998a6ad96bd97b">00181</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#af128d6b299eb6ed929998a6ad96bd97b">zmq::session_base_t::clean_pipes</a> ()
-<a name="l00182"></a>00182 {
-<a name="l00183"></a>00183     <span class="keywordflow">if</span> (pipe) {
-<a name="l00184"></a>00184 
-<a name="l00185"></a>00185         <span class="comment">//  Get rid of half-processed messages in the out pipe. Flush any</span>
-<a name="l00186"></a>00186         <span class="comment">//  unflushed messages upstream.</span>
-<a name="l00187"></a>00187         pipe-&gt;rollback ();
-<a name="l00188"></a>00188         pipe-&gt;flush ();
-<a name="l00189"></a>00189 
-<a name="l00190"></a>00190         <span class="comment">//  Remove any half-read message from the in pipe.</span>
-<a name="l00191"></a>00191         <span class="keywordflow">while</span> (incomplete_in) {
-<a name="l00192"></a>00192             <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> msg;
-<a name="l00193"></a>00193             <span class="keywordtype">int</span> rc = msg.<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
-<a name="l00194"></a>00194             <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00195"></a>00195             <span class="keywordflow">if</span> (!read (&amp;msg)) {
-<a name="l00196"></a>00196                 <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!incomplete_in);
-<a name="l00197"></a>00197                 <span class="keywordflow">break</span>;
-<a name="l00198"></a>00198             }
-<a name="l00199"></a>00199             rc = msg.<a class="code" href="classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d">close</a> ();
-<a name="l00200"></a>00200             <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00201"></a>00201         }
-<a name="l00202"></a>00202     }
-<a name="l00203"></a>00203 }
-<a name="l00204"></a>00204 
-<a name="l00205"></a><a class="code" href="classzmq_1_1session__base__t.html#a4df884ce246b6b36bd89ef507966a34a">00205</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a4df884ce246b6b36bd89ef507966a34a">zmq::session_base_t::terminated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
-<a name="l00206"></a>00206 {
-<a name="l00207"></a>00207     <span class="comment">//  Drop the reference to the deallocated pipe.</span>
-<a name="l00208"></a>00208     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (pipe == pipe_);
-<a name="l00209"></a>00209     pipe = NULL;
-<a name="l00210"></a>00210 
-<a name="l00211"></a>00211     <span class="comment">//  If we are waiting for pending messages to be sent, at this point</span>
-<a name="l00212"></a>00212     <span class="comment">//  we are sure that there will be no more messages and we can proceed</span>
-<a name="l00213"></a>00213     <span class="comment">//  with termination safely.</span>
-<a name="l00214"></a>00214     <span class="keywordflow">if</span> (pending)
-<a name="l00215"></a>00215         proceed_with_term ();
+<a name="l00095"></a>00095     <span class="keywordflow">default</span>:
+<a name="l00096"></a>00096         errno = EINVAL;
+<a name="l00097"></a>00097         <span class="keywordflow">return</span> NULL;
+<a name="l00098"></a>00098     }
+<a name="l00099"></a>00099     <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (s);
+<a name="l00100"></a>00100     <span class="keywordflow">return</span> s;
+<a name="l00101"></a>00101 }
+<a name="l00102"></a>00102 
+<a name="l00103"></a><a class="code" href="classzmq_1_1session__base__t.html#a6cba87f32226d3cc69dadc9ec47476fa">00103</a> <a class="code" href="classzmq_1_1session__base__t.html#a6cba87f32226d3cc69dadc9ec47476fa">zmq::session_base_t::session_base_t</a> (<span class="keyword">class</span> <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread_,
+<a name="l00104"></a>00104       <span class="keywordtype">bool</span> connect_, <span class="keyword">class</span> <a class="code" href="classzmq_1_1socket__base__t.html">socket_base_t</a> *socket_, <span class="keyword">const</span> <a class="code" href="structzmq_1_1options__t.html">options_t</a> &amp;options_,
+<a name="l00105"></a>00105       <span class="keyword">const</span> <span class="keywordtype">char</span> *protocol_, <span class="keyword">const</span> <span class="keywordtype">char</span> *address_) :
+<a name="l00106"></a>00106     <a class="code" href="classzmq_1_1own__t.html">own_t</a> (io_thread_, options_),
+<a name="l00107"></a>00107     <a class="code" href="classzmq_1_1io__object__t.html">io_object_t</a> (io_thread_),
+<a name="l00108"></a>00108     connect (connect_),
+<a name="l00109"></a>00109     pipe (NULL),
+<a name="l00110"></a>00110     incomplete_in (false),
+<a name="l00111"></a>00111     pending (false),
+<a name="l00112"></a>00112     engine (NULL),
+<a name="l00113"></a>00113     socket (socket_),
+<a name="l00114"></a>00114     io_thread (io_thread_),
+<a name="l00115"></a>00115     has_linger_timer (false),
+<a name="l00116"></a>00116     send_identity (options_.send_identity),
+<a name="l00117"></a>00117     recv_identity (options_.recv_identity)
+<a name="l00118"></a>00118 {
+<a name="l00119"></a>00119     <span class="keywordflow">if</span> (protocol_)
+<a name="l00120"></a>00120         <a class="code" href="classzmq_1_1session__base__t.html#a98a9fe4e559e5dd57b295c5e64d0424f">protocol</a> = protocol_;
+<a name="l00121"></a>00121     <span class="keywordflow">if</span> (address_)
+<a name="l00122"></a>00122         <a class="code" href="classzmq_1_1session__base__t.html#a3d138c04ab779a81743c6e172e50ad0c">address</a> = address_;
+<a name="l00123"></a>00123 }
+<a name="l00124"></a>00124 
+<a name="l00125"></a><a class="code" href="classzmq_1_1session__base__t.html#a7dbd9463fd8c53ba079382a21cdec00f">00125</a> <a class="code" href="classzmq_1_1session__base__t.html#a7dbd9463fd8c53ba079382a21cdec00f">zmq::session_base_t::~session_base_t</a> ()
+<a name="l00126"></a>00126 {
+<a name="l00127"></a>00127     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!pipe);
+<a name="l00128"></a>00128 
+<a name="l00129"></a>00129     <span class="comment">//  If there&#39;s still a pending linger timer, remove it.</span>
+<a name="l00130"></a>00130     <span class="keywordflow">if</span> (has_linger_timer) {
+<a name="l00131"></a>00131         cancel_timer (linger_timer_id);
+<a name="l00132"></a>00132         has_linger_timer = <span class="keyword">false</span>;
+<a name="l00133"></a>00133     }
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135     <span class="comment">//  Close the engine.</span>
+<a name="l00136"></a>00136     <span class="keywordflow">if</span> (engine)
+<a name="l00137"></a>00137         engine-&gt;terminate ();
+<a name="l00138"></a>00138 }
+<a name="l00139"></a>00139 
+<a name="l00140"></a><a class="code" href="classzmq_1_1session__base__t.html#a7ae23d364fd90150bc2a3bcf5ade9ecf">00140</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a7ae23d364fd90150bc2a3bcf5ade9ecf">zmq::session_base_t::attach_pipe</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
+<a name="l00141"></a>00141 {
+<a name="l00142"></a>00142     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!is_terminating ());
+<a name="l00143"></a>00143     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!pipe);
+<a name="l00144"></a>00144     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (pipe_);
+<a name="l00145"></a>00145     pipe = pipe_;
+<a name="l00146"></a>00146     pipe-&gt;<a class="code" href="classzmq_1_1pipe__t.html#a4d661236931c97f340b7795c87007ff9">set_event_sink</a> (<span class="keyword">this</span>);
+<a name="l00147"></a>00147 }
+<a name="l00148"></a>00148 
+<a name="l00149"></a><a class="code" href="classzmq_1_1session__base__t.html#a2fad89793c3f2302032139228b733b2f">00149</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1session__base__t.html#a2fad89793c3f2302032139228b733b2f">zmq::session_base_t::read</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_)
+<a name="l00150"></a>00150 {
+<a name="l00151"></a>00151     <span class="comment">//  First message to send is identity (if required).</span>
+<a name="l00152"></a>00152     <span class="keywordflow">if</span> (send_identity) {
+<a name="l00153"></a>00153         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!(msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a>));
+<a name="l00154"></a>00154         msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a2d40a80f7828b6ab4f63a1d2afa2af82">init_size</a> (options.identity_size);
+<a name="l00155"></a>00155         memcpy (msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a26adec31435b79adca75ac9ba2793776">data</a> (), options.identity, options.identity_size);
+<a name="l00156"></a>00156         send_identity = <span class="keyword">false</span>;
+<a name="l00157"></a>00157         incomplete_in = <span class="keyword">false</span>;
+<a name="l00158"></a>00158         <span class="keywordflow">return</span> 0;
+<a name="l00159"></a>00159     }
+<a name="l00160"></a>00160 
+<a name="l00161"></a>00161     <span class="keywordflow">if</span> (!pipe || !pipe-&gt;read (msg_)) {
+<a name="l00162"></a>00162         errno = EAGAIN;
+<a name="l00163"></a>00163         <span class="keywordflow">return</span> -1;
+<a name="l00164"></a>00164     }
+<a name="l00165"></a>00165     incomplete_in = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a73391014b431294259c870089153d6b2">flags</a> () &amp; <a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a667ab2e09f6cc43b018caca04f9ee2a7">msg_t::more</a> ? <span class="keyword">true</span> : <span class="keyword">false</span>;
+<a name="l00166"></a>00166 
+<a name="l00167"></a>00167     <span class="keywordflow">return</span> 0;
+<a name="l00168"></a>00168 }
+<a name="l00169"></a>00169 
+<a name="l00170"></a><a class="code" href="classzmq_1_1session__base__t.html#afb9623752426a24f3c7897ed1fb21ee4">00170</a> <span class="keywordtype">int</span> <a class="code" href="classzmq_1_1session__base__t.html#afb9623752426a24f3c7897ed1fb21ee4">zmq::session_base_t::write</a> (<a class="code" href="classzmq_1_1msg__t.html">msg_t</a> *msg_)
+<a name="l00171"></a>00171 {
+<a name="l00172"></a>00172     <span class="comment">//  First message to receive is identity (if required).</span>
+<a name="l00173"></a>00173     <span class="keywordflow">if</span> (recv_identity) {
+<a name="l00174"></a>00174         msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#aea7736e7955f2125dd6298baee851ca7">set_flags</a> (<a class="code" href="classzmq_1_1msg__t.html#a220c29f1d9569af70f931284ecfb58f9a6f4ddb6979a23ee0edf5605d0055b130">msg_t::identity</a>);
+<a name="l00175"></a>00175         recv_identity = <span class="keyword">false</span>;
+<a name="l00176"></a>00176     }
+<a name="l00177"></a>00177 
+<a name="l00178"></a>00178     <span class="keywordflow">if</span> (pipe &amp;&amp; pipe-&gt;write (msg_)) {
+<a name="l00179"></a>00179         <span class="keywordtype">int</span> rc = msg_-&gt;<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
+<a name="l00180"></a>00180         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00181"></a>00181         <span class="keywordflow">return</span> 0;
+<a name="l00182"></a>00182     }
+<a name="l00183"></a>00183 
+<a name="l00184"></a>00184     errno = EAGAIN;
+<a name="l00185"></a>00185     <span class="keywordflow">return</span> -1;
+<a name="l00186"></a>00186 }
+<a name="l00187"></a>00187 
+<a name="l00188"></a><a class="code" href="classzmq_1_1session__base__t.html#a5590017b77892a92a1d10526461e976d">00188</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a5590017b77892a92a1d10526461e976d">zmq::session_base_t::flush</a> ()
+<a name="l00189"></a>00189 {
+<a name="l00190"></a>00190     <span class="keywordflow">if</span> (pipe)
+<a name="l00191"></a>00191         pipe-&gt;flush ();
+<a name="l00192"></a>00192 }
+<a name="l00193"></a>00193 
+<a name="l00194"></a><a class="code" href="classzmq_1_1session__base__t.html#af128d6b299eb6ed929998a6ad96bd97b">00194</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#af128d6b299eb6ed929998a6ad96bd97b">zmq::session_base_t::clean_pipes</a> ()
+<a name="l00195"></a>00195 {
+<a name="l00196"></a>00196     <span class="keywordflow">if</span> (pipe) {
+<a name="l00197"></a>00197 
+<a name="l00198"></a>00198         <span class="comment">//  Get rid of half-processed messages in the out pipe. Flush any</span>
+<a name="l00199"></a>00199         <span class="comment">//  unflushed messages upstream.</span>
+<a name="l00200"></a>00200         pipe-&gt;rollback ();
+<a name="l00201"></a>00201         pipe-&gt;flush ();
+<a name="l00202"></a>00202 
+<a name="l00203"></a>00203         <span class="comment">//  Remove any half-read message from the in pipe.</span>
+<a name="l00204"></a>00204         <span class="keywordflow">while</span> (incomplete_in) {
+<a name="l00205"></a>00205             <a class="code" href="classzmq_1_1msg__t.html">msg_t</a> msg;
+<a name="l00206"></a>00206             <span class="keywordtype">int</span> rc = msg.<a class="code" href="classzmq_1_1msg__t.html#a4899b9ed66fcf7ec396cab878656538e">init</a> ();
+<a name="l00207"></a>00207             <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00208"></a>00208             <span class="keywordflow">if</span> (!read (&amp;msg)) {
+<a name="l00209"></a>00209                 <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!incomplete_in);
+<a name="l00210"></a>00210                 <span class="keywordflow">break</span>;
+<a name="l00211"></a>00211             }
+<a name="l00212"></a>00212             rc = msg.<a class="code" href="classzmq_1_1msg__t.html#af371987bc4315f04738d2ca7a863327d">close</a> ();
+<a name="l00213"></a>00213             <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00214"></a>00214         }
+<a name="l00215"></a>00215     }
 <a name="l00216"></a>00216 }
 <a name="l00217"></a>00217 
-<a name="l00218"></a><a class="code" href="classzmq_1_1session__base__t.html#ac61f54d2eea744306771367b73d1ba81">00218</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#ac61f54d2eea744306771367b73d1ba81">zmq::session_base_t::read_activated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
+<a name="l00218"></a><a class="code" href="classzmq_1_1session__base__t.html#a4df884ce246b6b36bd89ef507966a34a">00218</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a4df884ce246b6b36bd89ef507966a34a">zmq::session_base_t::terminated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
 <a name="l00219"></a>00219 {
-<a name="l00220"></a>00220     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (pipe == pipe_);
-<a name="l00221"></a>00221 
-<a name="l00222"></a>00222     <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#a217a0bd562b98ae8c2ffce44935351e1">likely</a> (engine != NULL))
-<a name="l00223"></a>00223         engine-&gt;activate_out ();
-<a name="l00224"></a>00224     <span class="keywordflow">else</span>
-<a name="l00225"></a>00225         pipe-&gt;check_read ();
-<a name="l00226"></a>00226 }
-<a name="l00227"></a>00227 
-<a name="l00228"></a><a class="code" href="classzmq_1_1session__base__t.html#a3d89e1f17279c1932a1162ea02d2b9ee">00228</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a3d89e1f17279c1932a1162ea02d2b9ee">zmq::session_base_t::write_activated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
-<a name="l00229"></a>00229 {
-<a name="l00230"></a>00230     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (pipe == pipe_);
-<a name="l00231"></a>00231 
-<a name="l00232"></a>00232     <span class="keywordflow">if</span> (engine)
-<a name="l00233"></a>00233         engine-&gt;activate_in ();
-<a name="l00234"></a>00234 }
-<a name="l00235"></a>00235 
-<a name="l00236"></a><a class="code" href="classzmq_1_1session__base__t.html#a340322bc40224320cc1ef99747dd3363">00236</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a340322bc40224320cc1ef99747dd3363">zmq::session_base_t::hiccuped</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
-<a name="l00237"></a>00237 {
-<a name="l00238"></a>00238     <span class="comment">//  Hiccups are always sent from session to socket, not the other</span>
-<a name="l00239"></a>00239     <span class="comment">//  way round.</span>
-<a name="l00240"></a>00240     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-<a name="l00241"></a>00241 }
-<a name="l00242"></a>00242 
-<a name="l00243"></a><a class="code" href="classzmq_1_1session__base__t.html#ab2fb501fbb9801df9a339097b6b778bd">00243</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#ab2fb501fbb9801df9a339097b6b778bd">zmq::session_base_t::process_plug</a> ()
-<a name="l00244"></a>00244 {
-<a name="l00245"></a>00245     <span class="keywordflow">if</span> (connect)
-<a name="l00246"></a>00246         start_connecting (<span class="keyword">false</span>);
+<a name="l00220"></a>00220     <span class="comment">//  Drop the reference to the deallocated pipe.</span>
+<a name="l00221"></a>00221     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (pipe == pipe_);
+<a name="l00222"></a>00222     pipe = NULL;
+<a name="l00223"></a>00223 
+<a name="l00224"></a>00224     <span class="comment">//  If we are waiting for pending messages to be sent, at this point</span>
+<a name="l00225"></a>00225     <span class="comment">//  we are sure that there will be no more messages and we can proceed</span>
+<a name="l00226"></a>00226     <span class="comment">//  with termination safely.</span>
+<a name="l00227"></a>00227     <span class="keywordflow">if</span> (pending)
+<a name="l00228"></a>00228         proceed_with_term ();
+<a name="l00229"></a>00229 }
+<a name="l00230"></a>00230 
+<a name="l00231"></a><a class="code" href="classzmq_1_1session__base__t.html#ac61f54d2eea744306771367b73d1ba81">00231</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#ac61f54d2eea744306771367b73d1ba81">zmq::session_base_t::read_activated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
+<a name="l00232"></a>00232 {
+<a name="l00233"></a>00233     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (pipe == pipe_);
+<a name="l00234"></a>00234 
+<a name="l00235"></a>00235     <span class="keywordflow">if</span> (<a class="code" href="likely_8hpp.html#a217a0bd562b98ae8c2ffce44935351e1">likely</a> (engine != NULL))
+<a name="l00236"></a>00236         engine-&gt;activate_out ();
+<a name="l00237"></a>00237     <span class="keywordflow">else</span>
+<a name="l00238"></a>00238         pipe-&gt;check_read ();
+<a name="l00239"></a>00239 }
+<a name="l00240"></a>00240 
+<a name="l00241"></a><a class="code" href="classzmq_1_1session__base__t.html#a3d89e1f17279c1932a1162ea02d2b9ee">00241</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a3d89e1f17279c1932a1162ea02d2b9ee">zmq::session_base_t::write_activated</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
+<a name="l00242"></a>00242 {
+<a name="l00243"></a>00243     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (pipe == pipe_);
+<a name="l00244"></a>00244 
+<a name="l00245"></a>00245     <span class="keywordflow">if</span> (engine)
+<a name="l00246"></a>00246         engine-&gt;activate_in ();
 <a name="l00247"></a>00247 }
 <a name="l00248"></a>00248 
-<a name="l00249"></a><a class="code" href="classzmq_1_1session__base__t.html#ad6287689e1caa0a0b364667a4df4e9e6">00249</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#ad6287689e1caa0a0b364667a4df4e9e6">zmq::session_base_t::process_attach</a> (<a class="code" href="structzmq_1_1i__engine.html">i_engine</a> *engine_)
+<a name="l00249"></a><a class="code" href="classzmq_1_1session__base__t.html#a340322bc40224320cc1ef99747dd3363">00249</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a340322bc40224320cc1ef99747dd3363">zmq::session_base_t::hiccuped</a> (<a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipe_)
 <a name="l00250"></a>00250 {
-<a name="l00251"></a>00251     <span class="comment">//  If some other object (e.g. init) notifies us that the connection failed</span>
-<a name="l00252"></a>00252     <span class="comment">//  without creating an engine we need to start the reconnection process.</span>
-<a name="l00253"></a>00253     <span class="keywordflow">if</span> (!engine_) {
-<a name="l00254"></a>00254         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!engine);
-<a name="l00255"></a>00255         detached ();
-<a name="l00256"></a>00256         <span class="keywordflow">return</span>;
-<a name="l00257"></a>00257     }
-<a name="l00258"></a>00258 
-<a name="l00259"></a>00259     <span class="comment">//  Create the pipe if it does not exist yet.</span>
-<a name="l00260"></a>00260     <span class="keywordflow">if</span> (!pipe &amp;&amp; !is_terminating ()) {
-<a name="l00261"></a>00261         <a class="code" href="classzmq_1_1object__t.html">object_t</a> *parents [2] = {<span class="keyword">this</span>, socket};
-<a name="l00262"></a>00262         <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipes [2] = {NULL, NULL};
-<a name="l00263"></a>00263         <span class="keywordtype">int</span> hwms [2] = {options.rcvhwm, options.sndhwm};
-<a name="l00264"></a>00264         <span class="keywordtype">bool</span> delays [2] = {options.delay_on_close, options.delay_on_disconnect};
-<a name="l00265"></a>00265         <span class="keywordtype">int</span> rc = pipepair (parents, pipes, hwms, delays);
-<a name="l00266"></a>00266         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
-<a name="l00267"></a>00267 
-<a name="l00268"></a>00268         <span class="comment">//  Plug the local end of the pipe.</span>
-<a name="l00269"></a>00269         pipes [0]-&gt;<a class="code" href="classzmq_1_1pipe__t.html#a4d661236931c97f340b7795c87007ff9">set_event_sink</a> (<span class="keyword">this</span>);
-<a name="l00270"></a>00270 
-<a name="l00271"></a>00271         <span class="comment">//  Remember the local end of the pipe.</span>
-<a name="l00272"></a>00272         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!pipe);
-<a name="l00273"></a>00273         pipe = pipes [0];
-<a name="l00274"></a>00274 
-<a name="l00275"></a>00275         <span class="comment">//  Ask socket to plug into the remote end of the pipe.</span>
-<a name="l00276"></a>00276         send_bind (socket, pipes [1]);
-<a name="l00277"></a>00277     }
-<a name="l00278"></a>00278 
-<a name="l00279"></a>00279     <span class="comment">//  Plug in the engine.</span>
-<a name="l00280"></a>00280     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!engine);
-<a name="l00281"></a>00281     engine = engine_;
-<a name="l00282"></a>00282     engine-&gt;<a class="code" href="structzmq_1_1i__engine.html#ac04fd4cb59268c0b5d1cb4fb160fc070">plug</a> (io_thread, <span class="keyword">this</span>);
-<a name="l00283"></a>00283 }
-<a name="l00284"></a>00284 
-<a name="l00285"></a><a class="code" href="classzmq_1_1session__base__t.html#abbd0391ca6fdc24c167676f01c0d69ba">00285</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#abbd0391ca6fdc24c167676f01c0d69ba">zmq::session_base_t::detach</a> ()
-<a name="l00286"></a>00286 {
-<a name="l00287"></a>00287     <span class="comment">//  Engine is dead. Let&#39;s forget about it.</span>
-<a name="l00288"></a>00288     engine = NULL;
-<a name="l00289"></a>00289 
-<a name="l00290"></a>00290     <span class="comment">//  Remove any half-done messages from the pipes.</span>
-<a name="l00291"></a>00291     clean_pipes ();
-<a name="l00292"></a>00292 
-<a name="l00293"></a>00293     <span class="comment">//  Send the event to the derived class.</span>
-<a name="l00294"></a>00294     detached ();
-<a name="l00295"></a>00295 
-<a name="l00296"></a>00296     <span class="comment">//  Just in case there&#39;s only a delimiter in the pipe.</span>
-<a name="l00297"></a>00297     <span class="keywordflow">if</span> (pipe)
-<a name="l00298"></a>00298         pipe-&gt;check_read ();
-<a name="l00299"></a>00299 }
-<a name="l00300"></a>00300 
-<a name="l00301"></a><a class="code" href="classzmq_1_1session__base__t.html#a7a7a26911f68b96cb797e9fd7c5ebe61">00301</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a7a7a26911f68b96cb797e9fd7c5ebe61">zmq::session_base_t::process_term</a> (<span class="keywordtype">int</span> linger_)
-<a name="l00302"></a>00302 {
-<a name="l00303"></a>00303     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!pending);
-<a name="l00304"></a>00304 
-<a name="l00305"></a>00305     <span class="comment">//  If the termination of the pipe happens before the term command is</span>
-<a name="l00306"></a>00306     <span class="comment">//  delivered there&#39;s nothing much to do. We can proceed with the</span>
-<a name="l00307"></a>00307     <span class="comment">//  stadard termination immediately.</span>
-<a name="l00308"></a>00308     <span class="keywordflow">if</span> (!pipe) {
-<a name="l00309"></a>00309         proceed_with_term ();
-<a name="l00310"></a>00310         <span class="keywordflow">return</span>;
-<a name="l00311"></a>00311     }
-<a name="l00312"></a>00312 
-<a name="l00313"></a>00313     pending = <span class="keyword">true</span>;
-<a name="l00314"></a>00314 
-<a name="l00315"></a>00315     <span class="comment">//  If there&#39;s finite linger value, delay the termination.</span>
-<a name="l00316"></a>00316     <span class="comment">//  If linger is infinite (negative) we don&#39;t even have to set</span>
-<a name="l00317"></a>00317     <span class="comment">//  the timer.</span>
-<a name="l00318"></a>00318     <span class="keywordflow">if</span> (linger_ &gt; 0) {
-<a name="l00319"></a>00319         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!has_linger_timer);
-<a name="l00320"></a>00320         add_timer (linger_, linger_timer_id);
-<a name="l00321"></a>00321         has_linger_timer = <span class="keyword">true</span>;
-<a name="l00322"></a>00322     }
-<a name="l00323"></a>00323 
-<a name="l00324"></a>00324     <span class="comment">//  Start pipe termination process. Delay the termination till all messages</span>
-<a name="l00325"></a>00325     <span class="comment">//  are processed in case the linger time is non-zero.</span>
-<a name="l00326"></a>00326     pipe-&gt;terminate (linger_ != 0);
+<a name="l00251"></a>00251     <span class="comment">//  Hiccups are always sent from session to socket, not the other</span>
+<a name="l00252"></a>00252     <span class="comment">//  way round.</span>
+<a name="l00253"></a>00253     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
+<a name="l00254"></a>00254 }
+<a name="l00255"></a>00255 
+<a name="l00256"></a><a class="code" href="classzmq_1_1session__base__t.html#ab2fb501fbb9801df9a339097b6b778bd">00256</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#ab2fb501fbb9801df9a339097b6b778bd">zmq::session_base_t::process_plug</a> ()
+<a name="l00257"></a>00257 {
+<a name="l00258"></a>00258     <span class="keywordflow">if</span> (connect)
+<a name="l00259"></a>00259         start_connecting (<span class="keyword">false</span>);
+<a name="l00260"></a>00260 }
+<a name="l00261"></a>00261 
+<a name="l00262"></a><a class="code" href="classzmq_1_1session__base__t.html#ad6287689e1caa0a0b364667a4df4e9e6">00262</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#ad6287689e1caa0a0b364667a4df4e9e6">zmq::session_base_t::process_attach</a> (<a class="code" href="structzmq_1_1i__engine.html">i_engine</a> *engine_)
+<a name="l00263"></a>00263 {
+<a name="l00264"></a>00264     <span class="comment">//  If some other object (e.g. init) notifies us that the connection failed</span>
+<a name="l00265"></a>00265     <span class="comment">//  without creating an engine we need to start the reconnection process.</span>
+<a name="l00266"></a>00266     <span class="keywordflow">if</span> (!engine_) {
+<a name="l00267"></a>00267         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!engine);
+<a name="l00268"></a>00268         detached ();
+<a name="l00269"></a>00269         <span class="keywordflow">return</span>;
+<a name="l00270"></a>00270     }
+<a name="l00271"></a>00271 
+<a name="l00272"></a>00272     <span class="comment">//  Create the pipe if it does not exist yet.</span>
+<a name="l00273"></a>00273     <span class="keywordflow">if</span> (!pipe &amp;&amp; !is_terminating ()) {
+<a name="l00274"></a>00274         <a class="code" href="classzmq_1_1object__t.html">object_t</a> *parents [2] = {<span class="keyword">this</span>, socket};
+<a name="l00275"></a>00275         <a class="code" href="classzmq_1_1pipe__t.html">pipe_t</a> *pipes [2] = {NULL, NULL};
+<a name="l00276"></a>00276         <span class="keywordtype">int</span> hwms [2] = {options.rcvhwm, options.sndhwm};
+<a name="l00277"></a>00277         <span class="keywordtype">bool</span> delays [2] = {options.delay_on_close, options.delay_on_disconnect};
+<a name="l00278"></a>00278         <span class="keywordtype">int</span> rc = pipepair (parents, pipes, hwms, delays);
+<a name="l00279"></a>00279         <a class="code" href="err_8hpp.html#a0399435158def8e776efe83e52fd707a">errno_assert</a> (rc == 0);
+<a name="l00280"></a>00280 
+<a name="l00281"></a>00281         <span class="comment">//  Plug the local end of the pipe.</span>
+<a name="l00282"></a>00282         pipes [0]-&gt;<a class="code" href="classzmq_1_1pipe__t.html#a4d661236931c97f340b7795c87007ff9">set_event_sink</a> (<span class="keyword">this</span>);
+<a name="l00283"></a>00283 
+<a name="l00284"></a>00284         <span class="comment">//  Remember the local end of the pipe.</span>
+<a name="l00285"></a>00285         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!pipe);
+<a name="l00286"></a>00286         pipe = pipes [0];
+<a name="l00287"></a>00287 
+<a name="l00288"></a>00288         <span class="comment">//  Ask socket to plug into the remote end of the pipe.</span>
+<a name="l00289"></a>00289         send_bind (socket, pipes [1]);
+<a name="l00290"></a>00290     }
+<a name="l00291"></a>00291 
+<a name="l00292"></a>00292     <span class="comment">//  Plug in the engine.</span>
+<a name="l00293"></a>00293     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!engine);
+<a name="l00294"></a>00294     engine = engine_;
+<a name="l00295"></a>00295     engine-&gt;<a class="code" href="structzmq_1_1i__engine.html#ac04fd4cb59268c0b5d1cb4fb160fc070">plug</a> (io_thread, <span class="keyword">this</span>);
+<a name="l00296"></a>00296 }
+<a name="l00297"></a>00297 
+<a name="l00298"></a><a class="code" href="classzmq_1_1session__base__t.html#abbd0391ca6fdc24c167676f01c0d69ba">00298</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#abbd0391ca6fdc24c167676f01c0d69ba">zmq::session_base_t::detach</a> ()
+<a name="l00299"></a>00299 {
+<a name="l00300"></a>00300     <span class="comment">//  Engine is dead. Let&#39;s forget about it.</span>
+<a name="l00301"></a>00301     engine = NULL;
+<a name="l00302"></a>00302 
+<a name="l00303"></a>00303     <span class="comment">//  Remove any half-done messages from the pipes.</span>
+<a name="l00304"></a>00304     clean_pipes ();
+<a name="l00305"></a>00305 
+<a name="l00306"></a>00306     <span class="comment">//  Send the event to the derived class.</span>
+<a name="l00307"></a>00307     detached ();
+<a name="l00308"></a>00308 
+<a name="l00309"></a>00309     <span class="comment">//  Just in case there&#39;s only a delimiter in the pipe.</span>
+<a name="l00310"></a>00310     <span class="keywordflow">if</span> (pipe)
+<a name="l00311"></a>00311         pipe-&gt;check_read ();
+<a name="l00312"></a>00312 }
+<a name="l00313"></a>00313 
+<a name="l00314"></a><a class="code" href="classzmq_1_1session__base__t.html#a7a7a26911f68b96cb797e9fd7c5ebe61">00314</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a7a7a26911f68b96cb797e9fd7c5ebe61">zmq::session_base_t::process_term</a> (<span class="keywordtype">int</span> linger_)
+<a name="l00315"></a>00315 {
+<a name="l00316"></a>00316     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!pending);
+<a name="l00317"></a>00317 
+<a name="l00318"></a>00318     <span class="comment">//  If the termination of the pipe happens before the term command is</span>
+<a name="l00319"></a>00319     <span class="comment">//  delivered there&#39;s nothing much to do. We can proceed with the</span>
+<a name="l00320"></a>00320     <span class="comment">//  stadard termination immediately.</span>
+<a name="l00321"></a>00321     <span class="keywordflow">if</span> (!pipe) {
+<a name="l00322"></a>00322         proceed_with_term ();
+<a name="l00323"></a>00323         <span class="keywordflow">return</span>;
+<a name="l00324"></a>00324     }
+<a name="l00325"></a>00325 
+<a name="l00326"></a>00326     pending = <span class="keyword">true</span>;
 <a name="l00327"></a>00327 
-<a name="l00328"></a>00328     <span class="comment">//  TODO: Should this go into pipe_t::terminate ?</span>
-<a name="l00329"></a>00329     <span class="comment">//  In case there&#39;s no engine and there&#39;s only delimiter in the</span>
-<a name="l00330"></a>00330     <span class="comment">//  pipe it wouldn&#39;t be ever read. Thus we check for it explicitly.</span>
-<a name="l00331"></a>00331     pipe-&gt;check_read ();
-<a name="l00332"></a>00332 }
-<a name="l00333"></a>00333 
-<a name="l00334"></a><a class="code" href="classzmq_1_1session__base__t.html#a074c5a78dad6b7c9278584c2f52c734e">00334</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a074c5a78dad6b7c9278584c2f52c734e">zmq::session_base_t::proceed_with_term</a> ()
-<a name="l00335"></a>00335 {
-<a name="l00336"></a>00336     <span class="comment">//  The pending phase have just ended.</span>
-<a name="l00337"></a>00337     pending = <span class="keyword">false</span>;
-<a name="l00338"></a>00338 
-<a name="l00339"></a>00339     <span class="comment">//  Continue with standard termination.</span>
-<a name="l00340"></a>00340     <a class="code" href="classzmq_1_1own__t.html#aa6cf69fab99e823b61cca86e51dbe555">own_t::process_term</a> (0);
-<a name="l00341"></a>00341 }
-<a name="l00342"></a>00342 
-<a name="l00343"></a><a class="code" href="classzmq_1_1session__base__t.html#ab5c9c92923dd66a435365ce9dba21b92">00343</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#ab5c9c92923dd66a435365ce9dba21b92">zmq::session_base_t::timer_event</a> (<span class="keywordtype">int</span> id_)
-<a name="l00344"></a>00344 {
-<a name="l00345"></a>00345     <span class="comment">//  Linger period expired. We can proceed with termination even though</span>
-<a name="l00346"></a>00346     <span class="comment">//  there are still pending messages to be sent.</span>
-<a name="l00347"></a>00347     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (id_ == linger_timer_id);
-<a name="l00348"></a>00348     has_linger_timer = <span class="keyword">false</span>;
-<a name="l00349"></a>00349 
-<a name="l00350"></a>00350     <span class="comment">//  Ask pipe to terminate even though there may be pending messages in it.</span>
-<a name="l00351"></a>00351     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (pipe);
-<a name="l00352"></a>00352     pipe-&gt;terminate (<span class="keyword">false</span>);
-<a name="l00353"></a>00353 }
-<a name="l00354"></a>00354 
-<a name="l00355"></a><a class="code" href="classzmq_1_1session__base__t.html#a277990c7c6647ac4d61657fe10f2bbfc">00355</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a277990c7c6647ac4d61657fe10f2bbfc">zmq::session_base_t::detached</a> ()
-<a name="l00356"></a>00356 {
-<a name="l00357"></a>00357     <span class="comment">//  Transient session self-destructs after peer disconnects.</span>
-<a name="l00358"></a>00358     <span class="keywordflow">if</span> (!connect) {
-<a name="l00359"></a>00359         terminate ();
-<a name="l00360"></a>00360         <span class="keywordflow">return</span>;
-<a name="l00361"></a>00361     }
+<a name="l00328"></a>00328     <span class="comment">//  If there&#39;s finite linger value, delay the termination.</span>
+<a name="l00329"></a>00329     <span class="comment">//  If linger is infinite (negative) we don&#39;t even have to set</span>
+<a name="l00330"></a>00330     <span class="comment">//  the timer.</span>
+<a name="l00331"></a>00331     <span class="keywordflow">if</span> (linger_ &gt; 0) {
+<a name="l00332"></a>00332         <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (!has_linger_timer);
+<a name="l00333"></a>00333         add_timer (linger_, linger_timer_id);
+<a name="l00334"></a>00334         has_linger_timer = <span class="keyword">true</span>;
+<a name="l00335"></a>00335     }
+<a name="l00336"></a>00336 
+<a name="l00337"></a>00337     <span class="comment">//  Start pipe termination process. Delay the termination till all messages</span>
+<a name="l00338"></a>00338     <span class="comment">//  are processed in case the linger time is non-zero.</span>
+<a name="l00339"></a>00339     pipe-&gt;terminate (linger_ != 0);
+<a name="l00340"></a>00340 
+<a name="l00341"></a>00341     <span class="comment">//  TODO: Should this go into pipe_t::terminate ?</span>
+<a name="l00342"></a>00342     <span class="comment">//  In case there&#39;s no engine and there&#39;s only delimiter in the</span>
+<a name="l00343"></a>00343     <span class="comment">//  pipe it wouldn&#39;t be ever read. Thus we check for it explicitly.</span>
+<a name="l00344"></a>00344     pipe-&gt;check_read ();
+<a name="l00345"></a>00345 }
+<a name="l00346"></a>00346 
+<a name="l00347"></a><a class="code" href="classzmq_1_1session__base__t.html#a074c5a78dad6b7c9278584c2f52c734e">00347</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a074c5a78dad6b7c9278584c2f52c734e">zmq::session_base_t::proceed_with_term</a> ()
+<a name="l00348"></a>00348 {
+<a name="l00349"></a>00349     <span class="comment">//  The pending phase have just ended.</span>
+<a name="l00350"></a>00350     pending = <span class="keyword">false</span>;
+<a name="l00351"></a>00351 
+<a name="l00352"></a>00352     <span class="comment">//  Continue with standard termination.</span>
+<a name="l00353"></a>00353     <a class="code" href="classzmq_1_1own__t.html#aa6cf69fab99e823b61cca86e51dbe555">own_t::process_term</a> (0);
+<a name="l00354"></a>00354 }
+<a name="l00355"></a>00355 
+<a name="l00356"></a><a class="code" href="classzmq_1_1session__base__t.html#ab5c9c92923dd66a435365ce9dba21b92">00356</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#ab5c9c92923dd66a435365ce9dba21b92">zmq::session_base_t::timer_event</a> (<span class="keywordtype">int</span> id_)
+<a name="l00357"></a>00357 {
+<a name="l00358"></a>00358     <span class="comment">//  Linger period expired. We can proceed with termination even though</span>
+<a name="l00359"></a>00359     <span class="comment">//  there are still pending messages to be sent.</span>
+<a name="l00360"></a>00360     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (id_ == linger_timer_id);
+<a name="l00361"></a>00361     has_linger_timer = <span class="keyword">false</span>;
 <a name="l00362"></a>00362 
-<a name="l00363"></a>00363     <span class="comment">//  Reconnect.</span>
-<a name="l00364"></a>00364     start_connecting (<span class="keyword">true</span>);
-<a name="l00365"></a>00365 
-<a name="l00366"></a>00366     <span class="comment">//  For subscriber sockets we hiccup the inbound pipe, which will cause</span>
-<a name="l00367"></a>00367     <span class="comment">//  the socket object to resend all the subscriptions.</span>
-<a name="l00368"></a>00368     <span class="keywordflow">if</span> (pipe &amp;&amp; (options.type == <a class="code" href="zmq_8h.html#ad331770f0eec9ed393bf25fe6ea65dcc">ZMQ_SUB</a> || options.type == <a class="code" href="zmq_8h.html#a9922722259aed3ec260c84ad3cc2ac23">ZMQ_XSUB</a>))
-<a name="l00369"></a>00369         pipe-&gt;hiccup ();  
-<a name="l00370"></a>00370 }
-<a name="l00371"></a>00371 
-<a name="l00372"></a><a class="code" href="classzmq_1_1session__base__t.html#addcd71cbdce835b290dfb99c6f5c025a">00372</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#addcd71cbdce835b290dfb99c6f5c025a">zmq::session_base_t::start_connecting</a> (<span class="keywordtype">bool</span> wait_)
-<a name="l00373"></a>00373 {
-<a name="l00374"></a>00374     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (connect);
+<a name="l00363"></a>00363     <span class="comment">//  Ask pipe to terminate even though there may be pending messages in it.</span>
+<a name="l00364"></a>00364     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (pipe);
+<a name="l00365"></a>00365     pipe-&gt;terminate (<span class="keyword">false</span>);
+<a name="l00366"></a>00366 }
+<a name="l00367"></a>00367 
+<a name="l00368"></a><a class="code" href="classzmq_1_1session__base__t.html#a277990c7c6647ac4d61657fe10f2bbfc">00368</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#a277990c7c6647ac4d61657fe10f2bbfc">zmq::session_base_t::detached</a> ()
+<a name="l00369"></a>00369 {
+<a name="l00370"></a>00370     <span class="comment">//  Transient session self-destructs after peer disconnects.</span>
+<a name="l00371"></a>00371     <span class="keywordflow">if</span> (!connect) {
+<a name="l00372"></a>00372         terminate ();
+<a name="l00373"></a>00373         <span class="keywordflow">return</span>;
+<a name="l00374"></a>00374     }
 <a name="l00375"></a>00375 
-<a name="l00376"></a>00376     <span class="comment">//  Choose I/O thread to run connecter in. Given that we are already</span>
-<a name="l00377"></a>00377     <span class="comment">//  running in an I/O thread, there must be at least one available.</span>
-<a name="l00378"></a>00378     <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread = choose_io_thread (options.affinity);
-<a name="l00379"></a>00379     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (io_thread);
-<a name="l00380"></a>00380 
-<a name="l00381"></a>00381     <span class="comment">//  Create the connecter object.</span>
-<a name="l00382"></a>00382 
-<a name="l00383"></a>00383     <span class="keywordflow">if</span> (protocol == <span class="stringliteral">&quot;tcp&quot;</span>) {
-<a name="l00384"></a>00384         <a class="code" href="classzmq_1_1tcp__connecter__t.html">tcp_connecter_t</a> *connecter = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1tcp__connecter__t.html">tcp_connecter_t</a> (
-<a name="l00385"></a>00385             io_thread, <span class="keyword">this</span>, options, address.c_str (), wait_);
-<a name="l00386"></a>00386         <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (connecter);
-<a name="l00387"></a>00387         launch_child (connecter);
-<a name="l00388"></a>00388         <span class="keywordflow">return</span>;
-<a name="l00389"></a>00389     }
-<a name="l00390"></a>00390 
-<a name="l00391"></a>00391 <span class="preprocessor">#if !defined ZMQ_HAVE_WINDOWS &amp;&amp; !defined ZMQ_HAVE_OPENVMS</span>
-<a name="l00392"></a>00392 <span class="preprocessor"></span>    <span class="keywordflow">if</span> (protocol == <span class="stringliteral">&quot;ipc&quot;</span>) {
-<a name="l00393"></a>00393         <a class="code" href="classzmq_1_1ipc__connecter__t.html">ipc_connecter_t</a> *connecter = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1ipc__connecter__t.html">ipc_connecter_t</a> (
-<a name="l00394"></a>00394             io_thread, <span class="keyword">this</span>, options, address.c_str (), wait_);
-<a name="l00395"></a>00395         <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (connecter);
-<a name="l00396"></a>00396         launch_child (connecter);
-<a name="l00397"></a>00397         <span class="keywordflow">return</span>;
-<a name="l00398"></a>00398     }
-<a name="l00399"></a>00399 <span class="preprocessor">#endif</span>
-<a name="l00400"></a>00400 <span class="preprocessor"></span>
-<a name="l00401"></a>00401 <span class="preprocessor">#if defined ZMQ_HAVE_VTCP</span>
-<a name="l00402"></a>00402 <span class="preprocessor"></span>    <span class="keywordflow">if</span> (protocol == <span class="stringliteral">&quot;vtcp&quot;</span>) {
+<a name="l00376"></a>00376     <span class="comment">//  Reconnect.</span>
+<a name="l00377"></a>00377     start_connecting (<span class="keyword">true</span>);
+<a name="l00378"></a>00378 
+<a name="l00379"></a>00379     <span class="comment">//  For subscriber sockets we hiccup the inbound pipe, which will cause</span>
+<a name="l00380"></a>00380     <span class="comment">//  the socket object to resend all the subscriptions.</span>
+<a name="l00381"></a>00381     <span class="keywordflow">if</span> (pipe &amp;&amp; (options.type == <a class="code" href="zmq_8h.html#ad331770f0eec9ed393bf25fe6ea65dcc">ZMQ_SUB</a> || options.type == <a class="code" href="zmq_8h.html#a9922722259aed3ec260c84ad3cc2ac23">ZMQ_XSUB</a>))
+<a name="l00382"></a>00382         pipe-&gt;hiccup ();  
+<a name="l00383"></a>00383 }
+<a name="l00384"></a>00384 
+<a name="l00385"></a><a class="code" href="classzmq_1_1session__base__t.html#addcd71cbdce835b290dfb99c6f5c025a">00385</a> <span class="keywordtype">void</span> <a class="code" href="classzmq_1_1session__base__t.html#addcd71cbdce835b290dfb99c6f5c025a">zmq::session_base_t::start_connecting</a> (<span class="keywordtype">bool</span> wait_)
+<a name="l00386"></a>00386 {
+<a name="l00387"></a>00387     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (connect);
+<a name="l00388"></a>00388 
+<a name="l00389"></a>00389     <span class="comment">//  Choose I/O thread to run connecter in. Given that we are already</span>
+<a name="l00390"></a>00390     <span class="comment">//  running in an I/O thread, there must be at least one available.</span>
+<a name="l00391"></a>00391     <a class="code" href="classzmq_1_1io__thread__t.html">io_thread_t</a> *io_thread = choose_io_thread (options.affinity);
+<a name="l00392"></a>00392     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (io_thread);
+<a name="l00393"></a>00393 
+<a name="l00394"></a>00394     <span class="comment">//  Create the connecter object.</span>
+<a name="l00395"></a>00395 
+<a name="l00396"></a>00396     <span class="keywordflow">if</span> (protocol == <span class="stringliteral">&quot;tcp&quot;</span>) {
+<a name="l00397"></a>00397         <a class="code" href="classzmq_1_1tcp__connecter__t.html">tcp_connecter_t</a> *connecter = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1tcp__connecter__t.html">tcp_connecter_t</a> (
+<a name="l00398"></a>00398             io_thread, <span class="keyword">this</span>, options, address.c_str (), wait_);
+<a name="l00399"></a>00399         <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (connecter);
+<a name="l00400"></a>00400         launch_child (connecter);
+<a name="l00401"></a>00401         <span class="keywordflow">return</span>;
+<a name="l00402"></a>00402     }
 <a name="l00403"></a>00403 
-<a name="l00404"></a>00404         vtcp_connecter_t *connecter = <span class="keyword">new</span> (std::nothrow) vtcp_connecter_t (
-<a name="l00405"></a>00405             io_thread, <span class="keyword">this</span>, options, address.c_str (),
-<a name="l00406"></a>00406             wait_);
-<a name="l00407"></a>00407         <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (connecter);
-<a name="l00408"></a>00408         launch_child (connecter);
-<a name="l00409"></a>00409         <span class="keywordflow">return</span>;
-<a name="l00410"></a>00410     }
-<a name="l00411"></a>00411 <span class="preprocessor">#endif</span>
-<a name="l00412"></a>00412 <span class="preprocessor"></span>
-<a name="l00413"></a>00413 <span class="preprocessor">#if defined ZMQ_HAVE_OPENPGM</span>
-<a name="l00414"></a>00414 <span class="preprocessor"></span>
-<a name="l00415"></a>00415     <span class="comment">//  Both PGM and EPGM transports are using the same infrastructure.</span>
-<a name="l00416"></a>00416     <span class="keywordflow">if</span> (protocol == <span class="stringliteral">&quot;pgm&quot;</span> || protocol == <span class="stringliteral">&quot;epgm&quot;</span>) {
-<a name="l00417"></a>00417 
-<a name="l00418"></a>00418         <span class="comment">//  For EPGM transport with UDP encapsulation of PGM is used.</span>
-<a name="l00419"></a>00419         <span class="keywordtype">bool</span> udp_encapsulation = (protocol == <span class="stringliteral">&quot;epgm&quot;</span>);
-<a name="l00420"></a>00420 
-<a name="l00421"></a>00421         <span class="comment">//  At this point we&#39;ll create message pipes to the session straight</span>
-<a name="l00422"></a>00422         <span class="comment">//  away. There&#39;s no point in delaying it as no concept of &#39;connect&#39;</span>
-<a name="l00423"></a>00423         <span class="comment">//  exists with PGM anyway.</span>
-<a name="l00424"></a>00424         <span class="keywordflow">if</span> (options.type == <a class="code" href="zmq_8h.html#a0755bc624cb1e1a7e897d8b512e17f2a">ZMQ_PUB</a> || options.type == <a class="code" href="zmq_8h.html#a78a83eb0c7396e987626b6e1b99e0e6c">ZMQ_XPUB</a>) {
-<a name="l00425"></a>00425 
-<a name="l00426"></a>00426             <span class="comment">//  PGM sender.</span>
-<a name="l00427"></a>00427             pgm_sender_t *pgm_sender =  <span class="keyword">new</span> (std::nothrow) pgm_sender_t (
-<a name="l00428"></a>00428                 io_thread, options);
-<a name="l00429"></a>00429             <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (pgm_sender);
-<a name="l00430"></a>00430 
-<a name="l00431"></a>00431             <span class="keywordtype">int</span> rc = pgm_sender-&gt;init (udp_encapsulation, address.c_str ());
-<a name="l00432"></a>00432             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
-<a name="l00433"></a>00433 
-<a name="l00434"></a>00434             send_attach (<span class="keyword">this</span>, pgm_sender);
-<a name="l00435"></a>00435         }
-<a name="l00436"></a>00436         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (options.type == <a class="code" href="zmq_8h.html#ad331770f0eec9ed393bf25fe6ea65dcc">ZMQ_SUB</a> || options.type == <a class="code" href="zmq_8h.html#a9922722259aed3ec260c84ad3cc2ac23">ZMQ_XSUB</a>) {
-<a name="l00437"></a>00437 
-<a name="l00438"></a>00438             <span class="comment">//  PGM receiver.</span>
-<a name="l00439"></a>00439             pgm_receiver_t *pgm_receiver =  <span class="keyword">new</span> (std::nothrow) pgm_receiver_t (
-<a name="l00440"></a>00440                 io_thread, options);
-<a name="l00441"></a>00441             <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (pgm_receiver);
-<a name="l00442"></a>00442 
-<a name="l00443"></a>00443             <span class="keywordtype">int</span> rc = pgm_receiver-&gt;init (udp_encapsulation, address.c_str ());
-<a name="l00444"></a>00444             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
-<a name="l00445"></a>00445 
-<a name="l00446"></a>00446             send_attach (<span class="keyword">this</span>, pgm_receiver);
-<a name="l00447"></a>00447         }
-<a name="l00448"></a>00448         <span class="keywordflow">else</span>
-<a name="l00449"></a>00449             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-<a name="l00450"></a>00450 
-<a name="l00451"></a>00451         <span class="keywordflow">return</span>;
-<a name="l00452"></a>00452     }
-<a name="l00453"></a>00453 <span class="preprocessor">#endif</span>
-<a name="l00454"></a>00454 <span class="preprocessor"></span>
-<a name="l00455"></a>00455     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
-<a name="l00456"></a>00456 }
-<a name="l00457"></a>00457 
+<a name="l00404"></a>00404 <span class="preprocessor">#if !defined ZMQ_HAVE_WINDOWS &amp;&amp; !defined ZMQ_HAVE_OPENVMS</span>
+<a name="l00405"></a>00405 <span class="preprocessor"></span>    <span class="keywordflow">if</span> (protocol == <span class="stringliteral">&quot;ipc&quot;</span>) {
+<a name="l00406"></a>00406         <a class="code" href="classzmq_1_1ipc__connecter__t.html">ipc_connecter_t</a> *connecter = <span class="keyword">new</span> (std::nothrow) <a class="code" href="classzmq_1_1ipc__connecter__t.html">ipc_connecter_t</a> (
+<a name="l00407"></a>00407             io_thread, <span class="keyword">this</span>, options, address.c_str (), wait_);
+<a name="l00408"></a>00408         <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (connecter);
+<a name="l00409"></a>00409         launch_child (connecter);
+<a name="l00410"></a>00410         <span class="keywordflow">return</span>;
+<a name="l00411"></a>00411     }
+<a name="l00412"></a>00412 <span class="preprocessor">#endif</span>
+<a name="l00413"></a>00413 <span class="preprocessor"></span>
+<a name="l00414"></a>00414 <span class="preprocessor">#if defined ZMQ_HAVE_OPENPGM</span>
+<a name="l00415"></a>00415 <span class="preprocessor"></span>
+<a name="l00416"></a>00416     <span class="comment">//  Both PGM and EPGM transports are using the same infrastructure.</span>
+<a name="l00417"></a>00417     <span class="keywordflow">if</span> (protocol == <span class="stringliteral">&quot;pgm&quot;</span> || protocol == <span class="stringliteral">&quot;epgm&quot;</span>) {
+<a name="l00418"></a>00418 
+<a name="l00419"></a>00419         <span class="comment">//  For EPGM transport with UDP encapsulation of PGM is used.</span>
+<a name="l00420"></a>00420         <span class="keywordtype">bool</span> udp_encapsulation = (protocol == <span class="stringliteral">&quot;epgm&quot;</span>);
+<a name="l00421"></a>00421 
+<a name="l00422"></a>00422         <span class="comment">//  At this point we&#39;ll create message pipes to the session straight</span>
+<a name="l00423"></a>00423         <span class="comment">//  away. There&#39;s no point in delaying it as no concept of &#39;connect&#39;</span>
+<a name="l00424"></a>00424         <span class="comment">//  exists with PGM anyway.</span>
+<a name="l00425"></a>00425         <span class="keywordflow">if</span> (options.type == <a class="code" href="zmq_8h.html#a0755bc624cb1e1a7e897d8b512e17f2a">ZMQ_PUB</a> || options.type == <a class="code" href="zmq_8h.html#a78a83eb0c7396e987626b6e1b99e0e6c">ZMQ_XPUB</a>) {
+<a name="l00426"></a>00426 
+<a name="l00427"></a>00427             <span class="comment">//  PGM sender.</span>
+<a name="l00428"></a>00428             pgm_sender_t *pgm_sender =  <span class="keyword">new</span> (std::nothrow) pgm_sender_t (
+<a name="l00429"></a>00429                 io_thread, options);
+<a name="l00430"></a>00430             <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (pgm_sender);
+<a name="l00431"></a>00431 
+<a name="l00432"></a>00432             <span class="keywordtype">int</span> rc = pgm_sender-&gt;init (udp_encapsulation, address.c_str ());
+<a name="l00433"></a>00433             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
+<a name="l00434"></a>00434 
+<a name="l00435"></a>00435             send_attach (<span class="keyword">this</span>, pgm_sender);
+<a name="l00436"></a>00436         }
+<a name="l00437"></a>00437         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (options.type == <a class="code" href="zmq_8h.html#ad331770f0eec9ed393bf25fe6ea65dcc">ZMQ_SUB</a> || options.type == <a class="code" href="zmq_8h.html#a9922722259aed3ec260c84ad3cc2ac23">ZMQ_XSUB</a>) {
+<a name="l00438"></a>00438 
+<a name="l00439"></a>00439             <span class="comment">//  PGM receiver.</span>
+<a name="l00440"></a>00440             pgm_receiver_t *pgm_receiver =  <span class="keyword">new</span> (std::nothrow) pgm_receiver_t (
+<a name="l00441"></a>00441                 io_thread, options);
+<a name="l00442"></a>00442             <a class="code" href="err_8hpp.html#ae1d6a271788759e0cdcbf3b62a1037a3">alloc_assert</a> (pgm_receiver);
+<a name="l00443"></a>00443 
+<a name="l00444"></a>00444             <span class="keywordtype">int</span> rc = pgm_receiver-&gt;init (udp_encapsulation, address.c_str ());
+<a name="l00445"></a>00445             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (rc == 0);
+<a name="l00446"></a>00446 
+<a name="l00447"></a>00447             send_attach (<span class="keyword">this</span>, pgm_receiver);
+<a name="l00448"></a>00448         }
+<a name="l00449"></a>00449         <span class="keywordflow">else</span>
+<a name="l00450"></a>00450             <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
+<a name="l00451"></a>00451 
+<a name="l00452"></a>00452         <span class="keywordflow">return</span>;
+<a name="l00453"></a>00453     }
+<a name="l00454"></a>00454 <span class="preprocessor">#endif</span>
+<a name="l00455"></a>00455 <span class="preprocessor"></span>
+<a name="l00456"></a>00456     <a class="code" href="err_8hpp.html#a6eef7faa8d283dc3ed63ef0a6f2bad22">zmq_assert</a> (<span class="keyword">false</span>);
+<a name="l00457"></a>00457 }
+<a name="l00458"></a>00458 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -578,7 +579,7 @@ function toggleVisibility(linkObj) {
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Tue Oct 11 2011 03:17:44 for libzmq by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Nov 8 2011 10:17:23 for libzmq by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>
